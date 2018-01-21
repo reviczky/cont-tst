@@ -1,0 +1,68 @@
+<?xml version="1.0" standalone="yes"?>
+
+<root>
+
+inline cdata <![CDATA[oeps 1 1  1   1]]> crap
+
+text <a b="x"
+    c="y"/> text
+
+text<a b="x"
+    c="y"/>text
+
+text <a b="x"
+    c="y"/>
+text
+
+text <a b="x"
+    c="y"/>
+
+text
+
+<![CDATA[oeps 1 1  1   1
+oeps 2 2  2   2
+ oeps 3 3  3   3
+  oeps 4 4  4   4
+     oeps 5 {%} {$}
+        oeps 6
+
+        oeps 6
+]]>
+
+text
+
+<a b="x"
+    c="y"/>
+
+next line
+  next line
+       next line
+
+first some cdata verbatim
+
+<verbatim>
+<![CDATA[oeps 1 1  1   1
+oeps 2 2  2   2
+ oeps 3 3  3   3
+  oeps 4 4  4   4
+     oeps 5 {%} {$}
+        oeps 6
+
+        oeps 6
+]]>
+</verbatim>
+
+next some normal verbatim
+
+<verbatim>
+oeps 1 1  1   1
+oeps 2 2  2   2
+ oeps 3 3  3   3
+  oeps 4 4  4   4
+     oeps 5 {%} {$}
+        oeps 6
+
+        oeps 6
+</verbatim>
+
+</root>

@@ -1,0 +1,15 @@
+\environment devanagari-000
+
+\starttext
+
+    \DevaOne
+
+    % [U+0915][U+094D][U+0930] (क्र "kra") incorrectly produces the glyph intended for
+    % [U+0930][U+094D][U+0915] (र्क "rka")
+
+    \char"0915\char"094D\char"0930 \quad क्र \quad kra \par
+    \char"0930\char"094D\char"0915 \quad र्क \quad rka \par
+
+    \externalfigure[devanagari.png]
+
+\stoptext

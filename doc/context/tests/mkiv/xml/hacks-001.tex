@@ -1,0 +1,9 @@
+\starttext
+
+\edef\MyFileName{\cldcontext{resolvers.findbinfile(url.hashed("http://www.pragma-ade.com/index.html"))}}
+
+\xmlprocessfile{main}{\MyFileName}{}
+
+\xmlshow{main}
+
+\stoptext

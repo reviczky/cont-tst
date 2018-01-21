@@ -1,0 +1,44 @@
+\startMPpage
+    property p[] ;
+    p1 = properties(dashed evenly withcolor blue) ;
+    p2 = properties(dashed evenly withcolor red) ;
+
+    % fill fullcircle scaled 2cm withproperties p1 ;
+
+def withproperties expr p =
+    if colormodel p = 3 :
+        withcolor greypart p
+    elseif colormodel p = 5 :
+        withcolor (redpart p,greenpart p,bluepart p)
+    elseif colormodel p = 7 :
+        withcolor (cyanpart p,magentapart p,yellowpart p,blackpart p)
+    fi
+    withpen penpart p
+%     if dashpart p <> nullpicture :
+        dashed dashpart p
+%     fi
+    withprescript prescriptpart p
+    withpostscript postscriptpart p
+enddef ;
+
+
+    picture pic ;
+    pic := textext("one") ;
+    draw pic withproperties p1 ;
+    draw pic shifted (1cm,0) withproperties p2 ;
+
+    path pth ;
+    pth := fullcircle scaled 2cm ;
+    draw pth withproperties p1 ;
+    draw pth shifted (1cm,0) withproperties p2 ;
+
+    drawoptions(withcolor red);
+    pic := textext("one") shifted (1cm,0) ;
+    drawoptions();
+    draw pic ;
+
+    drawoptions(withcolor green);
+    draw textext("one") shifted (2cm,0) ;
+    drawoptions();
+
+\stopMPpage

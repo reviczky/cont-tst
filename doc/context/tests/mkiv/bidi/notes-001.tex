@@ -1,0 +1,114 @@
+% sample posted to list by Talal
+
+\showframe
+
+\definefontfamily
+  [mainface]
+  [serif]
+  [ALMFixed]
+  [features=arabic,
+   range=arabic]
+
+\setupbodyfont
+  [mainface]
+
+\setupdirections
+  [bidi=global]
+
+\startsetups[note:footnote]
+    \setupdirections[bidi=global]
+\stopsetups
+
+\setupalign
+  [r2l]
+
+\setupnote
+  [footnote]
+  [setups=note:footnote,
+   align=righttoleft,
+   rule={on,right},
+   paragraph=yes]
+
+\setupnotation
+  [footnote]
+  [align=righttoleft,
+   alternative=serried,
+   width=broad,
+   distance=.5em]
+
+\definenote
+  [afootnote]
+  [setups=note:footnote,
+   align=righttoleft,
+   arule={on,right},
+   paragraph=yes,
+   frame=on,
+   framecolor=yellow]
+
+\setupnotation
+  [afootnote]
+  [align=righttoleft,
+   alternative=serried,
+   width=broad,
+   distance=.5em,
+   display=no]
+
+\definenote
+  [bfootnote]
+  [setups=note:footnote,
+   paragraph=yes,
+   frame=on,
+   framecolor=yellow]
+
+\setupnotation
+  [bfootnote]
+  [alternative=serried,
+   width=broad,
+   distance=.5em,
+   display=no]
+
+\definestartstop
+  [arabik]
+  [before={\blank\startalignment[r2l]},
+   after={\stopalignment\blank}]
+
+\definestartstop
+  [english]
+  [before={\blank\startalignment[l2r]},
+   after={\stopalignment\blank}]
+
+\starttext
+
+\startsection[title={Arabic with default footnote stream}]
+
+هذه رسالة مني إليك. I wish you could read it. ولكنها
+مكتوبة بالعربية. \footnote { هذه (تعليقة) أولى. I wish
+you could read it. ولكنها مكتوبة بالعربية. } فانتهيت.
+\footnote {هذه (تعليقة) ثانية..}
+
+\stopsection
+
+\startsection[title={Arabic with custom afootnote stream}]
+
+هذه رسالة لطيفة ألفها العالم الكبير الفهامة
+النحرير. \afootnote{وهذه هي التعليقة الأولى (وهي
+طويلة) إلا أنها ليست صحيحة.} هذه رسالة جامعة
+مانعة ألفها الشيخ الفاضل الرَّحلة. \afootnote{هذه
+تعليقة (ثانية).}
+
+\startenglish
+
+\stopsection
+
+\startsection[title={English with custom bfootnote stream}]
+
+This is my LTR sentence with a regular, LTR footnote. \bfootnote {This is a
+custom bfootnote. Notice how the serried spacing is working nicely in this
+footnote but also in the R2L ones above.} This, also, is LTR sentence with a
+regular footnote. \bfootnote {This is the second custom bfootnote.}
+
+\stopsection
+
+\stopenglish
+
+\stoptext

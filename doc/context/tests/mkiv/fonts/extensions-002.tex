@@ -1,0 +1,24 @@
+% only works in new loader
+
+\startluacode
+    fonts.handlers.otf.addfeature {
+        name = "ptest",
+        type = "pair",
+        data = {
+         -- [0x0153] = { [0x0301] = { { 0, 0, 0, 0 }, { -500, 0, 0, 0 } } },
+            [0x0153] = { [0x0301] = { false,  { -500, 0, 0, 0 } } },
+        }
+    }
+\stopluacode
+
+\definefontfeature[default][default][ptest=yes]
+
+\setupbodyfont[cambria]
+
+\starttext
+
+    \unexpanded\def\oeacute{\char"153\char"301\relax}
+
+    b\oeacute f
+
+\stoptext

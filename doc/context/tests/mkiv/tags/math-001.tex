@@ -1,0 +1,96 @@
+% \enabletrackers[structures.export.spaces]
+
+% \setupbackend[export=yes]
+
+\starttext
+
+% \bTABLE
+%     \bTR \bTD a \eTD \bTD[align=flushright] b \eTD \eTR
+%     \bTR \bTD[nx=2,align=flushright]       c \eTD \eTR
+% \eTABLE
+
+% \starttabulate
+%     \NC 11 \NC 12 \NC \NR
+%     \NC    \NC 22 \NC \NR
+% \stoptabulate
+
+% \starttabulate
+%     \NC 11 \NC  \NC \NR
+%     \NC 21 \NC  \NC \NR
+% \stoptabulate
+
+% \starttabulate
+%     \NC 11 \NC 12 \par 12 \NC \NR
+% \stoptabulate
+
+% \starttabulate[|||]
+%     \NC 11 \NC 12 \NC \NR
+%     \NC 21 \NC 22 \NC \NR
+% \stoptabulate
+
+% \starttabulate[|p|p|]
+%     \NC 11\par11 \NC 12       \NC \NR
+%     \NC 21       \NC 22\par22 \NC \NR
+% \stoptabulate
+
+% \starttabulate[|||]
+%     \NC 11 \NC 12 \NC \NR
+%     \NC    \NC 22 \NC \NR
+% \stoptabulate
+
+% \starttabulate[|p|p|]
+%     \NC 11\par11 \NC 12       \NC \NR
+%     \NC          \NC 22\par22 \NC \NR
+% \stoptabulate
+
+\input ward
+
+\ruledvbox\bgroup
+    \startalign
+        \NC  a \EQ b \NR
+    \stopalign
+\egroup
+
+\input ward
+
+\startformula
+    \startalign
+        \NC  a \EQ b \NR
+        \NC  c \EQ d \NR
+    \stopalign
+\stopformula
+
+\input ward
+
+\startformula
+    \startalign
+        \NC  a \EQ b \NR
+        \NC    \EQ c \NR
+    \stopalign
+\stopformula
+
+\input ward
+
+\startformula
+    \sqrt{b}
+\stopformula
+
+\startformula
+    \sqrt[3]{b}
+\stopformula
+
+\startformula
+    \frac{a}{b}
+\stopformula
+
+\startformula
+    \startalign
+        \NC  a^2 \EQ \sqrt{b}    \NR
+        \NC  c   \EQ \frac{d}{e} \NR
+        \NC      \EQ f           \NR
+        \NC      \EQ \sqrt{g} \NR
+    \stopalign
+\stopformula
+
+\stoptext
+

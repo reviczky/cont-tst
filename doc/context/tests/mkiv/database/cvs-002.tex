@@ -1,0 +1,23 @@
+\usemodule [database]
+
+\defineseparatedlist
+  [CSV]
+  [quotechar=",
+   before={\starttabulate[|l|l|]},
+   after=\stoptabulate,
+   first=\NC,last=\NR,
+   left=,right=\NC]
+
+\starttext
+
+    \startCSV
+        alpha, loremloremlorem
+        beta,"ipsum, ipsum, ipsum"
+    \stopCSV
+
+    \startCSV
+        alpha, loremloremlorem
+        beta, "ipsum, ipsum, ipsum"
+    \stopCSV
+
+\stoptext

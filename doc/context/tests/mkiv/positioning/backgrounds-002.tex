@@ -1,0 +1,82 @@
+\setupbodyfont[dejavu]
+
+\definetextbackground[normal][location=paragraph,mp=mpos:region:show]
+\definetextbackground[shaped][location=paragraph,mp=mpos:region:show,method=mpos:regionshape]
+
+\definetextbackground[xnormal][location=paragraph]
+\definetextbackground[xshaped][location=paragraph,method=mpos:regionshape]
+
+\tracepositions
+
+\starttext
+
+    \starttextbackground[normal]
+        \placefigure[right]{}{} \input ward \par \input ward
+    \stoptextbackground
+
+    \starttextbackground[normal]
+        \placefigure[right]{}{} \input ward
+    \stoptextbackground
+
+    \page
+
+    \starttextbackground[shaped]
+        \placefigure[left]{}{} \input ward \input ward
+    \stoptextbackground
+
+    \blank[2*big]
+
+    \starttextbackground[shaped]
+        \placefigure[left]{}{} \input ward \par \input ward
+    \stoptextbackground
+
+    \page
+
+%     \startnarrower
+%         \starttextbackground[normal]
+%             \input ward \par \input ward
+%         \stoptextbackground
+%     \stopnarrower
+
+    \starttextbackground[shaped]
+        \placefigure[right]{}{} \input ward \par \input ward
+    \stoptextbackground
+
+    \blank
+
+    \starttextbackground[shaped]
+        \placefigure[left]{}{} \input ward
+    \stoptextbackground
+
+    \blank
+
+    \starttextbackground[shaped]
+        \placefigure[right]{}{} \input ward
+    \stoptextbackground
+
+    \page
+
+    \starttextbackground[shaped]
+        \placefigure[right]{}{} \dorecurse{2}{test test test\par}
+        \input ward
+    \stoptextbackground
+
+    \blank
+
+    \starttextbackground[shaped]
+        \placefigure[right]{}{} \dorecurse{20}{test test test\par}
+    \stoptextbackground
+
+    \page
+
+    \starttextbackground[xshaped]
+        \placefigure[left]{}{} \input ward \input ward
+    \stoptextbackground
+
+    \blank
+
+    \starttextbackground[xshaped]
+        \placefigure[left]{}{} \input ward \par \input ward
+    \stoptextbackground
+
+\stoptext

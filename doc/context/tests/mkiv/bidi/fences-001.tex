@@ -1,0 +1,14 @@
+\starttext
+
+\setupalign[r2l]
+
+\definefont[arabicfont][Arial*arabic at 20pt]
+
+\enabletrackers[typesetters.directions.one]
+\enabletrackers[typesetters.directions.two]
+
+\setupdirections[bidi=global,method=default] \arabicfont این (یک آزمایش 1363) است. \par
+\setupdirections[bidi=global,method=one]     \arabicfont این (یک آزمایش 1363) است. \par
+\setupdirections[bidi=global,method=two]     \arabicfont این (یک آزمایش 1363) است. \par
+
+\stoptext

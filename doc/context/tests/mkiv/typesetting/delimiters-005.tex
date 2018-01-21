@@ -1,0 +1,16 @@
+\starttext
+
+\enabletrackers[delimited.language]
+
+\starttexdefinition MyQuote #1#2#3
+    Like the famous {\fr Alan Braslau} once said: %
+        \quotation [#1] {J'adore la typographie, %
+            \quotation [#2] {so shut up Hans, I'm serious here, and don't pretend that %
+                \quotation [#3] {ik geen nederlands versta}}}. \blank
+\stoptexdefinition
+
+\MyQuote {fr:}   {en:}   {nl:}
+\MyQuote   {:fr}   {:en}   {:nl}
+\MyQuote {fr:fr} {en:en} {nl:nl}
+
+\stoptext

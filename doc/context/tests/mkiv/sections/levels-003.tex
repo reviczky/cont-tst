@@ -1,0 +1,32 @@
+\starttext
+
+\startsectionlevel [title=A section]
+    \currentnamedsection\par
+    \startsectionlevel [title=A subsection]
+        \currentnamedsection\par
+    \stopsectionlevel
+    \currentnamedsection\par
+    \startsubjectlevel [title=A subsubject]
+        \currentnamedsection\par
+    \stopsubjectlevel
+    \currentnamedsection\par
+\stopsectionlevel
+
+\startchapter [title=A section]
+    \currentnamedsection\par
+    \startsection [title=A section]
+        \currentnamedsection\par
+        \startsectionlevel [title=A subsection]
+            \startsubjectlevel [title=A subsubsubject]
+                \currentnamedsection\par
+            \stopsubjectlevel
+            \startsubjectlevel [title=A subsubsubject]
+                \currentnamedsection\par
+            \stopsubjectlevel
+        \stopsectionlevel
+        \currentnamedsection\par
+    \stopsection
+    \currentnamedsection\par
+\stopchapter
+
+\stoptext

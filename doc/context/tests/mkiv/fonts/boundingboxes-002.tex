@@ -1,0 +1,23 @@
+\definefontfeature[default][default][boundingbox=yes]
+% \definefontfeature[default][default][boundingbox=background]
+% \definefontfeature[default][default][boundingbox=frame]
+
+% \definefontfeature[default][default][boundingbox={background,empty}]
+% \definefontfeature[default][default][boundingbox={frame,empty}]
+
+% \definefontfeature[default][default][boundingbox={frame,darkred,empty}]
+% \definefontfeature[default][default][boundingbox={frame,darkred}]
+% \definefontfeature[default][default][boundingbox={background,darkred,empty}]
+% \definefontfeature[default][default][boundingbox={background,darkred}]
+
+\nopdfcompression
+
+\starttext
+    \tf \input sapolsky \par
+    \definefontfeature[default][default][boundingbox={frame,darkred}]
+    \bf \input sapolsky \par
+    \definefontfeature[default][default][boundingbox={background,darkgreen,empty}]
+    \it \input sapolsky \par
+    \definefontfeature[default][default][boundingbox={frame,darkblue,empty}]
+    \bi \input sapolsky \par
+\stoptext

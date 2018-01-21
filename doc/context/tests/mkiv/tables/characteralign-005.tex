@@ -1,0 +1,44 @@
+% fixed example from list
+
+\setupTABLE
+  [aligncharacter=yes,
+   alignmentcharacter=.,
+   align=middle]
+
+\starttext
+
+\startTABLE
+    \NC \nocharacteralign
+        Foo\crlf bar    \NC \NR
+    \NC 1.1             \NC \NR
+    \NC 11.1            \NC \NR
+\stopTABLE
+
+\blank
+
+\startTABLE
+    \NC \nocharacteralign
+        Foo\\bar        \NC \NR
+    \NC 1.1             \NC \NR
+    \NC 11.1            \NC \NR
+\stopTABLE
+
+\blank
+
+\startTABLE
+    \NC \nocharacteralign
+        Foo\high{bar}   \NC \NR
+    \NC 1.1             \NC \NR
+    \NC 11.1            \NC \NR
+\stopTABLE
+
+\blank
+
+\startTABLE
+    \NC \nocharacteralign
+        Foo\low{bar}    \NC \NR
+    \NC 1.1             \NC \NR
+    \NC 11.1            \NC \NR
+\stopTABLE
+
+\stoptext

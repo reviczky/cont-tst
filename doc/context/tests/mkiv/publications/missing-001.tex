@@ -1,0 +1,40 @@
+\endinput % needs fixing
+
+\usemodule[art-01]
+
+\definebtxdataset
+	[sample]
+
+\usebtxdataset
+	[sample]
+	[sample.bib]
+
+\setbtxdataset
+	[sample]
+
+\definebtxrendering
+	[sample]
+	[dataset=sample,
+	 alternative=foo]
+
+\setupwhitespace
+  [big]
+
+\starttext
+
+This is from \cite[hh2010b] and \cite[bar].
+
+List of publications is empty: \blank
+
+\placelistofpublications
+	[sample]
+	[criterium=all]
+
+\showbtxdatasetfields
+	[sample]
+% \showbtxdatasetcompleteness
+% 	[sample]
+
+\typefile{missing-001.tex}
+
+\stoptext

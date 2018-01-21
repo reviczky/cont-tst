@@ -1,0 +1,32 @@
+\startuseMPgraphic{verticalline}
+    if CurrentColumn < NOfColumns :
+        draw rightboundary OverlayBox shifted (2.5mm,0) withpen pencircle scaled .5mm withcolor \MPcolor {darkred} ;
+        setbounds currentpicture to OverlayBox enlarged 2.5mm;
+    fi ;
+\stopuseMPgraphic
+
+\setupalign
+  [verytolerant,stretch]
+
+\dontcomplain
+
+\definecolumnset
+  [example]
+  [n=3,
+   background=verticalline,
+   distance=5mm]
+
+\defineoverlay
+  [verticalline]
+  [\useMPgraphic{verticalline}]
+
+\starttext
+
+    \startcolumnset [example]
+        \input knuth
+        \input knuth
+        \input knuth
+        \input knuth
+    \stopcolumnset
+
+\stoptext

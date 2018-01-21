@@ -1,0 +1,27 @@
+\starttext
+
+\startbuffer
+    \startitemize[a,columns,four][grid=]
+        \startitem  1: \snappedmath { 5^3            } \stopitem
+        \startitem  2: \snappedmath { \frac{2}{3}^4  } \stopitem
+        \startitem  3: \snappedmath { 254^0          } \stopitem %\column
+        \startitem  4: \snappedmath { \frac{-8}{12}^3} \stopitem
+        \startitem  5: \snappedmath { -3^5           } \stopitem
+        \startitem  6: \snappedmath { -50^5          } \stopitem %\column
+        \startitem  7: \snappedmath { -10^7          } \stopitem
+        \startitem  8: \snappedmath { 0,2^3          } \stopitem
+        \startitem  9: \snappedmath { -0,22^4        } \stopitem %\column
+        \startitem 10: \snappedmath { \frac{3}{2}^4  } \stopitem
+        \startitem 11: \snappedmath { 22^1           } \stopitem
+        \startitem 12: \snappedmath { 22^0           } \stopitem
+    \stopitemize
+\stopbuffer
+
+\input ward \getbuffer
+
+\let\snappedmath\ruledmbox
+
+\input ward \getbuffer \input ward
+
+\stoptext
+

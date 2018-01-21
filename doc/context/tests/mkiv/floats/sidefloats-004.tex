@@ -1,0 +1,45 @@
+\setuplayout[tight]
+\setupbodyfont[dejavu]
+
+\usemodule[simulate]
+
+\starttext
+
+\definemeasure[MyHeight][3cm] \definemeasure[MyWidth][3cm]
+
+\unexpanded\def\FakeWords#1%
+  {\simulatewords[n=#1,m=#1,min=1,max=5,hyphen=no,color=text,line=yes,random=1234]}
+
+\startbuffer
+    \FakeWords{100}\par
+    \placefigure[left]{oeps}{\framed[width=\measure{MyWidth},height=\measure{MyHeight}]{}}
+    \FakeWords{2}\par
+    \FakeWords{3}\par
+    \FakeWords{5}\par
+    \FakeWords{4}\par
+    \FakeWords{200}\par
+    \placefigure[left]{oeps}{\framed[width=\measure{MyWidth},height=\measure{MyHeight}]{}}
+    \FakeWords{200}\par
+\stopbuffer
+
+\enabletrackers[floats.anchoring]
+\setupfloats[step=small]
+
+\setupheadertexts[width=\measure{MyWidth},height=\measure{MyHeight}]
+
+\dostepwiserecurse {\number\dimexpr3cm} {\number\dimexpr4cm} {\number\dimexpr0.25cm} {
+    \definemeasure[MyWidth][#1sp]
+    \dostepwiserecurse {\number\dimexpr3cm} {\number\dimexpr4cm} {\number\dimexpr0.25cm} {
+        \definemeasure[MyHeight][##1sp]
+        \start
+            \setupwhitespace[none]
+            \getbuffer \page
+        \stop
+        \start
+            \setupwhitespace[big]
+            \getbuffer \page
+        \stop
+    }
+}
+
+\stoptext

@@ -1,0 +1,52 @@
+\startbuffer[demo]
+<a>
+  <aa number="--">--</aa>
+  <aa number="a1">A1</aa>
+  <ax number="x1">X1</ab>
+  <ab number="b1">B1</ab>
+  <aa number="--">--</aa>
+  <aa number="a2">A2</aa>
+  <ax number="x2">X2</ab>
+  <ab number="b2">B2</ab>
+  <aa number="--">--</aa>
+  <aa number="a3">A3</aa>
+  <ax number="x3">X3</ab>
+  <ab number="b3">B3</ab>
+</a>
+\stopbuffer
+
+\startxmlsetups xml:initialize
+    \xmlsetsetup{#1}{*}{xml:*}
+\stopxmlsetups
+
+\startxmlsetups xml:a
+    \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:aa
+    \par
+    <aa>\xmlflush{#1}</aa>
+    \par
+\stopxmlsetups
+
+\startxmlsetups xml:ax
+    \par
+    <ax>\xmlflush{#1}</ax>
+    \par
+\stopxmlsetups
+
+\startxmlsetups xml:ab
+    \par
+    <ab>
+    \xmlflush{#1}:\space
+    aa: {\bf \xmlfilter{#1}{reverse-sibling::[tag() == 'aa']/attribute('number')}}\space
+    ax: {\bf \xmlfilter{#1}{reverse-sibling::[tag() == 'ax']/attribute('number')}}\space
+    </ab>
+    \par
+\stopxmlsetups
+
+\xmlregistersetup{xml:initialize}
+
+\starttext
+  \xmlprocessbuffer{main}{demo}{}
+\stoptext

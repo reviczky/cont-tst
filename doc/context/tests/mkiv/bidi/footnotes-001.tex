@@ -1,0 +1,13 @@
+\setupfootnotes[rule=paragraph]
+
+\starttext
+    \dorecurse{20}{
+        \ifodd#1
+            \lefttoright
+        \else
+            \righttoleft
+        \fi
+        Just some text with a footnote. \footnote{Footnote text}
+        \page
+    }
+\stoptext

@@ -1,0 +1,33 @@
+\starttext
+
+\startmixedcolumns[balance=yes] line 1 \column line 2 \par    line 3 \par    line 4 \par    line 5 \stopmixedcolumns \blank[2*line]
+\startmixedcolumns[balance=yes] line 1 \par    line 2 \column line 3 \par    line 4 \par    line 5 \stopmixedcolumns \blank[2*line]
+\startmixedcolumns[balance=yes] line 1 \par    line 2 \par    line 3 \column line 4 \par    line 5 \stopmixedcolumns \blank[2*line]
+\startmixedcolumns[balance=yes] line 1 \par    line 2 \par    line 3 \par    line 4 \column line 5 \stopmixedcolumns \blank[2*line]
+\startmixedcolumns[balance=yes] line 1 \par    line 2 \par    line 3 \par    line 4 \par    line 5 \stopmixedcolumns \blank[2*line]
+
+\doactivateinjector{test} \showinjector
+
+\setinjector[test][5][{\column}]
+\setinjector[test][7][{\column}]
+
+\startmixedcolumns[balance=yes]
+    \dotestinjector{test}line 1 \par
+    \dotestinjector{test}line 2 \par
+    \dotestinjector{test}line 3 \par
+    \dotestinjector{test}line 4 \par
+    \dotestinjector{test}line 5
+\stopmixedcolumns
+
+\blank[2*line]
+
+\startmixedcolumns[balance=yes]
+    \dotestinjector{test}line 1 \par
+    \dotestinjector{test}line 2 \par
+    \dotestinjector{test}line 3 \par
+    \dotestinjector{test}line 4 \par
+    \dotestinjector{test}line 5
+\stopmixedcolumns
+
+\stoptext
+

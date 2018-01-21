@@ -1,0 +1,15 @@
+\starttext
+
+\newdimen\mytexdimension \mytexdimension 100pt
+
+\ruledhbox to\mytexdimension{\the\mytexdimension}
+
+\ctxlua{document.myluadimension = "200pt"}
+
+\ruledhbox to \cldcontext{document.myluadimension}{\cldcontext{document.myluadimension}}
+
+\ctxlua{tex.dimen.mytexdimension = "300pt"}
+
+\ruledhbox to\mytexdimension{\the\mytexdimension}
+
+\stoptext

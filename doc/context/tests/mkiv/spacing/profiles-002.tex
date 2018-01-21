@@ -1,0 +1,64 @@
+\startbuffer[example-1]
+    Regelmatig kom je procenten tegen. ‘Pro centum’ is Latijn en betekent per
+    honderd, dus één van elke honderd, dus $\frac{1}{100}$ deel. Met procenten
+    rekenen is daarom rekenen met honderdsten: $45 \procent = \frac{45}{100} = 0,45$.
+    Dus $45\procent$ van een geheel is het $\frac{45}{100}$ deel ervan en dat kun je
+    berekenen door te vermenigvuldigen met $0,45$.
+\stopbuffer
+
+\startbuffer[example-2]
+De vergelijking \math{ax^2+bx+c=0} heeft als oplossing:
+\math{x= \frac{-b + \sqrt{b^2-4 ac}} {2 a} ∨ x = \frac{- b - \sqrt{b^2-4 ac}}{2 a}}
+\stopbuffer
+
+\mainlanguage[en]
+
+\setuplayout
+  [grid=yes]
+
+\showgrid
+
+\showcolorstruts
+
+\starttext
+
+    \startboxedcolumns[distance=3em,grid=yes]
+        \getbuffer[example-1]
+    \stopboxedcolumns
+
+    boxed column with profile
+
+    \startboxedcolumns[distance=3em,grid=yes,profile=fixed]
+        \getbuffer[example-1]
+    \stopboxedcolumns
+
+    \page
+
+    column without profile
+
+    \startcolumns[balance=yes,distance=3em]
+        \getbuffer[example-1]
+    \stopcolumns
+
+    column without profile
+
+    \startcolumns[balance=yes,distance=3em]
+        \setprofile[fixed]
+        \getbuffer[example-1]
+    \stopcolumns
+
+    done
+
+    \startcolumns[balance=yes,distance=3em]
+        \getbuffer[example-2]
+    \stopcolumns
+
+    column without profile
+
+    \startcolumns[balance=yes,distance=3em]
+        \setprofile[fixed]
+        \getbuffer[example-2]
+    \stopcolumns
+
+\stoptext
+

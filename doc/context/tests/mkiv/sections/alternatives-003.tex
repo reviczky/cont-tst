@@ -1,0 +1,30 @@
+\setuplayout
+  [backspace=6cm,
+   width=10cm]
+
+% \definemargindata
+%   [margintext:chapter]
+%   [margintext:section]
+
+% \defineheadalternative
+%   [margintext:chapter]
+%   [margintext]
+%   [margintext=margintext:chapter]
+
+% \setuphead
+%   [chapter]
+%   [alternative=margintext:chapter]
+
+\setuphead
+  [chapter]
+  [alternative=margintext]
+
+\showframe
+
+\starttext
+
+    \chapter{Oeps}
+
+    \input tufte
+
+\stoptext

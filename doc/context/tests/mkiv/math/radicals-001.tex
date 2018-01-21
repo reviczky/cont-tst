@@ -1,0 +1,19 @@
+\startTEXpage[offset=10pt]
+
+\startbuffer
+$ y = \sqrt[3]{ x^2 + ax + b } $ \blank[medium]
+
+$ y = \sqrt[3] { \frac{x^2 + ax + b }{d} } $
+\stopbuffer
+
+\getbuffer \blank
+
+\setupmathradical[sqrt][alternative=normal,color=darkblue]
+
+\getbuffer \blank
+
+\setupmathradical[sqrt][alternative=mp,color=darkgreen]
+
+\getbuffer
+
+\stopTEXpage

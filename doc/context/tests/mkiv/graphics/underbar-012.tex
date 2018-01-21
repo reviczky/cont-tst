@@ -1,0 +1,19 @@
+%  \definebar[hiddenbar][underbar][continue=yes,left=\zwj,right=\zwj,empty=yes]
+
+\starttext
+
+\input ward \hiddenbar               {\color[red]{invisible}}
+\input ward \hiddenbar          {\quad\color[red]{invisible}\quad}
+\input ward \hiddenbar{\quad\quad\quad\color[red]{invisible}\quad\quad\quad}
+\input ward \hiddenbar               {\color[red]{invisible}\quad\quad\quad\quad\quad\quad}
+\input ward
+
+\definebar
+  [widehiddenbar]
+  [hiddenbar]
+  [left={\quads[3]},
+   right={\quads[3]}]
+
+\input ward \widehiddenbar{invisible} \input ward
+
+\stoptext

@@ -1,0 +1,28 @@
+\showcolorstruts
+
+\setupbodyfont[dejavu]
+
+\switchtobodyfont[modern]
+
+\enabletrackers[profiling.show]
+% \enabletrackers[profiling.trace]
+
+\starttext
+
+\starttexdefinition demo-profile-1 #1
+    \framed
+        [align=normal,profile=#1]
+        {xxx$\frac{1}{\frac{1}{\frac{1}{2}}}$
+         \par
+         $\frac{\frac{1}{\frac{1}{2}}}{2}$xxx}
+\stoptexdefinition
+
+\startTEXpage
+    \texdefinition{demo-profile-1}{none}
+    \texdefinition{demo-profile-1}{fixed}
+    \texdefinition{demo-profile-1}{halffixed}
+    \texdefinition{demo-profile-1}{quarterfixed}
+    \texdefinition{demo-profile-1}{eightsfixed}
+\stopTEXpage
+
+\stoptext

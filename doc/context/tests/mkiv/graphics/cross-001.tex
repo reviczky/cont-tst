@@ -1,0 +1,21 @@
+\setupinteraction[state=start]
+
+\starttext
+
+    \startplacefigure[title=A Dutch Cow A]
+        \externalfigure[cow.pdf][width=3cm,frame=on,crossreference=yes]
+    \stopplacefigure
+
+    \startplacefigure[title=A Dutch Cow B]
+        \externalfigure[cow.pdf][width=2cm,frame=on]
+    \stopplacefigure
+
+    \startplacefigure[title=A Dutch Cow C]
+        \externalfigure[cow.pdf][width=5cm,frame=on,crossreference=yes]
+    \stopplacefigure
+
+    \page
+
+    \placeregisteredexternalfigures[factor=max]
+
+\stoptext

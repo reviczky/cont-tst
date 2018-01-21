@@ -1,0 +1,22 @@
+\setupbackgrounds[page][background=color,backgroundcolor=blue]
+
+\starttext
+    \rotate[rotation=90,foregroundcolor=white]{\definedfont[SansBold at 24pt]\white \ConTeXt} \par
+    \scale [sx=.5]                            {\definedfont[SansBold at 24pt]\white \ConTeXt} \par
+    \scale [sx=2]                             {\definedfont[SansBold at 24pt]\white \ConTeXt} \par
+    \scale [sx=2]                             {\scale
+           [sx=.5]                            {\definedfont[SansBold at 24pt]\white \ConTeXt}}\par
+    \mirror                                   {\definedfont[SansBold at 24pt]\white \ConTeXt  \par
+    \mirror                                   {\definedfont[SansBold at 24pt]\white \ConTeXt}}\par
+                                              {\definedfont[SansBold at 24pt]\white \ConTeXt} \par
+                                              {\definedfont[SansBold at 16pt]\white \ConTeXt} \par
+
+    \page
+
+    \color[red]{RED: \input tufte }
+
+    \scale[width=.2\paperheight]{SCALED}
+
+    BLACK: \input tufte
+
+\stoptext

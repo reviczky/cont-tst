@@ -1,0 +1,55 @@
+% derived from post by pablo on list
+
+\startbuffer[demo]
+<d>
+     <p>Case 1: <a href="http://a.b/c#d">http://a.b/c#d</a></p>
+     <p>Case 2: <a href="http://a.b/c"  >http://a.b/c#d</a></p>
+     <p>Case 3: <a href="http://a.b/c#d">http://a.b/c  </a></p>
+</d>
+\stopbuffer
+
+\nopdfcompression
+
+\startxmlsetups xml:initialize
+     \xmlsetsetup{#1}{*}{xml:*}
+\stopxmlsetups
+
+\xmlregistersetup{xml:initialize}
+
+\startxmlsetups xml:d
+     \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:p
+     \xmlflush{#1}
+     \blank
+\stopxmlsetups
+
+\startxmlsetups xml:a
+    \mypersonalurl
+      {\xmlatt{#1}{href}}
+      {\xmlflush{#1}}
+      {\xmlraw{#1}{.}}
+\stopxmlsetups
+
+\starttexdefinition unexpanded mypersonalurl #1#2#3
+    \dontleavehmode
+    \begingroup
+    \tt
+    \starttabulate[||||]
+    \NC url \NC #1 \NC \goto{\hyphenatedurl{#2}}[url(#1)] \NC \NR
+    \NC txt \NC #2 \NC \goto{\hyphenatedurl{#2}}[url(#2)] \NC \NR
+    \NC raw \NC #3 \NC \goto{\hyphenatedurl{#3}}[url(#3)] \NC \NR
+    \stoptabulate
+    \endgroup
+\stoptexdefinition
+
+\setupinteraction[state=start]
+
+\starttext
+
+% \enabletrackers[structures.referencing.analyzing]
+
+\xmlprocessbuffer{main}{demo}{}
+
+\stoptext

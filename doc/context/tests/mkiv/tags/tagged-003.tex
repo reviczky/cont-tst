@@ -1,0 +1,73 @@
+\nopdfcompression
+
+\setuptagging[state=start]
+
+\setupbackend
+  [export=yes]
+
+\definedescription[whatever]
+
+\starttext
+
+\startfrontmatter
+    \startchapter[title=One]
+        \startparagraph \input tufte \stopparagraph
+        \startparagraph
+            \blank
+            \type{structure:section}            : \doifinelementelse{structure:section}            {yes} {no}\par
+            \type{structure:chapter}            : \doifinelementelse{structure:chapter}            {yes} {no}\par
+            \type{division:*-structure:chapter} : \doifinelementelse{division:*-structure:chapter} {yes} {no}\par
+            \blank
+        \stopparagraph
+        \startitemize
+            \startitem zero \stopitem
+            \startitem first \footnote{test}
+            \startitem second \index{one} \index{two} \stopitem
+            \startitem third \stopitem
+        \stopitemize
+        \startparagraph \input ward \stopparagraph
+        \startwhatever {whocares} \input zapf \stopwhatever
+    \stopchapter
+
+\stopfrontmatter
+
+\startbodymatter
+
+    \startchapter[title=Two]
+        \startitemize
+            \startitem first \stopitem
+            \startitem second \index{one} \index{two} \stopitem
+        \stopitemize
+%         \startparagraph par 1 \par par 2 \stopparagraph
+%         \startparagraph \input ward \stopparagraph
+    \stopchapter
+
+    \startchapter[title=Three]
+        \startparagraph \input knuth \stopparagraph
+        \startsection[title=Alpha]
+            \startparagraph \input tufte \stopparagraph
+            \startparagraph \input tufte \input tufte \stopparagraph
+            \startparagraph \input tufte \stopparagraph
+        \stopsection
+    \stopchapter
+
+    \startchapter[title=Four]
+        oeps
+        \startparagraph \input ward \stopparagraph
+    \stopchapter
+
+\stopbodymatter
+
+\startbackmatter
+
+    \starttitle[title=Index]
+
+    \placeregister[index][n=1]
+
+    \stoptitle
+
+    \page
+
+\stopbackmatter
+
+\stoptext

@@ -1,0 +1,10 @@
+
+\setupbackend
+  [export=yes]
+
+\enabledirectives
+  [export.embed]
+
+\starttext
+    \dorecurse{9}{test $e+#1=mc^2+#1$ test\par}
+\stoptext

@@ -1,0 +1,15 @@
+return {
+ ["htmlfiles"]={ "hz-001-div.html" },
+ ["htmlroot"]="hz-001-div.html",
+ ["identifier"]="a1832ec6-407e-9169-9ac4-d4a7f6b2fc3c",
+ ["imagefile"]="styles/hz-001-images.css",
+ ["imagepath"]="images",
+ ["images"]={},
+ ["language"]="en",
+ ["metadata"]={},
+ ["name"]="hz-001",
+ ["stylepath"]="styles",
+ ["styles"]={ "hz-001-defaults.css", "hz-001-images.css", "hz-001-styles.css" },
+ ["xhtmlfiles"]={ "hz-001-tag.xhtml" },
+ ["xmlfiles"]={ "hz-001-raw.xml" },
+}

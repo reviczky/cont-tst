@@ -1,0 +1,15 @@
+\startTEXpage
+
+\startluacode
+
+    context("the current emwidth is %p",\number\emwidth)
+    context.par()
+    context.formatted("the current emwidth is %p",\number\emwidth)
+    context.par()
+    context.bold(string.formatters["the current emwidth is %p"](\number\emwidth))
+    context.par()
+    context.formatted.bold("the current emwidth is %p",\number\emwidth)
+
+\stopluacode
+
+\stopTEXpage

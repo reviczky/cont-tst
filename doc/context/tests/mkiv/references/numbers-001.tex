@@ -1,0 +1,17 @@
+\setupreferencestructureprefix
+  [default]
+  [prefixsegments=2:4]
+
+\setuphead
+  [section]
+  [sectionsegments=section]
+
+\starttext
+
+    \chapter[mychapter]{My Chapter}
+    \section[mysection]{My Section}
+
+    \in{foo}[mysection]
+
+\stoptext
+

@@ -1,0 +1,13 @@
+\starttext
+
+\doifmodeelse {test} {yes} {nop}
+
+\bgroup \enablemode[test] \egroup
+
+\doifmodeelse {test} {yes} {nop}
+
+\bgroup \globalenablemode[test] \egroup
+
+\doifmodeelse {test} {yes} {nop}
+
+\stoptext

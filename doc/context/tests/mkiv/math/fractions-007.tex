@@ -1,0 +1,41 @@
+\usemodule[x][mathml]
+
+\startbuffer[mmltest]
+<p xmlns:m="http://www.w3.org/1998/Math/MathML">a <m:math>
+    <m:mrow>
+        <m:mi>a</m:mi>
+        <m:mo>+</m:mo>
+        <m:mstyle scriptlevel="+"><m:mfrac><m:mi>a</m:mi><m:mi>b</m:mi></m:mfrac></m:mstyle>
+        <m:mo>+</m:mo>
+        <m:mi>a</m:mi>
+        <m:mo>+</m:mo>
+        <m:mstyle scriptlevel="" ><m:mfrac><m:mi>a</m:mi><m:mi>b</m:mi></m:mfrac></m:mstyle>
+        <m:mo>+</m:mo>
+        <m:mi>a</m:mi>
+        <m:mo>+</m:mo>
+        <m:mstyle scriptlevel="-"><m:mfrac><m:mi>a</m:mi><m:mi>b</m:mi></m:mfrac></m:mstyle>
+        <m:mo>+</m:mo>
+        <m:mi>a</m:mi>
+    </m:mrow>
+</m:math> a</p>
+\stopbuffer
+
+\unexpanded\def\ShowMathFractions#1#2%
+  {\mathematics{x+\tfrac{#1}{#2}+1+\frac{#1}{#2}+2+\sfrac{#1}{#2}+g}}
+
+\showmathstruts
+
+\starttext
+
+    \startTEXpage[offset=10pt]
+        \xmlprocessbuffer{main}{mmltest}{}
+    \stopTEXpage
+
+    \startTEXpage[offset=10pt]
+        \ShowMathFractions{a}{a}\par
+        \ShowMathFractions{1}{x}\par
+        \ShowMathFractions{a}{b}\par
+        \ShowMathFractions{1}{b}\par
+    \stopTEXpage
+
+\stoptext

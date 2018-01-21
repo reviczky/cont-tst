@@ -1,0 +1,20 @@
+\useMPlibrary[dum]
+
+\setuplabeltext[en][figure={LEFT , RIGHT}]
+
+\definereferenceformat[infigure][label=*]
+
+\setupcaption
+  [figure]
+  [textcommand=\groupedcommand{<}{>},
+   numbercommand=\groupedcommand{[}{]}]
+
+\starttext
+
+    \startplacefigure[reference=fig:dummy,title=Dummy figure]
+        \externalfigure[dummy]
+    \stopplacefigure
+
+    See \infigure[fig:dummy].
+
+\stoptext

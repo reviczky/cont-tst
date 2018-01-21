@@ -1,0 +1,18 @@
+\startreusableMPgraphic{bullet}
+    fill fullcircle
+        scaled (.75EmWidth)
+        withshademethod "circular"
+        withcolor red shadedinto blue ;
+\stopreusableMPgraphic
+
+\definesymbol[1][\hbox{\lower.125ex\hbox{\reuseMPgraphic{bullet}}}]
+
+\starttext
+
+    \startitemize
+    \startitem one \stopitem
+    \startitem two \stopitem
+    \stopitem
+
+\stoptext
+

@@ -1,0 +1,20 @@
+% example by WS posted at mailing list
+
+\usemodule[database]
+
+\define[2]\TestCommand{Currency: #1, Value: #2 \par}
+
+\startbuffer[testdata]
+Euro,"€ 100"
+Dollar,"$ 300"
+\stopbuffer
+
+\definedatabase[test][quotechar=",command=\TestCommand]
+
+\starttext
+
+\asciimode
+
+\processdatabasebuffer[test][testdata]
+
+\stoptext

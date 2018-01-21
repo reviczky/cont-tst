@@ -1,0 +1,26 @@
+\starttext
+
+    \enabletrackers[graphics.locating]
+
+    \startMPrun{foo}
+        beginfig(2) ;
+            fill fullcircle scaled 1cm withcolor blue ;
+        endfig ;
+        beginfig(1) ;
+            fill fullcircle scaled 2cm withcolor red ;
+        endfig ;
+    \stopMPrun
+
+    \startMPrun
+        beginfig(6) ;
+            fill fullcircle scaled 15mm withcolor green ;
+        endfig ;
+    \stopMPrun
+
+    \startoverlay
+        {\externalfigure [mprun.foo.1]}
+        {\externalfigure [mprun.6]}
+        {\externalfigure [mprun:foo.2]}
+    \stopoverlay
+
+\stoptext

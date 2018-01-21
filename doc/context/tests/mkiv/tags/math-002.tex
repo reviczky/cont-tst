@@ -1,0 +1,37 @@
+\enabletrackers[structures.export]
+
+\setupbackend[export=yes]
+
+\setupmathlabeltext[tan=tg]
+
+\starttext
+
+% \enabletrackers[export.trace]
+
+\startTEXpage
+
+$\hat a$
+
+$x = 123 + 45.6$
+
+$x = 123 + \mn{45.6} + \mn{0x004D}$
+
+$\apply{\sin}{x}$
+
+$\apply \sin x$
+
+$\apply f {(x)}$
+
+$\tan(a) + \cos(b) + \sin(c) = 1$
+
+$\tan(a) + \cos(b) + \sin(c) = 1$
+
+$\sin\left(d\right) = 1$
+
+$\tan/\sin$
+
+$\tan$
+
+\stopTEXpage
+
+\stoptext

@@ -1,0 +1,30 @@
+\starttext
+
+    \startluacode
+
+        document.mydimen = context.registers.newdimen("MyDimen")
+        document.mycount = context.registers.newcount("MyCount")
+        document.mybox   = context.registers.newbox  ("MyBox")
+
+        tex.dimen[document.mydimen] = "10pt"
+        tex.count[document.mycount] = 10
+
+    \stopluacode
+
+    \setbox\MyBox\hbox{!}
+
+    (\the\MyDimen/\the\MyCount/\the\wd\MyBox)
+
+    \MyDimen=100pt
+    \MyCount=100
+
+    (\the\MyDimen/\the\MyCount/\the\wd\MyBox)
+
+    \startluacode
+        context("(%s/%s/%s)",
+            number.points(tex.dimen[document.mydimen]),
+            tex.count[document.mycount],
+            number.points(tex.box[document.mybox].width))
+    \stopluacode
+
+\stoptext

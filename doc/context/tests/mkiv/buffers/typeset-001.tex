@@ -1,0 +1,21 @@
+\starttext
+
+    \enabletrackers[buffers.run]
+
+    \startbuffer [sample]
+        \starttext
+            \startTEXpage[offset=10pt] one   \stopTEXpage
+            \startTEXpage[offset=10pt] two   \stopTEXpage
+            \startTEXpage[offset=10pt] three \stopTEXpage
+        \stoptext
+    \stopbuffer
+
+    \typesetbuffer[sample][frame=on,page=1]
+    \typesetbuffer[sample][frame=on,page=2]
+    \typesetbuffer[sample][frame=on,page=3]
+
+    \externalfigure[\lasttypesetbuffer][frame=on,page=2]
+
+    \typesetbuffer[*][frame=on,page=3]
+
+\stoptext

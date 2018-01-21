@@ -1,0 +1,60 @@
+
+\setupbackend[export=yes]
+
+\enabletrackers[export.trace]
+
+\setupwhitespace[big]
+
+\definehighlight[emph][style=italic]
+
+% \appendtoks \char0\to\everypar
+
+\starttext
+
+\emph{A1} A2    \par
+\emph{B1} B2    \par
+C1 \emph{C2}    \par
+D1              \par
+\emph{E1}       \par
+F1              \par
+G1 \emph{G2} G3 \par
+\emph{H1}       \par
+\emph{I1}       \par
+J1              \par
+\emph{K1}       \par
+\emph{L1}       \par
+\emph{M1}       \par
+\emph{N1}       \par
+\emph{O1}       \par
+
+% \bpar A \epar \bpar \emph{B} \epar \bpar C \epar \bpar D \emph{E} F \epar
+
+% \startitemize[n]
+% \startitem test \stopitem
+% \startitem test \stopitem
+% \stopitemize
+
+% \startitemize[n]
+% \startitem \bpar test \epar \stopitem
+% \startitem \bpar test \epar \stopitem
+% \stopitemize
+
+\startparagraph
+
+Published on \emph{Dissonanze} vol. I
+
+\stopparagraph
+
+\start \startparagraph \raggedright
+
+Published on vol. I Published on vol. I Published on vol. I Published on \emph{Dissonanze} vol. I
+
+\stopparagraph \stop
+
+\startparagraph
+
+\input tufte
+
+\stopparagraph
+
+\stoptext

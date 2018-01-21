@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+
+<!-- input filename   : injectors-001     -->
+<!-- processing date  : 10/14/14 09:33:53 -->
+<!-- context version  : 2014.10.10 13:44  -->
+<!-- exporter version : 0.32              -->
+
+<?xml-stylesheet type="text/css" href="styles/injectors-001-defaults.css"?>
+<?xml-stylesheet type="text/css" href="styles/injectors-001-images.css"?>
+<?xml-stylesheet type="text/css" href="styles/injectors-001-styles.css"?>
+<?xml-stylesheet type="text/css" href="styles/mb-mp.css"?>
+
+<document language="en" file="injectors-001" date="10/14/14 09:33:53" context="2014.10.10 13:44" version="0.32" xmlns:m="http://www.w3.org/1998/Math/MathML">
+ <list>
+  <listitem detail="section" internal="1">
+&lt;1&gt;    <listtag>1</listtag>
+   <listcontent>Al­pha</listcontent>
+   <listpage>2</listpage>
+  </listitem>
+  <listitem detail="section" internal="3">
+   <break/>
+&lt;2&gt;    <listtag>2</listtag>
+   <listcontent>Beta</listcontent>
+   <listpage>2</listpage>
+  </listitem>
+  <listitem detail="section" internal="5">
+&lt;3&gt;    <listtag>3</listtag>
+   <listcontent>Gamma</listcontent>
+   <listpage>2</listpage>
+  </listitem>
+  <listitem detail="section" internal="7">
+&lt;4&gt;    <listtag>4</listtag>
+   <listcontent>Delta</listcontent>
+   <listpage>2</listpage>
+  </listitem>
+ </list>
+ <register detail="index">
+  <registersection>
+   <registertag>&lt;1&gt; f</registertag>
+   <registerentries>
+    <registerentry>
+&lt;2&gt;      <registercontent>first</registercontent>
+     <registerpages><registerpage>2</registerpage></registerpages>
+    </registerentry>
+    <registerentry>
+&lt;3&gt;      <registercontent>fourth</registercontent>
+     <registerpages><registerpage>2</registerpage></registerpages>
+    </registerentry>
+   </registerentries>
+  </registersection>
+  <registersection>
+   <registertag>    <break/>
+&lt;4&gt; s</registertag>
+   <registerentries>
+    <registerentry>
+&lt;5&gt;      <registercontent>sec­ond</registercontent>
+     <registerpages><registerpage>2</registerpage></registerpages>
+    </registerentry>
+   </registerentries>
+  </registersection>
+  <registersection>
+   <registertag>    <break/>
+&lt;6&gt; t</registertag>
+   <registerentries>
+    <registerentry>
+&lt;7&gt;      <registercontent>third</registercontent>
+     <registerpages><registerpage>2</registerpage></registerpages>
+    </registerentry>
+   </registerentries>
+  </registersection>
+ </register>
+0
+ <section detail="section" level="3" level="3" level="3" level="3" level="3">
+  <sectionnumber>1</sectionnumber>
+   <sectiontitle>Al­pha</sectiontitle>
+  <sectioncontent>
+1: first <registerlocation detail="index" internal="2"></registerlocation>   </sectioncontent>
+ </section>
+1
+ <section detail="section" level="3" level="3" level="3" level="3" level="3">
+  <sectionnumber>2</sectionnumber>
+   <sectiontitle>Beta</sectiontitle>
+  <sectioncontent>
+2: sec­ond <registerlocation detail="index" internal="4"></registerlocation>   </sectioncontent>
+ </section>
+2
+ <section detail="section" level="3" level="3" level="3" level="3" level="3">
+  <sectionnumber>3</sectionnumber>
+   <sectiontitle>Gamma</sectiontitle>
+  <sectioncontent>
+3: third <registerlocation detail="index" internal="6"></registerlocation>   </sectioncontent>
+ </section>
+3
+ <section detail="section" level="3" implicit="7">
+  <sectionnumber>4</sectionnumber>
+   <sectiontitle>Delta</sectiontitle>
+  <sectioncontent>
+4: fourth <registerlocation detail="index" internal="8"></registerlocation>  </sectioncontent>
+ </section>
+</document>

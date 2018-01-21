@@ -1,0 +1,29 @@
+\definenarrower[Common][left=3cm,right=3cm]
+\definenarrower[One][Common][default=right]
+\definenarrower[Two][Common][default=left]
+
+\setuplayout
+  [backspace=1cm,
+   width=middle,
+   topspace=1cm,
+   height=middle,
+   footer=0cm,
+   header=0cm]
+
+\setupbodyfont
+  [10pt]
+
+\setupwhitespace
+  [big]
+
+\starttext
+
+    \startOne
+        \input ward
+    \stopOne
+
+    \startTwo
+        \input ward
+    \stopTwo
+
+\stoptext

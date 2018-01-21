@@ -1,0 +1,37 @@
+\starttext
+
+\defineenumeration[testa]
+\defineenumeration[testb]
+\defineenumeration[testc][testa]
+
+\starttesta a1 xyz \stoptesta
+\starttestb b1 xyz \stoptestb
+\starttestb b2 xyz \stoptestb
+\starttesta a2 xyz \stoptesta
+\starttestb b3 xyz \stoptestb
+\starttestb b4 xyz \stoptestb
+\starttesta a3 xyz \stoptesta
+\starttestb b5 xyz \stoptestb
+\starttestb b6 xyz \stoptestb
+\starttesta a4 xyz \stoptesta
+\starttestc c5 xyz \stoptestc
+
+\page
+
+\definenote[notea]
+\definenote[noteb]
+\definenote[notec][notea]
+
+xyz \notea{a1}
+xyz \noteb{b1}
+xyz \noteb{b2}
+xyz \notea{a2}
+xyz \noteb{b3}
+xyz \noteb{b4}
+xyz \notea{a3}
+xyz \noteb{b5}
+xyz \noteb{b6}
+xyz \notea{a4}
+xyz \notec{c5}
+
+\stoptext

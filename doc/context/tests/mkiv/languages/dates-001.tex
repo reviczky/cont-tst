@@ -1,0 +1,13 @@
+\starttext
+
+    gregorian : \currentdate
+
+    jalali    : \currentdate[jalali:to,month,day,{, },year]
+
+    jalali    : \date[y=1395,m=4,d=18][month,day,{, },year]
+
+    jalali    : \date[y=1395,m=4,d=18][month:jalali,day,{, },year]
+
+    gregorian : \date[y=1395,m=4,d=18][jalali:from,month,day,{, },year]
+
+\stoptext

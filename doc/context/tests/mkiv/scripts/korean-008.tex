@@ -1,0 +1,21 @@
+\starttext
+
+    \definefontfeature
+      [korean-demo]
+      [goodies=hanbatanglvt,
+       colorscheme=default,
+       decomposehangul=yes, % new pseudo feature
+       mode=node,
+       ljmo=yes,
+       tjmo=yes,
+       vjmo=yes,
+       script=hang,
+       language=kor]
+
+    \definefont[KoreanJMO] [hanbatanglvt*korean-demo] \setfontcolorscheme[2]
+
+    \startTEXpage[offset=5pt,foregroundstyle=\KoreanJMO]
+        점들
+    \stopTEXpage
+
+\stoptext

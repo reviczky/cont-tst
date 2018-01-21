@@ -1,0 +1,14 @@
+\showframe
+
+\starttext
+    \startmixedcolumns[balance=yes]
+        \dorecurse{8}{\input{ward}\par}
+    \stopmixedcolumns
+    \startmixedcolumns[balance=no]
+        \dorecurse{4}{\input{knuth}\par}
+    \stopmixedcolumns
+    \startmixedcolumns[balance=yes]
+        \dorecurse{8}{\input{ward}\par}
+    \stopmixedcolumns
+\stoptext
+

@@ -1,0 +1,49 @@
+\starttext
+
+\startMPextensions
+     color ColorOne   ; ColorOne   := red ;
+     color ColorTwo   ; ColorTwo   := green ;
+     color ColorThree ; ColorThree := blue ;
+\stopMPextensions
+
+\startMPextensions{doublefun}
+     color ColorThree ; ColorThree := magenta ;
+\stopMPextensions
+
+\startMPinclusions
+     def DoWhatever = draw textext("N") ; enddef ;
+\stopMPinclusions
+
+\startMPinclusions
+     def DoWhatever = draw textext("Y") ; enddef ;
+\stopMPinclusions
+
+\startMPinclusions{doublefun}
+     def DoWhatever = draw textext("Y") ; enddef ;
+\stopMPinclusions
+
+\startMPinclusions[+]{doublefun}
+     def DoWhatever = draw textext("YY") ; enddef ;
+\stopMPinclusions
+
+\startMPcode{metafun}
+     draw fullcircle scaled 1cm withcolor ColorOne   withpen pencircle
+scaled 1mm ;
+     draw fullcircle scaled 2cm withcolor ColorTwo   withpen pencircle
+scaled 1mm ;
+     draw fullcircle scaled 3cm withcolor ColorThree withpen pencircle
+scaled 1mm ;
+     DoWhatever ;
+\stopMPcode
+
+\startMPcode{doublefun}
+     draw fullcircle scaled 1cm withcolor ColorOne   withpen pencircle
+scaled 1mm ;
+     draw fullcircle scaled 2cm withcolor ColorTwo   withpen pencircle
+scaled 1mm ;
+     draw fullcircle scaled 3cm withcolor ColorThree withpen pencircle
+scaled 1mm ;
+     DoWhatever ;
+\stopMPcode
+
+\stoptext

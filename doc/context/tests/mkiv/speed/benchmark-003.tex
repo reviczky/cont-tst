@@ -1,0 +1,26 @@
+% macros=mkvi
+
+% 1.5
+
+\starttext
+
+    \placelist[chapter,section] % 4 pages
+
+    \page
+
+    \dorecurse{20} {
+
+        \startchapter[title=test]
+
+            \dorecurse{5} {
+
+                \startsection[title=test]
+                    test
+                \stopsection
+
+            }
+
+        \stopchapter
+    }
+
+\stoptext

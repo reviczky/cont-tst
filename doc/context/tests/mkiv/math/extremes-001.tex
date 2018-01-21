@@ -1,0 +1,58 @@
+\usemodule[visual]
+
+\startbuffer[default]
+    \pushrandomseed
+    \setrandomseed{123}
+    \dorecurse{80}{test \m[i:default]{\red \fakeformula} test }
+    \poprandomseed
+\stopbuffer
+\startbuffer[half]
+    \pushrandomseed
+    \setrandomseed{123}
+    \dorecurse{80}{test \m[i:half]{\red \fakeformula} test }
+    \poprandomseed
+\stopbuffer
+\startbuffer[tight]
+    \pushrandomseed
+    \setrandomseed{123}
+    \dorecurse{80}{test \m[i:tight]{\red \fakeformula} test }
+    \poprandomseed
+\stopbuffer
+\startbuffer[fixed]
+    \pushrandomseed
+    \setrandomseed{123}
+    \dorecurse{80}{test \m[i:fixed]{\red \fakeformula} test }
+    \poprandomseed
+\stopbuffer
+
+\starttext \dontcomplain
+
+\showframe \setupalign[tolerant,stretch]
+
+% \getbuffer[default]\page
+% \getbuffer[half]   \page
+% \getbuffer[tight]  \page
+% \getbuffer[fixed]  \page
+
+\def\TestThem#1#2%
+  {\page
+   \setupalign      [#1]
+   \setupfootertexts[\tttf #1 / #2]
+   \startmixedcolumns\getbuffer[#2]\stopmixedcolumns
+   \page}
+
+\TestThem{tolerant,stretch}                           {default}
+
+\TestThem{tolerant,stretch}                           {half}
+\TestThem{tolerant,stretch}                           {tight}
+\TestThem{tolerant,stretch}                           {fixed}
+
+\TestThem{flushleft,broad,verytolerant,stretch}       {half}
+\TestThem{flushleft,broad,verytolerant,stretch}       {tight}
+\TestThem{flushleft,broad,verytolerant,stretch}       {fixed}
+
+\TestThem{flushleft,broad,verytolerant,extremestretch}{half}
+\TestThem{flushleft,broad,verytolerant,extremestretch}{tight}
+\TestThem{flushleft,broad,verytolerant,extremestretch}{fixed}
+
+\stoptext

@@ -1,0 +1,212 @@
+\starttext
+
+\setupchemical
+  [scale=.4,
+   width=4,
+   height=4,
+   axis=on]
+
+\setvariables
+  [chemistry]
+  [EIGHT=8,
+   SEVEN=7,
+   SIX=6,
+   FIVE=5,
+   FOUR=4,
+   THREE=3,
+   ONE=8,
+   CARBON=4,
+   ALKYL=4,
+   CHAIR=6,
+   BOAT=6,
+   FIVEFRONT=5,
+   SIXFRONT=6]
+
+\dontcomplain
+
+\startbuffer[demo-0]
+\def\HEAD#1{\bTD #1 \eTD}%
+\startplacetable [title=\type{ROT}]
+    \setupchemical [scale=.4,width=4,height=4,axis=on]%
+    \setupTABLE [c] [each] [align={middle,lohi},frame=off]%
+    \setupTABLE [c] [1] [width=3em,style=type]%
+    \setupTABLE [r] [1] [style=type]%
+    \bTABLE
+        \bTR
+            \bTD \eTD
+            \processcommalist[EIGHT,SEVEN,SIX,FIVE,FOUR,THREE,ONE,CARBON]\HEAD
+        \eTR
+        \dostepwiserecurse{0}{1}{1} {%
+            \def\ROT##1{\bTD \startchemical \chemical [##1,ROT#1,ZN,B,+SR1,RZ1] [\red 1] \stopchemical \eTD}%
+            \bTR
+                \bTD ROT#1 \eTD
+                \processcommalist[EIGHT,SEVEN,SIX,FIVE,FOUR,THREE,ONE,CARBON]\ROT
+            \eTR
+        }%
+        \def\ROT#1{\bTD \cldcontext{"\letterpercent.3g",180/#1}° \eTD}%
+        \def\ROTT#1{\ROT{\getvariable{chemistry}{#1}}}%
+        \bTR
+            \bTD \eTD
+            \processcommalist[EIGHT,SEVEN,SIX,FIVE,FOUR,THREE,ONE]\ROTT
+            \bTD 54.7° \eTD
+        \eTR
+    \eTABLE
+\stopplacetable
+\stopbuffer
+
+\startbuffer[demo-1]
+\def\HEAD#1{\startxcell[width=3em,foregroundstyle=\tt] #1 \stopxcell}%
+\startplacetable [title=\type{ROT}]
+    \startxtable[frame=off,align={middle,lohi}]
+        \startxrow
+            \startxcell \stopxcell
+            \processcommalist[EIGHT,SEVEN,SIX,FIVE,FOUR,THREE,ONE,CARBON]\HEAD
+        \stopxrow
+        \dostepwiserecurse{0}{1}{1}{%
+            \def\ROT##1{\startxcell \startchemical \chemical [##1,ROT#1,ZN,B,+SR1,RZ1] [\red 1] \stopchemical \stopxcell}%
+            \startxrow
+                \startxcell[foregroundstyle=\tt] ROT#1 \stopxcell
+                \processcommalist[EIGHT,SEVEN,SIX,FIVE,FOUR,THREE,ONE,CARBON]\ROT
+            \stopxrow
+        }%
+        \startxrow
+            \def\ROT#1{\startxcell \cldcontext{"\letterpercent.3g",180/#1}° \stopxcell}%
+            \def\ROTT#1{\ROT{\getvariable{chemistry}{#1}}}%
+            \startxcell \stopxcell
+            \processcommalist[EIGHT,SEVEN,SIX,FIVE,FOUR,THREE,ONE]\ROTT
+            \startxcell 54.7° \stopxcell
+        \stopxrow
+    \stopxtable
+\stopplacetable
+\stopbuffer
+
+\startbuffer[demo-2]
+\startluacode
+
+local chemistry = {
+    EIGHT     = 8,
+    SEVEN     = 7,
+    SIX       = 6,
+    FIVE      = 5,
+    FOUR      = 4,
+    THREE     = 3,
+    ONE       = 8,
+    CARBON    = 4,
+    ALKYL     = 4,
+    CHAIR     = 6,
+    BOAT      = 6,
+    FIVEFRONT = 5,
+    SIXFRONT  = 6,
+}
+
+context.startxtable { frame = "off", align = "middle,lohi" }
+    context.startxrow()
+        context.startxcell()
+        context.stopxcell()
+        for k, v in ipairs { "EIGHT","SEVEN","SIX","FIVE","FOUR","THREE","ONE","CARBON" } do
+            context.startxcell { foregroundstyle = "type", width = "3em" }
+                context(v)
+            context.stopxcell()
+        end
+    context.stopxrow()
+    for i=0,1 do
+        context.startxrow()
+            context.startxcell { foregroundstyle = "type" }
+                context("ROT%s",i)
+            context.stopxcell()
+            for k, v in ipairs { "EIGHT","SEVEN","SIX","FIVE","FOUR","THREE","ONE","CARBON" } do
+                context.startxcell()
+                    context.startchemical()
+                        context("\\chemical[%s,ROT%s,ZN,B,+SR1,RZ1][\\red 1]",v,i)
+                    context.stopchemical()
+                context.stopxcell()
+            end
+        context.stopxrow()
+    end
+    context.startxrow()
+        context.startxcell()
+        context.stopxcell()
+        for k, v in ipairs { "EIGHT","SEVEN","SIX","FIVE","FOUR","THREE","ONE" } do
+            context.startxcell()
+                context("%.3g°",180/chemistry[v])
+            context.stopxcell()
+        end
+        context.startxcell()
+            context("54.7°")
+        context.stopxcell()
+    context.stopxrow()
+context.stopxtable()
+
+\stopluacode
+
+\startplacetable [title=\type{ROT}]\processxtablebuffer[demo]\stopplacetable
+
+\stopbuffer
+
+\startbuffer[demo-3]
+\startluacode
+
+local chemistry_angles = {
+    EIGHT     = 180/8,
+    SEVEN     = 180/7,
+    SIX       = 180/6,
+    FIVE      = 180/5,
+    FOUR      = 180/4,
+    THREE     = 180/3,
+    ONE       = 180/8,
+    CARBON    = 54.7,
+ -- ALKYL     = 180/4,
+ -- CHAIR     = 180/6,
+ -- BOAT      = 180/6,
+ -- FIVEFRONT = 180/5,
+ -- SIXFRONT  = 180/6,
+}
+
+local list = { "EIGHT","SEVEN","SIX","FIVE","FOUR","THREE","ONE","CARBON" }
+
+context.startxtable { frame = "off", align = "middle,lohi" }
+    context.startxrow()
+        context.startxcell()
+        context.stopxcell()
+        for i=1,#list do
+            context.startxcell { foregroundstyle = "type", width = "3em" }
+                context(list[i])
+            context.stopxcell()
+        end
+    context.stopxrow()
+    for i=0,1 do
+        context.startxrow()
+            context.startxcell { foregroundstyle = "type" }
+                context("ROT%s",i)
+            context.stopxcell()
+            for j=1,#list do
+                context.startxcell()
+                    context.startchemical()
+                        context("\\chemical[%s,ROT%s,ZN,B,+SR1,RZ1][\\red 1]",list[j],i)
+                    context.stopchemical()
+                context.stopxcell()
+            end
+        context.stopxrow()
+    end
+    context.startxrow()
+        context.startxcell()
+        context.stopxcell()
+        for i=1,#list do
+            context.startxcell()
+                context("%.3g°",chemistry_angles[list[i]])
+            context.stopxcell()
+        end
+    context.stopxrow()
+context.stopxtable()
+\stopluacode
+
+\startplacetable [title=\type{ROT}]\processxtablebuffer[demo]\stopplacetable
+
+\stopbuffer
+
+\testfeatureonce{10}{\getbuffer[demo-0]\page}   % 64 (4 passes)
+\testfeatureonce{10}{\getbuffer[demo-1]\page}   % 48 (3 passes)
+\testfeatureonce{10}{\getbuffer[demo-2]\page}   % 48 (3 passes)
+\testfeatureonce{10}{\getbuffer[demo-3]\page}   % 48 (3 passes)
+
+\stoptext

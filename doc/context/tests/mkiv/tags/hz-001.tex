@@ -1,0 +1,12 @@
+\definefontfeature[default][default][expansion=quality] \setupalign[hz]
+\setupbackend[export=yes,css=yes,xhtml=yes]
+
+\unexpanded\def\,{\mathortext{\mskip\thinmuskip}\narrownobreakspace}
+
+\starttext
+  \startbuffer
+    narrow\,nonbreaking\,space
+  \stopbuffer
+  \getbuffer \par \dorecurse{10}{\getbuffer}
+\stoptext
+

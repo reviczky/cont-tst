@@ -1,0 +1,47 @@
+\setupbodyfont[pagella]
+
+\starttext
+
+% \definefontfeature[nl][language=nld,script=latn]
+\setuplanguages[font=auto]
+% \setuplanguage [default][font=auto]
+% \setuplanguage [nl][font=auto]
+
+\definefontfeature[f:smallcaps][smcp=yes]
+\definefontfeature[f:nocaps]   [smcp=no]
+\definefontfeature[f:oldstyle] [onum=yes]
+\definefontfeature[f:newstyle] [onum=no]
+
+% \enabletrackers[fonts.features]
+
+\startTEXpage[offset=10pt]
+    fijn fietsen 123
+    \feature{f:oldstyle}
+    fijn fietsen 123
+    \feature{f:smallcaps}
+    fijn fietsen 123
+    \feature{f:oldstyle}
+    fijn fietsen 123
+    \start
+    \nl % \feature{nl}
+    fijn fietsen 123
+    \de
+    fijn fietsen 123
+    \stop
+    fijn fietsen 123
+    \feature{f:newstyle}
+    fijn fietsen 123
+    \feature{f:nocaps}
+    fijn fietsen 123
+\stopTEXpage
+
+\startTEXpage[offset=10pt]
+    \definedfont[lmroman10-regular*default]
+    fijn fietsen
+    \nl
+    fijn fietsen
+    \de
+    fijn fietsen
+\stopTEXpage
+
+\stoptext

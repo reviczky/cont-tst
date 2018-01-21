@@ -1,0 +1,24 @@
+\usemodule[database]
+
+\enabletrackers[module.database.flush]
+
+\starttext
+
+\defineseparatedlist
+  [CSV]
+  [separator={,},
+   before=\bTABLE,after=\eTABLE,
+   first=\bTR,last=\eTR,
+   left=\bTD,right=\eTD]
+
+\startCSV
+a,b,c
+d,e,f
+\stopCSV
+
+\startseparatedlist[CSV]
+a,b,c
+d,e,f
+\stopseparatedlist
+
+\stoptext

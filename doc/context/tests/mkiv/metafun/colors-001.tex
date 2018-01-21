@@ -1,0 +1,14 @@
+\definecolor[maincolor]   [r=.5]
+\definecolor[extracolor]  [g=.5]
+\definecolor[anothercolor][b=.5]
+\definecolor[morecolor]   [s=.8]
+
+\startMPpage
+    fill fullcircle scaled 10cm withcolor "maincolor" ;
+    fill fullcircle scaled  9cm withcolor "extracolor" ;
+    fill fullcircle scaled  8cm withcolor complementary "anothercolor" ;
+    fill fullcircle scaled  7cm withcolor complemented "anothercolor" ;
+    fill fullcircle scaled  6cm withcolor "morecolor" randomized 1 ;
+    fill fullcircle scaled  5cm withcolor "morecolor" randomized 1 ;
+    addbackground withcolor .5[resolvedcolor("morecolor"),resolvedcolor("extracolor")] ;
+\stopMPpage

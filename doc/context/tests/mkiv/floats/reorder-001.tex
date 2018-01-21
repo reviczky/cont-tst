@@ -1,0 +1,31 @@
+\setupbodyfont[dejavu]
+
+\useMPlibrary
+  [dum]
+
+\setupfloat
+  [figure]
+  [default=top]
+
+
+\ctxlua{structures.lists.autoreorder = true}
+
+\starttext
+
+\input knuth
+
+\startplacefigure
+  \externalfigure [dummy]
+\stopplacefigure
+
+\startplacefigure
+  \externalfigure [dummy] [width=10cm, height=16cm]
+\stopplacefigure
+
+\startplacefigure
+  \externalfigure [dummy]
+\stopplacefigure
+
+\stoptext
+
+

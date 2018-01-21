@@ -1,0 +1,69 @@
+\setuplayout
+  [width=middle,
+   height=middle,
+   footer=0pt,
+   header=1cm,
+   topspace=5mm,
+   bottomspace=5mm,
+   backspace=5mm]
+
+\setupbodyfont
+  [8pt]
+
+
+\starttext
+\startbuffer
+    \startluacode
+        local chardata = characters.data
+        local colored = fonts.helpers.getcoloredglyphs()
+        context.starttabulate { "|Tl|l|Tl|" }
+        for i=1,#colored do
+            local unicode     = colored[i]
+            local description = chardata[unicode] and chardata[unicode].description or ""
+            if description ~= "" and description ~= "PRIVATE SLOT" then
+                context.NC() context("%U",unicode)
+                context.NC() context.char(unicode)
+                context.NC() context(chardata[unicode] and chardata[unicode].description or "")
+                context.NC() context.NR()
+            end
+        end
+        context.stoptabulate()
+    \stopluacode
+\stopbuffer
+
+% svg graphics ... kind of inefficient and slow when uncached
+
+\startcolumns
+    \definefontfeature[svg][svg=yes]
+    \definefont[Emoj][file:emojionecolor-svginot.ttf*default,svg at 12pt]
+    \Emoj \getbuffer
+\stopcolumns
+
+\page
+
+% overlayed glyphs, quite okay (demo uses an ms font)
+
+\startcolumns
+    \definefont[Emoj][file:seguiemj.ttf*default at 12pt]
+    \Emoj \getbuffer
+\stopcolumns
+
+\page
+
+\startcolumns
+    \definefontfeature[colored][colr=yes]
+    \definefont[Emoj][file:seguiemj.ttf*default,colored at 12pt]
+    \Emoj \getbuffer
+\stopcolumns
+
+\page
+
+\startcolumns
+    \definefontfeature[colored-2][colr=2]
+    \definefont[Emoj][file:seguiemj.ttf*default,colored-2 at 12pt]
+    \Emoj \getbuffer
+\stopcolumns
+
+\page
+
+\stoptext

@@ -1,0 +1,13 @@
+\starttext
+
+\usepath[./subdir-1]
+
+\input okay-1.tex
+
+\usepath[./subdir-2] % resets some cache
+
+\input okay-2.tex
+
+\input okay-1.tex
+
+\stoptext

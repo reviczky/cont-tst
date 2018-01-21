@@ -1,0 +1,108 @@
+\starttext
+
+\edef\TestA{\cldloadfile{tufte.tex}}
+\edef\TestB{\cldloadfile{knuth.tex}}
+\edef\TestC{\cldloadfile{zapf.tex}}
+\edef\TestD{\cldloadfile{ward.tex}}
+\edef\TestE{\cldloadfile{darwin.tex}}
+
+\edef\TestAup{\cldcontext{context(characters.upper([[\TestA]]))}}
+\edef\TestBup{\cldcontext{context(characters.upper([[\TestB]]))}}
+\edef\TestCup{\cldcontext{context(characters.upper([[\TestC]]))}}
+\edef\TestDup{\cldcontext{context(characters.upper([[\TestD]]))}}
+\edef\TestEup{\cldcontext{context(characters.upper([[\TestE]]))}}
+
+% \enabletrackers[hyphenator.steps]
+
+\dontcomplain
+
+\def\TestN{10}
+
+\def\TestX
+  {\begingroup
+  %\language0
+   \setbox\scratchbox\vbox{\TestA\TestAup}%
+   \setbox\scratchbox\vbox{\TestB\TestBup}%
+   \setbox\scratchbox\vbox{\TestC\TestCup}%
+   \setbox\scratchbox\vbox{\TestD\TestDup}%
+   \setbox\scratchbox\vbox{\TestE\TestEup}%
+   \endgroup}
+
+\def\TestZ
+  {\begingroup
+  %\language0
+   \TestA\TestAup \par
+   \TestB\TestBup \par
+   \TestC\TestCup \par
+   \TestD\TestDup \par
+   \TestE\TestEup \par
+   \endgroup}
+
+\def\TestY#1#2%
+  {\setbox#1\vbox % to 200\lineheight
+     {\startcolor[#2]%
+      \hsize1mm
+     %\language0
+      \dontleavehmode
+      foo-bar\par
+      foo\-bar\par
+      \TestA\par
+      \vfill
+      \stopcolor}}
+
+    \testfeatureonce\TestN{\TestX}
+  % \testfeatureonce\TestN{\TestZ}
+    \TestY{0}{red}
+
+    \setuphyphenation[method=traditional]
+
+  % \definehyphenationfeatures
+  %   [whatever]
+  %   [hyphen=no]
+
+    \sethyphenationfeatures
+      [default,whatever]
+
+  % \sethyphenationfeatures
+  %   [default]
+
+    \testfeatureonce\TestN{\TestX}
+  % \testfeatureonce\TestN{\TestZ}
+    \TestY{2}{blue}
+
+    \setuphyphenation[method=default]
+
+    \startTEXpage[offset=10mm]
+        \dontleavehmode\hbox to 0pt{\hss\box0\hss}%
+      % \hskip1mm
+        \hbox to 0pt{\hss\box2\hss}%
+    \stopTEXpage
+
+    \setuphyphenation[method=traditional]
+
+    \startluacode
+
+        local registerpattern = languages.hyphenators.traditional.registerpattern
+
+        registerpattern("nl","e1ë",  { start = 1, length = 2, before = "e",  after = "e"  } )
+        registerpattern("nl","oo7ë", { start = 2, length = 3, before = "o",  after = "e"  } )
+
+    \stopluacode
+
+    \def\TestW#1%
+      {\dostepwiserecurse{1}{10}{1} {
+         \start
+         \hsize##1mm
+         \lefthyphenmin1
+         \righthyphenmin1
+         \language[nl]
+         #1\par
+         \stop}}
+
+    \startmixedcolumns[n=3]
+        \TestW{reëel}  \column
+        \TestW{reeëel} \column
+        \TestW{rooëel} \column
+    \stopmixedcolumns
+
+\stoptext

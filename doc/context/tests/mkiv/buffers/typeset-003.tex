@@ -1,0 +1,25 @@
+\startbuffer[one]
+
+\starttext
+    \dorecurse{10}{
+        \placefigure[left]{#1.1}{}
+        a small sentence \par
+        \placefigure[left]{#1.2}{}
+        a small sentence \par
+        \input klein \par
+    }
+\stoptext
+\stopbuffer
+
+\starttext
+
+\typebuffer[one]
+
+\startplacefigure[title={Just an example.},reference=ex:one]
+    \startcombination
+        {\scale[width=.45\textwidth]{\typesetbuffer[one][frame=on,page=1]}} {page 1}
+        {\scale[width=.45\textwidth]{\typesetbuffer[one][frame=on,page=2]}} {page 2}
+    \stopcombination
+\stopplacefigure
+
+\stoptext

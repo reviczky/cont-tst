@@ -1,0 +1,92 @@
+\startbuffer[first]
+
+    @article {one,
+        title  = "Article One",
+        author = "Author, One",
+        year   = 2015,
+    }
+
+    @article {two,
+        title  = "Article Two",
+        author = "Author, Two",
+        year   = 2015,
+    }
+
+\stopbuffer
+
+\startbuffer[second]
+
+    @article {alpha,
+        title  = "Article Alpha",
+        author = "Author, Alpha",
+        year   = 2015,
+    }
+
+    @article {beta,
+        title  = "Article Beta",
+        author = "Author, Beta",
+        year   = 2015,
+    }
+
+\stopbuffer
+
+\startbuffer[third]
+
+    @article {foo,
+        title  = "Article Foo",
+        author = "Author, Foo",
+        year   = 2015,
+    }
+
+    @article {bar,
+        title  = "Article Bar",
+        author = "Author, Bar",
+        year   = 2015,
+    }
+
+\stopbuffer
+
+\usemodule
+  [article]
+
+\definebtxdataset [first]
+\definebtxdataset [second]
+\definebtxdataset [third]
+
+\usebtxdataset [first]  [first.buffer]
+\usebtxdataset [second] [second.buffer]
+\usebtxdataset [third]  [third.buffer]
+
+\setupbtxrendering [second] [group=whatever]
+\setupbtxrendering [third]  [group=whatever]
+
+\definebtxrendering [first]  [dataset=first, criterium=text,specification=default]
+\definebtxrendering [second] [dataset=second,criterium=text,specification=default]
+\definebtxrendering [third]  [dataset=third, criterium=text,specification=default]
+
+\starttext
+
+    \setupbtxlist[default][prefix=yes,width=1cm]
+
+%     \enabletrackers[publ*]
+
+    \cite[crap]
+    \cite[match(author:crap)]
+
+    \startsection[title=first]
+        from first  we take \cite[first::one]    and \cite[first::two]   \blank[big]
+    \stopsection
+    \startsection[title=second]
+        from second we take \cite[second::alpha] and \cite[second::beta] \blank[big]
+    \stopsection
+    \startsection[title=third]
+        from third  we take \cite[third::foo]    and \cite[third::bar]   \blank[big]
+    \stopsection
+
+    \startsection[title=lists]
+        \startpacked \placebtxrendering [first]  \stoppacked \blank[big]
+        \startpacked \placebtxrendering [second] \stoppacked %blank[big]
+        \startpacked \placebtxrendering [third]  \stoppacked \blank[big]
+    \stopsection
+
+\stoptext

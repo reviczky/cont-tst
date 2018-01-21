@@ -1,0 +1,18 @@
+\starttext
+
+\enablemode[one]
+\enablemode[two]
+
+\definemode[one]  [keep]
+\definemode[two]
+\definemode[three][yes]
+\definemode[four]
+
+\startlines
+one   : \doifmodeelse{one}  {yes}{nop} == yes
+two   : \doifmodeelse{two}  {yes}{nop} == nop
+three : \doifmodeelse{three}{yes}{nop} == yes
+four  : \doifmodeelse{four} {yes}{nop} == nop
+\stoplines
+
+\stoptext

@@ -1,0 +1,12 @@
+\setuplayout
+  [backspace=4cm,width=middle]
+
+\setuphead
+  [chapter]
+  [alternative=margintext]
+
+\starttext
+    \chapter{One}   \startparagraph\input jojomayer\stopparagraph
+    \chapter{Two}   \input jojomayer
+    \chapter{Three} \startitemize \startitem test \stopitem \stopitemize
+\stoptext

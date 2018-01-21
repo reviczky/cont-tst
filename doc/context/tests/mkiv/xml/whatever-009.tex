@@ -1,0 +1,37 @@
+\startbuffer[test]
+<something>
+    <what a="1"></what>
+    <what a="2"/>
+</something>
+\stopbuffer
+
+\startxmlsetups xml:mysetups
+    \xmlsetsetup{#1}{something}{xml:*}
+\stopxmlsetups
+
+\xmlregistersetup{xml:mysetups}
+
+\startxmlsetups xml:something
+  % \xmldoifelse {#1} {/what[@a='1']} {
+  %     1: \xmlfilter {#1} {/what/command('xml:yes')}
+  % } {
+  %     1: \xmlfilter {#1} {/what/command('xml:nop')}
+  % }
+    1: YES \xmlfilter {#1} {/what[@a='1']/command('xml:yes','xml:nop')}
+    \blank
+    2: YES \xmlfilter {#1} {/what[@a='2']/command('xml:yes')}
+    \blank
+    3: NOP \xmlfilter {#1} {/what[@a='3']/command('xml:yes','xml:nop')}
+\stopxmlsetups
+
+\startxmlsetups xml:yes
+    YES
+\stopxmlsetups
+
+\startxmlsetups xml:nop
+    NOP
+\stopxmlsetups
+
+\starttext
+    \xmlprocessbuffer{main}{test}{}
+\stoptext

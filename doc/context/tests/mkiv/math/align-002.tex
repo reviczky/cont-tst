@@ -1,0 +1,99 @@
+\usemodule[art-01]
+
+\starttext
+
+\startbuffer[demo]
+before
+    \startformula
+        z + 3y = \alignhere x
+                 \dorecurse{20}{ + #1x^{#1x}}
+    \stopformula
+inbetween
+    \startformula
+        z + 3y \alignhere = 1
+               \dorecurse{4}{
+                    \dorecurse{#1}{+ #1x^{##1x}}
+                    \ifnum#1<4\breakhere\fi
+               }
+    \stopformula
+after
+\stopbuffer
+
+\typebuffer[demo]
+
+\startbuffer[setup]
+\setupformula
+  [split=no]
+\stopbuffer
+
+\typebuffer[setup] \start \getbuffer[setup,demo] \stop
+
+\startbuffer[setup]
+\setupformula
+  [split=yes,
+   align=flushleft]
+\stopbuffer
+
+\typebuffer[setup] \start \getbuffer[setup,demo] \stop
+
+\startbuffer[setup]
+\setupformula
+  [split=yes,
+   align=flushleft,
+   hang=auto]
+\stopbuffer
+
+\typebuffer[setup] \start \getbuffer[setup,demo] \stop
+
+\startbuffer[setup]
+\setupformula
+  [split=yes,
+   align=flushleft,
+   hang=auto,
+   distance=1em]
+\stopbuffer
+
+\typebuffer[setup] \start \getbuffer[setup,demo] \stop
+
+\startbuffer[setup]
+\setupformula
+  [split=yes,
+   align=flushleft,
+   hang=yes,
+   distance=2em]
+\stopbuffer
+
+\typebuffer[setup] \start \getbuffer[setup,demo] \stop
+
+\startbuffer[setup]
+\setupformula
+  [split=yes,
+   align=flushleft,
+   hang=yes,
+   distance=2em,
+   interlinespace=1.5\lineheight]
+\stopbuffer
+
+\typebuffer[setup] \start \getbuffer[setup,demo] \stop
+
+\startbuffer[demo]
+\placeformula
+\startformula
+    z + 3y = 1
+           \dorecurse{25}{
+                \dorecurse{#1}{+ #1x^{##1x}}
+           }
+\stopformula
+\stopbuffer
+
+\startbuffer[setup]
+\setupformula
+  [split=page,
+   align=middle,
+   interlinespace=2\lineheight]
+\stopbuffer
+
+\typebuffer[setup] \start \getbuffer[setup,demo] \stop
+
+
+\stoptext

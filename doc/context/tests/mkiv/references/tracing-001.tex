@@ -1,0 +1,45 @@
+% \showreferences
+\usemodule[references-show]
+\enabletrackers[nodes.references,nodes.destinations]
+
+\usemodule[art-01]
+
+\setupinteraction
+  [state=start]
+
+\setuppagenumbering
+  [alternative=doublesided]
+
+\starttext
+
+\title {Contents}
+
+\placelist[chapter]
+
+\setupreferenceprefix[zero]
+
+\chapter[crap]{foo}
+
+\setupreferenceprefix[one]
+
+test \pagereference[whatever]
+
+\dorecurse{5}{
+  \placefigure
+    [here][bar 1.#1]
+    {xx}{\framed{xx #1}}
+}
+
+\setupreferenceprefix[two]
+
+\dorecurse{5}{
+  \placefigure
+    [here][bar 2.#1]
+    {xx}{\framed{xx #1}}
+}
+
+\in{checked}[bar 1.1]
+\in{checked}[bar 2.1]
+
+\stoptext
+

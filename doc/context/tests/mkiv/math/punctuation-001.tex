@@ -1,0 +1,40 @@
+\starttext
+
+\startTEXpage[offset=1cm]
+
+\setupmathematics[autopunctuation=no]
+
+autopunctuation=no
+
+\starttabulate[||||]
+\NC 2,5  \NC 2, 5 \NC $2,5$  \NC \NR
+\NC 2, 5 \NC 2, 5 \NC $2, 5$ \NC \NR
+\NC 2.5  \NC 2.5  \NC $2.5$  \NC \NR
+\NC 2. 5 \NC 2.5  \NC $2. 5$ \NC \NR
+\stoptabulate
+
+\setupmathematics[autopunctuation=yes]
+
+autopunctuation=yes
+
+\starttabulate[||||]
+\NC 2,5  \NC 2,5  \NC $2,5$  \NC \NR
+\NC 2, 5 \NC 2, 5 \NC $2, 5$ \NC \NR
+\NC 2.5  \NC 2.5  \NC $2.5$  \NC \NR
+\NC 2. 5 \NC 2.5  \NC $2.5$  \NC \NR
+\stoptabulate
+
+\setupmathematics[autopunctuation=all]
+
+autopunctuation=all
+
+\starttabulate[||||]
+\NC 2,5  \NC 2,5  \NC $2,5$  \NC \NR
+\NC 2, 5 \NC 2, 5 \NC $2, 5$ \NC \NR
+\NC 2.5  \NC 2.5  \NC $2.5$  \NC \NR
+\NC 2. 5 \NC 2. 5 \NC $2. 5$ \NC \NR
+\stoptabulate
+
+\stopTEXpage
+
+\stoptext

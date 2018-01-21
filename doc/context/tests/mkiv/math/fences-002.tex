@@ -1,0 +1,19 @@
+% \setupmathfences[state=auto]
+
+\setupmathfences[color=red]
+
+\starttext
+    \startformula
+        \left( \sqrt{a + \sqrt{\frac{b}{c}} - d} \right)
+        \left( \sqrt{a + \sqrt{\frac{b}{c}} - d} \right)
+        \left. \sqrt{a + \sqrt{\frac{b}{c}} - d} \right.
+        \Bigl( \sqrt{a + \sqrt{\frac{b}{c}} - d} \Bigr )
+        \Big ( \sqrt{a + \sqrt{\frac{b}{c}} - d} \Big  )
+        \Bigg( \sqrt{a + \sqrt{\frac{b}{c}} - d} \Bigg )
+        \mathdelimiterstep1(
+        \mathdelimiterstep2(
+        \mathdelimiterstep3(
+        \mathdelimiterstep4(
+    \stopformula
+\stoptext
+

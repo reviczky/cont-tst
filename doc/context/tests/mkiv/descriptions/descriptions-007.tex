@@ -1,0 +1,66 @@
+% example adapted from the list (avoid shrink)
+
+\definedescription
+  [demo]
+  [headstyle=\tf,
+   alternative=hanging,
+%  distance=1sp, % when zero a default kicks in
+   distance=5mm,
+   stretch=0,
+   shrink=0,
+   width=3cm]
+
+\definelayer
+  [line]
+
+\setlayer
+  [line]
+% [x=3cm]
+  [x=35mm]
+  {\blackrule[color=red,width=0.2pt,height=\textheight]}
+
+\setupbackgrounds
+  [text]
+  [background=line]
+
+\starttext
+  \startdemo{one}
+      \dorecurse{2}{Description of item one.}
+  \stopdemo
+  \startdemo{two}
+      \dorecurse{2}{Description of item two.}
+  \stopdemo
+  \startdemo{three}
+      \dorecurse{2}{Description of item three.}
+  \stopdemo
+  \startdemo{four}
+      \dorecurse{2}{Description of item four.}
+  \stopdemo
+  \startdemo{five}
+      \dorecurse{2}{Description of item five.}
+  \stopdemo
+  \startdemo{six}
+      \dorecurse{2}{Description of item six.}
+  \stopdemo
+  \startdemo{seven}
+      \dorecurse{3}{Description of item seven.}
+  \stopdemo
+  \startdemo{eight}
+      \dorecurse{3}{Description of item eight.}
+  \stopdemo
+  \startdemo{nine}
+      \dorecurse{3}{Description of item nine.}
+  \stopdemo
+  \startdemo{ten}
+      \dorecurse{3}{Description of item nine.}
+  \stopdemo
+  \startdemo{eleven}
+      \dorecurse{3}{Description of item eleven.}
+  \stopdemo
+  \startdemo{twelve}
+      \dorecurse{9}{Description of item twelve.}
+  \stopdemo
+  \startdemo{thirteen}
+      \dorecurse{9}{Description of item thirteen.}
+  \stopdemo
+\stoptext

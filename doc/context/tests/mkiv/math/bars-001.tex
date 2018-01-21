@@ -1,0 +1,58 @@
+% \setupbodyfont[cambria]
+% \setupbodyfont[xits]
+
+\usemodule[mathml]
+
+\starttext
+
+\startbuffer
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mrow>
+        <mover accent="true">
+            <mrow><msub><mi>U</mi><mi>a</mi></msub></mrow>
+            <mo>&OverBar;</mo>
+        </mover>
+    </mrow>
+</math>
+\stopbuffer
+
+\processxmlbuffer
+
+\startbuffer
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mrow>
+        <munder accent="true">
+            <mrow><msub><mi>U</mi><mi>a</mi></msub></mrow>
+            <mo>&UnderBar;</mo>
+        </munder>
+    </mrow>
+</math>
+\stopbuffer
+
+\processxmlbuffer
+
+\startbuffer
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mrow>
+        <msub>
+        <mover accent="true">
+            <mrow><mi>U</mi></mrow>
+            <mo>&OverBar;</mo>
+        </mover>
+        <mi>a</mi>
+        </msub>
+    </mrow>
+</math>
+\stopbuffer
+
+\processxmlbuffer
+
+\startformula
+    \ruledhbox{\char"305} \quad \ruledhbox{\char"203E} \overbar {xxxxxxxxxx} \quad \overbar {x_1}
+\stopformula
+
+\startformula
+    \ruledhbox{\char"305} \quad \ruledhbox{\char"203E} \underbar{xxxxxxxxxx} \quad \underbar{x_1}
+\stopformula
+
+\stoptext

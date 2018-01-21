@@ -1,0 +1,59 @@
+\useMPlibrary[dum]
+
+\setuplayout[middle] \setupbodyfont[8pt]
+
+\starttext
+
+\definefloat[crap][figure]
+
+\setupfloat       [crap][location=left,leftmargin=\effectiveleftskip]
+\setupfloatcaption[crap][align=flushleft,leftmargin=\effectiveleftskip]
+
+crap \the\effectiveleftskip/\the\leftskip
+
+\placefigure{\the\effectiveleftskip}{\externalfigure[cow.pdf][width=3cm,height=1cm]}
+
+crap \the\effectiveleftskip/\the\leftskip
+
+\startnarrower[4*left]
+    crap \the\effectiveleftskip/\the\leftskip
+    \placecrap{\the\effectiveleftskip}{\externalfigure[cow.pdf][width=3cm,height=1cm]}
+        crap \the\effectiveleftskip/\the\leftskip
+\stopnarrower
+
+\startitemize
+    \startitem
+        crap \the\effectiveleftskip/\the\leftskip
+        \placecrap{\the\effectiveleftskip}{\externalfigure[cow.pdf][width=3cm,height=1cm]}
+        crap \the\effectiveleftskip/\the\leftskip
+    \stopitem
+\stopitemize
+
+\startnarrower[4*left]
+    \startitemize
+        \startitem
+            crap \the\effectiveleftskip/\the\leftskip
+            \placecrap{\the\effectiveleftskip}{\externalfigure[cow.pdf][width=3cm,height=1cm]}
+            crap \the\effectiveleftskip/\the\leftskip
+        \stopitem
+        \startitemize
+            \startitem
+                crap \the\effectiveleftskip/\the\leftskip
+                \placecrap{\the\effectiveleftskip}{\externalfigure[cow.pdf][width=3cm,height=1cm]}
+                crap \the\effectiveleftskip/\the\leftskip
+            \stopitem
+            \startitem
+                crap \the\effectiveleftskip/\the\leftskip
+                \placecrap{\the\effectiveleftskip}{\externalfigure[cow.pdf][width=3cm,height=1cm]}
+                crap \the\effectiveleftskip/\the\leftskip
+            \stopitem
+        \stopitemize
+        \startitem
+            crap \the\effectiveleftskip/\the\leftskip
+            \placecrap{\the\effectiveleftskip}{\externalfigure[cow.pdf][width=3cm,height=1cm]}
+            crap \the\effectiveleftskip/\the\leftskip
+        \stopitem
+    \stopitemize
+\stopnarrower
+
+\stoptext

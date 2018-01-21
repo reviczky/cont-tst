@@ -1,0 +1,46 @@
+\defineMPinstance
+  [myinstance]
+  [metafun]
+
+\startuseMPgraphic{alpha}
+    draw textext("alpha") ;
+\stopuseMPgraphic
+
+\startuseMPgraphic{myinstance::beta}
+  draw textext("beta") ;
+\stopuseMPgraphic
+
+\startuniqueMPgraphic{myinstance::beta}{width}
+  draw textext("beta") xsized \MPvar{width} ;
+\stopuniqueMPgraphic
+
+\startuseMPgraphic{myinstance::epsilon}{width,height}
+  draw textext("epsilon") xysized (\MPvar{width},\MPvar{height}) ;
+\stopuseMPgraphic
+
+\setMPvariables
+  [myinstance::beta]
+  [width=5cm]
+
+\setMPvariables
+  [epsilon]
+  [width=5cm,
+   height=5cm]
+
+\starttext
+
+    one   : \useMPgraphic{alpha} \blank
+
+    two   : \useMPgraphic{myinstance::beta} \blank
+
+    three : \startMPcode{myinstance} draw textext("gamma") ; \stopMPcode \blank
+
+    four  : \reuseMPgraphic{myinstance::beta}{width=2cm} \blank
+
+    five  : \startMPcode{myinstance} draw textext("delta") ; \stopMPcode \blank
+
+    six   : \reuseMPgraphic{myinstance::epsilon}{height=2cm} \blank
+
+    seven : \reuseMPgraphic{myinstance::epsilon} \blank
+
+\stoptext

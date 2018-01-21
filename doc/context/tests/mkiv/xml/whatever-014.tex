@@ -1,0 +1,38 @@
+% example by Thomas
+
+\startbuffer[test]
+<A>
+  <B>cat</B>
+  <B><C>dog</C></B>
+  <B><C>mouse</C></B>
+  <B><C>donkey</C></B>
+  <B>giraffe</B>
+</A>
+\stopbuffer
+
+\startxmlsetups xml:testsetups
+	\xmlsetsetup{#1}{A|B|C}{xml:*}
+ 	\xmlsetsetup{#1}{B/C/..[1]}{xml:C:first}
+\stopxmlsetups
+
+\xmlregistersetup{xml:testsetups}
+
+\startxmlsetups xml:A
+	\xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:B
+	\xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:C:first
+	\color[red]{\xmlflush{#1}}
+\stopxmlsetups
+
+\startxmlsetups xml:C
+	\xmlflush{#1}
+\stopxmlsetups
+
+\starttext
+    \xmlprocessbuffer{main}{test}{}
+\stoptext

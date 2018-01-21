@@ -1,0 +1,21 @@
+\startxmlsetups xml:setups
+    \xmlsetsetup{#1}{document|embedded}{xml:*}
+\stopxmlsetups
+
+\xmlregistersetup{xml:setups}
+
+\startxmlsetups xml:document
+    \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:embedded
+    \xmltofile{#1}{.} {files-001-embedded-1.xml}
+    \xmltofile{#1}{..}{files-001-embedded-2.xml}
+\stopxmlsetups
+
+\starttext
+    \xmlprocessfile{main}{files-001.xml}{}
+    \typefile{files-001-embedded-1.xml}
+    \blank[3*line]
+    \typefile{files-001-embedded-2.xml}
+\stoptext

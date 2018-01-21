@@ -1,0 +1,16 @@
+\starttext
+
+test \placefigure[somewhere:alpha][whatever]{alpha}{}
+test \placefigure[somewhere:beta] [whatever]{beta}{}
+test \placefigure[somewhere:gamma][whatever]{gamma}{}
+test \placefigure[somewhere:delta][whatever]{delta}{}
+test \placefigure{}{}
+
+in \in{figure}[whatever] bla bla
+
+\placenamedfloat[figure][*l*]
+
+\placenamedfloat[figure][gamma]
+\placenamedfloat[figure][beta]
+
+\stoptext

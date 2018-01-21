@@ -1,0 +1,84 @@
+\startbuffer[demo]
+<doc>
+    <p>Text
+        <a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> and
+        <a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>
+    </p>
+    <div class="footnotes">
+        <hr />
+        <ol>
+            <li id="fn1"><p>A footnote.<a href="#fnref1">↩</a></p></li>
+            <li id="fn2"><p>A second footnote.<a href="#fnref2">↩</a></p></li>
+        </ol>
+    </div>
+</doc>
+\stopbuffer
+
+\starttext
+
+% variant 1:
+
+\startxmlsetups xml:doc
+    variant 1:
+    \blank
+    \xmlflush{#1}
+    \blank
+\stopxmlsetups
+
+\startxmlsetups xml:p
+    \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:footnote
+    (1)\footnote{\xmlfirst{example-1}{div[@class='footnotes']/ol/li[@id='\xmlrefatt{#1}{href}']}}
+\stopxmlsetups
+
+\startxmlsetups xml:initialize
+    \xmlsetsetup{#1}{p|doc}{xml:*}
+    \xmlsetsetup{#1}{a[@class='footnoteRef']}{xml:footnote}
+    \xmlsetsetup{#1}{div[@class='footnotes']}{xml:nothing}
+\stopxmlsetups
+
+\xmlregisterdocumentsetup{example-1}{xml:initialize}
+
+\xmlprocessbuffer{example-1}{demo}{}
+
+% \stoptext
+
+% variant 2:
+
+\startxmlsetups xml:doc
+    variant 2:
+    \blank
+    \xmlflush{#1}
+    \blank
+\stopxmlsetups
+
+\startxmlsetups xml:p
+    \xmlflush{#1}
+\stopxmlsetups
+
+\startluacode
+    userdata.notes =  {}
+\stopluacode
+
+\startxmlsetups xml:collectnotes
+    \ctxlua{userdata.notes['\xmlrefatt{#1}{id}'] = '#1'}
+\stopxmlsetups
+
+\startxmlsetups xml:footnote
+    (2)\footnote{\xmlflush{\cldcontext{userdata.notes['\xmlrefatt{#1}{href}']}}}
+\stopxmlsetups
+
+\startxmlsetups xml:initialize
+    \xmlsetsetup{#1}{p|doc}{xml:*}
+    \xmlsetsetup{#1}{a[@class='footnoteRef']}{xml:footnote}
+    \xmlfilter{#1}{div[@class='footnotes']/ol/li/command(xml:collectnotes)}
+    \xmlsetsetup{#1}{div[@class='footnotes']}{}
+\stopxmlsetups
+
+\xmlregisterdocumentsetup{example-2}{xml:initialize}
+
+\xmlprocessbuffer{example-2}{demo}{}
+
+\stoptext

@@ -1,0 +1,42 @@
+\starttext
+
+\startsetups tex:whatever
+    \fastsetup{tex:whatever:\documentvariable{stylevariant}}
+\stopsetups
+
+\startsetups tex:whatever:foo
+    TFOO
+\stopsetups
+
+\startsetups tex:whatever:bar
+    TBAR
+\stopsetups
+
+\startxmlsetups xml:whatever
+    \xmlsetup{#1}{xml:whatever:\documentvariable{stylevariant}}
+\stopxmlsetups
+
+\startxmlsetups xml:whatever:foo
+    XFOO (#1)
+\stopxmlsetups
+
+\startxmlsetups xml:whatever:bar
+    XBAR (#1)
+\stopxmlsetups
+
+\setups       {tex:whatever}
+\xmlsetup{123}{xml:whatever}
+
+\setupdocument
+  [stylevariant=foo]
+
+\setups       {tex:whatever}
+\xmlsetup{123}{xml:whatever}
+
+\setupdocument
+  [stylevariant=bar]
+
+\setups       {tex:whatever}
+\xmlsetup{123}{xml:whatever}
+
+\stoptext

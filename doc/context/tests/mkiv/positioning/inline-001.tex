@@ -1,0 +1,24 @@
+\defineoverlay
+  [frames]
+  [\positionoverlay{frames}]
+
+\setupbackgrounds
+  [text]
+  [background=frames]
+
+\startMPpositiongraphic{frame}
+    if unknown context_apos : input mp-apos.mpiv ; fi ;
+    \MPgetposboxes{\MPvar{self}}{\MPanchorid}
+    if nofposboxes = 1 :
+        draw posboxes[1] ;
+    fi ;
+\stopMPpositiongraphic
+
+\startpositionoverlay{frames}
+    \setMPpositiongraphic{one}{frame}
+    \setMPpositiongraphic{two}{frame}
+\stoppositionoverlay
+
+\starttext
+    This \hpos{one}{word} should be \hpos{two}{framed}.
+\stoptext

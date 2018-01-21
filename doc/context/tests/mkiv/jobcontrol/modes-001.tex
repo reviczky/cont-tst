@@ -1,0 +1,19 @@
+\starttext
+
+\enablemode[test]
+\enablemode[xxxx]
+
+\doifallmodes{test,xxx}{NO}
+\doifallmodes{test,xxxx}{YES}
+\doifmode{test}{YES}
+\doifnotmode{xxx}{YES}
+
+\startluacode
+    tex.sprint(tex.modes['x']    and "YES" or "NOP")
+    tex.sprint(tex.modes['xx']   and "YES" or "NOP")
+    tex.sprint(tex.modes['xxx']  and "YES" or "NOP")
+    tex.sprint(tex.modes['xxxx'] and "YES" or "NOP")
+    tex.sprint(tex.modes['test'] and "YES" or "NOP")
+\stopluacode
+
+\stoptext

@@ -1,0 +1,34 @@
+\starttext
+
+\startluacode
+
+    local t = {
+        "1", "12", "123", "1234", "12345", "123456", "1234567", "12345678", "123456789",
+        "1.1", "12.12", "123.123", "1234.123", "1234.1234", "12345.1234", "1234.12345", "12345.12345",
+        "123456.123456", "1234567.1234567", "12345678.12345678", "123456789.123456789",
+        "0.00002", "0.1234", "1234.0", "1234.00", "0.123456789", "100.00005",
+        "0.80018", "10.80018", "100.80018", "1000.80018", "10000.80018",
+    }
+
+    context.starttabulate { "||||" }
+    context.TL()
+    context.BC() context("method 1")
+    context.BC() context("method 2")
+    context.BC() context("method 3")
+    context.NC()
+    context.NR()
+    context.ML()
+    for i=1,#t do
+        local ti = t[i]
+        context.NC() context.setvalue("spaceddigitsmethod",1) context.spaceddigits(ti)
+        context.NC() context.setvalue("spaceddigitsmethod",2) context.spaceddigits(ti)
+        context.NC() context.setvalue("spaceddigitsmethod",3) context.spaceddigits(ti)
+        context.NC()
+        context.NR()
+    end
+    context.LL()
+    context.stoptabulate()
+
+\stopluacode
+
+\stoptext

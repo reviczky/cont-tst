@@ -1,0 +1,25 @@
+\enabledirectives[fontgoodies.mathkerning]
+
+\setuppapersize[A7,landscape] \setuplayout[middle] \noheaderandfooterlines
+
+\setupbodyfont[minion]
+
+\starttext
+
+    \showglyphs
+
+    minion @ \the\bodyfontsize : $V^i_j$ and $W^i_j$ and $𝒜 = \cal A$ \blank
+
+    \switchtobodyfont[minion,10pt]
+
+    minion @ \the\bodyfontsize : $V^i_j$ and $W^i_j$ and $𝒜 = \cal A$ \blank
+
+    \switchtobodyfont[minion,9pt]
+
+    minion @ \the\bodyfontsize : $V^i_j$ and $W^i_j$ and $𝒜 = \cal A$ \blank
+
+    \switchtobodyfont[minion,8pt]
+
+    minion @ \the\bodyfontsize : $V^i_j$ and $W^i_j$ and $𝒜 = \cal A$ \blank
+
+\stoptext

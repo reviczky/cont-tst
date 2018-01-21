@@ -1,0 +1,11 @@
+\definefontfeature [node-smcp-tlig] [mode=node,script=latn,smcp=yes,tlig=yes]
+\definefontfeature [base-smcp-tlig] [mode=base,script=latn,smcp=yes,tlig=yes]
+
+\definefont [testfontnodesmcptlig] [file:linlibertine_r.otf*node-smcp-tlig]
+\definefont [testfontbasesmcptlig] [file:linlibertine_r.otf*base-smcp-tlig]
+
+\startTEXpage[offset=1ex]
+    \start \testfontnodesmcptlig gnu - gnat -- foo --- foo \stop
+    \par
+    \start \testfontbasesmcptlig gnu - gnat -- foo --- foo \stop
+\stopTEXpage

@@ -1,0 +1,21 @@
+\starttext
+
+\replaceword[basics][new]  [old]
+\replaceword[basics][now]  [hl3->never]
+\replaceword[basics][never][now]
+\replaceword[basics][heck] []
+
+\definehighlight[hl1][style={\setbar[underbar]\red\setcharactercasing[WORD]\bf}]
+\definehighlight[hl2][style={\setbar[overbar]\blue\setcharactercasing[Words]}]
+\definehighlight[hl3][style={\setbar[overstrike]\green\bs}]
+
+\registeroverloads[hl1]
+\registeroverloads[hl2]
+\registeroverloads[hl3]
+
+\start \setreplacements[basics][hl1] What the heck, it's now or never, isn't it new? \stop \par
+\start \setreplacements[basics][hl2] What the heck, it's now or never, isn't it new? \stop \par
+\start \setreplacements[basics][hl1] What the heck, it's now or never, isn't it new? \stop \par
+\start \setreplacements[basics]      What the heck, it's now or never, isn't it new? \stop \par
+
+\stoptext

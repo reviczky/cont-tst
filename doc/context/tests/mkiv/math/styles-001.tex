@@ -1,0 +1,36 @@
+\starttext
+
+\startTEXpage[offset=1ex]
+
+\def\TestMe#1%
+  {\NC \ttbf #1
+   \NC \ruledhbox{$\setupmathstyle[#1]x + x_j^2 + x_i^{e^2} + \frac{1}{x}$}
+   \NC \ruledhbox{$\setupmathstyle[#1,small]x + x_j^2 + x_i^{e^2} + \frac{1}{x}$}
+   \NC \NR}
+
+\starttabulate[|l|r|l|]
+\HL
+\NC \NC \NC \ttbf ...,small \NC \NR
+\HL
+\TestMe{text}
+\TestMe{text,cramped}
+\TestMe{script}
+\TestMe{script,cramped}
+\TestMe{scriptscript}
+\TestMe{scriptscript,cramped}
+\TestMe{display}
+\TestMe{display,cramped}
+\HL
+\stoptabulate
+
+\stopTEXpage
+
+\startTEXpage[offset=1ex]
+
+$x\begingroup\setupmathstyle[script]x\endgroup x$
+$x{\setupmathstyle[script]x}x$
+$x\startmathstyle[script]x\stopmathstyle x$
+
+\stopTEXpage
+
+\stoptext

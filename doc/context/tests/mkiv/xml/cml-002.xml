@@ -1,0 +1,8 @@
+<?xml version='1.0' standalone='yes'?>
+
+<cml:dchem>
+    <cml:molecule>
+        <cml:atom n="2">H</cml:atom>
+        <cml:atom>O</cml:atom>
+    </cml:molecule>
+</cml:dchem>

@@ -1,0 +1,17 @@
+% posted by WS in response ISH
+
+\definefontfamily     [palatino_cg] [rm] [TeX Gyre Pagella]
+\definefallbackfamily [palatino_cg] [mm] [TeX Gyre Schola Math] [range={lowercasescript,lowercaseboldscript,uppercasescript,uppercaseboldscript},force=yes]
+\definefontfamily     [palatino_cg] [mm] [TeX Gyre Pagella Math]
+
+\setupbodyfont[palatino]
+
+\starttext
+
+\m{\cal ABCDEFG \quad \bf ABCDEFG}
+
+\switchtobodyfont[palatino_cg]
+
+\m{\cal ABCDEFG \quad \bf ABCDEFG}
+
+\stoptext

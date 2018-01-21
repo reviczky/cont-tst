@@ -1,0 +1,43 @@
+\nopdfcompression
+
+\setupinteraction[state=start]
+\setupstructure[state=start,method=auto]
+\setuptagging[state=start]
+\setupbackend[export=yes]
+\setupexport[properties=user_] % yes
+
+\starttext
+
+\startbuffer[test]
+<document>
+    <chapter>
+        <title>First Chapter</title>
+        <content>whatever</content>
+    </chapter>
+</document>
+\stopbuffer
+
+\startxmlsetups xml:document
+    \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:chapter
+    \startchapter[title=\xmltext{#1}{/title}]
+        \setupelementuserproperties[sectiontitle][elementname=head]
+        (\getelementtag)
+        \startelement[somecontent][luigi=wants this]
+            \xmltext{#1}{/content}
+            (\getelementtag)
+        \stopelement
+    \stopchapter
+\stopxmlsetups
+
+\startxmlsetups xml:setup
+    \xmlsetsetup{#1}{*}{xml:*}
+\stopxmlsetups
+
+\xmlappendsetup{xml:setup}
+
+\xmlprocessbuffer{main}{test}{}
+
+\stoptext

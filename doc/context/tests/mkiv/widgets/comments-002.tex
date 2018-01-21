@@ -1,0 +1,24 @@
+\setupinteraction[state=start]
+
+\starttext
+
+\startbuffer[a]
+for i=1,10 do
+    print(i)
+end
+\stopbuffer
+
+\typebuffer[a]
+
+1: \comment{\cldcontext{buffers.getcontent("a")}}
+
+
+\blank
+
+2: \comment[buffer=a]{}
+
+\blank
+
+3: \comment[space=yes,buffer=a]{}
+
+\stoptext

@@ -1,0 +1,42 @@
+% taken from post by Sietse Brouwer
+
+\setupblackrules
+  [depth=\strutdepth,
+   height=\strutheight,
+   width=1mm,
+   color=red]
+
+\starttext
+    \ruledhbox
+      {A
+       \framed
+         [width=2cm,align=middle,location=]
+         {location\\equals\\(nothing)}%
+       \blackrule
+       \framed
+         [width=2cm,align=middle,location=depth]
+         {location\\equals\\depth}%
+       \blackrule
+       \framed
+         [width=2cm,align=middle,location=height]
+         {location\\equals\\height}%
+       \blackrule
+       \framed[width=2cm,align=middle,location=hanging]{location\\equals\\hanging}
+       B}
+    \vskip2cm
+    \ruledhbox
+      {A
+       \framed[width=2cm,align=middle,location=low]    {location\\equals\\low}
+       \framed[width=2cm,align=middle,location=line]   {location\\equals\\line}
+       \framed[width=2cm,align=middle,location=high]   {location\\equals\\high}
+       B}
+    \vskip2cm
+    \ruledhbox
+     {A
+      \framed[width=2cm,align=middle,location=bottom] {location\\equals\\bottom}
+      \framed[width=2cm,align=middle,location=lohi]   {location\\equals\\lohi}
+      \framed[width=2cm,align=middle,location=middle] {location\\equals\\middle}
+      \framed[width=2cm,align=middle,location=top]    {location\\equals\\top}
+      B}
+
+\stoptext

@@ -1,0 +1,20 @@
+\usemodule[xfdf]
+
+\setupbodyfont[dejavu]
+
+\setuphead[subject][style=bold]
+
+\startxmlsetups xfdf:b
+    \bold{\xmlflush{#1}}
+\stopxmlsetups
+
+\starttext
+
+    \xmlloadonly{answers}{xfdf-001.xfdf}{xfdf}
+
+    \dorecurse{3} {
+        \subject{Answer #1}
+        \xfdftext{answers}{answer-#1}
+    }
+
+\stoptext

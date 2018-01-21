@@ -1,0 +1,11 @@
+\defineMPinstance
+  [myfun]
+  [metafun]
+  [textcolor=white]
+
+\starttext
+    \startMPpage[instance=myfun,offset=1cm]
+        fill fullcircle scaled 10cm ;
+        draw textext("MyFun") xsized 5cm ;
+    \stopMPpage
+\stoptext

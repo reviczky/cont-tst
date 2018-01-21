@@ -1,0 +1,27 @@
+\setupbodyfont[dejavu]
+
+\definefiller[test][alternative=symbol,symbol=!]
+
+\starttext
+
+dummy \page
+
+\testfeatureonce{1000} { % 0.19  | 0.60
+%     \setbox0
+        \hbox to \hsize
+            {text
+            \removeunwantedspaces\leaders\hbox to 1em{\hss !\hss}\hfill\ignorespaces
+            text}
+}
+
+\page
+
+\testfeatureonce{1000} { % 0.27 | 0.65
+%     \setbox0
+        \hbox to \hsize
+            {text
+             \filler[test]
+             text}
+}
+
+\stoptext

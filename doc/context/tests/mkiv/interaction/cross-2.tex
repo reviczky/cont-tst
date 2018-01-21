@@ -1,0 +1,19 @@
+\environment cross-0
+
+\startproduct cross-2
+
+    this is 2.1\pagereference[C]\blank
+    \goto{file 1.1}[cross-1::A]\par
+    \goto{file 1.2}[cross-1::B]\par
+    \goto{self 2.1}[C]\par
+    \goto{self 2.2}[D]
+
+    \page
+
+    this is 2.2\pagereference[D]\blank
+    \goto{file 1.1}[cross-1::A]\par
+    \goto{file 1.2}[cross-1::B]\par
+    \goto{self 2.1}[C]\par
+    \goto{self 2.2}[D]
+
+\stopproduct

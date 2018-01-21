@@ -1,0 +1,25 @@
+% this file is already loaded under text regime
+
+\enabledirectives[filters.utf.reorder=line]
+
+\definefont[DemoFont][file:almmono10-regular*arabic at 14pt]
+
+\starttext
+
+    \DemoFont \setupdirections[bidi=global] \righttoleft
+
+    \startTEXpage [offset=10pt]
+
+        \input reorder-001-data.tex
+
+        \disabledirectives[filters.utf.reorder] \blank
+
+        \input reorder-001-data.tex
+
+        \enabledirectives[filters.utf.reorder] \blank
+
+        \input reorder-001-data.tex
+
+    \stopTEXpage
+
+\stoptext

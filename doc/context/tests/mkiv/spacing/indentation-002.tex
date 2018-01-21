@@ -1,0 +1,20 @@
+\defineindenting[whatever][yes,2cm]
+%defineindenting[whatever][yes,-2cm]
+
+\starttext
+
+\startbuffer
+    \setupindenting[yes,-2em] \input ward \par
+    \setupindenting[yes,2em]  \input ward \par
+    \setupindenting[whatever] \input ward \par
+\stopbuffer
+
+\getbuffer
+
+\defineindenting[whatever][yes,-2cm]
+
+\blank
+
+\getbuffer
+
+\stoptext

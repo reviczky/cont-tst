@@ -1,0 +1,21 @@
+\starttext
+
+\startbuffer[test-1]
+    \startTEXpage
+        test less oeps done
+    \stopTEXpage
+\stopbuffer
+
+\startbuffer[test-2]
+    \startTEXpage
+        test more and more
+    \stopTEXpage
+\stopbuffer
+
+\framed{\typesetbuffer[test-1][scale=1000]}
+\framed{\typesetbuffer[test-1][scale=1000]}
+\framed{\typesetbuffer[test-2][scale=1000]}
+\framed{\typesetbuffer[test-2][scale=1000]}
+\framed{\typesetbuffer[test-1,test-2][scale=1000]}
+
+\stoptext

@@ -1,0 +1,8 @@
+\setuppagenumbering
+  [alternative=doublesided]
+
+\starttext
+
+    \dorecurse{500}{\dontleavehmode\signalrightpage\doifrightpageelse{right}{left}\par}
+
+\stoptext

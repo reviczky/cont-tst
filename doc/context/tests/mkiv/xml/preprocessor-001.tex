@@ -1,0 +1,50 @@
+\startluacode
+    function lxml.preprocessor(data,settings)
+        return string.find(data,"BAD TITLE:")
+           and string.gsub(data,"BAD TITLE:","<bold>BAD TITLE:</bold>")
+            or data
+    end
+\stopluacode
+
+\startxmlsetups demo:initialize
+    \xmlsetsetup{#1}{*}{demo:*}
+\stopxmlsetups
+
+\xmlregisterdocumentsetup{demo}{demo:initialize}
+
+\startxmlsetups demo:root
+    \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups demo:bold
+    \begingroup\bf\xmlflush{#1}\endgroup
+\stopxmlsetups
+
+\startbuffer[demo]
+<root>
+BAD TITLE: crap crap crap crap crap crap crap crap crap crap crap crap crap crap
+crap crap crap crap crap crap crap crap crap crap crap crap crap crap crap crap
+crap crap crap crap crap crap crap crap crap crap crap crap crap crap crap crap
+crap crap crap crap crap crap crap crap crap crap crap crap crap crap crap crap
+crap crap crap crap crap crap crap crap crap crap crap crap crap crap crap crap
+crap crap crap crap crap crap crap crap crap crap crap crap crap crap crap crap
+crap crap crap crap crap crap crap crap crap crap crap crap crap crap crap crap
+crap crap crap crap crap crap crap crap crap crap crap crap crap crap crap crap
+crap crap crap crap crap crap crap crap crap crap crap crap crap crap
+
+BAD TITLE: crap crap crap crap crap crap crap crap crap crap crap crap crap crap
+crap crap crap crap crap crap crap crap crap crap crap crap crap crap crap crap
+crap crap crap crap crap crap crap crap crap crap crap crap crap crap crap crap
+crap crap crap crap crap crap crap crap crap crap crap crap crap crap crap crap
+crap crap crap crap crap crap crap crap crap crap crap crap crap crap crap crap
+crap crap crap crap crap crap crap crap crap crap crap crap crap crap crap crap
+crap crap crap crap crap crap crap crap crap crap crap crap crap crap crap crap
+crap crap crap crap crap crap crap crap crap crap crap crap crap crap crap crap
+crap crap crap crap crap crap crap crap crap crap crap crap crap crap
+</root>
+
+\stopbuffer
+
+\starttext
+    \xmlprocessbuffer{demo}{demo}{}
+\stoptext

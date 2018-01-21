@@ -1,0 +1,15 @@
+return {
+ ["htmlfiles"]={ "userproperties-001-div.html" },
+ ["htmlroot"]="userproperties-001-div.html",
+ ["identifier"]="d52e145f-4a01-888a-4109-7906ca3bd056",
+ ["imagefile"]="styles/userproperties-001-images.css",
+ ["imagepath"]="images",
+ ["images"]={},
+ ["language"]="en",
+ ["metadata"]={},
+ ["name"]="userproperties-001",
+ ["stylepath"]="styles",
+ ["styles"]={ "userproperties-001-defaults.css", "userproperties-001-images.css", "userproperties-001-styles.css" },
+ ["xhtmlfiles"]={ "userproperties-001-tag.xhtml" },
+ ["xmlfiles"]={ "userproperties-001-raw.xml" },
+}

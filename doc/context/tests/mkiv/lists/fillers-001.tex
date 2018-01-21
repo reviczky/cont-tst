@@ -1,0 +1,24 @@
+\starttext
+
+    \setuplistalternative[c][filler=sym]    \placelist[chapter][alternative=c]
+    \setuplistalternative[c][filler=symbol] \placelist[chapter][alternative=c]
+    \setuplistalternative[c][filler=width]  \placelist[chapter][alternative=c]
+    \setuplistalternative[c][filler=space]  \placelist[chapter][alternative=c]
+    \setuplistalternative[c][filler=rule]   \placelist[chapter][alternative=c]
+
+    \definefiller
+      [whatever]
+      [symbol]
+      [filler=symbol,
+       symbol=\hbox to .25em{\periodcentered},
+       color=darkred,
+       style=\bf]
+
+    \setuplistalternative[c][filler=whatever]
+    \placelist[chapter][alternative=c]
+
+    \chapter{test a}
+    \chapter{test b}
+    \chapter{test c}
+
+\stoptext

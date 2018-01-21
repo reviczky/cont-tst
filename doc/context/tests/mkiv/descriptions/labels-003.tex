@@ -1,0 +1,15 @@
+\definelabel[MyLabel][way=bytext,text=OEPS]
+
+\starttext
+    \setuplabel[MyLabel][alternative=intext]
+    \MyLabel[labelname1] This is some text after \in[labelname1].
+    \blank
+    \MyLabel[labelname2] This is some text after \in[labelname2].
+    \blank
+    \setuplabel[MyLabel][alternative=inleft]
+    \MyLabel[labelname1] This is some text after \in[labelname1].
+    \blank
+    \MyLabel[labelname2] This is some text after \in[labelname2].
+    \blank
+\stoptext
+

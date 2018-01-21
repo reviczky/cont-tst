@@ -1,0 +1,47 @@
+% adapted from question by pablo
+
+\startbuffer[demo]
+<doc>
+    <pre><code>\ConTeXt\ is great</code></pre>
+
+    <pre><code>but you need to know some tricks</code></pre>
+</doc>
+\stopbuffer
+
+\startxmlsetups xml:initialize
+     \xmlsetsetup{#1}{doc|p|code}{xml:*}
+     \xmlsetsetup{#1}{pre/code}{xml:pre:code}
+\stopxmlsetups
+
+\xmlregistersetup{xml:initialize}
+
+\startxmlsetups xml:doc
+     \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:pre:code
+    solution one \begingroup
+        \expandUx
+        \comment[symbol=Key, location=inmargin,color=yellow]{\xmlflush{#1}}
+    \endgroup
+    \par
+    solution two
+    \comment[symbol=Key, location=inmargin,color=yellow]{\xmlpure{#1}}
+    \par
+    \xmlprettyprint{#1}{tex}
+\stopxmlsetups
+
+\setuppapersize
+  [A6,landscape]
+
+\setuplayout
+  [middle]
+
+\setupinteraction
+  [state=start]
+
+\noheaderandfooterlines
+
+\starttext
+    \xmlprocessbuffer{main}{demo}{}
+\stoptext

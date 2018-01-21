@@ -1,0 +1,26 @@
+% example for list
+
+\setuplayout
+  [width=25mm]
+
+\definebreakpoint
+  [compound]
+  [_]
+
+\definetype
+  [Test]
+  [lines=hyphenated,
+   setups=Test,
+   space=stretch,
+   style={\tttf\setbreakpoints[compound]}]
+
+\showframe
+
+\starttext
+    hellohello hellohello
+
+    hellohello \Test{hel_lohello}
+
+    hellohello \Test{hellohello}
+\stoptext
+

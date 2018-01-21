@@ -1,0 +1,30 @@
+\definefontfeature
+  [system:tabnum]
+  [system:tabnum]
+  [onum=no]
+
+\definefontfeature[default][default][onum=yes]
+
+\setupbodyfont[pagella]
+
+\starttext
+
+\enabledirectives[typesetters.characteralign.autofont]
+
+\bTABLE
+\setupTABLE[alignmentcharacter={text->.},aligncharacter=yes,align=middle]
+\bTR \bTD 1.23456789 \eTD \eTR
+\bTR \bTD 12.3456789 \eTD \eTR
+\bTR \bTD 123.456789 \eTD \eTR
+\eTABLE
+
+\disabledirectives[typesetters.characteralign.autofont]
+
+\bTABLE
+\setupTABLE[alignmentcharacter={text->.},aligncharacter=yes,align=middle]
+\bTR \bTD 1.23456789 \eTD \eTR
+\bTR \bTD 12.3456789 \eTD \eTR
+\bTR \bTD 123.456789 \eTD \eTR
+\eTABLE
+
+\stoptext

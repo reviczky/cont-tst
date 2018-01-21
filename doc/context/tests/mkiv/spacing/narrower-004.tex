@@ -1,0 +1,60 @@
+% macros=mkvi
+
+% \showframe
+
+\setupwhitespace[big]
+% \indenting[yes,big]
+
+% \everypar{!!!}
+
+\starttext
+
+A \type{bTABLE}:
+
+\startnarrower
+    \bTABLE
+        \dorecurse{3}{\bTR \bTD test \eTD \bTD test \eTD \eTR}
+    \eTABLE
+    \par
+    \bTABLE
+        \dorecurse{3}{\bTR \bTD test \eTD \bTD test \eTD \eTR}
+    \eTABLE
+\stopnarrower
+
+\startlinecorrection
+    \startnarrower
+        \bTABLE
+            \dorecurse{3}{\bTR \bTD test \eTD \bTD test \eTD \eTR}
+        \eTABLE
+        \par
+        \bTABLE
+            \dorecurse{3}{\bTR \bTD test \eTD \bTD test \eTD \eTR}
+        \eTABLE
+    \stopnarrower
+\stoplinecorrection
+
+A \type{xtable}:
+
+\startnarrower
+    \startxtable
+        \dorecurse{3}{\startxrow \startxcell test \stopxcell \startxcell test \stopxcell \stopxrow}
+    \stopxtable
+    \par
+    \startxtable
+        \dorecurse{3}{\startxrow \startxcell test \stopxcell \startxcell test \stopxcell \stopxrow}
+    \stopxtable
+\stopnarrower
+
+\startlinecorrection
+    \startnarrower
+        \startxtable
+            \dorecurse{3}{\startxrow \startxcell test \stopxcell \startxcell test \stopxcell \stopxrow}
+        \stopxtable
+        \par
+        \startxtable
+            \dorecurse{3}{\startxrow \startxcell test \stopxcell \startxcell test \stopxcell \stopxrow}
+        \stopxtable
+    \stopnarrower
+\stoplinecorrection
+
+\stoptext

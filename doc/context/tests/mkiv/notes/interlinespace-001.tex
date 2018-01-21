@@ -1,0 +1,20 @@
+\defineinterlinespace
+  [footnote]
+  [line=6ex]
+
+\setupnotation
+  [footnote]
+  [alternative=serried]
+
+\setupnote
+  [footnote]
+  [paragraph=yes,
+   interlinespace=footnote]
+
+\showframe
+
+\starttext
+
+    \dorecurse{4}{These are footnotes\footnote{\input knuth}. }
+
+\stoptext

@@ -1,0 +1,14 @@
+\usemodule[database]
+
+\starttext
+
+    \define[3]\TestCommand{\ruledhbox{#1:#2:#3}}
+
+    \defineseparatedlist[test][command=\TestCommand,left=(,right=),strip=yes]
+
+    \starttest
+    111,     222,333
+    111,222,     333
+    \stoptest
+
+\stoptext

@@ -1,0 +1,25 @@
+\defineframed
+  [myframe]
+  [foregroundstyle=italic,
+   foregroundcolor=blue]
+
+\def\mycmd#1{\color[blue]{\strut#1}}
+
+\starttext
+
+  \processisolatedwords{three four}\mycmd
+
+  \processisolatedwords{five six}\myframe
+
+  \applytowords\mycmd  {seven eight}
+
+  \applytowords\myframe{nine ten}
+
+  \applytosplitstringchar      \myframe{eleven twelve}\par
+  \applytosplitstringword      \myframe{eleven twelve}\par
+  \applytosplitstringline      \myframe{eleven twelve}\par
+  \applytosplitstringcharspaced\myframe{eleven twelve}\par
+  \applytosplitstringwordspaced\myframe{eleven twelve}\par
+  \applytosplitstringlinespaced\myframe{eleven twelve}\par
+
+\stoptext

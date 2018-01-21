@@ -1,0 +1,28 @@
+\starttext
+
+\enabletrackers[typesetters.characteralign]
+
+\bgroup
+\setupTABLE[column][1][aligncharacter=yes,alignmentcharacter={,}]
+\bTABLE
+    \bTR \bTD  1,2   \eTD \bTD  1,2  \eTD \bTD xxx \eTD \eTR
+    \bTR \bTD - 1,2  \eTD \bTD -1,2  \eTD \bTD xxx \eTD \eTR
+    \bTR \bTD -1,2   \eTD \bTD -1,2  \eTD \bTD xxx \eTD \eTR
+    \bTR \bTD 11,2   \eTD \bTD 11,2  \eTD \bTD xxx \eTD \eTR
+    \bTR \bTD 11,224 \eTD \bTD 11,22 \eTD \bTD xxx \eTD \eTR
+\eTABLE
+\egroup
+
+\bgroup
+\setupTABLE[column][1][aligncharacter=yes,alignmentcharacter={-}]
+\setupTABLE[column][2][aligncharacter=yes,alignmentcharacter={\endash}]
+\bTABLE
+    \bTR \bTD  1-2    \eTD \bTD  1\endash2    \eTD\bTD xxx \eTD \eTR
+    \bTR \bTD  1-2    \eTD \bTD  1\endash2    \eTD\bTD xxx \eTD \eTR
+    \bTR \bTD  1-2    \eTD \bTD  1\endash2    \eTD\bTD xxx \eTD \eTR
+    \bTR \bTD 11-2    \eTD \bTD 11\endash2    \eTD\bTD xxx \eTD \eTR
+    \bTR \bTD 11-22 + \eTD \bTD 11\endash22 + \eTD\bTD xxx \eTD \eTR
+\eTABLE
+\egroup
+
+\stoptext

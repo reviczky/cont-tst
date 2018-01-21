@@ -1,0 +1,31 @@
+\usemodule[mathml]
+
+\startbuffer[test]
+<text>
+    <math xmlns='http://www.w3c.org/mathml' version='2.0'>
+      <mrow>
+        <mn>47</mn>
+        <mo>/</mo>
+        <mn>11</mn>
+        <mo>&#x003E;</mo>
+        <mn>4</mn>
+      </mrow>
+  </math>
+
+    <math xmlns='http://www.w3c.org/mathml' version='2.0'>
+      <mrow>
+        <mo>(</mo>
+        <mn>47</mn>
+        <mo>/</mo>
+        <mn>11</mn>
+        <mo>)</mo>
+        <mo>&#x003E;</mo>
+        <mn>4</mn>
+      </mrow>
+  </math>
+</text>
+\stopbuffer
+
+\starttext
+    \xmlprocessbuffer{main}{test}{}
+\stoptext

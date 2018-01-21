@@ -1,0 +1,39 @@
+\setuplayout
+  [margin=1cm]
+
+\showframe
+
+\starttext
+
+% \dorecurse {3} {
+%     \ininnermargin{\expanded{\dorecurse{12}{IM\recurselevel\space}}}%
+%     \inoutermargin{\expanded{\dorecurse{12}{OM\recurselevel\space}}}%
+%     \input tufte \par
+% }
+
+% \page
+
+% \dorecurse {3} {
+%     \ininner[stack=no]{\expanded{\dorecurse{12}{IM\recurselevel\space}}}%
+%     \inouter[stack=no]{\expanded{\dorecurse{12}{OM\recurselevel\space}}}%
+%     \input tufte \par
+% }
+
+% \page
+% \enabletrackers[paragraphs.anchors]
+
+\dorecurse {3} {
+    \ininner[stack=yes]{\expanded{\dorecurse{12}{IM\recurselevel\space}}}%
+    \inouter[stack=yes]{\expanded{\dorecurse{12}{OM\recurselevel\space}}}%
+    \input tufte \par
+}
+
+\page
+
+\dorecurse {3} {
+    \ininner[stack=continue]{\expanded{\dorecurse{12}{IM\recurselevel\space}}}%
+    \inouter[stack=continue]{\expanded{\dorecurse{12}{OM\recurselevel\space}}}%
+    \input tufte \par
+}
+
+\stoptext

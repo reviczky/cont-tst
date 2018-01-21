@@ -1,0 +1,27 @@
+\enabletrackers[mixedcolumns.trace]
+
+\starttext
+
+    \startitemize[n]
+
+      % \dorecurse{2}{test \par} % wrong break in columns
+        \dorecurse{4}{test \par} % disappearing pre text
+
+        \dorecurse{30} {
+
+            \writestatus{!!!!!!}{itemize: \recurselevel}
+
+            \startitem item
+
+                \startitemize[n,packed,columns,two]
+                    \item test \item test
+                    \item test \item test
+                \stopitemize
+
+            \stopitem
+
+        }
+
+    \stopitemize
+
+\stoptext

@@ -1,0 +1,15 @@
+% example from list
+
+\setupinteraction[state=start]
+
+\setupbackend[export=yes,xhtml=yes,css=export-example.css]
+
+\useURL[google][http://www.google.com/][][Google]
+
+\starttext
+    \startlines
+        \dontleavehmode \from[google]
+        \dontleavehmode \textreference[txt:ref]{some text}\in[txt:ref]
+        \dontleavehmode \goto{Google}[url(http://www.google.com/)]
+    \stoplines
+\stoptext

@@ -1,0 +1,9 @@
+\setupinteraction[state=start]
+
+\setupnotation[footnote][interaction=yes,way=bytext]
+
+\setupnotes[footnote][split=verystrict,scope=page]
+
+\starttext
+    \dorecurse{50}{some text\footnote{a footnote} }
+\stoptext

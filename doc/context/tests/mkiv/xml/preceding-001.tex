@@ -1,0 +1,135 @@
+\startbuffer[demo]
+<?xml version="1.0" encoding="utf-8"?>
+
+<a>
+  <b> <c>1</c> <d>Text</d>           </b>
+  <b> <c>2</c> <d>More text</d>      </b>
+  <b> <c>2</c> <d>Even more text</d> </b>
+  <b> <c>2</c> <d>And more</d>       </b>
+  <b> <c>3</c> <d>And even more</d>  </b>
+</a>
+\stopbuffer
+
+\startluacode
+
+-- solution 1
+
+local lasttitle = nil
+
+function xml.functions.test_ba(t)
+    local title = xml.text(t, "c")
+    local content = xml.text(t, "d")
+    context.startxrow()
+    context.startxcell( { background="color", backgroundcolor="yellow" } )
+    if lasttitle == title then
+        context.color( { "red" }, title)
+    else
+        lasttitle = title
+        context.color( { "blue" }, title)
+    end
+    context.stopxcell()
+    context.startxcell()
+    context(content)
+    context.stopxcell()
+    context.stopxrow()
+end
+
+-- solution 2
+
+local titles = { }
+
+function xml.functions.reset_bb(t)
+    titles = { }
+end
+
+function xml.functions.test_bb(t)
+    local title = xml.text(t, "c")
+    local content = xml.text(t, "d")
+    context.startxrow()
+    context.startxcell( { background="color", backgroundcolor="yellow" } )
+    if titles[title] then
+        context.color( { "red" }, title)
+    else
+        titles[title] = true
+        context.color( { "blue" }, title)
+    end
+    context.stopxcell()
+    context.startxcell()
+    context(content)
+    context.stopxcell()
+    context.stopxrow()
+end
+
+-- solution 3
+
+function xml.functions.test_bc(t)
+    local title = xml.text(t, "c")
+    local content = xml.text(t, "d")
+    context.startxrow()
+    context.startxcell( { background="color", backgroundcolor="yellow" } )
+    if xml.text(t,"./preceding-sibling::/[-1]") == title then
+        context.color( { "red" }, title)
+    else
+        context.color( { "blue" }, title)
+    end
+    context.stopxcell()
+    context.startxcell()
+    context(content)
+    context.stopxcell()
+    context.stopxrow()
+end
+
+\stopluacode
+
+\startxmlsetups xml:test_setups
+    \xmlsetsetup{#1}{a|b|c|d}{xml:*}
+\stopxmlsetups
+
+\xmlregistersetup{xml:test_setups}
+
+\starttext
+
+    % solution 1
+
+    \startxmlsetups xml:a
+        \startembeddedxtable
+            \xmlflush{#1}
+        \stopembeddedxtable
+    \stopxmlsetups
+
+    \startxmlsetups xml:b
+        \xmlfunction{#1}{test_ba}
+    \stopxmlsetups
+
+    \xmlprocessbuffer{main}{demo}{} \page
+
+    % solution 2
+
+    \startxmlsetups xml:a
+        \ctxlua{xml.functions.reset_bb()}
+        \startembeddedxtable
+            \xmlflush{#1}
+        \stopembeddedxtable
+    \stopxmlsetups
+
+    \startxmlsetups xml:b
+        \xmlfunction{#1}{test_bb}
+    \stopxmlsetups
+
+    \xmlprocessbuffer{main}{demo}{} \page
+
+    % solution 3
+
+    \startxmlsetups xml:a
+        \startembeddedxtable
+            \xmlflush{#1}
+        \stopembeddedxtable
+    \stopxmlsetups
+
+    \startxmlsetups xml:b
+        \xmlfunction{#1}{test_bc}
+    \stopxmlsetups
+
+    \xmlprocessbuffer{main}{demo}{} \page
+
+\stoptext

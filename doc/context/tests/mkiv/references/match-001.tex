@@ -1,0 +1,28 @@
+\starttext
+
+\chapter{The never ending story}
+
+\section{An ending story}
+
+\in{chapter}[match(complex bibliographies)]
+\in{chapter}[match(never ending)]
+\in{chapter}[match(ending)]
+\in{chapter}[match(chapter:never ending)]
+\in{chapter}[match(chapter:ending)]
+\in{section}[match(section:ending)]
+\in{figure}[match(float:mess)]
+\in{figure}[match(figure:mess)]
+\in{figure (not found)}[match(section:mess)]
+\in{figure (not found)}[match(section:xxxx)]
+\in{figure}[match(mess)]
+
+\placefigure{What a mess}{}
+
+\chapter{About complex bibliographies}
+
+\in{chapter}[match(complex bibliographies)]
+\in{chapter}[match(never ending)]
+\in{figure}[match(mess)]
+
+\stoptext
+

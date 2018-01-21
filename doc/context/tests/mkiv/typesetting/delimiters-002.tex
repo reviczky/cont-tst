@@ -1,0 +1,35 @@
+\mainlanguage[fr]
+
+\starttext
+
+\input tufte
+
+\startquotation
+    \input tufte
+\stopquotation
+
+\input tufte
+
+\setupdelimitedtext
+  [quotation]
+  [nextleft=right,
+   nextright=left]
+
+\startquotation
+    \input tufte
+\stopquotation
+
+\input tufte
+
+\setupdelimitedtext
+  [quotation]
+  [nextleft={\symbol[nextleftquotation]},
+   nextright={\symbol[nextrightquotation]}]
+
+\startquotation
+    \input tufte
+\stopquotation
+
+\input tufte
+
+\stoptext

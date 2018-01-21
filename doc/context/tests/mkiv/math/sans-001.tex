@@ -1,0 +1,30 @@
+% posted by wolfgang on the mailing list
+
+\definefontfamily     [mainface] [ss] [Latin Modern Sans]
+
+\definefallbackfamily [mainface] [mm] [Latin Modern Sans] [preset=math:digitsnormal]
+\definefallbackfamily [mainface] [mm] [Latin Modern Sans] [preset=math:digitsbold]
+
+\definefallbackfamily [mainface] [mm] [Latin Modern Sans] [preset=math:uppercasenormal]
+\definefallbackfamily [mainface] [mm] [Latin Modern Sans] [preset=math:uppercaseitalic]
+\definefallbackfamily [mainface] [mm] [Latin Modern Sans] [preset=math:uppercasebold]
+\definefallbackfamily [mainface] [mm] [Latin Modern Sans] [preset=math:uppercasebolditalic]
+
+\definefallbackfamily [mainface] [mm] [Latin Modern Sans] [preset=math:lowercasenormal]
+\definefallbackfamily [mainface] [mm] [Latin Modern Sans] [preset=math:lowercaseitalic]
+\definefallbackfamily [mainface] [mm] [Latin Modern Sans] [preset=math:lowercasebold]
+\definefallbackfamily [mainface] [mm] [Latin Modern Sans] [preset=math:lowercasebolditalic]
+
+\definefontfamily     [mainface] [mm] [Latin Modern Math]
+
+\setupbodyfont[mainface]
+
+\starttext
+
+    abcdefg ABCDEFG 123456
+
+    \startformula
+        {\tf abcdefg\,ABCDEFG} \quad abcdefg\,ABCDEFG \quad 123456 \quad {\bf 123456}
+    \stopformula
+
+\stoptext

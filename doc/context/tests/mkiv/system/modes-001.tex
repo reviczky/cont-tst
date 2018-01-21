@@ -1,0 +1,42 @@
+\starttext
+
+\enablemode[two]
+% \enablemode[one]
+
+\startmodeset
+    [one]     {1}
+    [two]     {2}
+    [two]     {2}
+    [three]   {3}
+    [default] {?}
+\stopmodeset
+
+\startmodeset
+    [one]     {1}
+    [three]   {3}
+    [default] {?}
+\stopmodeset
+
+\startmodeset
+    [one] {
+        \input tufte
+    }
+    [two] {
+        \startmodeset
+            [one]     {A}
+            [two]     {B}
+            [two]     {B}
+            [three]   {C}
+            [default] {!}
+        \stopmodeset
+    }
+    [three] {
+        \input zapf
+    }
+    [default] {
+        \input ward
+    }
+\stopmodeset
+
+\stoptext
+

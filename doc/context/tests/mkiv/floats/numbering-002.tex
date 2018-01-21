@@ -1,0 +1,37 @@
+% issue identified by MP
+
+\setupcaptions
+  [prefix=no,
+   way=bytext]
+
+% \setupcaption
+%   [figure, table]
+%   [prefix=no,
+%    way=bytext]
+
+\starttext
+
+\setupblackrules
+  [width=4cm, height=1cm]
+
+\dorecurse {2} {
+
+    \startchapter [title=Chapter]
+
+        \dorecurse {2} {
+
+            \startplacefigure
+                \blackrule
+            \stopplacefigure
+
+            \startplacetable
+                \blackrule
+            \stopplacetable
+
+        }
+
+    \stopchapter
+
+}
+
+\stoptext

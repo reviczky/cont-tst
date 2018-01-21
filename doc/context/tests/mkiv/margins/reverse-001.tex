@@ -1,0 +1,152 @@
+% macros=mkvi
+
+\enabletrackers[paragraphs.anchors]
+
+\showframe
+
+\setuplayout[margin=1cm,margindistance=.5cm,width=middle]
+
+\starttext \dontcomplain \showboxes
+
+\startbuffer
+\enabletrackers[paragraphs.anchors]
+
+\margintext{1L\quad\strut}\inleft{1l}\inright{1r}
+\startlinenumbering
+\input ward
+\stoplinenumbering
+
+\startplacefigure[location={left}]
+	\externalfigure[cow.jpg][width=5cm]
+\stopplacefigure
+\margintext{2L\quad\strut}\inleft{2l}\inright{2r}
+Look here: this picture is placed correctly on the left. What is wrong with placing the picture on the right?
+
+\startplacefigure[location={right}]
+	\externalfigure[cow.jpg][width=5cm]
+\stopplacefigure
+\margintext{3L\quad\strut}\inleft{3l}\inright{3r}
+Look here: this picture is not placed correctly on the right. What is wrong with placing the picture on the right
+
+\flushsidefloats
+
+\startnarrower[3*left,1*right]
+    \margintext{4L\quad\strut}\inleft{4l}\inright{4r}
+    \input tufte
+\stopnarrower
+
+\startbuffer[nested]
+\parshape 6
+     0pt \dimexpr\textwidth-4cm
+    20pt \dimexpr\textwidth-4cm
+    20pt \dimexpr\textwidth-5cm
+    30pt \dimexpr\textwidth-6cm
+    40pt \dimexpr\textwidth-4cm
+    20pt \dimexpr\textwidth-20pt
+\dontleavehmode
+\inleft[scope=local]{LA}\inright[scope=local]{RA}We thrive in information||thick worlds because of our
+\inleft[scope=local]{LB}\inright[scope=local]{RB}marvelous and everyday capacity to select, edit,
+\inleft[scope=local]{LC}\inright[scope=local]{RC}single out, structure, highlight, group, pair, merge,
+\inleft[scope=local]{LD}\inright[scope=local]{RD}harmonize, synthesize, focus, organize, condense,
+\inleft[scope=local]{LE}\inright[scope=local]{RE}reduce, boil down, choose, categorize, catalog, classify,
+\inleft[scope=local]{LF}\inright[scope=local]{RF}list, abstract, scan, look into, idealize, isolate,
+\inleft[scope=local]{LG}\inright[scope=local]{RG}discriminate, distinguish, screen, pigeonhole, pick over,
+\inleft[scope=local]{LH}\inright[scope=local]{RH}sort, integrate, blend, inspect, filter, lump, skip,
+\inleft[scope=local]{LI}\inright[scope=local]{RI}smooth, chunk, average, approximate, cluster, aggregate,
+\inleft[scope=local]{LJ}\inright[scope=local]{RJ}outline, summarize, itemize, review, dip into,
+\inleft[scope=local]{LK}\inright[scope=local]{RK}flip through, browse, glance into, leaf through, skim,
+\inleft[scope=local]{LL}\inright[scope=local]{RL}refine, enumerate, glean, synopsize, winnow the wheat
+\inleft[scope=local]{LM}\inright[scope=local]{RM}from the chaff and separate the sheep from the
+\inleft[scope=local]{LM}\inright[scope=local]{RM}goats.
+\par
+\stopbuffer
+\getbuffer[nested]
+
+\start
+    \blank
+    \setupmargindata[inleft][option=paragraph]
+    \setupmargindata[inright][option=paragraph]
+    \getbuffer[nested]
+    \blank
+\stop
+
+\startnarrower[2*left,1*right]
+\getbuffer[nested]
+\stopnarrower
+
+\setupmargindata[style=\tttf]
+
+\margintext{MT}
+
+\starttabulate[|k5p|k5p|]
+\NC
+    test
+\NC
+    test
+\NC \NR
+\NC
+    \dontleavehmode
+    \inleft[scope=local] {\lefttoright LL1}%
+    \inright[scope=local]{\lefttoright LR1}%
+    test
+\NC
+    \dontleavehmode
+    \inleft[scope=local] {\lefttoright LL2}%
+    \inright[scope=local]{\lefttoright LR2}%
+    test
+\NC \NR
+\NC
+    \dontleavehmode
+    \inleft {\lefttoright GL1}%
+    \inright{\lefttoright GR1}%
+    test
+\NC
+    \dontleavehmode
+    \inleft {\lefttoright GL2}%
+    \inright{\lefttoright GR2}%
+    test
+\NC \NR
+\stoptabulate
+
+\blank
+\dontleavehmode
+\inleft [scope=local]{\lefttoright LL}%
+\inright[scope=local]{\lefttoright LR}%
+test 1
+
+\blank
+\startnarrower[4*left,2*right]
+\dontleavehmode
+\inleft [scope=local]{\lefttoright LL}%
+\inright[scope=local]{\lefttoright LR}%
+test 2
+\stopnarrower
+
+\blank
+\dontleavehmode
+\inleft              {\lefttoright GL}%
+\inright             {\lefttoright GR}%
+test 3
+
+\blank
+\startnarrower[4*left,2*right]
+\dontleavehmode
+\inleft              {\lefttoright GL}%
+\inright             {\lefttoright GR}%
+test 4
+\stopnarrower
+
+
+\stopbuffer
+
+\getbuffer \page
+
+{\setupalign[r2l] \getbuffer \page}
+
+\margintext{!!}
+
+\starttabulate
+\NC test \NC \input tufte \NC \NR
+\stoptabulate
+
+\stoptext

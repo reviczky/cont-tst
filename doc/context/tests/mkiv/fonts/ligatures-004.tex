@@ -1,0 +1,15 @@
+\blockligatures[fi,ff] \blockligatures[fl]
+\blockligatures[u:fl:age]
+
+\definefontfeature[default:nolig][default][blockligatures=yes]
+
+\setupbodyfont[pagella]
+
+\showfontkerns
+
+\startTEXpage[offset=1em]
+    \definedfont[Serif*default:nolig]
+    fi ff fl auflage
+    \definedfont[Serif*default]
+    fi ff fl auflage
+\stopTEXpage

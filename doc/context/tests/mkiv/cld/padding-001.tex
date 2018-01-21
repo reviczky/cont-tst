@@ -1,0 +1,17 @@
+\starttext
+
+\startluacode
+    context.start()
+    context.tttf()
+    context.verbatim("[[% 30<]]","xxaxx") context.par()
+    context.verbatim("[[% 30<]]","xx½xx") context.par()
+    context.verbatim("[[% 30>]]","xxaxx") context.par()
+    context.verbatim("[[% 30>]]","xx½xx") context.par()
+    context.verbatim("[[%-30<]]","xxaxx") context.par()
+    context.verbatim("[[%-30<]]","xx½xx") context.par()
+    context.verbatim("[[%-30>]]","xxaxx") context.par()
+    context.verbatim("[[%-30>]]","xx½xx") context.par()
+    context.stop()
+\stopluacode
+
+\stoptext

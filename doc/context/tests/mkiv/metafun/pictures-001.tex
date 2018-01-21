@@ -1,0 +1,20 @@
+\startuseMPgraphic{smile}
+    draw image (
+        path p ; p := (0,2) .. (2,2) .. (0,-2) ;
+        draw p randomized .5 ;
+        draw (0.5,1) ;
+        draw (0.5,-1) ;
+    ) xsized EmWidth ;
+\stopuseMPgraphic
+
+\definesymbol[smile][\useMPgraphic{smile}]
+
+\starttext
+
+\startTEXpage[width=20em]
+
+\dorecurse{100}{\dontleavehmode\symbol[smile] }
+
+\stopTEXpage
+
+\stoptext

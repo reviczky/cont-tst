@@ -1,0 +1,13 @@
+\startbuffer
+가〈나〉다 (U+\uchexnumber{`〈} D+\number`〈)\par
+가〈나〉다  (U+\uchexnumber{`〈} D+\number`〈)\par
+\the\fontdimen2\font
+\stopbuffer
+
+\definefontfeature[noto1][default][script=hang,language=kor,space=A]
+\definefontfeature[noto2][default][script=hang,language=kor,halt=yes,space=locl]
+
+\starttext
+    \definedfont[file:notosanskr-regular.otf*noto1]\getbuffer
+    \definedfont[file:notosanskr-regular.otf*noto2]\getbuffer
+\stoptext

@@ -1,0 +1,100 @@
+\setupnotes[spacebefore=4*line]
+\setupnotes[spaceinbetween=line]
+
+\starttext
+
+
+    \setupnote [footnote][before=,after=]
+    \definenote[toofnote][before=,after=]
+
+    \dorecurse{100}{
+        test #1.a\footnote{note #1}
+        test #1.b\toofnote{eton #1}
+        \par}
+
+    \page
+
+    \setuplanguage[agr][patterns={agr,la}]
+
+    \mainlanguage[agr] % Greek as main language
+
+    \definefallbackfamily [mainface] [serif] [GFS Didot] [preset=range:greek]
+    \definefontfamily [mainface] [serif] [TeX Gyre Pagella]
+
+    \setupbodyfont[mainface] % ,7.8pt]
+
+    \setuplayout[header=2cm,footer=2cm]
+
+    \setupnotes[compress=yes]
+    \setupnotations[alternative=serried]
+
+    \definenote[aNote]
+    \definenote[bNote]
+    \definenote[cNote]
+    \definenote[dNote]
+
+    \setupnote[aNote][before=,after=]
+    \setupnote[bNote][before=,after=]
+    \setupnote[cNote][before=,after=]
+    \setupnote[dNote][before=,after=]
+
+    \def\ANote#1#2{#1\aNote{#1] #2}}
+    \def\BNote#1#2{#1\bNote{#1] #2}}
+    \def\CNote#1#2{#1\cNote{#1] #2}}
+    \def\DNote#1#2{#1\dNote{#1] #2}}
+
+    \setupalign[hz, hanging]
+    \setuptolerance[strict]
+
+\setupnotes[spacebefore=4*line]
+\setupnotes[spaceinbetween=]
+
+    % \setuplinenumbering[step=5, location=inright, distance=1ex,align=center, width=0.5em]
+
+    \definemargindata[Stephanus][location=inner, distance=2ex,style=\em]
+
+    % \setupbodyfont[mainface,7.8pt]
+
+    \start\fr % some text in French
+    Définir un `apparat critique' et le mettre en page avec un traitement de texte
+    courant est un véritable casse-tête. LaTeX et ConTeXt offrent des outils
+    d'automatisation encore assez mal connus dans la communauté des éditeurs,
+    notamment dans l'édition savante, pour la collation et la comparaison de textes
+    médiévaux.
+    \stop
+
+    \blank
+
+    \start\en % some text in English
+    {\em It is not very easy to define a `criticus apparatus' with some current tools
+    (like Microsoft Office Word or LibreOffice). Maybe \ConTeXt offers some ways that
+    seem easier, in order to improve clear and precise printing.}
+    \stop
+
+    \dorecurse{4}{
+        \startmixedcolumns[n=2, balance=yes]
+            \Stephanus{1a} Ὁμώνυμα λέγεται ὧν ὄνομα μόνον κοινόν, ὁ δὲ κατὰ τοὔνομα
+            λόγος τῆς οὐσίας ἕτερος, οἷον ζῷον ὅ τε ἄνθρωπος καὶ τὸ γεγραμμένον•
+            τούτων γὰρ ὄνομα μόνον κοινόν, ὁ δὲ κατὰ τοὔνομα λόγος τῆς οὐσίας ἕτερος•
+            ἐὰν γὰρ ἀποδιδῷ τις τί ἐστιν αὐτῶν ἑκατέρῳ τὸ ζῴῳ εἶναι, ἴδιον ἑκατέρου
+            λόγον ἀποδώσει. συνώνυμα δὲ λέγεται ὧν τό τε ὄνομα κοινὸν καὶ ὁ κατὰ
+            τοὔνομα λόγος τῆς οὐσίας ὁ αὐτός, οἷον ζῷον ὅ τε ἄνθρωπος καὶ ὁ βοῦς•
+            τούτων γὰρ ἑκάτερον κοινῷ ὀνόματι προσαγορεύεται ζῷον, καὶ ὁ λόγος δὲ τῆς
+            οὐσίας ὁ αὐτός• ἐὰν γὰρ ἀποδιδῷ τις τὸν ἑκατέρου λόγον τί ἐστιν αὐτῶν
+            ἑκατέρῳ τὸ ζῴῳ εἶναι, τὸν αὐτὸν λόγον ἀποδώσει.
+            \column
+            \startlinenumbering[continue]
+                Aequivoca dicuntur quorum \CNote{nomen}{first note} solum commune
+                est, secundum nomen vero \ANote{substantiae}{second note}
+                \ANote{ratio}{second note} diversa, ut animal \DNote{homo}{third
+                note} et quod pingitur. Horum enim solum nomen commune est, secundum
+                nomen vero substantiae ratio diversa; si enim quis assignet quid est
+                utrique eorum quo sint animalia, propriam assignabit utriusque
+                rationem. Univoca vero dicuntur quorum et nomen commune est et
+                secundum nomen eadem substantiae ratio, ut animal homo atque bos.
+            \stoplinenumbering
+        \stopmixedcolumns
+    }
+
+\stoptext
+

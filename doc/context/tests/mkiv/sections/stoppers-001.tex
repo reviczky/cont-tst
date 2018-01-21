@@ -1,0 +1,22 @@
+% posted by ws on list
+
+\defineprocessor[dostopper][right=.]
+\defineprocessor[nostopper][right=]
+
+\defineconversionset[stopperconversionyes][][dostopper->n]
+\defineconversionset[stopperconversionnop][][nostopper->n]
+
+\setuphead[chapter][sectionconversionset=stopperconversionyes]
+
+%\setupreferencestructureprefix[chapter][default][prefixconversionset=stopperconversionnop]
+\setupreferencestructureprefix[default][prefixconversionset=stopperconversionnop]
+
+\starttext
+
+    \chapter[one]{First heading}
+
+    \input knuth
+
+    In \in{chapter}[one] we learn a lot.
+
+\stoptext

@@ -1,0 +1,27 @@
+\definetype[TeXcodeA][option=TEX]
+\definetype[TeXcodeB][option=TEX,compact=all]
+\definetype[TeXcodeC][option=TEX,compact=absolute]
+
+\def\argA#1{\TeXcodeA{{#1}}}
+\def\argB#1{\TeXcodeB{{#1}}}
+\def\argC#1{\TeXcodeC{{#1}}}
+
+\starttext
+
+\startlines
+\argA     {\em\de Textsatzsystem}
+\argB     {\em\de Textsatzsystem}
+\argC     {\em\de Textsatzsystem}
+\TeXcodeA{{\em\de Textsatzsystem}}
+\TeXcodeB{{\em\de Textsatzsystem}}
+\TeXcodeC{{\em\de Textsatzsystem}}
+\blank
+\argA     {\em \de Textsatzsystem}
+\argB     {\em \de Textsatzsystem}
+\argC     {\em \de Textsatzsystem}
+\TeXcodeA{{\em \de Textsatzsystem}}
+\TeXcodeB{{\em \de Textsatzsystem}}
+\TeXcodeC{{\em \de Textsatzsystem}}
+\stoplines
+
+\stoptext

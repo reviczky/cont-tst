@@ -1,0 +1,38 @@
+% example by HvdM
+
+\startxmlsetups xml:testsetups
+    \xmlsetsetup{test}{test|a|b|c}{xml:*}
+\stopxmlsetups
+
+\xmlregistersetup{xml:testsetups}
+
+\startxmlsetups xml:test
+    \blank\relax
+    [\ignorespaces\xmlflush{#1}\removeunwantedspaces]
+    \blank\relax
+    [\xmlstrip{#1}{.}\xmlflush{#1}]
+    \blank\relax
+    [\xmlstripnolines{#1}{.}\xmlflush{#1}]
+    \blank\relax
+    [\xmlstripanywhere{#1}{.}\xmlflush{#1}]
+    \blank\relax
+\stopxmlsetups
+
+\startxmlsetups xml:a
+    (\xmlflush{#1})
+    (\xmlstripanywhere{#1}{.}\xmlflush{#1})
+\stopxmlsetups
+
+\startxmlsetups xml:b
+    (\xmlflush{#1})
+    (\xmlstripanywhere{#1}{.}\xmlflush{#1})
+\stopxmlsetups
+
+\startxmlsetups xml:c
+    (\xmlflush{#1})
+    (\xmlstripanywhere{#1}{.}\xmlflush{#1})
+\stopxmlsetups
+
+\starttext
+    \xmlprocessfile{test}{whatever-007.xml}{}
+\stoptext

@@ -1,0 +1,16 @@
+\startMPpage
+    def drawit(expr p, c) =
+        drawarrow p withcolor c ;
+        drawcontrollines p ;
+        drawcontrolpoints p ;
+        drawpoints p ;
+        drawpointlabels p ;
+    enddef ;
+    drawit(( origin ..  (100,0) {up}    .. cycle)  shifted (  0,  0),red) ;
+    drawit(( origin ..  (100,0) {down}  .. cycle)  shifted (150,  0),green) ;
+    drawit(( origin ..  (100,0)         .. cycle)  shifted (300,  0),blue) ;
+    drawit(((origin ..  (100,0) {down}) .. cycle)  shifted (  0,150),magenta) ;
+    drawit(( origin ..  (100,0) {down}  .. origin) shifted (150,150),cyan) ;
+    drawit(( origin .. ((100,0) {down}) .. cycle)  shifted (300,150),yellow) ;
+    currentpicture := currentpicture xsized 10cm ;
+\stopMPpage

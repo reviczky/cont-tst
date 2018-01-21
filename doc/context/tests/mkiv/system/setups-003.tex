@@ -1,0 +1,41 @@
+\startsetups foo:before
+    <foo>{\bf Foo}
+\stopsetups
+
+\startsetups bar:before
+    <bar>\define\Gnat{{\bf Bar}}
+\stopsetups
+
+\startsetups gnu:before
+    <gnu>\define[1]\Gnat{{\bf Gnu##1}}
+\stopsetups
+
+\startsetups foo:after
+    </foo>
+\stopsetups
+
+\startsetups bar:after
+    </bar>
+\stopsetups
+
+\startsetups gnu:after
+    </gnu>
+\stopsetups
+
+\definestartstop[Foo][before=\directsetup{foo:before},after=\directsetup{foo:after}]
+\definestartstop[Bar][before=\directsetup{bar:before},after=\directsetup{bar:after}]
+\definestartstop[Gnu][before=\directsetup{gnu:before},after=\directsetup{gnu:after}]
+
+\starttext
+    \startFoo
+        Gnat
+    \stopFoo
+    \par
+    \startBar
+        \Gnat Gnat
+    \stopBar
+    \par
+    \startGnu
+        \Gnat{Gnat}
+    \stopGnu
+\stoptext

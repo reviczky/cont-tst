@@ -1,0 +1,20 @@
+\setupbodyfont
+  [pagella]
+
+\setupnote
+  [footnote]
+  [paragraph=yes]
+
+\setupnotation
+  [footnote]
+  [alternative=serried,
+   width=broad,
+   distance=.5em,
+   display=no]
+
+\starttext
+    \dorecurse{500}{text text text\footnote{note} }
+\stoptext
+
+
+

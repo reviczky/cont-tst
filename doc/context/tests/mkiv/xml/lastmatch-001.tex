@@ -1,0 +1,76 @@
+\startbuffer[test]
+<something>
+    <crap>
+        <crapa> <crapb> <crapc> <crapd> <crape>
+            done 1
+        </crape> </crapd> </crapc> </crapb> </crapa>
+    </crap>
+    <crap>
+        <crapa> <crapb> <crapc> <crapd> <crape>
+            done 2
+        </crape> </crapd> </crapc> </crapb> </crapa>
+    </crap>
+    <crap>
+        <crapa> <crapb> <crapc> <crapd> <crape>
+            done 3
+        </crape> </crapd> </crapc> </crapb> </crapa>
+    </crap>
+</something>
+\stopbuffer
+
+\startxmlsetups xml:mysetups
+    \xmlsetsetup{#1}{*}{xml:*}
+\stopxmlsetups
+
+\xmlregistersetup{xml:mysetups}
+
+\def\HowOften{10000}
+
+\startxmlsetups xml:something
+    \testfeatureonce\HowOften{
+        \xmldoif{#1}{/crap/crapa/crapb/crapc/crapd/crape}{
+        }
+    }
+    \type {\xmldoif{...}{...}} : \elapsedtime\par
+    \testfeatureonce\HowOften{
+        \xmlfirst{#1}{/crap/crapa/crapb/crapc/crapd/crape}
+    }
+    \type {\xmlfirst{...}{...}} : \elapsedtime\par
+    \testfeatureonce\HowOften{
+        \xmldoif{#1}{/crap/crapa/crapb/crapc/crapd/crape}{
+            \xmlfirst{#1}{/crap/crapa/crapb/crapc/crapd/crape}
+        }
+    }
+    \type {\xmldoif{...}{...} + \xmlfirst{...}{...}} : \elapsedtime\par
+    \testfeatureonce\HowOften{
+        \xmldoif{#1}{/crap/crapa/crapb/crapc/crapd/crape}{
+            \xmlfirst{#1}{last-match::}
+        }
+    }
+    \type {\xmldoif{...}{...} + \xmlfirst{...}{last-match::}} : \elapsedtime\par
+    \testfeatureonce\HowOften{
+        \xmldoif{#1}{/crap/crapa/crapb/crapc/crapd/crape}{
+            \xmlpushmatch
+            \xmlfirst{#1}{last-match::}
+            \xmlpopmatch
+        }
+    }
+    \type {<<\xmldoif{...}{...} + \xmlfirst{...}{last-match::}>>} : \elapsedtime\par
+    \testfeatureonce\HowOften{
+        \xmldoif{#1}{/crap/crapa/crapb/crapc/crapd/crape}{
+            \xmlpushmatch
+            \xmlfirst{#1}{=}
+            \xmlpopmatch
+        }
+    }
+    \type {<<\xmldoif{...}{...} + \xmlfirst{...}{=}>>} : \elapsedtime\par
+    \xmldoif{#1}{/crap/crapa/crapb/crapc/crapd/crape}{
+        \xmlpushmatch
+        \xmlall{#1}{=/text()}
+        \xmlpopmatch
+    }
+\stopxmlsetups
+
+\starttext
+    \xmlprocessbuffer{main}{test}{}
+\stoptext

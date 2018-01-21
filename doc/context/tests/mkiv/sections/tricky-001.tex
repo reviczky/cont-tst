@@ -1,0 +1,35 @@
+% Wolfgangs challenge:
+
+\defineresetset[noreset][][0]
+
+% Method 1:
+
+% \defineresetset[default][][0]
+
+% Method 2:
+
+% \setuphead[subsection][sectionresetset=noreset]
+
+% Method 3:
+
+% \setuphead[sectionresetset=noreset]
+
+\starttext
+
+    \chapter{First Chapter}
+        \section{First Section}
+            \subsection{First SubSection}
+            \subsection{Second SubSection}
+        \section{Second Section}
+            \subsection{First SubSection}
+            \subsection{Second SubSection}
+
+    \chapter{Second Chapter}
+        \section{Second Section}
+            \subsection{First SubSection}
+            \subsection{Second SubSection}
+        \section{Second Section}
+            \subsection{First SubSection}
+            \subsection{Second SubSection}
+
+\stoptext

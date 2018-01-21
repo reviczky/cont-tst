@@ -1,0 +1,24 @@
+% post by WS on dev list
+
+\setuppagenumbering
+  [alternative=doublesided]
+
+\setuphead
+  [chapter]
+  [page={yes,right,blank}]
+
+\setupbackgrounds
+  [page]
+  [background=color,
+   backgroundcolor=green]
+
+\starttext
+
+    \dorecurse {2} {
+        \chapter{Chapter \convertnumber{word}{#1}}
+        \dorecurse {10} {
+            \input knuth\par
+        }
+    }
+
+\stoptext

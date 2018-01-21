@@ -1,0 +1,40 @@
+\starttext
+
+    \registerpattern[demo]{It \darkred Works!}
+
+    \framed[offset=overlay]{\applypattern[demo][width=7cm,height=4cm]}
+
+    \blank
+
+    \registerpattern[name=more,hoffset=0bp,voffset=0pt]{\externalfigure[cow.pdf][width=1cm]}
+
+    \framed[offset=overlay]{\applypattern[name=more,width=7cm,height=4cm]}
+
+    \blank
+
+    \registerpattern[name=more,hoffset=auto,voffset=auto]{\externalfigure[cow.pdf][width=1cm]}
+
+    \framed[offset=overlay]{\applypattern[name=more,width=7cm,height=4cm]}
+
+    \blank
+
+    \registerpattern[name=more,hoffset=-auto,voffset=-auto]{\externalfigure[cow.pdf][width=1cm]}
+
+    \framed[offset=overlay]{\applypattern[name=more,width=7cm,height=4cm]}
+
+    \page
+
+    \registerpattern
+        [name=more]
+        {\startMPcode
+            fill fullcircle scaled 1cm
+                withshademethod "circular"
+                withshadecolors ("red","green")
+                withtransparency ("normal",0.5)
+            ;
+         \stopMPcode}
+
+    \framed[offset=overlay]{\applypattern[name=more,width=7cm,height=4cm]}
+
+\stoptext
+

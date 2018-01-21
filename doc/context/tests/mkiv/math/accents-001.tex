@@ -1,0 +1,15 @@
+\starttext
+
+    $ \hat{H}  \ruledhbox{$\widehat{H}$}  \ruledhbox{$H$}  \widehat{H} $
+
+    \definemathoverextensible [top] [hoed]  ["FE302]
+    \definemathoverextensible [top] [slang] ["FE303]
+
+    $ \hoed{H}  \ruledhbox{$\hoed{\tf H}$}  \slang{H} $
+
+    \definemathaccents   [myaccents] [color=darkred]
+    \definemathtopaccent [myaccents] [mywidehat] ["0302]
+
+    $ \hat{H}  \widehat{H}  \mywidehat{H} $
+
+\stoptext

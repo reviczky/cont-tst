@@ -1,0 +1,90 @@
+% this is experimental code ... used for development
+
+\doifnotmode{atpragma}{\endinput}
+
+\setuplayout[width=middle,height=middle,backspace=1cm,grid=yes]
+\setupalign[verytolerant,stretch]
+
+\showmakeup
+
+\definepagegrid[test]
+
+\starttext \dontcomplain
+
+\showboxes
+
+test \page
+
+\startpagegrid[test]
+%     \placefigure[fixd:15*4]{}{\externalfigure[mill.png][width=.25\hsize]}
+    \placefigure[fixd:10*3]{A1}{\externalfigure[hacker.jpg][width=.5\hsize]}
+    \placefigure[fixd:10*5]{A2}{\externalfigure[hacker.jpg][width=.5\hsize]}
+    \input ward\par
+    \placefigure[fixd:10*3]{B}{\externalfigure[hacker.jpg][width=.5\hsize]}
+    \placefigure[fixd:10*7]{C}{\externalfigure[hacker.jpg][width=.5\hsize]}
+    \placefigure[fixd:20*6]{D}{\externalfigure[hacker.jpg][width=.5\hsize]}
+%         \placefigure[top]{}{\externalfigure[mill.png][width=.25\hsize]}
+%         \placefigure[top]{}{\externalfigure[mill.png][width=.25\hsize]}
+%         \placefigure[top]{}{\externalfigure[mill.png][width=.25\hsize]}
+    \dorecurse{10}{
+  %     \placefigure[tblr]{}{\externalfigure[mill.png][width=.25\hsize]}
+%         \placefigure[fxtb]{}{\externalfigure[mill.png][width=.25\hsize]}
+%         \placefigure[top]{}{\externalfigure[mill.png][width=.25\hsize]}
+        \placefigure[force]{}{\externalfigure[mill.png][width=.25\hsize]}
+%         \placefigure[here]{}{\externalfigure[mill.png][width=.25\hsize]}
+    \input waltham\par
+    }
+    \dorecurse{15}{
+        \dontleavehmode{\bf[#1]} \input waltham\par
+    }
+\stoppagegrid
+
+test
+
+% \startpagegrid[n=4]
+%     \setpagegrid[c=2,r=16]{\externalfigure[cow.pdf][width=2\hsize]}
+%     \input ward\par
+%     \input ward\par
+%     \placefigure{}{\externalfigure[mill.png][width=.25\hsize]}
+%     \placefigure{}{\externalfigure[mill.png][width=.5\hsize]}
+%     \input ward\par
+%     \placefigure{}{\externalfigure[mill.png][width=.5\hsize]}
+%     \placefigure{}{\externalfigure[mill.png][width=.5\hsize]}
+%     \input ward\par
+%     \dorecurse{100}{
+%         \placefigure{x.#1}{\externalfigure[mill.png][width=.5\hsize]}
+%         \input ward\par
+%     }
+% \stoppagegrid
+
+% \startpagegrid[n=4]
+%     \reservepagegrid[c=1,r=1,nc=2,nr=1]
+%     \reservepagegrid[c=2,r=3,nc=2,nr=4]
+%     \reservepagegrid[c=1,r=6,nc=1,nr=1]
+%     \reservepagegrid[c=3,r=8,nc=1,nr=2]
+%     \setpagegrid[c=2,r=16]{\externalfigure[cow.pdf][width=2\hsize]}
+%     \par
+%     \dorecurse{10}{
+%         \input ward\par
+%         \input ward\par
+%         \par
+%         \placefigure{}{\externalfigure[mill.png][width=.5\hsize]}
+%       % \setpagegrid{\externalfigure[cow.pdf][width=.9\hsize]}
+%       % \setpagegrid{\externalfigure[cow.pdf][width=.5\hsize]}
+%       % \setpagegrid{\externalfigure[cow.pdf][width=.5\hsize]}
+%       % \setpagegrid{\externalfigure[cow.pdf][width=.5\hsize]}
+%         \placefigure{}{\externalfigure[cow.pdf][width=.9\hsize]}
+%         \placefigure{}{\externalfigure[cow.pdf][width=.5\hsize]}
+%         \placefigure{}{\externalfigure[cow.pdf][width=.5\hsize]}
+%         \placefigure{}{\externalfigure[cow.pdf][width=.5\hsize]}
+%         \input ward\par
+%         \placefigure{}{\externalfigure[cow.pdf][width=.5\hsize]}
+%         \input ward\par
+%         \input ward\par
+%         \placefigure{}{\externalfigure[cow.pdf][width=\hsize]}
+%         \input ward\par
+%         \input ward\par
+%         }
+% \stoppagegrid
+
+\stoptext

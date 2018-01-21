@@ -1,0 +1,35 @@
+\setupbodyfont[xits]
+% \setupbodyfont[pagella]
+
+% \enabletrackers[math.variants]
+
+\starttexdefinition ShowVariant#1
+    \dontleavehmode
+    {\tttf #1: }
+    \mathematics {
+        \utfchar{#1} =
+        \utfchar{#1}\utfchar{"FE00} =
+        \vsone{\utfchar{#1}}
+    }
+    \par
+\stoptexdefinition
+
+\starttext
+
+    \type{<char><"FE00>:}\blank
+
+    \ShowVariant{"2229} \ShowVariant{"222A}
+    \ShowVariant{"2268} \ShowVariant{"2269}
+    \ShowVariant{"2272} \ShowVariant{"2273}
+    \ShowVariant{"228A} \ShowVariant{"228B}
+    \ShowVariant{"2293} \ShowVariant{"2294}
+    \ShowVariant{"2295}
+    \ShowVariant{"2297}
+    \ShowVariant{"229C}
+    \ShowVariant{"22DA} \ShowVariant{"22DB}
+    \ShowVariant{"2A3C} \ShowVariant{"2A3D}
+    \ShowVariant{"2A9D} \ShowVariant{"2A9E}
+    \ShowVariant{"2AAC} \ShowVariant{"2AAD}
+    \ShowVariant{"2ACB} \ShowVariant{"2ACC}
+
+\stoptext

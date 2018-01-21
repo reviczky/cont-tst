@@ -1,0 +1,34 @@
+\showglyphs
+
+\startbuffer
+\startTEXpage
+\dontleavehmode
+\startoverlay
+  {\strut$\red   f'$}
+  {\strut$\green f^{'}$}
+\stopoverlay
+\startoverlay
+  {\strut$\red   f'x$}
+  {\strut$\green f^{'}x$}
+\stopoverlay
+\startoverlay
+  {\strut$\red   f'(x)$}
+  {\strut$\green f^{'}(x)$}
+\stopoverlay
+\startoverlay
+  {\strut$\red   (f')$}
+  {\strut$\green (f^{'})$}
+\stopoverlay
+\stopTEXpage
+\stopbuffer
+
+\starttext
+
+% \enablemode[pxmath]
+
+                         \getbuffer
+\setupbodyfont[stixtwo]  \getbuffer
+\setupbodyfont[lucidaot] \getbuffer
+\setupbodyfont[pagella]  \getbuffer
+
+\stoptext

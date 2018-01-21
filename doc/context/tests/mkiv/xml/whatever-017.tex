@@ -1,0 +1,56 @@
+% \enabletrackers[structures.processors,lxml.setups]
+
+\startbuffer[example]
+<subsection>
+    <title>1 One &amp; two % three four</title>
+    <subtitle>2 One &amp; two % three four</subtitle>
+    <p>One &amp; two % three four</p>
+
+    <title>3 One &amp; <b>two</b> % three <b>four</b></title>
+    <subtitle>4 One &amp; <b>two</b> % three <b>four</b></subtitle>
+    <p>One &amp; <b>two</b> % three <b>four</b></p>
+</subsection>
+\stopbuffer
+
+\startxmlsetups xml:mysetups
+    \xmlsetsetup{#1}{*}{xml:*}
+\stopxmlsetups
+
+\xmlregistersetup{xml:mysetups}
+
+    \startxmlsetups ctx:mysetups
+        \xmlsetup{#1}{xml:mysetups}
+        \xmlsetsetup{#1}{ctx:sectionentry}{ctx:sectionentry}
+        \xmlflush{#1}
+    \stopxmlsetups
+
+    \startxmlsetups ctx:sectionentry
+        \xmlflush{#1}
+    \stopxmlsetups
+
+    \setupsection[section]   [expansion=xml,xmlsetup=ctx:mysetups]
+    \setupsection[subsection][expansion=yes,xmlsetup=ctx:mysetups]
+
+\startxmlsetups xml:subsection
+    \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:title
+    \subsection{\xmlflush{#1}}
+\stopxmlsetups
+
+\startxmlsetups xml:subtitle
+    \subsubsection{\xmlflush{#1}}
+\stopxmlsetups
+
+\startxmlsetups xml:p
+    \xmlflush{#1}\par
+\stopxmlsetups
+
+\startxmlsetups xml:b
+    {\bf \xmlflush{#1}}
+\stopxmlsetups
+
+\starttext
+    \xmlprocessbuffer{main}{example}{}
+\stoptext

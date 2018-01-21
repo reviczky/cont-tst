@@ -1,0 +1,51 @@
+\startluacode
+
+    local kerns = {
+        ["TeXGyrePagellaMath-Regular"] = {
+            [0x1D449] = { bottomright = { { kern = -200 } } }, -- math italic V
+            [0x1D44A] = { bottomright = { { kern = -100 } } }, -- math italic W
+        }
+    }
+
+    local function addkerns(tfmdata)
+        if tfmdata.mathparameters then
+            local kerns = kerns[tfmdata.properties.fontname]
+            if kerns then
+                local characters = tfmdata.characters
+                for unicode, specification in pairs(kerns) do
+                    local character = characters[unicode]
+                    if character and not character.mathkerns then
+                        character.mathkerns = specification
+                    end
+                end
+            end
+        end
+    end
+
+    fonts.handlers.otf.features.register {
+        name         = "mathkerns",
+        description  = "additional math kerns",
+        default      = true,
+        initializers = {
+            position = 1,
+            base     = addkerns,
+            node     = addkerns,
+        }
+    }
+
+\stopluacode
+
+\setupbodyfont[pagella] \showglyphs
+
+\starttext
+
+    Don't use this method in \ConTeXt\ as we have
+    other mechanisms for it!
+
+    \startformula V^i_j = W^i_j \stopformula
+
+    \page
+
+    \typefile{kerns-002.tex}
+
+\stoptext

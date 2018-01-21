@@ -1,0 +1,26 @@
+\setupalign[r2l]
+\setuppapersize[A4][A2,landscape]
+\setuplayout   [location=middle]
+
+\setupnote[footnote][rule={on,right}]
+
+% \setupnotedefinition[footnote][location=left,width=1cm] % !!!
+% \setupnotedefinition[footnote][location=left,command={\smash[w]}] % !!!
+% \setupnotedefinition[footnote][location=left] % !!!
+
+\definedescription[testa][location=left]
+\definedescription[testb][location=right]
+\definedescription[testc][location=inleft]
+\definedescription[testd][location=inright]
+
+\showframe
+
+\starttext
+    \starttesta{a} \input ward \stoptesta
+    \starttestb{b} \input ward \stoptestb
+    \starttestc{c} \input ward \stoptestc
+    \starttestd{d} \input ward \stoptestd
+
+
+    Text\footnote{Note}
+\stoptext

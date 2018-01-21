@@ -1,0 +1,14 @@
+% for ton ... mb-mp collapsing mess
+
+\showframe
+
+\tracesidefloatstrue
+
+\starttext
+
+\setupfloats[step=big]    \dorecurse{10}{\placefigure[left,+line]{}{\externalfigure[dummy][height=5.0\lineheight]} big    \flushsidefloats} \page
+\setupfloats[step=medium] \dorecurse{10}{\placefigure[left,+line]{}{\externalfigure[dummy][height=5.0\lineheight]} medium \flushsidefloats} \page
+\setupfloats[step=small]  \dorecurse{10}{\placefigure[left,+line]{}{\externalfigure[dummy][height=5.0\lineheight]} small  \flushsidefloats} \page
+\setupfloats[step=depth]  \dorecurse{10}{\placefigure[left,+line]{}{\externalfigure[dummy][height=5.0\lineheight]} depth  \flushsidefloats} \page
+
+\stoptext

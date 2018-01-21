@@ -1,0 +1,34 @@
+\usemodule[art-01,fnt-20]
+
+\enabletrackers[otf.bugs]
+
+\starttext
+
+\def\sample{نَسْتَعِينُ وَلَا الضَّالِّينَ}
+% \def\sample{نَسْتَعِينُ}
+% \def\sample{\Uchar"0643\Uchar"0644\Uchar"0651\Uchar"0627\Uchar"064E}
+% \def\sample{لرَّحْمَـٰنِ}
+% \def\sample{حْمَن}
+
+\setvariables
+  [otftracker]
+  [font=file:uthmantn1ver10.ttf,
+   size=24pt,
+   features=arabic,
+   direction=-1,
+   title=Feature Check,
+   sample=\sample]
+
+\page
+
+\setvariables
+  [otftracker]
+  [font=file:arabtype,
+   size=24pt,
+   features=arabic,
+   direction=-1,
+   title=Feature Check,
+   sample=\sample]
+
+\stoptext
+

@@ -1,0 +1,13 @@
+\setupbackend[export=yes]
+
+\definefontsynonym [Dingbats] [name:dingbats] [features=dingbats]
+
+\starttext
+
+Hello world!
+(\getnamedglyphdirect{Dingbats}{a79})
+(\getnamedglyphdirect{Dingbats*dingbats}{a79})
+(\getglyphdirect{Dingbats*dingbats}{\number"2756})
+({\definedfont[Dingbats]\char"2756})
+
+\stoptext

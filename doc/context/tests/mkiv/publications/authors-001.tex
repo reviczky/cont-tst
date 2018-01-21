@@ -1,0 +1,57 @@
+\startbuffer[mybib]
+
+@book{something-1,
+    author = { Foo Bar von Something },
+    title  = { Whatever 1 },
+    year   = { 2015 }
+}
+
+@book{something-2,
+    author = { Foo Bar von Something and John Doe },
+    title  = { Whatever 2 },
+    year   = { 2015 }
+}
+
+@book{something-3,
+    author = { von Something, Foo Bar and John Doe },
+    title  = { Whatever 3 },
+    year   = { 2015 }
+}
+
+@book{something-4,
+    author = { {}, von Something, Foo Bar and John Doe },
+    title  = { Whatever 4 },
+    year   = { 2015 }
+}
+
+@book{something-5,
+    author = { {}, von Something, {}, Foo Bar and John Doe and Hans Hagen },
+    title  = { Whatever 5 },
+    year   = { 2015 }
+}
+
+@book{something-6,
+    author = { {}, {von Something}, {}, Foo Bar, FoBa and John Doe },
+    title  = { Whatever 6 },
+    year   = { 2015 }
+}
+
+\stopbuffer
+
+\usemodule[art-01]
+
+\usebtxdataset[mybib.buffer]
+
+\starttext
+
+    \showbtxdatasetcompleteness[standard]
+
+    \page
+
+    \showbtxdatasetauthors[standard]
+
+    \page
+
+    \placebtxrendering[method=dataset]
+
+\stoptext

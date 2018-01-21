@@ -1,0 +1,19 @@
+% from/to list:
+
+\startMPcalculation
+    path p ; p = (0,0) -- (PaperWidth,.5PaperHeight);
+    path q ; q = (0,PaperHeight) -- (PaperWidth,0);
+
+    passvariable("myheight",ypart (p intersectionpoint q)) ;
+\stopMPcalculation
+
+\setuplayout
+  [topspace=0pt,
+   header=0pt,
+   height=\MPrunvar{myheight}bp]
+
+\showgrid
+
+\starttext
+    passed value :\MPrunvar{myheight}
+\stoptext

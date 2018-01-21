@@ -1,0 +1,89 @@
+\setupbodyfont[pagella]
+
+\starttext
+
+\enabletrackers[typesetters.characteralign]
+
+% \the\fontcharwd\font`,\quad\the\fontcharwd\font`.\quad\setbox0\hbox{\punctuationspace}\the\wd0\par
+% \dostepwiserecurse{0}{9}{1}{\setbox0\hbox{\recurselevel}\the\wd0\quad}\par
+
+\starttabulate[|l|g{,}|r|]
+    \NC test \NC 1.234.456,99 \NC \NC test \NR
+    \NC test \NC   234.456,9  \NC \NC test \NR
+    \NC test \NC   234.456    \NC \NC test \NR
+    \NC test \NC       456    \NC \NC test \NR
+    \NC test \NC \bf default  \NC \NC test \NR
+\stoptabulate
+
+\starttabulate[|l|g{!}|r|]
+    \NC test \NC 1.234.456!99 \NC \NC test \NR
+    \NC test \NC   234.456!9  \NC \NC test \NR
+    \NC test \NC   234.456    \NC \NC test \NR
+    \NC test \NC       456    \NC \NC test \NR
+\stoptabulate
+
+\starttabulate[|l|rg{,}|]
+    \NC test \NC 1.234.456,99 \NC \NR
+    \NC test \NC   234.456,9  \NC \NR
+    \NC test \NC          ,9  \NC \NR
+    \NC test \NC   234.456,   \NC \NR
+    \NC test \NC   234.456    \NC \NR
+    \NC test \NC       456    \NC \NR
+    \NC test \NC \bf right    \NC \NR
+\stoptabulate
+
+\starttabulate[|l|lg{,}|]
+    \NC test \NC -1.234.456,99 \NC \NR
+    \NC test \NC +1.234.456,99 \NC \NR
+    \NC test \NC  1.234.456,99 \NC \NR
+    \NC test \NC    234.456,9  \NC \NR
+    \NC test \NC    234.456    \NC \NR
+    \NC test \NC        456    \NC \NR
+    \NC test \NC \bf left      \NC \NR
+\stoptabulate
+
+\starttabulate[|l|cg{,}|cg{.}|]
+    \NC test \NC 1.234.456,99 \NC 1,234,456.99 \NR
+    \NC test \NC   234.456,9  \NC   234,456.9  \NR
+    \NC test \NC   234.456    \NC   234,456    \NR
+    \NC test \NC       456    \NC       456    \NR
+    \NC test \NC \bf center   \NC \bf center   \NR
+\stoptabulate
+
+\starttabulate[|l|cg{,}w(10em)|lg{,}|]
+    \NC test \NC €                      1,1     \NC                1.234.456,99 \NC \NR
+    \NC test \NC €                     11,11    \NC                  234.456,9  \NC \NR
+    \NC test \NC € 12\punctuationspace111,11    \NC  234\punctuationspace456,9  \NC \NR
+    \NC test \NC €                 12 111,11    \NC                  234 456,9  \NC \NR
+    \NC test \NC €              1.234.451,22222 \NC                  234.456    \NC \NR
+    \NC test \NC €                234.451,2     \NC                      456    \NC \NR
+    \NC test \NC €                234.451       \NC                             \NC \NR
+    \NC test \NC €                    451       \NC                             \NC \NR
+    \NC test \NC \bf center+width               \NC \bf center                  \NC \NR
+\stoptabulate
+
+% \page
+
+\bTABLE
+    \bTR \bTD test \eTD \bTD[aligncharacter=yes] €                      1,1     \eTD \bTD[aligncharacter=yes]                1.234.456,99 \eTD \eTR
+    \bTR \bTD test \eTD \bTD[aligncharacter=yes] €                     11,11    \eTD \bTD[aligncharacter=yes]                  234.456,9  \eTD \eTR
+    \bTR \bTD test \eTD \bTD[aligncharacter=yes] € 12\punctuationspace111,11    \eTD \bTD[aligncharacter=yes]  234\punctuationspace456,9  \eTD \eTR
+    \bTR \bTD test \eTD \bTD[aligncharacter=yes] €                 12 111,11    \eTD \bTD[aligncharacter=yes]                  234 456,9  \eTD \eTR
+    \bTR \bTD test \eTD \bTD[aligncharacter=yes] €              1.234.451,22222 \eTD \bTD[aligncharacter=yes]                  234.456    \eTD \eTR
+    \bTR \bTD test \eTD \bTD[aligncharacter=yes] €                234.451,2     \eTD \bTD[aligncharacter=yes]                      456    \eTD \eTR
+    \bTR \bTD test \eTD \bTD[aligncharacter=yes] €                234.451       \eTD \bTD[aligncharacter=yes]                             \eTD \eTR
+    \bTR \bTD test \eTD \bTD[aligncharacter=yes] €                    451       \eTD \bTD[aligncharacter=yes]                             \eTD \eTR
+    \bTR \bTD test \eTD \bTD                     \bf center+width               \eTD \bTD                     \bf center                  \eTD \eTR
+\eTABLE
+
+\startcharacteralign
+    \checkcharacteralign{123.456,78}
+    \blank[small]
+    \checkcharacteralign{456}
+    \blank[small]
+    \checkcharacteralign{23.456}
+    \blank[small]
+    \checkcharacteralign{78,9}
+\stopcharacteralign
+
+\stoptext

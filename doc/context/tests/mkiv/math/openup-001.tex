@@ -1,0 +1,43 @@
+\enabletrackers[math.openedup]
+
+\starttext
+
+    \dorecurse{10}{\dorecurse{#1}{whatever }}
+
+    \startitemize[packed]
+        \startitem whatever \openedupimath{\frac{1}{2}} whatever
+        \startitem whatever \openedupimath{\frac{1}{2}} whatever
+        \startitem whatever \openedupimath{\frac{1}{2}} whatever
+    \stopitemize
+    \startitemize[packed,columns]
+        \startitem whatever \openedupimath{\frac{1}{2}} whatever
+        \startitem whatever \openedupimath{\frac{1}{2}} whatever
+        \startitem whatever \openedupimath{\frac{1}{2}} whatever
+        \startitem whatever \openedupimath{\frac{1}{2}} whatever
+        \startitem whatever \openedupimath{\frac{1}{2}} whatever
+        \startitem whatever \openedupimath{\frac{1}{2}} whatever
+    \stopitemize
+
+    \dorecurse{5}{\dorecurse{#1}{whatever }\openedupimath{\frac{1}{2}} }
+
+    \startitemize[packed,columns]
+        \startitem whatever \openedupimath{1+2} whatever
+        \startitem whatever \openedupimath{1+2} whatever
+        \startitem whatever \openedupimath{\frac{1}{2}} whatever
+        \startitem whatever \openedupimath{1+2} whatever
+        \startitem whatever \openedupimath{1+2} whatever
+    \stopitemize
+
+    \dorecurse{5}{\dorecurse{#1}{whatever }\openedupimath{1+2} }
+
+    \startitemize[packed]
+        \startitem whatever \openedupimath{\frac{1}{2}} whatever
+        \startitem whatever \openedupimath{\frac{1}{2}} whatever
+        \startitem whatever \openedupimath{\frac{1}{2}} whatever
+    \stopitemize
+
+    \dorecurse{10}{whatever }
+    \dorecurse {5}{\dorecurse{#1}{whatever }\openedupimath{\frac{1}{2}} }
+    \dorecurse{10}{whatever }
+
+\stoptext

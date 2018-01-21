@@ -1,0 +1,23 @@
+\setuppapersize[A7] \setuplayout[middle]
+
+\showframe \showfontexpansion % \showfontkerns
+
+\starttext
+
+    \definefont[testfont][file:lmroman10-regular*default,quality @ 12pt]
+
+  % normally \setupalign[hz|fullhz] % 3 2 (no 1 support)
+
+    \testfont \normaladjustspacing 0 0: \input ward \page % nothing
+    \testfont \normaladjustspacing 1 1: \input ward \page % g k (only stretch/shrink)
+    \testfont \normaladjustspacing 2 2: \input ward \page % g k (also in par builder)
+    \testfont \normaladjustspacing 3 3: \input ward \page % g   (also in par builder)
+
+  % \font\testfont=file:lmroman10-regular:kern=yes;expansion=quality at 12pt
+  %
+  % \testfont \normaladjustspacing 0 0: \input ward \page
+  % \testfont \normaladjustspacing 1 1: \input ward \page
+  % \testfont \normaladjustspacing 2 2: \input ward \page
+  % \testfont \normaladjustspacing 3 3: \input ward \page
+
+\stoptext

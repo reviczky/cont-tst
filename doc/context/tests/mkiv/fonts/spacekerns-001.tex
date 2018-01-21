@@ -1,0 +1,54 @@
+\enabledirectives[fonts.injections.useitalics]
+\enabletrackers[fonts.injections.spaces]
+\showfontkerns \showfontitalics
+
+\dontcomplain
+
+\starttext
+
+\definefontfeature
+	[DFLTSK]
+	[mode=node,language=dflt,script=latn,
+     kern=yes,liga=yes,mark=yes,
+	 mkmk=yes,ccmp=yes,tlig=yes]
+
+\definefontfeature
+	[GREKSK]
+	[mode=node,language=dflt,script=grek,
+	 kern=yes,liga=yes,mark=yes,
+	 mkmk=yes,ccmp=yes,tlig=yes]
+
+\definefontfeature
+	[DFLT]
+	[mode=node,language=dflt,script=latn,
+     kern=yes,liga=yes,mark=yes,
+	 mkmk=yes,ccmp=yes,tlig=yes,spacekern=no]
+
+\definefontfeature
+	[GREK]
+	[mode=node,language=dflt,script=grek,
+	 kern=yes,liga=yes,mark=yes,
+	 mkmk=yes,ccmp=yes,tlig=yes,spacekern=no]
+
+\showotfcomposition
+	{Brill*DFLTSK at 48pt}
+	{0}
+	{I{\char"03A4} {\char"03A4}I}
+
+\showotfcomposition
+	{Brill*DFLT at 48pt}
+	{0}
+	{I{\char"03A4} {\char"03A4}I}
+
+\showotfcomposition
+	{Brill*GREKSK at 48pt}
+	{0}
+	{I{\char"03A4} {\char"03A4}I}
+
+\showotfcomposition
+	{Brill*GREK at 48pt}
+	{0}
+	{I{\char"03A4} {\char"03A4}I}
+
+\stoptext
+

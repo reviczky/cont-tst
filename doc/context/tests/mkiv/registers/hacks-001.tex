@@ -1,0 +1,30 @@
+\defineprocessor[twolines][command=\MyStyle]
+
+\unexpanded\def\MyStyle#1%
+  {\setbox\scratchbox\hbox{#1}%
+   \scratchdimen\dimexpr\hsize-\leftskip-\hangindent\relax
+   \ifdim\wd\scratchbox>\scratchdimen
+     \aftergroup\hangafter
+     \aftergroup\plustwo
+     \aftergroup\break
+   \else\ifdim\wd\scratchbox>2\scratchdimen
+     \aftergroup\hangafter
+     \aftergroup\plustwo
+     \aftergroup\break
+   \fi\fi
+   \unhbox\scratchbox}
+
+\setupregister
+  [balance=no]
+
+\setupregister
+  [index:1]
+  [textstyle=\MyStyle]
+
+\starttext
+    \index{primary+secondary+tertiary}
+    \index{twolines->primary long primary long primary long primary long primary long}
+    \index{twolines->primary longer primary longer primary longer primary longer primary longer}
+    \input{tufte}
+    \completeindex
+\stoptext

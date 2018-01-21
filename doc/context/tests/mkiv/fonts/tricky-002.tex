@@ -1,0 +1,35 @@
+\starttext
+
+\unexpanded\def\test#1%
+  {\dontleavehmode\hbox{%
+   \hbox to 1cm{\char#1\hss}%
+    U+\uchexnumber{#1}%
+   /D+#1%
+   /I+\uchexnumber{\cldcontext{fonts.hashes.characters[true][#1] and fonts.hashes.characters[true][#1].index or 0}}%
+   }\par}
+
+\startbuffer[1]
+    \test{\number`一}
+    \test{\number`㏽}
+\stopbuffer
+\startbuffer[2]
+    \test{\number"301C}
+    \test{\number"2016}
+    \test{\number"FF5E}
+\stopbuffer
+\startbuffer[3]
+    ⿓ (U+02FD3) 龍 (U+09F8D) 龍 (U+0F9C4)\par
+\stopbuffer
+
+\startTEXpage[offset=10pt]
+    \testfeatureonce {1} {
+        \definedfont   [file:notosanskr-regular.otf*default]\getbuffer[1]\blank\getbuffer[3]\blank
+    }
+    \testfeatureonce {1} {
+        \definedfont[file:notosanscjkkr-regular.otf*default]\getbuffer[1]\blank\getbuffer[3]\blank
+    }
+%     \definedfont                        [ipaexg]\getbuffer[2]\blank
+%     \definedfont                        [ipaexm]\getbuffer[2]
+\stopTEXpage
+
+\stoptext

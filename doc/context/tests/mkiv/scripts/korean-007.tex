@@ -1,0 +1,48 @@
+% This example was made at the TUG 2013 conference after a presentation by Chof. The font
+% most recent version of the font (adapted by by Dohyun Kim) can be downloaded from:
+% http://ftp.ktug.org/KTUG/hcr-lvt/1.910_nomac/.
+
+\starttext
+
+\definefontfeature
+  [jamoforms]
+  [ljmo=yes,
+   tjmo=yes,
+   vjmo=yes]
+
+\definefontfeature
+  [korean-base]
+  [goodies=hanbatanglvt,
+   colorscheme=default,
+   mode=node,
+   script=hang,
+   language=kor]
+
+\definefontfeature
+  [korean-jmo]
+  [korean-base,jamoforms]
+
+\definefontfeature
+  [korean-calt]
+  [korean-base]
+  [calt=yes]
+
+\definefont[KoreanJMO] [hanbatanglvt*korean-jmo]
+\definefont[KoreanCALT][hanbatanglvt*korean-calt]
+
+\setfontcolorscheme[2]
+
+\startbuffer
+    % Hunminjeongeum: http://en.wikipedia.org/wiki/Hunminjeongeum
+    나랏말ᄊᆞ미中듕國귁에달아문ᄍᆞᆼ와로서르ᄉᆞᄆᆞᆺ디아니ᄒᆞᆯᄊᆡ%
+    사ᄅᆞᆷ마다ᄒᆡᅇᅧ수ᄫᅵ니겨날로ᄡᅮ메便뼌安ᅙᅡᆫ킈ᄒᆞ고져ᄒᆞᇙᄯᆞᄅᆞ미니라
+\stopbuffer
+
+\startTEXpage[offset=5pt]
+    \KoreanJMO  \type{-jmo:} \getbuffer \par
+    \KoreanCALT \type{calt:} \getbuffer \par
+\stopTEXpage
+
+\stoptext
+
+

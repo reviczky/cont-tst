@@ -1,0 +1,36 @@
+\setupinteraction
+  [state=start]
+
+\placebookmarks
+  [part,chapter,section,title,subject]
+  [force=yes]
+
+\setupcombinedlist
+  [content]
+  [list={part,chapter,section,subsection},
+   alternative=c]
+
+\setuphead
+  [part]
+  [placehead=yes,
+   bodypartlabel=part]
+
+\starttext
+
+    \startfrontmatter[bookmark=A fancy title]
+        \startchapter[title={The introduction}]
+        \stopchapter
+        \startchapter[title=Contents]
+            \placecontent[criterium=all]
+        \stopchapter
+    \stopfrontmatter
+
+    \startbodymatter
+        \startpart[title={part}]
+            \startchapter[title={Some chapter}]
+            \stopchapter
+        \stoppart
+    \stopbodymatter
+
+\stoptext
+

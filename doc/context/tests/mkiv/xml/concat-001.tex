@@ -1,0 +1,32 @@
+% example by/for hvdm
+
+\startxmlsetups xmltest:setups
+    \xmlsetsetup{#1}{root|test}{xmltest:*}
+\stopxmlsetups
+
+\xmlregistersetup{xmltest:setups}
+
+\startxmlsetups xmltest:root
+    \writestatus{TEST}{calling xmltest:root}
+    \xmlconcat{#1}{test}{xxx}\crlf
+    \xmlconcat{#1}{test/command(xmltest:test)}{yyy}\crlf
+    \xmlall   {#1}{test/concat('zzz')}\crlf
+\stopxmlsetups
+
+\startxmlsetups xmltest:test
+    [\xmlflush{#1}]
+\stopxmlsetups
+
+\startbuffer[xmlbuffer]
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+<test>node-1</test>
+<test>node-2</test>
+<test>node-3</test>
+<test>node-4</test>
+</root>
+\stopbuffer
+
+\starttext
+    \xmlprocessbuffer{root}{xmlbuffer}{}
+\stoptext

@@ -1,0 +1,27 @@
+\starttext
+
+\startxmlsetups xml:settings
+    \xmlsetsetup{#1}{foo}{xml:foo}
+\stopxmlsetups
+
+\startxmlsetups xml:foo
+    \xmlvalue{ctx:b}{\xmlatt{#1}{ctx-before}}{}
+    \xmlflush{#1}
+    \xmlvalue{ctx:a}{\xmlatt{#1}{ctx-after}}{}
+\stopxmlsetups
+
+\xmlmapvalue{ctx:b}{one}{\page BEFORE\par}
+\xmlmapvalue{ctx:a}{one}{\par AFTER\page}
+
+\startbuffer[temp]
+<document>
+    <foo ctx-before="one" ctx-after="one">foo 1</foo>
+    <foo>foo 2</foo>
+</document>
+\stopbuffer
+
+\xmlregistersetup{xml:settings}
+
+\xmlprocessbuffer{main}{temp}{}
+
+\stoptext

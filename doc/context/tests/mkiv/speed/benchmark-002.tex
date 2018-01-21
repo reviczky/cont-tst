@@ -1,0 +1,21 @@
+\setupbodyfont[dejavu]
+
+\setuppagenumbering[alternative=doublesided]
+
+\starttext
+
+    \setupbackgrounds[text] [background=color,backgroundcolor=magenta]
+    \setupbackgrounds[header][text] [background=color,backgroundcolor=cyan]
+
+    \dorecurse{250}{
+        \setupbackgrounds[leftpage] [background=color,backgroundcolor=red]
+        \setupbackgrounds[rightpage][background=color,backgroundcolor=green]
+        test \recurselevel \page
+        test \recurselevel \page
+        \setupbackgrounds[leftpage] [background=color,backgroundcolor=blue]
+        \setupbackgrounds[rightpage][background=color,backgroundcolor=yellow]
+        test \recurselevel \page
+        test \recurselevel \page
+    }
+
+\stoptext

@@ -1,0 +1,26 @@
+% \definefont[xxx][file:SourceHanSans-Medium.ttc]
+
+\definefont[xxx][name:SourceHanSansSCMedium]
+\definefont[yyy][name:SourceHanSansTCMedium]
+\definefont[zzz][name:SourceHanSansMedium]
+\definefont[www][name:SourceHanSansKMedium]
+
+\starttext
+
+    multiple unicode to index (not variants)
+
+    \blank
+
+    {\number`骨:\xxx 骨}\par
+    {\number`骨:\yyy 骨}\par
+    {\number`骨:\zzz 骨}\par
+    {\number`骨:\www 骨}\par
+
+    \blank
+
+    {\number`曜:\xxx 曜}\par
+    {\number`曜:\yyy 曜}\par
+    {\number`曜:\zzz 曜}\par
+    {\number`曜:\www 曜}\par
+
+\stoptext

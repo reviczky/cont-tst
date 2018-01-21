@@ -1,0 +1,68 @@
+\starttext
+
+\defineitemgroup[One][levels=3]
+\defineitemgroup[Two][levels=3]
+
+\setupitemgroup[One][each][fit][symbol=n]
+\setupitemgroup[One][1][stopper={}]
+\setupitemgroup[One][2][stopper={ONE}]
+\setupitemgroup[One][3][stopper={ONEONE}]
+\setupitemgroup[One][4][stopper={ONEONEONE}]
+
+\setupitemgroup[Two][each][fit][symbol=n]
+\setupitemgroup[Two][1][stopper={}]
+\setupitemgroup[Two][2][stopper={TWO}]
+\setupitemgroup[Two][3][stopper={TWOTWO}]
+\setupitemgroup[Two][4][stopper={TWOTWOTWO}]
+
+\startbuffer[one]
+\startOne
+	\item item 1
+	\startOne
+		\item item 1.1
+		\startOne
+			\item item 1.1.1
+			\item item 1.1.2
+            \startOne
+                \item item 1.1.2.1
+                \item item 1.1.2.2
+            \stopOne
+		\stopOne
+		\item item 1.2
+	\stopOne
+	\item item 2
+\stopOne
+\stopbuffer
+
+\startbuffer[two]
+\startTwo
+	\item item 1
+	\startTwo
+		\item item 1.1
+		\startTwo
+			\item item 1.1.1
+			\item item 1.1.2
+            \startTwo
+                \item item 1.1.2.1
+                \item item 1.1.2.2
+            \stopTwo
+		\stopTwo
+		\item item 1.2
+	\stopTwo
+	\item item 2
+\stopTwo
+\stopbuffer
+
+\getbuffer[one]
+\setbox0\vbox{\settrialtypesetting\getbuffer[one]\resettrialtypesetting}
+\setbox0\vbox{\settrialtypesetting\getbuffer[one]\resettrialtypesetting}
+\setbox0\vbox{\settrialtypesetting\getbuffer[one]\resettrialtypesetting}
+\getbuffer[one]
+\getbuffer[two]
+\getbuffer[two]
+\getbuffer[two]
+\getbuffer[one]
+\getbuffer[two]
+\getbuffer[one]
+
+\stoptext

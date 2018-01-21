@@ -1,0 +1,63 @@
+% extended from bug report ... we might come up with better default (when writing
+% details.tex)
+
+\showframe
+
+\setupbodyfont[dejavu]
+
+% \setuplinenumbering[typing][location=text]
+
+\starttext
+
+\starttyping[numbering=line]
+Line 1
+Line 2
+Line 3
+Line 4
+\stoptyping
+
+\definetyping[code][numbering=line,step=1]
+
+\setuplinenumbering[location=text,style=\ttx]
+
+\startcolumns[n=2]
+\startcode
+this
+is
+some
+code
+spread
+over
+two
+columns
+\stopcode
+\stopcolumns
+
+\startlinenumbering[code]
+\startcode
+foo
+foo
+\stopcode
+\stoplinenumbering
+
+\startlinenumbering[code]
+foo 1\par
+foo 2\par
+\stoplinenumbering
+
+\startlinenumbering[code][continue]
+\startcode[continue]
+bar
+bar
+\stopcode
+\stoplinenumbering
+
+\startlinenumbering[code]
+\input tufte \par
+\stoplinenumbering
+
+\startlinenumbering[code][continue]
+\input tufte \par
+\stoplinenumbering
+
+\stoptext

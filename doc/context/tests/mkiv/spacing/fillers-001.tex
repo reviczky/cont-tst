@@ -1,0 +1,14 @@
+\setupbodyfont[dejavu]
+
+\definefiller[test-a][alternative=stretch]
+\definefiller[test-b][alternative=symbol,symbol=!]
+\definefiller[test-c][alternative=rule,height=.1ex,leftmargin=.5em,rightmargin=.25em]
+
+\starttext
+
+    text\filler[test-a]text \par
+    text\filler[test-b]text \par
+    text\filler[test-c]text \par
+    text\checkedfiller{<nothing>}text \par
+
+\stoptext

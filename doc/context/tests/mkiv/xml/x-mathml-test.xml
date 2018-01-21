@@ -1,0 +1,62 @@
+<? xml version='1.0' standalone='yes'?>
+
+<document>
+    <math xmlns='http://www.w3c.org/mathml' version='2.0'>
+        <mrow>
+            <mn>4740</mn>
+            <mtext> </mtext>
+            <mtext>kg</mtext>
+            <mo>&gt;</mo>
+            <mn>2500</mn>
+            <mtext> </mtext>
+            <mtext>kg</mtext>
+        </mrow>
+    </math>
+    <math xmlns='http://www.w3c.org/mathml' version='2.0'>
+        <mrow>
+            <mn>4740</mn>
+            <mtext>      </mtext>
+            <mtext>kg</mtext>
+            <mo>&gt;</mo>
+            <mn>2500</mn>
+            <mtext>     </mtext>
+            <mtext>kg</mtext>
+        </mrow>
+    </math>
+    <math xmlns='http://www.w3c.org/mathml' version='2.0'>
+        <mrow>
+            <mn>4740</mn><mtext> kg</mtext>
+            <mo>&gt;</mo>
+            <mn>2500</mn><mtext> kg</mtext>
+        </mrow>
+    </math>
+    <math xmlns='http://www.w3c.org/mathml' version='2.0'>
+        <mrow>
+            <mn>4740</mn><mtext>   kg</mtext>
+            <mo>&gt;</mo>
+            <mn>2500</mn><mtext>   kg</mtext>
+        </mrow>
+    </math>
+    <math xmlns='http://www.w3c.org/mathml' version='2.0'>
+        <mrow>
+            <mn>4740</mn>
+            <mtext> </mtext>
+            <mtext>kg</mtext>
+            <mo>&gt;</mo>
+            <mn>2500</mn>
+            <mtext> </mtext>
+            <mtext>kg</mtext>
+        </mrow>
+    </math>
+    <math xmlns='http://www.w3c.org/mathml' version='2.0'>
+        <mrow>
+            <mn>4740</mn>
+            <mtext>&nbsp;</mtext>
+            <mtext>kg</mtext>
+            <mo>&#x2265;</mo>
+            <mn>2500</mn>
+            <mtext>&nbsp;</mtext>
+            <mtext>kg</mtext>
+        </mrow>
+    </math>
+</document>

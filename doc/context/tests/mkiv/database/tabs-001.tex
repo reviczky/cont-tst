@@ -1,0 +1,63 @@
+% Marco's examples:
+
+\usemodule [database]
+
+\enabletrackers[module.database.flush]
+
+\defineseparatedlist
+  [CSV]
+  [before=\bTABLE, after=\eTABLE,
+   first=\bTR, last=\eTR,
+   left=\bTD, right=\eTD]
+
+\starttext
+
+% indentation with spaces
+
+  \startCSV
+    alpha, 10
+    beta,  20
+    gamma, 30
+  \stopCSV
+
+% indentation with tabs
+
+	\startCSV
+		alpha, 10
+		beta,  20
+		gamma, 30
+	\stopCSV
+
+% some weird indentation
+
+\startplacetable
+	\startCSV
+		alpha, 10
+		beta,  20
+		gamma, 30
+\stopCSV
+\stopplacetable
+
+\setupseparatedlist
+  [CSV]
+  [strip=yes]
+
+% indentation with tabs
+
+	\startCSV
+		alpha, 10
+		beta,  20
+		gamma, 30
+	\stopCSV
+
+% some weird indentation
+
+\startplacetable
+	\startCSV
+		alpha, 10
+		beta,  20
+		gamma, 30
+\stopCSV
+\stopplacetable
+
+\stoptext

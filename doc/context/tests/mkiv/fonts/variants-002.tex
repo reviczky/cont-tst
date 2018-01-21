@@ -1,0 +1,34 @@
+\starttext
+
+\unexpanded\def\dotestchar#1#2#3%
+  {\dontleavehmode
+   \begingroup
+   \tt
+   (%
+   \uchexnumbers{#3}%
+   :%
+   \begingroup
+   \definedfont[name:#1*default]#2%
+   \endgroup
+   ,%
+   \begingroup
+   \definedfont[name:#1*default]#2\char#3%
+   \endgroup
+   ,%
+   \begingroup
+   \definefontfeature[default#3][default][variant=#3]%
+   \definedfont[name:#1*default#3]#2%
+   \endgroup
+   )%
+   \endgroup}
+
+\unexpanded\def\testchar#1#2%
+  {\dostepwiserecurse{"E0100}{"E010F}{1}{\dotestchar{#1}{#2}{##1}\space}%
+  %\dostepwiserecurse {"FE00} {"FE01}{1}{\dotestchar{#1}{#2}{##1}\space}%
+  }
+
+\testchar{SourceHanSansSCMedium}{曜}\blank
+\testchar{SourceHanSansSCMedium}{邉}\blank % 37001
+\testchar{SourceHanSansSCMedium}{邊}\blank % 37002
+
+\stoptext

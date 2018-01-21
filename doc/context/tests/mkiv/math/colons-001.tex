@@ -1,0 +1,38 @@
+\setuplayout[width=middle,backspace=1cm]
+
+\starttext
+
+\def\Sample#1#2#3#4%
+  {\NC\type{#1}\NC
+   \doifsomething{#2}{\type{0x#2}}\NC
+   \switchtobodyfont[cambria]$#3$\NC
+   \switchtobodyfont[cambria]\doifsomething{#2}{$\Umathchar"0"0"#2$}\NC
+   $#3$\NC
+   \doifsomething{#2}{$\Umathchar"0"0"#2$}\NC
+   \type{#4}\NC\NR}
+
+\starttabulate[||||||||]
+\HL
+\NC name \NC unicode \NC cambria \NC \NC lm \NC \NC definition \NC \NR
+\HL
+\Sample{centercolon     }{}    {\centercolon     }{\mathstylevcenteredhbox\colon}
+\Sample{colonminus      }{}    {\colonminus      }{\centercolon\colonsep\mathrel{-}}
+\Sample{minuscolon      }{2239}{\minuscolon      }{\mathrel{-}\colonsep\centercolon}
+\Sample{colonequals     }{2254}{\colonequals     }{\centercolon\colonsep=}
+\Sample{equalscolon     }{2255}{\equalscolon     }{=\centercolon\colonsep}
+\Sample{colonapprox     }{}    {\colonapprox     }{\centercolon\colonsep\approx}
+\Sample{approxcolon     }{}    {\approxcolon     }{\approx\centercolon\colonsep}
+\Sample{colonsim        }{}    {\colonsim        }{\centercolon\colonsep\sim}
+\Sample{simcolon        }{}    {\simcolon        }{\sim\centercolon\colonsep}
+\Sample{coloncolon      }{}    {\coloncolon      }{\centercolon\doublecolonsep\centercolon}
+\Sample{coloncolonminus }{}    {\coloncolonminus }{\coloncolon\colonsep\mathrel{-}}
+\Sample{minuscoloncolon }{}    {\minuscoloncolon }{\mathrel{-}\colonsep\coloncolon}
+\Sample{coloncolonequals}{2A74}{\coloncolonequals}{\coloncolon\colonsep=}
+\Sample{equalscoloncolon}{}    {\equalscoloncolon}{=\coloncolon\colonsep}
+\Sample{coloncolonapprox}{}    {\coloncolonapprox}{\coloncolon\colonsep\approx}
+\Sample{approxcoloncolon}{}    {\approxcoloncolon}{\approx\coloncolon\colonsep}
+\Sample{colonsim        }{}    {\colonsim        }{\coloncolon\colonsep\sim}
+\Sample{simcoloncolon   }{}    {\simcoloncolon   }{\sim\coloncolon\colonsep}
+\stoptabulate
+
+\stoptext

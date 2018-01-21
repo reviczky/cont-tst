@@ -1,0 +1,40 @@
+% example from list
+
+\startbuffer[test]
+<text>
+  <!-- with following semicolon: ampersand and semicolon are eaten -->
+  <p>Me &amp; my friends; you &amp; your friends.</p>
+  <!-- without following semicolon: everything ok -->
+  <p>Me &amp; my friends. You &amp; your friends.</p>
+  <!-- way around: place a comment after the ampersand -->
+  <p>Me &amp;<!-- --> my friends; you &amp; your friends.</p>
+  <!-- messy double escaped entities -->
+  <p>Me &amp;amp; my friends; your friends.</p>
+</text>
+\stopbuffer
+
+\startxmlsetups xml:somesetups
+    \xmlsetsetup{#1}{text|p}{xml:*}
+\stopxmlsetups
+
+\xmlregistersetup{xml:somesetups}
+
+\startxmlsetups xml:text
+    \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:p
+    \xmlshow{#1}
+    \xmlflush{#1}\par\blank[line]
+\stopxmlsetups
+
+\enabletrackers[xml.entities]
+
+\xmlsetentity{amp}{&}
+
+\starttext
+    \xmlprocessbuffer{main}{test}{}
+    \blank[3*line]
+    \enabledirectives[lxml.escapedentities]
+    \xmlprocessbuffer{main}{test}{}
+\stoptext

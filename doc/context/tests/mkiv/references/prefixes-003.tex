@@ -1,0 +1,40 @@
+% WS on dev list:
+
+\setupreferencestructureprefix
+  [default]
+  [prefixstopper={\symbol[none]},
+   numberstopper={\symbol[none]}]
+
+% \setupreferencestructureprefix
+%   [section]
+%   [default]
+%   [prefixconversion=A]
+
+% \setupreferencestructureprefix
+%   [float]
+%   [default]
+%   [numberconversion=A]
+
+\setuphead
+  [chapter]
+  [sectionstopper=.]
+
+\setupcaption
+  [figure]
+  [numberstopper=:]
+
+\starttext
+
+\chapter[sec:dummy]{Dummy chapter}
+
+\placefigure
+  [here]
+  [fig:dummy]
+  {Dummy figure}
+  {\externalfigure[dummy]}
+
+Section: \in[sec:dummy]
+
+Float: \in[fig:dummy]
+
+\stoptext

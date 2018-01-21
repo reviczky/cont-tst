@@ -1,0 +1,34 @@
+\startTEXpage
+
+\ruledhbox\bgroup
+    \startMPcode{chemistry}
+        chem_start_structure(
+            1,     %  numeric : structures
+            0,     %  numeric : left
+            0,     %  numeric : right
+            0,     %  numeric : top
+            0,     %  numeric : bottom
+            0,     %  numeric : rotation
+            11pt,  %  numeric : unit
+            2,     %  numeric : bondlength
+            1,     %  numeric : scale
+            0,     %  numeric : offset
+            true,  %  boolean : axis,
+            .6pt,  %  numeric : rulethickness
+            "red"    %  color   : axiscolor
+        ) ;
+        chem_start_component ;
+        chem_set(one) ;
+        chem_b(one,1,8,0.6pt,(0,0,0));
+        chem_stop_component ;
+        chem_stop_structure ;
+    \stopMPcode
+\egroup
+
+\ruledhbox\bgroup
+    \startchemical
+        \chemical[SIX,B,R]
+    \stopchemical
+\egroup
+
+\stopTEXpage

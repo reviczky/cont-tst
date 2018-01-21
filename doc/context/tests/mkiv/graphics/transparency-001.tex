@@ -1,0 +1,53 @@
+\starttext
+
+% the two pdf graphics show three transparency variants and were
+% prepared for this example by Henning Hraban Ramm
+
+\startoverlay
+    {\framed[width=10cm,align=normal,foregroundcolor=red]{\input tufte }}
+    {\externalfigure[transparency-ai-sample.pdf][width=9cm]}
+\stopoverlay
+
+\startoverlay
+    {\framed[width=10cm,align=normal,foregroundcolor=red]{\input tufte }}
+    {\externalfigure[transparency-gs-sample.pdf][width=9cm]}
+\stopoverlay
+
+\page
+
+\startoverlay
+    {\framed[width=10cm,align=normal,foregroundcolor=red]{\input tufte }}
+    {\startMPcode fill fullsquare scaled 5cm withcolor blue withtransparency (1,.5) \stopMPcode}
+\stopoverlay
+
+\startreusableMPgraphic{demo}
+    fill fullsquare scaled 5cm withcolor green withtransparency (1,.5)
+\stopreusableMPgraphic
+
+\startoverlay
+    {\framed[width=10cm,align=normal,foregroundcolor=red]{\input tufte }}
+    {\reuseMPgraphic{demo}}
+\stopoverlay
+
+\page
+
+\definetransparency[tnormal]    [a=normal,t=.5]
+\definetransparency[tmultiply]  [a=multiply,t=.5]
+\definetransparency[tdifference][a=difference,t=.5]
+
+\startoverlay
+    {\framed[width=10cm,align=normal,foregroundcolor=red]{\input tufte }}
+    {\starttransparent[tnormal]\externalfigure[cow.pdf][width=9cm]\stoptransparent}
+\stopoverlay
+
+\startoverlay
+    {\framed[width=10cm,align=normal,foregroundcolor=red]{\input tufte }}
+    {\starttransparent[tmultiply]\externalfigure[cow.pdf][width=9cm]\stoptransparent}
+\stopoverlay
+
+\startoverlay
+    {\framed[width=10cm,align=normal,foregroundcolor=red]{\input tufte }}
+    {\starttransparent[tdifference]\externalfigure[cow.pdf][width=9cm]\stoptransparent}
+\stopoverlay
+
+\stoptext

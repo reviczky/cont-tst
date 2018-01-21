@@ -1,0 +1,23 @@
+\enabletrackers[met*textex*]
+
+\starttext
+
+    \startMPcalculation
+        path PicX ; PicX := boundingbox textext("?") ;
+    \stopMPcalculation
+
+    \startMPpage
+        picture PicA ; PicA := textext("*");
+        picture PicB ; PicB := textext("?");
+
+        numeric Step ; Step := 10cm div bbwidth(PicX) ;
+    %   numeric Step ; Step := 10cm div bbwidth(Xpic)  ;
+
+        for i = 1 upto Step :
+            draw PicB shifted (i*cm,0) ;
+        endfor ;
+        draw PicA ;
+    \stopMPpage
+
+\stoptext
+

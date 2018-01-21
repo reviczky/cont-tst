@@ -1,0 +1,80 @@
+% example from list by xan
+
+\definemathmatrix
+  [det]
+  [left={\left\lvert\,},
+   right={\,\right\rvert},
+   strut=1.25]
+
+\setupwhitespace[big]
+
+\starttext
+
+$\startdet[n=3]
+    \NC yz \NC \ruledhbox{$\frac{1}{x}$} \NC x \NR
+    \NC yz \NC \ruledhbox{$\frac{1}{x}$} \NC x \NR
+    \NC yz \NC \frac{1}{x} \NC x \NR
+    \NC zx \NC \frac{1}{y} \NC y \NR
+    \NC xy \NC \frac{1}{z} \NC z \NR
+\stopdet$
+
+Whatever:
+
+\startitemize[a,columns]
+
+    \startitem $\startdet[n=4]
+        \NC 1 \NC 1 \NC  1 \NC  1 \NR
+        \NC 1 \NC 2 \NC  3 \NC  4 \NR
+        \NC 1 \NC 3 \NC  6 \NC 10 \NR
+        \NC 1 \NC 4 \NC 10 \NC 20 \NR
+    \stopdet$ \stopitem
+
+    \startitem $\startdet[n=4]
+        \NC 1 \NC -2 \NC  0 \NC  1 \NR
+        \NC 1 \NC  1 \NC  0 \NC  2 \NR
+        \NC 0 \NC  3 \NC -2 \NC -1 \NR
+        \NC 1 \NC  1 \NC  1 \NC  3 \NR
+    \stopdet$ \stopitem
+
+    \startitem $\startdet[n=5]
+        \NC 1 \NC 2 \NC 3 \NC 4 \NC 5 \NR
+        \NC 2 \NC 3 \NC 4 \NC 5 \NC 1 \NR
+        \NC 3 \NC 4 \NC 5 \NC 1 \NC 2 \NR
+        \NC 4 \NC 5 \NC 1 \NC 2 \NC 3 \NR
+        \NC 5 \NC 1 \NC 2 \NC 3 \NC 4 \NR
+    \stopdet$ \stopitem
+
+    \startitem $\startdet[n=3]
+        \NC 1 \NC 2 \NC  3 \NR
+        \NC 1 \NC 4 \NC  9 \NR
+        \NC 1 \NC 8 \NC 27 \NR
+    \stopdet$ \stopitem
+
+\stopitemize
+
+And more:
+
+\startitemize[a]
+
+    \startitem $\startdet[n=3]
+        \NC -\sqrt{3} \NC 3                \NR
+        \NC 5         \NC -\sqrt{3}\cdot 5 \NR
+    \stopdet$ \stopitem
+
+    \startitem $\startdet[n=3]
+        \NC  2 \NC 1 \NC  3 \NR
+        \NC  1 \NC 0 \NC  1 \NR
+        \NC -3 \NC 2 \NC -1 \NR
+    \stopdet$ \stopitem
+
+\stopitemize
+
+$\startdet[n=3]
+    \NC yz \NC \ruledhbox{$\frac{1}{x}$} \NC x \NR
+    \NC yz \NC \ruledhbox{$\frac{1}{x}$} \NC x \NR
+    \NC yz \NC \frac{1}{x}               \NC x \NR
+    \NC zx \NC \frac{1}{y}               \NC y \NR
+    \NC xy \NC \frac{1}{z}               \NC z \NR
+\stopdet$
+
+\stoptext

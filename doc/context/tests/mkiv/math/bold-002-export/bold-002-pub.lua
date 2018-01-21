@@ -1,0 +1,15 @@
+return {
+ ["htmlfiles"]={ "bold-002-div.html" },
+ ["htmlroot"]="bold-002-div.html",
+ ["identifier"]="22f765fe-4391-9c55-3296-cb6ec76178ae",
+ ["imagefile"]="styles/bold-002-images.css",
+ ["imagepath"]="images",
+ ["images"]={},
+ ["language"]="en",
+ ["metadata"]={},
+ ["name"]="bold-002",
+ ["stylepath"]="styles",
+ ["styles"]={ "bold-002-defaults.css", "bold-002-images.css", "bold-002-styles.css" },
+ ["xhtmlfiles"]={ "bold-002-tag.xhtml" },
+ ["xmlfiles"]={ "bold-002-raw.xml" },
+}

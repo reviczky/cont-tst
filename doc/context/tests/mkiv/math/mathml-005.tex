@@ -1,0 +1,83 @@
+\usemodule[x][entities]
+\usemodule[x][mathml]
+\usemodule[abr-01]
+
+\starttext
+
+\startbuffer[test]
+<p xmlns:m="http://www.w3.org/1998/Math/MathML">
+
+<m:math>
+    <m:mrow>
+        <m:mi>a</m:mi>
+        <m:mover>
+            <m:mo>&xrarr;</m:mo>
+            <m:ms>arrow + text</m:ms>
+        </m:mover>
+        <m:mi>b</m:mi>
+        <m:mover>
+            <m:ms>text + arrow</m:ms>
+            <m:mo>&xrarr;</m:mo>
+        </m:mover>
+        <m:mi>c</m:mi>
+    </m:mrow>
+</m:math>
+
+<m:math>
+    <m:mrow>
+        <m:mi>a</m:mi>
+        <m:munder>
+            <m:mo>&xrarr;</m:mo>
+            <m:ms>arrow + text</m:ms>
+        </m:munder>
+        <m:mi>b</m:mi>
+        <m:munder>
+            <m:ms>text + arrow</m:ms>
+            <m:mo>&xrarr;</m:mo>
+        </m:munder>
+        <m:mi>c</m:mi>
+    </m:mrow>
+</m:math>
+
+<m:math>
+    <m:mrow>
+        <m:mi>a</m:mi>
+        <m:munderover>
+            <m:mo>&xrarr;</m:mo>
+            <m:ms>text 1</m:ms>
+            <m:ms>text 2</m:ms>
+        </m:munder>
+        <m:mi>b</m:mi>
+    </m:mrow>
+</m:math>
+
+<m:math>
+    <m:mrow>
+        <m:mi>a</m:mi>
+        <m:munderover>
+            <m:ms>text 1</m:ms>
+            <m:ms>text 2</m:ms>
+            <m:ms>text 3</m:ms>
+        </m:munder>
+        <m:mi>b</m:mi>
+    </m:mrow>
+</m:math>
+
+<m:math>
+    <m:mrow>
+        <m:mi>a</m:mi>
+        <m:munderover>
+            <m:ms>text 1</m:ms>
+            <m:mo>&xrarr;</m:mo>
+            <m:ms>text 2</m:ms>
+        </m:munder>
+        <m:mi>b</m:mi>
+    </m:mrow>
+</m:math>
+
+</p>
+\stopbuffer
+
+\xmlprocessbuffer{main}{test}{}
+
+\stoptext

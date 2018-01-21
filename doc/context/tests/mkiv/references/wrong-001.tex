@@ -1,0 +1,27 @@
+\setupbodyfont
+  [dejavu]
+
+\setuphead
+  [section]
+  [number=no]
+
+\starttext
+
+    \startsectionlevel [title=Alpha]
+
+        See section \in[invalid].
+
+        See section \in[sec:bar].
+
+        See section \about[sec:bar].
+
+        \startsectionlevel [title=Foo]
+        \stopsectionlevel
+
+        \startsectionlevel [title=Bar, reference=sec:bar]
+        \stopsectionlevel
+
+    \stopsectionlevel
+
+\stoptext
+

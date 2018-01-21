@@ -1,0 +1,36 @@
+\setupbodyfont[dejavu]
+
+\definemarking[country]
+
+\startsetups myheader
+    (\getmarking[country][1][top]\enspace\emdash\enspace\getmarking[country][1][bottom])
+    \hfill
+    (\getmarking[country][2][top]\enspace\emdash\enspace\getmarking[country][2][bottom])
+\stopsetups
+
+\setupheadertexts
+  [\setups{myheader}][]
+  [][\setups{myheader}]
+
+\def\anothersection#1%
+  {\par
+   \dontleavehmode
+   \marking[country]{#1}%
+   \start\bf #1 \endgraf\stop
+   \quad
+   test
+   \par}
+
+% \enabledirectives[marks.boxestoo]
+
+\starttext
+    \startmixedcolumns[distance=5mm, balance=yes]
+        \anothersection{Brazil}
+       %\anothersection{Suriname}
+       %\anothersection{Uruguay}
+       %\anothersection{Bolivia}
+       %\anothersection{Venezuela}
+        \anothersection{Peru}
+    \stopmixedcolumns
+\stoptext
+

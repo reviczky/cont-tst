@@ -1,0 +1,11 @@
+\starttext
+
+    \luascript        {        context("foo 1:") context(i) } \par
+    \luathread {test} { i = 10 context("bar 1:") context(i) } \par
+    \luathread {test} {        context("bar 2:") context(i) } \par
+    \luathread {test} {} % resets
+    \luathread {test} {        context("bar 3:") context(i) } \par
+    \luascript        {        context("foo 2:") context(i) } \par
+
+\stoptext
+

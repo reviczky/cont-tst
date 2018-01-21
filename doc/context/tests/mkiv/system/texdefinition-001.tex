@@ -1,0 +1,13 @@
+\starttext
+
+% [spaces|nospaces] [global] [unexpanded] [expanded] [..argument] csname
+
+\starttexdefinition unexpanded doubleempty whatever [#1][#2]#3
+
+    this is (#1) (#2) it#3
+
+\stoptexdefinition
+
+*\whatever[a]{!}*
+
+\stoptext

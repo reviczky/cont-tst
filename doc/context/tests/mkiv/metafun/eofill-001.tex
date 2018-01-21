@@ -1,0 +1,37 @@
+% after a question on the metapost list eofill was added:
+
+\starttext
+
+\startMPpage
+
+    fill
+                fullcircle scaled 10cm --
+                fullcircle scaled  8cm --
+                fullcircle scaled  4cm -- cycle
+        withcolor red/4
+        withtransparency (1,.5) ;
+
+    currentpicture := currentpicture shifted (-5cm,0) ;
+
+    fill
+                fullcircle scaled 10cm --
+        reverse fullcircle scaled  8cm --
+        reverse fullcircle scaled  4cm -- cycle
+        withcolor green/4
+        withtransparency (1,.5) ;
+
+    currentpicture := currentpicture shifted (-5cm,0) ;
+
+    eofill
+                fullcircle scaled 10cm --
+                fullcircle scaled  8cm --
+                fullcircle scaled  4cm -- cycle
+        withcolor blue/4
+        withtransparency (1,.5) ;
+
+    currentpicture := currentpicture shifted (-5cm,0) ;
+
+\stopMPpage
+
+\stoptext
+

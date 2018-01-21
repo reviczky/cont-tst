@@ -1,0 +1,21 @@
+\setupinteraction[state=start]
+
+\starttext
+
+  % \startTEXpage \externalfigure[pages-001.pdf][page=1,interaction=all]\stopTEXpage
+  % \startTEXpage \externalfigure[pages-001.pdf][page=2,interaction=all]\stopTEXpage
+  % \startTEXpage \externalfigure[pages-001.pdf][page=3,interaction=all]\stopTEXpage
+
+    \setuplayout[page]
+
+    \setupexternalfigure[interaction=all]
+
+    \filterpages[pages-001.pdf][1,2,3]
+
+    \page
+
+    \setuplayout[reset]
+
+    \typefile{pages-001.tex}
+
+\stoptext

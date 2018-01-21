@@ -1,0 +1,22 @@
+\enabletrackers[math.italics,typesetters.italics]
+
+% \setupbodyfont[xits]
+
+\showglyphs
+
+\setupitaliccorrection[always]
+
+\starttext
+
+    \startTEXpage
+        \setupmathematics[italics=no]test $a;b;a; b; f;$ test\par
+        \setupmathematics[italics=4] test $a;b;a; b; f;$ test\par
+        \setupmathematics[italics=4] test $a;b;a; b; f{\tf x}$ test\par
+        \setupmathematics[italics=4] test $a;b;a; b; f{\it x}$ test\par
+        \setupmathematics[italics=3]test $a;b;a; b; f$; test\par
+        \setupmathematics[italics=4] test $a;b;a; b; f$x test\par
+        \setupmathematics[italics=4] test $a;b;a; b; f${\tf x} test\par
+        \setupmathematics[italics=4] test $a;b;a; b; f${\it x} test\par
+    \stopTEXpage
+
+\stoptext

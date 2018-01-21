@@ -1,0 +1,14 @@
+\edef\ward{\cldloadfile{ward}}
+
+\starttext
+
+    \dorecurse{100}{
+         \hsize\dimexpr\textwidth-#1mm\relax
+         \setupalign[normal]        \ward \par
+         \setupalign[normal,final]  \ward \par
+         \setupalign[normal,3*final]\ward \par
+         \setupalign[normal,4*final]\ward \par
+         \page
+    }
+
+\stoptext

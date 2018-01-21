@@ -1,0 +1,56 @@
+% test file for page injections by WS/HH
+
+\enabletrackers[pagebuilder.injections]
+
+\setuppageinjection[offset=2em]
+
+\definepageinjection[chapter][previouspage][pagestate=stop]
+\definepageinjection[later]  [delay=yes,state=+2]
+
+\useMPlibrary[dum]
+
+\starttext
+
+\startchapter[title={Insert pages before/after the current page}]
+
+	\dorecurse{10}{one: \input ward\par}
+
+	\pageinjection[previouspage][name=dummy-1]
+
+	\dorecurse{20}{two: \input ward\par} \page
+
+	\pageinjection[nextpage][name=dummy-2]
+ 	\pageinjection[later]   [name=dummy-4]
+ 	\pageinjection[delay=yes,state=+2][name=dummy-5]
+
+	\dorecurse{100}{three: \input ward\par}
+
+\stopchapter
+
+\startbuffer[whatever]
+    \dorecurse{10}{whatever #1 }
+\stopbuffer
+
+\startchapter[title={Insert pages at the current location}]
+
+	\dorecurse{10}{\input ward\par}
+
+	\pageinjection[direct][name=dummy-3]
+	\pageinjection[direct][alternative=buffer,name=whatever]
+
+	\dorecurse{10}{\input ward\par}
+
+\stopchapter
+
+\setuphead
+  [chapter]
+  [beforesection={\pageinjection[empty]},
+   insidesection={\pageinjection[chapter][name=\structureuservariable{image}]}]
+
+\startchapter[title={Combine both mechanism}][name=dummy-4]
+
+	\dorecurse{10}{\input ward\par}
+
+\stopchapter
+
+\stoptext

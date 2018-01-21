@@ -1,0 +1,32 @@
+\nopdfcompression
+
+\starttext
+
+\definefontfeature[sbix][default][sbix=yes]
+
+\definefont[SampleA][file:applecoloremoji.ttc*sbix at 10bp]
+\definefont[SampleB][file:applecoloremoji.ttc*sbix at 20bp]
+
+% \showglyphs
+
+\startTEXpage[offset=3pt]
+    \bTABLE
+        \bTR
+            \bTD[align=middle,strut=no] \SampleA\char"F08AC \eTD
+            \bTD[align=middle,strut=no] \SampleA\char"F0053 \eTD
+            \bTD[align=middle,strut=no] \SampleA\char"F0054 \eTD
+        \eTR
+        \bTR
+            \bTD[align=middle,strut=no] \SampleB\char"F08AC \eTD
+            \bTD[align=middle,strut=no] \SampleB\char"F0053 \eTD
+            \bTD[align=middle,strut=no] \SampleB\char"F0054 \eTD
+        \eTR
+        \bTR
+            \bTD[align=middle,strut=no] \tttf 0xF08AC \eTD
+            \bTD[align=middle,strut=no] \tttf 0xF0053 \eTD
+            \bTD[align=middle,strut=no] \tttf 0xF0054 \eTD
+        \eTR
+    \eTABLE
+\stopTEXpage
+
+\stoptext

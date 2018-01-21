@@ -1,0 +1,66 @@
+\enabletrackers[chemistry.boundingbox]
+% \enabletrackers[chemistry.metapost]
+% \enabletrackers[chemistry.structure]
+% \enabletrackers[chemistry.textstack]
+
+\setupchemical
+  [axis=on]
+
+\starttext
+
+\startbuffer
+\startchemical \chemical[SIX,B] \stopchemical
+\stopbuffer
+\typebuffer \ruledhbox{\getbuffer}
+
+\startbuffer
+\startchemical [left=none,right=4cm] \chemical[SIX,B] \stopchemical
+\stopbuffer
+\typebuffer \ruledhbox{\getbuffer}
+
+\startbuffer
+\startchemical [right=none] \chemical[SIX,B] \stopchemical
+\stopbuffer
+\typebuffer \ruledhbox{\getbuffer}
+
+\startbuffer
+\startchemical [right=2mm] \chemical[SIX,B] \stopchemical
+\stopbuffer
+\typebuffer \ruledhbox{\getbuffer}
+
+\startbuffer
+\startchemical [left=none] \chemical[SIX,B] \stopchemical
+\stopbuffer
+\typebuffer \ruledhbox{\getbuffer}
+
+\startbuffer
+\startchemical [width=none] \chemical[SIX,B] \stopchemical
+\stopbuffer
+\typebuffer \ruledhbox{\getbuffer}
+
+\startbuffer
+\startchemical [width=.1] \chemical[SIX,B] \stopchemical
+\stopbuffer
+\typebuffer \ruledhbox{\getbuffer}
+
+\startbuffer
+\startchemical [height=none] \chemical[SIX,B] \stopchemical
+\stopbuffer
+\typebuffer \ruledhbox{\getbuffer}
+
+\startbuffer
+\startchemical [bottom=none] \chemical[SIX,B] \stopchemical
+\stopbuffer
+\typebuffer \ruledhbox{\getbuffer}
+
+\startbuffer
+\startchemical [top=none] \chemical[SIX,B] \stopchemical
+\stopbuffer
+\typebuffer \ruledhbox{\getbuffer}
+
+\startbuffer
+\startchemical [height=.1] \chemical[SIX,B] \stopchemical
+\stopbuffer
+\typebuffer \ruledhbox{\getbuffer}
+
+\stoptext

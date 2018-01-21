@@ -1,0 +1,16 @@
+\setupbackend [export=yes]
+
+% \enabletrackers[structures.export.spaces]
+\enabledirectives[structures.export.pagebreaks]
+
+\starttext
+
+\startchapter [title=Tufte Example]
+
+\startparagraph
+    \dorecurse{10}{\input tufte}
+\stopparagraph
+
+\stopchapter
+
+\stoptext

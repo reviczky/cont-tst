@@ -1,0 +1,23 @@
+\setupitemgroup
+  [itemize]
+  [broad,joinedup,packed,autointro]
+
+\starttext
+
+    \setupitemize[itemalign=flushright]
+
+    \startitemize[n,repeat]
+        \startitem level a
+            \startitemize[n,norepeat]
+                \startitem level b
+                    \startitemize[A]
+                        \startitem
+                            level c
+                        \stopitem
+                    \stopitemize
+                \stopitem
+            \stopitemize
+        \stopitem
+    \stopitemize
+
+\stoptext

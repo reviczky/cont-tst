@@ -1,0 +1,28 @@
+\setuptagging[state=start]
+
+\enabletrackers[structure.tags]
+
+\starttext
+
+\startparagraph
+
+$ b = x^2 + 1 + \hbox{whatever $x$ more} + 1$
+% $ b = x^2 + 1$
+% $ b = x^2 + 1 + z $
+% $ b = x^2 + 1 + \frac{a}{3} $
+% $ \frac{aa}{3} $
+% $ b = x^2 + 1 + \root{a}\of{3}\relax $
+% $ b = \left( x^2 + 1 + \frac{a}{3} \right) $
+% $ b = \left( x^2 + \root{3}\of{1 + \frac{a}{3}} \right) $
+% $ b =  x^2 + \root{3}\of{1 + \frac{a}{3}} $
+% $ b = \left( x^2 + \root{3}\of{1 + \frac{a}{3}} \right) \hbox{whatever}$
+
+% \startbuffer
+% $$ y = \left( x^2 + \root{3}\of{ax + {{b}\over{3}}} \right) ^ 2 $$
+% \stopbuffer
+
+% \typebuffer \getbuffer
+
+\stopparagraph
+
+\stoptext

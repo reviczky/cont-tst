@@ -1,0 +1,33 @@
+\useMPlibrary[dum]
+
+\starttext
+
+\definelabel[test][text=,numberconversion=character,stopper=!]
+
+\resetcounter[test]
+
+\startcombination[2*2]
+    {first} {\test}
+    {first} {\test}
+\stopcombination
+
+\startcombination[2*2]
+    {first} {\test}
+    {first} {\test}
+\stopcombination
+
+\resetcounter[test]
+
+\startcombination[2*2]
+    {first} {\test}
+    {first} {\test}
+\stopcombination
+
+\resetcounter[test]
+
+\startcombination[2*2]
+    {first} {\test}
+    {first} {\test}
+\stopcombination
+
+\stoptext

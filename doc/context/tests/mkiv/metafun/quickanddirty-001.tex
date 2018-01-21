@@ -1,0 +1,14 @@
+\starttext
+
+\startluacode
+
+    local result = metapost.quickanddirty("metafun",[[ draw fullcircle scaled 1cm ;]])
+
+    context("% t",result.bbox)
+    context.par()
+    context("% t",result.code)
+    context.par()
+
+\stopluacode
+
+\stoptext

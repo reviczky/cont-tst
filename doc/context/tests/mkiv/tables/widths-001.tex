@@ -1,0 +1,23 @@
+\startbuffer
+\bTABLE
+    \bTR \bTD een lekkere brede 1e kolom \eTD \bTD col 2 \eTD \bTD col 3 \eTD \bTD col 4 \eTD \bTD col 5 \eTD \bTD col 6 \eTD \bTD col 7 \eTD \bTD col 8 \eTD \eTR
+    \bTR \bTD een lekkere brede 1e kolom \eTD \bTD col 2 \eTD \bTD col 3 \eTD \bTD col 4 \eTD \bTD col 5 \eTD \bTD col 6 \eTD \bTD col 7 \eTD \bTD col 8 \eTD \eTR
+    \bTR \bTD een lekkere brede 1e kolom \eTD \bTD col 2 \eTD \bTD col 3 \eTD \bTD col 4 \eTD \bTD col 5 \eTD \bTD col 6 \eTD \bTD col 7 \eTD \bTD col 8 \eTD \eTR
+\eTABLE
+\stopbuffer
+
+\starttext
+
+\startcolumns
+
+    \getbuffer
+
+    {\autoTBLhsizefalse \getbuffer}
+
+    {\setupTABLE[maxwidth=\textwidth] \getbuffer}
+
+    {\setupTABLE[textwidth=\maxdimen] \getbuffer}
+
+\stopcolumns
+
+\stoptext

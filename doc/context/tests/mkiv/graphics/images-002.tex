@@ -1,0 +1,22 @@
+\starttext
+
+test
+
+\startluacode
+    pdf.setignoreunknownimages(1)
+\stopluacode
+
+\ruledhbox {\startluacode
+    local i = img.scan { filename = "images-002.tex" }
+    img.write(i)
+\stopluacode}
+
+\pdfignoreunknownimages 1
+
+\pdfximage {images-002.tex} \pdfrefximage\pdflastximage
+
+test
+
+\stoptext
+
+

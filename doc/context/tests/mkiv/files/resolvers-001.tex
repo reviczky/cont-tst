@@ -1,0 +1,46 @@
+\setupbodyfont[dejavu,8pt,tt]
+
+\starttext
+
+% \enabletrackers[resolvers.*]
+
+\startluacode
+
+    local function test(filename)
+        local resolved = resolvers.resolve(filename)
+        local fullname = resolvers.findfile(resolved)
+     -- logs.report("result","filename: %s, fullname: %s",filename,fullname)
+        context("name: %s",filename)
+        if io.exists(fullname) then
+            context.par()
+            context("used: %s",fullname)
+        end
+        context.blank()
+    end
+
+    test("first.tex")
+    test("second.tex")
+    test("test-first.tex")
+    test("test-second.tex")
+
+    test("test/first.tex")
+    test("test/second.tex")
+    test("test/test-first.tex")
+    test("test/test-second.tex")
+
+    test("user/test/first.tex")
+    test("user/test/second.tex")
+    test("user/test/test-first.tex")
+    test("user/test/test-second.tex")
+
+    test("user/*/first.tex")
+    test("user/*/second.tex")
+    test("user/*/test-first.tex")
+    test("user/*/test-second.tex")
+
+    test("user/test/temp.tex")
+    test("selfautoparent:/texmf-project/tex/context/user/test/temp.tex")
+
+\stopluacode
+
+\stoptext

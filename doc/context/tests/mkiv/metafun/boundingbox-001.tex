@@ -1,0 +1,19 @@
+\starttext
+
+\startMPpage[offset=10pt]
+    draw(btex this is a test etex) scaled 10 ;
+    fill boundingbox currentpicture withcolor red withtransparency (1,.5) ;
+\stopMPpage
+
+\startMPpage[offset=10pt]
+    draw(btex this is a test etex) scaled 10 ;
+    fill bbox(currentpicture) withcolor green withtransparency (1,.5) ;
+\stopMPpage
+
+\startMPpage[offset=10pt]
+    draw(btex this is a test etex) scaled 10 ;
+    fill boundingbox currentpicture withcolor black withtransparency (1,.5) ;
+    fill bbox(currentpicture) withcolor blue withtransparency (1,.5) ;
+\stopMPpage
+
+\stoptext

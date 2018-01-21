@@ -1,0 +1,21 @@
+\startbuffer
+    \startformula
+        x =
+        \integral[1]^{t}_{b}{p} +
+        \integral[5]^{t}_{b}{\frac{\frac{p}{q}}{\frac{r}{s}}} +
+        \integral[7]^{t}_{b}{\frac{\frac{\frac{\frac{p}{q}}{r}}{s}}{t}} =
+        \autointegral{t}{b}{p} +
+        \autointegral{t}{b}{\frac{\frac{p}{q}}{\frac{r}{s}}} +
+        \autointegral{t}{b}{\frac{\frac{\frac{\frac{p}{q}}{r}}{s}}{t}}
+    \stopformula
+\stopbuffer
+
+\starttext
+
+\getbuffer
+
+{\switchtobodyfont[cambria]\getbuffer}
+
+{\switchtobodyfont[pagella]\getbuffer}
+
+\stoptext

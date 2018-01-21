@@ -1,0 +1,41 @@
+\definelayer
+  [chapter]
+  [width=\paperwidth,
+   height=\paperheight]
+
+\defineoverlay
+  [pagebackground]
+  [\directsetup{pagebackground}]
+
+\setupbackgrounds
+  [page]
+  [background=pagebackground]
+
+\startsetups pagebackground
+    \doifelsemode {chapterpage} {
+        \setlayer
+          [chapter]
+          [preset=middle]
+          {\scale[width=\textwidth]{CHAPTER}}
+        \globaldisablemode[chapterpage]
+    } {
+        \setlayer
+          [chapter]
+          [preset=middle]
+          {\scale[width=\textwidth]{WHATEVER}}
+    }
+    \placelayer[chapter]
+\stopsetups
+
+\startsetups chapter:before
+    \globalenablemode[chapterpage]
+\stopsetups
+
+\setuphead
+  [chapter]
+  [before=\setup{chapter:before}]
+
+\starttext
+    \chapter{foo} test \page test
+    \chapter{bar} test \page test
+\stoptext

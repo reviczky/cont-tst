@@ -1,0 +1,21 @@
+\starttext
+
+\startluacode
+    context.xmlloadonly("xml","verbatim-001.xml")
+\stopluacode
+
+\startxmlsetups xml:show
+    \typefile
+      [option=xml]
+      {\cldcontext
+         {resolvers.savers.byscheme("virtual","xmlshow",xml.tostring(lxml.id("#1")))}}
+\stopxmlsetups
+
+\xmlfilter{xml}{/p/command(xml:show)}
+
+\xmlfilter{xml}{/p/abra/command(xml:show)}
+
+\xmlfilter{xml}{/p/oze/command(xml:show)}
+
+\stoptext
+

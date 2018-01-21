@@ -1,0 +1,44 @@
+% \enabledirectives[logs.errors] % context --errors
+
+% \enabledirectives[logs.errors=missing characters] % context --errors="missing characters"
+
+% \enabletrackers[fonts.missing]
+
+\setupinteraction[state=start]
+
+\environment is-not-there
+
+\usemodule[x][foobar]
+
+\starttext
+
+\chapter[foo]{foo}
+
+\in{foo}[foo]
+\in{bar}[bar]
+
+\chapter[bar]{bar}
+
+\in{foo}[foo]
+\in{bar}[bar]
+
+\xmlload{main}{crapcrap.xml}{}
+
+oeps \in{foo}[foo-a] oeps \char 999 \par
+oeps \in{foo}[foo-a] oeps \char 995 \par
+oeps \in{foo}[foo-b] oeps \char 991 \par
+
+\externalfigure[dummy]
+
+
+\dorecurse {10} {
+    \samplefile{sapolsky}
+    {\sl  \char 999 \char 995 \char 991}
+    {\bf  \char 999 \char 995 \char 991}
+    {\bfa \char 999 \char 995 \char 991}
+    {\bfb \char 999 \char 995 \char 991}
+    {\bfc \char 999 \char 995 \char 991}
+    \par
+}
+
+\stoptext

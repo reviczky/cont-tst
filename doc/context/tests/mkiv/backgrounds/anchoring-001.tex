@@ -1,0 +1,33 @@
+% based on example posted on the list
+
+\starttext
+
+\defineoverlay[my overlay][\positionoverlay{my graphic}]
+
+\startpositionoverlay{my graphic}
+    \setMPpositiongraphic{three}{mypos:circle}{mypos:radius=1cm,mypos:circlecolor=red}
+    \setMPpositiongraphic{three}{mypos:circle}{mypos:radius=.5cm,mypos:circlecolor=green}
+\stoppositionoverlay
+
+\startMPinclusions
+    if unknown context_apos : input mp-apos.mpiv ; fi ;
+    if unknown context_abck : input mp-abck.mpiv ; fi ;
+\stopMPinclusions
+
+\startMPpositiongraphic{mypos:circle}
+    drawarrow
+        fullcircle
+            scaled \MPvar{mypos:radius}
+            shifted \MPxy{\MPvar{self}}
+            shifted (\MPw{\MPvar{self}}/2,ExHeight/2)
+            withpen pencircle
+                scaled 2pt
+                withcolor \MPvar{mypos:circlecolor} ;
+    anchor_box(\MPanchor{\MPvar{self}}) ;
+\stopMPpositiongraphic
+
+\framed
+  [background=my overlay]
+  {let's see what happens \hpos{three}{{\em here}} or there}
+
+\stoptext

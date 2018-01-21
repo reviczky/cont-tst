@@ -1,0 +1,24 @@
+\starttext
+
+    \def\xtablestate{(\currentxtablerow,\currentxtablecolumn)}
+
+    \startxtable
+        \startxrow
+            \startxcell[nx=2] \xtablestate \stopxcell
+            \startxcell       \xtablestate \stopxcell
+            \startxcell       \xtablestate \stopxcell
+        \stopxrow
+        \startxrow
+            \startxcell[ny=2] \xtablestate \stopxcell
+            \startxcell[nx=2] \xtablestate \stopxcell
+            \startxcell       \xtablestate \stopxcell
+        \stopxrow
+        \startxrow
+            \startxcell[nx=2] \xtablestate \stopxcell
+            \startxcell       \xtablestate \stopxcell
+            \startxcell       \xtablestate \stopxcell
+        \stopxrow
+    \stopxtable
+
+\stoptext
+

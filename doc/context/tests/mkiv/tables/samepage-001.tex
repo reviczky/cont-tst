@@ -1,0 +1,11 @@
+\showframe
+
+\starttext
+
+\bTABLE[split=yes]
+    \dorecurse{30}{\bTR                  \bTD line 1.#1 \eTD \eTR}
+    \dorecurse{10}{\bTR[samepage=before] \bTD same page \eTD \eTR}
+    \dorecurse{10}{\bTR                  \bTD line 2.#1 \eTD \eTR}
+\eTABLE
+
+\stoptext

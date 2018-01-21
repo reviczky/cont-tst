@@ -1,0 +1,70 @@
+\starttext
+
+\startbuffer[demo]
+<document>
+  <bibitem xml:id="hagen2011">
+    <author>Hans Hagen</author>
+    <title>The Meaning of Life Is 42</title>
+    <journal>The Rhetoric of Mathematics</journal>
+    <date>2011</date>
+  </bibitem>
+  <bibitem xml:id="hagen2012">
+    <author>Hans Hagen</author>
+    <title>The New Meaning is Now 43</title>
+    <journal>High Energy Metaphysics</journal>
+    <date>2012</date>
+  </bibitem>
+  <text>
+    <p>This has been successfully proven in papers by <bib
+    ref="#hagen2011"/> and <bib ref="#hagen2012"/>.</p>
+  </text>
+</document>
+\stopbuffer
+
+\startxmlsetups xml:define
+    \xmlsetsetup{#1}{*}{xml:*}
+\stopxmlsetups
+
+\startxmlsetups xml:document
+    \xmlall{#1}{/text}
+\stopxmlsetups
+\startxmlsetups xml:text
+    \xmlflush{#1}
+\stopxmlsetups
+\startxmlsetups xml:p
+    \xmlflush{#1}
+    \par
+\stopxmlsetups
+
+\startxmlsetups xml:bib
+   \BibAuthor{#1}{\xmlatt{#1}{ref}}
+\stopxmlsetups
+
+\startxmlsetups xml:author
+    [[\xmlflush{#1}]]
+\stopxmlsetups
+
+\def\BibAuthor#1#2{[1:\xmlfirst{whatever}{/document/bibitem[@xml:id==string.sub('#2',2)]/author}]}
+
+\xmlregistersetup{xml:define}
+
+\xmlprocessbuffer{whatever}{demo}{}
+
+\startluacode
+    userdata = userdata or { }
+    userdata.bibitems = { }
+\stopluacode
+
+\startxmlsetups xml:document
+    \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:bibitem
+    \ctxlua{userdata.bibitems["\letterhash\xmlatt{#1}{xml:id}"] = "#1"}
+\stopxmlsetups
+
+\def\BibAuthor#1#2{[2:\xmlfirst{\cldcontext{userdata.bibitems['#2']}}{/author}]}
+
+\xmlprocessbuffer{whatever}{demo}{}
+
+\stoptext

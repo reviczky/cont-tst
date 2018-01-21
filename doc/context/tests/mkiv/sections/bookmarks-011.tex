@@ -1,0 +1,18 @@
+\setupinteraction
+  [state=start]
+
+\setupinteractionscreen
+  [option=bookmark]
+
+\definelist
+  [mylist]
+
+\placebookmarks
+  [chapter,mylist]
+  [chapter,mylist]
+
+\starttext
+    \startchapter[title=Messing Around]
+        \bookmark[mylist]{luigi is messing around again}\input zapf
+    \stopchapter
+\stoptext

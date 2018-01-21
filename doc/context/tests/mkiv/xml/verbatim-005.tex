@@ -1,0 +1,45 @@
+\startbuffer[test]
+<document>
+whatever
+
+<texcode>
+\starttext
+     \ConTeXt\ is awesome!
+\stoptext
+</texcode>
+
+whatever
+
+<xmlcode>
+     <text>
+         <front>
+             ...
+         </front>
+         <body>
+             ...
+         </body>
+     </text>
+</xmlcode>
+
+whatever
+</document>
+\stopbuffer
+
+\startxmlsetups xml:testsetups
+     \xmlsetsetup{#1}{/document/xmlcode}{xml:xmlcode}
+     \xmlsetsetup{#1}{/document/texcode}{xml:texcode}
+\stopxmlsetups
+
+\xmlregistersetup{xml:testsetups}
+
+\startxmlsetups xml:texcode
+     \xmlprettyprint{#1}{tex}
+\stopxmlsetups
+
+\startxmlsetups xml:xmlcode
+     \xmlprettyprint{#1}{xml}
+\stopxmlsetups
+
+\starttext
+    \xmlprocessbuffer{main}{test}{}
+\stoptext

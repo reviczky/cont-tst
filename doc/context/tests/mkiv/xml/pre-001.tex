@@ -1,0 +1,56 @@
+% example by Mojca
+
+\startbuffer[test1]
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head/>
+<body>
+<pre>
+. h y p h e n a t i o n .
+-------------------------
+           <span class="n">1</span>n a
+               <span class="n">1</span>t i o
+                 <span class="n">2</span>i o
+        h e<span class="n">2</span>n
+        h e n<span class="n">5</span>a t
+        h e n a<span class="n">4</span>
+  h y<span class="n">3</span>p h
+            n<span class="n">2</span>a t
+                    o<span class="n">2</span>n
+-------------------------
+. h y<span class="n">3</span>p h e<span class="n">2</span>n<span class="n">5</span>a<span class="n">4</span>t<span class="n">2</span>i o<span class="n">2</span>n.
+</pre>
+</body>
+</html>
+\stopbuffer
+
+\startxmlsetups all:html
+   \xmlsetsetup{main}{pre}{*}
+\stopxmlsetups
+
+\startxmlsetups all:html
+	\xmlsetsetup{main}{head|h1|pre|span}{*}
+\stopxmlsetups
+
+\xmlmapval{span}{n}{\bf\red}
+
+\startxmlsetups span
+    \start
+        \xmlval{span}{\xmlatt{#1}{class}}{}
+        \xmlflush{#1}
+    \stop
+\stopxmlsetups
+
+\startxmlsetups pre
+    \start \tttf
+   %\xmlflush{#1}
+   %\xmlflushlinewise{#1}
+    \xmlflushspacewise{#1}
+    \stop
+\stopxmlsetups
+
+\xmlregistersetup{all:html}
+
+\starttext
+    \xmlprocessbuffer{main}{test1}{}
+\stoptext

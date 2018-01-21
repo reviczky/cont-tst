@@ -1,0 +1,53 @@
+\useMPlibrary[dum]
+
+\starttext
+
+First line.
+
+\startplacefigure[location=here,reference=first,title=first]
+    \externalfigure[dummy][height=2cm]
+\stopplacefigure
+
+Second line.
+
+\startplacefigure[location=here,reference=second,title=second,group=alpha,groupsuffix=.a]
+    \externalfigure[dummy][height=2cm]
+\stopplacefigure
+
+Third line.
+
+\startplacefigure[location=here,reference=third,title=third]
+    \externalfigure[dummy][height=2cm]
+\stopplacefigure
+
+Fourth line.
+
+\startplacefigure[location=here,reference=fourth,title=fourth,group=alpha,groupsuffix=.b]
+    \externalfigure[dummy][height=2cm]
+\stopplacefigure
+
+Fifth line.
+
+\startplacefigure[location=here,reference=fifth,title=fifth,group=alpha,groupsuffix=.c]
+    \externalfigure[dummy][height=2cm]
+\stopplacefigure
+
+
+Last line: \in[first] / \in[second] / \in[third] / \in[fourth] / \in[fifth].
+
+\page
+
+\placelist[figure]
+
+\stoptext
+
+
+\startplacefigure[location=here,reference=first, title=first, group=alpha,groupsuffix=.a]
+    \externalfigure[dummy][height=2cm]
+\stopplacefigure
+\startplacefigure[location=here,reference=second,title=second,group=alpha,groupsuffix=.b]
+    \externalfigure[dummy][height=2cm]
+\stopplacefigure
+
+
+\stoptext

@@ -1,0 +1,191 @@
+
+\startluacode
+    fonts.handlers.otf.addfeature {
+        name = "stest",
+        type = "substitution",
+        data = {
+            a = "X",
+            b = "P",
+        }
+    }
+\stopluacode
+
+\startluacode
+    fonts.handlers.otf.addfeature {
+        name = "atest",
+        type = "alternate",
+        data = {
+            a = { "X", "Y" },
+            b = { "P", "Q" },
+        }
+    }
+\stopluacode
+
+\startluacode
+    fonts.handlers.otf.addfeature {
+        name = "mtest",
+        type = "multiple",
+        data = {
+            a = { "X", "Y" },
+            b = { "P", "Q" },
+        }
+    }
+\stopluacode
+
+\startluacode
+    fonts.handlers.otf.addfeature {
+        name = "ltest",
+        type = "ligature",
+        data = {
+            ['1'] = { "a", "b" },
+            ['2'] = { "d", "a" },
+        }
+    }
+\stopluacode
+
+\startluacode
+    fonts.handlers.otf.addfeature {
+        name = "ktest",
+        type = "kern",
+        data = {
+            a = { b = -500 },
+        }
+    }
+\stopluacode
+
+% \startluacode
+%
+%     -- we could populate this one mostly automatic if needed
+%     -- but also expect a font to have such kerns
+%
+%     local kern = -50
+%     local pair = { [32] = kern }
+%
+%     fonts.handlers.otf.addfeature {
+%         name    = "kern", -- spacekerns assume kern
+%         type    = "kern",
+%         data    = {
+%             A = pair, V = pair, W = pair,
+%             [32] = {
+%                 A = kern,
+%                 V = kern,
+%                 W = kern,
+%             },
+%         }
+%     }
+%
+% \stopluacode
+
+\startluacode
+    fonts.handlers.otf.addfeature {
+        name    = "ytest",
+        type    = "chainsubstitution",
+     -- flags   = { false, false, false, false },
+        lookups = {
+            {
+                type = "substitution",
+                data = {
+                    ["b"] = "B",
+                    ["c"] = "C",
+                },
+            },
+        },
+     -- steps    = {
+     --     {
+     --         rules = {
+     --             {
+     --                 before  = { { "a" } },
+     --                 current = { { "b", "c" } },
+     --                 lookups = { 1 },
+     --             },
+     --         },
+     --     },
+     -- },
+        data = {
+            rules = {
+                {
+                    before  = { { "a" } },
+                    current = { { "b", "c" } },
+                    lookups = { 1 },
+                },
+            },
+        },
+    }
+\stopluacode
+
+\startluacode
+    fonts.handlers.otf.addfeature {
+        name    = "itest",
+        type    = "chainsubstitution",
+        prepend = 1,
+        lookups = {
+            {
+                type = "multiple",
+                data = {
+                    ["f"] = { "f", 0x200C },
+                },
+            },
+            {
+                type = "single",
+                data = {
+                    ["a"] = "1",
+                    ["b"] = "2",
+                    ["c"] = "3",
+                },
+            },
+        },
+        data = {
+            rules = {
+                {
+                    current = { { "f" }, { "f" } },
+                    lookups = { 1 },
+                },
+                {
+                    current = { { "a" }, { "b" }, { "c" } },
+                    lookups = { 2, false, 2 },
+                },
+            },
+        }
+    }
+\stopluacode
+
+\startluacode
+    fonts.handlers.otf.addfeature {
+        name = "stest",
+        type = "single",
+        data = {
+            a = { -30, 0, -50, 0 },
+        }
+    }
+\stopluacode
+
+\definefontfeature[stest][stest=yes]
+\definefontfeature[atest][atest=yes]
+\definefontfeature[mtest][mtest=yes]
+\definefontfeature[ltest][ltest=yes]
+\definefontfeature[ktest][ktest=yes]
+\definefontfeature[ytest][ytest=yes]
+\definefontfeature[itest][itest=yes]
+\definefontfeature[ikern][ikern=yes]
+\definefontfeature[skern][skern=yes]
+
+\starttext
+
+\startTEXpage
+    \definedfont[file:dejavu-serif.ttf*default]%
+                  abracadabra\par
+    {\addff{stest}abracadabra\par}
+    {\addff{atest}abracadabra\par}
+    {\addff{mtest}abracadabra\par}
+    {\addff{ltest}abracadabra\par}
+    {\addff{ktest}abracadabra\par}
+    \enabletrackers[otf.*]
+    {\addff{ytest}abracadabra\par}
+    \disabletrackers[otf.*]
+    \enabletrackers[otf.*]
+    {\addff{itest}effe abcdef !f\par}
+    \disabletrackers[otf.*]
+    {\addff{stest}\vl a\vl\par}
+\stopTEXpage
+
+\stoptext

@@ -1,0 +1,21 @@
+\starttext
+
+    \placefigure
+      [left]
+      {}
+      {\framed[height=1cm,width=2cm]{}} \input tufte
+
+    \doifelsesidefloat
+        {\dontleavehmode{\bf OKAY}: HERE}
+        {\inmargin{OKAY} HERE}
+
+    \placefigure
+      [left]
+      {}
+      {\framed[height=10cm,width=2cm]{}} \input tufte
+
+    \doifelsesidefloat
+        {\dontleavehmode{\bf OKAY}: HERE}
+        {\inmargin{OKAY} HERE}
+
+\stoptext

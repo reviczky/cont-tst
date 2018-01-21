@@ -1,0 +1,30 @@
+\setupinteraction
+  [state=start]
+
+\showlayoutcomponents
+
+\nopdfcompression
+
+\enabletrackers[structure.referencing]
+
+\starttext
+
+\title{Contents}
+
+\placelist[chapter][criterium=text,interaction=all]
+
+\blank \goto{pragma website}[url(http://www.pragma-ade.com)]
+
+\blank \goto{merge-001.pdf}[file(merge-001.pdf)]
+
+\blank \goto{merge-001.pdf, page 2}[merge-001.pdf::page(3)]
+
+\chapter[one]{First}
+
+test \goto{page 3}[page(3)] and \goto{two}[two]
+
+\chapter[two]{Second}
+
+test \goto{page 2}[page(2)] and \goto{one}[one]
+
+\stoptext

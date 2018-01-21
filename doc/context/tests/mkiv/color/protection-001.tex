@@ -1,0 +1,15 @@
+\startprotectedcolors
+
+    \definecolor[mycolor][r=.4]
+
+\stopprotectedcolors
+
+\starttext
+
+    \color[mycolor]{In MyColor}
+
+  % {\mycolor Errro In MyColor}
+
+    {\csname mycolor\endcsname Not In MyColor}
+
+\stoptext

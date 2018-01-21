@@ -1,0 +1,73 @@
+\setupbackend
+  [export=book-001,
+   xhtml=yes,
+   css=export-example.css]
+
+\setupexport
+  [hyphen=yes]
+
+\definehighlight[whatever][color=red,style=bold]
+
+\starttext
+
+\startchapter[title=First Chapter]
+
+    \startsection[title=First Section]
+
+        \input ward
+
+        test \whatever{test} test
+
+        \input tufte
+
+        \startitemize
+        \startitem test \stopitem
+        \stopitemize
+
+        \startformula
+            e = \sqrt{mc^2}
+        \stopformula
+
+        \placefigure
+          {cow}
+          {\externalfigure[cow.pdf]}
+
+    \stopsection
+
+\stopchapter
+
+\stoptext
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\starttext
+
+\startchapter[title=First Chapter]
+
+    \startsection[title=First Section]
+
+        \input ward
+
+        \startformula
+            e = mc^2
+        \stopformula
+
+        \placefigure{test}{\externalfigure[cow.pdf]}
+
+    \stopsection
+
+\stopchapter
+
+\stoptext

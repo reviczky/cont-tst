@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test>
+    <a>
+        This is node a:
+        <b>
+            :Node    b:
+        </b>
+         and
+        <c>
+            :Node     c:
+        </c>
+        <b>B</b><c>C</c>
+    </a>
+</test>

@@ -1,0 +1,35 @@
+\starttext
+
+\def\TestA#1%
+  {\writestatus{Test A}{#1}%
+   \ctxlua{str = [[#1]] print(str) context(str) io.savedata("temp.tmp",str)}}
+
+\def\TestB#1%
+  {\writestatus{Test B}{#1}%
+   \ctxlua{str = [[\detokenize{#1}]] print(str) context(str) io.savedata("temp.tmp",str)}}
+
+\def\TestC#1%
+  {\writestatus{Test C}{#1}%
+   \edef\temp{#1}%
+   \ctxlua{str = [[\detokenize\expandafter{\temp}]] print(str) context(str) io.savedata("temp.tmp",str)}%
+   \typefile{temp.tmp}}
+
+\TestA{Test\
+A}
+
+\TestB{Test\
+B}
+
+\TestC{Test\
+C}
+
+Test\
+D
+
+\section{Test\
+E}
+
+Test F\footnote{Note\
+F}
+
+\stoptext

@@ -1,0 +1,14 @@
+\startctxfunction MyFunctionA
+    context(" A1 ")
+\stopctxfunction
+
+\startctxfunctiondefinition MyFunctionB
+    context(" B2 ")
+\stopctxfunctiondefinition
+
+\starttext
+    \resettimer \dorecurse{10000}{\ctxfunction{MyFunctionA}}   (\elapsedtime) \page
+    \resettimer \dorecurse{10000}{\MyFunctionB}                (\elapsedtime) \page
+    \resettimer \dorecurse{10000}{\ctxlua{context(" C3 ")}}    (\elapsedtime) \page
+    \resettimer \dorecurse{10000}{\ctxlua{tex.sprint(" D4 ")}} (\elapsedtime) \page
+\stoptext

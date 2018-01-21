@@ -1,0 +1,21 @@
+\starttext
+
+An example:
+
+\startlocalnotes[footnote]
+  \placetable
+    {Some Table}
+    \placeontopofeachother
+      {\starttable[|l|r|]
+       \HL
+       \VL Nota\footnote{Bene} \VL Bene\footnote{Nota} \VL\SR
+       \VL Bene\footnote{Nota} \VL Nota\footnote{Bene} \VL\SR
+       \HL
+       \stoptable}
+      {\setupnotation[footnote][alternative={serried},distance=.5em,after=\hskip1em]%
+       \placelocalnotes[footnote]}
+\stoplocalnotes
+
+test \footnote{x}test
+
+\stoptext

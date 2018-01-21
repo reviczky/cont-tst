@@ -1,0 +1,42 @@
+\startenvironment environment
+
+\startsetups table:references
+
+  \starttabulate[|l|l|l|]
+  \HL
+  \NC \bf Section   \NC \bf Number/Title \NC \bf Page         \NC\NR
+  \HL
+  \NC –             \NC \in[content]     \NC \at[content]     \NC\NR
+  \HL
+  \NC 1             \NC \in[sec:zero]    \NC \at[sec:zero]    \NC\NR
+  \NC 1.1           \NC \in[sec:one]     \NC \at[sec:one]     \NC\NR
+  \NC 1.1.1         \NC \in[sec:one:one] \NC \at[sec:one:one] \NC\NR
+  \NC 1.1.2         \NC \in[sec:one:two] \NC \at[sec:one:two] \NC\NR
+  \NC 1.2           \NC \in[sec:two]     \NC \at[sec:two]     \NC\NR
+  \NC 1.2.1         \NC \in[sec:two:one] \NC \at[sec:two:one] \NC\NR
+  \NC 1.2.2         \NC \in[sec:two:two] \NC \at[sec:two:two] \NC\NR
+  \HL
+  \NC 1             \NC \in[ref:zero]    \NC \at[ref:zero]    \NC\NR
+  \NC 1.1           \NC \in[ref:one]     \NC \at[ref:one]     \NC\NR
+  \NC 1.1.1         \NC \in[ref:one:one] \NC \at[ref:one:one] \NC\NR
+  \NC 1.1.2         \NC \in[ref:one:two] \NC \at[ref:one:two] \NC\NR
+  \NC 1.2           \NC \in[ref:two]     \NC \at[ref:two]     \NC\NR
+  \NC 1.2.1         \NC \in[ref:two:one] \NC \at[ref:two:one] \NC\NR
+  \NC 1.2.2         \NC \in[ref:two:two] \NC \at[ref:two:two] \NC\NR
+  \HL
+  \stoptabulate
+
+\stopsetups
+
+\setuphead
+  [part,chapter,section]
+  [page=yes,
+   continue=no,
+   placehead=yes,
+   insidesection=\texsetup{table:references}]
+
+\setuphead
+  [title]
+  [insidesection=]
+
+\stopenvironment

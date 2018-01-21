@@ -1,0 +1,11 @@
+\starttext
+
+\startMPpage
+    path p ; p := (-5cm,0) {up} .. {down} origin .. {up} (5cm,0) -- cycle ;
+    path q ; q := fullcircle scaled 1cm shifted (-2.5cm, 1.25cm) ;
+    path r ; r := fullcircle scaled 1cm shifted ( 2.5cm,-1.25cm);
+
+    draw image ( nofill p ; nofill q ; eofill r ; ) withcolor .5white ;
+\stopMPpage
+
+\stoptext

@@ -1,0 +1,29 @@
+\startbuffer[demo]
+<doc>
+<pre>
+\def\whatever#1{[whatever #1]}
+
+\ctxlua{print("okay")}
+</pre>
+</doc>
+\stopbuffer
+
+\usemodule[scite]
+
+\startxmlsetups xml:initialize
+    \xmlsetsetup{#1}{doc|pre}{xml:*}
+\stopxmlsetups
+
+\xmlregistersetup{xml:initialize}
+
+\startxmlsetups xml:doc
+    \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:pre
+    \xmlprettyprint{#1}{tex}
+\stopxmlsetups
+
+\starttext
+    \xmlprocessbuffer{main}{demo}{}
+\stoptext

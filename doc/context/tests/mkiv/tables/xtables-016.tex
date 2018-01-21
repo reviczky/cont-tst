@@ -1,0 +1,36 @@
+\setupexternalfigures[location=default]
+
+% example by Pablo: image also oveflows 2 columns so we need to distribute
+
+\starttext
+
+\startxtable[option=stretch]
+    \startxrow
+        \startxcell First line left\stopxcell
+        \startxcell \stopxcell
+        \startxcell First line right\stopxcell
+    \stopxrow
+    \startxrow
+        \startxcell Second line left\stopxcell
+        \startxcell \stopxcell
+        \startxcell Second line right\stopxcell
+    \stopxrow
+    \startxrow
+        \startxcell Third Line left\stopxcell
+        \startxcell[align=left,ny=2]
+            \externalfigure[cow][height=2cm]
+        \stopxcell
+        \startxcell \stopxcell
+    \stopxrow
+    \startxrow
+        \startxcell Fourth line left\stopxcell
+        \startxcell \stopxcell
+    \stopxrow
+    \startxrow
+        \startxcell Fifth line left\stopxcell
+        \startxcell \stopxcell
+        \startxcell Fifth line right\stopxcell
+    \stopxrow
+\stopxtable
+
+\stoptext

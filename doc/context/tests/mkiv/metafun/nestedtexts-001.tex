@@ -1,0 +1,27 @@
+\starttext
+
+    \startuniqueMPgraphic{mytest}
+        fill OverlayBox withcolor green ;
+        draw textext("nested") xsized 8cm shifted center OverlayBox withcolor blue ;
+        draw fullcircle scaled bbwidth(OverlayBox) withcolor red ;
+    \stopuniqueMPgraphic
+
+    \defineoverlay[mytest][\uniqueMPgraphic{mytest}]
+
+    \startMPpage[offset=1pt]
+        fill fullcircle scaled 10cm withcolor red ;
+        draw textext("\framed[background=mytest]{bla}") ;
+        draw textext("test 1.1") xsized 8cm rotated  45 withcolor white/2 ;
+        draw textext("test 1.2") xsized 4cm rotated -45 withcolor white/4 ;
+    \stopMPpage
+
+    \startMPpage[offset=1pt]
+        fill fullcircle scaled 10cm withcolor red ;
+        draw textext("\framed[background=mytest]{bla bla}") ;
+        draw textext("test 2.1") xsized 8cm rotated  45 withcolor white/1  ;
+        draw textext("test 2.2") xsized 4cm rotated -45 withcolor white/2  ;
+        draw textext("test 2.1") xsized 6cm rotated -30 withcolor white/3  ;
+        draw textext("test 2.2") xsized 4cm rotated  30 withcolor white/4  ;
+    \stopMPpage
+
+\stoptext

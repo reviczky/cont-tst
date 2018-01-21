@@ -1,0 +1,28 @@
+% check breaks
+
+\starttext
+
+\startchapter[title=test]
+
+\dorecurse{10}{word \TEX\ test }
+
+\dorecurse{10}{word \type{word} word \TEX\ test }
+
+\startlines
+line
+line
+$line$
+$line$
+\stoplines
+
+line
+
+line\par line\par \type {line} \par \type {line}
+
+line 1\par line 2\par word $\rm word$ word\par $\rm line$
+
+line 1\par line 2\par word \type{word} word\par \type{line}
+
+\stopchapter
+
+\stoptext

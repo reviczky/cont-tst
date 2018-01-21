@@ -1,0 +1,37 @@
+\starttext
+
+\definefacingfloat
+  [whatever]
+
+\setupfacingfloat
+  [whatever]
+  [style=bold,
+   color=white]
+
+\setupfacingfloat
+  [whatever:left]
+  [background=color,
+   backgroundcolor=red]
+
+\setupfacingfloat
+  [whatever:right]
+  [background=color,
+   backgroundcolor=green]
+
+\startfacingfloat[whatever]
+    {\dorecurse{10}{\samplefile{tufte} }}
+    {\dorecurse{10}{\samplefile{ward}  }}
+    {\dorecurse{10}{\samplefile{tufte} }}
+    {\dorecurse{10}{\samplefile{ward}  }}
+\stopfacingfloat
+
+\startfacingfloat[whatever]
+    \startcontent \dorecurse{10}{\samplefile{tufte} } \stopcontent
+    \startcontent \dorecurse{10}{\samplefile{ward}  } \stopcontent
+    \startcontent \dorecurse{10}{\samplefile{tufte} } \stopcontent
+    \startcontent \dorecurse{10}{\samplefile{ward}  } \stopcontent
+\stopfacingfloat
+
+\dorecurse{10}{\samplefile{sapolsky} }
+
+\stoptext

@@ -1,0 +1,18 @@
+\setupbackgrounds
+  [page]
+  [background=color,
+   backgroundcolor=red]
+
+\setupmixedcolumns
+  [align={flushleft,tolerant},
+   backgroundoffset=2mm,
+   background=color,
+   backgroundcolor=white]
+
+\starttext
+
+    \startmixedcolumns
+        \input tufte
+    \stopmixedcolumns
+
+\stoptext

@@ -1,0 +1,46 @@
+% \ctxlua{characters.registerentities()}
+
+\usemodule[mathml]
+
+\xmltexentity{textbar}{\textbar{}}
+
+\startbuffer[xmltest]
+<p>A &textbar; B A &textbar; B &amp; etc &lt; [&nbsp;] </p>
+\stopbuffer
+
+\startxmlsetups xml:mysetups
+    \xmlsetsetup{\xmldocument}{p}{xml:*}
+\stopxmlsetups
+
+\xmlregistersetup{xml:mysetups}
+
+\startxmlsetups xml:p
+    \xmlflush{#1} \par
+\stopxmlsetups
+
+\starttext
+
+\xmlprocessbuffer{main}{xmltest}{}
+
+\enabletrackers[context.trace]
+
+\xmlshow{main}
+
+\disabletrackers[context.trace]
+
+% \usemodule[mathml]
+% \startbuffer
+% <math xmlns="http://www.w3c.org/mathml" version="2.0">
+%   <mrow>
+%     <mi> x </mi>
+%     <munder>
+%       <mo> &RightArrow; </mo>
+%       <mtext> maps to </mtext>
+%     </munder>
+%     <mi> y </mi>
+%   </mrow>
+% </math>
+% \stopbuffer
+% \processxmlbuffer
+
+\stoptext

@@ -1,0 +1,40 @@
+\starttext
+
+\defineMPinstance
+  [myfun-a]
+  [format=metafun]
+
+\defineMPinstance
+  [myfun-b]
+  [format=metafun]
+
+\startMPdefinitions{myfun-a}
+    color MyColor ; MyColor := (1,0,0) ;
+\stopMPdefinitions
+
+\startMPdefinitions{myfun-b}
+    color MyColor ; MyColor := (0,1,0) ;
+\stopMPdefinitions
+
+\startuseMPgraphic{myfun-a::test-1}
+    fill fullcircle scaled 1cm withcolor MyColor  ;
+\stopuseMPgraphic
+
+\startuseMPgraphic{myfun-a::test-2}
+    fill fullcircle scaled 1cm withcolor MyColor ;
+\stopuseMPgraphic
+
+\startuseMPgraphic{myfun-b::test-1}
+    fill fullcircle scaled 1cm withcolor MyColor  ;
+\stopuseMPgraphic
+
+\startuseMPgraphic{myfun-b::test-2}
+    fill fullcircle scaled 1cm withcolor MyColor ;
+\stopuseMPgraphic
+
+\useMPgraphic{myfun-a::test-1}
+\useMPgraphic{myfun-b::test-1}
+\useMPgraphic{myfun-a::test-2}
+\useMPgraphic{myfun-b::test-2}
+
+\stoptext

@@ -1,0 +1,21 @@
+\starttext
+
+\startMPcode
+    passvariable("version","1.0") ;
+    passvariable("number",123) ;
+    passvariable("string","whatever") ;
+    passvariable("point",(1,2)) ;
+    passvariable("triplet",(1,2,3)) ;
+    passvariable("quad",(1,2,3,4)) ;
+    passvariable("boolean",false) ;
+    passvariable("path",fullcircle scaled 1cm) ;
+
+    draw fullcircle scaled 20pt ;
+\stopMPcode
+
+\ctxlua{inspect(metapost.variables)}
+
+\ctxcommand{mprunvar("number")}
+\ctxcommand{mprunvar("string")}
+
+\stoptext

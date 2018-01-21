@@ -1,0 +1,15 @@
+% a neat example by wolfgang (response to question on list)
+
+\unexpanded\def\Fleuron
+  {\par % only shows up when there is one line space
+   \leaders\vbox to \lineheight{MIDDLE OF THE PAGE}\vfil}
+
+\setuplayout[lines=10]
+
+\starttext
+
+    \dorecurse {5}{Line \recurselevel\par} \Fleuron \page
+    \dorecurse{10}{Line \recurselevel\par} \Fleuron \page
+    \dorecurse {5}{Line \recurselevel\par} \Fleuron
+
+\stoptext

@@ -1,0 +1,14 @@
+\definedescription
+  [description]
+  [alternative=hanging,
+   width=broad]
+
+\starttext
+
+    \dorecurse{15}{
+        \startdescription{\dorecurse{#1}{test }}
+            \input knuth
+        \stopdescription
+    }
+
+\stoptext

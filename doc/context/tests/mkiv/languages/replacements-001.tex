@@ -1,0 +1,36 @@
+\startluacode
+
+languages.replacements.add("basics", {
+    ["aap"]   = "monkey",
+    ["noot"]  = "nut",
+    ["never"] = "fourever",
+    ["newer"] = "cooler",
+    ["new"]   = "cool",
+})
+
+\stopluacode
+
+\replaceword[more][this][that]
+\replaceword[more][crap][support]
+\replaceword[more][---][—]
+\replaceword[more][shelfful][shelf{}ful]
+\replaceword[more][shifffahrt[shiff{}fahrt]
+\replaceword[more][auflösen][auf{-}{}{\zwnj}lösen]
+
+\starttext
+
+    Some code made for bacho\TeX\ 2013 but not used there as it's too complex to
+    serve as example. I need to check my system for more such potentially useful
+    code.
+
+    \setreplacements[basics]
+
+    What the heck, it's now or never, isn't it new?
+
+    \setreplacements[more]
+
+    Do we --- {\it really} --- need this kind of crap?
+
+    shelfful shifffahrt
+
+\stoptext

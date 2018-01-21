@@ -1,0 +1,88 @@
+\setupbodyfont[pagella]
+
+\starttext
+
+\definefontfeature[f:smallcaps][smcp=yes]
+\definefontfeature[f:nocaps]   [smcp=no]
+\definefontfeature[f:oldstyle] [onum=yes]
+\definefontfeature[f:newstyle] [onum=no]
+
+% \enabletrackers[fonts.features]
+
+\startTEXpage[offset=10pt]
+    \start
+        fijn fietsen 123
+        \type{[+os]}\feature[+][f:oldstyle]
+        fijn fietsen 123
+        \type{[+sc]}\feature[+][f:smallcaps]
+        fijn fietsen 123
+        \type{[+ns]}\feature[+][f:newstyle]
+        fijn fietsen 123
+        \type{[+nc]}\feature[+][f:nocaps]
+        fijn fietsen 123
+    \stop
+    \par
+    \start
+        fijn fietsen 123
+        \type{[+os]}\feature{+}{f:oldstyle}
+        fijn fietsen 123
+        \type{[+sc]}\feature{+}{f:smallcaps}
+        fijn fietsen 123
+        \type{[+ns]}\feature{+}{f:newstyle}
+        fijn fietsen 123
+        \type{[+nc]}\feature{+}{f:nocaps}
+        fijn fietsen 123
+    \stop
+    \par
+    \start
+        fijn fietsen 123
+        \type{[+os]}\feature[+][f:oldstyle]
+        fijn fietsen 123
+        \type{[+sc]}\feature[+][f:smallcaps]
+        fijn fietsen 123
+        \type{[-os]}\feature[-][f:oldstyle]
+        fijn fietsen 123
+        \type{[-sc]}\feature[-][f:smallcaps]
+        fijn fietsen 123
+    \stop
+    \par
+    \start
+        fijn fietsen 123
+        \type{[+os]}\addfeature{f:oldstyle}
+        fijn fietsen 123
+        \type{[+sc]}\addfeature{f:smallcaps}
+        fijn fietsen 123
+        \type{[-os]}\subtractfeature{f:oldstyle}
+        fijn fietsen 123
+        \type{[-sc]}\subtractfeature{f:smallcaps}
+        fijn fietsen 123
+    \stop
+    \par
+    \start
+        fijn fietsen 123
+        \type{[+os]}\addfeature{f:oldstyle}
+        fijn fietsen 123
+        \type{[+sc]}\addfeature{f:smallcaps}
+        fijn fietsen 123
+        \type{[=os]}\replacefeature{f:oldstyle}
+        fijn fietsen 123
+        \type{[=sc]}\replacefeature{f:smallcaps}
+        fijn fietsen 123
+    \stop
+    \par
+    \start
+        fijn fietsen 123
+        \type{[+os]}\addfeature[f:oldstyle]
+        fijn fietsen 123
+        \type{[+sc]}\addfeature[f:smallcaps]
+        fijn fietsen 123
+        \type{[reset]}\resetfeature
+        fijn fietsen 123
+        \type{[+os]}\addfeature[f:oldstyle]
+        fijn fietsen 123
+        \type{[+sc]}\addfeature[f:smallcaps]
+        fijn fietsen 123
+    \stop
+\stopTEXpage
+
+\stoptext

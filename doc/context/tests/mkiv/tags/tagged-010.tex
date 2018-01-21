@@ -1,0 +1,23 @@
+\setupbackend[export=yes]
+
+\setupbodyfont[dejavu]
+
+\starttext
+
+    \startTEXpage[offset=1ex]
+
+        12 45\quad
+        12345\quad
+        12.34\par
+        12\nobreakspace    45\quad
+        12\figurespace     45\quad
+        12\punctuationspace34\par
+        12\utfchar{"00A0}45\quad
+        12\utfchar{"2007}45\quad
+        12\utfchar{"2008}34\par
+
+     % \typefile{tagged-010.export}
+
+    \stopTEXpage
+
+\stoptext

@@ -1,0 +1,18 @@
+\starttext
+
+\startsection [title=Test 1, reference=ref 1]              \stopsection
+\startsection [title=Test 2, reference={ref 2}]            \stopsection
+\startsection [title=Test 3, reference= {ref 3}]           \stopsection
+\startsection [title=Test 4, reference={ref 4} ]           \stopsection
+\startsection [title=Test 5, reference= {ref 5} ]          \stopsection
+\startsection [title=Test 6, reference={ ref 6 , ref 7 }] \stopsection
+
+\dorecurse{7}{
+    \in{ref}[ref #1]
+    \in{ref}[ ref #1]
+    \in{ref}[ref #1 ]
+    \in{ref}[ ref #1 ]
+    \par
+}
+
+\stoptext

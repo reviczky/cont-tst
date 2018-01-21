@@ -1,0 +1,17 @@
+\usemodule[x][mathml]
+
+\starttext
+
+\startbuffer[demo]
+<p xmlns:m="http://whereever/mathml">
+    <m:math>
+         <m:mrow>
+            <m:mi>x</m:mi><m:mo lspace="15pt" rspace="15pt">=</m:mo><m:mn>3</m:mn>
+        </m:mrow>
+    </m:math>
+</p>
+\stopbuffer
+
+\xmlprocessbuffer{main}{demo}{}
+
+\stoptext

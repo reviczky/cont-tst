@@ -1,0 +1,24 @@
+\starttext
+
+\definedescription[lemma]
+\setupdescriptions[lemma][before=,after=,location=serried,width=fit]
+
+% ln: will disappear when this is stable
+
+\setupnote[linenote][paragraph=yes,numbercommand=,inbetween=\hskip.5em\vl\hskip.5em]
+\setupnotation [linenote][display=no,location=serried,distance=.5em]
+
+\setuplinenumbering[align=flushleft]
+
+\startlinenumbering[100]
+test \linenote {\startlemma{oeps 1} \input tufte\stoplemma} test test test test test test
+test \startlinenote [well] {oeps X} test test test test test test
+test \linenote {oeps 2} test test test test test test
+test \linenote {oeps 3} test test test test test test
+test \linenote {oeps 4} test test test test test test
+test \linenote {oeps 5} test test test test test test
+test \stoplinenote [well] test test test test test test
+\stoplinenumbering
+
+\stoptext
+

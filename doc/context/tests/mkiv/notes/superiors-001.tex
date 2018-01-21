@@ -1,0 +1,21 @@
+% posted by WS on list
+
+\definefontfeature[f:sups][sups=yes]
+
+\definefontfamily [mainface][rm][Linux Libertine O]
+\definefontfamily [mainface][mm][TeX Gyre Pagella Math]
+
+\setupbodyfont[mainface]
+
+\setupnote    [footnote][textcommand=,textstyle=\addff{f:sups}]   % \setsuperiors
+\setupnotation[footnote][numbercommand=,headstyle=\addff{f:sups}] % \setsuperiors
+
+\starttext
+
+\input knuth\footnote{Knuth sample text}
+
+\input ward\footnote{Ward sample text}
+
+\input tufte\footnote{Tufte sample text}
+
+\stoptext

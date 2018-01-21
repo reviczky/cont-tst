@@ -1,0 +1,69 @@
+\usemodule[mathml]
+
+\starttext
+
+\startTEXpage[offset=10pt]
+
+\startbuffer[test-1]
+<math xmlns='http://www.w3c.org/mathml' version='2.0'>
+    <mrow>
+        <mstyle scriptlevel="-">
+            <mfrac><mi>a</mi><mi>c</mi></mfrac>
+        </mstyle>
+        <mo>+</mo>
+            <mfrac><mi>a</mi><mi>c</mi></mfrac>
+        <mo>+</mo>
+        <mstyle scriptlevel="+">
+            <mfrac><mi>a</mi><mi>c</mi></mfrac>
+        </mstyle>
+        <mo>=</mo>
+        <mstyle scriptlevel="-">
+            <mfrac><mi>1</mi><mi>2</mi></mfrac>
+        </mstyle>
+        <mo>+</mo>
+            <mfrac><mi>1</mi><mi>2</mi></mfrac>
+        <mo>+</mo>
+        <mstyle scriptlevel="+">
+            <mfrac><mi>1</mi><mi>2</mi></mfrac>
+        </mstyle>
+        <mo>=</mo>
+        <mstyle scriptlevel="-">
+            <mfrac><mi>1</mi><mi>a</mi></mfrac>
+        </mstyle>
+        <mo>+</mo>
+            <mfrac><mi>1</mi><mi>a</mi></mfrac>
+        <mo>+</mo>
+        <mstyle scriptlevel="+">
+            <mfrac><mi>1</mi><mi>a</mi></mfrac>
+        </mstyle>
+        <mo>=</mo>
+        <mstyle scriptlevel="-">
+            <mi>x</mi>
+        </mstyle>
+        <mo>+</mo>
+            <mi>x</mi>
+        <mo>+</mo>
+        <mstyle scriptlevel="+">
+            <mi>x</mi>
+        </mstyle>
+        <mo>=</mo>
+        <mstyle scriptlevel="+">
+            <mi>x</mi>
+        </mstyle>
+        <mo>+</mo>
+            <mi>x</mi>
+        <mo>+</mo>
+        <mstyle scriptlevel="-">
+            <mi>x</mi>
+        </mstyle>
+    </mrow>
+</math>
+\stopbuffer
+
+\typebuffer[test-1][option=xml] \blank
+
+\xmlprocessbuffer{test}{test-1}{}
+
+\stopTEXpage
+
+\stoptext

@@ -1,0 +1,83 @@
+% macros=mkvi
+
+\startbuffer[mybib]
+
+@book{something-en,
+    author   = { Nobody, E. N. },
+    title    = { Something \quote{very} English },
+    language = { english },
+    address  = { Lake Wobegon, MN },
+    year     = { 2012 }
+}
+
+@book{something-nl,
+    author   = { Niemand, N. L. },
+    title    = { Dit is \quote{nogal} Nederlands },
+    title:en = { Something \quote{very} Dutch },
+    address  = { Hasselt, NL }
+    language = { dutch },
+    year     = { 2013 }
+}
+
+@book{something-de,
+    author   = { Niemand, D. E. von and von Nichts, D.},
+    title    = { Etwas \quote{sehr} deutsch },
+    title:en = { Something \quote{very} German },
+    language = { de },
+    year     = { 2014 }
+}
+
+@book{something-fr,
+    author   = { de la Trifouilly-les-Oies, F. R.},
+    title    = { Quelque chose de \quote{très} française },
+    title:en = { Something \quote{very} French },
+    address  = { Perpète en Brousse },
+    language = { french },
+    year     = { 2015 }
+}
+
+\stopbuffer
+
+\usemodule[art-01]
+
+\usebtxdataset[mybib.buffer]
+
+\usebtxdefinitions[apa]
+
+\starttext
+
+    %\setupdelimitedtext[language=local]
+
+    \quotation{foo} and {\fr \quotation{foo}}
+
+    \cite[title][something-en,something-fr,something-nl,something-de]
+
+    \cite[author][something-en,something-fr,something-nl,something-de]
+
+    \cite[year][something-en,something-fr,something-nl,something-de]
+
+    \showbtxdatasetcompleteness[standard]
+
+    \page
+
+    \startsection[title=Bibliographie]
+        \setupdelimitedtext[language=global]
+        \fr
+        \cite[title][something-en,something-fr]
+
+        \blank
+
+        \placebtxrendering[criterium=section,repeat=yes]
+
+    \stopsection
+
+    \page
+
+    \startsection[title=Bibliography]
+
+        \placebtxrendering[criterium=all,repeat=yes]
+
+    \stopsection
+
+\stoptext
+

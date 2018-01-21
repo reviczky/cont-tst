@@ -1,0 +1,22 @@
+\setupinteraction
+  [state=start,
+   option=bookmark]
+
+\setupinteractionscreen
+  [option=bookmark]
+
+\placebookmarks
+  [part,chapter,title,section,subsection]
+  [part,chapter,title]
+
+\setupbookmarks
+  [sectionblock=yes]
+
+\starttext
+
+    \startfrontmatter \chapter{chapter in frontmatter} \stopfrontmatter
+    \startbodymatter  \chapter{chapter in bodymatter}  \stopbodymatter
+    \startappendices  \chapter{chapter in appendices}  \stopappendices
+    \startbackmatter  \chapter{chapter in backmatter}  \stopbackmatter
+
+\stoptext

@@ -1,0 +1,46 @@
+\setupregister[index][n=1]
+
+\starttext
+
+hello \index{aa}
+hello \index{aa+aa}
+hello \index{aa+bb}
+hello \index{aa+cc}
+
+hello \index{bb}
+hello \index{bb+aa}
+hello \index{bb+bb}
+hello \index{bb+bb+aa}
+hello \index{bb+bb+bb}
+hello \index{bb+cc}
+
+hello \index{bb}
+hello \index{bb+aa}
+hello \index{bb+bb}
+hello \index{bb+bb+aa}
+hello \index{bb+bb+bb}
+hello \index{bb+cc}
+hello \seeindex{bb+aa}{foo}
+hello \seeindex{bb+bb}{foo}
+hello \seeindex{bb+bb+aa}{foo}
+hello \seeindex{bb+bb+bb}{foo}
+hello \seeindex{bb+cc}{foo}
+
+hello \index{cc}
+hello \seeindex{cc+aa}{foo}
+hello \seeindex{cc+bb}{foo}
+hello \seeindex{cc+bb+aa}{foo}
+hello \seeindex{cc+bb+bb}{foo}
+hello \seeindex{cc+cc}{foo}
+
+hello \index{dd}
+hello \seeindex{dd}{foo}
+
+hello \seeindex{ee}{foo}
+
+\blank[3*big]
+
+\placeindex[criterium=all]
+
+\stoptext
+

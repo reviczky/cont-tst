@@ -1,0 +1,58 @@
+\startbuffer[test]
+<A sectiontitle="1">
+    <B lemmatitle="1">some stuff</B>
+    <B lemmatitle="2">some stuff <C>First</C> more stuff <C>Second</C></B>
+    <B lemmatitle="3"><C>Third</C></B>
+    <B lemmatitle="4"><C>Fourth</C></B>
+    <B lemmatitle="5">more stuff</B>
+</A>
+\stopbuffer
+
+% 1 2 First
+%     Second
+%   3 Third
+%   4 Fourth
+
+\startxmlsetups xml:testsetups
+	\xmlsetsetup{\xmldocument}{A|B|C}{xml:*}
+\stopxmlsetups
+
+\xmlregistersetup{xml:testsetups}
+
+\startxmlsetups xml:A
+    \startsection[title=\xmlatt{#1}{sectiontitle}]
+        \SectionTitle{\getheadsyncs\getheadtitle}
+        \xmlflush{#1}
+    \stopsection
+\stopxmlsetups
+
+\startxmlsetups xml:B
+    \xmldoif {#1} {C} {
+        \LemmaTitle{\xmlatt{#1}{lemmatitle}}
+        \xmlall{#1}{C}
+    }
+\stopxmlsetups
+
+\startxmlsetups xml:C
+    \xmlflush{#1}
+    \par
+\stopxmlsetups
+
+\definemargindata[SectionTitle] [left] [hoffset=1em]
+\definemargindata[LemmaTitle]   [left]
+
+\setuphead
+  [section]
+  [style=bold,
+   alternative=margin,
+   distance=0pt,
+   placehead=no,
+   expansion=yes,
+   number=yes,
+   after=,
+   page=no]
+
+\starttext
+    \xmlprocessbuffer{main}{test}{}
+\stoptext
+

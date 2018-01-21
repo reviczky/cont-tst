@@ -1,0 +1,30 @@
+\showframe
+
+\startbuffer
+\setlocalhsize
+\dontleavehmode\framed[width=\hsize]      {\the\hsize,\the\localhsize,\setlocalhsize\the\localhsize,\type{\hsize      }} \par
+\dontleavehmode\framed[width=\localhsize] {\the\hsize,\the\localhsize,\setlocalhsize\the\localhsize,\type{\localhsize }} \par
+\dontleavehmode\framed[width=\textwidth]  {\the\hsize,\the\localhsize,\setlocalhsize\the\localhsize,\type{\textwidth  }} \par
+\dontleavehmode\framed[width=\makeupwidth]{\the\hsize,\the\localhsize,\setlocalhsize\the\localhsize,\type{\makeupwidth}} \par
+\dontleavehmode\framed[width=local]       {\the\hsize,\the\localhsize,\setlocalhsize\the\localhsize,\type{local}}        \par
+\dontleavehmode\blackrule[width=\hsize]       \par
+\dontleavehmode\blackrule[width=\localhsize]  \par
+\dontleavehmode\blackrule[width=\textwidth]   \par
+\dontleavehmode\blackrule[width=\makeupwidth] \par
+\dontleavehmode\ruledhbox to \hsize      {x\hss x} \par
+\dontleavehmode\ruledhbox to \localhsize {x\hss x} \par
+\dontleavehmode\ruledhbox to \textwidth  {x\hss x} \par
+\dontleavehmode\ruledhbox to \makeupwidth{x\hss x} \par
+\stopbuffer
+
+\starttext
+
+\startitemize
+    \startitem
+        \getbuffer
+    \stopitem
+\stopitemize
+
+\getbuffer
+
+\stoptext

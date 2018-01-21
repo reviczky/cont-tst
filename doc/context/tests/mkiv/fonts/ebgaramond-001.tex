@@ -1,0 +1,35 @@
+\usetypescriptfile[ebgaramond] % so we can overload features
+
+\definefontfeature
+  [quality]
+  [expansion=quality,protrusion=quality]
+
+\definefontfeature
+  [eb-garamond-normal]
+  [eb-garamond-normal,quality]
+
+\definefontfeature
+  [eb-garamond-smallcaps]
+  [eb-garamond-smallcaps,quality]
+
+\setupbodyfont[ebgaramond,12pt]
+
+\setupcapitals[sc=yes]
+
+\setupbodyfontenvironment[default][em=italic]
+
+\setupinterlinespace[line=3.2ex]
+
+\setupalign[lesshyphenation,hz,hanging]
+
+\showframe
+
+\starttext
+
+    \dostepwiserecurse {8} {12} {1} {
+        \switchtobodyfont[#1pt]
+        \input tufte
+        \blank
+    }
+
+\stoptext

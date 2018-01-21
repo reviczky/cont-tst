@@ -1,0 +1,24 @@
+% a nice posted on stack exchange
+
+\installshipoutmethod{REPEAT}
+  {\dowithnextbox
+     {\setbox\scratchbox\hpack to \paperwidth{\box\nextbox\hss}%
+      \setbox\scratchbox\hpack               {\copy\scratchbox\box\scratchbox}%
+      \invokepagehandler{normal}{\box\scratchbox}}
+   \hpack}
+
+\setuppapersize[A5][A4,landscape]
+
+\setuppaper[method=REPEAT]
+
+\starttext
+
+    \chapter{Knuth} \input knuth
+    \chapter{Zapf}  \input zapf
+
+\stoptext
+
+% or:
+%
+% \setuppapersize[A5][A4,landscape]
+% \setuplayout[nx=2]

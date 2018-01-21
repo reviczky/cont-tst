@@ -1,0 +1,59 @@
+\usemodule[art-01]
+
+\starttext
+
+    \par some line of text \par
+    \startitemize[columns,three,packed]
+        \startitem one   \stopitem \startitem two   \stopitem
+        \startitem three \stopitem \startitem four  \stopitem
+        \startitem five   \stopitem
+    \stopitemize
+    \par some line of text \par
+    \startitemize[columns,three][inbetween={\blank[small]}]
+        \startitem one   \stopitem \startitem two   \stopitem
+        \startitem three \stopitem \startitem four  \stopitem
+        \startitem five   \stopitem
+    \stopitemize
+    \par some line of text \par
+    \startitemize[columns,three][inbetween={\blank[medium]}]
+        \startitem one   \stopitem \startitem two   \stopitem
+        \startitem three \stopitem \startitem four  \stopitem
+        \startitem five   \stopitem
+    \stopitemize
+    \par some line of text \par
+    \startitemize[columns,three][inbetween={\blank[2*big]}]
+        \startitem one   \stopitem \startitem two   \stopitem
+        \startitem three \stopitem \startitem four  \stopitem
+        \startitem five   \stopitem
+    \stopitemize
+    \par some line of text \par
+
+    \page
+
+    \par some line of text \par
+    \startitemize[columns,three,packed]
+        \startitem one   \stopitem \startitem two   \stopitem
+        \startitem three \stopitem \startitem four  \stopitem
+        \startitem five   \stopitem
+    \stopitemize
+    \par some line of text \par
+    \startitemize[columns,three][inbetween={\blank[small]},grid=]
+        \startitem one   \stopitem \startitem two   \stopitem
+        \startitem three \stopitem \startitem four  \stopitem
+        \startitem five   \stopitem
+    \stopitemize
+    \par some line of text \par
+    \startitemize[columns,three][inbetween={\blank[medium]},grid=]
+        \startitem one   \stopitem \startitem two   \stopitem
+        \startitem three \stopitem \startitem four  \stopitem
+        \startitem five   \stopitem
+    \stopitemize
+    \par some line of text \par
+    \startitemize[columns,three][inbetween={\blank[2*big]},grid=]
+        \startitem one   \stopitem \startitem two   \stopitem
+        \startitem three \stopitem \startitem four  \stopitem
+        \startitem five   \stopitem
+    \stopitemize
+    \par some line of text \par
+
+\stoptext

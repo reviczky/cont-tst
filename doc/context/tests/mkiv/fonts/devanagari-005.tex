@@ -1,0 +1,167 @@
+% \environment devanagari-000
+
+\usemodule[fnt-20]
+
+\setupbodyfont[dejavu]
+
+\starttext
+
+\def\devline#1#2%
+  {\setvariables
+     [otftracker]
+     [font=file:chandas.ttf,
+      features=devanagari-one,
+      size=30pt,
+      figure=,
+      title={#2},
+      sample={#1}]}
+
+\devline
+{\char"00A0\char"200D\char"094D\char"0930}
+{vatta on nbsp}
+
+\devline
+{\char"00A0\char"200D\char"094D\char"0931}
+{halant forced not on nbsp}
+
+\devline
+{\char"0930\char"094D\char"00A0}
+{reph on nbsp}
+
+\devline
+{\char"0930\char"094D}
+{lonely reph}
+
+\devline
+{\char"094D}
+{lonely halant}
+
+\devline
+{\char"094D\char"0930}
+{halant + ra}
+
+\devline
+{\char"00A0\char"094D}
+{halant on nbsp}
+
+\devline
+{\char"0930\char"094D\char"0937\char"094D\char"091F}
+{reph on consonant-ligature}
+
+\devline
+{\char"0930\char"094D\char"200C\char"0937\char"094D\char"091F}
+{ra + halant forced not to form reph on consonant}
+
+\devline
+{\char"0945}
+{lonely above-mark}
+
+\devline
+{\char"00A0\char"0945}
+{above-mark on nbsp}
+
+\devline
+{\char"0943}
+{lonely below-mark}
+
+\devline
+{\char"00A0\char"0943}
+{below-mark on nbsp}
+
+\devline
+{\char"0940}
+{lonely post-mark}
+
+\devline
+{\char"00A0\char"0940}
+{post-mark on nbsp}
+
+\devline
+{\char"0915\char"093E\char"0945}
+{consonant with two matra's, which is wrong}
+
+\devline
+{\char"0915\char"093E\char"0943}
+{consonant with two matra's, which is wrong}
+
+\devline
+{\char"0915\char"093E\char"0940}
+{consonant with two matra's, which is wrong}
+
+\devline
+{\char"0915\char"093E\char"0923\char"093F}
+{syllable containing pre-mark}
+
+\devline
+{\char"200D\char"0915}
+{zwj preceding consonant, should disappear}
+
+\devline
+{\char"200D\char"0930\char"094D\char"0915}
+{zwj preceding consonant with reph, should disappear}
+
+\devline
+{\char"0915\char"094D\char"0937}
+{consonant-ligarure}
+
+\devline
+{\char"0915\char"094D\char"200D\char"0937}
+{forced half-form}
+
+\devline
+{\char"0915\char"094D\char"200C\char"0937}
+{forced explicit halant}
+
+\devline
+{\char"0915\char"094D}
+{halant after last consonant}
+
+\devline
+{\char"0915\char"094D\char"200D}
+{forced half-form}
+
+\devline
+{\char"0915\char"094D\char"200C}
+{"forced" explicit halant}
+
+\devline
+{\char"093F}
+{lonely pre-mark}
+
+\devline
+{\char"00A0\char"093F}
+{pre-mark on nbsp}
+
+\devline
+{\char"0901}
+{lonely above-mark}
+
+\devline
+{\char"00A0\char"0901}
+{above-mark on nbsp}
+
+\devline
+{\char"0930\char"094D\char"00A0\char"0901}
+{reph and above-mark on same nbsp}
+
+\devline
+{\char"0930\char"094D\char"0915\char"0901}
+{reph and above-mark on same consonant}
+
+\devline
+{\char"0915\char"0901}
+{above-mark on consonant}
+
+\devline
+{\char"092A\char"0930\char"094D\char"0935\char"0924\char"0947}
+{word containing syllable with reph}
+
+\devline
+{\char"092A\char"0930\char"094D\char"200D\char"0935\char"0924\char"0947}
+{word containing syllable with ra forced as half-form: the eyelash ra}
+
+\devline
+{\char"092A\char"0931\char"094D\char"0935\char"0924\char"0947}
+{word containing syllable with eyelash ra which some fonts use to encode half-form of dravidian rra}
+
+\stoptext

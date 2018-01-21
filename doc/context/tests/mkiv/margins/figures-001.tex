@@ -1,0 +1,50 @@
+\setuppagenumbering[alternative=doublesided]
+
+\starttext
+
+    \definelayer
+      [extrafiguretextlayer:l]
+      [width=\overlaywidth,
+       height=\overlayheight,
+       corner={right,top},
+       location={right,bottom},
+       x=-1cm]
+
+    \definelayer
+      [extrafiguretextlayer:r]
+      [width=\overlaywidth,
+       height=\overlayheight,
+       corner={left,top},
+       location={left,bottom},
+       x=-1cm]
+
+    \startsetups extrafiguretext
+        \signalouterrealign
+        \setlayerframed
+          [extrafiguretextlayer:\rightorleftpageaction rl]
+          []
+          [width=\marginwidth,
+           align={lohi,middle},
+           foregroundstyle=\tx]
+          {\floatuserdataparameter{text}}
+        \flushlayer
+          [extrafiguretextlayer:\rightorleftpageaction rl]
+    \stopsetups
+
+    \defineoverlay
+      [extrafiguretext]
+      [\setups{extrafiguretext}]
+
+    \setupfloat
+      [figure]
+      [background={foreground,extrafiguretext}]
+
+    \dorecurse {20} {
+
+        \startplacefigure[title=Dummy figure][text={margin dummy text #1}]
+            \externalfigure[dummy][width=.8\textwidth]
+        \stopplacefigure
+
+    }
+
+\stoptext

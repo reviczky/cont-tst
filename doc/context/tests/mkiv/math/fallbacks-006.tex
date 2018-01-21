@@ -1,0 +1,17 @@
+%resetfontfallback  [cjk-math]
+\definefontfallback [cjk-math] [file:ipaexm] [0x0000-0xFFFF] [check=yes] % inefficient, should be ranges
+
+\starttypescript [math] [test] [name]
+    \definefontsynonym [MathRoman] [texgyrepagella-math] [features=math\mathsizesuffix,fallbacks=cjk-math]
+\stoptypescript
+
+\definetypeface [test] [rm] [serif] [pagella] [default]
+\definetypeface [test] [mm] [math]  [test]    [default]
+
+\setupbodyfont[test]
+
+\starttext
+
+    $f_{高温}$
+
+\stoptext

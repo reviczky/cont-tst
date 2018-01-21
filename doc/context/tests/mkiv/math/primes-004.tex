@@ -1,0 +1,71 @@
+\enabletrackers[math.collapsing]
+
+\setupbodyfont[xits]
+\setupbodyfont[modern-designsize]
+\setupbodyfont[modern]
+\setupbodyfont[palatino]
+
+\doifmode {*allfonts} {
+    \setupbodyfont[cambria]
+    \setupbodyfont[lucidaot]
+}
+
+\unexpanded\def\TestPrime#1%
+  {\detokenize{#1} \NC
+   \switchtobodyfont             [xits]\ruledhbox{\strut$#1$}\NC
+   \doifmode {*allfonts} {
+       \switchtobodyfont      [cambria]\ruledhbox{\strut$#1$}\NC
+       \switchtobodyfont     [lucidaot]\ruledhbox{\strut$#1$}\NC
+    }
+   \switchtobodyfont         [palatino]\ruledhbox{\strut$#1$}\NC
+   \switchtobodyfont[modern-designsize]\ruledhbox{\strut$#1$}\NC
+   \switchtobodyfont           [modern]\ruledhbox{\strut$#1$}\NC}
+
+\starttext
+
+\startTEXpage[offset=10pt]
+
+    \starttabulate[|T|c|c|c|c|c|c|]
+        \NC
+            \NC \type {xits}
+            \doifmode {*allfonts} {
+                \NC \type {cambria}
+                \NC \type {lucida}
+            }
+            \NC \type {palladio}
+            \NC \type {virtual}
+            \NC \type {modern}
+        \NC \NR \NR
+        \HL
+        \NC \TestPrime{\char"2032} \NR
+        \NC \TestPrime{\textstyle\prime\quad'} \NR
+        \NC \TestPrime{\scriptstyle\prime\quad'} \NR
+        \NC \TestPrime{\scriptscriptstyle\prime\quad'} \NR
+        \NC \TestPrime{\textstyle f'\scriptstyle      f'     \scriptscriptstyle f'} \NR
+        \NC \TestPrime{\textstyle f\prime\scriptstyle f\prime\scriptscriptstyle f\prime} \NR
+        \HL
+        \NC \TestPrime{f'} \NR
+        \NC \TestPrime{f''} \NR
+        \NC \TestPrime{f''} \NR
+        \HL
+        \NC \TestPrime{f\prime} \NR
+        \NC \TestPrime{f\prime\prime} \NR
+        \NC \TestPrime{f\prime\prime\prime} \NR
+        \HL
+        \NC \TestPrime{f\prime^{\prime^{\prime}}} \NR
+        \NC \TestPrime{f'^{'^{'}}} \NR
+        \HL
+        \NC \TestPrime{x^{f'}} \NR
+        \NC \TestPrime{x^{f\prime}} \NR
+        \HL
+        \NC \TestPrime{f^{\prime}} \NR
+        \NC \TestPrime{f^{'}} \NR
+        \HL
+        \NC \TestPrime{f'_      {2} f'      ^{3} f'      _{2}^{3}} \NR
+        \NC \TestPrime{f\prime _{2} f\prime ^{3} f\prime _{2}^{3}} \NR
+        \HL
+    \stoptabulate
+
+\stopTEXpage
+
+\stoptext

@@ -1,0 +1,48 @@
+\setuppapersize
+  [A5]
+
+\setupheadertexts
+  [][chapter]
+  [\getvariable{document}{title}][]
+
+\setuppagenumbering
+  [alternative=doublesided,
+   location=footer]
+
+\unexpanded\def\MyChapterTitle#1#2%
+  {\framed
+    [offset=overlay,
+     frame=off,
+     width=\textwidth,
+     align={middle,lohi}]
+    {#1\blank#2}}
+
+\setuphead
+  [chapter]
+  [header=high,
+   command=\MyChapterTitle,
+   conversion=Words,
+   style=\bfc,
+   numberstyle=\bfb]
+
+\setuplabeltext
+  [chapter=Chapter~]
+
+\setupbodyfont
+  [punknova]
+
+\startdocument[title=MyTitle]
+
+    \startchapter[title=First]
+
+        \dorecurse{10}{\input ward\par}
+
+    \stopchapter
+
+    \startchapter[title=Second]
+
+        \dorecurse{10}{\input ward\par}
+
+    \stopchapter
+
+\stopdocument

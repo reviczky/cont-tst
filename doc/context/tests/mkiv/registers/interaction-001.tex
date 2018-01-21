@@ -1,0 +1,25 @@
+% posted on list (adapted)
+
+\setupinteraction[state=start]
+
+% \startsectionblockenvironment[bodypart]
+% 	\setcounter[userpage][9]
+% \stopsectionblockenvironment
+
+\setupuserpagenumber[way=byblock]
+
+\starttext
+
+\startfrontmatter
+    dummy 1\page
+    dummy 2\page
+\stopfrontmatter
+
+\startbodymatter
+    dummy 3\page
+    bla\index{bla}
+\stopbodymatter
+
+\placeregister[index]
+
+\stoptext

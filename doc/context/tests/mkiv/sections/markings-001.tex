@@ -1,0 +1,8 @@
+\setupheadertexts[{\getmarking[section]}]
+\definehead[suction][section][number=no]
+
+\starttext
+    \placelist[section] \page
+    \section{foo} \page
+    \suction{bar} \page
+\stoptext

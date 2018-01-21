@@ -1,0 +1,18 @@
+\mainlanguage[pe]
+
+\usetypescriptfile[dejavu]
+
+\definetypeface [dejavu] [rm] [serif] [dejavu]   [default]
+\definetypeface [dejavu] [ss] [sans]  [dejavu]   [default]
+\definetypeface [dejavu] [tt] [mono]  [dejavu]   [default]
+\definetypeface [dejavu] [mm] [math]  [xitsbidi] [default] [direction=both,rscale=1.2]
+
+\setuptypeface[dejavu]
+
+\starttext
+
+    \start \setupalign[r2l] \setupmathematics[align=r2l] arabic: این یک آزمایش است. \par text: 3+2=5 \par math: $3+2=5$ $\sqrt{3+2=5}$ \par \stop
+
+    \start \setupalign[l2r] \setupmathematics[align=l2r] latin:  This is a test.    \par text: 3+2=5 \par math: $3+2=5$ $\sqrt{3+2=5}$\par \stop
+
+\stoptext

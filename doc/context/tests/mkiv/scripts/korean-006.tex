@@ -1,0 +1,77 @@
+% This example was made at the TUG 2013 conference after a presentation by Chof. The font
+% most recent version of the font (adapted by by Dohyun Kim) can be downloaded from:
+% http://ftp.ktug.org/KTUG/hcr-lvt/1.910_nomac/.
+
+% there are 2 rlig lookups but these only work okay when calt is applied (first)
+
+% uni1112.y4 uni119E.y1            uni1112119E
+% uni1112.y5 uni119E.y0 uni11AB.y2 uni1112119E11AB
+
+\starttext
+
+\definefontfeature
+  [korean-base]
+  [goodies=hanbatanglvt,
+   colorscheme=default,
+   mode=node,
+   script=hang,
+   language=kor]
+
+\definefontfeature
+  [korean-jmo]
+  [korean-base]
+  [ljmo=yes,
+   tjmo=yes,
+   vjmo=yes]
+
+\definefontfeature
+  [korean-calt]
+  [korean-base]
+  [calt=yes]
+
+\definefontfeature
+  [korean-rlig]
+  [korean-base]
+  [calt=yes,
+   rlig=yes]
+
+
+\definefont[KoreanJMO] [hanbatanglvt*korean-jmo]
+\definefont[KoreanCALT][hanbatanglvt*korean-calt]
+\definefont[KoreanRLIG][hanbatanglvt*korean-rlig]
+\setfontcolorscheme[2]
+
+\startbuffer
+    % Hunminjeongeum: http://en.wikipedia.org/wiki/Hunminjeongeum
+    ᄒᆞᆫ / 나랏말ᄊᆞ미中듕國귁에달아문ᄍᆞᆼ와로서르ᄉᆞᄆᆞᆺ디아니ᄒᆞᆯᄊᆡ%
+    사ᄅᆞᆷ마다ᄒᆡᅇᅧ수ᄫᅵ니겨날로ᄡᅮ메便뼌安ᅙᅡᆫ킈ᄒᆞ고져ᄒᆞᇙᄯᆞᄅᆞ미니라
+\stopbuffer
+
+\startTEXpage[offset=5pt]
+    \KoreanJMO  \type{-jmo:} \getbuffer \par
+    \KoreanCALT \type{calt:} \getbuffer \par
+    \KoreanRLIG \type{rlig:} \getbuffer \par
+    %disabledirectives[otf.chain.quitonnoreplacement] % only for debugging a font
+    %KoreanJMO  \type{-jmo:} \getbuffer \par
+    %KoreanCALT \type{calt:} \getbuffer \par
+    %KoreanRLIG \type{rlig:} \getbuffer \par
+    %enabledirectives[otf.chain.quitonnoreplacement]
+\stopTEXpage
+
+\showotfcomposition{hanbatanglvt*korean-jmo} {l2r}{문} \page
+\showotfcomposition{hanbatanglvt*korean-calt}{l2r}{문} \page
+\showotfcomposition{hanbatanglvt*korean-rlig}{l2r}{문} \page
+
+%disabledirectives[otf.chain.quitonnoreplacement]
+%showotfcomposition{hanbatanglvt*korean-jmo} {l2r}{문} \page
+%showotfcomposition{hanbatanglvt*korean-calt}{l2r}{문} \page
+%showotfcomposition{hanbatanglvt*korean-rlig}{l2r}{문} \page
+%enabledirectives[otf.chain.quitonnoreplacement]
+
+\page
+
+\typefile{korean-006.tex}
+
+\stoptext
+
+

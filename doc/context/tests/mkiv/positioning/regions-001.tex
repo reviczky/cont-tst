@@ -1,0 +1,67 @@
+\setuppapersize[A6][A6] % by ws ...
+
+\starttext
+
+\dontleavehmode\xypos{testposition1}\par
+\dontleavehmode\xypos{testposition3}\par
+
+\startlines[style=mono]
+X1: \MPx{testposition1}
+Y1: \MPy{testposition1}
+R1: \MPr{testposition1}
+P1: \MPp{testposition1}
+\stoplines
+
+\startlines[style=mono]
+X3: \MPx{testposition3}
+Y3: \MPy{testposition3}
+R3: \MPr{testposition3}
+P3: \MPp{testposition3}
+\stoplines
+
+\pageanchor
+
+\page
+
+\dontleavehmode\xypos{testposition2}\par
+\dontleavehmode\xypos{testposition4}\par
+
+\startlines[style=mono]
+X2: \MPx{testposition2}
+Y2: \MPy{testposition2}
+R2: \MPr{testposition2}
+P2: \MPp{testposition2}
+\stoplines
+
+\startlines[style=mono]
+X4: \MPx{testposition4}
+Y4: \MPy{testposition4}
+R4: \MPr{testposition4}
+P4: \MPp{testposition4}
+\stoplines
+
+\pageanchor
+
+\page
+
+\dontleavehmode\xypos{testposition5}\par
+\dontleavehmode\xypos{testposition6}\par
+
+\startlines[style=mono]
+X5: \MPx{testposition5}
+Y5: \MPy{testposition5}
+R5: \MPr{testposition5}
+P5: \MPp{testposition5}
+\stoplines
+
+\startlines[style=mono]
+X6: \MPx{testposition6}
+Y6: \MPy{testposition6}
+R6: \MPr{testposition6}
+P6: \MPp{testposition6}
+\stoplines
+
+\pageanchor
+
+\stoptext
+

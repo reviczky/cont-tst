@@ -1,0 +1,70 @@
+% \enabletrackers[structures.referencing]
+% \enabletrackers[structures.referencing.analyzing]
+% \enabletrackers[structures.referencing.identifying]
+% \enabletrackers[structures.referencing.importing]
+
+\setupreferencing[autofile=yes]
+\setupinteraction[state=start]
+
+\startcomponent cross-002
+
+\product cross-100
+
+\startchapter[title=Two,reference=two]
+
+    \dontleavehmode \textreference[hello]{Hello There Two!}Hello There Two
+
+    \starttabulate[|l|l|l|]
+        \NC [two] \NC at    \NC \at      {page}[two] \NC \NR
+        \NC [two] \NC in    \NC \in   {chapter}[two] \NC \NR
+        \NC [two] \NC about \NC \about         [two] \NC \NR
+        \NC [two] \NC goto  \NC \goto{location}[two] \NC \NR
+    \stoptabulate
+
+    \starttabulate[|l|l|l|]
+        \NC [one] \NC at    \NC \at      {page}[one] \NC \NR
+        \NC [one] \NC in    \NC \in   {chapter}[one] \NC \NR
+        \NC [one] \NC about \NC \about         [one] \NC \NR
+        \NC [one] \NC goto  \NC \goto{location}[one] \NC \NR
+    \stoptabulate
+
+    \starttabulate[|l|l|l|]
+        \NC [cross-001:one] \NC at    \NC \at      {page}[cross-001:one] \NC \NR
+        \NC [cross-001:one] \NC in    \NC \in   {chapter}[cross-001:one] \NC \NR
+        \NC [cross-001:one] \NC about \NC \about         [cross-001:one] \NC \NR
+        \NC [cross-001:one] \NC goto  \NC \goto{location}[cross-001:one] \NC \NR
+    \stoptabulate
+
+    \starttabulate[|l|l|l|]
+        \NC [cross-001::one] \NC at    \NC \at      {page}[cross-001::one] \NC \NR
+        \NC [cross-001::one] \NC in    \NC \in   {chapter}[cross-001::one] \NC \NR
+        \NC [cross-001::one] \NC about \NC \about         [cross-001::one] \NC \NR
+        \NC [cross-001::one] \NC goto  \NC \goto{location}[cross-001::one] \NC \NR
+    \stoptabulate
+
+    \starttabulate[|l|l|l|]
+        \NC [cross-001:::one] \NC at    \NC \at      {page}[cross-001:::one] \NC \NR
+        \NC [cross-001:::one] \NC in    \NC \in   {chapter}[cross-001:::one] \NC \NR
+        \NC [cross-001:::one] \NC about \NC \about         [cross-001:::one] \NC \NR
+        \NC [cross-001:::one] \NC goto  \NC \goto{location}[cross-001:::one] \NC \NR
+    \stoptabulate
+
+    \startlines
+        \at          {page}[cross-001:::one] in \from[cross-001]
+        \in       {chapter}[cross-001:::one] of \from[cross-001] (\about[cross-001:::one])
+        \goto{more details}[cross-001:::one]
+    \stoplines
+
+    \starttabulate[|l|l|l|]
+        \NC [cross-001:::hello] \NC other text \NC \ref[text][cross-001:::hello] \NC \NR
+        \NC [cross-001::hello]  \NC other text \NC \ref[text][cross-001::hello]  \NC \NR
+        \NC [cross-001:hello]   \NC other text \NC \ref[text][cross-001:hello]   \NC \NR
+        \NC [cross-001:::hello] \NC other page \NC \ref[page][cross-001:::hello] \NC \NR
+        \NC [cross-001:::hello] \NC about      \NC \about    [cross-001:::hello] \NC \NR
+        \NC [cross-001::hello]  \NC about      \NC \about    [cross-001::hello]  \NC \NR
+        \NC [cross-001:hello]   \NC about      \NC \about    [cross-001:hello]   \NC \NR
+    \stoptabulate
+
+\stopchapter
+
+\stopcomponent

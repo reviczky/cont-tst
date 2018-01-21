@@ -1,0 +1,12 @@
+\setupnotation[linenote][compress=yes]
+
+\starttext
+
+\startlinenumbering
+\strut \linenote{note 1.1}\linenote{note 1.2}\linenote{note 1.3}line 1\crlf
+x\linenote{note 2.1}x\linenote{note 2.2}x\linenote{note 2.3}x\startlinenote[one]{This should have lines 2 to 4.}line 2\crlf
+line 3\crlf
+line 4\stoplinenote[one]
+\stoplinenumbering
+
+\stoptext

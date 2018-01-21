@@ -1,0 +1,41 @@
+% for taco
+
+% \nopdfcompression
+
+\setupinteraction[state=start]
+
+% \setupinteraction[page=auto] % default (works best with views)
+% \setupinteraction[page=yes]
+\setupinteraction[page=name]   % also use named destination in goto (no views then)
+
+\starttext
+
+    \startTEXpage
+        \textreference[bla]{bla}%
+        \goto{\strut alb}[alb]%
+        \goto{\strut xxx}[xxx]%
+    \stopTEXpage
+
+    \startTEXpage
+        \textreference[alb]{alb}%
+        \goto{\strut bla}[bla]%
+        \goto{\strut xxx}[xxx]%
+    \stopTEXpage
+
+    \startTEXpage
+        \textreference[xxx]{xxx}%
+        \goto{\strut 111}[bla]%
+        \goto{\strut 222}[alb]%
+    \stopTEXpage
+
+    \startTEXpage
+        \goto{\strut 111}[bla]%
+        \goto{\strut 222}[alb]%
+    \stopTEXpage
+
+    \startTEXpage
+        \goto{\strut 111}[bla]%
+        \goto{\strut 222}[alb]%
+    \stopTEXpage
+
+\stoptext

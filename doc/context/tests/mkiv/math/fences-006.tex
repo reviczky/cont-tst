@@ -1,0 +1,41 @@
+\usemodule[x][mathml]
+
+\starttext
+
+\startbuffer[test]
+<p xmlns:m="http://www.w3.org/1998/Math/MathML">
+
+    <m:math>
+        <m:mrow>
+            <m:mfrac>
+                <m:mi>a</m:mi>
+                <m:mi>b</m:mi>
+            </m:mfrac>
+            <m:mo>|</m:mo>
+            <m:mfrac>
+                <m:mi>c</m:mi>
+                <m:mi>d</m:mi>
+            </m:mfrac>
+        </m:mrow>
+    </m:math>
+
+    <m:math>
+        <m:mrow>
+            <m:mfrac>
+                <m:mi>a</m:mi>
+                <m:mi>b</m:mi>
+            </m:mfrac>
+            <m:mo>/</m:mo>
+            <m:mfrac>
+                <m:mi>c</m:mi>
+                <m:mi>d</m:mi>
+            </m:mfrac>
+        </m:mrow>
+    </m:math>
+
+</p>
+\stopbuffer
+
+\xmlprocessbuffer{main}{test}{}
+
+\stoptext

@@ -1,0 +1,14 @@
+% macros=mkvi
+
+\starttext
+
+    \checked\def \whatevera#alpha#beta{#alpha + #beta}
+    \checked\edef\whatevera#alpha#beta{#beta + #alpha}
+
+    \unique \def \whateverb#alpha#beta{#alpha + #beta}
+    \unique \edef\whateverb#alpha#beta{#beta + #alpha}
+
+    \whatevera{1}{2}\par
+    \whateverb{1}{2}\par
+
+\stoptext

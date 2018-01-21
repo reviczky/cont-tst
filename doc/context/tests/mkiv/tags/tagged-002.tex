@@ -1,0 +1,34 @@
+\setuptagging[state=start,method=none]
+
+\enabletrackers[structure.tags,backends.tags]
+
+\starttext
+
+\startelement[document]
+
+    \startelement[chapter]
+        \startelement[p] \input tufte \stopelement \par
+    \stopelement
+
+    \startelement[chapter]
+        ziezo
+        \startelement[p] \input ward \stopelement \par
+    \stopelement
+
+    \startelement[chapter]
+        \startelement[p] \input knuth \stopelement \par
+        \startelement[whatever]
+            \startelement[p] \input tufte \stopelement \par
+            \startelement[p] \input tufte \input tufte \stopelement \par
+            \startelement[p] \input tufte \stopelement \par
+        \stopelement
+    \stopelement
+
+    \startelement[chapter]
+        oeps
+        \startelement[p] \input ward \stopelement \par
+    \stopelement
+
+\stopelement
+
+\stoptext

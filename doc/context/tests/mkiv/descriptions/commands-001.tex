@@ -1,0 +1,22 @@
+\defineenumeration
+  [Example]
+  [headcommand={\framed[background=color,backgroundcolor=red]},
+   numbercommand={\framed[background=color,backgroundcolor=green]},
+   titlecommand={\framed[background=color,backgroundcolor=blue]},
+   title=yes,
+   titledistance=1em,
+   distance=2em,
+   width=broad,
+   alternative=left]
+
+\starttext
+
+\startExample{foo}
+    This is a test for enumeration.
+\stopExample
+
+\startExample{bar}
+    This is a test for enumeration.
+\stopExample
+
+\stoptext

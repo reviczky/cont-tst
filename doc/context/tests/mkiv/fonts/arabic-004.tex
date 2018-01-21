@@ -1,0 +1,30 @@
+% \usemodule[oldotf]
+
+\definefontfeature
+ [urdu]
+ [default]
+ [mode=node,language=urd,script=arab,
+  autoscript=position,
+  autolanguage=position,
+  ccmp=yes,
+  init=yes,isol=yes,fina=yes,medi=yes,
+  rlig=yes,
+  curs=yes,kern=yes,mark=yes,mkmk=yes]
+
+\definefont [urdu] [file:NotoNastaliqUrdu-Regular.ttf*urdu]
+
+\setupalign[r2l]
+
+% \enabletrackers[fonts.injections.marks]
+% \enabletrackers[fonts.injections.cursive]
+
+\starttext
+
+\showotfcomposition
+    {file:NotoNastaliqUrdu-Regular.ttf*urdu}
+    {-1}
+    {ہوں خود}
+
+\urdu سفر میں خود ہی گھایل ہو گیا ہوں
+
+\stoptext

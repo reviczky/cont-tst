@@ -1,0 +1,15 @@
+\starttext
+
+\showjustification \dontcomplain
+
+\newdimen\MyHsize
+
+\dostepwiserecurse {0} {100} {10} {
+    \MyHsize\dimexpr\hsize -#1pt\relax
+    {\hsize\MyHsize\setupalign[normal]     \input tufte \par}
+    {\hsize\MyHsize\setupalign[flushleft]  \input tufte \par}
+    {\hsize\MyHsize\setupalign[flushright] \input tufte \par}
+    {\hsize\MyHsize\setupalign[center]     \input tufte \par}
+}
+
+\stoptext

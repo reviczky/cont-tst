@@ -1,0 +1,18 @@
+\setupbodyfont[pagella]
+
+\starttext
+
+\dorecurse{10}{
+    \dorecurse{20}{
+        \start
+            What \recursedepth\recurselevel\space
+            \feature{smallcaps}
+            What \recursedepth\recurselevel\space
+            \feature{oldstyle}
+            What \recursedepth\recurselevel\space
+        \stop
+    }
+    \par
+}
+
+\stoptext

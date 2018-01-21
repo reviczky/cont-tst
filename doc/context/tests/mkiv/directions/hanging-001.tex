@@ -1,0 +1,26 @@
+\useMPlibrary[dum]
+
+\starttext
+
+\showboxes
+
+\starthanging[location=left]{\externalfigure[dummy][width=4cm,height=3\lineheight]}
+\input tufte
+\stophanging
+
+\starthanging[location=right]{\externalfigure[dummy][width=4cm,height=3\lineheight]}
+\input tufte
+\stophanging
+
+\blank
+
+\startalignment[righttoleft]
+    \starthanging[location=left]{\externalfigure[dummy][width=4cm,height=3\lineheight]}
+    \input tufte
+    \stophanging
+    \starthanging[location=right]{\externalfigure[dummy][width=4cm,height=3\lineheight]}
+    \input tufte
+    \stophanging
+\stopalignment
+
+\stoptext

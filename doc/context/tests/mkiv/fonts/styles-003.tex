@@ -1,0 +1,76 @@
+\usemodule[art-01]
+
+\starttext
+
+\startbuffer
+\startbuffer[demo]
+    \start
+        \getbuffer[setup]
+        \subject{[ {\myslanted myslanted} ] [ {\it it} ] [ {\slanted slanted} ] [ $x=1$ ]}
+        [ {\myslanted myslanted} ] [ {\it it} ] [ {\slanted slanted} ] [ $x=1$ ]
+        \typebuffer[setup]
+        \blackrule[width=\textwidth,height=1pt,depth=0pt]
+    \stop
+\stopbuffer
+
+\startbuffer[setup]
+\setuphead[subject][style=\tfb,before=,after=]
+\definealternativestyle [myslanted] [\it] []
+\stopbuffer
+
+\getbuffer[demo]
+
+\startbuffer[setup]
+\setuphead[subject][style=\tfb,before=,after=]
+\definealternativestyle [myslanted] [\it] [\bi]
+\stopbuffer
+
+\getbuffer[demo]
+
+\startbuffer[setup]
+\setuphead[subject][style=\tfb,before=,after=]
+\definealternativestyle [myslanted] [\it] [\tf]
+\stopbuffer
+
+\getbuffer[demo]
+
+\startbuffer[setup]
+\definealternativestyle [myslanted] [\normalitalicface]
+\setuphead[subject][style=bold,before=,after=]
+\stopbuffer
+
+\getbuffer[demo]
+
+\startbuffer[setup]
+\definealternativestyle [myslanted] [\normalitalicface]
+\setuphead[subject][style=\bfd,before=,after=]
+\stopbuffer
+
+\getbuffer[demo]
+
+\startbuffer[setup]
+\definealternativestyle [myslanted] [\slantedface]
+\setuphead[subject][style=boldface,before=,after=]
+\stopbuffer
+
+\getbuffer[demo]
+
+\stopbuffer
+
+\unprotect
+
+\setupalternativestyles[method=normal] \getbuffer \page
+\setupalternativestyles[method=auto]   \getbuffer \page
+
+\starttyping
+\emphasistypeface
+\emphasisboldface
+
+\normaltypeface    == \typeface
+\normalboldface    == \boldface
+\normalslantedface == \slantedface
+\normalitalicface  == \italicface
+\swaptypeface      == \swapface
+\stoptyping
+
+\stoptext

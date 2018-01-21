@@ -1,0 +1,78 @@
+\definebtx
+  [mwe]
+  [default=default,
+   specification=mwe]
+
+\definebtxdataset
+  [mwe]
+
+\startbuffer [mwe]
+@mwe { one,
+    name = {one},
+    kind = {first},
+}
+
+@mwe { two,
+    name = {two},
+    kind = {second},
+}
+
+@mwe { three,
+    name = {three},
+    kind = {third},
+}
+\stopbuffer
+
+\usebtxdataset
+  [mwe]
+  [mwe.buffer]
+
+\setupbtx
+  [specification=mwe,
+   dataset=mwe]
+
+\definebtxrendering
+  [mwe]
+  [specification=mwe,
+   dataset=mwe,
+   before=\blank,
+   after=\blank,
+   sorttype=dataset]
+
+% #1 is number of entries
+
+\starttexdefinition unexpanded btx:for:alan:wrapper #1
+    \bTABLE
+        \flushbtxentries[command=\texdefinition{btx:for:alan:content}] % or setups=...
+    \eTABLE
+\stoptexdefinition
+
+% #1 is tag
+
+\starttexdefinition unexpanded btx:for:alan:content #1
+    \bTR
+        \bTD
+            \btxsettag{#1}
+            \btxfield{name}
+        \eTD
+        \bTD
+            \btxsettag{#1}
+            \btxfield{kind}
+        \eTD
+    \eTR
+\stoptexdefinition
+
+\starttext
+
+% \let\hiddencitation\btxhiddencitation  \let\hiddencite\hiddencitation
+% \let\listcitation  \btxlistcitation    \let\listcite  \listcitation
+% \let\textcitation  \btxtextcitation    \let\textcite  \textcitation
+% \let\alwayscitation\btxalwayscitation  \let\alwayscite\alwayscitation
+
+
+test: \alwayscite[name] [match(name:*)]
+
+% \flushbtxrendering [method=dataset,command=\texdefinition{btx:for:alan:wrapper}]
+
+\stoptext
+

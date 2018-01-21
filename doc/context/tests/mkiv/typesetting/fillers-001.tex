@@ -1,0 +1,42 @@
+\definefiller[dots][left=\dontleavehmode,right=\hskip\zeropoint\par]
+
+\definefloat
+  [recipe]
+  [figure]
+
+\setupfloat
+  [recipe]
+  [default={right,none}]
+
+\defineframed
+  [myframed]
+  [width=6cm,
+   foregroundstyle={\switchtobodyfont[10pt]},
+   align={high,flushleft},
+   frame=on,
+   framecolor=red,
+   background=color,
+   backgroundcolor=lightgray]
+
+\starttext
+
+\startbuffer
+    bla bla bla
+    \startitemize
+        \startitem bla bla bla \stopitem
+        \startitem bla bla bla \stopitem
+        \startitem bla bla bla \stopitem
+    \stopitemize
+\stopbuffer
+
+\placerecipe
+  {}
+  {\myframed{\getbuffer}}
+
+\startitemize[n][stopper={.},style=bold]
+    \startitem
+        \dorecurse{5}{\filler[dots]}
+    \stopitem
+\stopitemize
+
+\stoptext

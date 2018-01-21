@@ -1,0 +1,25 @@
+\startsetups chapter:after
+    \ifcase\rawcountervalue[footnote]\relax
+    \or
+        \startsubject[title=Footnote]
+            \placefootnotes
+        \stopsubject
+    \else
+        \startsubject[title=Footnotes]
+            \placefootnotes
+        \stopsubject
+    \fi
+\stopsetups
+
+\setupnotes[location=none]
+\setupnotation[way=bychapter]
+
+\setuphead[chapter][aftersection=\setups{chapter:after}]
+
+\starttext
+    \dorecurse{4}{
+        \startchapter[title=Number #1]
+            A few notes\dorecurse{\numexpr#1-1\relax}{\footnote{Note #1.##1}}.
+        \stopchapter
+    }
+\stoptext

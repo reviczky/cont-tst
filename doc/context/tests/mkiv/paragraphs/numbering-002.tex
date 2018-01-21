@@ -1,0 +1,56 @@
+% wolfgangs answer to idris question
+
+\defineseparatorset [ParagraphNumber][.,]
+
+\definecounter[ParagraphNumber][numberseparatorset=ParagraphNumber,criterium=all]
+
+\define\ParagraphNumber
+  {\incrementcounter[ParagraphNumber]%
+   \convertedcounter[ParagraphNumber][numbersegments=1]\quad}
+
+\define\subParagraphNumber
+  {\incrementcounter[ParagraphNumber][2]%
+   \convertedcounter[ParagraphNumber][numbersegments=1:2]\quad}
+
+\define\subsubParagraphNumber
+  {\incrementcounter[ParagraphNumber][3]%
+   \convertedcounter[ParagraphNumber][numbersegments=1:3]\quad}
+
+\setupwhitespace[line]
+
+\starttext
+    \ParagraphNumber       \input ward  \par
+    \subsubParagraphNumber \input klein \par
+    \subParagraphNumber    \input ward  \par
+    \subsubParagraphNumber \input klein \par
+    \subsubParagraphNumber \input ward  \par
+    \subParagraphNumber    \input klein \par
+    \subsubParagraphNumber \input ward  \par
+    \ParagraphNumber       \input klein \par
+\stoptext
+
+% % first version, a nice hack, so also shown:
+%
+% \defineexpandable[1]\PreviousNumber{\number\numexpr#1-1\relax}
+%
+% \defineconversion[PreviousNumber][\PreviousNumber]
+%
+% \defineconversionset[ParagraphNumber][n,PreviousNumber,PreviousNumber]
+%
+% \definecounter[ParagraphNumber][numberconversionset=ParagraphNumber,numberseparatorset=ParagraphNumber]
+%
+% \define\ParagraphNumber
+%   {\incrementcounter[ParagraphNumber]%
+%    \incrementcounter[ParagraphNumber][2]%
+%    \incrementcounter[ParagraphNumber][3]%
+%    \convertedcounter[ParagraphNumber][numbersegments=1]\quad}
+%
+% \define\subParagraphNumber
+%   {\incrementcounter[ParagraphNumber][2]%
+%    \incrementcounter[ParagraphNumber][3]%
+%    \convertedcounter[ParagraphNumber][numbersegments=1:2]\quad}
+%
+% \define\subsubParagraphNumber
+%   {\incrementcounter[ParagraphNumber][3]%
+%    \convertedcounter[ParagraphNumber][numbersegments=1:3]\quad}
+

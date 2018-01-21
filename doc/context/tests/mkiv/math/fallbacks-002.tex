@@ -1,0 +1,36 @@
+% example by ws ... test file for testing (see euler typescripts for other example)
+
+% \enabletrackers[math.collecting,fonts.collecting]
+
+\resetfontfallback  [testfallback]
+
+\definefontfallback [testfallback] [file:texgyreherosregular] [uppercasenormal] [check=yes,force=yes]
+\definefontfallback [testfallback] [file:texgyreherosregular] [digitsnormal]    [check=yes,force=yes]
+\definefontfallback [testfallback] [file:texgyreherositalic]  [uppercasenormal] [check=yes,force=yes,offset=uppercaseitalic]
+\definefontfallback [testfallback] [file:texgyreherositalic]  [uppercasenormal] [check=yes,force=yes,offset=uppercaseitalic]
+
+\starttypescript [math] [test1] [name]
+    \definefontsynonym [MathRoman] [texgyrepagella-math] [features=math\mathsizesuffix]
+\stoptypescript
+
+\starttypescript [math] [test2] [name]
+    \definefontsynonym [MathRoman] [texgyrepagella-math] [features=math\mathsizesuffix,fallbacks=testfallback]
+\stoptypescript
+
+\definetypeface [test1] [rm] [serif] [pagella] [default]
+\definetypeface [test1] [mm] [math]  [test1]   [default]
+
+\definetypeface [test2] [rm] [serif] [pagella] [default]
+\definetypeface [test2] [mm] [math]  [test2]   [default]
+
+\setupbodyfont[test1]
+
+\starttext
+
+    ABC $ ABC \, \rm 123 \, ABC$
+
+    \switchtobodyfont[test2]
+
+    ABC $ ABC \, \rm 123 \, ABC$
+
+\stoptext

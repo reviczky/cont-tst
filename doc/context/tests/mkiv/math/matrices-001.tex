@@ -1,0 +1,27 @@
+\setupmathmatrix[left={\left[\thickspace},right={\thickspace\right]}]
+
+\starttext \showstruts
+
+\blackrule[width=\hsize]
+
+\startformula
+    \startmathmatrix
+        \NC 1 \NR \NC 2 \NR \NC 3 \NR
+    \stopmathmatrix
+\stopformula
+
+\blackrule[width=\hsize]
+
+\startformula
+    \startalign
+        \NC
+            \startmathmatrix
+                \NC 1 \NR \NC 2 \NR \NC 3 \NR
+            \stopmathmatrix
+        \NR
+    \stopalign
+\stopformula
+
+\blackrule[width=\hsize]
+
+\stoptext

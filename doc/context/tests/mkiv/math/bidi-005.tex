@@ -1,0 +1,28 @@
+\starttypescript [mathdigits] [all]
+    \resetfontfallback [mathdigits]
+\stoptypescript
+
+\starttypescript [mathdigits] [arabicindic]
+    \definefontfallback [mathdigits] [dejavusansmono]     [0x0660-0x0669] [check=yes,force=yes,offset=digitsnormal]
+    \definefontfallback [mathdigits] [dejavusansmonobold] [0x0660-0x0669] [check=yes,force=yes,offset=digitsbold]
+\stoptypescript
+
+\starttypescript [mathdigits] [extendedarabicindic]
+    \definefontfallback [mathdigits] [dejavusansmono]     [0x06F0-0x06F9] [check=yes,force=yes,offset=digitsnormal]
+    \definefontfallback [mathdigits] [dejavusansmonobold] [0x06F0-0x06F9] [check=yes,force=yes,offset=digitsbold]
+\stoptypescript
+
+\usetypescript [mathdigits][arabicindic]
+
+\starttypescript [math] [xits] [name]
+    \definefontsynonym[MathRoman][file:xits-math.otf][features=math\mathsizesuffix,goodies=xits-math,fallbacks=mathdigits]
+\stoptypescript
+
+\setupbodyfont[dejavu]
+
+\starttext
+
+    $3+2=5 \quad \bf 3+2=5$
+
+\stoptext
+

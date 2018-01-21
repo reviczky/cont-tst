@@ -1,0 +1,16 @@
+\starttext
+
+\definefont[myfont][dejavusansbold]
+
+\startluacode
+    local id, cs = fonts.definers.internal { }
+    context("%s: %s",id,cs) context.par()
+    local id, cs = fonts.definers.internal { number = 2 }
+    context("%s: %s",id,cs) context.par()
+    local id, cs = fonts.definers.internal { name = "dejavusans" }
+    context("%s: %s",id,cs) context.par()
+\stopluacode
+
+test {\getuvalue{internal font 1}test} test
+
+\stoptext

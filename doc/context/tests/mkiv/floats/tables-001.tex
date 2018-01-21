@@ -1,0 +1,32 @@
+\starttext
+
+    \useMPlibrary[dum]
+
+    \bTABLE
+        \bTR
+            \bTD
+                \placefigure{}{\externalfigure[dummy][width=4cm]}%
+            \eTD
+        \eTR
+    \eTABLE
+
+    \bTABLE[split=yes]
+        \dorecurse{10}{
+            \bTR
+                \bTD \placefigure{}{\externalfigure[dummy][width=4cm]} \eTD
+                \bTD \placefigure{}{\externalfigure[dummy][width=4cm]} \eTD
+            \eTR
+            \bTR
+                \bTD[nx=2] \placefigure{}{\externalfigure[dummy][width=12cm,height=3cm]} \eTD
+            \eTR
+            \bTR
+                \bTD       \placefigure{}{\externalfigure[dummy][width=4cm]} \eTD
+                \bTD[ny=2] \placefigure{}{\externalfigure[dummy][width=4cm,height=8cm]} \eTD
+            \eTR
+            \bTR
+                \bTD       \placefigure{}{\externalfigure[dummy][width=4cm]} \eTD
+            \eTR
+        }
+    \eTABLE
+
+\stoptext

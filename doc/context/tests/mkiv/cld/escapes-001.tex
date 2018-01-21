@@ -1,0 +1,9 @@
+\starttext
+
+\startluacode
+    context(lpeg.match(lpeg.patterns.texescape,"${}"))
+    context(string.formatters["%!tex!"]("${}"))
+    context("%!tex!","${}")
+\stopluacode
+
+\stoptext

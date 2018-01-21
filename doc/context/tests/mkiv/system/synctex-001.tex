@@ -1,0 +1,13 @@
+\setupsynctex[state=start]
+% \setupsynctex[state=start,method=min]
+% \setupsynctex[state=start,method=max]
+\enabletrackers[system.synctex.visualize]
+% \enabletrackers[system.synctex.visualize=real]
+
+\starttext
+    \testfeatureonce {10} {
+        \input tufte \page
+        \input ward  \page
+        \input knuth \page
+    }
+\stoptext

@@ -1,0 +1,18 @@
+\starttext
+
+\samplefile{tufte} \footnote{\samplefile{tufte}}
+
+\startitemize[packed,columns]
+\item one
+\item two
+\item three \footnote{A note (three).}
+\item four
+\item five
+\item six
+\item seven
+\item eight
+\stopitemize
+
+\dorecurse{10}{\samplefile{ward} \footnote{Another note #1!} \par}
+
+\stoptext

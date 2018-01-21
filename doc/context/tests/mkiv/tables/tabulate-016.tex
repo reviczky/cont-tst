@@ -1,0 +1,15 @@
+% tests penalty after repeated header
+
+\starttext
+
+\setuptabulate[header=repeat]
+
+\starttabulatehead
+    \NC A \NC B \NC\NR
+\stoptabulatehead
+
+\starttabulate[|l|l|]
+    \dorecurse{100}{\NC ##1 \NC ##1 \NC\NR}
+\stoptabulate
+
+\stoptext

@@ -1,0 +1,22 @@
+\setuppapersize[A6][A6]
+
+\definetextbackground
+  [blockquotebackground]
+  [location=paragraph,
+   background=color,
+   backgroundcolor=gray,
+   frame=off]
+
+\dontcomplain
+
+\showframe
+
+\chardef\kindofpagetextareas\plusone
+
+\starttext
+
+    \startblockquotebackground
+        \dorecurse{3}{x\footnote{x}\input tufte \par}
+    \stopblockquotebackground
+
+\stoptext

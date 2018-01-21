@@ -1,0 +1,30 @@
+\setupbodyfont[dejavu]
+
+\defineprofile
+  [myprofile]
+  [method=quarterfixed,
+   height=\strutht,
+   depth=\strutdp,
+   distance=3pt]
+
+\startbuffer
+\dostepwiserecurse{1}{400}{5}{just a test #1 $\frac{x}{#1}^{#1}$ and }done\par
+\stopbuffer
+
+\starttext
+
+    \startTEXpage[align=normal,strut=no]
+        \getbuffer
+    \stopTEXpage
+
+    \startTEXpage[align=normal,strut=no,profile=myprofile]
+        \getbuffer
+    \stopTEXpage
+
+    \enabletrackers[profiling.show]
+    \startTEXpage[align=normal,strut=no,profile=myprofile]
+        \getbuffer
+    \stopTEXpage
+    \disabletrackers[profiling.show]
+
+\stoptext

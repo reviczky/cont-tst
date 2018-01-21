@@ -1,0 +1,15 @@
+\definetextbackground [mybackgroundOverlay] [mp=mpos:region:whatever]
+
+\startuseMPgraphic{mpos:region:whatever}
+    for i=1 upto nofmultipars :
+        draw textext("\externalfigure[cow.pdf]") rotated 10 shifted center multipars[i] ;
+    endfor ;
+\stopuseMPgraphic
+
+\starttext
+
+  \startmybackgroundOverlay
+        \dorecurse{10}{\input knuth \par}
+  \stopmybackgroundOverlay
+
+\stoptext

@@ -1,0 +1,63 @@
+% \setupmathfences[state=auto]
+
+\starttext
+
+\startimath
+    \startcheckedfences
+        1 \left( 2 \left( 3 \left( 4
+        \middle|
+        4 \right) 3 \right) 2 \right) 1
+    \stopcheckedfences
+\stopimath
+
+\startimath
+    \startcheckedfences
+        1 \left( 2 \left( 3 \left( 4
+        \middle|
+        4 \right) 3 \right) 2 ! 1
+    \stopcheckedfences
+\stopimath
+
+\startimath
+    \startcheckedfences
+        1 \left( 2 \left( 3 ! 4
+        \middle|
+        4 \right) 3 \right) 2 \right) 1
+    \stopcheckedfences
+\stopimath
+
+\startimath
+    \startcheckedfences
+        1 \left( 2 \right) 3
+    \stopcheckedfences
+\stopimath
+
+\startimath
+    \startcheckedfences
+        1 \left( 2 \middle | 3 \right) 4
+    \stopcheckedfences
+\stopimath
+
+\startimath
+    \startcheckedfences
+        1 \left( 2 \middle | 3 \right) 4
+    \stopcheckedfences
+\stopimath
+
+\usemodule[x][mathml]
+
+\startbuffer[test]
+<m:math xmlns:m="http://www.w3.org/1998/Math/MathML">
+    <m:mrow>
+        <m:mo>(</m:mo>
+        <m:mn>1</m:mn>
+        <m:mo>|</m:mo>
+        <m:mn>2</m:mn>
+        <m:mo>)</m:mo>
+    </m:mrow>
+</m:math>
+\stopbuffer
+
+\xmlprocessbuffer{main}{test}{}
+
+\stoptext

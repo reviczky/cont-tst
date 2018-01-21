@@ -1,0 +1,16 @@
+\nopdfcompression
+
+\starttext
+
+    % the following fonts should be shared in the backend
+
+    \font\FontA={name:LM Roman 10 Regular:mode=node;extend=1.5}\relax
+    \font\FontB={name:LM Roman 10 Regular:mode=base}\relax
+    \font\FontC={name:LM Roman 10 Regular:mode=base;liga=yes}\relax
+    \font\FontD={name:LM Roman 10 Regular:mode=node;liga=yes}\relax
+    \FontA \input tufte\par
+    \FontB \input tufte\par
+    \FontC \input tufte\par
+    \FontD \input tufte\par
+
+\stoptext

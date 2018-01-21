@@ -1,0 +1,15 @@
+return {
+ ["htmlfiles"]={ "tagged-010-div.html" },
+ ["htmlroot"]="tagged-010-div.html",
+ ["identifier"]="05edb92d-4d70-b294-24d0-5fb95fab6f52",
+ ["imagefile"]="styles/tagged-010-images.css",
+ ["imagepath"]="images",
+ ["images"]={},
+ ["language"]="en",
+ ["metadata"]={},
+ ["name"]="tagged-010",
+ ["stylepath"]="styles",
+ ["styles"]={ "tagged-010-defaults.css", "tagged-010-images.css", "tagged-010-styles.css" },
+ ["xhtmlfiles"]={ "tagged-010-tag.xhtml" },
+ ["xmlfiles"]={ "tagged-010-raw.xml" },
+}

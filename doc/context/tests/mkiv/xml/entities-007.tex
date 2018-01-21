@@ -1,0 +1,33 @@
+% \disabledirectives[lxml.entities.escaped]
+% \disabledirectives[lxml.entities.prefertex]
+
+\setupbodyfont[dejavu]
+
+\xmltexentity{oeps}{\textdegree}
+
+\startbuffer[test]
+<?xml version="1.0"?>
+<!DOCTYPE blah SYSTEM "blah.dtd" [
+     <!ENTITY oeps "indeed">
+     <!ENTITY more "&#160;">
+]>
+<text>
+    Random text with an entity: &oeps; test &amp; test
+
+    Random text with an entity: &more; test
+</text>
+\stopbuffer
+
+\startxmlsetups xml:testsetups
+    \xmlsetsetup{#1}{text}{xml:*}
+\stopxmlsetups
+
+\xmlregistersetup{xml:testsetups}
+
+\startxmlsetups xml:text
+    \xmlflush{#1}\par
+\stopxmlsetups
+
+\starttext
+    \xmlprocessbuffer{main}{test}{}
+\stoptext

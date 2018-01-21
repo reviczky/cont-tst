@@ -1,0 +1,31 @@
+\starttext
+
+% \startluacode
+%
+% fonts.handlers.otf.addfeature("hangulfix",{
+%     type     = "substitution",
+%     features = { ["hang"] = { ["*"] = true } },
+%     data     = {
+%         [0x1160] = 0x119E,
+%     },
+%     order    = { "hangulfix" },
+%     flags    = { },
+%     prepend  = true,
+% })
+%
+% fonts.handlers.otf.features.register {
+%     name        = 'hangulfix',
+%     description = 'fixes for hangul',
+% }
+%
+% \stopluacode
+
+\definefontfeature[whatever][mode=node,script=hang,ljmo=yes,vjmo=yes,tjmo=yes,hangulfix=yes]
+
+\showotfcomposition{sourcehansansklight*whatever}{1}{%
+    ---\quad
+    \char"1155\char"1160\quad
+    \char"1155\char"119E
+}\page
+
+\stoptext

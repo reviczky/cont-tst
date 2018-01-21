@@ -1,0 +1,22 @@
+\def\chapter#1{\par<h1>#1</h1>\par}
+
+\def\bTABLE{\par<table>\crlf}
+\def\eTABLE{</table>\par}
+\def\bTR{<tr>}
+\def\eTR{</tr>\crlf}
+\def\bTD{<td>}
+\def\eTD{</td>}
+
+\appendtoks  <html><body>  \to \everystarttext
+\prependtoks </body><html> \to \everystoptext
+
+\setupwhitespace[line]
+\setuplayout    [page]
+\setupbodyfont  [tt] % 1pt
+
+\starttext
+    \chapter{First}  \input tufte
+    \chapter{Second} \input tufte
+
+    \bTABLE \bTR \bTD test \eTD \eTR \eTABLE
+\stoptext

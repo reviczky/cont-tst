@@ -1,0 +1,11 @@
+\definefontfeature [persian-fake-math] [arabic] [anum=yes]
+
+\starttext
+
+    \definedfont[dejavusans*persian-fake-math]
+
+    \start \setupalign[r2l] arabic: این یک آزمایش است. \par text: 3+2=5 \par math: $3+2=5$ $\sqrt{3+2=5}$ \par \stop
+
+    \start \setupalign[l2r] latin:  This is a test.    \par text: 3+2=5 \par math: $3+2=5$ $\sqrt{3+2=5}$\par \stop
+
+\stoptext

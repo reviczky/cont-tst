@@ -1,0 +1,61 @@
+\starttext
+
+% \enabletrackers[metapost.variables]
+
+\startMPcode
+    numeric n[]   ; for i=1 upto 10: n[i] := 1/i ; endfor ;
+    path    p[]   ; for i=1 upto 10: p[i] := fullcircle xyscaled (cm*i,cm/i) ; endfor ;
+    numeric r[][] ; for i=1 upto 4 : for j=1 upto 3 : r[i][j] := uniformdeviate(1) ; endfor ; endfor ;
+    pair    u[][] ; for i=1 step 0.5 until 4 : for j=1 step 0.1 until 2 : u[i][j] := (i,j) ; endfor ; endfor ;
+
+    passvariable("x",12345) ;
+    passarrayvariable("n-array",n,1,7,1) ;
+    passarrayvariable("p-array",p,1,7,1) ;
+    passvariable("p",(1,1) .. (2,2)) ;
+
+    startpassingvariable("b")
+        for i=1 upto 4 :
+            startpassingvariable(i)
+                for j=1 upto 3 :
+                    passvariable(j,r[i][j])
+                endfor
+            stoppassingvariable
+        endfor
+    stoppassingvariable ;
+
+    startpassingvariable("a")
+        startpassingvariable("test 1")
+            passvariable(1,123)
+            passvariable(2,456)
+        stoppassingvariable ;
+        startpassingvariable("test 2")
+            passvariable(0,123)
+            passvariable(1,456)
+            passvariable(2,789)
+            passvariable(999,987)
+        stoppassingvariable ;
+        startpassingvariable("test 3")
+            passvariable("first",789)
+            passvariable("second",987)
+        stoppassingvariable
+    stoppassingvariable ;
+
+    startpassingvariable("c")
+        for i=1 step 0.5 until 4 :
+            startpassingvariable(i)
+                for j=1 step 0.1 until 2 :
+                    passvariable(j,u[i][j])
+                endfor
+            stoppassingvariable
+        endfor
+    stoppassingvariable ;
+
+    draw fullcircle scaled 1cm ;
+\stopMPcode
+
+\ctxluacode{inspect(metapost.variables)}
+
+\ctxcommand{mprunvar("x")}
+
+\stoptext
+

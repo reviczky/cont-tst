@@ -1,0 +1,57 @@
+\defineitemgroup[legal]
+\defineitemgroup[again][itemize]
+
+\starttext
+
+\startlegal[n] \item Level L1
+    \startlegal[n] \item Level L2
+      \startitemize[n] \item Level I1
+          \startitemize[n] \item Level I2
+             \startlegal[n] \item Level L3
+               \startlegal[n] \item Level L4
+               \stoplegal
+             \stoplegal
+          \stopitemize
+      \stopitemize
+  \stoplegal
+\stoplegal
+
+\startitemize[n] \item Level 1
+    \startitemize[n] \item Level 2
+      \startitemize[n] \item Level 3
+          \startitemize[n] \item Level 4
+              \startitemize[n] \item Level 5
+                  \startitemize[n] \item Level 6
+                      \startitemize[n] \item Level 7
+                          \startitemize[n] \item Level 8
+                              \startitemize[n] \item Level 9
+                              \stopitemize
+                          \stopitemize
+                      \stopitemize
+                  \stopitemize
+              \stopitemize
+          \stopitemize
+      \stopitemize
+  \stopitemize
+\stopitemize
+
+\startitemize[n] \item Level 1
+    \startitemize[n] \item Level 2
+      \startitemize[n] \item Level 3
+          \startitemize[n] \item Level 4
+              \startitemize[n] \item Level 5
+                  \startagain[n] \item Level 6
+                      \startitemize[n] \item Level 7
+                          \startitemize[n] \item Level 8
+                              \startitemize[n] \item Level 9
+                              \stopitemize
+                          \stopitemize
+                      \stopitemize
+                  \stopagain
+              \stopitemize
+          \stopitemize
+      \stopitemize
+  \stopitemize
+\stopitemize
+
+\stoptext

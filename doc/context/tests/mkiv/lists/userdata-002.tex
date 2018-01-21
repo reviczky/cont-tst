@@ -1,0 +1,25 @@
+\starttext
+
+\unexpanded\def\ShowSummary#1#2#3%
+  {\inleftmargin{#1}\structurelistuservariable{summary}\blank}
+
+
+\placelist[chapter][alternative=command,command=\ShowSummary]
+
+\startchapter
+  [title={This is a chapter}]
+  [summary={This is a small description of this chapter}]
+
+\input knuth.tex
+
+\stopchapter
+
+\startchapter
+  [title={This is also a chapter}]
+  [summary={This is a larger description of this chapter}]
+
+\input ward.tex
+
+\stopchapter
+
+\stoptext

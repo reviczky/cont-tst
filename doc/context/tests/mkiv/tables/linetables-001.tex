@@ -1,0 +1,16 @@
+\setuplinetable[n=6,lines=40]
+
+\setuplinetable[c][1]   [width=2cm,background=color,backgroundcolor=red]
+\setuplinetable[c][4]   [width=3cm,background=color,backgroundcolor=yellow]
+\setuplinetable[c][6]   [width=3cm,background=color,backgroundcolor=magenta]
+
+\setuplinetable[r][even][background=color,backgroundcolor=green]
+
+\starttext
+
+\startlinetable
+    \dorecurse{5}{\NC aaa #1  \NC bb \NC c \NC ddddd \NC eeee \NC ff} \NC \NR
+    \dorecurse{20}{\dorecurse{5}{\NC aaa #1 ##1\NC bb \NC c \NC ddddd \NC eeee \NC ff} \NC \NR}
+\stoplinetable
+
+\stoptext

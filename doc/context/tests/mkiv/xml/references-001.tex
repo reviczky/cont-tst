@@ -1,0 +1,19 @@
+\startbuffer[demo]
+<a href="#whatever">a hyperlink</a>
+\stopbuffer
+
+\startxmlsetups xml:initialize
+     \xmlsetsetup{#1}{a}{xml:*}
+\stopxmlsetups
+
+\xmlregistersetup{xml:initialize}
+
+\startxmlsetups xml:a
+    \cldcontext{string.sub([[\xmlatt{#1}{href}]],2)}
+    \par
+    \xmlrefatt{#1}{href}
+\stopxmlsetups
+
+\starttext
+     \xmlprocessbuffer{main}{demo}{}
+\stoptext

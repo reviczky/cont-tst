@@ -1,0 +1,23 @@
+\starttext
+
+\startlocalfootnotes
+\bTABLE[frame=on,offset=1ex]
+    \bTR
+        \bTD This is a text with note.\footnote[TableNote1]{Inside Table 1.} \eTD
+        \bTD This is a text with note.\footnote[TableNote2]{Inside Table 2.} \eTD
+        \bTD Here we refer to it.\note[TableNote1] \eTD
+        \bTD Here we refer to it.\note[TableNote2] \eTD
+    \eTR
+\eTABLE
+\placelocalfootnotes
+\stoplocalfootnotes
+
+\blank
+
+Here is another text with note.\footnote[TextNote1]{In Running Text 1.}
+Here is another text with note.\footnote[TextNote2]{In Running Text 2.}
+
+And here we refer to it.\note[TextNote1]
+And here we refer to it.\note[TextNote2]
+
+\stoptext

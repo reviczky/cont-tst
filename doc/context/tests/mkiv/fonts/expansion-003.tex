@@ -1,0 +1,39 @@
+\startluacode
+    local byte = string.byte
+
+    fonts.expansions.classes.mine = {
+        stretch = 2,
+        shrink  = 2,
+        step    = .5,
+        factor  = 1
+    }
+
+    fonts.expansions.vectors.mine = {
+        [byte('a')] = 0.2,
+        [byte('e')] = 0.5,
+        [byte('i')] = 1.4,
+        [byte('o')] = 1.8,
+        [byte('u')] = 1.2,
+        [byte('y')] = 1.5,
+    }
+\stopluacode
+
+\definefontfeature[mine-1] [default][expansion=mine-1]
+\definefontfeature[mine-2] [default][expansion=mine-2]
+\definefontfeature[mine-3] [default][expansion=mine-3]
+
+\setupfontexpansion [mine-1][vector=mine,class=mine]
+\setupfontexpansion [mine-2][vector=mine,class=mine,factor=2]
+\setupfontexpansion [mine-3][vector=mine,stretch=4,shrink=4,step=.25,factor=2]
+
+\setupalign[hz]
+
+\starttext
+
+\startoverlay
+    {\framed[align={normal,hz}]{\red  \definedfont[Serif*mine-1]\input tufte\relax}}
+    {\framed[align={normal,hz}]{\blue \definedfont[Serif*mine-2]\input tufte\relax}}
+    {\framed[align={normal,hz}]{\green\definedfont[Serif*mine-3]\input tufte\relax}}
+\stopoverlay
+
+\stoptext

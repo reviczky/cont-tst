@@ -1,0 +1,27 @@
+\starttext
+
+\useMPlibrary[txt]
+
+\startsetups text-a
+    \startuseMPgraphic{followtokens}
+        path RotPath ; RotPath := reverse halfcircle xyscaled 5cm ;
+        draw RotPath ;
+    \stopuseMPgraphic
+    \followtokens{some text but not that long{\hskip1em}}
+\stopsetups
+
+\startsetups text-b
+    \startuseMPgraphic{followtokens}
+        path RotPath ; RotPath := reverse halfcircle xyscaled 3cm  ;
+        draw RotPath ;
+    \stopuseMPgraphic
+    \followtokens{{\hskip1em}some text{\hskip1em}}
+\stopsetups
+
+\startMPpage
+    draw textext("\setups{text-a}") ;
+    draw textext("\setups{text-b}") shifted (0,-.5cm);
+\stopMPpage
+
+\stoptext
+

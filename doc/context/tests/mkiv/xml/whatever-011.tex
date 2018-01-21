@@ -1,0 +1,93 @@
+\usemodule[asciimath]
+
+\setupbodyfont[palatino]
+
+\enabletrackers[asciimath.mapping]
+
+\startxmlsetups xml:testsetups
+    \xmlsetsetup{test} {document|b|p|i|br|am}   {xml:*}
+    \xmlsetsetup{test} {p[@class='tips']}       {xml:tips}
+    \xmlsetsetup{test} {br[tag(1)='br']}        {xml:brbr}
+    \xmlsetsetup{test} {div}                    {xml:div}
+    \xmlsetsetup{test} {input}                  {xml:input}
+    \xmlsetsetup{test} {input[@type='text']}    {xml:inputtext}
+    \xmlsetsetup{test} {script|span}            {xml:skip}
+    \xmlsetsetup{test} {div[@class='question']} {xml:question}
+    \xmlsetsetup{test} {div[@class='review']}   {xml:review}
+\stopxmlsetups
+
+\xmlregistersetup{xml:testsetups}
+
+\startxmlsetups xml:document
+    \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:skip
+    \removeunwantedspaces\ignorespaces
+\stopxmlsetups
+
+\startxmlsetups xml:input
+\stopxmlsetups
+
+\startxmlsetups xml:inputtext
+    \blank
+%     \dontleavehmode\strut\blackrule[height=1pt,depth=0pt,width=\textwidth]
+    \dontleavehmode\underbar{\strut\char0\hskip\textwidth\strut}
+    \blank
+\stopxmlsetups
+
+\startxmlsetups xml:div
+    \blank
+    \xmlflush{#1}
+    \blank
+\stopxmlsetups
+
+\newcount\QuestionCounter
+
+\startxmlsetups xml:question
+    \blank
+    \global\advance\QuestionCounter\plusone
+    \margintitle{\the\QuestionCounter}
+    \xmlflush{#1}
+    \blank
+\stopxmlsetups
+
+\startxmlsetups xml:review
+%     \blank
+%     \xmlflush{#1}
+%     \blank
+\stopxmlsetups
+
+\startxmlsetups xml:am
+    \expanded{\asciimath{\xmlflushpure{#1}}}
+\stopxmlsetups
+
+\startxmlsetups xml:br
+    \par
+\stopxmlsetups
+
+\startxmlsetups xml:p
+    \par
+\stopxmlsetups
+
+\startxmlsetups xml:tips
+    \blank
+    \bgroup\bf Tips: \egroup\xmlflush{#1}
+    \blank
+\stopxmlsetups
+
+\startxmlsetups xml:brbr
+    \blank
+\stopxmlsetups
+
+\startxmlsetups xml:i
+    \bgroup\it\xmlflush{#1}\egroup
+\stopxmlsetups
+
+\startxmlsetups xml:b
+    \bgroup\it\xmlflush{#1}\egroup
+\stopxmlsetups
+
+\starttext
+    \xmlprocessfile{test}{whatever-011.xml}{}
+\stoptext

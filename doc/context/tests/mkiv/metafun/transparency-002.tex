@@ -1,0 +1,14 @@
+\definecolor [trans] [a=multiply, t=.5, g=.5]
+
+\startMPpage
+    fill fullcircle scaled 12cm withcolor \MPcoloronly{trans};
+    fill fullcircle scaled 10cm withcolor \MPcolor{trans};
+
+    fill fullsquare xyscaled (15cm, 15cm)
+      withshademethod "linear"
+      withshadevector (0,1)
+      withshadecolors (red,\MPcoloronly{trans})
+      withtransparency \MPtransparency{trans}
+    ;
+
+\stopMPpage

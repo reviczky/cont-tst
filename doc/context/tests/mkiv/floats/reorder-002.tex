@@ -1,0 +1,30 @@
+\useMPlibrary
+  [dum]
+
+\setupfloat
+  [figure]
+  [default=top]
+
+\ctxlua{structures.lists.autoreorder = true}
+
+\starttext
+
+\input knuth
+
+alpha: \in{figure}[alpha] \par
+beta:  \in{figure}[beta]  \par
+gamma: \in{figure}[gamma] \par
+
+\startplacefigure [title=Alpha, reference=alpha]
+  \externalfigure [dummy]
+\stopplacefigure
+
+\startplacefigure [title=Beta, reference=beta]
+  \externalfigure [dummy] [width=10cm, height=16cm]
+\stopplacefigure
+
+\startplacefigure [title=Gamma, reference=gamma]
+  \externalfigure [dummy]
+\stopplacefigure
+
+\stoptext

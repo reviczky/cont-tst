@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+
+    <table>
+        <tgroup cols="2">
+            <tbody>
+                <row>
+                    <entry>alpha</entry>
+                    <entrytbl>
+                        <tgroup cols="2">
+                            <tbody>
+                                <row>
+                                    <entry align='middle'>one</entry>
+                                    <entry>three</entry>
+                                </row>
+                                <row>
+                                    <entry align='left'>4</entry>
+                                    <entry align='right'>5</entry>
+                                </row>
+                            </tbody>
+                        </tgroup>
+                    </entrytbl>
+                </row>
+                <row>
+                    <entry>one</entry>
+                    <entry><b>two</b></entry>
+                </row>
+            </tbody>
+        </tgroup>
+    </table>
+
+</root>

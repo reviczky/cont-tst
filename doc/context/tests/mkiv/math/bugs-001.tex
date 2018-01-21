@@ -1,0 +1,67 @@
+% luatex bug 1 : mix up of assignments, scriptscript gets text quad, and text/script get none
+% luatex bug 2 : mu is not set i.e. takes from normal quad (reported on luatex mailing list)
+%
+% fix:
+%
+% cur_mu = x_over_n(get_math_quad(cur_size), 18);
+%   =>
+% cur_mu = x_over_n(get_math_quad(cur_style), 18);
+%
+% fixed but it's a nice test anyway
+
+\starttexdefinition TestStyle#1#2#3#4
+    \dontleavehmode
+    \begingroup
+  % \writestatus{BEGIN TEST}{\string#1/\string#2/\string#3}
+    \setbox\scratchbox\ruledhbox {
+        \startimath
+            #2
+            #4\Umathquad\textstyle         6\emwidth % this sets the mu value but it is forgotten
+            #4\Umathquad\scriptstyle       4\emwidth % when we set it local so after the group the
+            #4\Umathquad\scriptscriptstyle 2\emwidth % math list is processed with the old values
+            #1
+            \scratchwidth   5\onepoint
+            \scratchmuskip .5\muquad
+            \vrule height \Umathquad#1                 depth  \zeropoint width \scratchwidth
+            \vrule depth  \Umathaxis#1                 height \zeropoint width \scratchwidth
+            \mkern\scratchmuskip
+            \vrule height \Umathquad\textstyle         depth  \zeropoint width \scratchwidth
+            \vrule depth  \Umathaxis\textstyle         height \zeropoint width \scratchwidth
+            \mkern\scratchmuskip
+            \vrule height \Umathquad\scriptstyle       depth  \zeropoint width \scratchwidth
+            \vrule depth  \Umathaxis\scriptstyle       height \zeropoint width \scratchwidth
+            \mkern\scratchmuskip
+            \vrule height \Umathquad\scriptscriptstyle depth  \zeropoint width \scratchwidth
+            \vrule depth  \Umathaxis\scriptscriptstyle height \zeropoint width \scratchwidth
+            #3
+        \stopimath
+    }
+    \normalexpanded {
+        \box\scratchbox
+        \quad
+        \tt (
+            w=\the\wd\scratchbox,
+            h=\the\ht\scratchbox,
+            d=\the\dp\scratchbox
+        )
+    }
+  % \writestatus{END TEST}{\string#1/\string#2/\string#3}
+    \endgroup
+\stoptexdefinition
+
+\starttexdefinition Test#1
+    \TestStyle\textstyle        \relax \relax #1\par
+    \TestStyle\scriptstyle      \relax \relax #1\par
+    \TestStyle\scriptscriptstyle\relax \relax #1\par
+    % beware: the values outside the group are applied
+    \TestStyle\textstyle        \bgroup\egroup#1\par
+    \TestStyle\scriptstyle      \bgroup\egroup#1\par
+    \TestStyle\scriptscriptstyle\bgroup\egroup#1\par
+\stoptexdefinition
+
+\starttext
+
+\startTEXpage[offset=10pt]\Test\relax \stopTEXpage
+\startTEXpage[offset=10pt]\Test\global\stopTEXpage
+
+\stoptext

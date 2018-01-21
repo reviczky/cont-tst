@@ -1,0 +1,36 @@
+\enabletrackers[xml.lpath]
+
+\startbuffer[test]
+<?xml version='1.0'?>
+<something>
+  <whatever>
+    <whocares/>
+    <whoknows label='a'/>
+    <whoknows label='b'/>
+    <whoknows label='c'/>
+    <whocares/>
+    <whoknows label='d'/>
+  </whatever>
+</something>
+\stopbuffer
+
+\startxmlsetups xml:mysetups
+    \xmlsetsetup{main}{something|whatever|whocares|whocaresnot}{xml:*}
+\stopxmlsetups
+
+\xmlregistersetup{xml:mysetups}
+
+\startxmlsetups xml:something
+%     [whatever: \xmlcount{#1}{whatever}]\par\relax
+%     [whoknows: \xmlcount{#1}{whoknows}]\par\relax
+%     [whocares: \xmlcount{#1}{whocares}]\blank\relax
+%     [whoknows: \xmlcount{#1}{whatever/whoknows}]\blank\relax
+%     [whoknows: \xmlfilter{#1}{whatever/whoknows[tag()='whoknows']/attribute('label')}]\blank\relax
+    [whoknows: \xmlfilter{#1}{whatever/whoknows[tag(2)='whoknows']/attribute('label')}]\blank\relax
+    [whoknows: \xmlfilter{#1}{whatever/whoknows[position()=2]/attribute('label')}]\blank\relax
+%     [whoknows: \xmlfilter{#1}{whatever/whoknows[tag(2)='whocares']/attribute('label')}]\blank\relax
+\stopxmlsetups
+
+\starttext
+    \xmlprocessbuffer{main}{test}{}
+\stoptext

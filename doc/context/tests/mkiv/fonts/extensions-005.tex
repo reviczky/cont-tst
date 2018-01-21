@@ -1,0 +1,27 @@
+\starttext
+
+\startluacode
+    fonts.handlers.otf.addfeature {
+        name = "oneb",
+        type = "substitution",
+        data = {
+            ["one"] = "one.ss01",
+        }
+    }
+\stopluacode
+
+% context
+
+\definefontfeature[default-oneb][default][oneb=yes]
+\definefontfeature[default-ss01][default][ss01=yes]
+
+\definedfont[name:vollkorn*default]      123\par
+\definedfont[name:vollkorn*default-oneb] 123\par
+\definedfont[name:vollkorn*default-ss01] 123\par
+
+% non context
+
+\font\foo=name:vollkorn:mode=node;kern=yes;liga=yes;          \foo 123\par
+\font\foo=name:vollkorn:mode=node;kern=yes;liga=yes;oneb=yes; \foo 123\par
+
+\stoptext

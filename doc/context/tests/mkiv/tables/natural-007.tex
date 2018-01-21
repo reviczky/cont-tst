@@ -1,0 +1,47 @@
+\starttext
+
+\enableparpositions \tracepositions
+
+\startbuffer[btable]
+\bTABLE
+    \dorecurse{3} {
+        \bTR
+            \dorecurse{3} {
+                \bTD btable \eTD
+            }
+        \eTR
+    }
+\eTABLE
+\stopbuffer
+
+\startbuffer[xtable]
+\startxtable
+    \dorecurse{3} {
+        \startxrow
+            \dorecurse{3} {
+                \startxcell xtable \stopxcell
+            }
+        \stopxrow
+    }
+\stopxtable
+\stopbuffer
+
+\getbuffer[xtable]
+
+\input ward
+
+\placetable
+  [leftmargin,nonumber,none,height]
+  {}
+  {\getbuffer[btable]}
+
+\input ward
+
+\placetable
+  [leftmargin,nonumber,none,height]
+  {}
+  {\getbuffer[xtable]}
+
+\input ward
+
+\stoptext

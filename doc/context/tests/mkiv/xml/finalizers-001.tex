@@ -1,0 +1,30 @@
+% by HvdM, patched a bit by HH
+
+\startxmlsetups xml:test:setups
+    \xmlsetsetup{\xmldocument}{root|a}{xml:test:*}
+\stopxmlsetups
+
+\xmlregistersetup{xml:test:setups}
+
+\startxmlsetups xml:test:root
+    \par
+    Value of count = <\xmlfilter{#1}{/count()}>\par
+    Value of count = <\number0\xmlfilter{#1}{/count()}>\par
+    Value of count = <\xmlcount{#1}{/*}>\par
+\stopxmlsetups
+\startxmlsetups xml:test:a
+    found an <a>\crlf
+\stopxmlsetups
+
+\def\xmltri{<root><a/><a></a><a/></root>}
+\def\xmltwo{<root><a/><a></a></root>}
+\def\xmlone{<root><a></a></root>}
+\def\xmlnul{<root></root>}
+
+\starttext\tt
+    XML = \quotation{xmltri} \xmlprocessdata{root}{\xmltri}{} \blank
+    XML = \quotation{xmltwo} \xmlprocessdata{root}{\xmltwo}{} \blank
+    XML = \quotation{xmlone} \xmlprocessdata{root}{\xmlone}{} \blank
+    XML = \quotation{xmlnul} \xmlprocessdata{root}{\xmlnul}{} \blank
+\stoptext
+

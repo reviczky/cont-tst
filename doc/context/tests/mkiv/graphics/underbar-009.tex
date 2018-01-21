@@ -1,0 +1,13 @@
+\definefontfeature[default][default][expansion=quality]
+\definefont[myfont][Serif*default]
+\setupalign[hz]
+
+% \setupbars[unit=pt,rulethickness=5]
+
+\starttext
+
+    \myfont \setupinterlinespace
+
+    \underbar{\dorecurse{5}{\color[red]{\input knuth }}}
+
+\stoptext

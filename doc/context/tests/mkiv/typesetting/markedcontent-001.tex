@@ -1,0 +1,32 @@
+\setupbodyfont[10pt]
+
+\starttext
+
+\startbuffer
+before, after
+
+before,\removepunctuation after
+
+before\markcontent[gone]{\darkred\em   gone}\removemarkedcontent[gone]after
+
+before\markcontent[kept]{\darkgreen\em kept}\removemarkedcontent[gone]after
+
+before\startmarkedcontent[kept]
+    \darkgreen\em kept
+\stopmarkedcontent\removemarkedcontent[gone]after
+
+before\startmarkedcontent[gone]
+    \darkgreen\em gone
+\stopmarkedcontent\removemarkedcontent[gone]after
+
+\markcontent[gone]{\darkred\em   gone}\removemarkedcontent[gone]after
+
+\markcontent[kept]{\darkgreen\em kept}\removemarkedcontent[gone]after
+
+before\markcontent{\darkred\em simple}\removemarkedcontent after
+
+\stopbuffer
+
+\typebuffer \blank \getbuffer\blank
+
+\stoptext

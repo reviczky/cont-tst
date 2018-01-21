@@ -1,0 +1,11 @@
+\setupinteraction[state=start]
+
+\starttext
+
+    \pagereference[one]\pagereference[two]
+
+    \goto{one and two}[one,two]         % two similar references (same page)
+
+    \goto{one and two}[\empty{one,two}] % this keeps the whole
+
+\stoptext

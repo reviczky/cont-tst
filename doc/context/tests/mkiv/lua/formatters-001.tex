@@ -1,0 +1,21 @@
+\starttext
+
+\tt
+
++\startluacode context(string.formatters["%F"]( 0.1))            \stopluacode\par
+ \startluacode context(string.formatters["%F"](-0.1))            \stopluacode\par
++\startluacode context(string.formatters["%F"]( 0.0000005))      \stopluacode\par
+ \startluacode context(string.formatters["%F"](-0.0000005))      \stopluacode\par
++\startluacode context(string.formatters["%F"]( 0.00000005))     \stopluacode\par
+ \startluacode context(string.formatters["%F"](-0.00000005))     \stopluacode\par
++\startluacode context(string.formatters["%F"]( 0.000000005))    \stopluacode\par
+ \startluacode context(string.formatters["%F"](-0.000000005))    \stopluacode\par
++\startluacode context(string.formatters["%F"]( 0.0000000005))   \stopluacode\par
+ \startluacode context(string.formatters["%F"](-0.0000000005))   \stopluacode\blank
+
+ \startluacode context(string.formatters["%F"]( 0.00000000005))  \stopluacode\par
+ \startluacode context(string.formatters["%F"](-0.00000000005))  \stopluacode\par
+ \startluacode context(string.formatters["%F"]( 0.000000000005)) \stopluacode\par
+ \startluacode context(string.formatters["%F"](-0.000000000005)) \stopluacode\par
+
+\stoptext

@@ -1,0 +1,19 @@
+\startluacode
+    mathematics.registerdomain {
+        name       = "foo",
+        parents    = { "bar" },
+        characters = {
+            [0x3A] = {
+                char  = 0x2236,
+                class = "inner"
+            }
+        }
+    }
+\stopluacode
+
+\startTEXpage
+    $a: b$\par
+    \setupmathematics[domain=foo]$a: b$\par
+    \mathematics[domain=foo]{a: b}\par
+%     \definemathematics[foo][domain=foo]\mathematics[foo]{a: b}\par
+\stopTEXpage

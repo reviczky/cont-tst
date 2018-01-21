@@ -1,0 +1,15 @@
+return {
+ ["htmlfiles"]={ "spaces-002-div.html" },
+ ["htmlroot"]="spaces-002-div.html",
+ ["identifier"]="432c8239-4270-8895-c7ed-15a947b376e5",
+ ["imagefile"]="styles/spaces-002-images.css",
+ ["imagepath"]="images",
+ ["images"]={},
+ ["language"]="en",
+ ["metadata"]={},
+ ["name"]="spaces-002",
+ ["stylepath"]="styles",
+ ["styles"]={ "spaces-002-defaults.css", "spaces-002-images.css", "spaces-002-styles.css" },
+ ["xhtmlfiles"]={ "spaces-002-tag.xhtml" },
+ ["xmlfiles"]={ "spaces-002-raw.xml" },
+}

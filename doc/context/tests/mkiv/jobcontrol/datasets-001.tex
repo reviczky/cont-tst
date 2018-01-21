@@ -1,0 +1,28 @@
+\starttext
+
+\definedataset[test-1]
+\definedataset[test-2][delay=yes]
+
+\startluacode
+    job.datasets.setdata {
+         name = "test-1",
+         tag  = "foo", -- crashes
+      -- tag  = 5, -- works
+         data = { bar = 123 },
+    }
+\stopluacode
+
+\startlines
+set 1:\setdataset[test-1][whatever=this-or-that-1]
+set 2:\setdataset[test-2][whatever=this-or-that-2]
+set 3:\setdataset[test-2][whatever=this-or-that-3]
+\stoplines
+
+\startlines
+get 1: \datasetvariable{test-1}{1}{whatever} / \datasetvariable{test-1}{1}{realpage}
+get 2: \datasetvariable{test-2}{1}{whatever} / \datasetvariable{test-2}{1}{realpage}
+get 3: \datasetvariable{test-2}{2}{whatever} / \datasetvariable{test-2}{2}{realpage}
+get 4: \datasetvariable{test-1}{foo}{bar}
+\stoplines
+
+\stoptext

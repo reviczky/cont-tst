@@ -1,0 +1,58 @@
+\setuplayout
+  [header=15mm,
+   headerdistance=10mm]
+
+\setuppagenumbering
+  [location=,
+   alternative=doublesided]
+
+\setupdocument
+  [logo=t:/sources/cow.pdf,
+   header={<some text>}]
+
+\definemeasure[logodistance]    [2mm]
+\definemeasure[headerruleheight][.5pt]
+
+\startsetups header:both
+    % If the figure comes last we don't have figurewidth yet so we use a
+    % box. We could do a preroll and save the image dimensions in a measure
+    % but the next works ok too, asuming a doublesided layout.
+    \hbox to \textwidth {
+        \setbox\scratchboxone \hbox {
+            \externalfigure
+                [\documentvariable{logo}]
+                [height=\headerheight]
+        }
+        \scratchwidth\wd\scratchboxone
+        \setbox\scratchboxtwo \hbox {
+            \framed
+                [align={\ifodd\realpageno flushright\else flushleft\fi,lohi},
+                 frame=off, % comment this line when tracing
+                 height=\headerheight,
+                 width=\dimexpr\textwidth-\scratchwidth-\measure{logodistance}\relax]
+                {\documentvariable{header}\par
+                 \nointerlineskip
+                 \blackrule[width=\hsize,height=\measure{headerruleheight}]
+                 \vskip\strutdepth}
+        }
+        \ifodd\realpageno
+            \box\scratchboxone
+            \hss
+            \box\scratchboxtwo
+        \else
+            \box\scratchboxtwo
+            \hss
+            \box\scratchboxone
+        \fi
+    }
+\stopsetups
+
+\setupheadertexts
+  [][\directsetup{header:both}]
+  [\directsetup{header:both}][]
+
+% \showframe
+
+\starttext
+    \dorecurse{10}{\input tufte\par}
+\stoptext

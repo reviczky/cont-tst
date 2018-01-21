@@ -1,0 +1,19 @@
+\usemodule[languages-words]
+
+\starttext
+
+% beware, no grouping (maybe some day, but maybe not)
+
+\setupspellchecking[state=start,method=2]
+
+\setupspellchecking[list=tufte] \bold{tufte:} \input tufte \blank
+\setupspellchecking[list=knuth] \bold{knuth:} \input knuth \blank
+\setupspellchecking[list=ward]  \bold{ward:}  \input ward  \blank
+
+% \typefile{words-003.words}
+
+\setupspellchecking[state=stop]
+
+\showwords[filename=words-003.words]
+
+\stoptext

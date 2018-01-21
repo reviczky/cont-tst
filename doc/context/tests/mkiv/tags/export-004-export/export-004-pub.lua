@@ -1,0 +1,15 @@
+return {
+ ["htmlfiles"]={ "export-004-div.html" },
+ ["htmlroot"]="export-004-div.html",
+ ["identifier"]="43d8a1c1-45b4-bd3f-bb66-ec59b8ac5f8e",
+ ["imagefile"]="styles/export-004-images.css",
+ ["imagepath"]="images",
+ ["images"]={},
+ ["language"]="en",
+ ["metadata"]={},
+ ["name"]="export-004",
+ ["stylepath"]="styles",
+ ["styles"]={ "export-004-defaults.css", "export-004-images.css", "export-004-styles.css" },
+ ["xhtmlfiles"]={ "export-004-tag.xhtml" },
+ ["xmlfiles"]={ "export-004-raw.xml" },
+}

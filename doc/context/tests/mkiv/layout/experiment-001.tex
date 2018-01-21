@@ -1,0 +1,53 @@
+\starttext
+
+% Unfortunate we have no pdf viewers on tablets that:
+%
+% - default to fit width
+% - remember where we were at a page when we swipe left/right
+%
+% so it's to soon to start thinking different about what a page
+% is.
+
+\definepapersize
+  [onepage]
+  [height=16000pt]
+
+\definepapersize
+  [thepage]
+  [height=\the\dimexpr\pagetotal+\topspace+\bottomspace+1cm]
+
+\setuppapersize
+  [onepage]
+
+\setuplayout
+  [header=2cm,
+   footer=2cm,
+   topspace=2cm,
+   bottomspace=2cm,
+   width=middle,
+   height=middle]
+
+\appendtoks
+    \setuppapersize
+      [thepage]
+\to \beforeeverypage
+
+\useMPlibrary[dum]
+
+\dorecurse {10} {
+    \setuppapersize
+      [onepage]
+    \startchapter[title=Chapter #1]
+        \dorecurse {#1} {
+            \input tufte \par
+            \placefigure {}{\externalfigure[dummy]}
+            \input ward  \par
+            \placefigure {}{\externalfigure[dummy]}
+            \input knuth \par
+        }
+        \page
+    \stopchapter
+}
+
+\stoptext
+

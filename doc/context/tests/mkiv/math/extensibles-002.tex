@@ -1,0 +1,26 @@
+\starttext
+
+\def\TestMe#1%
+  {\placeformula
+   \startformula
+     #1{i}\quad#1{ii}\quad#1{ii}\quad#1{iii}\quad#1{iiii}\quad#1{iiiii}\quad#1{iiiiii}\quad
+     #1{iiiiii}_a^b
+   \stopformula}
+
+\TestMe\overbrace
+\TestMe\overparent
+\TestMe\overbracket
+\TestMe\overrightarrow
+\TestMe\overbar
+
+\TestMe\underbrace
+\TestMe\underparent
+\TestMe\underbracket
+\TestMe\underrightarrow
+\TestMe\underbar
+
+\TestMe\doublebrace
+\TestMe\doubleparent
+\TestMe\doublebracket
+
+\stoptext

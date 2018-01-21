@@ -1,0 +1,38 @@
+\setupbodyfont[dejavu]
+
+\starttext
+
+\startMPpage[offset=10pt]
+
+    picture MyText ; MyText := textext("Dummy") ; % not used later on
+
+    picture MyText ; MyText := textext("\red Red") ;
+
+    draw MyText ;
+
+    draw MyText scaled 2 shifted (0,-1cm) ;
+
+    draw MyText scaled 3 shifted (0,-2cm) ;
+
+    picture MyText ; MyText := textext("Blue Green Red") ;
+
+    draw MyText rotatedaround(center MyText,10) shifted (0,-3cm) withcolor blue ;
+
+    draw MyText shifted (0,-4cm) withcolor green ;
+
+    draw MyText rotatedaround(center MyText,-10) shifted (0,-5cm) withcolor red ;
+
+    picture MyText ; MyText := image (
+        draw textext("Green Red Blue {\yellow YELLOW} Whatever 1") ;
+        draw textext("Green Red Blue {\yellow YELLOW} Whatever 2") shifted (10cm,0) ;
+    ) ;
+
+    draw MyText shifted (0,-6cm) withcolor green ;
+
+    draw MyText shifted (0,-7cm) withcolor red ;
+
+    draw MyText shifted (0,-8cm) withcolor blue ;
+
+\stopMPpage
+
+\stoptext

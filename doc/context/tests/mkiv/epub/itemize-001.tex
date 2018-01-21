@@ -1,0 +1,24 @@
+\setupbackend[export=yes]
+
+\starttext
+    \startitemize[n]
+        \starthead {Head 1}
+            Test 1
+        \stophead
+        \starthead {Head 2}
+            Test 2
+        \stophead
+        \startitem
+            Test 3
+        \stopitem
+        \startspecialitem[sym]{!!!}
+            Test 3
+        \stopspecialitem
+        \startspecialitem[sub]
+            Test 4
+        \stopspecialitem
+        \startspecialitem[mar]{foo}
+            Test 5
+        \stopspecialitem
+    \stopitemize
+\stoptext

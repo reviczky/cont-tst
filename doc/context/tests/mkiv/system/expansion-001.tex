@@ -1,0 +1,15 @@
+% processing eventually will crash (overflow)
+
+% \starttext
+%     \def\l{\directlua0}\l{n=0}\def\t{\l{n=n+1;print(n)}\the\t} \t
+% \stoptext
+
+% \input plain
+% \newtoks\xxx
+% \def\xxx{\the\xxx}
+% \xxx
+% \bye
+
+\starttext
+    overflow test commented
+\stoptext

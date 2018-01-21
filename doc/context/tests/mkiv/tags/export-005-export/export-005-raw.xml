@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+
+<!--
+
+    input filename   : export-005
+    processing date  : 
+    context version  : 2018.01.03 14:46
+    exporter version : 0.35
+
+-->
+
+<?xml-stylesheet type="text/css" href="styles/export-005-defaults.css" ?>
+<?xml-stylesheet type="text/css" href="styles/export-005-images.css" ?>
+<?xml-stylesheet type="text/css" href="styles/export-005-styles.css" ?>
+
+<document context="2018.01.03 14:46" file="export-005" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+ <metadata>
+ </metadata>
+ <section detail="chapter" chain="chapter" implicit="1" level="2">
+  <sectioncaption>
+   <sectionnumber>1</sectionnumber>
+   <sectiontitle>chapter a</sectiontitle>
+  </sectioncaption>
+  <sectioncontent>
+   <section detail="section" chain="section" implicit="2" level="3">
+    <sectioncaption>
+     <sectionnumber>1.1</sectionnumber>
+     <sectiontitle>section a</sectiontitle>
+    </sectioncaption>
+   </section>
+   <section detail="section" chain="section" implicit="3" level="3">
+    <sectioncaption>
+     <sectionnumber>1.2</sectionnumber>
+     <sectiontitle>section b</sectiontitle>
+    </sectioncaption>
+    </section>
+  </sectioncontent>
+ </section>
+ <section detail="chapter" chain="chapter" implicit="4" level="2">
+  <sectioncaption>
+   <sectionnumber>2</sectionnumber>
+   <sectiontitle>chapter b</sectiontitle>
+  </sectioncaption>
+  <sectioncontent>
+   <section detail="section" chain="section" implicit="5" level="3">
+    <sectioncaption>
+     <sectionnumber>2.1</sectionnumber>
+     <sectiontitle>section a</sectiontitle>
+    </sectioncaption>
+   </section>
+   <section detail="section" chain="section" implicit="6" level="3">
+    <sectioncaption>
+     <sectionnumber>2.2</sectionnumber>
+     <sectiontitle>section b</sectiontitle>
+    </sectioncaption>
+   </section>
+  </sectioncontent>
+ </section>
+</document>

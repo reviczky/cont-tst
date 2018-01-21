@@ -1,0 +1,23 @@
+% forwarded question on s.e. (leaders and bars)
+
+\setuppapersize[A6][A6]
+
+\starttext
+
+    \overstrike{Hello\hfill world!}
+
+    Hello\leaders\hbox{.}\hfill world!
+
+    \overstrike{Hello there\leaders\hbox{.}\hfill world!}
+
+    \overstrikes{Hello there\leaders\hbox{.}\hfill world!}
+
+    \setupbar[overstrike][continue=all] % new
+
+    \overstrike{Hello there\leaders\hbox{.}\hfill world!}
+
+    \definebar[superstrike][overstrike][continue=all,color=red]
+
+    \superstrike{Hello there\leaders\hbox{.}\hfill world!}
+
+\stoptext

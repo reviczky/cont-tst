@@ -1,0 +1,50 @@
+\setuptagging[state=start]
+
+\setupbackend[export=yes]
+
+% \enabletrackers[structure.tags,backends.tags]
+
+\setelementnature[display][display]
+\setelementnature[inline] [inline]
+\setelementnature[mixed]  [mixed]
+
+\showframe
+
+\starttext
+
+% \startelement[whatever]
+%     \startelement[whatever]whatever\stopelement
+%     \startelement[mixed]mixed\stopelement
+%     \startelement[inline]inline\stopelement
+% \stopelement
+
+\bTABLE
+\bTR \bTD test 11 \eTD \bTD[ny=2] test 12 <a> \eTD \eTR
+\bTR \bTD test 21 \eTD                             \eTR
+\bTR \bTD test 21 \eTD                             \eTR
+\bTR \bTD[nx=2,align=flushright] test 33      \eTD \eTR
+\eTABLE
+
+test
+
+\starttabulate[|l|p|r|]
+\NC one \NC     \NC           \NC \NR
+\NC     \NC two \NC           \NC \NR
+\NC     \NC     \NC \de three \quote {connect} oeps \NC \NR
+\stoptabulate
+
+test \blank test
+
+\starttabulate[|l|p|r|]
+\NC zero\NC line one \par line two \par line three \NC 0 \NC \NR
+\NC one \NC \input zapf \par \input zapf \NC 1 \NC \NR
+\NC two \NC \input zapf \NC 2 \NC \NR
+\NC three \NC \input zapf \NC 3 \NC \NR
+\NC four \NC \input zapf \NC 4 \NC \NR
+\NC five \NC \input zapf \NC 5 \NC \NR
+\NC six \NC before \type {connect} \par after \NC 6 \NC \NR
+\NC seven \NC before \type {connect} after \NC 7 \NC \NR
+\NC eight \NC before \par after \NC 8 \NC \NR
+\stoptabulate
+
+\stoptext

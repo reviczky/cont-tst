@@ -1,0 +1,32 @@
+\setupbodyfont [pagella]
+
+\starttext
+    \startMPcode
+        addto currentpicture also "FooBar effe" infont defaultfont ; % default scale
+        label("FooBar effe", origin) shifted (0,-06mm) ;
+        draw btex FooBar effe etex   shifted (0,-12mm) ;
+        draw textext("FooBar effe")  shifted (0,-18mm) ;
+        draw boundingbox currentpicture ;
+    \stopMPcode
+
+    \switchtobodyfont [10pt]
+
+    \startMPcode
+        addto currentpicture also "FooBar effe" infont defaultfont ; % default scale
+        label("FooBar effe", origin) shifted (0,-06mm) ;
+        draw btex FooBar effe etex   shifted (0,-12mm) ;
+        draw textext("FooBar effe")  shifted (0,-18mm) ;
+        draw boundingbox currentpicture ;
+    \stopMPcode
+
+    \definefontsynonym[MetafunDefault][Bold*default]
+
+    \startMPcode
+        addto currentpicture also "FooBar effe" infont defaultfont ; % default scale
+        label("FooBar effe", origin) shifted (0,-06mm) ;
+        draw btex FooBar effe etex   shifted (0,-12mm) ;
+        draw textext("FooBar effe")  shifted (0,-18mm) ;
+        draw boundingbox currentpicture ;
+    \stopMPcode
+
+\stoptext

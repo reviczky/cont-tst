@@ -1,0 +1,17 @@
+\usemodule[art-01]
+
+\enabletrackers[scripts.*]
+
+\definefont[testfont][ipaexm.ttf][script=kana,language=jan]
+
+\startTEXpage
+    \startformula test \stopformula \par
+    \testfont \startscript[nihongo]\ruledhbox{漢字\hskip 2cm 文書}\stopscript\par
+    \testfont \startscript[nihongo]\ruledhbox to 7cm{漢字\hfill 文書}\stopscript\par
+    \testfont \startscript[nihongo]\ruledhbox{漢字文書}\stopscript\par
+    \testfont \startscript[nihongo]\ruledhbox{漢字 文書}\stopscript\par
+    \testfont \startscript[nihongo]\ruledhbox{漢字\kern 2cm 文書}\stopscript\par
+    \testfont \startscript[nihongo]\ruledhbox{\hskip 2cm 漢字文書}\stopscript\par
+\stopTEXpage
+
+\stoptext

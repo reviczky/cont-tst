@@ -1,0 +1,41 @@
+\starttext
+
+\start
+\setupframedtablecolumn [1] [width=3cm,align=normal]
+\setupframedtablecolumn [2] [width=3cm,align={normal,verytolerant,stretch}]
+\setupframedtablecolumn [3] [width=3cm,align=normal]
+\setupframedtablecolumn [4] [width=3cm,align=normal]
+
+\startframedtable
+    \startframedrow
+        \startframedcell
+            One
+        \stopframedcell
+        \startframedcell
+            Cell Two has a slightly longer text
+        \stopframedcell
+        \startframedcell
+            Three
+        \stopframedcell
+        \startframedcell
+            Four
+        \stopframedcell
+    \stopframedrow
+    \startframedrow
+        \startframedcell
+            One
+        \stopframedcell
+        \startframedcell
+            Two
+        \stopframedcell
+        \startframedcell
+            Three
+        \stopframedcell
+        \startframedcell
+            Four
+        \stopframedcell
+    \stopframedrow
+\stopframedtable
+\stop
+
+\stoptext

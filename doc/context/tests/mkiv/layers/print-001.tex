@@ -1,0 +1,15 @@
+\defineviewerlayer[visibleandprint]      [printable=yes,state=start]
+\defineviewerlayer[visibleandnotprint]   [printable=no, state=start]
+\defineviewerlayer[notvisibleandprint]   [printable=yes,state=stop]
+\defineviewerlayer[notvisibleandnotprint][printable=no, state=stop]
+
+\setupinteraction[state=start]
+
+\starttext
+
+\startviewerlayer[visibleandprint]       visible and print          \stopviewerlayer \blank
+\startviewerlayer[visibleandnotprint]    visible and not print      \stopviewerlayer \blank
+\startviewerlayer[notvisibleandprint]    not visible and print      \stopviewerlayer \blank
+\startviewerlayer[notvisibleandnotprint] not visible and not print  \stopviewerlayer \blank
+
+\stoptext

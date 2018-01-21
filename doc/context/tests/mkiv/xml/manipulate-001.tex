@@ -1,0 +1,45 @@
+\startbuffer[test]
+<A>
+  <B>right</B>
+  <B>wrong</B>
+</A>
+\stopbuffer
+
+\startluacode
+
+local rehash = {
+    ["right"] = "ok",
+}
+
+function xml.finalizers.tex.Shorter(collected,what)
+    for i=1,#collected do
+        if what == "all" then
+            local str = xml.text(collected[i])
+            context(rehash[str] or str)
+        else
+            context(str)
+        end
+    end
+end
+
+\stopluacode
+
+\startxmlsetups xml:testsetups
+	\xmlsetsetup{#1}{A|B}{xml:*}
+\stopxmlsetups
+
+\xmlregistersetup{xml:testsetups}
+
+\startxmlsetups xml:A
+	\xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:B
+    \startchapter
+      [title={\xmlfilter{#1}{./Shorter("all")}},
+       list={\xmltext{#1}}]
+\stopxmlsetups
+
+\starttext
+    \xmlprocessbuffer{main}{test}{}
+\stoptext

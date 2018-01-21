@@ -1,0 +1,29 @@
+\setupbodyfont[lucidaot]
+\setupmathrendering[lucidaot][it=]
+
+\setupwhitespace[big]
+
+\starttext
+
+$x
+   ^{i \leftarrow 0 = ∅}
+   _{\setmathfontalternate{arrow}
+     \setmathfontalternate{dotless}
+     \setmathfontalternate{zero}
+     i \leftarrow 0 = ∅}
+$
+
+$x
+   ^{i \leftarrow 0 = ∅}
+   _{\setmathfontalternate{arrow,dotless,zero}
+     i \leftarrow 0 = ∅}
+$
+
+\setupmathematics[stylealternative={arrow,dotless,zero}]
+
+$x
+   ^{i \leftarrow 0 = ∅}
+   _{i \leftarrow 0 = ∅}
+$
+
+\stoptext

@@ -1,0 +1,24 @@
+\showmakeup
+
+\starttext
+
+\strut \hfill first line
+\blank[overlay]
+second line \hfill \strut
+
+\ruledvbox {
+    \strut \hfill line 1
+    \blank[overlay]
+    line 2\hfill \strut
+    \blank[overlay]
+    \strut \hfill line 3\hfill \strut
+}
+
+\startitemize[n]
+    \item bla
+    \item \startitemize[a]
+        \item bla $\displaystyle\int^{x^{y^4}}$ \item bla
+    \stopitemize
+\stopitemize
+
+\stoptext

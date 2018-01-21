@@ -1,0 +1,23 @@
+\startbuffer[test]
+<something whatever="alpha % oeps">
+    <what>
+        oeps % oeps
+    </what>
+</something>
+\stopbuffer
+
+\startxmlsetups xml:mysetups
+    \xmlsetsetup{\xmldocument}{something}{xml:*}
+\stopxmlsetups
+
+\xmlregistersetup{xml:mysetups}
+
+\startxmlsetups xml:something
+    \xmlatt{#1}{whatever}
+    \xmlfirst{#1}{what}
+\stopxmlsetups
+
+\starttext
+    \xmlprocessbuffer{main}{test}{}
+\stoptext
+

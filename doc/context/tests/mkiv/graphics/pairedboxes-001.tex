@@ -1,0 +1,29 @@
+\starttext
+
+\definepairedbox
+  [mylegend]
+  [location={right,top}]
+
+\startitemize[n,packed,joinedup][stopper=)]
+    \startitem
+        some introduction text \blank and some more \blank
+        \startplacemylegend
+            \startcontent
+                \starttable[|l|l|]
+                    \HL \VL foo     \VL bar \VL \NR \HL
+                    \VL \VL \VL \AR \VL \VL \VL \AR \HL
+                    \VL \VL \VL \AR \VL \VL \VL \AR \HL
+                    \VL \VL \VL \AR \VL \VL \VL \AR \HL
+                \stoptable
+            \stopcontent
+            \startcaption
+                \input ward
+            \stopcaption
+        \stopplacemylegend
+    \stopitem
+    \startitem
+        and even more
+    \stopitem
+\stopitemize
+
+\stoptext

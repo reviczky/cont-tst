@@ -1,0 +1,33 @@
+\showframe
+
+\definenarrower[whatever][left=3cm,right=2cm,default=left]
+
+\starttext
+
+\input ward
+
+\startnarrower[2*left] \input ward \stopnarrower
+
+\input ward
+
+\startnarrow[whatever] \input ward \stopnarrow
+
+\input ward
+
+\startnarrow[whatever][right] \input ward \stopnarrow
+
+\input ward
+
+\startnarrow[whatever][default=middle] \input ward \stopnarrow
+
+\input ward
+
+\startnarrow[whatever][default=middle,middle=-1cm] \input ward \stopnarrow
+
+\input ward
+
+\startnarrow[default=middle] \input ward \stopnarrow
+
+\input ward
+
+\stoptext

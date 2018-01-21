@@ -1,0 +1,52 @@
+\usemodule[art-01]
+
+\definesynonyms
+  [myabbreviation]
+
+\setupsynonyms
+  [myabbreviation]
+  [headstyle=bold,
+   headcolor=darkred,
+   synonymstyle=boldslanted,
+   synonymcolor=darkblue,
+   textstyle=slanted,
+   textcolor=darkgreen,
+   style=normal,
+   color=darkyellow]
+
+\definesorting
+  [mylogo]
+
+\setupsorting
+  [mylogo]
+  [style=bold,
+   color=darkmagenta]
+
+\myabbreviation [FIRST]  {TheFirst}  {The First Words}
+\myabbreviation [SECOND] {TheSecond} {The Second Words}
+\myabbreviation [THIRD]  {TheThird}  {The Third Words}
+
+\mylogo [FOURTH] {TheFourth}
+
+\starttext
+
+\setupsynonyms[myabbreviation][alternative=first]
+
+We have \FIRST, \SECOND\ and also \THIRD\ but no \FOURTH.
+
+We have \FIRST, \SECOND\ and also \THIRD\ but no \FOURTH.
+
+\resetshownsynonyms[myabbreviation]
+
+\setupsynonyms[myabbreviation][alternative=last]
+
+We have \FIRST\ and \THIRD\ or \FOURTH.
+
+We have \FIRST\ and \THIRD\ or \FOURTH.
+
+\placelistofsynonyms[myabbreviation]
+
+\placelistofsorts[mylogo]
+
+\stoptext
+

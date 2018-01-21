@@ -1,0 +1,19 @@
+% per request on the list:
+
+\showfontkerns
+
+\setupbodyfont[dejavu]
+
+\replaceword[more][shelfful]  [shel{ff}ul]
+\replaceword[more][shelfful]  [shelf\zwnj ful]
+\replaceword[more][shifffahrt][shif\zwnj ffahrt]
+\replaceword[more][shifffahrt][shif{}ffahrt]
+\replaceword[more][shiffling] [shiff{}ling]
+\replaceword[more][shiffling] [{shiffling}]
+%replaceword[more][shiffling] [{{shiffling}}] % more a test
+
+% also: [foobar][foo{-}{-}{}bar]
+
+\starttext
+    \setreplacements[more] shelfful shifffahrt shiffling
+\stoptext

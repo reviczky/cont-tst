@@ -1,0 +1,24 @@
+% this used to crash on some linux 64 bit machines so we keep it as test
+
+\enabletrackers[metapost.properties]
+
+\startTEXpage[offset=10pt]
+
+    BEFORE
+
+    \startuseMPgraphic{doublefun::test}
+        fill fullcircle scaled 100e0 ;
+        if epsilon/4 = 0 :
+            errmessage ">>>>>>>>>>> We need double precision here." ;
+            endinput ;
+        fi
+        fill fullcircle scaled 50e0 withcolor red ;
+    \stopuseMPgraphic
+
+    \useMPgraphic{doublefun::test}
+
+    \useMPgraphic{doublefun:test}
+
+    AFTER
+
+\stopTEXpage

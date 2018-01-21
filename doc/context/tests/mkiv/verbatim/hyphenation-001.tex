@@ -1,0 +1,15 @@
+\starttext
+
+    \setuplayout[width=4cm] \showframe
+
+    \setupalign[stretch,verytolerant]
+
+    \definetype[whatever][lines=hyphenated,space=stretch]
+
+    A quote from ward: \expanded{\whatever{\cldloadfile{ward}}} That's it.
+
+    \definetype[whatever][lines=normal,space=stretch]
+
+    A quote from ward: \expanded{\whatever{\cldloadfile{ward}}} That's it.
+
+\stoptext

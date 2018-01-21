@@ -1,0 +1,51 @@
+\setuplayout[middle]
+
+\starttext
+
+\setupalign[r2l]
+
+\definefont[arabicfont][Arial*arabic at 20pt]
+
+\enabletrackers[typesetters.directions.default]
+\enabletrackers[typesetters.directions.one]
+\enabletrackers[typesetters.directions.two]
+
+\setupdirections[bidi=global,method=default]
+% \setupdirections[bidi=global,method=one]
+% \setupdirections[bidi=global,method=two]
+
+\arabicfont \setupinterlinespace
+
+                  \hbox{\righttoleft(0001)}\par
+   \dontleavehmode\hbox{\righttoleft(0002)}\par
+                       {\righttoleft(0003)\par}
+                       {\righttoleft(0004)}\par
+        \dontleavehmode{\righttoleft(0005)\par}
+        \dontleavehmode{\righttoleft(0006)}\par
+               \rtlhbox{(0007)}\par
+               \ltrhbox{(0008)}\par
+\dontleavehmode\rtlhbox{(0009)}\par
+\dontleavehmode\ltrhbox{(0010)}\par
+
+                  \hbox{(0011)}\par
+   \dontleavehmode\hbox{(0012)}\par
+
+\setupitemize[left=(,right=),distance=1em]
+
+\startitemize[a]
+\item اولی
+\item دومی
+\stopitemize
+
+(1984)
+
+این (آزمایش 1363] و یک (آزمایش 1984] خوب است  و باقی ماجرا. \blank
+
+این (آزمایش (oeps 1363)) و یک (آزمایش 1984) خوب است  و باقی ماجرا. \blank
+
+این (آزمایش (oeps 1363)) و یک \blank
+
+این (آزمایش [oeps 1363]) و یک \blank
+این (آزمایش [oeps 1363)] و یک \blank
+
+\stoptext

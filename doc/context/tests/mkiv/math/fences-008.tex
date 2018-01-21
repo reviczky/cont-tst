@@ -1,0 +1,18 @@
+\definemathfence [MEAN] [angle] [command=yes, color=blue, factor=2.5]
+
+\starttext
+\startTEXpage
+    \startformula
+        \MEAN[factor=1]{\sum_{i = 1}^n A_i x_i }
+        \hbox{ vs. }
+        \MEAN{ \sum_{i = 1}^n A_i x_i }
+        \hbox{ vs. }
+        \bigg\langle \sum_{i=1}^n A_i x_i \bigg\rangle
+        \MEAN[factor=0]{ x_0 }
+        \MEAN[factor=0.85]{ x }
+        \MEAN[factor=1.15]{ x }
+        \MEAN[factor=1.45]{ x }
+        \MEAN[factor=1.75]{ x }
+\stopformula
+\stopTEXpage
+\stoptext

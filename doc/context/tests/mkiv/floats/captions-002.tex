@@ -1,0 +1,15 @@
+\starttext
+
+\startplacefigure
+    \framed[width=.8\textwidth,framecolor=red]{one}
+\stopplacefigure
+
+\definefloat[widefigure][figure][figure]
+\setupfloat   [widefigure][location=flushleft]
+\setupcaptions[widefigure][width=\textwidth,align=middle]
+
+\startplacewidefigure
+    \framed[width=1.2\textwidth,framecolor=blue]{two}
+\stopplacewidefigure
+
+\stoptext

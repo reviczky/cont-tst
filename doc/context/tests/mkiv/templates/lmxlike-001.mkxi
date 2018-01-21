@@ -1,0 +1,48 @@
+% macros=mkxi
+
+% Context recognizes the file suffix as well as the preamble. The mkix filetype just
+% compiles, while the mkxi filetype also applies mkvi translation. This last step is
+% somewat tricky as it is applied on the template.
+
+\setupbodyfont
+  [dejavu,8pt]
+
+\starttext
+
+    \bTABLE
+        <?lua for i=1,40 do ?>
+            \bTR
+                <?lua for j=1,5 do ?>
+                    \bTD cell (<?lua inject(i) ?>,<?lua inject(j)?>) is <?lua inject(variables.text or "unset") ?>\eTD
+                <?lua end ?>
+            \eTR
+        <?lua end ?>
+    \eTABLE
+
+    \page
+
+    \startluacode
+        context.bTABLE()
+            for i=1,40 do
+                context.bTR()
+                    for j=1,5 do
+                        context.bTD()
+                        context("cell (%s,%s) is %s",i,j,document.variables.text or "unset")
+                        context.eTD()
+                    end
+                context.eTR()
+            end
+        context.eTABLE()
+    \stopluacode
+
+    \page
+
+    \def\testmacro#one#two{[#one,#two]}
+
+    \testmacro{1}{2}
+    \testmacro{one}{two}
+    \testmacro{second}{first}
+
+    \page
+
+\stoptext

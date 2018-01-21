@@ -1,0 +1,24 @@
+% posted by WS on mailing list
+
+\defineseparatorset[formulaprefix][][+]
+\defineseparatorset[formulanumber][][-]
+
+\setupformulas
+  [prefixseparatorset=formulaprefix,
+   numberseparatorset=formulanumber,
+   prefixconnector=?,
+   prefixsegments=1:*]
+
+\starttext
+
+\chapter{Formulas}
+
+\section{Indeed}
+
+\startplaceformula
+	\startformula
+        c^2 = a^2 + b^2
+	\stopformula
+\stopplaceformula
+
+\stoptext

@@ -1,0 +1,105 @@
+% for Jano K
+
+\startbuffer
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<albums>
+	<year value="2010">
+		<album genre="Rock">Nirvana</album>
+		<album genre="Baroque">Vivaldi</album>
+		<album genre="Rock">G Love</album>
+		<album genre="Baroque">Monteverdi</album>
+	</year>
+	<year value="2011">
+		<album genre="Classics">Mozart</album>
+		<album genre="Jazz">Mayer</album>
+		<album genre="Baroque">Zelenka</album>
+	</year>
+	<year value="2012">
+		<album genre="Jazz">Gilberto</album>
+		<album genre="Rock">The Frames</album>
+		<album genre="Jazz">Armstrong</album>
+	</year>
+</albums>
+
+<!-- 			RESULT
+-----------------------------------------
+Genre 		Artist					Count
+-----------------------------------------
+2010
+-----------------------------------------
+Baroque		Monteverdi, Vivaldi		2
+Rock		G Love, Nirvana			2
+-----------------------------------------
+2011
+-----------------------------------------
+Baroque		Zelenka					1
+Classics	Mozart					1
+Jazz		Mayer					1
+-----------------------------------------
+2012
+-----------------------------------------
+Jazz		Armstrong, Gilberto		2
+Rock		The Frames				1
+-----------------------------------------
+\stopbuffer
+
+\starttext
+
+\startluacode
+    function xml.finalizers.filter(e)
+        local hash = { }
+        for i=1,#e do
+            for c in xml.collected(e[i],"/year") do
+                local y = tonumber(c.at["value"])
+                local h = hash[y]
+                if not h then
+                    h = { }
+                    hash[y] = h
+                end
+                for c in xml.collected(c,"/album") do
+                    local g = c.at.genre
+                    local t = xml.text(c)
+                    if h[g] then
+                        h[g][t] = true
+                    else
+                        h[g] = { [t] = true }
+                    end
+                end
+            end
+        end
+        -- ok, for utf you need a better sorter but for english this will do
+        context.starttabulate { "|l|p|r|" }
+        for k, v in table.sortedhash(hash) do
+            context.HL()
+            context.NC()
+            context(k)
+            context.NC()
+            context.NC()
+            context.NR()
+            context.HL()
+            for k, v in table.sortedhash(v) do
+                local c = table.sortedkeys(v)
+                context.NC()
+                context(k)
+                context.NC()
+                context("%, t",c)
+                context.NC()
+                context(#c)
+                context.NC()
+                context.NR()
+            end
+            context.HL()
+        end
+        context.stoptabulate()
+    end
+\stopluacode
+
+\xmlloadbuffer{main}{}{}
+
+\startxmlsetups xml:filter
+    \xmlfilter{#1}{/albums/filter()}
+\stopxmlsetups
+
+\xmlsetup{main}{xml:filter}
+
+\stoptext

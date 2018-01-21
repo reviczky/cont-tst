@@ -1,0 +1,28 @@
+\useMPlibrary[mat]
+
+\setupmathstackers
+  [both] % vfenced]
+  [color=darkred,
+   alternative=mp]
+
+\setupmathstackers
+  [top]
+  [color=darkred,
+   alternative=mp]
+
+\setupmathstackers
+  [bottom]
+  [color=darkred,
+   alternative=mp]
+
+\starttext
+
+    $\overbracket   {a+b+c+d} \quad \underbracket    {a+b+c+d} \quad \doublebracket{a+b+c+d}$ \blank
+    $\overparent    {a+b+c+d} \quad \underparent     {a+b+c+d} \quad \doubleparent {a+b+c+d}$ \blank
+    $\overbrace     {a+b+c+d} \quad \underbrace      {a+b+c+d} \quad \doublebrace  {a+b+c+d}$ \blank
+    $\overbar       {a+b+c+d} \quad \underbar        {a+b+c+d} \quad \doublebar    {a+b+c+d}$ \blank
+
+    $\overleftarrow  {a+b+c+d} \quad \overrightarrow  {a+b+c+d} $ \blank
+    $\underleftarrow {a+b+c+d} \quad \underrightarrow {a+b+c+d} $ \blank
+
+\stoptext

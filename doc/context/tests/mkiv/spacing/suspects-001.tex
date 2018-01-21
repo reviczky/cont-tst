@@ -1,0 +1,24 @@
+\unexpanded\def\showsample#1%
+  {\NC \type{#1}%
+   \NC \enabletrackers[typesetters.suspects]#1\disabletrackers[typesetters.spacing]%
+   \NC \NR}
+
+\startTEXpage[strut=no,offset=1cm]
+    \starttabulate[|||][before=,after=]
+        \showsample{foo$x$}
+        \showsample{$x$bar}
+        \showsample{foo$x$bar}
+        \showsample{$f+o+o$:}
+        \showsample{;$f+o+o$}
+        \showsample{; bar}
+        \showsample{foo:bar}
+        \showsample{\quote{ foo }}
+        \showsample{\quote{bar }}
+        \showsample{\quote{ bar}}
+        \showsample{(foo )}
+        \showsample{\{foo \}}
+        \showsample{foo{\bf gnu}bar}
+        \showsample{foo$x^2$bar}
+        \showsample{foo\nobreakspace bar}
+    \stoptabulate
+\stopTEXpage

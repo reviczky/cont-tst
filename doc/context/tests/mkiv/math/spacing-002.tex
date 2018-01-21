@@ -1,0 +1,18 @@
+\starttext
+
+$y=a x + b$
+
+$y=a {\mkern 1mu} x + b$
+
+\startsetups math:morespacing
+    \ordordspacing\textstyle 1mu plus .5mu minus .25mu\relax
+\stopsetups
+
+\setupmathematics
+  [setups=math:morespacing]
+
+$y=m x+c$
+
+$y=m{\mkern 1mu}x+c$
+
+\stoptext

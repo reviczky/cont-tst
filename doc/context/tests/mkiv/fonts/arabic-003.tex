@@ -1,0 +1,16 @@
+\starttext
+
+    \definefontfeature
+      [amiri]
+      [mode=node,language=dflt,script=arab,
+       init=yes,medi=yes,fina=yes,isol=yes,
+       ccmp=yes,locl=yes,calt=yes,
+       liga=yes,clig=yes,dlig=yes,rlig=yes,
+       mark=yes,mkmk=yes,kern=yes,curs=yes]
+
+    \showotfcomposition
+      {amiri*amiri at 48pt}
+      {-1}
+      {\char"0644\char"0644\char"0647}
+
+\stoptext

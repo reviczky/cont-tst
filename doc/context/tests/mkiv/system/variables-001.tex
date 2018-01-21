@@ -1,0 +1,15 @@
+\setvariables
+  [whatever]
+  [name:first={product a},
+   price:first={123,45},
+   name:second={product b},
+   price:second={0.67}]
+
+\starttext
+
+You can order \getvariable {whatever} {name:first} but only if you're willing
+to pay the price of \getvariable {whatever} {price:first} Euros. But why not
+go for the much cheaper \getvariable {whatever} {name:second} that only costs
+you \getvariable {whatever} {price:second} Euros!
+
+\stoptext

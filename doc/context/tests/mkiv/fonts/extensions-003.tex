@@ -1,0 +1,19 @@
+\startluacode
+    fonts.handlers.otf.addfeature {
+        name = "kern",
+        type = "pair",
+        data = {
+            [0x0153] = { [0x0301] = { false, { -140, 0, 0, 0 } } },
+        }
+    }
+\stopluacode
+
+\setupbodyfont[cambria]
+
+\starttext
+
+    \unexpanded\def\oeacute{\char"153\char"301\relax}
+
+    b\oeacute f
+
+\stoptext

@@ -1,0 +1,63 @@
+% language=uk
+
+\usemodule[art-01,abr-04]
+
+\noheaderandfooterlines
+
+\starttext
+
+\startsubject[title=The test suite]
+
+This suite is a loosely organized collection of small files. Some files are
+tests that we made during development, some are examples taken (and/or
+adapted) from the mailing list and mail exchanges. Many of the files show
+some tricks that are not really meant for daily usage.
+
+If you use these files as a kind of regression test, an exact comparison with
+previous runs not always makes sense. Some files will differ due to typeset
+times, or because random content is used. Also some functionality can have
+been improved or fonts be updated. The \type {testsuite-info.lua} file
+provides some information about what files to skip in such a test.
+
+I run this suite occasionally when we have done some fundamental update to
+\CONTEXT\ or \LUATEX. When I'm in a hurry the test is simply running all files
+and checking if we get an error. Sometimes I do a more extensive test with the
+\type {mtx-testsuite} script that can be run as follows:
+
+\starttyping
+mtxrun --script testsuite --compare --objects \
+    --oldname=cld-compare-old  --newname=cld-compare-new  --pattern=**/*.cld
+mtxrun --script testsuite --compare --objects \
+    --oldname=mkiv-compare-old --newname=mkiv-compare-new --pattern=**/*.mkiv
+mtxrun --script testsuite --compare --objects \
+    --oldname=mkvi-compare-old --newname=mkvi-compare-new --pattern=**/*.mkvi
+mtxrun --script testsuite --compare --objects \
+    --oldname=tex-compare-old  --newname=tex-compare-new  --pattern=**/*.tex
+\stoptyping
+
+This is just one way of comparing results and probably not the best one either
+but it evolved that way. If you have your own test method, it might help to know
+that you can run \CONTEXT\ in a way that gives (in most cases) comparable \PDF\
+files:
+
+\starttyping
+context --batch --nocompression --nodates --trailerid=1 somefile
+\stoptyping
+
+You can also run \type {contextjit} but that might fail on extremely large fonts
+due to limitations in the virtual machine.
+
+Several users run these files as test and report me issues. Feel free to send
+reports or addenda for the info file. If you observe differences, first make sure
+that the newer results are okay: after all macros might have been improved.
+
+\blank[2*big]
+
+\startlines
+Hans Hagen
+Hasselt NL
+\stoplines
+
+\stopsubject
+
+\stoptext

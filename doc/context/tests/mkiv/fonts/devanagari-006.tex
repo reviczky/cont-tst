@@ -1,0 +1,24 @@
+\starttypescript [serif] [rachana] [name]
+   \definefontsynonym[Serif] [file:rachana][features=malayalam-one]
+\stoptypescript
+
+\starttypescript [rachana]
+   \definetypeface[rachana][rm][serif][rachana][default]
+   \definetypeface[rachana][mm][math] [modern][default]
+\stoptypescript
+
+\setupbodyfont[rachana]
+
+\starttext
+
+    \char"0D15 \char"0D4D \char"0D24 \char"0D4D \char"0D30            \\ % ക്ത്ര
+    \char"0D15 \char"0D4D \char"0D24 \char"0D4D \char"0D30 \char"0D4B \\ % ക്ത്രോ
+    \char"0D38 \char"0D4D \char"0D2A \char"0D4D \char"0D30            \\ % സ്പ്ര
+    \char"0D38 \char"0D4D \char"0D2A \char"0D4D \char"0D30 \char"0D4C \\ % സ്പ്രൌ
+    \char"0D24 \char"0D4D \char"0D30 \char"0D2A                       \\ % ത്രപ
+    \char"0D24 \char"0D4D \char"0D38                                  \\ % ത്സ
+    \char"0D24 \char"0D4D \char"0D38 \char"0D4D \char"0D2F            \\ % ത്സ്യ
+    \char"0D15 \char"0D4D \char"0D2F                                  \\ % ക്യ
+    \char"0D15 \char"0D4D \char"0D2F \char"0D42                       \\ % ക്യൂ
+
+\stoptext

@@ -1,0 +1,33 @@
+\setuplayout[grid=yes] \showgrid
+
+% \enabletrackers[streams.flushing]
+% \enabletrackers[streams.collecting]
+
+\setuppagenumbering[alternative=doublesided]
+
+\starttext
+
+\enableoutputstream[en]
+
+    \dorecurse {3} {
+        Are you sleeping, brother John?\footnote{xxx}
+        x \footnote{note \recurselevel}\input tufte \par \pushoutputstream
+    }
+
+\enableoutputstream[de]
+
+    \dorecurse {3} {
+        Bruder Jakob, schläfst du noch?\footnote{yyy}
+        x \footnote{note \recurselevel}\input ward \par \pushoutputstream
+    }
+
+\disableoutputstream
+
+\input tufte \page[left]
+
+\synchronizestreams[en,de]
+
+\page \flushoutputstream[en]
+\page \flushoutputstream[de]
+
+\stoptext

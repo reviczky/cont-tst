@@ -1,0 +1,57 @@
+% adapted from mail from list
+
+\showframe
+
+\setuplayout
+  [backspace=3cm,
+   margin=2cm,
+   width=middle]
+
+\setuppagenumbering
+  [alternative=doublesided]
+
+\definemargindata
+  [margintext:chapter]
+  [margintext]
+  [width=\outermarginwidth,
+   location=outer,
+   align=flushouter]
+
+\defineheadalternative
+  [margintext:chapter]
+  [margintext]
+  [margintext=margintext:chapter]
+
+\definemargindata[margintext:section]
+  [margintext]
+  [width=\innermarginwidth,
+   location=inner,
+   align=flushinner]
+
+\defineheadalternative
+  [margintext:section]
+  [margintext]
+  [margintext=margintext:section]
+
+\setuphead
+  [chapter]
+  [alternative=margintext:chapter,
+   style=\tf,
+   number=no]
+
+\setuphead
+  [section]
+  [alternative=margintext,
+   style=\tf,
+   number=no]
+
+\starttext
+
+    \chapter{Introduction}
+
+    \dorecurse {15} {
+        \section{Section}
+        \input ward
+    }
+
+\stoptext

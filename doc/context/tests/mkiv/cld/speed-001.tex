@@ -1,0 +1,20 @@
+\starttext
+
+\def\test[#1]{#1 \space}
+
+\dontcomplain
+
+\startluacode
+    statistics.starttiming()
+    for i=1,1000 do
+        context.startnointerference()
+        for i=1,500 do
+         -- context.test { i }
+            context.test { context.delayed(i) }
+        end
+        context.stopnointerference()
+    end
+    context.test { statistics.stoptiming() }
+\stopluacode
+
+\stoptext

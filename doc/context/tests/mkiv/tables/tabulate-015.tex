@@ -1,0 +1,28 @@
+\starttext
+
+\enabledirectives[tabulate.linenumbers]
+
+\startmixedcolumns
+    \startlinenumbering
+        \input ward
+    \stoplinenumbering
+    \column
+    \startlinenumbering
+        \input knuth
+    \stoplinenumbering
+\stopmixedcolumns
+
+\starttabulate[|p|i3p|]
+    \NC
+        \startlinenumbering
+            \input ward \par
+        \stoplinenumbering
+    \NC
+        \startlinenumbering
+            \input knuth \par
+        \stoplinenumbering
+    \NC
+    \NR
+\stoptabulate
+
+\stoptext

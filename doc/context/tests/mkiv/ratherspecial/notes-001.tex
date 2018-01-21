@@ -1,0 +1,45 @@
+\enabletrackers[structures.notes]
+
+\setupnotation[footnote][location=left,distance=1em,hang=4,headalign=flushright]
+
+\startluacode
+    local n, ranges, pages = 0, { }, { }
+    for k, v in ipairs(structures.lists.collected) do
+        if v.metadata.kind == "description" and v.metadata.name == "footnote" then
+            local realpage = v.references.realpage
+            local number = v.numberdata.numbers[1]
+            local range = ranges[realpage]
+            if not range then
+                range = { min = 0, max = 0 }
+                ranges[realpage] = range
+            end
+            if number < range.min then
+                range.min = number
+            end
+            if number > range.max then
+                range.max = number
+            end
+            pages[number] = range
+        end
+    end
+    function document.dosomething()
+        n = n + 1
+        local range = pages[n]
+        if range then
+            context.setupnotedefinition(
+                { "footnote" },
+                {  sample = range.max }
+            )
+        end
+    end
+\stopluacode
+
+\appendtoks
+    \ctxlua{document.dosomething()}
+\to \everybeforenoteinsert
+
+\showframe
+
+\starttext
+    \dorecurse {200} {test\footnote{test} }
+\stoptext

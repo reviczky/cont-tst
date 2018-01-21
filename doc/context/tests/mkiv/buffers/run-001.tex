@@ -1,0 +1,29 @@
+% reuse of buffer test
+%
+% september 2013: luatex:luajittex == 1.90:1.65
+
+\starttext
+
+    \startbuffer [foo]
+        \setupbodyfont[dejavu,9pt]
+        \startTEXpage[frame=on,offset=10pt]
+            \input tufte
+        \stopTEXpage
+    \stopbuffer
+
+    \dorecurse{20} {
+        \typesetbuffer [foo] [width=\textwidth] \blank
+    }
+
+    \startbuffer [foo]
+        \setupbodyfont[dejavu,9pt]
+        \startTEXpage[frame=on,offset=10pt]
+            \input ward
+        \stopTEXpage
+    \stopbuffer
+
+    \dorecurse{20} {
+        \typesetbuffer [foo] [width=\textwidth] \blank
+    }
+
+\stoptext

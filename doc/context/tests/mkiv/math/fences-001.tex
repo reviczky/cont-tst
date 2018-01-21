@@ -1,0 +1,29 @@
+% \setupmathfences[state=auto]
+
+\starttext
+
+\definemathfence [fancybracket]  [bracket] [command=yes,color=blue]
+\definemathfence [scriptbracket] [bracket] [command=yes,color=green,mathstyle=script]
+\definemathfence [smallbracket]  [bracket] [command=yes,color=green,mathstyle=small]
+\definemathfence [normalbracket] [bracket] [command=yes,color=magenta]
+
+\startTEXpage[offset=1ex]
+
+test $|x|$ test \par
+test $||x||$ test (okay) \par
+test $a\left|\frac{1}{b}\right|c$ test \par
+test $a\left||\frac{1}{b}\right||c$ test (not okay) \par
+
+\startbuffer
+test $a\fenced[bar]{\frac{1}{b}}c$ test \par
+test $a\fenced[doublebar]{\frac{1}{b}}c$ test \par
+test $a\fenced[bracket]{\frac{1}{b}}c$ test \par
+test $a\fancybracket{\frac{1}{b}}c$ test \par
+test $a\frac{1}{normal}\scriptbracket{\frac{1}{script}}\normalbracket{\frac{1}{normal}}\smallbracket{\frac{1}{small}}c$ test \par
+\stopbuffer
+
+\getbuffer \setupmathfences [color=red] \getbuffer
+
+\stopTEXpage
+
+\stoptext

@@ -1,0 +1,18 @@
+\setupinteraction[state=start]
+
+% This kind of crap is mostly useful for debugging. Design a proper
+% interactive style instead.
+
+\enabledirectives[destinations.log]
+\enabledirectives[references.border]
+% \enabledirectives[references.border=darkgray]
+% \enabledirectives[references.border=darkyellow]
+
+\starttext
+
+    \placelist[chapter]
+
+    \chapter{one}
+    \chapter{two}
+
+\stoptext

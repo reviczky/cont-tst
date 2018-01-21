@@ -1,0 +1,25 @@
+% example by PR
+
+\setupinteraction[state=start]
+\placebookmarks[part, chapter, hiddentitle][part, chapter]
+\setuphead[part][placehead=yes]
+\definehead[hiddentitle][chapter]
+\setuphead[hiddentitle][number=no]
+
+\starttext
+  % \setsectionblock[frontpart] % automatic per mid 2015
+    \hiddentitle{[Copyright1]}
+    \startfrontmatter
+        \chapter{Foreword}
+        \chapter{Introduction}
+    \stopfrontmatter
+    \hiddentitle{[Copyright2]}
+    \startbodymatter
+        \part{First Part}
+            \chapter{First Chapter}
+            \chapter{Second Chapter}
+        \part{Second Part}
+            \chapter{Third Chapter}
+            \chapter{Fourth Chapter}
+    \stopbodymatter
+\stoptext

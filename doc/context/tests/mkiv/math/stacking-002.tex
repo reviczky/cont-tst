@@ -1,0 +1,23 @@
+\starttext
+
+\definemathstackers[symbol][voffset=-.30\mathexheight,hoffset=\zeropoint,color=red]
+
+\definemathover[symbol][interiorset]["2217]
+
+\startformula
+    \mathover  [symbol]{"2217}       {A}
+    \mathover  [symbol]{"2218}       {A}
+    \mathover  [symbol]{"2219}       {A}
+    \mathunder [symbol]       {"2217}{A}
+    \mathunder [symbol]       {"2218}{A}
+    \mathunder [symbol]       {"2219}{A}
+
+    \mathdouble[symbol]{"2217}{"2217}{A}
+    \mathdouble[symbol]{"2218}{"2218}{A}
+    \mathdouble[symbol]{"2219}{"2219}{A}
+
+    \mathring{A}
+    \interiorset{A}^{\interiorset{A}^{\interiorset{A}}}
+\stopformula
+
+\stoptext

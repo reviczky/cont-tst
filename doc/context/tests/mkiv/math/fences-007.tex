@@ -1,0 +1,25 @@
+\starttext
+
+\def\foo{\frac{\frac{1}{\frac{1}{x}}}{\frac{1}{\frac{1}{x}}}}
+
+\setupmathfence[brace][color=darkyellow]
+\setupmathfence[bar][color=darkred]
+\setupmathfence[doublebar][color=darkred]
+
+$\left\|     \foo \right\|$
+$\left|      \foo \right|$
+$\left{      \foo \right}$
+$\lfence{||} \foo \rfence{||}$
+
+$\fenced[doublebar]{\foo}$
+
+\definemathfence [db] [bracket] [command=yes,color=darkblue]
+
+$\fenced[db]{\foo}$
+
+\definemathfence [db] [doublebar] [command=yes,color=darkgreen]
+
+$\fenced[db]{\foo}$
+
+\stoptext
+

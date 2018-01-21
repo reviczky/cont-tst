@@ -1,0 +1,21 @@
+\showframe
+
+\setuplayout
+  [location=middle,
+   width=middle,
+   height=middle,
+   cropoffset=auto,
+   trimoffset=1bp,
+   bleedoffset=2bp,
+   artoffset=2bp]
+
+\starttext
+
+\definepapersize[TestA][width=100bp,height=200bp]
+\definepapersize[TestB][width=150bp,height=250bp]
+
+\setuppapersize[TestA][TestB]
+
+test
+
+\stoptext

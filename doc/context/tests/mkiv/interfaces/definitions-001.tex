@@ -1,0 +1,83 @@
+\starttext
+
+\enabletrackers[context.trace]
+
+\startluacode
+function OneOptionalOneMandate(optional,mandate)
+end
+
+function startOneOptionalOneMandate(optional,mandate)
+end
+
+function stopOneOptionalOneMandate(optional,mandate)
+end
+
+function OneOptional(optional)
+end
+
+function OneMandate(mandate)
+end
+
+function TwoMandate(mandate_one,mandate_two)
+end
+
+interfaces.definecommand {
+    name        = "OneOptionalOneMandate",
+    environment = "both",
+    macro       = OneOptionalOneMandate,
+    starter     = startOneOptionalOneMandate,
+    stopper     = stopOneOptionalOneMandate,
+    arguments   = {
+        { "option",  "list"},
+        { "content", "string" },
+    },
+}
+
+interfaces.definecommand {
+    name      = "OneOptional",
+    macro     = OneOptional,
+    arguments = {
+        { "option",  "list"},
+    },
+}
+
+interfaces.definecommand {
+    name      = "OneMandate",
+    macro     = OneMandate,
+    arguments = {
+        { "content", "string" },
+    },
+}
+
+interfaces.definecommand {
+    name      = "TwoMandate",
+    macro     = TwoMandate,
+    arguments = {
+        { "content", "string" },
+        { "content", "string" },
+    },
+}
+\stopluacode
+
+\disabletrackers[context.trace]
+
+\start \tttf
+
+\meaning \OneOptionalOneMandate       \blank
+\meaning \startOneOptionalOneMandate  \blank
+\meaning \mkivdoOneOptionalOneMandate \blank
+\meaning \stopOneOptionalOneMandate   \blank
+
+\meaning \OneOptional       \blank
+\meaning \startOneOptional  \blank
+\meaning \mkivdoOneOptional \blank
+\meaning \stopOneOptional   \blank
+
+\meaning \OneMandate       \blank
+\meaning \startOneMandate  \blank
+\meaning \mkivdoOneMandate \blank
+\meaning \stopOneMandate   \blank
+
+\stop
+
+\stoptext

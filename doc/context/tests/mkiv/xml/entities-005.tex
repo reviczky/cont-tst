@@ -1,0 +1,28 @@
+% \enabletrackers[xml.entities]
+
+\startbuffer[test]
+<a>
+   test &sim; test
+   test &xxx; test
+   test &zzz; test
+</a>
+\stopbuffer
+
+\startxmlsetups xml:testsetups
+    \xmlsetsetup{#1}{a}{xml:*}
+\stopxmlsetups
+
+\xmlregistersetup{xml:testsetups}
+
+\startxmlsetups xml:a
+    \xmlflush{#1}
+\stopxmlsetups
+
+\xmltexentity{sim}{\getglyph{name:texgyretermesmath}{\char"223C}}
+
+\starttext
+    \xmlprocessbuffer{main}{test}{}
+    \xmltexentity{xxx}{\getglyph{name:texgyretermesmath}{\char"223D}}
+    \xmltexentity{zzz}{\getglyph{name:texgyretermesmath}{\char"223A}}
+    \xmlprocessbuffer{main}{test}{}
+\stoptext

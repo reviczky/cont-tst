@@ -1,0 +1,20 @@
+\enabletrackers[metapost.graphics]
+
+\starttext
+
+\startMPpage
+    fill fullcircle scaled 4cm withcolor blue ;
+    label.top(btex \color[white]{\bf This is a test.} etex, origin);
+\stopMPpage
+
+\setuplayout[width=middle,height=middle,topspace=1cm,backspace=1cm,header=1cm]
+
+\setupbodyfont[9pt]
+
+\typefile[lines=yes]{tracing-001.tex}
+
+\page
+
+\typefile[lines=yes]{tracing-001-mplib-run-001.mp}
+
+\stoptext

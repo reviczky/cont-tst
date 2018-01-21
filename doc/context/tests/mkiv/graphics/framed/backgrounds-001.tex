@@ -1,0 +1,47 @@
+% answer to question on list
+
+\startuniqueMPgraphic{LabelA}
+    path p ; p := OverlayBox cornered 5pt ;
+    fill p enlarged 2pt withcolor OverlayColor ;
+    draw p withpen pencircle scaled 2pt dashed withdots ;
+\stopuniqueMPgraphic
+
+\startuniqueMPgraphic{LabelB}
+    path p ; p := OverlayBox cornered 5pt ;
+    fill p enlarged 2pt withcolor OverlayColor ;
+    draw p withpen pencircle scaled 2pt dashed withdots withcolor OverlayLineColor ;
+\stopuniqueMPgraphic
+
+\defineoverlay[LabelA][\uniqueMPgraphic{LabelA}]
+\defineoverlay[LabelB][\uniqueMPgraphic{LabelB}]
+
+\def\VariantA{\mframed[foregroundstyle=\tfc,frame=off,background=LabelA,backgroundoffset=3pt,backgroundcolor=red]}
+\def\VariantB{\mframed[foregroundstyle=\tfc,frame=off,background=LabelA,backgroundoffset=4pt,backgroundcolor=green]}
+\def\VariantC{\mframed[foregroundstyle=\tfc,frame=off,background=LabelB,backgroundoffset=5pt,backgroundcolor=blue,foregroundcolor=white,framecolor=white]}
+
+\starttext
+
+Large font with rounded gray background
+
+\startformula
+    \VariantA{e^{i\pi} + 1 = 0}
+\stopformula
+
+\blank[big]
+
+Large font in dotted rounded frame & gray background (should be)
+
+\startformula
+    \VariantB{e^{i\pi} + 1 = 0}
+\stopformula
+
+\blank[big]
+
+Large font in dotted rounded frame & gray background  (should be)
+
+\startformula
+    \VariantC{e^{i\pi} + 1 = 0}
+\stopformula
+
+\stoptext
+

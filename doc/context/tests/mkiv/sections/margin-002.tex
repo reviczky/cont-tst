@@ -1,0 +1,27 @@
+\showframe
+
+\definemargindata[outerhead][outer]
+
+\setuppagenumbering
+  [alternative=doublesided]
+
+\setuphead
+  [section]
+  [alternative=inmargin,
+   align=center,
+   location=outerhead]
+
+\setuphead
+  [subsection]
+  [alternative=inmargin,
+   align=center,
+   location=inner]
+
+\starttext
+    \dorecurse {5} {
+        \section{Section title}
+        \dorecurse{5} {
+            \subsection{Subsection title}
+        }
+    }
+\stoptext

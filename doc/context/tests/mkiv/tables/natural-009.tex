@@ -1,0 +1,43 @@
+\starttext
+
+\startbuffer
+\startuseMPgraphic{cell:innerframe}{innercolor}
+    draw OverlayBox enlarged -1.5OverlayLineWidth
+        withpen pensquare scaled OverlayLineWidth
+        withcolor \MPvar{innercolor} ;
+\stopuseMPgraphic
+
+\defineoverlay
+  [innerframe]
+  [{\uniqueMPgraphic{cell:innerframe}%
+      {innercolor=\framedparameter{innercolor}}}]
+
+\bTABLE[frame=on,framecolor=blue,rulethickness=1pt,innercolor=magenta]
+    \bTR
+        \bTD test \eTD
+        \bTD test \eTD
+        \bTD test \eTD
+    \eTR
+    \bTR
+        \bTD[background=innerframe] test \eTD
+        \bTD test \eTD
+        \bTD test \eTD
+    \eTR
+    \bTR
+        \bTD test \eTD
+        \bTD[background=innerframe,innercolor=red] test \eTD
+        \bTD test \eTD
+    \eTR
+    \bTR
+        \bTD test \eTD
+        \bTD test \eTD
+        \bTD[background=innerframe,innercolor=green] test \eTD
+    \eTR
+\eTABLE
+\stopbuffer
+
+\typebuffer
+
+\getbuffer
+
+\stoptext

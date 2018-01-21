@@ -1,0 +1,27 @@
+\startluacode
+    fonts.handlers.otf.addfeature {
+        name = "mojca",
+        type = "multiple",
+        prepend = true,
+        data = {
+            ["č"] = { 0x30C, "c" },
+        }
+    }
+    fonts.handlers.otf.addfeature {
+        name = "kern",
+        type = "pair",
+        data = {
+            [0x30C] = { c = { { 500, 0, 0, 0 }, false } },
+        }
+    }
+\stopluacode
+
+\definefontfeature[default][default][mojca=yes]
+
+\showframe
+
+\starttext
+
+    mojča miklave\utfchar{"30C}c
+
+\stoptext

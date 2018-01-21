@@ -1,0 +1,22 @@
+\setuppagenumbering
+  [alternative=doublesided]
+
+\setuplayout
+  [backspace=5cm,
+   width=middle]
+
+\starttext
+
+    \dorecurse{4}{
+        \placefigure[left]       {left} {\framed[height=1cm,width=4cm]{}} test
+        \placefigure[right]      {right}{\framed[height=1cm,width=4cm]{}} test
+        \placefigure[inner]      {inner}{\framed[height=1cm,width=4cm]{}} test
+        \placefigure[outer]      {outer}{\framed[height=1cm,width=4cm]{}} test
+        \placefigure[leftmargin] {left} {\framed[height=1cm,width=4cm]{}} test
+        \placefigure[rightmargin]{right}{\framed[height=1cm,width=4cm]{}} test
+        \placefigure[innermargin]{inner}{\framed[height=1cm,width=4cm]{}} test
+        \placefigure[outermargin]{outer}{\framed[height=1cm,width=4cm]{}} test
+        \page
+    }
+
+\stoptext

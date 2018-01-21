@@ -1,0 +1,44 @@
+\starttext
+
+\nl
+\setuphyphenation[method=traditional]
+
+\registerhyphenationexception[aaaaa-bbbbb]
+\registerhyphenationexception[cc-ccc-ddd-dd]
+
+\hsize 1mm \lefthyphenmin1\righthyphenmin1
+
+aaaaabbbbb \par
+cccccddddd \par
+
+xxxxxxxxxxxxxxx \par
+xxxxxxx\zwnj xxxxxxxx \par
+xxxxxxx\zwj xxxxxxxx \par
+
+% \setuphyphenation[method=default]
+
+\sethyphenationfeatures[default]
+
+
+\definehyphenationfeatures
+  [demo-1]
+  [joiners=no]
+
+\definehyphenationfeatures
+  [demo-2]
+  [%characters=\zwnj\zwj,
+   joiners=yes]
+
+\sethyphenationfeatures
+  [demo-1]
+
+effective \par
+ef\zwj fective \par
+
+\sethyphenationfeatures
+  [demo-2]
+
+effective \par
+ef\zwj fective \par
+
+\stoptext

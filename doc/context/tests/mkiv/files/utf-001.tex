@@ -1,0 +1,14 @@
+\setupbodyfont[dejavu]
+
+\starttext
+
+\startluacode
+    local decompose = characters.filters.utf.decompose
+    local decomposed = characters.decomposed
+    for k, v in table.sortedhash(decomposed) do
+        context("%s : %s : %s",k,v,decompose(k))
+        context.par()
+    end
+\stopluacode
+
+\stoptext

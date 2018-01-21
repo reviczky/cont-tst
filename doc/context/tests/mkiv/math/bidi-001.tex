@@ -1,0 +1,60 @@
+% example from the xits suite
+
+% \setupbodyfont[xits]
+
+\setupbodyfont[xitsbidi]
+
+\setupalign[r2l]
+
+\starttext
+
+\setupmathematics[align=r2l]
+
+\startplaceformula
+    \startformula
+        \sqrt{ف^2\over 4ب}
+    \stopformula
+\stopplaceformula
+
+\setupmathematics[align=l2r]
+
+\startplaceformula
+    \startformula
+        \sqrt{x^2\over 4x}
+    \stopformula
+\stopplaceformula
+
+\setupmathematics[align=r2l]
+
+\startplaceformula
+    \startformula
+        \sum^\infty_{س=0} س^2
+    \stopformula
+\stopplaceformula
+
+\startformula
+    \left(\root{2} \of{155}\right)
+\stopformula
+
+\startformula
+\left[\int^{55}_{123} 666^3\right]
+\qquad\textstyle\left[\int^{55}_{123} 666^3\right]
+\stopformula
+
+\startformula
+\left\{\sum^{55}_{123} 666^3\right\}
+\stopformula
+
+\startformula
+\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{55}}}}}}}}}}
+\stopformula
+
+\startformula
+5 < 6 > 4
+\stopformula
+
+\startformula
+5 \leq 6 \geq 7
+\stopformula
+
+\stoptext

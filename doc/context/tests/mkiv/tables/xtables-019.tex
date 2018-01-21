@@ -1,0 +1,41 @@
+\starttext
+
+  \showstruts \showboxes
+
+  \startxtable[frame=on]
+
+    \startxrow
+      \startxcell[width=3cm]
+        \startitemize[packed]
+          \startitem
+            here filled with some words to force a rather long line
+          \stopitem
+        \stopitemize
+      \stopxcell
+    \stopxrow
+
+    \startxrow
+      \startxcell
+        \startitemize[packed]
+          \startitem
+            here filled with some words to force a rather long line
+          \stopitem
+        \stopitemize
+      \stopxcell
+    \stopxrow
+
+    \startxrow
+      \startxcell[width=3cm]
+            here filled with some words to force a rather long line
+      \stopxcell
+    \stopxrow
+
+    \startxrow
+      \startxcell
+            here filled with some words to force a rather long line
+      \stopxcell
+    \stopxrow
+
+  \stopxtable
+
+\stoptext

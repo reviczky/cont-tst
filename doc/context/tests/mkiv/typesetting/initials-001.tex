@@ -1,0 +1,38 @@
+\setupbodyfont[dejavu]
+
+\starttext
+
+\start \showstruts
+
+{\type{at}: TEST \strut\definedfont[Normal at         10pt] TEST}
+{\type{ht}: TEST \strut\definedfont[Normal ht \the\strutht] TEST}
+{\type{cp}: TEST \strut\definedfont[Normal cp \the\strutht] TEST}
+
+\placeinitial \strut \input ward.tex
+
+\start
+    \setupinitial[style=\bfd,voffset=.25\lineheight,n=1]
+    \placeinitial \strut \input ward.tex \par
+\stop
+
+\start
+    \setupinitial[font=Bold at 60pt]
+    \placeinitial \strut \input ward.tex \par
+\stop
+
+\start
+    \setupinitial[font=Bold at 60pt,voffset=2\lineheight]
+    \placeinitial \strut \input ward.tex \par
+\stop
+
+\start
+    \setupinitial[font=Bold cp \measure{initial:n},n=4,hoffset=.5em]
+    \placeinitial \strut \input ward.tex \par
+\stop
+
+\start
+    \setupinitial[font=Bold cp \measure{initial:n},hoffset=2ex,voffset=1\lineheight,n=2,m=2,distance=-1ex]
+    \placeinitial `What is this. \input ward \par
+\stop
+
+\stoptext

@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE blah SYSTEM "blah.dtd" [
+    <!ENTITY % xx '&#37;zz;' >
+    <!ENTITY % zz '&#60;!ENTITY tricky "error-prone" >' >
+    %xx;
+    <!ENTITY oeps "indeed" >
+    <!ENTITY more "&#160;" >
+    <!ENTITY AMP  "&amp;" >
+    <!ENTITY XAMP  "x&amp;" >
+    <!ENTITY mess "<p>just some text</p>" >
+    <!ENTITY a "&lt;" >
+    <!ENTITY b "&#60;" >
+    <!ENTITY c "&gt;" >
+    <!ENTITY example "<p>An ampersand (&#38;#38;) may be escaped
+        numerically (&#38;#38;#38;) or with a general entity (&amp;amp;).</p>" >
+]>
+
+<text c="&c;">
+    FIRST
+
+    Characters &a; and &b; and &AMP; and &XAMP; and &amp; dus.
+
+    This sample shows a &tricky; method.
+
+    SECOND
+
+    Here we go: &example;
+
+    Random text with an entity: &oeps; test &amp; test
+
+    Random text with an entity: &more; test
+
+    Here we go: &mess;
+
+    # &#35;
+    % &#37;
+    \ &#92;
+    { &#123;
+    | &#124;
+    } &#125;
+    ~ &#126;
+
+    THIRD
+
+    Here we go: &undefined;
+
+    Here we go: &example2;
+
+    And an alpha: &alpha;
+</text>

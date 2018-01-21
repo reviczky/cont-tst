@@ -1,0 +1,19 @@
+\setupmathfractions[strut=character]
+
+\starttext
+
+\input tufte
+
+\startitemize[packed]
+    \startitem  whatever $\frac{1}{2}$ whatever
+    \startitem  whatever $\frac{1}{2}$ whatever
+    \startitem  whatever $\frac{1}{2}$ whatever
+\stopitemize
+
+\inleft[method=top,threshold=-2ex] {foo}
+
+\dorecurse{10}{\dorecurse{#1}{whatever }$\frac{1}{2}$ }
+
+\input tufte
+
+\stoptext

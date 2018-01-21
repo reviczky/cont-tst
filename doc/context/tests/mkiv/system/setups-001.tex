@@ -1,0 +1,24 @@
+\startsetups S1
+    [S1]
+\stopsetups
+
+\startluasetups S2
+    context("[S2]")
+\stopluasetups
+
+\startsetups S3
+    [S3 \luasetup{S2}]
+\stopsetups
+
+\startxmlsetups S4
+    [S4 #1]
+\stopxmlsetups
+
+\starttext
+    \startTEXpage
+        \autosetups{S1} \par
+        \autosetups{lua(S2)} \par
+        \autosetups{S3} \par
+        \autosetups{S1,lua(S2),xml(S4{123}),S3} \par
+    \stopTEXpage
+\stoptext

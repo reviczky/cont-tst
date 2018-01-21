@@ -1,0 +1,25 @@
+\starttext
+
+% \enabletrackers[typesetters.directions.math]
+
+\startbuffer
+    \removeunwantedspaces
+    \m{   (  1 =   1)   }\quad
+    \m{   (123 = 123)   }\quad
+    \m{ a (  1 =   1) b }\quad
+    \m{ a (123 = 123) b }\quad
+    \m{ x = 123 y + (1 / \sqrt {x}) }
+\stopbuffer
+
+\starttabulate[|T|T||]
+\HL
+\NC align \NC bidi \NC                                                  \NC \NR
+\HL
+\NC l2r   \NC no   \NC \setupmathematics[bidi=no]            \getbuffer \NC \NR
+\NC l2r   \NC yes  \NC \setupmathematics[bidi=yes]           \getbuffer \NC \NR
+\NC r2l   \NC no   \NC \setupmathematics[align=r2l,bidi=no]  \getbuffer \NC \NR
+\NC r2l   \NC yes  \NC \setupmathematics[align=r2l,bidi=yes] \getbuffer \NC \NR
+\HL
+\stoptabulate
+
+\stoptext

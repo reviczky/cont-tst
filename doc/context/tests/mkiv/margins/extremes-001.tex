@@ -1,0 +1,19 @@
+\usemodule[x][asciimath]
+
+\starttext
+
+    % if needed combine with a negative theshold of e.g. 2ex
+
+    \inleftmargin[method=top]{foo} foo
+
+    \inleftmargin[method=top]{foo} \dontleavehmode \externalfigure[cow.pdf][height=4cm]
+
+    \inleftmargin[method=top]{foo} \dontleavehmode  whatever \openedupimath{\frac{x^2}{\frac{x^2}{x^2}}} whatever
+
+    \inleftmargin[method=line]{foo} foo
+
+    \inleftmargin[method=line]{foo} \dontleavehmode \externalfigure[cow.pdf][height=4cm]
+
+    \inleftmargin[method=line]{foo} \dontleavehmode  whatever \openedupimath{\frac{x^2}{\frac{x^2}{x^2}}} \dorecurse{10}{whatever }
+
+\stoptext

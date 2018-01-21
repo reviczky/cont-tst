@@ -1,0 +1,11 @@
+% used in the chemical macros:
+
+\startMPpage[offset=1cm]
+    numeric n ; n := 4cm ;
+    draw unitsquare scaled n dashed dashpattern (on n/2 off n/2) ;
+    currentpicture := currentpicture shifted (-2n,0) ;
+    draw unitsquare scaled n dashed dashpattern (on n/4 off n/2 on n/4) ;
+    currentpicture := currentpicture shifted (-2n,0) ;
+    draw unitsquare scaled n dashed dashpattern (on 0 off n/4 on n/2 off n/4) ;
+\stopMPpage
+

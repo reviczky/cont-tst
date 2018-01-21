@@ -1,0 +1,33 @@
+% posted by wolfgang on list
+
+\defineframedtext
+  [algorithmframe]
+  [width=fit,
+   background=color,
+   backgroundcolor=lightgray,
+   framecolor=darkred,
+   corner=round]
+
+\definelines
+  [algorithm]
+  [space=on,
+   before=\startalgorithmframe,
+   after=\stopalgorithmframe]
+
+\starttext
+
+\startalgorithm
+Variables \math{I} et \math{J} entiers
+T tableau d'entiers
+Début
+Pour \math{I} allant de \math{1} à \math{3}
+   Pour \math{J} allant de \math{1} à \math{3}
+     Si \math{J>I}
+        Alors \math{T[I, J]=J-I}
+        Sinon \math{T[I, J]=0}
+     Fin Si
+   Fin Pour
+Fin
+\stopalgorithm
+
+\stoptext

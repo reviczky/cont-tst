@@ -1,0 +1,123 @@
+\starttext
+
+\startluacode
+    fonts.handlers.otf.addfeature {
+        name    = "test-a",
+        type    = "chainsubstitution",
+        lookups = {
+            {
+                type = "substitution",
+                data = {
+                    ["a"] = "A",
+                    ["b"] = "B",
+                    ["c"] = "C",
+                    ["d"] = "D",
+                },
+            },
+            {
+                type = "ligature",
+                data = {
+                    ['1'] = { "a", "b" },
+                    ['2'] = { "c", "d" },
+                },
+            },
+        },
+        data = {
+            rules = {
+                {
+                    before  = { { " ", 0xFFFC } },
+                    current = { { "a" }, { "b" } },
+                    lookups = { 2 },
+                },
+                {
+                    current = { { "c" }, { "d" } },
+                    after   = { { 0xFFFC, " " } },
+                    lookups = { 2 },
+                },
+                {
+                    current = { { "a" } },
+                    after   = { { "b" } },
+                    lookups = { 1 },
+                },
+                {
+                    current = { { "c" } },
+                    after   = { { "d" } },
+                    lookups = { 1 },
+                },
+            },
+        },
+    }
+
+    fonts.handlers.otf.addfeature {
+        name    = "test-b",
+        type    = "chainsubstitution",
+        lookups = {
+            {
+                type = "ligature",
+                data = {
+                    ['1'] = { "a", "b" },
+                    ['2'] = { "c", "d" },
+                },
+            },
+        },
+        data = {
+            rules = {
+                {
+                    before  = { { " ", 0xFFFC } },
+                    current = { { "a" }, { "b" } },
+                    lookups = { 1 },
+                },
+                {
+                    current = { { "c" }, { "d" } },
+                    after   = { { 0xFFFC, " " } },
+                    lookups = { 1 },
+                },
+            },
+        },
+    }
+
+    fonts.handlers.otf.addfeature {
+        name    = "test-c",
+        type    = "chainsubstitution",
+        lookups = {
+            {
+                type = "ligature",
+                data = {
+                    ['1'] = { "a", "b" },
+                    ['2'] = { "c", "d" },
+                },
+            },
+        },
+        data = {
+            rules = {
+                {
+                    before  = { { " " } },
+                    current = { { "a" }, { "b" } },
+                    lookups = { 1 },
+                },
+                {
+                    current = { { "c" }, { "d" } },
+                    after   = { { " " } },
+                    lookups = { 1 },
+                },
+            },
+        },
+    }
+
+\stopluacode
+
+\definefontfeature[test-a][test-a=yes]
+\definefontfeature[test-b][test-b=yes]
+\definefontfeature[test-c][test-c=yes]
+
+\startbuffer
+abababcdcd abababcdcd abababcdcd
+\stopbuffer
+
+\typebuffer
+
+\definedfont[file:dejavu-serif.ttf*default,test-a] \getbuffer \blank
+\definedfont[file:dejavu-serif.ttf*default,test-b] \getbuffer \blank
+\definedfont[file:dejavu-serif.ttf*default,test-c] \getbuffer \blank
+
+\stoptext

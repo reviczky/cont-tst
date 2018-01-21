@@ -1,0 +1,16 @@
+\setuptolerance[verytolerant]
+
+\starttext
+
+\startmixedcolumns
+
+    \dorecurse{4}{\input ward \par}
+
+    \testcolumn[10][-1pt] % 10 lines - 1pt slack
+
+    \dorecurse{2}{\input ward \par}
+
+\stopmixedcolumns
+
+\stoptext
+

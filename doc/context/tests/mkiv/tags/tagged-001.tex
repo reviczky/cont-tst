@@ -1,0 +1,25 @@
+\nopdfcompression
+
+\setuptagging[state=start]
+
+\enabletrackers[structure.tags,backends.tags]
+
+\setupfootertexts[l][r]
+
+\starttext
+
+\startfrontmatter
+
+    \startchapter[title=test]
+        \input tufte
+%         \title{test}
+    \stopchapter
+
+    \startchapter[title=test]
+        \input tufte
+%         \title{test}
+    \stopchapter
+
+\stopfrontmatter
+
+\stoptext

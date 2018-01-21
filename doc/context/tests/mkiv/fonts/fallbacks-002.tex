@@ -1,0 +1,17 @@
+\definefallbackfamily [testfont] [rm] [DejaVu Serif] [range=0x25C6]
+\definefontfamily     [testfont] [rm] [TeX Gyre Pagella]
+
+\setupbodyfont[dejavu]
+
+\starttext
+
+a : \checkedtextchar{`a}   {{\tttf ??}}\par
+◆ : \checkedtextchar{"25C6}{{\tttf ??}}\par
+
+\switchtobodyfont[testfont]
+
+a : \checkedtextchar{`a}   {{\tttf ??}}\par
+◆ : \checkedtextchar{"25C6}{{\tttf ??}}\par
+
+\stoptext
+

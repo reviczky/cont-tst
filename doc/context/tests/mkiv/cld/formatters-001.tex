@@ -1,0 +1,19 @@
+\starttext
+
+\startluacode
+
+local c = utf.byte("a")
+
+context("Character %c has unicode %04H aka %04U.",c,c,c)
+
+context.par()
+
+context.type(string.formatters["Character %c has unicode %04H aka %04U."](c,c,c))
+
+context.par()
+
+context("The current textwidth is %p.",\number\hsize)
+
+\stopluacode
+
+\stoptext

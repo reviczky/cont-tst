@@ -1,0 +1,20 @@
+\starttext
+
+    \setupbackgrounds[page][background=color,backgroundcolor=red]
+    \input tufte
+    \page
+    \setupbackgrounds[page][background=,backgroundcolor=]
+    \input tufte
+    \page
+    \setupbackgrounds[page][background=color,backgroundcolor=red]
+    \input tufte
+    \page
+    \pushbackground[page]
+        \setupbackgrounds[page][background=color,backgroundcolor=green]
+        \input tufte
+        \page
+    \popbackground
+    \input tufte
+    \page
+
+\stoptext

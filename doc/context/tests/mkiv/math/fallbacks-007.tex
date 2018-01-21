@@ -1,0 +1,182 @@
+
+\starttext
+
+\definecolor[t-red]  [r=1,t=.5,a=1]
+\definecolor[t-green][b=1,t=.5,a=1]
+\definecolor[t-blue] [r=1,t=.5,a=1]
+
+\loadtypescriptfile[dejavu]
+
+\unprotect
+
+\definefontfallback
+    [CambriaFallback1]
+    [CambriaMath1]
+    [lowercaseitalic]
+    [force=yes]
+
+\starttypescriptcollection[cambria1]
+
+    \starttypescript [\s!math] [cambria1]
+        \definefontsynonym
+            [CambriaMath1]
+            [file:cambria.ttc(Cambria Math)]
+            [features=math\mathsizesuffix,%
+             fallbacks=CambriaFallback1]
+        \definefontsynonym [\s!MathRoman] [CambriaMath1] [\s!features={\s!math\mathsizesuffix,mathextra},\s!goodies=cambria-math]
+    \stoptypescript
+
+    \starttypescript [cambria1]
+        \definetypeface [\typescriptone] [\s!rm] [\s!serif] [dejavu]         [\s!default]
+        \definetypeface [\typescriptone] [\s!tt] [\s!mono]  [dejavu]         [\s!default]
+        \definetypeface [\typescriptone] [\s!mm] [\s!math]  [\typescriptone] [\s!default]
+    \stoptypescript
+
+\stoptypescriptcollection
+
+\definefontfallback
+    [CambriaFallback2]
+    [CambriaMath2]
+    [lowercaseitalic]
+    [force=yes,% passing features is an option, using synonyms is cleaner
+     features=math\mathsizesuffix]
+
+\starttypescriptcollection[cambria2]
+
+    \starttypescript [\s!math] [cambria2]
+        \definefontsynonym
+            [CambriaMath2]
+            [file:cambria.ttc(Cambria Math)]
+            [features=math\mathsizesuffix,%
+             fallbacks=CambriaFallback2]
+        \definefontsynonym [\s!MathRoman] [CambriaMath2] [\s!features={\s!math\mathsizesuffix,mathextra},\s!goodies=cambria-math]
+    \stoptypescript
+
+    \starttypescript [cambria2]
+        \definetypeface [\typescriptone] [\s!rm] [\s!serif] [dejavu]         [\s!default]
+        \definetypeface [\typescriptone] [\s!tt] [\s!mono]  [dejavu]         [\s!default]
+        \definetypeface [\typescriptone] [\s!mm] [\s!math]  [\typescriptone] [\s!default]
+    \stoptypescript
+
+\stoptypescriptcollection
+
+\starttypescriptcollection[cambria3]
+
+    \starttypescript [\s!math] [cambria3]
+        \definefontsynonym
+            [CambriaMath3]
+            [file:cambria.ttc(Cambria Math)]
+            [features=math\mathsizesuffix]
+        \definefontsynonym [\s!MathRoman] [CambriaMath3] [\s!features={\s!math\mathsizesuffix,mathextra},\s!goodies=cambria-math]
+    \stoptypescript
+
+    \starttypescript [cambria3]
+        \definetypeface [\typescriptone] [\s!rm] [\s!serif] [dejavu]         [\s!default]
+        \definetypeface [\typescriptone] [\s!tt] [\s!mono]  [dejavu]         [\s!default]
+        \definetypeface [\typescriptone] [\s!mm] [\s!math]  [\typescriptone] [\s!default]
+    \stoptypescript
+
+\stoptypescriptcollection
+
+\protect
+
+\startTEXpage
+\startoverlay
+    {\switchtobodyfont[cambria1]\removeunwantedspaces\color[t-red]  {$a_{a_a}$}}
+    {\switchtobodyfont[cambria2]\removeunwantedspaces\color[t-green]{$a_{a_a}$}}
+\stopoverlay
+\startoverlay
+    {\switchtobodyfont[cambria1]\removeunwantedspaces\color[t-red]  {$a_{a_a}$}}
+    {\switchtobodyfont[cambria3]\removeunwantedspaces\color[t-blue] {$a_{a_a}$}}
+\stopoverlay
+\startoverlay
+    {\switchtobodyfont[cambria2]\removeunwantedspaces\color[t-green]{$a_{a_a}$}}
+    {\switchtobodyfont[cambria3]\removeunwantedspaces\color[t-blue] {$a_{a_a}$}}
+\stopoverlay
+\startoverlay
+    {\switchtobodyfont[cambria1]\removeunwantedspaces\color[t-red]  {$a_{a_a}$}}
+    {\switchtobodyfont[cambria2]\removeunwantedspaces\color[t-green]{$a_{a_a}$}}
+    {\switchtobodyfont[cambria3]\removeunwantedspaces\color[t-blue] {$a_{a_a}$}}
+\stopoverlay
+\stopTEXpage
+
+\unprotect
+
+% I only have a very old minion math test font and no other matching minions.
+
+\starttypescriptcollection[minion1]
+
+    \starttypescript [\s!math][minion1][\s!all]
+        \loadfontgoodies[minion-math]
+        \definefontsynonym[\s!MathRoman] [Minion-Math]  [\s!features={\s!math\mathsizesuffix,mathextra},\s!designsize=\s!auto,\s!goodies=minion-math]
+    \stoptypescript
+
+    \starttypescript [minion1]
+        \definetypeface [\typescriptone] [\s!rm] [\s!serif] [dejavu]         [\s!default] [\s!rscale=0.8]
+        \definetypeface [\typescriptone] [\s!ss] [\s!sans]  [dejavu]         [\s!default] [\s!rscale=0.8]
+        \definetypeface [\typescriptone] [\s!tt] [\s!mono]  [dejavu]         [\s!default] [\s!rscale=0.8]
+        \definetypeface [\typescriptone] [\s!mm] [\s!math]  [\typescriptone] [\s!default]
+    \stoptypescript
+
+\stoptypescriptcollection
+
+\definefontfallback[MinionMathFallback2] [Minion-Math-DS] [lowercaseitalic]
+
+\starttypescriptcollection[minion2]
+
+    \starttypescript [\s!math][minion2][\s!all]
+        \loadfontgoodies[minion-math]
+        \definefontsynonym[Minion-Math-DS] [Minion-Math] [\s!features={\s!math\mathsizesuffix,mathextra},\s!designsize=\s!auto,\s!goodies=minion-math]
+        \definefontsynonym[\s!MathRoman]   [Minion-Math] [\s!features={\s!math\mathsizesuffix,mathextra},\s!designsize=\s!auto,\s!goodies=minion-math,\s!fallbacks=MinionMathFallback2]
+    \stoptypescript
+
+    \starttypescript [minion2]
+        \definetypeface [\typescriptone] [\s!rm] [\s!serif] [dejavu]         [\s!default] [\s!rscale=0.8]
+        \definetypeface [\typescriptone] [\s!ss] [\s!sans]  [dejavu]         [\s!default] [\s!rscale=0.8]
+        \definetypeface [\typescriptone] [\s!tt] [\s!mono]  [dejavu]         [\s!default] [\s!rscale=0.8]
+        \definetypeface [\typescriptone] [\s!mm] [\s!math]  [\typescriptone] [\s!default]
+    \stoptypescript
+
+\stoptypescriptcollection
+
+\definefontfallback[MinionMathFallback3] [Minion-Math] [lowercaseitalic]
+
+\starttypescriptcollection[minion3]
+
+    \starttypescript [\s!math][minion3][\s!all]
+        \loadfontgoodies[minion-math]
+        \definefontsynonym[\s!MathRoman] [Minion-Math] [\s!features={\s!math\mathsizesuffix,mathextra},\s!designsize=\s!auto,\s!goodies=minion-math,\s!fallbacks=MinionMathFallback3]
+    \stoptypescript
+
+    \starttypescript [minion3]
+        \definetypeface [\typescriptone] [\s!rm] [\s!serif] [dejavu]         [\s!default] [\s!rscale=0.8]
+        \definetypeface [\typescriptone] [\s!ss] [\s!sans]  [dejavu]         [\s!default] [\s!rscale=0.8]
+        \definetypeface [\typescriptone] [\s!tt] [\s!mono]  [dejavu]         [\s!default] [\s!rscale=0.8]
+        \definetypeface [\typescriptone] [\s!mm] [\s!math]  [\typescriptone] [\s!default]
+    \stoptypescript
+
+\stoptypescriptcollection
+
+\protect
+
+\startTEXpage
+    \startoverlay
+        {\switchtobodyfont[minion1]\removeunwantedspaces\color[t-red]  {$a_{a_a}$}}
+        {\switchtobodyfont[minion2]\removeunwantedspaces\color[t-green]{$a_{a_a}$}}
+    \stopoverlay
+    \startoverlay
+        {\switchtobodyfont[minion1]\removeunwantedspaces\color[t-red]  {$a_{a_a}$}}
+        {\switchtobodyfont[minion3]\removeunwantedspaces\color[t-blue] {$a_{a_a}$}}
+    \stopoverlay
+    \startoverlay
+        {\switchtobodyfont[minion2]\removeunwantedspaces\color[t-green]{$a_{a_a}$}}
+        {\switchtobodyfont[minion3]\removeunwantedspaces\color[t-blue] {$a_{a_a}$}}
+    \stopoverlay
+    \startoverlay
+        {\switchtobodyfont[minion1]\removeunwantedspaces\color[t-red]  {$a_{a_a}$}}
+        {\switchtobodyfont[minion2]\removeunwantedspaces\color[t-green]{$a_{a_a}$}}
+        {\switchtobodyfont[minion3]\removeunwantedspaces\color[t-blue] {$a_{a_a}$}}
+    \stopoverlay
+\stopTEXpage
+
+\stoptext

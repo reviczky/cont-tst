@@ -1,0 +1,16 @@
+% \nopdfcompression
+
+% \setupnotes[interaction=no]
+% \setupnotes[interaction=yes]
+% \setupnotes[interaction=text]
+% \setupnotes[interaction=number]
+\setupnotes[interaction=all]
+
+\setupinteraction[state=start,focus=width,option=name]
+
+\starttext
+    \dorecurse{10}{note #1\footnote[reference:#1]{\input ward \input tufte\relax} }
+    \par
+    \goto{OEPS  3}[reference:3]
+    \goto{OEPS 10}[reference:10]
+\stoptext

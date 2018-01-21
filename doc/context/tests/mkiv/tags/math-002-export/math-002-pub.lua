@@ -1,0 +1,15 @@
+return {
+ ["htmlfiles"]={ "math-002-div.html" },
+ ["htmlroot"]="math-002-div.html",
+ ["identifier"]="03b68c37-4397-b08b-29de-284e9d232924",
+ ["imagefile"]="styles/math-002-images.css",
+ ["imagepath"]="images",
+ ["images"]={},
+ ["language"]="en",
+ ["metadata"]={},
+ ["name"]="math-002",
+ ["stylepath"]="styles",
+ ["styles"]={ "math-002-defaults.css", "math-002-images.css", "math-002-styles.css" },
+ ["xhtmlfiles"]={ "math-002-tag.xhtml" },
+ ["xmlfiles"]={ "math-002-raw.xml" },
+}

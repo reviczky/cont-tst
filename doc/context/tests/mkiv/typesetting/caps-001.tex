@@ -1,0 +1,25 @@
+\setupbodyfont[dejavu,10pt]
+
+\setuplayout[middle]
+
+\starttext
+
+\startbuffer
+Is it \mixedcaps {OpenType} or actually more {\bf \mixedcaps {CloseType}} as
+some aspects are hidden in applications by their inventors?
+
+\dorecurse {8} {
+
+    \definefont
+        [MixedCaps]
+        [CurrentFont*default cp \the\dimexpr1.0#1\exheight]
+
+    Is it \mixedcaps {OpenType} or actually more {\bf \mixedcaps {CloseType}}
+    as some aspects are hidden in applications by their inventors?
+
+}
+\stopbuffer
+
+\typebuffer \getbuffer
+
+\stoptext

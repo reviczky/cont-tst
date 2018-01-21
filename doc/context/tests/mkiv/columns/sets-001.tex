@@ -1,0 +1,56 @@
+\setuppapersize
+  [A4][A3]
+
+\setuplayout
+  [location=middle]
+
+\setupalign[tolerant,stretch]
+
+\startuseMPgraphic{contrast}
+    fill OverlayBox withcolor red ;
+\stopuseMPgraphic
+
+\defineoverlay
+  [contrast]
+  [\useMPgraphic{contrast}]
+
+\showframe
+
+\setuppagenumbering
+  [alternative=doublesided]
+
+\definecolumnset
+  [mycolumnset]
+  [n=2]
+
+\definecolumnsetarea
+  [whatever]
+  [left]
+  [x=1,y=1,nx=3,ny=20,
+   background=contrast,
+   state=start,
+   leftoffset=1cm,
+   rightoffset=1cm]
+
+\setupcolumntextareatext
+  [whatever]
+  [HI THERE]
+
+\definecolumntextarea
+  [title]
+  [x=1,y=4,nx=2,ny=7,state=start]
+
+\setupcolumntextareatext
+  [title]
+  [\ruledvtop to 5cm{\hsize 4cm a\\b\\b\\d}]
+
+\starttext
+
+\startcolumnset[mycolumnset]
+
+    \dorecurse{15}{\input tufte\par}
+
+\stopcolumnset
+
+\stoptext
+

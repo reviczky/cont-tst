@@ -1,0 +1,28 @@
+\setupcombinations[distance=1cm] \setuplabeltext[en][figure=fig]
+
+\starttext
+
+\startplacefigure
+    \startfloatcombination[nx=6]
+        \startplacefigure[title={foo bar}]
+            \blackrule[width=1.0cm,color=cyan]
+        \stopplacefigure
+        \startplacefigure
+            \blackrule[width=1.0cm,color=red]
+        \stopplacefigure
+        \startplacefigure
+            \blackrule[width=1.2cm,color=blue]
+        \stopplacefigure
+        \startplacefigure
+            \blackrule[width=2.5cm,color=green]
+        \stopplacefigure
+        \startplacefigure
+            \blackrule[width=1.7cm,color=yellow]
+        \stopplacefigure
+        \startplacefigure[title={foo bar}]
+            \blackrule[width=2.0cm,color=magenta]
+        \stopplacefigure
+    \stopfloatcombination
+\stopplacefigure
+
+\stoptext

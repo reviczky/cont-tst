@@ -1,0 +1,27 @@
+\startbuffer[bib]
+@article{test-1a, author = {Bodkin Van Horn} }
+@article{test-1b, author = {Bodkin van Horn} }
+@article{test-1c, author = {Bodkin Van Horn and Bodkin van Horn} }
+@article{test-2,  author = {Marvin O'Gravel Balloon Face} }
+@article{test-3,  author = {Sir Michael Carmichael Zutt} }
+@article{test-4,  author = {Oliver Boliver Butt} }
+@article{test-5,  author = {Zanzibar Buck-Buck McFate} }
+@article{test-6a, author = {Laue, Max Von} }
+@article{test-6b, author = {Laue, Max von} }
+@article{test-6c, author = {Laue, Max v.} }
+@article{test-7a, author = {Van Der Waals, J} }
+@article{test-7b, author = {Van der Waals, J} }
+@article{test-7c, author = {van der Waals, J} }
+@article{test-8a, author = {De Gennes, P.-G.} }
+@article{test-8b, author = {de Gennes, P.-G.} }
+@article{test-8c, author = {De, Gennes, {}, P.-G., {}} }
+@article{test-9,  author = {Alan Braslau and Hans Hagen and Thomas A. Schmitz} }
+\stopbuffer
+
+\starttext
+
+    \usebtxdataset[bib.buffer]
+
+    \showbtxdatasetauthors[standard]
+
+\stoptext

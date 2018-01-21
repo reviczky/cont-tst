@@ -1,0 +1,41 @@
+\useMPlibrary[dum]
+
+\starttext
+
+\definecombination[mycombi][alternative=label]
+
+\setuplabel[combination:mycombi][text={Item },numberconversion=character,stopper=!]
+
+\startcombination[mycombi][2*2]
+    {\externalfigure[dummy][width=4cm,height=1cm]}
+    {\externalfigure[dummy][width=4cm,height=1cm]}
+    {\externalfigure[dummy][width=4cm,height=1cm]}
+    {\externalfigure[dummy][width=4cm,height=1cm]}
+\stopcombination
+
+\blank[2*big]
+
+\startcombination[mycombi][nx=2,ny=1,continue=yes]
+    {\externalfigure[dummy][width=4cm,height=1cm]}
+    {\externalfigure[dummy][width=4cm,height=1cm]}
+\stopcombination
+
+\blank[2*big]
+
+\startcombination[mycombi][alternative=text,nx=2,ny=2]
+    {\externalfigure[dummy][width=4cm,height=1cm]} {alpha}
+    {\externalfigure[dummy][width=4cm,height=1cm]} {beta}
+    {\externalfigure[dummy][width=4cm,height=1cm]} {gamma}
+    {\externalfigure[dummy][width=4cm,height=1cm]} {delta}
+\stopcombination
+
+\blank[2*big]
+
+\startcombination[mycombi][2*2]
+    {\externalfigure[dummy][width=4cm,height=1cm]}
+    {\externalfigure[dummy][width=4cm,height=1cm]}
+    {\externalfigure[dummy][width=4cm,height=1cm]}
+    {\externalfigure[dummy][width=4cm,height=1cm]}
+\stopcombination
+
+\stoptext

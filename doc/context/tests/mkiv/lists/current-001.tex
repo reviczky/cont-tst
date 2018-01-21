@@ -1,0 +1,36 @@
+\setuppapersize[S4]
+
+\definelist
+  [MyTopics]
+  [criterium=all,
+   alternative=command,
+   command=\TopicEntry]
+
+\starttexdefinition unexpanded Topic #1
+    \writetolist[MyTopics][location=none]{#1}{}
+\stoptexdefinition
+
+\starttexdefinition unexpanded TopicEntry #1#2#3
+    \quad
+    \doifelseincurrentlistentry {
+        \bf
+        \color[red]{#1}
+    }{
+        #1
+    }
+    \quad
+\stoptexdefinition
+
+\startsetups TopicFooter
+    \switchtobodyfont[8pt]
+    \placelist[MyTopics]
+\stopsetups
+
+\setupfootertexts
+  [\directsetup{TopicFooter}]
+
+\starttext
+    \Topic{First}  First  Topic \page
+    \Topic{Second} Second Topic \page
+    \Topic{Third}  Third  Topic \page
+\stoptext

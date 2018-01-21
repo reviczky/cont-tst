@@ -1,0 +1,86 @@
+\setupbodyfont[pagella]
+
+\starttext
+
+\startluacode
+fonts.handlers.otf.addfeature {
+    name     = "simplify",
+    type     = "multiple",
+    prepend  = true,
+ -- prepend  = "smcp",
+    dataset  =
+    {
+        {
+            features = {
+                ["*"] = {
+                    ["nld"] = true
+                }
+            },
+            data     = {
+             -- [utf.byte("ä")] = { "a" },
+             -- [utf.byte("Ä")] = { "A" },
+             -- [utf.byte("ü")] = { "u" },
+             -- [utf.byte("Ü")] = { "U" },
+             -- [utf.byte("ö")] = { "o" },
+             -- [utf.byte("Ö")] = { "O" },
+                [utf.byte("ĳ")] = { "i", "j" },
+                [utf.byte("Ĳ")] = { "I", "J" },
+                [utf.byte("æ")] = { "a", "e" },
+                [utf.byte("Æ")] = { "A", "E" },
+            },
+        },
+        {
+         -- type     = "multiple", -- local values possible
+            features = {
+                ["*"] = {
+                    ["deu"] = true
+                }
+            },
+            data     = {
+                [utf.byte("ä")] = { "a", "e" },
+                [utf.byte("Ä")] = { "A", "E" },
+                [utf.byte("ü")] = { "u", "e" },
+                [utf.byte("Ü")] = { "U", "E" },
+                [utf.byte("ö")] = { "o", "e" },
+                [utf.byte("Ö")] = { "O", "E" },
+                [utf.byte("ß")] = { "s", "z" },
+                [utf.byte("ẞ")] = { "S", "Z" },
+            },
+        }
+    }
+}
+\stopluacode
+
+\definefontfeature
+  [simplify]
+  [simplify=yes]
+
+\definefontfeature
+  [alwayssmcp]
+  [smcp=always]
+
+\definedfont[Serif*default,simplify,alwayssmcp]
+
+\start
+
+                       äüöß ĳæ
+    {\de\addfflanguage äüöß ĳæ}
+    {\nl\addfflanguage äüöß ĳæ}
+
+\stop
+
+\start
+
+    \setupfonts
+        [language=auto]
+
+    \definedfont
+        [Serif*default,simplify,alwayssmcp]
+
+         äüöß ĳæ
+    {\de äüöß ĳæ}
+    {\nl äüöß ĳæ}
+
+\stop
+
+\stoptext

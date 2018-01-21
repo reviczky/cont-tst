@@ -1,0 +1,50 @@
+\nopdfcompression
+
+\defineframed[colored][foregroundcolor=red,foregroundstyle=\bfc\underbar,location=low]
+
+\enabletrackers[context*]
+
+\starttext
+
+\colored{What}
+
+% todo: keep punctuation normal
+
+\processisolatedwords {\input ward \relax} \colored
+
+\startluacode
+
+    local words = lpeg.split(lpeg.patterns.spacer,io.loaddata(resolvers.findfile("ward.tex")) or "")
+
+    for i=1,#words do
+        if i == 1 then
+            context.dontleavehmode()
+        else
+            context.space()
+        end
+        context.colored(words[i])
+    end
+
+    local i = 0
+
+    local function reset()
+        i = 0
+    end
+
+    local function apply(s)
+        i = i + 1
+        if i == 1 then
+            context.dontleavehmode()
+        else
+            context.space()
+        end
+        context.colored(s)
+    end
+
+    local splitter = lpeg.P(true)/reset * lpeg.splitter(lpeg.patterns.spacer,apply)
+
+    lpeg.match(splitter,io.loaddata(resolvers.findfile("ward.tex")) or "")
+
+\stopluacode
+
+\stoptext

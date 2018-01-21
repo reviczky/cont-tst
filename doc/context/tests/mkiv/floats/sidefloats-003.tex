@@ -1,0 +1,30 @@
+% offsets for harald
+
+\setupbodyfont[dejavu,10pt] \useMPlibrary[dum] \setuplayout[middle]
+
+\starttext
+
+\input ward
+
+\startplacefigure[location=left]
+    \externalfigure[dummy][width=2cm]
+\stopplacefigure
+
+\input ward
+\input ward
+
+\startplacefigure[location={left,halfline}]
+    \externalfigure[dummy][width=2cm]
+\stopplacefigure
+
+\input ward
+\input ward
+
+\startplacefigure[location=left,topoffset=5mm,bottomoffset=5mm]
+    \externalfigure[dummy][width=2cm]
+\stopplacefigure
+
+\input tufte
+\input tufte
+
+\stoptext

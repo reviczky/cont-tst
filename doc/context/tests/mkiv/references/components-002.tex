@@ -1,0 +1,23 @@
+\startbuffer [component]
+    \startcomponent *
+        ((set reference\textreference[check]{check}))
+    \stopcomponent
+\stopbuffer
+
+\savebuffer[list=component,file=test-component.tex,prefix=no]
+
+\setupinteraction [state=start]
+
+\starttext
+
+    there: \in[check]
+
+  % \start
+        \component test-component
+  % \stop
+
+    there: \in[check]
+    \page
+    there: \in[check]
+
+\stoptext

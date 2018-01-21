@@ -1,0 +1,58 @@
+\startMPpage
+
+draw image (draw fullcircle scaled 3cm shifted (0cm,0cm) withcolor green) numberstriped (1,10,3) withcolor red ;
+draw image (draw fullcircle scaled 3cm shifted (3cm,0cm) withcolor green) numberstriped (2,20,3) withcolor green ;
+draw image (draw fullcircle scaled 3cm shifted (3cm,3cm) withcolor green) numberstriped (3,10,5) withcolor blue ;
+draw image (draw fullcircle scaled 3cm shifted (0cm,3cm) withcolor green) numberstriped (4,20,5) withcolor yellow ;
+
+draw image (draw fullcircle scaled 3cm shifted (6cm,0cm) withcolor green) anglestriped (1,20,2) withcolor red ;
+draw image (draw fullcircle scaled 3cm shifted (9cm,0cm) withcolor green) anglestriped (2,40,2) withcolor green ;
+draw image (draw fullcircle scaled 3cm shifted (9cm,3cm) withcolor green) anglestriped (3,60,2) withcolor blue ;
+draw image (draw fullcircle scaled 3cm shifted (6cm,3cm) withcolor green) anglestriped (4,80,2) withcolor yellow ;
+
+draw image (
+    draw fullcircle scaled 3cm shifted (0cm,0cm) withcolor green withpen pencircle scaled 2mm ;
+    draw fullcircle scaled 2cm shifted (0cm,1cm) withcolor blue  withpen pencircle scaled 3mm ;
+) shifted (9cm,0cm) numberstriped (1,10,3) withcolor red ;
+
+draw image (
+    draw fullcircle scaled 3cm shifted (0cm,0cm) withcolor green  withpen pencircle scaled 2mm ;
+    draw fullcircle scaled 2cm shifted (0cm,1cm) withcolor blue   withpen pencircle scaled 3mm ;
+) shifted (12cm,0cm) numberstriped (2,10,3) withcolor red ;
+
+draw image (
+    draw fullcircle scaled 3cm shifted (0cm,0cm) withcolor green  withpen pencircle scaled 2mm ;
+    draw fullcircle scaled 2cm shifted (0cm,1cm) withcolor blue   withpen pencircle scaled 3mm ;
+) shifted (9cm,5cm) numberstriped (3,10,3) withcolor red ;
+
+draw image (
+    draw fullcircle scaled 3cm shifted (0cm,0cm) withcolor green  withpen pencircle scaled 2mm ;
+    draw fullcircle scaled 2cm shifted (0cm,1cm) withcolor blue   withpen pencircle scaled 3mm ;
+) shifted (12cm,5cm) numberstriped (4,10,3) withcolor red ;
+
+
+% stripe_path_n
+%   (dashed evenly withcolor blue)
+%   (filldraw)
+%   fullcircle xscaled 100 yscaled 40 shifted (50,50) withpen pencircle scaled 4;
+
+% currentpicture := currentpicture shifted (- 100,0) ;
+
+% stripe_path_a
+%   (withpen pencircle scaled 2 withcolor red)
+%   (draw)
+%   fullcircle xscaled 100 yscaled 40 withcolor blue;
+
+% stripe_n     := 20;
+% stripe_slot  :=  3;
+% stripe_gap   := 10;
+% stripe_angle := 30;
+
+% currentpicture := currentpicture shifted (- 100,0) ;
+
+% stripe_path_a
+%   (withpen pencircle scaled 2 withcolor red)
+%   (draw)
+%   fullcircle xscaled 100 yscaled 40 withcolor blue;
+
+\stopMPpage

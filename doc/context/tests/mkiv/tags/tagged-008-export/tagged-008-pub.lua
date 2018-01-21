@@ -1,0 +1,15 @@
+return {
+ ["htmlfiles"]={ "tagged-008-div.html" },
+ ["htmlroot"]="tagged-008-div.html",
+ ["identifier"]="d3bcd779-4f4d-80f2-a210-3e49ff386967",
+ ["imagefile"]="styles/tagged-008-images.css",
+ ["imagepath"]="images",
+ ["images"]={},
+ ["language"]="en",
+ ["metadata"]={},
+ ["name"]="tagged-008",
+ ["stylepath"]="styles",
+ ["styles"]={ "tagged-008-defaults.css", "tagged-008-images.css", "tagged-008-styles.css" },
+ ["xhtmlfiles"]={ "tagged-008-tag.xhtml" },
+ ["xmlfiles"]={ "tagged-008-raw.xml" },
+}

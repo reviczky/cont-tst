@@ -1,0 +1,31 @@
+\definefont[hebrewfont][arial at 12 pt]
+
+% \setupdirections[bidi=global]
+\setupdirections[bidi=one] \enabletrackers[typesetters.directions.one]
+
+% \enabletrackers[typesetters.directions]
+% \enabletrackers[typesetters.directions.one.details]
+
+\starttext
+
+    \start \hebrewfont ש(י]כ   \par \stop
+    \start \hebrewfont ש (י] כ \par \stop
+  % \start \hebrewfont ש ( י ] כ   \par \stop
+
+    \start \hebrewfont ש(abc]כ     \par \stop
+    \start \hebrewfont ש (abc] כ   \par \stop
+  % \start \hebrewfont ש ( abc ] כ \par \stop
+
+    \start \righttoleft \hebrewfont ש(י]כ   \par \stop
+    \start \righttoleft \hebrewfont ש (י] כ \par \stop
+  % \start \righttoleft \hebrewfont ש ( י ] כ   \par \stop
+
+    \start \righttoleft \hebrewfont ש(abc]כ     \par \stop
+    \start \righttoleft \hebrewfont ש (abc] כ   \par \stop
+  % \start \righttoleft \hebrewfont ש ( abc ] כ \par \stop
+
+  % \start \righttoleft \hebrewfont שלום (אני) כותב \par \stop
+  % \start              \hebrewfont שלום (אני) כותב \par \stop
+  % \start \righttoleft \hebrewfont שלום (אני) כותב \par \stop
+
+\stoptext

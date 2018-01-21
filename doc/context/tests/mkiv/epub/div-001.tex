@@ -1,0 +1,40 @@
+\setuptyping
+  [space=on]
+
+\setupbackend
+  [export=yes,
+   xhtml=yes,
+   alternative=div,
+   css=export-example.css]
+
+\starttext
+
+\input tufte \par
+
+\starttyping
+1
+\stoptyping
+
+\starttyping
+ 2
+\stoptyping
+
+\starttyping
+  3
+\stoptyping
+
+\starttyping
+   4
+\stoptyping
+
+\input tufte \par
+
+\startitemize
+    \startitem x \stopitem
+    \startitem y \stopitem
+    \startitem z \stopitem
+\stopitemize
+
+a bit of $e=mc^2$
+
+\stoptext

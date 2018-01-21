@@ -1,0 +1,10 @@
+% taken/adapted from a question on the list
+
+\definedelimitedtext[parenthesis]   [location=text]
+\setupdelimitedtext [parenthesis:1] [left={(}, right={)}]
+\setupdelimitedtext [parenthesis:2] [symcolor=red,symstyle=boldslanted,style=slanted, left={[}, right={]}]
+\setupdelimitedtext [parenthesis:3] [symcolor=blue,symstyle=bold,style=normal, left={\{}, right={\}}]
+
+\starttext
+    \parenthesis{My outer layer \parenthesis{my inner layer \parenthesis{my innermost layer}}}
+\stoptext

@@ -1,0 +1,14 @@
+\starttext
+
+test {\red\underrandoms{test me}} and \underrandom{test} or \underrandom{grep} \blank
+test {\red\underdashes {test me}} and \underdash  {test} or \underdash  {grep} \blank
+test {\red\underdots   {test me}} and \underdot   {test} or \underdot   {grep} \blank
+
+\testfeatureonce{10}{ % ##1 == \currentfeaturetest
+    \dorecurse{100}{
+        test {\red\underdots{test me ##1}} and \underdot{test ##1} or \underdot{grep ##1}
+        test {\red\underbars{test me ##1}} and \underbar{test ##1} or \underbar{grep ##1}
+    }\blank
+}
+
+\stoptext

@@ -1,0 +1,8 @@
+\starttext
+    test \systemlog     {foo.log}{test}{a=1,b=3,c=each}  test
+    test \systemlog     {foo.log}{test}{a=2,b=8,c=each}  test
+    test \systemlogfirst{foo.log}{test}{a=2,b=8,c=first} test
+    test \systemloglast {foo.log}{test}{a=2,b=8,c=last}  test
+
+    \typefile{foo.log}
+\stoptext

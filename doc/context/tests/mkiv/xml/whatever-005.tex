@@ -1,0 +1,48 @@
+\startbuffer[test]
+<html>
+    <p>
+        <br/>
+        <br/>
+        <br/>
+    </p>
+</html>
+\stopbuffer
+% \startbuffer[test]
+% <html>
+%     <br/>
+%     <br/>
+%     <br/>
+% </html>
+% \stopbuffer
+
+\startxmlsetups xml:mysetups
+    \xmlsetsetup{#1}{p|br|html}{xml:*}
+    \xmlsetsetup{#1}{html/br[element() == lastelement()]}{xml:last}
+    \xmlsetsetup{#1}{html/p[print(element(),lastelement()) and element() == lastelement()]/br[element() == lastelement()]}{xml:last}
+\stopxmlsetups
+
+\xmlregistersetup{xml:mysetups}
+
+\startxmlsetups xml:html
+    html(\xmlflush{#1})
+\stopxmlsetups
+
+\startxmlsetups xml:p
+    p(\xmlflush{#1})
+\stopxmlsetups
+
+\startxmlsetups xml:br
+    [br] %
+\stopxmlsetups
+
+\startxmlsetups xml:last
+    [LAST] %
+\stopxmlsetups
+
+\starttext
+%     \enabletrackers[xml.parse]
+    \enabletrackers[xml.path]
+    \xmlprocessbuffer{main}{test}{}
+%     \disabletrackers[xml.parse]
+    \disabletrackers[xml.path]
+\stoptext

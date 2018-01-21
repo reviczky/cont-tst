@@ -1,0 +1,15 @@
+return {
+ ["htmlfiles"]={ "export-008-div.html" },
+ ["htmlroot"]="export-008-div.html",
+ ["identifier"]="00bb2127-4e09-b444-8174-84a7d752159b",
+ ["imagefile"]="styles/export-008-images.css",
+ ["imagepath"]="images",
+ ["images"]={},
+ ["language"]="en",
+ ["metadata"]={},
+ ["name"]="export-008",
+ ["stylepath"]="styles",
+ ["styles"]={ "export-008-defaults.css", "export-008-images.css", "export-008-styles.css" },
+ ["xhtmlfiles"]={ "export-008-tag.xhtml" },
+ ["xmlfiles"]={ "export-008-raw.xml" },
+}

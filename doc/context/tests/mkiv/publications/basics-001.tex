@@ -1,0 +1,67 @@
+\starttext
+
+\startbuffer[bib]
+
+@article{test-1,
+    title    = {Article One},
+   xtitle    = x,
+   ytitle    = x{foo},
+    author   = {A. Foo and X. Bar},
+    year     = {2001},
+    keywords = {alpha,first,second},
+}
+
+@book{test-2,
+    title    = {Book Two},
+    author   = {B. Foo},
+    year     = {2002},
+    keywords = {beta},
+}
+
+@whatever{test-3,
+    title    = {Book Three},
+    author   = {C. Foo},
+    year     = {2003},
+    keywords = {gamma},
+}
+
+@book{test-4,
+    title    = {Eerste Boek},
+    language = {nl},
+    title:en = {Book One},
+    author   = {Y. Bar},
+    year     = {2002},
+    keywords = {delta},
+    pages    = {123-128}
+}
+
+\stopbuffer
+
+% \loadbtxdefinitionfile[apa]
+% \setupbtx[specification=apa]
+
+\usebtxdataset[bib.buffer]
+
+\showbtxdatasetcompleteness[standard]
+
+\starttabulate[|T||]
+\NC             \NC \cite             [test-1]        \NC \NR
+\NC num         \NC \cite[num]        [test-1]        \NC \NR
+\NC author      \NC \cite[author]     [test-1]        \NC \NR
+\NC authornum   \NC \cite[authornum]  [test-1]        \NC \NR
+\NC authoryear  \NC \cite[authoryear] [test-1]        \NC \NR
+\NC authoryears \NC \cite[authoryears][test-1]        \NC \NR
+\NC authoryears \NC \cite[authoryears][test-1,test-2] \NC \NR
+\stoptabulate
+
+% \setupbtx
+%     [default:page]
+%     [command={\wordright},
+%      pageleft=(,
+%      pageright=)]
+
+\placebtxrendering[method=dataset,pagestate=start]
+
+\ctxcommand{showbtxvariants("standard",true)} % will be interfaced
+
+\stoptext

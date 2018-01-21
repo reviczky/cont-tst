@@ -1,0 +1,17 @@
+\startbuffer[demo]
+    <document>test <code>code</code> test</document>
+\stopbuffer
+
+\startxmlsetups xml:test
+    \xmlsetsetup{#1}{code}{xml:*}
+\stopxmlsetups
+
+\xmlregistersetup{xml:test}
+
+\startxmlsetups xml:code
+    \xmlinlineverbatim{#1}
+\stopxmlsetups
+
+\starttext
+    \xmlprocessbuffer{main}{demo}{}
+\stoptext

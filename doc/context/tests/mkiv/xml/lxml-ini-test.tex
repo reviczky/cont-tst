@@ -1,0 +1,74 @@
+% engine=luatex
+
+\starttext
+
+\title{\ConTeXt\ setups loading}
+
+\xmlload{main}{cont-en.xml}{}
+
+% applying actions on the fly
+%
+% \xmlgrab{main}{cd:command}{cd-demo}
+%
+% \startxmlsetups cd-demo
+%     \NC \xmlatt{#1}{name} \NC \xmlatt{#1}{file} \NC \NR
+% \stopxmlsetups
+% \starttabulate[|l|l|]
+%     \NC command \NC file \NC \NR
+%     \xmlall{main}{//cd:command}
+% \stoptabulate
+
+% filtering data
+
+
+% first \xmlfilter{main}{cd:command/first()} \blank[2*big]
+% last  \xmlfilter{main}{cd:command/last()}  \blank[2*big]
+% first \xmlall{main}{cd:command} \blank[2*big]
+% first \xmlfirst{main}{cd:command} \blank[2*big]
+% last  \xmllast {main}{cd:command} \blank[2*big]
+
+% applying actions on demand
+%
+% \startxmlsetups cd-demo
+%     \NC \xmlatt{#1}{name} \NC \xmlatt{#1}{file} \NC \NR
+% \stopxmlsetups
+% \starttabulate[|l|l|]
+%     \NC command \NC file \NC \NR
+%     \xmlcommand{main}{//cd:command}{cd-demo}
+% \stoptabulate
+
+% variant:
+
+\startxmlsetups just-another-demo
+    \NC \xmlatt{#1}{name} \NC \xmlatt{#1}{file} \NC \NR
+\stopxmlsetups
+\starttabulate[|l|l|]
+    \NC command \NC file \NC \NR
+    \xmlfilter{main}{cd:command/command('just-another-demo')}
+\stoptabulate
+
+% verbatim test
+
+\title{Verbatim, whitespace, and cdata}
+
+\startxmlsetups test
+    \xmlsetsetup   {main}{a}{*}
+    \xmlsetfunction{main}{verbatim}{lxml.displayverbatim}
+    \xmlsetfunction{main}{verb}    {lxml.inlineverbatim}
+\stopxmlsetups
+
+\startxmlsetups a
+    !
+\stopxmlsetups
+
+\xmlregistersetup{test}
+
+\subject{processed}
+
+\xmlprocess{main}{lxml-ini-test.xml}{}
+
+\subject{verbatim}
+
+\typefile{lxml-ini-test.xml}
+
+\stoptext

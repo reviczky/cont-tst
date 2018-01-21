@@ -1,0 +1,35 @@
+\starttext
+
+\startbuffer
+\fr
+
+\hsize 1mm
+
+\hjcode`x=`o
+
+foobar % foo-bar
+
+fxxbar % fxx-bar
+
+\lefthyphenmin3
+
+œdipus % œdi-pus
+
+\lefthyphenmin4
+
+œdipus % œdipus
+
+\hjcode`œ=2    % < 32 then it's the length and code is char code
+
+œdipus % œdi-pus
+
+\hjcode`i=32
+\hjcode`d=32
+
+œdipus % œdipus
+
+\stopbuffer
+
+\typebuffer \getbuffer
+
+\stoptext

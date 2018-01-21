@@ -1,0 +1,33 @@
+% test file by Thomas Schmitz: resolve entities (two step, also number)
+%
+% context --environment=entities-002 entities-002.xml
+
+% \xmlsetentity{one}  {[one]}
+% \xmlsetentity{two}  {[one]}
+\xmlsetentity{three}{[overloaded three]}
+
+\startxmlsetups xml:mysetups
+	\xmlsetsetup{\xmldocument}{document|section|content|p}{xml:*}
+\stopxmlsetups
+
+\xmlregistersetup{xml:mysetups}
+
+\startxmlsetups xml:document
+	\xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:p
+	\xmlflush{#1}\par
+\stopxmlsetups
+
+\startxmlsetups xml:section
+	\xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:content
+	\xmlflush{#1}
+\stopxmlsetups
+
+\starttext
+    \xmlprocessfile{main}{entities-002.xml}{}
+\stoptext

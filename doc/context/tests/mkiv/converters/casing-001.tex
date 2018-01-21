@@ -1,0 +1,13 @@
+\setupbodyfont[dejavu]
+
+\starttext
+
+\startluacode
+
+    context(characters.upper ("abcdeÀÁÂÃÄÅàáâãäå")) context.par()
+    context(characters.lower ("ABCDEÀÁÂÃÄÅàáâãäå")) context.par()
+    context(characters.shaped("ÀÁÂÃÄÅàáâãäå"     )) context.par()
+
+\stopluacode
+
+\stoptext

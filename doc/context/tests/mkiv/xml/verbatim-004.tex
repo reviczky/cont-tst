@@ -1,0 +1,34 @@
+% a weird example posted on the list (stripped)
+
+\startbuffer[demo]
+<document>
+    <source>\command[option=value]{text "<&>"}</source>
+
+    <code>
+        <span class="fu">\command</span>[option=value]{text
+&quot;&lt;&amp;&gt;&quot;}
+    </code>
+</document>
+\stopbuffer
+
+\startxmlsetups xml:initialize
+    \xmlsetsetup{#1}{document|source|code}{xml:*}
+\stopxmlsetups
+
+\xmlregistersetup{xml:initialize}
+
+\startxmlsetups xml:document
+    \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:source
+    \xmlprettyprinttext{#1}{tex}
+\stopxmlsetups
+
+\startxmlsetups xml:code
+    \xmlprettyprinttext{#1}{tex}
+\stopxmlsetups
+
+\starttext
+    \xmlprocessbuffer{main}{demo}{}
+\stoptext

@@ -1,0 +1,21 @@
+\setuphead[section][textstyle={\setbar[overstrike]},textcolor=blue]
+
+\definehighlight[Whatever][color=darkyellow]
+\definehighlight[Delete]  [color=red,style={\setbar[overstrike]}]
+\definehighlight[Keep]    [color=green]
+
+\starttext
+
+    \setupbar[overstrike][foregroundcolor=cyan,color=blue]
+
+    \startsection[title={{\green green} foo {\green green}}]
+
+        foo \startbar[overstrike]bar\stopbar
+
+        test  \Delete{test} test \Keep{test} test \Whatever{test} test
+
+        \color[red]{test  \Delete{test} test \Keep{test} test}
+
+    \stopsection
+
+\stoptext

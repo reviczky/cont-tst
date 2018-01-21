@@ -1,0 +1,36 @@
+\starttext
+
+    % maybe in a next version: \hyphenationbounds
+
+    % 0 = not strict
+    % 1 = strict start
+    % 2 = strict end
+    % 3 = strict start and strict end
+
+    \parindent0pt \hsize=1.1cm
+    12-34-56 \par
+    12-34-\hbox{56} \par
+    12-34-\vrule width 1em height 1.5ex \par
+    12-\hbox{34}-56 \par
+    12-\vrule width 1em height 1.5ex-56 \par
+    12-34-56-78-12-34-56-78 \par
+    12-34-12-34-12-34-12-34 \par
+    \hjcode`\1=`\1 \hjcode`\2=`\2 \hjcode`\3=`\3 \hjcode`\4=`\4 \vskip.5cm
+    12-34-56 \par
+    12-34-\hbox{56} \par
+    12-34-\vrule width 1em height 1.5ex \par
+    12-\hbox{34}-56 \par
+    12-\vrule width 1em height 1.5ex-56 \par
+    12-34-56-78-12-34-56-78 \par
+    12-34-12-34-12-34-12-34 \par
+
+    \hsize 10cm
+
+    \definefontfeature[basemode][mode=base]
+    \definefontfeature[nodemode][mode=node]
+    \definedfont[Serif*xdefault,basemode]
+    foo--bar---foo----bar-----foo------bar-------foo \par
+    \definedfont[Serif*default,basemode]
+    foo--bar---foo----bar-----foo------bar-------foo \par
+
+\stoptext

@@ -1,0 +1,12 @@
+\starttext
+
+We need to make sure that utf gets passed along nicely.
+
+\startluacode
+    local s = utf.char(178) .. ".tex"
+    io.savedata(s,"\\starttext test \\stoptext ")
+    os.execute("context " .. s)
+\stopluacode
+
+\stoptext
+

@@ -1,0 +1,23 @@
+\setupbackend
+  [export=yes]
+
+\settaggedmetadata
+  [title=Hello World!,
+   author=Hans Hagen]
+
+\starttext
+
+\startelement[ignore]
+    \input tufte
+\stopelement
+
+\input ward
+
+\settaggedmetadata
+  [whatever=Again and Again]
+
+\startchapter[title=test]
+    \input ward
+\stopchapter
+
+\stoptext

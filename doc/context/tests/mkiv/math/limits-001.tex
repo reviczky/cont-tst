@@ -1,0 +1,22 @@
+\starttext
+
+\startbuffer
+    \hbox\bgroup
+        \showglyphs
+        \dostepwiserecurse{0}{4}{1}{
+            {\mathnolimitsmode#1\relax #1: $\displaystyle\int\nolimits _0^1 x\,dx$}
+        }
+        {\mathnolimitsmode750\relax 750: $\displaystyle\int\nolimits _0^1 x\,dx$}
+    \egroup
+\stopbuffer
+
+{\switchtobodyfont[10pt,modern]  \getbuffer}\blank
+{\switchtobodyfont[10pt,xits]    \getbuffer}\blank
+{\switchtobodyfont[10pt,pagella] \getbuffer}\blank
+{\switchtobodyfont[10pt,cambria] \getbuffer}\blank
+
+% \adaptfontfeature[*math*][mathnolimitsmode={0,750}]
+
+{\switchtobodyfont[10pt,termes]  \getbuffer}\blank
+
+\stoptext

@@ -1,0 +1,15 @@
+% \setuphead[chapter][after={\markpage[chapter][+1]}]
+\setuphead[chapter][after={\markpage[chapter]\blank[2*big]}]
+
+\defineoverlay
+  [whatever]
+  [\doifelsemarkedpage{chapter}{CHAPTER}{}]
+
+\setupbackgrounds
+  [page]
+  [background=whatever]
+
+\starttext
+    test \page test \page test \chapter{OEPS}
+    test \page test \page test \chapter{OEPS}
+\stoptext

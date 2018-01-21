@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+
+<!--
+
+    input filename   : itemize-001
+    processing date  : 
+    context version  : 2018.01.03 14:46
+    exporter version : 0.35
+
+-->
+
+<?xml-stylesheet type="text/css" href="styles/itemize-001-defaults.css" ?>
+<?xml-stylesheet type="text/css" href="styles/itemize-001-images.css" ?>
+<?xml-stylesheet type="text/css" href="styles/itemize-001-styles.css" ?>
+
+<document context="2018.01.03 14:46" file="itemize-001" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+ <metadata>
+ </metadata>
+ <itemgroup detail="itemize" chain="itemize" level="1" symbol="n">
+  <item kind="head">
+   <itemtag>1.</itemtag>
+   <itemcontent><itemhead>Head 1</itemhead> <itembody>Test 1</itembody></itemcontent>
+  </item>
+  <item kind="head">
+   <itemtag>2.</itemtag>
+   <itemcontent><itemhead>Head 2</itemhead> <itembody>Test 2</itembody></itemcontent>
+  </item>
+  <item>
+   <itemtag>3.</itemtag>
+   <itemcontent>Test 3</itemcontent>
+  </item>
+  <item kind="symbol">
+   <itemtag>!!!</itemtag>
+   <itemcontent>Test 3</itemcontent>
+  </item>
+  <item kind="sub">
+   <itemtag>3.</itemtag>
+   <itemcontent>Test 4</itemcontent>
+  </item>
+  <item kind="margin">
+   <itemtag>4.</itemtag>
+   <itemcontent>Test 5</itemcontent>
+  </item>
+ </itemgroup>
+</document>

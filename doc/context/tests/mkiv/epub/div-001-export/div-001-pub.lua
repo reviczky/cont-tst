@@ -1,0 +1,15 @@
+return {
+ ["htmlfiles"]={ "div-001-div.html" },
+ ["htmlroot"]="div-001-div.html",
+ ["identifier"]="edfe9677-42c4-8bc1-4e4f-64b5cb84bb59",
+ ["imagefile"]="styles/div-001-images.css",
+ ["imagepath"]="images",
+ ["images"]={},
+ ["language"]="en",
+ ["metadata"]={},
+ ["name"]="div-001",
+ ["stylepath"]="styles",
+ ["styles"]={ "div-001-defaults.css", "div-001-images.css", "div-001-styles.css" },
+ ["xhtmlfiles"]={ "div-001-tag.xhtml" },
+ ["xmlfiles"]={ "div-001-raw.xml" },
+}

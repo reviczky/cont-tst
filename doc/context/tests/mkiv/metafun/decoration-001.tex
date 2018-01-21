@@ -1,0 +1,57 @@
+% This will work with mplib of December 2012 (prescriptpart / postscriptpart + a fix).
+
+\starttext
+
+\startMPpage
+    draw image (
+        draw fullcircle scaled 20cm withpen pencircle scaled 20mm withcolor red   withtransparency (1,.40) ;
+        draw fullcircle scaled 15cm withpen pencircle scaled 15mm withcolor green withtransparency (1,.30) ;
+        draw fullcircle scaled 10cm withpen pencircle scaled 10mm withcolor blue  withtransparency (1,.20) ;
+    )
+        withcolor blue
+        withtransparency (1,.125) % selectively applied
+        withpen pencircle scaled 10mm
+    ;
+    setbounds currentpicture to fullsquare scaled 25cm ;
+\stopMPpage
+
+\startMPpage
+    draw undecorated (
+        draw fullcircle scaled 20cm withpen pencircle scaled 20mm withcolor red   withtransparency (1,.40) ;
+        draw fullcircle scaled 15cm withpen pencircle scaled 15mm withcolor green withtransparency (1,.30) ;
+        draw fullcircle scaled 10cm withpen pencircle scaled 10mm withcolor blue  withtransparency (1,.20) ;
+    )
+        withcolor blue
+        withtransparency (1,.125) % selectively applied
+        withpen pencircle scaled 10mm
+    ;
+    setbounds currentpicture to fullsquare scaled 25cm ;
+\stopMPpage
+
+\startMPpage
+    draw decorated (
+        draw fullcircle scaled 20cm withpen pencircle scaled 20mm withcolor red   withtransparency (1,.40) ;
+        draw fullcircle scaled 15cm withpen pencircle scaled 15mm withcolor green withtransparency (1,.30) ;
+        draw fullcircle scaled 10cm withpen pencircle scaled 10mm withcolor blue  withtransparency (1,.20) ;
+    )
+        withcolor blue
+        withtransparency (1,.125) % selectively applied
+        withpen pencircle scaled 10mm
+    ;
+    setbounds currentpicture to fullsquare scaled 25cm ;
+\stopMPpage
+
+\startMPpage
+    draw redecorated (
+        draw fullcircle scaled 20cm withpen pencircle scaled 20mm withcolor red   withtransparency (1,.40) ;
+        draw fullcircle scaled 15cm withpen pencircle scaled 15mm withcolor green withtransparency (1,.30) ;
+        draw fullcircle scaled 10cm withpen pencircle scaled 10mm withcolor blue  withtransparency (1,.20) ;
+    )
+        withcolor blue
+        withtransparency (1,.125) % selectively applied
+        withpen pencircle scaled 10mm
+    ;
+    setbounds currentpicture to fullsquare scaled 25cm ;
+\stopMPpage
+
+\stoptext

@@ -1,0 +1,36 @@
+\enabletrackers[interfaces.namespaces,context.flush]
+
+\definenamespace
+  [xy]
+  [type=module,
+   comment=test module,
+   version=1,
+   name=test,
+   style=yes,
+   command=yes,
+   setup=list,
+   parent=xy]
+
+\unprotect
+
+\getparameters
+  [\????xy]
+  [text=]
+
+\protect
+
+\definetest[one]
+
+\starttext
+
+“\testparameter{text}”
+
+\setuptest[text=foo]
+
+“\testparameter{text}”
+
+\setuptest[one][text=bar]
+
+“\testparameter{text}”
+
+\stoptext

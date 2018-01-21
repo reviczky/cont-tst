@@ -1,0 +1,25 @@
+\setupinteraction[state=start,page={page,page}]
+
+% \nopdfcompression
+
+\enabledirectives[figures.embedded] % we get a warning anyway
+
+\starttext
+
+    \startTEXpage
+        \externalfigure[cross-1.pdf][interaction=all,page=1]
+    \stopTEXpage
+
+    \startTEXpage
+        \externalfigure[cross-1.pdf][interaction=all,page=2]
+    \stopTEXpage
+
+    \startTEXpage
+        \externalfigure[cross-2.pdf][interaction=all,page=1]
+    \stopTEXpage
+
+    \startTEXpage
+        \externalfigure[cross-2.pdf][interaction=all,page=2]
+    \stopTEXpage
+
+\stoptext

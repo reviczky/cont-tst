@@ -1,0 +1,38 @@
+\setupinteraction[state=start]
+\enabledirectives[references.border]
+
+\nopdfcompression
+
+\starttext
+
+    \completecontent
+
+    \chapter[tex]{First \TeX}
+
+    \goto{\TeX}[tex]
+
+    \goto{\hbox{foo} \hbox{bar} \hbox {foo}}[tex]
+
+    \gotobox{\hbox{foo} \hbox{bar} \hbox {foo}}[tex]
+
+    \goto{foo \hbox{bar} foo}[tex]
+
+    \gotobox{foo \hbox{bar} foo}[tex]
+
+    test \goto{test}[page(5)] test \gotobox{test}[page(5)]
+
+    test \goto{test}[page(5)] test \goto{test}[page(5)]
+
+    test \goto{test}[page(5)] test \gotobox{test}[page(5)]
+
+    \goto{\input tufte }[page(5)]
+
+    \chapter{Second \TeX}
+    \chapter{Third \TeX}
+    \chapter{Fourth \TeX}
+
+    to here \goto{test page}[tex]
+
+    \chapter{Fifth \TeX}
+
+\stoptext

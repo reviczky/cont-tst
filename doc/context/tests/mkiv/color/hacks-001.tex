@@ -1,0 +1,15 @@
+% nice usage by aditya:
+
+\defineconversion
+  [colors]
+  [red,blue,green]
+
+\setuphead
+  [section]
+  [color={\convertnumber{colors}{\currentsectioncountervalue}}]
+
+\starttext
+
+    \dorecurse{10}{\section{Section \recurselevel}}
+
+\stoptext

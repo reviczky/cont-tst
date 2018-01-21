@@ -1,0 +1,71 @@
+\startxmlsetups xml:testsetups
+    \xmlsetsetup{#1}{*}{-}
+	\xmlsetsetup{#1}{a|note|word|emph|quotation|translation|latin}{xml:*}
+\stopxmlsetups
+
+\xmlregistersetup{xml:testsetups}
+
+% for first xml test
+
+\xmlloadonly{notes}{lua-xml-001-b.xml}{}
+
+% for second xml test
+
+\registerctxluafile{lua-xml-001}{1.001}
+
+\startxmlsetups xml:a
+    \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:note
+    \doif {\xmlatt{#1}{type}} {vok} {
+        via tex:
+        \xmlcommand {notes} {/dictionary/word[@xml:id="\xmltext{#1}{/word}"]/} {xml:note:test}
+        via xml:
+        \xmlfunction{#1}{gettranslation}
+        via xml:
+        \xmlfunction{#1}{gettranslationx}
+    }
+\stopxmlsetups
+
+\startxmlsetups xml:note:test
+    \par
+    \color[darkred]{\xmlfirst{#1}{/latin/text()}}
+    \space=\space
+    \color[darkblue]{\xmlfirst{#1}{/translation/text()}}
+    \par
+\stopxmlsetups
+
+\startxmlsetups xml:note:more
+    \par
+    \color[darkred]{\xmlfirst{#1}{/latin/text()}}
+    \space=\space
+    \color[darkblue]{\xmlfirst{#1}{/translation/text()}}
+    \par
+\stopxmlsetups
+
+\startxmlsetups xml:quotation
+    \quotation{\xmlflush{#1}}
+\stopxmlsetups
+
+\startxmlsetups xml:emph
+    \dontleavehmode{\em \xmlflush{#1}}
+\stopxmlsetups
+
+\startxmlsetups xml:latin
+    \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:translation
+    \xmlflush{#1}
+\stopxmlsetups
+
+\setupbodyfont [termes]
+
+\starttext
+
+done
+
+\xmlprocessfile{main}{lua-xml-001-a.xml}{}
+
+\stoptext

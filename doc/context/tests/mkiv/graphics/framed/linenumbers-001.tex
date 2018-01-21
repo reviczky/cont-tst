@@ -1,0 +1,13 @@
+\definefloat[sourcecode][sourcecodes]
+
+\startbuffer
+\startlinenumbering
+  \input tufte
+\stoplinenumbering
+\stopbuffer
+
+\starttext
+    \startplacesourcecode[title=For Aditya]
+      \framed[align={normal,tolerant},width=8cm,offset=1ex]{\getbuffer}
+    \stopplacesourcecode
+\stoptext

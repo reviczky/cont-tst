@@ -1,0 +1,31 @@
+% also a low level test
+
+\starttext
+    \setbreakpoints[compound]
+
+    \startbuffer
+        discrete---discrete
+    \stopbuffer
+    \typebuffer \start \dontcomplain \hsize 1pt \getbuffer \par \stop
+    \startbuffer
+        discrete\discretionary{}{}{---}discrete
+    \stopbuffer
+    \typebuffer \start \dontcomplain \hsize 1pt \getbuffer \par \stop
+    \startbuffer
+        discrete\wordboundary\discretionary{}{}{---}discrete
+    \stopbuffer
+    \typebuffer \start \dontcomplain \hsize 1pt \getbuffer \par \stop
+    \startbuffer
+        discrete\wordboundary\discretionary{}{}{---}\wordboundary discrete
+    \stopbuffer
+    \typebuffer \start \dontcomplain \hsize 1pt \getbuffer \par \stop
+    \startbuffer
+        discrete\wordboundary\discretionary{---}{}{}\wordboundary discrete
+    \stopbuffer
+    \typebuffer \start \dontcomplain \hsize 1pt \getbuffer \par \stop
+
+    foo---bar
+    foo\discretionary{}{}{---}bar
+    foo\discretionary{}{}{--}-bar
+    foo\discretionary{}{}{-}--bar
+\stoptext

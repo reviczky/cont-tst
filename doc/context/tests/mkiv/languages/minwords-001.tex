@@ -1,0 +1,46 @@
+\usemodule[art-01] \setupbodyfont[10pt]
+
+\definehyphenationfeatures
+  [words-1]
+  [rightwords=3,
+   lefthyphenmin=4,
+   righthyphenmin=4]
+
+\definehyphenationfeatures
+  [words-2]
+  [rightwords=3,
+   rightchars=word,
+   lefthyphenmin=4,
+   righthyphenmin=4]
+
+\definehyphenationfeatures
+  [words-3]
+  [rightwords=3,
+   rightchars=8,
+   lefthyphenmin=4,
+   righthyphenmin=4]
+
+\enabletrackers[hyphenator.visualize]
+
+\setupalign[verytolerant,stretch]
+
+\dontcomplain
+
+\setuphyphenation
+  [method=traditional]
+
+\edef\tufte{\cldloadfile{tufte}}
+
+\starttext
+
+\dorecurse{100}{
+    \hsize\dimexpr\textwidth-#1mm\relax
+    \start \sethyphenationfeatures[words-1] \tufte \par
+    \hsize\dimexpr\textwidth-#1mm\relax
+    \start \sethyphenationfeatures[words-2] \tufte \par
+    \hsize\dimexpr\textwidth-#1mm\relax
+    \start \sethyphenationfeatures[words-3] \tufte \par
+    \page
+}
+
+\stoptext

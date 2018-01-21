@@ -1,0 +1,48 @@
+\setuplayout
+  [width=middle,
+   height=middle,
+   backspace=2cm,
+   topspace=2cm,
+   footer=0pt,
+   header=0pt]
+
+\setupbodyfont
+  [10pt]
+
+\startbuffer
+def test(expr a) =
+    draw image (
+        draw (0,0){dir  a} .. {dir -a}(100,0) withpen pensquare scaled 10 withcolor red ;
+        currentpicture := currentpicture shifted (0,150) ;
+        draw (0,0){dir -a} .. {dir  a}(100,0) withpen pensquare scaled 10 withcolor green ;
+        currentpicture := currentpicture shifted (0,150) ;
+        draw (0,0){dir  a} .. {dir  a}(100,0) withpen pensquare scaled 10 withcolor blue ;
+        currentpicture := currentpicture shifted (0,150) ;
+        draw (0,0){dir -a} .. {dir -a}(100,0) withpen pensquare scaled 10 withcolor cyan ;
+    ) ;
+    currentpicture := currentpicture shifted (150,0) ;
+enddef ;
+
+test(90)      ; % weird
+test(90-eps)  ; % okay
+test(270)     ; % weird
+test(270+eps) ; % okay
+test(45)      ; % okay
+test(90+eps)  ; % weird
+
+currentpicture := currentpicture xsized TextWidth ;
+\stopbuffer
+
+\starttext
+
+    \vfilll
+
+    \processMPbuffer
+
+    \vfilll
+
+    \typebuffer
+
+    \vfilll
+
+\stoptext

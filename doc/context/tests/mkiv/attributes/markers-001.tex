@@ -1,0 +1,44 @@
+\setupbodyfont[dejavu]
+
+\definemarker[mymarker]
+
+\definecolor[mymarker:1][r=.6]
+\definecolor[mymarker:2][g=.6]
+\definecolor[mymarker:3][r=.6,g=.6]
+
+\startluacode
+local setcolor    = nodes.tracers.colors.setlist
+local getmarker   = nodes.markers.get
+local hlist_code  = nodes.codes.hlist
+local traverse_id = node.traverse_id
+
+function userdata.processmystuff(head)
+    for n in traverse_id(hlist_code,head) do
+        local m = getmarker(n,"mymarker")
+        if m then
+            setcolor(n.list,"mymarker:" .. m)
+        end
+    end
+    return head, true
+end
+
+nodes.tasks.appendaction("processors", "after", "userdata.processmystuff")
+nodes.tasks.disableaction("processors", "userdata.processmystuff")
+\stopluacode
+
+\starttext
+
+\startluacode
+nodes.tasks.enableaction("processors", "userdata.processmystuff")
+\stopluacode
+
+Node lists are processed \hbox \boxmarker{mymarker}{1} {nested from \hbox{inside}
+out} which is not what you might expect. But, \hbox {coloring} does not \hbox
+{happen} really nested here, more \hbox {in} \hbox \boxmarker{mymarker}{2} {the}
+\hbox {order} \hbox {of} \hbox \boxmarker{mymarker}{3} {processing}.
+
+\startluacode
+nodes.tasks.disableaction("processors", "userdata.processmystuff")
+\stopluacode
+
+\stoptext

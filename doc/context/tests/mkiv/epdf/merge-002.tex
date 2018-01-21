@@ -1,0 +1,23 @@
+\enabletrackers[figures.links]
+
+\nopdfcompression
+
+% \showlayoutcomponents
+
+\starttext
+
+\setupinteraction[state=start]
+
+\externalfigure[merge-001.pdf][page=1,scale=700,frame=on,interaction=all] \page
+\externalfigure[merge-001.pdf][page=2,scale=600,frame=on,interaction=all] \page
+\externalfigure[merge-001.pdf][page=3,scale=500,frame=on,interaction=all] \page
+
+\title{merge-001.tex}
+
+\typefile{merge-001.tex}
+
+\title{merge-002.tex}
+
+\typefile{merge-002.tex}
+
+\stoptext

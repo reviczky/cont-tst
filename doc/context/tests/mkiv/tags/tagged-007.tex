@@ -1,0 +1,53 @@
+\setuptagging[state=start]
+
+\setuptaglabeltext
+  [en]
+  [document=text]
+
+\nopdfcompression
+
+\setupinteraction[state=start]
+
+\enabletrackers[structure.tags,backends.tags]
+
+\definestartstop[notabene][style=\bf]
+
+\starttext
+
+\startchapter[title=chapter]
+
+\startparagraph Let's see what a user defined command does: \notabene{whow}! \stopparagraph
+
+\starttyping
+test
+\stoptyping
+
+\startTEX
+\whatever[goes]{here}
+\stopTEX
+
+\placefigure{test}{\framed{a simple graphic}}
+\placefigure{test}{\framed{a simple graphic}}
+\placefigure{test}{\externalfigure[cow.pdf]}
+
+\startlinecorrection
+\startMPcode
+    fill fullcircle xscaled TextWidth yscaled 1cm withcolor 0.5white ;
+\stopMPcode
+\stoplinecorrection
+
+\startparagraph Yet another paragraph, one with a \goto{wherever}[page(1)]. \stopparagraph
+
+\placeformula
+\startformula
+    e = mc^2
+\stopformula
+
+\placeformula
+\startformula
+    e = mc^2
+\stopformula
+
+\stopchapter
+
+\stoptext

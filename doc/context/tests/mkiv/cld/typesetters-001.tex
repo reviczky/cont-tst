@@ -1,0 +1,25 @@
+\starttext
+
+\startluacode
+
+    local f1 = fonts.definers.internal {
+        name     = "dejavuserif",
+        size     = "60pt",
+        features = "default",
+    }
+
+    local f2 = fonts.definers.internal {
+        name     = "dejavusansmono",
+        size     = "24pt",
+        features = "default",
+    }
+
+    context(nodes.typesetters.tohpack("Hi Taco",f1))
+
+    context.blank()
+
+    context(nodes.typesetters.tohpack("Hi Taco",f2))
+
+\stopluacode
+
+\stoptext

@@ -1,0 +1,67 @@
+\setupbodyfont[pagella]
+
+\defineheadalternative
+  [chaptermiddle]
+  [alternative=horizontal,
+   renderingsetup=head:chaptermiddle]
+
+\startsetups[head:chaptermiddle]
+    \ruledvbox {
+        \headsetupspacing
+        \veryraggedcenter
+        \begstrut
+        \bgroup
+        \ifconditional\headshownumber
+            \headnumbercontent
+            \blank[big]
+        \fi
+        \headtextcontent
+        \egroup
+        \endstrut
+    }
+\stopsetups
+
+\defineheadalternative
+  [sectionmiddle]
+  [alternative=horizontal,
+   renderingsetup=head:sectionmiddle]
+
+\startsetups[head:sectionmiddle]
+    \ruledvbox {
+        \headsetupspacing
+        \veryraggedcenter
+        \begstrut
+        \bgroup
+        \ifconditional\headshownumber
+            \headnumbercontent
+            \quad
+        \fi
+        \headtextcontent
+        \egroup
+        \endstrut
+    }
+\stopsetups
+
+\setuplabeltext[en][chapter=Chapter~]
+
+\setuphead
+  [chapter]
+  [alternative=chaptermiddle,
+   style=\bfc,
+   conversion=Romannumerals,
+   numberstyle=\setfontfeature{smallcaps},
+   after={\blank[big]}]
+
+\setuphead
+  [section]
+  [alternative=sectionmiddle,
+   style=\bfa,
+   sectionsegments=section]
+
+\starttext
+    \startchapter[title=Foo]
+        \startsection[title=Bar]
+            Foo or Bar.
+        \stopsection
+    \stopchapter
+\stoptext

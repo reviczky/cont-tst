@@ -1,0 +1,15 @@
+\starttext
+
+\setbox0\hbox{hans}
+\localpushbox0
+    \setbox0\hbox{kees}
+    \localpushbox0
+        \setbox0\hbox{ton}
+            \localpushbox0
+                \setbox0\hbox{taco}
+                [\box0]
+            \localpopbox0 [\box0]
+    \localpopbox0 [\box0]
+\localpopbox0 [\box0]
+
+\stoptext

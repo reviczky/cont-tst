@@ -1,0 +1,7 @@
+<?xml versio='1.0'?>
+<root>
+    <something>Hello &amp;&lt;; world! (1)</something>
+    Hello &amp;&lt;; world! (2)
+    <something>Hello &#038;&lt;; world! (3)</something>
+    Hello &#038;&lt;; world! (4)
+</root>

@@ -1,0 +1,48 @@
+\environment devanagari-000
+
+\usemodule[fnt-20]
+
+\starttext
+
+\definefont
+  [DevaOne]
+  [file:chandas.ttf*devanagari-one at 12pt]
+
+\ruledhbox{\DevaOne [something]\char"00A0\zwj\char"094D}
+
+\ruledhbox{\DevaOne [something]\char"0930\char"094D\char"00A0\char"0901}
+
+halant on nbsp: \ruledhbox{\DevaOne [something]\char"00A0\char"094D}
+
+lonely halant: \ruledhbox{\DevaOne [something]\char"094D}
+
+\page
+
+\setvariables
+   [otftracker]
+   [font=file:chandas.ttf,
+    features=devanagari-one,
+    size=30pt,
+    figure=,
+    title=Feature Check,
+    sample=\char"00A0\char"094D]
+
+\setvariables
+   [otftracker]
+   [font=file:chandas.ttf,
+    features=devanagari-one,
+    size=30pt,
+    figure=,
+    title=Feature Check,
+    sample=\char"094D]
+
+\setvariables
+   [otftracker]
+   [font=file:chandas.ttf,
+    features=devanagari-one,
+    size=30pt,
+    figure=,
+    title=Feature Check,
+    sample=\char"0930\char"094D\char"00A0\char"0901]
+
+\stoptext

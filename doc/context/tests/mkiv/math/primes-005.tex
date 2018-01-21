@@ -1,0 +1,37 @@
+\unexpanded\def\SampleLine#1{\NC \type{#1} \NC #1 \NC \NR}
+
+\startbuffer
+\starttabulate[|||]
+\SampleLine{$f^2$}
+\SampleLine{$f\prime^2$}
+\SampleLine{$f\prime\prime^2$}
+\SampleLine{$f\prime\prime\prime^2$}
+\SampleLine{$f{\prime}^2$}
+\SampleLine{$f{\prime\prime}^2$}
+\SampleLine{$f{\prime\prime\prime}^2$}
+\SampleLine{$f'(x)$}
+\SampleLine{$f''(x)$}
+\SampleLine{$f'''(x)$}
+\SampleLine{$f\utfchar{"2032}(x)$}
+\SampleLine{$f\utfchar{"2033}(x)$}
+\SampleLine{$f\utfchar{"2034}(x)$}
+\SampleLine{$f\utfchar{"2032}\utfchar{"2032}(x)$}
+\SampleLine{$f\utfchar{"2032}\utfchar{"2032}\utfchar{"2032}(x)$}
+\SampleLine{$f\utfchar{"2033}\utfchar{"2032}(x)$}
+\SampleLine{$f\utfchar{"2032}\utfchar{"2033}(x)$}
+\stoptabulate
+\stopbuffer
+
+\starttext
+
+                           \getbuffer \page
+
+\switchtobodyfont[cambria] \getbuffer \page
+
+\switchtobodyfont[pagella] \getbuffer \page
+
+\switchtobodyfont[dejavu]  \getbuffer \page
+
+\stoptext
+
+

@@ -1,0 +1,11 @@
+\setuppapersize[A5][A4,landscape]   \setuparranging[2UP]
+% \setuppapersize[A5,landscape][A4]     \setuparranging[2DOWN]
+
+\setuplayout[middle]
+\setuppagenumbering[alternative=doublesided]
+
+\starttext
+
+\dorecurse{100}{\input knuth \relax}
+
+\stoptext

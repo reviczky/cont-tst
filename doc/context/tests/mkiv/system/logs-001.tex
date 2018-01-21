@@ -1,0 +1,14 @@
+\starttext
+
+Just a check of reporting.
+
+\startluacode
+    local report_numbers = logs.reporter("numbers","check")
+    local status_numbers = logs.messenger("numbers","check")
+
+    status_numbers("number 1: %s, number 2: %s",123,456) -- last  : ends up as tex so gets delayed
+    report_numbers("number 1: %s, number 2: %s",456,123) -- first : logs immediate at the lua end
+\stopluacode
+
+\stoptext
+

@@ -1,0 +1,28 @@
+\starttext
+
+\startbuffer
+\startitemize[horizontal,a,three]
+    \startitem first \stopitem \startitem second \stopitem
+    \startitem third \stopitem \startitem fourth \stopitem
+    \startitem fifth \stopitem
+\stopitemize
+
+\blank
+
+\startitemize[horizontal,n,four]
+    \startitem first \stopitem \startitem second \stopitem
+    \startitem third \stopitem \startitem fourth \stopitem
+    \startitem fifth \stopitem \startitem sixth \stopitem
+    \startitem seventh \stopitem
+\stopitemize
+\stopbuffer
+
+\getbuffer
+
+\setupalign[r2l]
+
+\blank
+
+\getbuffer
+
+\stoptext

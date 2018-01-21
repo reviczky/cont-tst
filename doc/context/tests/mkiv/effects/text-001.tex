@@ -1,0 +1,14 @@
+% For Mojca :
+
+\starttext
+
+    \startbuffer[test]
+        \input tufte
+    \stopbuffer
+
+    \startoverlay
+        {\framed[align=normal,foregroundstyle=\bfd,foregroundcolor=blue]{\starteffect[inner]\getbuffer[test]\stopeffect}}
+        {\framed[align=normal,foregroundstyle=\bfd,foregroundcolor=red] {\starteffect[outer]\getbuffer[test]\stopeffect}}
+    \stopoverlay
+
+\stoptext

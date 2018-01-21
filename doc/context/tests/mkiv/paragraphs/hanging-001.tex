@@ -1,0 +1,17 @@
+\starttext
+
+    \defineframed
+      [whatever]
+      [width=1cm,
+       height=1cm,
+       background=color,
+       backgroundcolor=darkblue,
+       foregroundcolor=white,
+       forgroundstyle=bold]
+
+    \dorecurse {100} {
+        \starthanging{\whatever{#1}}
+            \input tufte
+        \stophanging
+    }
+\stoptext

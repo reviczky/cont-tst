@@ -1,0 +1,22 @@
+\starttext
+
+\startluacode
+
+    function document.MyCharacterMess(str,filename)
+        if file.nameonly(filename) == "ward" then
+            str = table.concat(string.totable(str,"."), " + ")
+        end
+        return str
+    end
+
+    local textfileactions = resolvers.openers.helpers.textfileactions
+
+    utilities.sequencers.appendaction(textfileactions,"system","document.MyCharacterMess")
+
+\stopluacode
+
+\input ward
+
+\input knuth
+
+\stoptext

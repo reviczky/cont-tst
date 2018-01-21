@@ -1,0 +1,14 @@
+% from mailing list (auto filling gaps)
+
+\definefontfamily     [mainface] [rm] [Latin Modern Roman]
+\definefallbackfamily [mainface] [mm] [TeX Gyre Termes Math] [range={uppercasedoublestruck}]  %%%,letterlikesymbols}]
+\definefontfamily     [mainface] [mm] [Latin Modern Math]
+\setupbodyfont[mainface]
+
+\starttext
+
+    \startformula
+        ABC \quad {\blackboard AB[C]DEFG[H]IJKLM[N]O[PQR]STUVWXY[Z]}
+    \stopformula
+
+\stoptext

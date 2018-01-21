@@ -1,0 +1,24 @@
+% \enabletrackers[structures.referencing]
+% \enabletrackers[structures.referencing.analyzing]
+% \enabletrackers[structures.referencing.identifying]
+% \enabletrackers[structures.referencing.importing]
+
+\setupinteraction[state=start]
+
+\starttext
+
+    \starttabulate[|l|l|l|]
+        \NC [cross-001::one] \NC at    \NC \at      {page}[cross-001::one] \NC \NR
+        \NC [cross-001::one] \NC in    \NC \in   {chapter}[cross-001::one] \NC \NR
+        \NC [cross-001::one] \NC about \NC \about         [cross-001::one] \NC \NR
+        \NC [cross-001::one] \NC goto  \NC \goto{location}[cross-001::one] \NC \NR
+    \stoptabulate
+
+    \starttabulate[|l|l|l|]
+        \NC [cross-002::two] \NC at    \NC \at      {page}[cross-002::two] \NC \NR
+        \NC [cross-002::two] \NC in    \NC \in   {chapter}[cross-002::two] \NC \NR
+        \NC [cross-002::two] \NC about \NC \about         [cross-002::two] \NC \NR
+        \NC [cross-002::two] \NC goto  \NC \goto{location}[cross-002::two] \NC \NR
+    \stoptabulate
+
+\stoptext

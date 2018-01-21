@@ -1,0 +1,27 @@
+% example by thomas
+
+\starttext
+
+\setupTABLE [row]    [each] [align={lohi,middle}]
+\setupTABLE [column] [each] [width=2cm]
+\setupTABLE [column] [1]    [width=5cm]
+
+\bTABLE
+\bTR[height=0pt,offset=overlay,frame=off] \dorecurse{7}{\bTD\eTD} \eTR
+\bTR \bTD OSI-Schicht            \eTD \bTD[nc=6] Umsetzung    \eTD \eTR
+\bTR \bTD Anwendungsschicht      \eTD \bTD[nc=2,nr=3] SOME/I  \eTD
+                                      \bTD[nc=2,nr=3] AVB/TSN \eTD
+                                      \bTD[nc=2,nr=3] DoIP    \eTD \eTR
+\bTR \bTD Darstellungsschicht    \eTD \eTR
+\bTR \bTD Sitzungsschicht        \eTD \eTR
+\bTR \bTD Transportschicht       \eTD \bTD[nc=3] TCP        \eTD
+                                      \bTD[nc=3] UDP        \eTD \eTR
+\bTR \bTD Vermittlungsschicht    \eTD \bTD[nc=3] IPv4       \eTD
+                                      \bTD[nc=3] IPv6       \eTD \eTR
+\bTR \bTD Sicherungsschicht      \eTD \bTD[nc=6] Ethernet   \eTD \eTR
+\bTR \bTD Bitübertragungsschicht \eTD \bTD[nc=2] 100BASE-TX \eTD
+                                      \bTD[nc=2] 100BASE-T  \eTD
+                                      \bTD[nc=2] 1000BASE-T \eTD \eTR
+\eTABLE
+
+\stoptext

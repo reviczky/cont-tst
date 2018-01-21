@@ -1,0 +1,62 @@
+\starttext
+
+\startluacode
+    local format = string.format
+    local concat = table.concat
+    local round  = math.round
+    function document.TestBitmap(nx,ny)
+        nx = round(nx/65536)
+        ny = round(ny/65536)
+        nx = 2 * round(nx/2)
+        ny = 2 * round(ny/2)
+        local r = { }
+        local dx = round(255/nx)
+        local dy = round(255/ny)
+        for i=1,ny/2 do
+            local n = i*dy
+            local c = { }
+            for j=1,nx/2 do
+                c[#c+1] = format("%02x",j*dx+n)
+            end
+            for j=nx/2,1,-1 do
+                c[#c+1] = format("%02x",j*dx+n)
+            end
+            c = concat(c,"",1,nx)
+            r[#r+1] = c
+        end
+        for i=ny/2,1,-1 do
+            local n = i*dy
+            local c = { }
+            for j=1,nx/2 do
+                c[#c+1] = format("%02x",j*dx+n)
+            end
+            for j=nx/2,1,-1 do
+                c[#c+1] = format("%02x",j*dx+n)
+            end
+            c = concat(c,"",1,nx)
+            r[#r+1] = c
+        end
+        r = concat(r,"\r",1,ny)
+        figures.bitmapimage {
+            data        = r,
+            xresolution = nx,
+            yresolution = ny,
+        }
+    end
+\stopluacode
+
+\defineoverlay
+  [BitMess]
+  [{\scale
+      [width=\dimexpr\overlaywidth+2ex,height=\dimexpr\overlayheight+2ex]
+      {\ctxlua{document.TestBitmap(\number\dimexpr\overlaywidth,\number\dimexpr\overlayheight)}}}]
+
+\framed
+  [width=10cm,
+   height=10cm,
+   frame=off,
+   background={BitMess,color},
+   backgroundcolor=white]
+  {test}
+
+\stoptext

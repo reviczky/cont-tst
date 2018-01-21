@@ -1,0 +1,58 @@
+\startluacode
+
+local f1 = [[
+%!PS-Adobe-3.0 EPSF-3.0
+%%BoundingBox: 0 0 10 10
+%%HiResBoundingBox: 0 0 9.96262 9.96262
+%%Creator: MetaPost 0.993
+%%CreationDate: 2009.10.21:1318
+%%Pages: 1
+%%BeginProlog
+/bd{bind def}bind def
+/hlw{0 dtransform exch truncate exch idtransform pop setlinewidth}bd
+/vlw{0 exch dtransform truncate idtransform setlinewidth pop}bd
+/l{lineto}bd/r{rlineto}bd/c{curveto}bd/m{moveto}bd/p{closepath}bd/n{newpath}bd
+/C{setcmykcolor}bd/G{setgray}bd/R{setrgbcolor}bd/lj{setlinejoin}bd/ml{setmiterlimit}bd
+/lc{setlinecap}bd/S{stroke}bd/F{fill}bd/q{gsave}bd/Q{grestore}bd/s{scale}bd/t{concat}bd
+/sd{setdash}bd/rd{[] 0 setdash}bd/P{showpage}bd/B{q F Q}bd/W{clip}bd
+%%EndProlog
+%%Page: 1 1
+ 0.7 G
+n 0 0 m
+0 9.96262 l
+9.96262 4.98131 l
+ p F
+P
+%%EOF
+]]
+
+local f2 = [[
+%!PS
+%%BoundingBox: 0 0 10 10
+%%HiResBoundingBox: 0 0 9.96262 9.96262
+%%Creator: MetaPost 1.803
+%%CreationDate: 2014.01.02:1250
+%%Pages: 1
+%%BeginProlog
+%%EndProlog
+%%Page: 1 1
+ 0.7 setgray
+newpath 0 0 moveto
+0 9.96262 lineto
+9.96262 4.98131 lineto
+ closepath fill
+showpage
+%%EOF
+]]
+
+io.savedata("converter-001.1",f1)
+io.savedata("converter-001.2",f2)
+
+\stopluacode
+
+\enabletrackers[graphics.locating]
+
+\startTEXpage
+    \externalfigure[converter-001.1][frame=on]
+    \externalfigure[converter-001.2][frame=on]
+\stopTEXpage

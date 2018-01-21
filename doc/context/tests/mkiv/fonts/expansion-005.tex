@@ -1,0 +1,39 @@
+\definefontfeature
+  [default]
+  [default]
+  [%boundingbox=yes,
+   expansion=quality]
+
+\setupbodyfont[pagella]
+
+\setuplayout
+  [topspace=15mm,
+   bottomspace=10mm,
+   height=middle,
+   footer=0cm]
+
+\starttext
+
+    \input sapolsky \blank
+
+    \setupalign[hz]
+
+    \input sapolsky \blank
+
+    \ctxlua {
+        if font.setexpansion then
+            font.setexpansion(font.current(),100,100,20)
+        end
+    }
+
+    \input sapolsky \blank
+
+    \ctxlua {
+        if font.setexpansion then
+            font.setexpansion(font.current(),50,50,10)
+        end
+    }
+
+    \input sapolsky \blank
+
+\stoptext

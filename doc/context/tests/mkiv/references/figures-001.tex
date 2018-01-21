@@ -1,0 +1,25 @@
+% adapted example from sanjoy
+
+\starttext
+
+    \placefigure
+      [none]
+      [regularref-1]
+      {}
+      {\hbox{\pagereference[workaroundref-1]\externalfigure[cow.pdf]}}
+
+    \placefigure
+      [here]
+      [regularref-2]
+      {}
+      {\hbox{\pagereference[workaroundref-2]\externalfigure[cow.pdf]}}
+
+    See \at{page}[workaroundref-1] or \at{page}[regularref-1]
+
+    See \at{page}[workaroundref-2] or \at{page}[regularref-2]
+
+    \blank
+
+    \placelist[figure][criterium=text]
+
+\stoptext

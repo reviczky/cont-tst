@@ -1,0 +1,30 @@
+% macros=mkvi
+
+\definefont[RatherBig][Mono at 60pt]
+
+\defineeffect [justone] [alternative=outer,rulethickness=1pt]
+\defineeffect [justtwo] [alternative=inner]
+
+\starttexdefinition example #font#line#text
+    \hbox {
+        \framed [offset=\dimexpr#line/2\relax,strut=no,frame=off] {
+            \definedfont[#font]
+            \defineeffect[bg][alternative=outer,rulethickness=#line]
+            \defineeffect[fg][alternative=inner]
+            \hsmash{\red \effect[bg]{#text}}
+            \hbox  {\blue\effect[fg]{#text}}
+        }
+    }
+\stoptexdefinition
+
+\starttext
+
+{\effect[justone]{\RatherBig BIG}}
+
+{\effect[justtwo]{\RatherBig BIG}}
+
+\example{Mono at 60pt}{5pt}{BIG}
+
+\example{Mono at 80pt}{10pt}{BIG}
+
+\stoptext

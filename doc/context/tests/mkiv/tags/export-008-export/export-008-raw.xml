@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+
+<!--
+
+    input filename   : export-008
+    processing date  : 
+    context version  : 2018.01.03 14:46
+    exporter version : 0.35
+
+-->
+
+<?xml-stylesheet type="text/css" href="styles/export-008-defaults.css" ?>
+<?xml-stylesheet type="text/css" href="styles/export-008-images.css" ?>
+<?xml-stylesheet type="text/css" href="styles/export-008-styles.css" ?>
+
+<document context="2018.01.03 14:46" file="export-008" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+ <metadata>
+ </metadata>
+ <table>
+  <tablerow>
+   <tablecell align="flushleft">A </tablecell>
+   <tablecell align="flushleft"></tablecell>
+  </tablerow>
+  <tablerow>
+   <tablecell align="flushleft"></tablecell>
+   <tablecell align="flushleft">B </tablecell>
+  </tablerow>
+  </table>
+ <table>
+  <tablerow>
+   <tablecell align="flushleft"> A </tablecell>
+   <tablecell align="flushleft"> </tablecell>
+  </tablerow>
+  <tablerow>
+   <tablecell align="flushleft"> </tablecell>
+   <tablecell align="flushleft"> B</tablecell>
+  </tablerow>
+ </table>
+</document>

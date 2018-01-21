@@ -1,0 +1,13 @@
+\definemathfraction[innerfrac][frac][alternative=inner,mathstyle=script,color=red]
+\definemathfraction[outerfrac][frac][alternative=outer,mathstyle=script,color=blue]
+
+\starttext
+
+    \startformula
+    a = \sqrt{b/c}
+        a = \frac{b}{c} = \sqrt{\frac{b}{c}} = \sqrt{{b}\over{c}}
+        a = \frac{b}{c} = \sqrt{\frac{b}{c}} = \sqrt{{b}\over{c}}
+        a = \outerfrac{a}{b} = \innerfrac{a}{b} = \frac{a}{b}
+    \stopformula
+
+\stoptext

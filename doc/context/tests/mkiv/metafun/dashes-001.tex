@@ -1,0 +1,30 @@
+\startMPpage
+
+    picture d ; d := dashpattern (on 3cm off 1cm) ;
+    path    p ; p := fullsquare scaled 4cm ;
+
+    draw
+        subpath(4,1.1) of p
+        dashed d
+        withpen pencircle scaled 2mm
+        withcolor green ;
+
+    draw
+        subpath(4,1.1) of p
+        dashed d
+        withpen pencircle scaled 1mm ;
+
+    currentpicture := currentpicture shifted (-5cm,0) ;
+
+    draw
+        subpath(1,3.9) of p
+        dashed d
+        withpen pencircle scaled 2mm
+        withcolor red ;
+
+    draw
+        subpath(1,3.9) of p
+        dashed d
+        withpen pencircle scaled 1mm ;
+
+\stopMPpage

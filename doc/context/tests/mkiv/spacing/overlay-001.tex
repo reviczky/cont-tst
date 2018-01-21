@@ -1,0 +1,34 @@
+% adapted from the ctx list
+
+\defineenumeration
+  [question]
+  [text=,
+   alternative=serried]
+
+\defineitemgroup
+  [abc]
+
+\setupitemgroup
+  [abc]
+  [each]
+  [a,horizontal,two,intro,nowhite]
+  [stopper=,
+   right=)]
+
+\starttext
+
+\startquestion
+    \blank[overlay]
+    \startabc
+        \startitem \strut $ \int_a^b f(x)\,dx$ \stopitem
+    \stopabc
+\stopquestion
+
+\startquestion
+    \blank[overlay]
+    \startabc
+        \startitem \vrule height 2cm depth 1cm width 1mm\stopitem
+    \stopabc
+\stopquestion
+
+\stoptext

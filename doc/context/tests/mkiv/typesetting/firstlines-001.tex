@@ -1,0 +1,73 @@
+\setupbodyfont
+  [pagella]
+
+\setupalign
+  [tolerant,stretch]
+
+\setupfirstline
+  [alternative=line,
+   color=darkred,
+   style=\setfontfeature{smallcaps}]
+
+\setupfirstline
+  [fancy]
+  [n=3]
+
+\setupfirstline
+  [fancier]
+  [alternative=word,
+   color=darkblue,
+   style=bold,
+   n=3]
+
+\setupfirstline
+  [weirder]
+  [alternative=line,
+   color=darkgreen,
+   style=\setfontfeature{smallcaps},
+   n=3]
+
+\setupinitial
+  [location=text,
+   n=2,
+   color=darkred,
+   voffset=1.2\lineheight,
+   before={\blank[2*big]}]
+
+% \enabletrackers[typesetters.firstlines,typesetters.initials]
+
+\starttext
+
+    \setfirstline
+
+    \input ward \par
+
+    \placeinitial
+
+    \input ward \par
+
+    \setupindenting[medium,yes]
+
+    \setinitial % \placeinitial
+
+    \input ward \par
+
+    \setinitial %  \placeinitial
+    \setfirstline
+
+    \input ward \par
+
+    \setfirstline[fancy]
+
+    \input ward \par
+
+    \setfirstline[fancier]
+
+    \input ward \par
+
+    \setinitial %  \placeinitial
+    \setfirstline[weirder]
+
+    \input ward \par
+
+\stoptext

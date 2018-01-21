@@ -1,0 +1,31 @@
+\starttext
+
+\startbuffer[makeup]
+\startpagemakeup[pagestate=start,page=no]
+    \color[red]{
+        \vfill
+        \dorecurse{3}{
+            \samplefile{klein}
+            \vfill
+        }
+    }
+\stoppagemakeup
+\stopbuffer
+
+\startcolor[green]
+    \dorecurse{10}{
+        \dontleavehmode{\bf 1:#1:} \samplefile{sapolsky}\par
+    }
+\stopcolor
+
+\startpostponing % [+3]
+    \getbuffer[makeup]
+\stoppostponing
+
+\startcolor[blue]
+    \dorecurse{25}{
+        \dontleavehmode{\bf 2:#1:} \samplefile{sapolsky}\par
+    }
+\stopcolor
+
+\stoptext

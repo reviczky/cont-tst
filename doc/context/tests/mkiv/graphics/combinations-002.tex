@@ -1,0 +1,26 @@
+\starttext
+
+    % stripping trailing spaces
+
+    \startcombination[2*1]
+        {\framed{Content 1}}{Caption 1}
+        {\framed{Content 2}}{Caption 2}
+    \stopcombination
+
+    \startcombination[2*1]
+        \startcontent
+            \framed{Content 1}
+        \stopcontent
+        \startcaption
+            Caption 1
+        \stopcaption
+        \startcontent
+            \framed{Content 2}
+        \stopcontent
+        \startcaption
+            Caption 2
+        \stopcaption
+    \stopcombination
+
+\stoptext
+

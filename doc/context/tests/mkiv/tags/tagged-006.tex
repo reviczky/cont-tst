@@ -1,0 +1,43 @@
+\setuptagging[state=start]
+
+\enabletrackers[structure.tags,backends.tags]
+
+\starttext
+
+\starttitle[title=Contents]
+    \placelist[chapter,section][criterium=all]
+\stoptitle
+
+\startchapter[title=One]
+
+    \startsection[title=alpha]
+        \startparagraph
+            test \quotation{test test} test
+            test \quotation{test test} test
+        \stopparagraph
+    \stopsection
+    \startsection[title=beta]
+        \startparagraph
+            test \quote {test test} test
+        \stopparagraph
+    \stopsection
+    \startsection[title=gamma]
+        \startparagraph
+            test \startquotation test test \stopquotation\ test
+        \stopparagraph
+    \stopsection
+    \startsection[title=delta]
+        \startparagraph
+            test |<|test test|>| test test test
+        \stopparagraph
+        \startparagraph
+            test \subsentence{test test} test test test
+        \stopparagraph
+        \startparagraph
+            test \startsubsentence test test\stopsubsentence\ test test test
+        \stopparagraph
+    \stopsection
+
+\stopchapter
+
+\stoptext

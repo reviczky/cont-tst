@@ -1,0 +1,26 @@
+\startbuffer[test]
+<something>
+    <question>
+        <tag name="whatever"><![CDATA[begin]]></tag>
+        <content>something</content>
+    </question>
+</something>
+\stopbuffer
+
+\startxmlsetups xml:mysetups
+    \xmlsetsetup{#1}{something}{xml:*}
+\stopxmlsetups
+
+\xmlregistersetup{xml:mysetups}
+
+\startxmlsetups xml:something
+    \xmlfilter{#1}{question/tag[@name=='whatever' and find(xml.tostring(text()),'begin')]/../command(xml:question:begin)}
+\stopxmlsetups
+
+\startxmlsetups xml:question:begin
+    !!!!!!!!!!!!!!!!
+\stopxmlsetups
+
+\starttext
+    test \xmlprocessbuffer{main}{test}{}
+\stoptext

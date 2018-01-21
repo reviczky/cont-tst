@@ -1,0 +1,17 @@
+\starttext
+
+\startfrontmatter
+
+    \doifelsemode{*frontpart}{yes}{no}
+    \doifelsemode{*backpart} {yes}{no}
+
+\stopfrontmatter
+
+\startbackmatter
+
+    \doifelsemode{*frontpart}{yes}{no}
+    \doifelsemode{*backpart} {yes}{no}
+
+\stopbackmatter
+
+\stoptext

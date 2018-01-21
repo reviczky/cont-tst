@@ -1,0 +1,24 @@
+% Permitting overload of callbacks is not advised and also not supported
+% officially. Don't expect support. It's only there for experiments.
+
+\enabledirectives[system.callbacks.permitoverloads]
+
+\starttext
+
+\startluacode
+
+    callbacks.push("find_image_file",function(whaveter)
+        return "whatever"
+    end)
+
+    -- If you comment the next line, image inclusion will still work as there is
+    -- checking in the figure handlers but when you ask for an existing image it
+    -- will crash luatex
+
+    callbacks.pop("find_image_file")
+\stopluacode
+
+% \externalfigure[t:/sources/cow.pdf]
+\externalfigure[whatever-dummy.pdf]
+
+\stoptext

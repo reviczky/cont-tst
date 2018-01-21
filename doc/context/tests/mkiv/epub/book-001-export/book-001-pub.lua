@@ -1,0 +1,27 @@
+return {
+ ["htmlfiles"]={ "book-001-div.html" },
+ ["htmlroot"]="book-001-div.html",
+ ["identifier"]="71e06b53-4594-b3e4-2fe8-105d6d7486ce",
+ ["imagefile"]="styles/book-001-images.css",
+ ["imagepath"]="images",
+ ["images"]={
+  ["image>1"]={
+   ["element"]="image",
+   ["height"]="7.056cm",
+   ["id"]="image-1",
+   ["name"]="cow.pdf",
+   ["namespace"]="",
+   ["page"]=1,
+   ["url"]="../images/cow.svg",
+   ["used"]="cow.pdf",
+   ["width"]="9.701cm",
+  },
+ },
+ ["language"]="en",
+ ["metadata"]={},
+ ["name"]="book-001",
+ ["stylepath"]="styles",
+ ["styles"]={ "book-001-defaults.css", "book-001-images.css", "book-001-styles.css" },
+ ["xhtmlfiles"]={ "book-001-tag.xhtml" },
+ ["xmlfiles"]={ "book-001-raw.xml" },
+}

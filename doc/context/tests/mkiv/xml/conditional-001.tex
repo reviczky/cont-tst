@@ -1,0 +1,51 @@
+% for thomas
+
+\starttext
+
+\startbuffer[test]
+<document>
+  <chapter title="OneC">
+    <section title="OneS">
+      <subsection title="OneSS">
+    Text
+      </subsection>
+    </section>
+  </chapter>
+  <chapter title="TwoC">
+    <subsection title="OneSS">
+      Text
+    </subsection>
+  </chapter>
+</document>
+\stopbuffer
+
+\startxmlsetups xml:test:setups
+    \xmlsetsetup{\xmldocument}{*}{xml:*}
+\stopxmlsetups
+
+\xmlregistersetup{xml:test:setups}
+
+\startxmlsetups xml:document
+    \xmlflush{#1}
+\stopxmlsetups
+\startxmlsetups xml:chapter
+    \blank[2*big] CHAPTER: \xmlattribute{#1}{.}{title}\blank
+    \xmlflush{#1}
+\stopxmlsetups
+\startxmlsetups xml:section
+    \blank SECTION: \xmlattribute{#1}{.}{title} \blank\relax
+    (previous:\xmlattribute{#1}{..[tag()='chapter']}{title})
+    \blank
+    \xmlflush{#1}
+\stopxmlsetups
+\startxmlsetups xml:subsection
+    \blank SUBSECTION: \xmlattribute{#1}{.}{title} \blank\relax
+    \blank
+    (previous:\xmlattribute{#1}{..[tag()='section' or tag()='chapter']}{title})
+    \blank
+    \xmlflush{#1}
+\stopxmlsetups
+
+\xmlprocessbuffer{main}{test}{}
+
+\stoptext

@@ -1,0 +1,34 @@
+\useMPlibrary[dum]
+
+\setuppagenumbering
+  [alternative=doublesided]
+
+% \setupreferencing
+%   [doublesided=no]
+
+% \somewhere{backward}{foreward}[label]
+% \someplace{preceding}{backward}{current}{foreward}{following}[label]
+% \atpage[#label]
+% \doifcheckedpagestate{label}{preceding}{backward}{current}{foreward}{following}{otherwise}
+
+\starttext
+
+\dorecurse {20} {
+    \placefigure
+      [here]
+      [fig:#1]
+      {}
+      {\externalfigure[dummy]}
+    \dorecurse {20} {
+        ##1: \atpage[fig:##1] /
+        \doifcheckedpagestate{fig:##1}
+         {preceding}
+         {backward}
+         {current}
+         {foreward}
+         {following}
+         {otherwise}
+    }
+}
+
+\stoptext

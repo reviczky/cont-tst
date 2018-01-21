@@ -1,0 +1,25 @@
+\starttext
+
+\hsize12cm
+
+\definedfont[Serif*default,quality] \showfontkerns
+
+\startcombination[1*3]
+    {\startoverlay
+        {\vbox\bgroup      \setupalign    [nohz]\input tufte\relax\egroup}
+        {\vbox\bgroup\green\setupalign  [fullhz]\input tufte\relax\egroup}
+     \stopoverlay}
+    {fullhz over nohz / glyphs and kerns}
+    {\startoverlay
+        {\vbox\bgroup      \setupalign  [nohz]\input tufte\relax\egroup}
+        {\vbox\bgroup\red  \setupalign    [hz]\input tufte\relax\egroup}
+    \stopoverlay}
+    {hz over nohz / glyphs only}
+    {\startoverlay
+        {\vbox\bgroup\green\setupalign[fullhz]\input tufte\relax\egroup}
+        {\vbox\bgroup\red  \setupalign    [hz]\input tufte\relax\egroup}
+     \stopoverlay}
+    {fullhz over hz}
+\stopcombination
+
+\stoptext

@@ -1,0 +1,20 @@
+\definepagechecker
+  [whatever]
+  [lines=35,
+   voffset=10pt,
+   before={\vfill\wordright{(see next page)}\par},
+   after=\noindentation]
+
+\setupindenting[yes,9pt,first]
+
+\starttext
+    \noindentation
+    \input knuth\par
+    \input knuth\par
+    \noindentation
+    \input knuth\par
+    \checkpage[whatever]
+    \input knuth\par
+    \input knuth\par
+\stoptext
+

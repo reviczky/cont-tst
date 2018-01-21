@@ -1,0 +1,55 @@
+% The example text is based on example posted on the mailing list.
+
+\definepapersize
+  [mine]
+  [width=8cm,
+   height=6cm]
+
+\setuplayout
+  [location=middle,
+   width=middle,
+   height=middle,
+   headerdistance=5mm]
+
+\setuppapersize
+  [mine]
+  [oversized]
+
+\definelinenote
+  [MyNote]
+
+\setupnote
+  [MyNote]
+  [paragraph=yes]
+
+\setupnotation
+  [MyNote]
+  [alternative=serried,
+   distance=.5em,
+   width=broad]
+
+\setupalign
+  [verytolerant]
+
+\showframe
+
+\startbuffer
+    \setupfootertexts[\ttxx compress=\namednoteparameter{MyNote}{compress}\quad compressmethod=\namednoteparameter{MyNote}{compressmethod}]
+    \startlinenumbering
+        This\MyNote{That} context\MyNote{document} is\MyNote{was} a
+        sample\MyNote{an example} that I\MyNote{she} want\MyNote{didn’t
+        want} to show\MyNote{publish}
+    \stoplinenumbering
+    \page
+\stopbuffer
+
+\starttext
+    \setupnote[MyNote][compress=yes,compressmethod=stopper]   \getbuffer
+    \setupnote[MyNote][compress=yes,compressmethod=separator] \getbuffer
+    \setupnote[MyNote][compress=yes,compressmethod=space]     \getbuffer
+    \setupnote[MyNote][compress=yes,compressmethod=]          \getbuffer
+    \setupnote[MyNote][compress=no,compressmethod=stopper]    \getbuffer
+    \setupnote[MyNote][compress=no,compressmethod=separator]  \getbuffer
+    \setupnote[MyNote][compress=no,compressmethod=space]      \getbuffer
+    \setupnote[MyNote][compress=no,compressmethod=]           \getbuffer
+\stoptext

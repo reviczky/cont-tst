@@ -1,0 +1,31 @@
+\showframe
+
+\setupbodyfont[12pt]
+\setuplayout[height=middle,topspace=1cm,header=0pt]
+\setuppagenumbering[alternative=doublesided]
+\setupinitial[font=Bold sa 4,n=3]
+
+\starttext
+
+\section{Knuth} \setupinitial[location=text]   \placeinitial \input knuth \par \placeinitial \input knuth \par
+\section{Knuth} \setupinitial[location=margin] \placeinitial \input knuth \par \placeinitial \input knuth \par
+
+\page
+
+\section{Knuth} \setupinitial[location=text]   \placeinitial \input knuth \par \placeinitial \input knuth \par
+\section{Knuth} \setupinitial[location=margin] \placeinitial \input knuth \par \placeinitial \input knuth \par
+
+\page
+
+\setupindenting[yes,1em]
+
+\section{Knuth} \setupinitial[location=text]   \placeinitial \input knuth \par \placeinitial \input knuth \par
+\section{Knuth} \setupinitial[location=margin] \placeinitial \input knuth \par \placeinitial \input knuth \par
+
+\page
+
+\section{Knuth} \setupinitial[location=text]   \placeinitial \input knuth \par \placeinitial \input knuth \par
+\section{Knuth} \setupinitial[location=margin] \placeinitial \input knuth \par \placeinitial \input knuth \par
+
+\stoptext
+

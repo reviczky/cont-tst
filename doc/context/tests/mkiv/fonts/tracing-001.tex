@@ -1,0 +1,69 @@
+\usemodule[art-01]
+
+\blockligatures[u:fl:a]
+
+\definefontfeature[default:b][default][blockligatures=yes]
+
+\setupbodyfont[times,10pt]
+
+\setuplayout[tight]
+
+\starttext
+
+\startotfcompositionlist{Serif*default:b @ 11pt}{l2r}%
+    \HL
+    \showotfcompositionsample{auflage}
+    \showotfcompositionsample{a\discretionary{-}{}{}uflage}
+    \showotfcompositionsample{au\discretionary{-}{}{}flage}
+    \showotfcompositionsample{auf\discretionary{-}{}{}lage}
+    \showotfcompositionsample{aufl\discretionary{-}{}{}age}
+    \showotfcompositionsample{aufla\discretionary{-}{}{}ge}
+    \showotfcompositionsample{auflag\discretionary{-}{}{}e}
+    \HL
+    \showotfcompositionsample{auflegt}
+    \showotfcompositionsample{a\discretionary{-}{}{}uflegt}
+    \showotfcompositionsample{au\discretionary{-}{}{}flegt}
+    \showotfcompositionsample{auf\discretionary{-}{}{}legt}
+    \showotfcompositionsample{aufl\discretionary{-}{}{}egt}
+    \showotfcompositionsample{aufle\discretionary{-}{}{}gt}
+    \showotfcompositionsample{aufleg\discretionary{-}{}{}t}
+    \HL
+\stopotfcompositionlist
+
+\startotfcompositionlist{Serif*default @ 11pt}{l2r}%
+    \HL
+    \showotfcompositionsample{effe}
+    \showotfcompositionsample{efficient}
+    \HL
+\stopotfcompositionlist
+
+% \page
+
+% \showotfcomposition{Serif*default:b @ 12pt}{1}{%
+%     fl
+%     auflage
+%     a\discretionary{-}{}{}uflage
+%     au\discretionary{-}{}{}flage
+%     auf\discretionary{-}{}{}lage
+%     aufl\discretionary{-}{}{}age
+%     aufla\discretionary{-}{}{}ge
+%     auflag\discretionary{-}{}{}e
+%     u\discretionary{-}{}{}fla
+%     fl%
+% }
+
+% \page
+
+% \showotfcomposition{Serif*default:b @ 12pt}{1}{%
+%     fl
+%     auflegt
+%     a\discretionary{-}{}{}uflegt
+%     au\discretionary{-}{}{}flegt
+%     auf\discretionary{-}{}{}legt
+%     aufl\discretionary{-}{}{}egt
+%     aufle\discretionary{-}{}{}gt
+%     aufleg\discretionary{-}{}{}t
+%     fl%
+% }
+
+\stoptext

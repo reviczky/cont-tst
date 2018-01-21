@@ -1,0 +1,18 @@
+<?xml version='1.0'?>
+
+<document>
+    <section>
+        Dummy Text
+    </section>
+    <section>
+        <topic>First</topic>
+        More dummy Text
+    </section>
+    <section>
+        Even more dummy Text
+    </section>
+    <section>
+        <topic>Second</topic>
+        And yet more dummy Text
+    </section>
+</document>

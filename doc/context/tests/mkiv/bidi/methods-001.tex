@@ -1,0 +1,71 @@
+\starttext
+
+\definefont[hebrewfont][arial*hebrew at 12pt]
+
+\startbuffer[fences]
+\hebrewfont
+ש)ל(א    none\par
+ש(ל]א    none\par
+ש(ל)א    2-4\par
+ש(ל[א)כ] 2-6\par
+ש(ל]א)כ  2-6\par
+ש(ל)א)כ  2-4\par
+ש(ל(א)כ  4-6\par
+ש(ל(א)כ) 2-8, 4-6\par
+ש(ל[א]כ) 2-8, 4-6\par
+\stopbuffer
+
+\startbuffer[junk]
+\hebrewfont
+\dorecurse{10} {
+%dorecurse{100} {
+    \dorecurse{20}{
+        שלום (אני) כותבשלום (אני) $ $ כותבשלום (אני) $x$ כותבשלום (אני) \ruledhbox {hans כותבשלום}
+        (אני) כותבשלום (אני) כותבשלום (אני) כותבשלום (אני) כותבשלום (אני) כותבשלום (אני) כותבשלום (אני) כותב
+    }
+    \par
+}
+\stopbuffer
+
+\setupalign[r2l,verytolerant]
+
+\start
+    \setupdirections[bidi=global,method=default]
+    \getbuffer[fences] \blank
+\stop
+
+\start
+    \setupdirections[bidi=global,method=one]
+    \enabletrackers[typesetters.directions.one]
+    \enabletrackers[typesetters.directions.one.details]
+    \getbuffer[fences] \blank
+    \disabletrackers[typesetters.directions.one]
+    \disabletrackers[typesetters.directions.one.details]
+\stop
+
+\start
+    \setupdirections[bidi=global,method=two,fences=yes]
+    \enabletrackers[typesetters.directions.two]
+    \enabletrackers[typesetters.directions.two.details]
+    \getbuffer[fences] \blank
+    \disabletrackers[typesetters.directions.two]
+    \disabletrackers[typesetters.directions.two.details]
+\stop
+
+\start
+    \setupdirections[bidi=global,method=two,fences=no]
+    \enabletrackers[typesetters.directions.two]
+    \enabletrackers[typesetters.directions.two.details]
+    \getbuffer[fences] \blank
+    \disabletrackers[typesetters.directions.two]
+    \disabletrackers[typesetters.directions.two.details]
+\stop
+
+\page
+
+\start
+    \setupdirections[bidi=global,method=two]
+    \getbuffer[junk] \blank
+\stop
+
+\stoptext

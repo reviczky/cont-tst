@@ -1,0 +1,64 @@
+\setupbodyfont[pagella]
+
+\definefontfeature[oldstylenumbers][onum=yes]
+\definefontfeature[inlinenumbers]  [lnum=yes,tnum=no]
+\definefontfeature[tabularnumbers] [tnum=yes,lnum=no]
+
+% \definefontfamily[mainface][sans][Constantia]
+% \setupbodyfont[mainface]
+
+% \disabledirectives[typesetters.characteralign.autofont]
+
+\starttext
+
+\setupTABLE
+  [alignmentcharacter=.,
+   aligncharacter=yes]
+
+\startbuffer
+    \bTABLE
+        \bTR \bTD  11.111 \eTD \eTR
+        \bTR \bTD   2.2   \eTD \eTR
+        \bTR \bTD 444.444 \eTD \eTR
+    \eTABLE
+    \par
+    1234567890\par
+    0000000000\par
+    1111111111\par
+    4444444444
+    \blank
+\stopbuffer
+
+\start
+    inlinenumbers:\crlf
+    \addfeature[inlinenumbers]
+    \getbuffer
+\stop
+
+\start
+    tabularnumbers:\crlf
+    \addfeature[tabularnumbers]
+    \getbuffer
+\stop
+
+\start
+    oldstylenumbers:\crlf
+    \addfeature[oldstylenumbers]
+    \getbuffer
+\stop
+
+\start
+    oldstylenumbers + inlinenumbers:\crlf
+    \addfeature[oldstylenumbers]
+    \addfeature[inlinenumbers]
+    \getbuffer
+\stop
+
+\start
+    oldstylenumbers + tabularnumbers:\crlf
+    \addfeature[oldstylenumbers]
+    \addfeature[tabularnumbers]
+    \getbuffer
+\stop
+
+\stoptext

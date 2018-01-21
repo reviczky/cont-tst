@@ -1,0 +1,32 @@
+\starttext
+
+\setuplayout
+  [page]
+
+\setupbackgrounds
+  [page]
+  [background={foreground,whatever}]
+
+\definelayer
+  [whatever]
+  [height=\paperheight,
+   width=\paperwidth]
+
+\setuptexttexts
+  [{\setlayerframed
+      [whatever]
+      [preset=middletop,
+       voffset=1cm]
+      [foregrondcolor=red,
+       foregroundstyle=\bfd]
+      {\pagenumber}}]
+
+\setupexternalfigures
+  [location=default]
+
+\externalfigure
+  [mill.png]
+  [height=\paperheight,
+   width=\paperwidth]
+
+\stoptext

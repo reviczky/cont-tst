@@ -1,0 +1,20 @@
+\startbuffer[test]
+<something>
+    test &#035; &#036; &#037;
+    test &#65; &#x65; &65; test &tex; test &amp; and # &lt; &gt; &amp; $ 1^2
+</something>
+\stopbuffer
+
+\startxmlsetups xml:mysetups
+    \xmlsetsetup{\xmldocument}{something}{xml:*}
+\stopxmlsetups
+
+\xmlregistersetup{xml:mysetups}
+
+\startxmlsetups xml:something
+    \xmlflush{#1}
+\stopxmlsetups
+
+\starttext
+    \xmlprocessbuffer{main}{test}{}
+\stoptext

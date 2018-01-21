@@ -1,0 +1,22 @@
+\setuppapersize
+  [A6]
+
+\setuplist
+  [part]
+  [after={\blank[samepage,big]}]
+
+\setuplist
+  [chapter]
+  [before=\blank] % is 'preference,big' by default
+
+\starttext
+
+\completecontent
+
+\dorecurse {4} {
+    \part{Part}
+    \chapter{Chapter}
+    \chapter{Chapter}
+}
+
+\stoptext

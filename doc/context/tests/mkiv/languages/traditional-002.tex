@@ -1,0 +1,20 @@
+\starttext
+
+\definehyphenationfeatures
+  [less]
+% [hyphenmin=8]
+  [hyphenmin=3]
+
+\sethyphenationfeatures
+  [default,less]
+
+\setuphyphenation
+  [method=traditional]
+
+\dorecurse{100}{\input tufte \par \input ward \par }
+
+% \edef\Tufte{\cldloadfile{tufte}}
+% \edef\Ward {\cldloadfile{ward}}
+% \dorecurse{100}{\Tufte \par \Ward \par }
+
+\stoptext

@@ -1,0 +1,65 @@
+% based on a post by Aditya
+
+\startMPdefinitions
+    % I don't know why this does not get loaded automatically. Answer: seldom needed.
+    input mp-abck.mpiv;
+\stopMPdefinitions
+
+\defineoverlay[highlight] [\positionoverlay{highlightoverlay}]
+
+\startMPpositiongraphic{highlightgraphic}
+    save n; path n[];
+
+    initialize_box(\MPpos{\MPvar{from}}); n[1] := pxy;
+    initialize_box(\MPpos{\MPvar{to}});   n[2] := pxy;
+
+    draw n[1];
+    draw n[2];
+
+    if ypart center n[1] > ypart center n[2] :
+        drawarrow (center n[1]){dir 225} ... {dir -225}(center n[2])
+            cutbefore n[1]
+            cutafter  n[2] ;
+    else :
+        drawarrow (center n[1]){dir 45} ... {dir -45}(center n[2])
+            cutbefore n[1]
+            cutafter  n[2] ;
+    fi ;
+
+    anchor_box(\MPanchor{\MPvar{from}});
+\stopMPpositiongraphic
+
+% ok, this is not that beautiful but it does the job:
+
+\newcounter\connectedwordcounter
+
+\starttexdefinition unexpanded fromword [#1]#2
+    \expandafter\pushmacro\csname cwc>#1\endcsname % nesting hack
+    \doglobal\increment\connectedwordcounter
+    \setxvalue{cwc>#1}{\connectedwordcounter}%
+    \startpositionoverlay{highlightoverlay}
+        \setMPpositiongraphic
+          {\getvalue{cwc>#1}>f}
+          {highlightgraphic}
+          {from=\getvalue{cwc>#1}>f,to=\getvalue{cwc>#1}>t}
+    \stoppositionoverlay
+    \hpos{\getvalue{cwc>#1}>f}{#2}%
+\stoptexdefinition
+
+\starttexdefinition unexpanded toword [#1]#2
+    \hpos{\getvalue{cwc>#1}>t}{#2}
+    \expandafter\popmacro\csname cwc>#1\endcsname % nesting hack
+\stoptexdefinition
+
+% so maybe i'll turn it into a module
+
+\setuppapersize[A6]
+
+\setupbackgrounds[page][background=highlight]
+
+\starttext
+    \fromword[foo]{this} belongs to \toword[foo]{that}
+    \fromword[bar]{this} belongs to \toword[bar]{that}
+    \fromword[foo]{this} belongs to \toword[foo]{that}
+    \fromword[bar]{this} belongs \fromword[bar]{this} belongs to \toword[bar]{that} to \toword[bar]{that}
+\stoptext

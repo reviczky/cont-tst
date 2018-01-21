@@ -1,0 +1,125 @@
+\enabletrackers[xml.lpath]
+
+\setuplayout[header=0pt,height=middle,topspace=1cm]
+
+\startbuffer[test]
+<?xml version='1.0'?>
+<something>
+  <whatever>
+    <whocares>
+      test 1
+    </whocares>
+    <whocaresnot>
+      test 2
+    </whocaresnot>
+  </whatever>
+  <whatever>
+     test 3
+  </whatever>
+  <whatever test="xxx">
+    <whocares>
+      test 4
+    </whocares>
+    <whocares>
+      test 5
+    </whocares>
+  </whatever>
+  <whatever test="xxx">
+    <whoknows>
+        <whocares>
+          test 6
+        </whocares>
+    </whoknows>
+    <whoknows>
+        <whocaresnot>
+          test 7
+        </whocaresnot>
+    </whoknows>
+    <whoknows>
+        <whocares>
+          test 8
+        </whocares>
+    </whoknows>
+  </whatever>
+</something>
+\stopbuffer
+
+\startxmlsetups xml:mysetups
+    \xmlsetsetup{main}{something|whatever|whocares|whocaresnot}{xml:*}
+\stopxmlsetups
+
+\xmlregistersetup{xml:mysetups}
+
+\startxmlsetups xml:something
+%     something a: 1, 2, 4, 5 : whatever
+%     \startnarrower
+%     \xmlall{#1}{whatever}
+%     \stopnarrower
+    something a: 1, 2, 4, 5 : whatever[whocares]
+    \startnarrower
+    \xmlall{#1}{/whatever[whocares]}
+    \stopnarrower
+%     something b: 4, 5 : whatever[whocares and not whocaresnot]
+%     \startnarrower
+%     \xmlall{#1}{whatever[whocares and not whocaresnot]}
+%     \stopnarrower
+%     something c: 6,8 : /whatever[whoknows][whocares]
+%     \startnarrower
+%     \xmlall{#1}{/whatever[whoknows][whocares]}
+%     \stopnarrower
+%     something d: 1, 2 : /whatever[whocares and whocaresnot]
+%     \startnarrower
+%     \xmlall{#1}{/whatever[whocares and whocaresnot]}
+%     \stopnarrower
+%     something e: 1, 2 : /whatever[whocares and whocaresnot]
+%     \startnarrower
+%     \xmlall{#1}{/whatever[whocares and whocaresnot]}
+%     \stopnarrower
+%     something f: 4, 5 : whatever[count(whocares) > 1]
+%     \startnarrower
+%     \xmlall{#1}{whatever[count(whocares) > 1]}
+%     \stopnarrower
+    something g: 4, 5, 6, 7, 8 : whatever[@test]
+    \startnarrower
+    \xmlall{#1}{whatever[@test]}
+    \stopnarrower
+%     something g: 8 : whatever[@test]
+%     \startnarrower
+%     \xmlall{#1}{whatever[@test][position()=1]}
+%     \stopnarrower
+%     something h: 3 : whatever[2]
+%     \startnarrower
+%     \xmlall{#1}{whatever[2]}
+%     \stopnarrower
+\stopxmlsetups
+
+\startxmlsetups xml:whatever
+    \startnarrower
+    whatever:
+    \startnarrower
+    \xmlflush{#1}
+    \stopnarrower
+    \stopnarrower
+\stopxmlsetups
+
+\startxmlsetups xml:whocares
+    \startnarrower
+    whocares:
+    \startnarrower
+    \xmlflush{#1}
+    \stopnarrower
+    \stopnarrower
+\stopxmlsetups
+
+\startxmlsetups xml:whocaresnot
+    \startnarrower
+    whocaresnot:
+    \startnarrower
+    \xmlflush{#1}
+    \stopnarrower
+    \stopnarrower
+\stopxmlsetups
+
+\starttext
+    \xmlprocessbuffer{main}{test}{}
+\stoptext

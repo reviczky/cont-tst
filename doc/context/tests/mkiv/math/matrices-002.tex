@@ -1,0 +1,25 @@
+\definemathmatrix[TheMatrixA][left={\left\lvert\,},right={\,\right\rvert}]
+\definemathmatrix[TheMatrixB][left={\left\lvert\,},right={\,\right\rvert},strut=1.25]
+\definemathmatrix[TheMatrixC][left={\left\lvert\,},right={\,\right\rvert},strut=1.50]
+
+\starttext
+
+    $\startTheMatrixA[n=3]
+        \NC yz \NC \frac{1}{x} \NC x \NR
+        \NC zx \NC \frac{1}{y} \NC y \NR
+        \NC xy \NC \frac{1}{z} \NC z \NR
+    \stopTheMatrixA$
+
+    $\startTheMatrixB[n=3]
+        \NC yz \NC \frac{1}{x} \NC x \NR
+        \NC zx \NC \frac{1}{y} \NC y \NR
+        \NC xy \NC \frac{1}{z} \NC z \NR
+    \stopTheMatrixB$
+
+    $\startTheMatrixC[n=3]
+        \NC yz \NC \frac{1}{x} \NC x \NR
+        \NC zx \NC \frac{1}{y} \NC y \NR
+        \NC xy \NC \frac{1}{z} \NC z \NR
+    \stopTheMatrixC$
+
+\stoptext

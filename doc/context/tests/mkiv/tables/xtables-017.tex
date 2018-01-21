@@ -1,0 +1,20 @@
+\starttext
+
+\startluacode
+context.startxtable()
+    for i=1,30 do
+        context.startxrow()
+            for i=1,6 do
+                context.startxcell()
+                    context.formatted.bold("test: %s",i)
+                context.stopxcell()
+                context.startxcell()
+                    context.formatted.italic("test: %s",i)
+                context.stopxcell()
+            end
+        context.stopxrow()
+    end
+context.stopxtable()
+\stopluacode
+
+\stoptext

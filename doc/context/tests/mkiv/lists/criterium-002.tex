@@ -1,0 +1,21 @@
+\setupbodyfont
+  [dejavu]
+
+\starttext
+
+    \startfrontmatter
+
+        \blank \type{criterium=all}             \blank \placelist[chapter][criterium=all]
+        \blank \type{criterium=frontmatter:all} \blank \placelist[chapter][criterium=frontpart:all]
+        \blank \type{criterium=bodymatter:all}  \blank \placelist[chapter][criterium=bodypart:all]
+
+        \chapter{Intro}
+    \stopfrontmatter
+
+    \startbodymatter
+        \chapter{One}
+        \chapter{Two}
+    \stopbodymatter
+
+\stoptext
+

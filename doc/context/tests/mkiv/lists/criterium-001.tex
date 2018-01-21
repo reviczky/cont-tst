@@ -1,0 +1,21 @@
+\setupbodyfont[dejavu]
+
+\starttext
+
+\blank FRONTPART \blank
+
+\placelist[chapter][criterium=frontpart:all]
+
+\blank BODYPART \blank
+
+\placelist[chapter][criterium=bodypart:all]
+
+\startfrontmatter
+    \chapter{Chapter In Frontpart}
+\stopfrontmatter
+
+\startbodymatter
+    \chapter{Chapter In Bodypart}
+\stopbodymatter
+
+\stoptext

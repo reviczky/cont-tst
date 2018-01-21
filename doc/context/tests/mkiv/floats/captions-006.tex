@@ -1,0 +1,20 @@
+\useMPlibrary[dum]
+
+\setuppapersize[A4][A3]
+
+\setuplayout[location=middle]
+
+\showframe
+
+\starttext
+
+    \setupcaption [figure][]
+    \placefloat[][]{default}{\externalfigure[dummy][]}
+
+    \setupcaption [figure][location={rightmargin,low}]
+    \placefloat[][]{right}{\externalfigure[dummy][]}
+
+    \setupcaption [figure][location=rightmargin]
+    \placefloat[][]{right}{\externalfigure[dummy][]}
+
+\stoptext

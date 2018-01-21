@@ -1,0 +1,32 @@
+\starttext
+
+\startluacode
+
+local mycsvsplitter = utilities.parsers.csvsplitter {
+    separator = ",",
+    quote     = '"',
+}
+
+local crap = [[
+"1","2","3","4"
+"a","b","c","d"
+]]
+
+local mycrap = mycsvsplitter(crap)
+
+context.bTABLE()
+    for i=1,#mycrap do
+        context.bTR()
+        local c = mycrap[i]
+        for i=1,#c do
+            context.bTD()
+            context(c[i])
+            context.eTD()
+        end
+        context.eTR()
+    end
+context.eTABLE()
+
+\stopluacode
+
+\stoptext

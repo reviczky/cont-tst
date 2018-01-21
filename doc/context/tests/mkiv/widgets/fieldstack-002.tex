@@ -1,0 +1,49 @@
+\setupinteraction[state=start]
+
+\starttext
+
+\definesymbol[frame-1][\ttd 1]
+\definesymbol[frame-2][\ttd 2]
+\definesymbol[frame-3][\ttd 3]
+\definesymbol[frame-4][\ttd 4]
+\definesymbol[frame-5][\ttd 5]
+\definesymbol[frame-6][\ttd 6]
+\definesymbol[frame-7][\ttd 7]
+
+\definefieldstack[frames-1][frame-1,frame-2,frame-3,frame-4,frame-5,frame-6,frame-7]
+\definefieldstack[frames-2][frame-1,frame-2,frame-3,frame-4,frame-5,frame-6,frame-7]
+\definefieldstack[frames-3][frame-1,frame-2,frame-3,frame-4,frame-5,frame-6,frame-7]
+\definefieldstack[frames-4][frame-1,frame-2,frame-3,frame-4,frame-5,frame-6,frame-7]
+\definefieldstack[frames-5][frame-1,frame-2,frame-3,frame-4,frame-5,frame-6,frame-7]
+
+repeat all:
+
+\placeontopofeachother
+  {\framed[frame=on,strut=no,offset=1ex]{\fieldstack[frames-1]}}
+  {\goto{Play}[JS(Start_Pause_Walk_Field{frames-1,2000})]}
+
+loop once:
+
+\placeontopofeachother
+  {\framed[frame=on,strut=no,offset=1ex]{\fieldstack[frames-2]}}
+  {\goto{Play}[JS(Start_Pause_Walk_Field{frames-2,2000,once})]}
+
+repeat 4..6:
+
+\placeontopofeachother
+  {\framed[frame=on,strut=no,offset=1ex]{\fieldstack[frames-3]}}
+  {\goto{Play}[JS(Start_Pause_Walk_Field{frames-3,2000,repeat,4,6})]}
+
+once 2..5:
+
+\placeontopofeachother
+  {\framed[frame=on,strut=no,offset=1ex]{\fieldstack[frames-4]}}
+  {\goto{Play}[JS(Start_Pause_Walk_Field{frames-4,2000,once,2,5})]}
+
+pause at 3 and 5:
+
+\placeontopofeachother
+  {\framed[frame=on,strut=no,offset=1ex]{\fieldstack[frames-5]}}
+  {\goto{Play}[JS(Start_Pause_Walk_Field{frames-5,2000,pause,3,5})]}
+
+\stoptext

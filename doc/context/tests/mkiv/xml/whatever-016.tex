@@ -1,0 +1,29 @@
+\startbuffer[example]
+<something>
+    <sometex>weird</sometex>
+</something>
+\stopbuffer
+
+\startbuffer[weird]
+    \color[red]{Looks red to me!}
+\stopbuffer
+
+\startxmlsetups xml:mysetups
+    \xmlsetsetup{#1}{*}{xml:*}
+\stopxmlsetups
+
+\xmlregistersetup{xml:mysetups}
+
+\startxmlsetups xml:something
+    \blank \relax [start something] \blank
+    \xmlflush{#1}
+    \blank \relax [stop something] \blank
+\stopxmlsetups
+
+\startxmlsetups xml:sometex
+    \processTEXbuffer[\xmlflush{#1}]
+\stopxmlsetups
+
+\starttext
+    \xmlprocessbuffer{main}{example}{}
+\stoptext

@@ -1,0 +1,32 @@
+\useMPlibrary[dum]
+
+\starttext
+
+    \placefigure
+      {Some very small figure with not too much text.}
+      {\externalfigure[dummy][width=5cm,height=2cm]}
+
+    \input tufte \page
+
+    One with a lot of text. In order to distinguish the caption from
+    the runing text:
+
+    \placefigure
+      {\input tufte\relax}
+      {\externalfigure[dummy][width=\textwidth,height=.2\textwidth]}
+
+    \input tufte \page
+
+    So this is nicer:
+
+    \setupcaptions
+      [maxwidth=.75\hsize]
+
+    \placefigure
+      {\input tufte\relax}
+      {\externalfigure[dummy][width=\textwidth,height=.2\textwidth]}
+
+    \input tufte \page
+
+\stoptext
+

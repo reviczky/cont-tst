@@ -1,0 +1,62 @@
+% \enabletrackers[math.italics]
+
+\starttext
+
+\startbuffer[integrals]
+
+    \dontleavehmode \ruledhbox{$\int$} \ruledhbox{$\iint$} \ruledhbox{$\iint$}
+
+    Watch this: $\int_{0}^{2\pi}\sin(x)dx = 0$ and $\int_{\Gamma}u(z)dz = 2{\rm i}\pi$.
+
+    \startformula
+        \int_{\Omega}f(x)dx= \int_{0}^\infty g(t)dt
+    \stopformula
+
+    More inline: if $\Omega:=(0,\infty)\times(0,\infty)$ then
+
+    \startformula
+        \iint_{\Omega}f(x)dx :=
+        \iint_{\Omega}f(x)dx :=
+        \int_{0}^\infty \int_{0}^\infty g(s,t)dsdt
+    \stopformula
+
+    And if $\Omega:=(0,\infty)\times(0,\infty)\times (0,\infty)$ then
+
+    \startformula
+        \int\int\int_{\Omega}f(x)dx =
+        \int\iint_{\Omega}f(x)dx =
+        \iiint_{\Omega}f(x)dx =
+        \int_{0}^\infty\int_{0}^\infty\int_{0}^\infty g(s,t,u)dsdtdu
+    \stopformula
+
+\stopbuffer
+
+\startbuffer
+
+    \type{\setupmathematics[integral=none]}
+    \setupmathematics[integral=none]
+    \getbuffer[integrals]
+
+    \type{\setupmathematics[integral=nolimits]}
+    \setupmathematics[integral=nolimits]
+    \getbuffer[integrals]
+
+    \type{\setupmathematics[integral=displaylimits]}
+    \setupmathematics[integral=displaylimits]
+    \getbuffer[integrals]
+
+    \type{\setupmathematics[integral=limits]}
+    \setupmathematics[integral=limits]
+    \getbuffer[integrals]
+
+    \type{\setupmathematics[integral=autolimits]}
+    \setupmathematics[integral=autolimits]
+    \getbuffer[integrals]
+
+\stopbuffer
+
+\title{LM Virtual}                         \getbuffer
+\title{XITS}       \setupbodyfont[xits]    \getbuffer
+\title{CAMBRIA}    \setupbodyfont[cambria] \getbuffer
+
+\stoptext

@@ -1,0 +1,74 @@
+\setupbodyfont[dejavu,10pt] \setuplayout[height=middle,topspace=1cm,header=1cm,footer=0pt]
+
+\starttext
+
+\startbuffer[sample]
+sitzen / ſitzen / effe fietsen / ch ck ſt tz ſi fi
+\stopbuffer
+
+\typebuffer[sample]
+
+\definefontfeature
+  [unifraktur-a]
+  [default]
+\definefontfeature
+  [unifraktur-b]
+  [default]
+  [goodies=unifraktur,keepligatures=yes]
+\definefontfeature
+  [unifraktur-c]
+  [default]
+  [ccmp=yes]
+\definefontfeature
+  [unifraktur-d]
+  [default]
+  [ccmp=yes,goodies=unifraktur,keepligatures=yes]
+\definefontfeature
+  [unifraktur-e]
+  [default]
+  [liga=no,rlig=no,clig=no,dlig=no,ccmp=yes,keepligatures=auto]
+
+\definefont[TestA][UnifrakturCook*unifraktur-a sa 0.85]
+\definefont[TestB][UnifrakturCook*unifraktur-b sa 0.85]
+\definefont[TestC][UnifrakturCook*unifraktur-c sa 0.85]
+\definefont[TestD][UnifrakturCook*unifraktur-d sa 0.85]
+\definefont[TestE][UnifrakturCook*unifraktur-e sa 0.85]
+
+\starttabulate[|T||]
+\NC liga                        \NC \TestA\getbuffer[sample] \NC \NR
+\NC liga + keepligatures        \NC \TestB\getbuffer[sample] \NC \NR
+\NC liga + ccmp                 \NC \TestC\getbuffer[sample] \NC \NR
+\NC liga + ccmp + keepligatures \NC \TestD\getbuffer[sample] \NC \NR
+\NC ccmp + keepligatures        \NC \TestE\getbuffer[sample] \NC \NR
+\stoptabulate
+
+\setupcharacterkerning[kerncharacters][factor=0.5]
+\setupcharacterkerning[letterspacing] [factor=0.5]
+
+\enabletrackers[typesetters.kerns.ligatures]
+
+\starttabulate[|T||]
+\NC \color[darkred]  {red}   \NC kept by dynamic feature \NC \NR
+\NC \color[darkgreen]{green} \NC kept by static feature  \NC \NR
+\NC \color[darkblue] {blue}  \NC keep by goodie          \NC \NR
+\stoptabulate
+
+\starttabulate[|T||]
+\NC liga                        \NC \kerncharacters {\TestA\getbuffer[sample]} \NC \NR
+\NC liga + keepligatures        \NC \kerncharacters {\TestB\getbuffer[sample]} \NC \NR
+\NC liga + ccmp                 \NC \kerncharacters {\TestC\getbuffer[sample]} \NC \NR
+\NC liga + ccmp + keepligatures \NC \kerncharacters {\TestD\getbuffer[sample]} \NC \NR
+\NC ccmp + keepligatures        \NC \kerncharacters {\TestE\getbuffer[sample]} \NC \NR
+\stoptabulate
+
+\starttabulate[|T||]
+\NC liga                        \NC \letterspacing {\TestA\getbuffer[sample]} \NC \NR
+\NC liga + keepligatures        \NC \letterspacing {\TestB\getbuffer[sample]} \NC \NR
+\NC liga + ccmp                 \NC \letterspacing {\TestC\getbuffer[sample]} \NC \NR
+\NC liga + ccmp + keepligatures \NC \letterspacing {\TestD\getbuffer[sample]} \NC \NR
+\NC ccmp + keepligatures        \NC \letterspacing {\TestE\getbuffer[sample]} \NC \NR
+\stoptabulate
+
+\page \switchtobodyfont[7pt] \typefile{\jobname}
+
+\stoptext

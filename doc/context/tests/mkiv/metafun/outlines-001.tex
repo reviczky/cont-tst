@@ -1,0 +1,52 @@
+% outlinetext   (text) transformations ;
+% outlinetext.d (text) (draw options) transformations ;
+% outlinetext.f (text) (fill options) transformations ;
+% outlinetext.b (text) (draw options) (fill options) transformations ;
+% outlinetext.r (text) (fill options) (draw options) transformations ;
+
+\starttext
+
+\startMPdefinitions
+    let graphictext = new_graphictext ;
+\stopMPdefinitions
+
+\startMPpage
+
+    draw outlinetext.b
+        ("\framed[align=normal]{\input{tufte}}")
+        (withcolor .5white)
+        (withcolor red withpen pencircle scaled 1/10)
+        xsized 10cm ;
+
+\stopMPpage
+
+\startMPpage
+
+    draw outlinetext.r
+        ("\framed[align=normal]{\input{tufte}}")
+        (withcolor red withpen pencircle scaled 1/10)
+        (withcolor .5white)
+        xsized 10cm ;
+
+\stopMPpage
+
+\startMPpage
+
+    draw outlinetext.d
+        ("\framed[align=normal]{\input{tufte}}")
+        (withcolor .5white)
+        xsized 10cm ;
+
+\stopMPpage
+
+\startMPpage
+
+    picture p ; p := outlinetext.p("PX") ;
+
+    for i within p :
+        draw i withcolor red withpen pencircle scaled 1/10 ;
+    endfor ;
+
+\stopMPpage
+
+\stoptext

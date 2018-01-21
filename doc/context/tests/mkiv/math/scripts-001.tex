@@ -1,0 +1,15 @@
+\setupbodyfont[cambria]
+
+\showglyphs \showboxes
+
+\starttext
+
+\startTEXpage[offset=2pt]
+    \setuptabulate[before=,after=]
+    \starttabulate[|||||]
+        \NC $T_{j}$    \NC $T^{j}$    \NC $T^j_{j}$    \NC $T^{ji}_{j}$      \NC \NR
+        \NC $T_j$      \NC $T^j$      \NC $T^j_j$      \NC $T^{ji}_j$        \NC \NR
+        \NC $T_{ji}$   \NC $T^{ji}$   \NC $T^j_{ji}$   \NC $T^{ji}_{ji}$     \NC \NR
+        \NC $T_{jiii}$ \NC $T^{jiii}$ \NC $T^j_{jiii}$ \NC $T^{jiii}_{jiii}$ \NC \NR
+    \stoptabulate
+\stopTEXpage

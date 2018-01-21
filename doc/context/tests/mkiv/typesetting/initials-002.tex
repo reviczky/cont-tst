@@ -1,0 +1,18 @@
+\setupbodyfont[dejavu,9pt]
+
+\starttext
+
+\startbuffer
+\setinitial[two]            D. E. Knuth   \ignorespaces\input knuth \par
+\setinitial[two]                  Knuth   \ignorespaces\input knuth \par
+\setinitial[two] \quotation{D. E. Knuth}  \ignorespaces\input knuth \par
+\setinitial[two] \quotation      {Knuth}  \ignorespaces\input knuth \par
+\setinitial[two]      [text={D.E. Knuth}] \ignorespaces\input knuth \par
+\setinitial[two]       [m=4] D. E. Knuth  \ignorespaces\input knuth \par
+\stopbuffer
+
+\type{m=2}                          \start \defineinitial[two][m=2,method=none]              \getbuffer \page \stop
+\type{m=1,method=auto}              \start \defineinitial[two][m=1,method=auto]              \getbuffer \page \stop
+\type{m=1,method={auto,first,last}} \start \defineinitial[two][m=1,method={first,auto,last}] \getbuffer \page \stop
+
+\stoptext

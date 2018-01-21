@@ -1,0 +1,37 @@
+\startluacode
+
+    function document.addfunnyhyphen(tfmdata)
+        local underscore = utf.byte("_")
+        local char       = tfmdata.characters[underscore]
+        tfmdata.characters[0xFE000]   = {
+            width    = 0,
+            height   = 0,
+            depth    = 0,
+            commands = {
+                { "right", -char.width },
+                { "down", char.depth or 0  },
+                { "slot", 1, underscore },
+            }
+        }
+        tfmdata.characters[0xFE001]   = {
+            width    = 0,
+            height   = 0,
+            depth    = 0,
+            commands = {
+                { "down", char.depth or 0 },
+                { "slot", 1, underscore },
+                { "right", char.width },
+            }
+        }
+    end
+
+
+    utilities.sequencers.appendaction("aftercopyingcharacters","after","document.addfunnyhyphen")
+
+\stopluacode
+
+\setuplanguage[en][righthyphenchar="FE000,lefthyphenchar="FE001]
+
+\starttext
+    \input tufte
+\stoptext

@@ -1,0 +1,29 @@
+\showframe
+
+\setupfloatcaption
+  [width=max]
+
+\startbuffer
+\startnarrower[4*right]
+    \startitemize
+        \startitem \input tufte \placefigure[effective,here]{}{\framed[width=11cm]{}} \stopitem
+    \stopitemize
+\stopnarrower
+\stopbuffer
+
+\starttext
+
+\getbuffer
+
+\setupfloats
+  [location=left,
+   leftmargin=\effectiveleftskip,
+   rightmargin=\effectiverightskip]
+
+\setupfloatcaption
+  [leftmargin=\effectiveleftskip,
+   rightmargin=\effectiverightskip]
+
+\getbuffer
+
+\stoptext

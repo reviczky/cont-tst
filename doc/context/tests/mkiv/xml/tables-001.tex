@@ -1,0 +1,89 @@
+\startbuffer[test]
+<a>
+  <nattable frame="on">
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
+      <td>8</td>
+    </tr>
+  </nattable>
+  <nattable frame="off">
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
+      <td>8</td>
+    </tr>
+  </nattable>
+  <nattable frame="no">
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
+      <td>8</td>
+    </tr>
+  </nattable>
+</a>
+\stopbuffer
+
+\startxmlsetups xml:testsetups
+    \xmlsetsetup{main}{a|nattable|tr|td|}{xml:*}
+\stopxmlsetups
+
+\xmlregistersetup{xml:testsetups}
+
+\startxmlsetups xml:a
+    \xmlflush{#1}
+\stopxmlsetups
+
+\xmlmapvalue {nattable:frame} {on}  {on}
+\xmlmapvalue {nattable:frame} {yes} {on}
+\xmlmapvalue {nattable:frame} {off} {off}
+\xmlmapvalue {nattable:frame} {no}  {off}
+
+\startxmlsetups xml:nattable
+    \placefigure
+        [here,none]
+        {}
+        {
+            \setupTABLE[frame=\xmlval{nattable:frame}{\xmlatt{#1}{frame}}{on}]
+            \bTABLE
+                \xmlflush{#1}
+            \eTABLE
+        }
+\stopxmlsetups
+
+\startxmlsetups xml:tr
+    \bTR
+        \xmlflush{#1}
+    \eTR
+\stopxmlsetups
+
+\startxmlsetups xml:td
+    \bTD
+        \xmlflush{#1}
+    \eTD
+\stopxmlsetups
+
+\starttext
+    \xmlprocessbuffer{main}{test}{}
+\stoptext

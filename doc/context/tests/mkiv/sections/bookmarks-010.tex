@@ -1,0 +1,39 @@
+% taken from the list ... enable sectionblocks to see the difference
+
+\setupinteraction
+  [state=start]
+
+% \setupbookmarks
+%   [sectionblock=yes]
+
+\placebookmarks
+  [part,chapter,section]
+
+\starttext
+
+\placecontent
+
+\startfrontmatter
+    \startchapter[title=Prologue]
+        \input knuth
+    \stopchapter
+\stopfrontmatter
+
+\startbodymatter
+    \startpart[title={Part A}]
+        \startchapter[title=One]
+            \input knuth
+        \stopchapter
+        \startchapter[title=Two]
+            \input knuth
+        \stopchapter
+    \stoppart
+\stopbodymatter
+
+\startbackmatter
+    \startchapter[title=Epilogue]
+        \input knuth
+    \stopchapter
+\stopbackmatter
+
+\stoptext

@@ -1,0 +1,105 @@
+\enabletrackers[lxml.selectors]
+
+\startbuffer[foo]
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?context-directive message info 1: this is a demo file ?>
+<?context-message-directive info 2: this is a demo file ?>
+
+<one>
+    <two>
+        <?context-select begin t1 t2 t3 ?>
+            <three>
+                t1 t2 t3
+                <?context-directive injector crlf t1 ?>
+                t1 t2 t3
+            </three>
+        <?context-select end ?>
+        <?context-select begin t4 ?>
+            <four>
+                t4
+            </four>
+        <?context-select end ?>
+        <?context-select begin t8 ?>
+            <four>
+                t8.0
+                t8.0
+            </four>
+        <?context-select end ?>
+        <?context-include begin t4 ?>
+            <!--
+                <three>
+                    t4.t3
+                    <?context-directive injector crlf t1 ?>
+                    t4.t3
+                </three>
+            -->
+            <three>
+                t3
+                <?context-directive injector crlf t1 ?>
+                t3
+            </three>
+        <?context-include end ?>
+        <?context-select begin t8 ?>
+            <four>
+                t8.1
+                t8.1
+            </four>
+        <?context-select end ?>
+        <?context-select begin t8 ?>
+            <four>
+                t8.2
+                t8.2
+            </four>
+        <?context-select end ?>
+        <?context-select begin t4 ?>
+            <four>
+                t4
+                t4
+            </four>
+        <?context-select end ?>
+        <?context-directive injector page t1 t2 ?>
+        foo
+        <?context-directive injector page t1 t2 ?>
+        bar
+    </two>
+</one>
+\stopbuffer
+
+\def\MyMessage#1#2#3{\writestatus{#1}{#2 #3}}
+
+\xmlinstalldirective{message}{MyMessage}
+
+\xmlsetinjectors[t1]
+\xmlsetinjectors[t4]
+
+\startxmlsetups xml:initialize
+    \xmlapplyselectors{#1}
+    \xmlsetsetup {#1} {
+        one|two|three|four
+    } {xml:*}
+\stopxmlsetups
+
+\xmlregistersetup{xml:initialize}
+
+\startxmlsetups xml:one
+    \xmlshow{#1}
+    \page\relax
+    [ONE \xmlflush{#1} ONE]
+\stopxmlsetups
+
+\startxmlsetups xml:two
+    [TWO \xmlflush{#1} TWO]
+\stopxmlsetups
+
+\startxmlsetups xml:three
+    [THREE \xmlflush{#1} THREE]
+\stopxmlsetups
+
+\startxmlsetups xml:four
+    [FOUR \xmlflush{#1} FOUR]
+\stopxmlsetups
+
+\starttext
+    \xmlprocessbuffer{main}{foo}{}
+\stoptext

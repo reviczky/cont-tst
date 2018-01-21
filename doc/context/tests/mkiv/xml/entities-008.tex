@@ -1,0 +1,110 @@
+\enabledirectives[lxml.entities.escaped]
+
+\usemodule[art-01]
+
+\xmltexentity{oeps}{\textdegree}
+\xmltexentity{undefined}{[[undefined]]}
+
+\setupxml[entities=yes] % load big entities table
+
+% \setuphead[section][expansion=yes]
+
+\startbuffer[test]
+<?xml version="1.0"?>
+
+<!DOCTYPE blah SYSTEM "blah.dtd" [
+    <!ENTITY % xx '&#37;zz;' >
+    <!ENTITY % zz '&#60;!ENTITY tricky "error-prone" >' >
+    %xx;
+    <!ENTITY oeps "indeed" >
+    <!ENTITY more "&#160;" >
+    <!ENTITY AMP  "&amp;" >
+    <!ENTITY XAMP "x&amp;" >
+    <!ENTITY mess "<p>just some text</p>" >
+    <!ENTITY a "&lt;" >
+    <!ENTITY b "&#60;" >
+    <!ENTITY c "&gt;" >
+    <!ENTITY example "<p>An ampersand (&#38;#38;) may be escaped
+        numerically (&#38;#38;#38;) or with a general entity (&amp;amp;).</p>" >
+]>
+
+<text c="&c;">
+    <section>ZERO &amp; dus &oeps;</section>
+
+    <section>FIRST &#35; <x>x</x> #1 &#35; &alpha; </section>
+
+    Characters &a; and &b; and &AMP; and &XAMP; and &amp; dus.
+
+    This sample shows a (tricky) &tricky; method.
+
+    <section>SECOND ~2 &alpha;</section>
+
+    Here we go: &example;
+
+    Random text with an entity: (oeps) &oeps; test &amp; test
+
+    Random text with an entity: (more) &more; test
+
+    Here we go: &mess;
+
+    &lt;&gt;
+
+    # &#35;
+    % &#37;
+    \ &#92;
+    { &#123;
+    | &#124;
+    } &#125;
+    ~ &#126;
+    $ $
+
+    <section>THIRD \3 \\ \? &alpha;</section>
+
+    Here we go: &undefined;
+
+    Here we go: &example2;
+
+    And an alpha: &alpha;
+
+</text>
+\stopbuffer
+
+\startxmlsetups xml:testsetups
+    \xmlsetsetup{#1}{*}{xml:*}
+\stopxmlsetups
+
+\xmlregistersetup{xml:testsetups}
+
+\startxmlsetups xml:text
+    \xmlflush{#1}\par
+\stopxmlsetups
+
+\startxmlsetups xml:x
+    \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:p
+    \par{\bf[P: \xmlflush{#1}]}\par
+\stopxmlsetups
+
+\startxmlsetups xml:section
+    \section{\xmlflush{#1}}
+ %  \section{\xmlfirst{#1}{.}}
+\stopxmlsetups
+
+\starttext
+    \chapter{Buffer \#0}
+    \placelist[section][criterium=current]
+    \xmlprocessbuffer{main}{test}{}
+    \placelist[section][criterium=previous]
+    \chapter{File}
+    \xmlprocessfile{file}{entities-008.xml}{}
+    \chapter{Script / original}
+    \typefile{entities-008.xml}
+    \chapter{Script / saved}
+    \startluacode
+        local x = xml.load("entities-008.xml")
+        xml.save(x,"entities-008-saved.xml")
+    \stopluacode
+    \typefile{entities-008-saved.xml}
+\stoptext

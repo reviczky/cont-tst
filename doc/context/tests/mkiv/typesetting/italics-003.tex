@@ -1,0 +1,16 @@
+\definefontfeature
+  [default]
+  [default]
+  [itlc=yes]
+
+\setupitaliccorrection
+  [global,always]
+
+% \enabletrackers[typesetters.italics]
+
+\starttext
+    \startTEXpage[offset=1ex]
+        f. {\em f}.\par f, {\em f},\par f. {\it f}.\par f, {\it f},\par f: {\it f}:\par f; {\it f};\par
+        x. {\em x}.\par x, {\em x},\par x. {\it x}.\par x, {\it x},\par x: {\it x}:\par x; {\it x};\par
+    \stopTEXpage
+\stoptext

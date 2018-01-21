@@ -1,0 +1,23 @@
+% engine=luatex
+
+\usemodule[cals]
+
+\startxmlsetups xml:cals:nonamespace
+    \xmlsetfunction {#1} {table} {moduledata.cals.table}
+\stopxmlsetups
+
+\xmlregistersetup{xml:cals:nonamespace}
+
+\startxmlsetups xml:basics
+    \xmlsetsetup{#1}{b}{*}
+\stopxmlsetups
+
+\startxmlsetups b
+    \bold{\xmlflush{#1}}
+\stopxmlsetups
+
+\xmlregistersetup{xml:basics}
+
+\starttext
+    \xmlprocess{main}{cals-001.xml}{}
+\stoptext

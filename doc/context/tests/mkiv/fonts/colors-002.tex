@@ -1,0 +1,33 @@
+\definefontfeature[svg]    [default][svg=yes]
+\definefontfeature[colored][default][colr=yes]
+
+% \definefont[Emoji][file:emojionecolor-svginot.ttf*default,svg]
+% \definefont[Emoji][file:seguiemj.ttf*default,colored]
+
+\definesymbol[bug1][\getglyphdirect{file:emojionecolor-svginot.ttf*svg}{\char"1F41B}]
+\definesymbol[bug2][\getglyphdirect{file:seguiemj.ttf*colored}         {\char"1F41B}]
+
+\setupbodyfont[dejavu]
+
+\startTEXpage [width=20em,align=middle,offset=1em]
+
+    There are several kind of bugs, like \symbol [bug1] and \symbol [bug2],
+    also in \CONTEXT !
+
+    \blank
+
+    \definefont[emoji][file:emojionecolor-svginot.ttf*svg]
+
+    \def\FourFaces{\char128104\zwj\char128105\zwj\char128102\zwj\char128102\relax}
+
+    How do we know what faces add up to the ligature {\emoji\FourFaces} and how
+    are we supposed to know that there should {\darkgray \type {zwj}} in between?
+
+    \blank
+
+    {\emoji\char128104} + {\darkgray \type {zwj}} +
+    {\emoji\char128105} + {\darkgray \type {zwj}} +
+    {\emoji\char128102} + {\darkgray \type {zwj}} +
+    {\emoji\char128102} = {\emoji\FourFaces}
+
+\stopTEXpage

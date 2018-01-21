@@ -1,0 +1,29 @@
+\starttext
+
+\startbuffer[selector-003]
+<?xml version="1.0" ?>
+
+<document>
+    <title    class="one">title 1</title>
+    <subtitle class="sub">title 1.1</subtitle>
+    <title    class="two">title 2</title>
+    <subtitle class="sub">title 2.1</subtitle>
+    <title    class="one">title 3</title>
+    <subtitle class="sub">title 3.1</subtitle>
+    <title    class="two">title 4</title>
+    <subtitle class="sub">title 4.1</subtitle>
+</document>
+\stopbuffer
+
+\xmlloadbuffer{selector-003}{selector-003}
+
+\startxmlsetups xml:selector:demo
+    \xmlverbatim{#1}\par
+\stopxmlsetups
+
+\xmlcommand
+  {selector-003}
+  {{document title .one + subtitle, document title .two + subtitle}}
+  {xml:selector:demo}
+
+\stoptext

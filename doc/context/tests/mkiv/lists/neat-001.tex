@@ -1,0 +1,43 @@
+% example by wolfgang (for marco)
+
+\setuplayout
+  [header=4cm]
+
+\setupheadertexts
+  [\setups{headlist}]
+
+\startsetups [headlist]
+  \framed[align=normal,frame=off]
+    {\placelist[chapter][alternative=highlight,criterium=all]}
+\stopsetups
+
+\definelistalternative
+  [highlight]
+  [renderingsetup=list:highlight]
+
+% \doifelse{\fetchmark[chapter][first]}{\currentlistentrytitle} % not expandable so fails
+% \doifelse{\fetchmark[chapter][first]}{\ctxcommand{listtitle("\currentlist",\currentlistindex)}} % nasty
+
+\startsetups [list:highlight]
+    \par
+    \startlinealignment[middle]
+    % hh: new trickery: \namesstructureheadlocation
+    \ifnum\currentlistentrylocation=\namedstructureheadlocation{chapter}\relax
+        \color[red] {\currentlistentrytitle}
+    \else
+        \color[blue]{\currentlistentrytitle}
+    \fi
+    \stoplinealignment
+    \par
+\stopsetups
+
+\setupinteraction
+  [state=start,
+   color=lightgray,
+   contrastcolor=darkgreen]
+
+\starttext
+    \startchapter [title=alpha]                    \stopchapter
+    \startchapter [title=beta]  \page \input knuth \stopchapter
+    \startchapter [title=gamma]                    \stopchapter
+\stoptext

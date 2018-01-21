@@ -1,0 +1,20 @@
+\usemodule[x][mathml]
+
+% chekc for buglet/border case in lpeg string substitution
+
+\starttext
+
+\startbuffer[test]
+<p xmlns:m="mathml">
+<m:math>
+    <m:msup>
+        <m:mi>x</m:mi>
+        <m:mn>2</m:mn>
+    </m:msup>
+</m:math>
+</p>
+\stopbuffer
+
+\xmlprocessbuffer{main}{test}{}
+
+\stoptext

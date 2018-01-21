@@ -1,0 +1,45 @@
+\setuptagging[state=start]
+
+\starttext
+
+\startchapter[title=First Chapter]
+    \startitemize
+        \startitem Text 1
+            \startitemize
+                \startitem Text 1.1 \stopitem
+                \startitem Text 1.2 \stopitem
+                \startitem Text 1.3 \stopitem
+            \stopitemize
+        \stopitem
+    \stopitemize
+\stopchapter
+
+\startchapter[title=Second Chapter]
+    \startitemize
+        \startitem Text 2
+            \startitemize[columns]
+                \startitem Text 2.1 \stopitem
+                \startitem Text 2.2 \stopitem
+                \startitem Text 2.3 \stopitem
+            \stopitemize
+        \stopitem
+    \stopitemize
+\stopchapter
+
+\startchapter[title=Third Chapter]
+  Text
+\stopchapter
+
+\startchapter[title=Fourth Chapter]
+    \startitemize
+        \startitem Text 3
+            \startitemize[columns]
+                \startitem Text 3.1 \stopitem
+                \startitem Text 3.2 \stopitem
+                \startitem Text 3.3 \stopitem
+            \stopitemize
+        \stopitem
+    \stopitemize
+\stopchapter
+
+\stoptext

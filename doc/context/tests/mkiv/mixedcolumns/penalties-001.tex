@@ -1,0 +1,24 @@
+\starttext
+
+% \enabletrackers[mixedcolumns.trace*]
+
+\showframe
+
+% \setupmixedcolumns[splitmethod=fixed]    % works as expected (4000 criterium)
+% \setupmixedcolumns[splitmethod=more]   % works as expected (4000 criterium, larger test too)
+% \setupmixedcolumns[splitmethod=auto]   % works as expected (zero criterium, larger test too)
+% \setupmixedcolumns[splitmethod=none]
+
+\startmixedcolumns
+
+\dorecurse{30}{
+    \section{Test #1a}
+    \strut test #1.1\par
+    \strut test #1.2\par
+    \section{Test #1b}
+    \strut test #1.1\par
+}
+
+\stopmixedcolumns
+
+\stoptext

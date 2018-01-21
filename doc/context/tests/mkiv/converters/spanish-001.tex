@@ -1,0 +1,33 @@
+% from the list
+
+\mainlanguage[es]
+
+\setupinteraction
+  [state=start]
+
+\placebookmarks
+  [section]
+
+\definestructureconversionset
+  [sectionnumbers]
+  [0,n,characters]
+  [n]
+
+\setupheads
+  [sectionconversionset=sectionnumbers]
+
+\starttext
+
+    \placelist[section]
+
+    \dorecurse{20}{\section{section}}
+
+    \startitemize[a,columns,four,packed,broad]
+        \dorecurse{80}{\item \recurselevel}
+    \stopitemize
+
+    \startitemize[alphabetic,columns,four,packed,broad]
+        \dorecurse{80}{\item \recurselevel}
+    \stopitemize
+
+\stoptext

@@ -1,0 +1,21 @@
+% engine=luatex
+
+\usemodule[x][ct]
+
+\setupbodyfont[palatino]
+
+\setupwhitespace[big]
+
+\startxmlsetups xml:basics
+    \xmlsetsetup{main}{b}{*}
+\stopxmlsetups
+
+\startxmlsetups b
+    \bold{\xmlflush{#1}}
+\stopxmlsetups
+
+\xmlregistersetup{xml:basics}
+
+\starttext
+    \xmlprocess{main}{ct-001.xml}{}
+\stoptext

@@ -1,0 +1,107 @@
+\startbuffer[duane]
+
+    @image {tug2014,
+        title       = "TUG 2014",
+        url         = "http://tug.org/tug2014/",
+        url_image   = "http://tug.org/art/tug2014-color.jpg",
+        url_thumb   = "http://tug.org/tug2014/t2014-thumb.jpg",
+        description = "Official drawing of the TUG 2014 conference",
+        author      = "Duane Bibby",
+        year        = 2014,
+    }
+
+    @image {tug2013,
+        title       = "TUG 2013",
+        url         = "http://tug.org/tug2013/",
+        url_image   = "http://tug.org/tug2013/tug2013-color-300.jpg",
+        url_thumb   = "http://tug.org/tug2013/t2013-thumb.jpg",
+        description = "Official drawing of the TUG 2013 conference",
+        author      = "Duane Bibby",
+        year        = 2013,
+    }
+
+    @image {tug2012,
+        title       = "TUG 2012",
+        url         = "http://tug.org/tug2012/",
+        url_image   = "http://www.tug.org/art/tug2012-color.jpg",
+        url_thumb   = "http://www.tug.org/tug2012/t2012-thumb.jpg",
+        description = "Official drawing of the TUG 2012 conference",
+        author      = "Duane Bibby",
+        year        = 2012,
+    }
+
+\stopbuffer
+
+% A quick and dirty layout:
+
+\usemodule
+  [article]
+
+\setupinteraction
+  [state=start]
+
+% We will use a dedicated dataset:
+
+\definebtxdataset
+  [duane]
+
+% That we will fill with some records:
+
+\usebtxdataset
+  [duane]
+  [duane.buffer]
+
+% And a rendering:
+
+\definebtxrendering
+  [duane]
+  [dataset=duane,
+   method=dataset,
+   specification=duane]
+
+% We also set up the associated list (a description):
+
+\setupbtxlist
+  [duane]
+  [number=no]
+
+% This is the image renderer:
+
+\startsetups btx:duane:list:image
+    \bgroup
+        \bTABLE[offset=1ex]
+            \bTR
+                \bTD[ny=4]
+                    \dontleavehmode \externalfigure[\btxfield{url_thumb}][width=4cm]
+                \eTD
+                \bTD
+                    \bold{\btxfield{title}}\blank
+                    \btxfield{Words -> description}\blank
+                    \goto{high res variant}[url(\btxfield{url_image})]
+                \eTD
+            \eTR
+        \eTABLE
+    \egroup
+\stopsetups
+
+\starttext
+
+    \placebtxrendering
+        [duane]
+
+    \page
+
+    \showbtxdatasetcompleteness
+      [specification=duane,
+       dataset=duane]
+
+    \page
+
+    \enabletrackers
+      [publications.setups]
+
+    \placebtxrendering
+        [duane]
+        [repeat=yes]
+
+\stoptext

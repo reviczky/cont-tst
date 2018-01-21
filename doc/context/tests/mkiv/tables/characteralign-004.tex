@@ -1,0 +1,81 @@
+\enabletrackers[typesetters.characteralign]
+
+\starttext
+
+    A few examples from mailing list ... maxwidth needed in the first
+    case:
+
+    \blank
+
+    \bgroup
+
+    \setupTABLE[maxwidth=100cm]
+
+    \setupTABLE[c][3][alignmentcharacter={.},aligncharacter=yes]
+
+    \bTABLE
+        \bTABLEbody
+            \bTR
+                \bTC AAA \eTC
+                \bTC[nc=2] Location \eTC
+            \eTR
+            \bTR
+                \bTC AAA Longish entry \eTC
+                \bTC Figure \eTC
+                \bTC 1.12 \eTC
+            \eTR
+            \bTR
+                \bTC AAA \eTC
+                \bTC Table \eTC
+                \bTC 10.8 \eTC
+            \eTR
+        \eTABLEbody
+    \eTABLE
+
+    \egroup
+
+    \blank
+
+    Watch the difference between \type {number} and \type {text}:
+
+    \blank
+
+    \bgroup
+
+        \setupTABLE[1,2][3,4,5,6,7,8][aligncharacter=yes,alignmentcharacter={-}]
+
+        \bTABLE[align={flushright}]
+            \bTR \bTD  xxxxxxxx \eTD \bTD  xxxxxxxx \eTD\bTD xxxxxxxx \eTD \eTR
+            \bTR \bTD  xxxxx    \eTD \bTD  xxxxx    \eTD\bTD xxxxx    \eTD \eTR
+            \bTR \bTD  \nocharacteralign 1D
+                                \eTD \bTD  \nocharacteralign 5D
+                                                    \eTD\bTD xxx      \eTD \eTR
+            \bTR \bTD  1-2      \eTD \bTD  1-2      \eTD\bTD xxx      \eTD \eTR
+            \bTR \bTD  1-2+     \eTD \bTD  1-2      \eTD\bTD xxx      \eTD \eTR
+            \bTR \bTD  1-2      \eTD \bTD  1-2      \eTD\bTD xxx      \eTD \eTR
+            \bTR \bTD 11-2      \eTD \bTD 11-2      \eTD\bTD xxx      \eTD \eTR
+            \bTR \bTD 11-22+    \eTD \bTD 11-22+    \eTD\bTD xxx      \eTD \eTR
+        \eTABLE
+
+    \egroup
+
+    \blank
+
+    \bgroup
+
+        \setupTABLE[1,2][3,4,5,6,7,8][aligncharacter=yes,alignmentcharacter={number->-}]
+
+        \bTABLE[align={flushright}]
+            \bTR \bTD  xxxxxxxx \eTD \bTD  xxxxxxxx \eTD\bTD xxxxxxxx \eTD \eTR
+            \bTR \bTD  xxxxx    \eTD \bTD  xxxxx    \eTD\bTD xxxxx    \eTD \eTR
+            \bTR \bTD  1D       \eTD \bTD  5D       \eTD\bTD xxx      \eTD \eTR
+            \bTR \bTD  1-2      \eTD \bTD  1-2      \eTD\bTD xxx      \eTD \eTR
+            \bTR \bTD  1-2+     \eTD \bTD  1-2      \eTD\bTD xxx      \eTD \eTR
+            \bTR \bTD  1-2      \eTD \bTD  1-2      \eTD\bTD xxx      \eTD \eTR
+            \bTR \bTD 11-2      \eTD \bTD 11-2      \eTD\bTD xxx      \eTD \eTR
+            \bTR \bTD 11-22+    \eTD \bTD 11-22+    \eTD\bTD xxx      \eTD \eTR
+        \eTABLE
+
+    \egroup
+
+\stoptext
