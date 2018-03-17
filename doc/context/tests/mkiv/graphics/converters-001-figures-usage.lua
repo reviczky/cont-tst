@@ -44,8 +44,8 @@ return {
     ["page"]=1,
     ["pageindex"]=1,
     ["width"]=7451758,
-    ["xscale"]=1,
-    ["yscale"]=1,
+    ["xscale"]=1.0,
+    ["yscale"]=1.0,
    },
    ["used"]={
     ["colordepth"]=8,
@@ -85,8 +85,8 @@ return {
     ["page"]=1,
     ["pageindex"]=2,
     ["width"]=16766455,
-    ["xscale"]=1,
-    ["yscale"]=1,
+    ["xscale"]=1.0,
+    ["yscale"]=1.0,
    },
    ["used"]={
     ["colordepth"]=8,

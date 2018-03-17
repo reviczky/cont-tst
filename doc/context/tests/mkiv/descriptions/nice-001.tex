@@ -1,0 +1,26 @@
+% posted by WS to the list
+
+\definemeasure[interview][3em]
+
+\define[1]\InterviewHeadCommand
+  {\offset[x=-\measure{interview}]{#1}}
+
+\definedescription
+  [interview]
+  [alternative=top,
+   headcommand=\InterviewHeadCommand,
+   margin=\measure{interview}]
+
+\showframe[text][text]
+
+\starttext
+
+\startinterview{Weisman}
+    \input weisman
+\stopinterview
+
+\startinterview{Ward}
+    \input ward
+\stopinterview
+
+\stoptext

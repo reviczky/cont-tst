@@ -4,7 +4,7 @@
 
     input filename   : tagged-005
     processing date  : 
-    context version  : 2018.01.03 14:46
+    context version  : 2018.03.10 14:52
     exporter version : 0.35
 
 -->
@@ -13,13 +13,13 @@
 <?xml-stylesheet type="text/css" href="styles/tagged-005-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/tagged-005-styles.css" ?>
 
-<document context="2018.01.03 14:46" file="tagged-005" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+<document context="2018.03.10 14:52" file="tagged-005" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
  <metadata>
  </metadata>
  <table>
   <tablerow>
    <tablecell align="flushleft"> test 11 </tablecell>
-   <tablecell align="flushleft" rows="2"> test 12 &lt;a&gt; </tablecell>
+   <tablecell align="flushleft" rows=2> test 12 &lt;a&gt; </tablecell>
   </tablerow>
   <tablerow>
    <tablecell align="flushleft"> test 21 </tablecell>
@@ -29,7 +29,7 @@
    <tablecell align="flushleft"> </tablecell>
   </tablerow>
   <tablerow>
-   <tablecell align="flushright" columns="2"> test 33 </tablecell>
+   <tablecell align="flushright" columns=2> test 33 </tablecell>
   </tablerow>
  </table>
 test 

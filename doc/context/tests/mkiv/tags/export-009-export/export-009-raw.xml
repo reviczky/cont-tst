@@ -4,7 +4,7 @@
 
     input filename   : export-009
     processing date  : 
-    context version  : 2018.01.03 14:46
+    context version  : 2018.03.10 14:52
     exporter version : 0.35
 
 -->
@@ -13,7 +13,7 @@
 <?xml-stylesheet type="text/css" href="styles/export-009-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/export-009-styles.css" ?>
 
-<document context="2018.01.03 14:46" file="export-009" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+<document context="2018.03.10 14:52" file="export-009" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
  <metadata>
  </metadata>
 test <m:math display="inline" xmlns:m="http://www.w3.org/1998/Math/MathML"><m:mrow><m:mi>𝑒</m:mi><m:mo>+</m:mo><m:mn>1</m:mn><m:mo>=</m:mo><m:mi>𝑚</m:mi><m:msup><m:mi>𝑐</m:mi><m:mn>2</m:mn></m:msup><m:mo>+</m:mo><m:mn>1</m:mn></m:mrow></m:math> test

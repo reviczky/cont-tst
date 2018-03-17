@@ -4,7 +4,7 @@
 
     input filename   : spaces-002
     processing date  : 
-    context version  : 2018.01.03 14:46
+    context version  : 2018.03.10 14:52
     exporter version : 0.35
 
 -->
@@ -13,7 +13,7 @@
 <?xml-stylesheet type="text/css" href="styles/spaces-002-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/spaces-002-styles.css" ?>
 
-<document context="2018.01.03 14:46" file="spaces-002" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+<document context="2018.03.10 14:52" file="spaces-002" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
  <metadata>
  </metadata>
 <highlight detail="emph">A1</highlight> A2

@@ -1,0 +1,31 @@
+\startbuffer[test]
+<something whatever="alpha">
+    <what>
+        beta
+    </what>
+</something>
+\stopbuffer
+
+\startxmlsetups xml:mysetups
+    \xmlsetsetup{\xmldocument}{*}{xml:*}
+\stopxmlsetups
+
+\xmlregistersetup{xml:mysetups}
+
+\startxmlsetups xml:something
+    parameter : \xmlpar   {#1}{whatever}\par
+    attribute : \xmlatt   {#1}{whatever}\par
+    text      : \xmlfirst {#1}{what}    \par
+                \xmlsetpar{#1}{whatever}{gamma}
+    parameter : \xmlpar   {#1}{whatever}\par
+    \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:what
+    what: \xmlflush{#1}\par
+    parameter : \xmlparam{#1}{..}{whatever}\par
+\stopxmlsetups
+
+\starttext
+    \xmlprocessbuffer{main}{test}{}
+\stoptext

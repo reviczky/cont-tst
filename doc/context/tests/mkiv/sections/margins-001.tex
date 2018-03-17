@@ -1,0 +1,32 @@
+\setuplayout
+  [backspace=4cm,
+   width=middle]
+
+\setupindenting
+  [yes,medium]
+
+\setupwhitespace
+  [line]
+
+\setuplayout
+  [backspace=2in,
+   width=middle]
+
+\setuphead
+  [subsection]
+  [alternative=margintext,
+   style=\tfx]
+
+\setupmargindata
+  [margintext:section]
+  [align={flushleft,nothyphenated,verytolerant}]
+
+\showframe
+
+\starttext
+
+\subsection{This is an arbitrary title} \input ward
+
+\subsection{This is an arbitrary title} \startitemize \item ward \stopitemize \input ward
+
+\stoptext

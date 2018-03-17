@@ -1,0 +1,20 @@
+% \setupcaptions
+%   [table]
+%   [headseparator={:}]
+
+\setupcaptions
+  [table]
+  [numberstopper={:}]
+
+\setupreferencestructureprefix
+  [table]
+  [default]
+  [numberstopper={}]
+
+\starttext
+
+    \placetable[here][tab:ships]{Ships that moored at Hasselt.}{xx}
+
+    See \in {Table} [tab:ships]
+
+\stoptext

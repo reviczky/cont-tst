@@ -1,0 +1,29 @@
+\starttext
+
+\startnodes
+   \placenode[0,0]{A}
+   \placenode[1,0]{B}
+   \connectnodes [0,1] [option=doublearrow]
+\stopnodes
+
+\startnodes[dx=2cm,rotation=45]
+   \placenode[0,0]{A}
+   \placenode[1,0]{B}
+   \placenode[1,1]{C}
+   \placenode[0,1]{D}
+   \connectnodes [0,2] [option=doublearrow,label=a,offset=.05]
+   \connectnodes [1,3] [option=doublearrows]
+\stopnodes
+
+\startnodes[dx=2cm,dy=2cm]
+   \nodeMPcode{ahlength  := 12pt ; ahangle := 30 ; ahvariant := 1 ;}
+   \mpcode{ahlength  := 12pt ; ahangle := 30 ; ahvariant := 1 ;}
+   \placenode[0,1]{\node{A}}
+   \placenode[1,1]{\node{B}}
+   \placenode[0,0]{\node{C}}
+   \placenode[1,0]{\node{D}}
+   \connectnodes [0,3] [option=arrow,label={ }]
+   \connectnodes [1,2] [option=arrow]
+\stopnodes
+
+\stoptext

@@ -1,0 +1,21 @@
+\starttext
+
+\input tufte
+
+\startplaceformula
+\startsplitformula
+\startalign
+\NC a \EQ b \NR[+]
+\NC   \EQ d \NR
+\NC c \EQ f \NR[+]
+\NC   \EQ g \NR
+\NC   \EQ h \NR[+]
+\dorecurse{100}{\NC \EQ i + #1 - #1\NR[+]}%
+\NC   \EQ x \NR
+\stopalign
+\stopsplitformula
+\stopplaceformula
+
+\input tufte
+
+\stoptext

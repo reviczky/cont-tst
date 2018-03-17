@@ -4,7 +4,7 @@
 
     input filename   : div-001
     processing date  : 
-    context version  : 2018.01.03 14:46
+    context version  : 2018.03.10 14:52
     exporter version : 0.35
 
 -->
@@ -13,7 +13,7 @@
 <?xml-stylesheet type="text/css" href="styles/div-001-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/div-001-styles.css" ?>
 
-<document context="2018.01.03 14:46" file="div-001" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+<document context="2018.03.10 14:52" file="div-001" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
  <metadata>
  </metadata>
 We thrive in information--thick worlds because of our marvelous and everyday capacity to select, edit, single out, structure, highlight, group, pair, merge, harmonize, synthesize, focus, organize, condense, reduce, boil down, choose, categorize, catalog, classify, list, abstract, scan, look into, idealize, isolate, discriminate, distinguish, screen, pigeonhole, pick over, sort, integrate, blend, inspect, filter, lump, skip, smooth, chunk, average, approximate, cluster, aggregate, outline, summarize, itemize, review, dip into, flip through, browse, glance into, leaf through, skim, refine, enumerate, glean, synopsize, winnow the wheat from the chaff and separate the sheep from the goats. 
@@ -38,7 +38,7 @@ We thrive in information--thick worlds because of our marvelous and everyday cap
   </verbatimlines>
  </verbatimblock>
 We thrive in information--thick worlds because of our marvelous and everyday capacity to select, edit, single out, structure, highlight, group, pair, merge, harmonize, synthesize, focus, organize, condense, reduce, boil down, choose, categorize, catalog, classify, list, abstract, scan, look into, idealize, isolate, discriminate, distinguish, screen, pigeonhole, pick over, sort, integrate, blend, inspect, filter, lump, skip, smooth, chunk, average, approximate, cluster, aggregate, outline, summarize, itemize, review, dip into, flip through, browse, glance into, leaf through, skim, refine, enumerate, glean, synopsize, winnow the wheat from the chaff and separate the sheep from the goats. 
- <itemgroup detail="itemize" chain="itemize" level="1" symbol="1">
+ <itemgroup detail="itemize" chain="itemize" level=1 symbol="1">
   <item>
    <itemtag><m:math display="inline" xmlns:m="http://www.w3.org/1998/Math/MathML"><m:mo>•</m:mo></m:math></itemtag>
    <itemcontent>x</itemcontent>

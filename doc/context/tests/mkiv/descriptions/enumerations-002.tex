@@ -1,0 +1,53 @@
+% based on a list post
+
+% till here
+
+\defineenumeration[Theorem]
+  [alternative=empty,
+   before=\startMyText,
+   after=\stopMyText]
+
+\defineframed
+  [MyFramed]
+  [frame=off,
+   loffset=1ex,
+   roffset=1ex,
+   foregroundstyle=\ssbf]
+
+\startuseMPgraphic{MyFrame}
+    picture p ; numeric o ; path a, b ; pair c ;
+ %  p := textext.rt("\MyFramed{\currentconstructiontext}") ;
+    p := textext.rt("\wrappedconstruction{\MyFramed{\currentconstructiontext}}") ;
+ %  p := textext.rt("\MyFramed{\wrappedconstruction{\currentconstructiontext}}") ;
+ %  p := textext.rt("\MyFramed{\wrappedcurrentconstruction}") ;
+    o := BodyFontSize ;
+    a := OverlayBox ;
+    p := p shifted (2o,OverlayHeight-ypart center p) ;
+    drawoptions (withpen pencircle scaled 1pt withcolor .625red) ;
+    b := a superellipsed .95 ;
+    draw b ;
+    b := (boundingbox p) superellipsed .95 ;
+    fill b withcolor .85white ;
+    draw b ;
+    draw p withcolor black ;
+    setbounds currentpicture to a ;
+\stopuseMPgraphic
+
+\defineoverlay[MyFrame][\useMPgraphic{MyFrame}]
+
+\defineframedtext
+  [MyText]
+  [frame=off,
+   background=MyFrame,
+   offset=\bodyfontsize,
+   width=\textwidth]
+
+\starttext
+
+\startTheorem[lem]
+    bla bla
+\stopTheorem
+
+Bla bla \in {Lemma} [lem] bla bla.
+
+\stoptext

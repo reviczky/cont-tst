@@ -1,7 +1,7 @@
 return {
  ["htmlfiles"]={ "symbolsets-001-div.html" },
  ["htmlroot"]="symbolsets-001-div.html",
- ["identifier"]="ae88e42e-4d45-91de-4d19-40c28cf6be86",
+ ["identifier"]="07802738-4e95-88a7-49ee-112e4c1283de",
  ["imagefile"]="styles/symbolsets-001-images.css",
  ["imagepath"]="images",
  ["images"]={},
