@@ -1,0 +1,22 @@
+\definefontfeature[test1][dimensions={,1,1}]
+\definefontfeature[test2][dimensions={1,,1}]
+\definefontfeature[test3][dimensions={1,1,}]
+\definefontfeature[test4][dimensions={1,1,1}]
+
+\starttext
+
+    \showglyphs
+
+    \ruledhbox{\definedfont[Serif*test1 @ 20pt]d h test test}
+    \ruledhbox{\definedfont[Serif*test1 @ 30pt]d h test test}
+    \blank
+    \ruledhbox{\definedfont[Serif*test2 @ 20pt]w d test test}
+    \ruledhbox{\definedfont[Serif*test2 @ 30pt]w d test test}
+    \blank
+    \ruledhbox{\definedfont[Serif*test3 @ 20pt]w h test test}
+    \ruledhbox{\definedfont[Serif*test3 @ 30pt]w h test test}
+    \blank
+    \ruledhbox{\definedfont[Serif*test4 @ 20pt]w h d test test}
+    \ruledhbox{\definedfont[Serif*test4 @ 30pt]w h d test test}
+
+\stoptext

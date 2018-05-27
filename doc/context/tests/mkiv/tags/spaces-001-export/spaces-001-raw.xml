@@ -4,7 +4,7 @@
 
     input filename   : spaces-001
     processing date  : 
-    context version  : 2018.03.10 14:52
+    context version  : 2018.05.19 21:46
     exporter version : 0.35
 
 -->
@@ -12,22 +12,3 @@
 <?xml-stylesheet type="text/css" href="styles/spaces-001-defaults.css" ?>
 <?xml-stylesheet type="text/css" href="styles/spaces-001-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/spaces-001-styles.css" ?>
-
-<document context="2018.03.10 14:52" file="spaces-001" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
- <metadata>
- </metadata>
-nop: [one] [two]
- <break/>
-nop: [one] [two]
- <break/>
-nop: [one] [two]
- <break/>
-nop: [one] [two]
- <break/>
-yes: [one] [two]
- <break/>
-yes: [one] [two]
- <break/>
-nop: [one][two]
- <break/>
-yes: [one] [two]</document>

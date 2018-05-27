@@ -4,7 +4,7 @@
 
     input filename   : spaces-002
     processing date  : 
-    context version  : 2018.03.10 14:52
+    context version  : 2018.05.19 21:46
     exporter version : 0.35
 
 -->
@@ -12,39 +12,3 @@
 <?xml-stylesheet type="text/css" href="styles/spaces-002-defaults.css" ?>
 <?xml-stylesheet type="text/css" href="styles/spaces-002-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/spaces-002-styles.css" ?>
-
-<document context="2018.03.10 14:52" file="spaces-002" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
- <metadata>
- </metadata>
-<highlight detail="emph">A1</highlight> A2
- <break/>
-<highlight detail="emph">B1</highlight> B2
- <break/>
-C1 <highlight detail="emph">C2</highlight>
- <break/>
-D1
- <break/>
-<highlight detail="emph">E1</highlight>
- <break/>
-F1
- <break/>
-G1 <highlight detail="emph">G2</highlight> G3
- <break/>
-<highlight detail="emph">H1</highlight>
- <break/>
-<highlight detail="emph">I1</highlight>
- <break/>
-J1
- <break/>
-<highlight detail="emph">K1</highlight>
- <break/>
-<highlight detail="emph">L1</highlight>
- <break/>
-<highlight detail="emph">M1</highlight>
- <break/>
-<highlight detail="emph">N1</highlight>
- <break/>
-<highlight detail="emph">O1</highlight> <paragraph>Published on <highlight detail="emph">Dissonanze</highlight> vol. I</paragraph>
- <paragraph>Published on vol. I Published on vol. I Published on vol. I Published on <highlight detail="emph">Dissonanze</highlight> vol. I</paragraph>
- <paragraph>We thrive in information--thick worlds because of our marvelous and everyday capacity to select, edit, single out, structure, highlight, group, pair, merge, harmonize, synthesize, focus, organize, condense, reduce, boil down, choose, categorize, catalog, classify, list, abstract, scan, look into, idealize, isolate, discriminate, distinguish, screen, pigeonhole, pick over, sort, integrate, blend, inspect, filter, lump, skip, smooth, chunk, average, approximate, cluster, aggregate, outline, summarize, itemize, review, dip into, flip through, browse, glance into, leaf through, skim, refine, enumerate, glean, synopsize, winnow the wheat from the chaff and separate the sheep from the goats.</paragraph>
-</document>

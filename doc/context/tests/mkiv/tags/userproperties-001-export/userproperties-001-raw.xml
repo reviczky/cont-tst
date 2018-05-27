@@ -4,7 +4,7 @@
 
     input filename   : userproperties-001
     processing date  : 
-    context version  : 2018.03.10 14:52
+    context version  : 2018.05.19 21:46
     exporter version : 0.35
 
 -->
@@ -12,16 +12,3 @@
 <?xml-stylesheet type="text/css" href="styles/userproperties-001-defaults.css" ?>
 <?xml-stylesheet type="text/css" href="styles/userproperties-001-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/userproperties-001-styles.css" ?>
-
-<document context="2018.03.10 14:52" file="userproperties-001" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
- <metadata>
- </metadata>
- <section detail="chapter" chain="chapter" implicit=1 level=2>
-  <sectioncaption>
-   <sectionnumber>1</sectionnumber>
-   <sectiontitle>First Chapter</sectiontitle>
-  </sectioncaption>
-  <sectioncontent>
-(sectioncontent)  </sectioncontent>
- </section>
-</document>

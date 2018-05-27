@@ -1,0 +1,25 @@
+\useMPlibrary[txt]
+
+\starttext
+
+\startuseMPgraphic{followtokens-1}
+    path RotPath ; RotPath := halfcircle scaled 7cm rotated 180 ;
+    for i=1 upto 6 :
+        draw halfcircle scaled (i*cm) rotated 180 ;
+    endfor ;
+    setbounds currentpicture to boundingbox halfcircle scaled 7cm rotated 180 ;
+\stopuseMPgraphic
+
+\startuseMPgraphic{followtokens-2}
+    path RotPath ; RotPath := halfcircle scaled 6cm rotated 180 ;
+    setbounds currentpicture to boundingbox halfcircle scaled 7cm rotated 180 ;
+\stopuseMPgraphic
+
+\startoverlay
+    {\startuseMPgraphic{followtokens}\includeMPgraphic{followtokens-1}\stopuseMPgraphic
+     \followtokens{\strut Dies ist ein anderer Text\strut}}
+    {\startuseMPgraphic{followtokens}\includeMPgraphic{followtokens-2}\stopuseMPgraphic
+     \followtokens{\strut Less text than before\strut}}
+\stopoverlay
+
+\stoptext

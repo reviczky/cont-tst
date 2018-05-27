@@ -1,0 +1,18 @@
+% testcase ws:
+
+\setupexternalfigure[location=default]
+
+\definepageinjection [spread]     [here]     [n=2,width=2\paperwidth,height=\paperheight]
+\definepageinjection [nextspread] [nextpage] [n=2,width=2\paperwidth,height=\paperheight]
+
+\setuppageinjection[strut=no,offset=1cm]
+
+\starttext
+
+    \pageinjection [here]   [name=mill]
+    \pageinjection [spread] [name=hacker]
+
+    \dorecurse{6}{\input lorem\par} \pageinjection [nextpage]   [name=mill]
+    \dorecurse{6}{\input lorem\par} \pageinjection [nextspread] [name=hacker]
+
+\stoptext

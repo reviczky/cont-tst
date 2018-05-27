@@ -1,0 +1,20 @@
+% from the list (l/r extension by WS)
+
+\setupregister
+  [index]
+  [n=1,
+   alternative=A,
+   distance=0pt,
+   pageleft=\wordright\bgroup,
+   pageright=\egroup]
+
+\starttext
+
+    \CONTEXT \index {\ConTeXt} \page
+    \LATEX   \index {\LaTeX}   \page
+    \CONTEXT \index {\ConTeXt} \page
+
+    \placeindex
+
+\stoptext
+

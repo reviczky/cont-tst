@@ -1,0 +1,31 @@
+\usemodule[art-01]\setupbodyfont[dejavu,12pt]
+
+\defineruby[auto]  [align=auto,color=darkred]
+\defineruby[left]  [align=flushleft,color=darkred]
+\defineruby[right] [align=flushright,color=darkred]
+\defineruby[spread][stretch=yes]
+
+\showframe \showglyphs \showfontkerns \setupinterlinespace[22pt]
+
+\starttext
+
+\startbuffer
+    \dorecurse{20}{\ruby{XYZ}{a|bc|d} }\par
+    \dorecurse{20}{\ruby{PQR}{p|q|r} }\par
+    \dorecurse{20}{\ruby{XYZ}{1|22|333} }\par
+    \dorecurse{20}{\ruby{XYZ}{111|222|333} }\par
+    \dorecurse{20}{\ruby{XYZ}{foobar} }\par
+    \dorecurse{20}{\ruby{XYZ}{fooledbar} }\par
+    \dorecurse{20}{\ruby[spread]{XYZ}{fooledbar} }\par
+    \dorecurse{20}{\ruby{extremely}{wide} }\par
+    \dorecurse{20}{\ruby{wide}{extremely} }\par
+ stopbuffer
+
+\testfeatureonce{1}{\start \setupinterlinespace[16pt] \setupruby[location=none]                   \getbuffer \stop \page}
+\testfeatureonce{1}{\start \setupinterlinespace[16pt] \setupruby[location=right]                  \getbuffer \stop \page}
+\testfeatureonce{1}{\start \setupinterlinespace[28pt] \setupruby[align=auto,color=darkred]        \getbuffer \stop \page}
+\testfeatureonce{1}{\start \setupinterlinespace[28pt] \setupruby[align=flushleft,color=darkgreen] \getbuffer \stop \page}
+\testfeatureonce{1}{\start \setupinterlinespace[28pt] \setupruby[align=flushright,color=darkblue] \getbuffer \stop \page}
+\testfeatureonce{1}{\start \setupinterlinespace[28pt] \setupruby[align=middle,color=darkyellow]   \getbuffer \stop \page}
+
+\stoptext

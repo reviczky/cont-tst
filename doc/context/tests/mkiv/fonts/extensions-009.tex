@@ -1,0 +1,25 @@
+% for Alan:
+
+\showfontkerns \showglyphs
+
+\startluacode
+    fonts.handlers.otf.addfeature {
+        name = "nokerns",
+        type = "kern",
+        data = {
+            ["L"] = { ["’"] =  200 },
+            ["’"] = { ["a"] = -150 },
+        },
+    }
+\stopluacode
+
+\definefontfeature[default][default][nokerns=true]
+
+\setupbodyfont [dejavu-condensed,12pt]
+
+\startTEXpage[offset=10pt]
+    L'aire\\
+    Laire\\
+    l'aire
+\stopTEXpage
+

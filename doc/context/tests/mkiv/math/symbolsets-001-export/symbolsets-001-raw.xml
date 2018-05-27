@@ -4,7 +4,7 @@
 
     input filename   : symbolsets-001
     processing date  : 
-    context version  : 2018.03.10 14:52
+    context version  : 2018.05.19 21:46
     exporter version : 0.35
 
 -->
@@ -12,32 +12,3 @@
 <?xml-stylesheet type="text/css" href="styles/symbolsets-001-defaults.css" ?>
 <?xml-stylesheet type="text/css" href="styles/symbolsets-001-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/symbolsets-001-styles.css" ?>
-
-<document context="2018.03.10 14:52" file="symbolsets-001" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
- <metadata>
- </metadata>
- <formula>
-  <formulacontent>
-   <m:math display="block" xmlns:m="http://www.w3.org/1998/Math/MathML">
-    <m:mrow>
-     <m:mi>ℝ</m:mi>
-     <m:mi>𝐑</m:mi>
-     <m:mi>ℝ</m:mi>
-     <m:mi>𝐑</m:mi>
-    </m:mrow>
-   </m:math>
-  </formulacontent>
-  </formula>
- <formula>
-  <formulacontent>
-   <m:math display="block" xmlns:m="http://www.w3.org/1998/Math/MathML">
-    <m:mrow>
-     <m:mi>ℝ</m:mi>
-     <m:mi>𝐑</m:mi>
-     <m:mi>ℝ</m:mi>
-     <m:mi>𝐑</m:mi>
-    </m:mrow>
-   </m:math>
-  </formulacontent>
- </formula>
-</document>

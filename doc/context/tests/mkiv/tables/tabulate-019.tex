@@ -1,0 +1,70 @@
+\starttext
+
+\startuseMPgraphic{foo}
+    fill unitsquare
+        xyscaled (RuleWidth,RuleHeight+RuleDepth) enlarged (ExHeight/4,ExHeight/8)
+        randomized ExHeight
+        shifted  (-ExHeight/8,ExHeight/16)
+        withcolor RuleColor ;
+\stopuseMPgraphic
+
+\setuptabulate % wel only have frame=name so we can use these:
+  [background=foo,
+   backgroundcolor=darkred,
+   foregroundcolor=white]
+
+\definelinefiller[foo][mp=foo,color=darkgreen]
+\definelinefiller[bar][mp=foo,color=darkred]
+
+\starttabulate[|||]
+    \DB foo \BC bar \BC \NR
+    \NC foo \NC bar \NC \NR
+    \NC foo \NC bar \NC \NR
+    \NC foo \NC bar \NC \NR
+    \NC foo \NC bar \NC \NR
+\stoptabulate
+
+\starttabulate[|||]
+    \PB foo \BC bar \BC \NR
+    \NC foo \NC bar \NC \NR
+    \NC foo \NC bar \NC \NR
+    \NC foo \NC bar \NC \NR
+    \NC foo \NC bar \NC \NR
+\stoptabulate
+
+\starttabulate[|||]
+    \FB[bar] foo \BC bar \BC \NR
+    \NC foo \NC bar \NC \NR
+    \NC foo \NC bar \NC \NR
+    \NC foo \NC bar \NC \NR
+    \NC foo \NC bar \NC \NR
+\stoptabulate
+
+\startnarrower
+    \starttabulate[|||]
+        \DB foo \DB bar \BC \NR
+        \NC foo \NC bar \NC \NR
+        \NC foo \NC bar \NC \NR
+        \NC foo \NC bar \NC \NR
+        \NC foo \NC bar \NC \NR
+    \stoptabulate
+\stopnarrower
+
+\starttabulate[|||]
+    \BC          foo \BC bar \BC \NR
+    \NL[magenta] foo \NC bar \NC \NR
+    \NL[yellow]  foo \NC bar \NC \NR
+    \NL[cyan]    foo \NC bar \NC \NR
+    \NL[gray]    foo \NC bar \NC \NR
+\stoptabulate
+
+\starttabulate
+    \NL[red]     foo \NC bar \NC \NR
+    \NL[green]   foo \NL[red] bar \NC \NR
+    \NC          foo \NC bar \NC \NR
+    \NL[blue]    foo \NC \input tufte  \NC \NR
+    \NL[gray]    foo \NC bar \NC \NR
+    \NL[yellow]  foo \NC bar \NC \NR
+\stoptabulate
+
+\stoptext

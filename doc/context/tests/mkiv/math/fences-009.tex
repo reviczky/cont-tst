@@ -1,0 +1,22 @@
+\setupbodyfont[lucidaot]
+
+\definemathfence[Set][left="007B,right="007D,command=yes]
+
+\starttext
+
+\startTEXpage[offset=1ex]
+    \startformula
+        \Set{x\in\mathbb R~:~x^2=1}
+    \stopformula
+    \startformula
+        \Set[size=2]{x\in\mathbb R~:~x^2=1}
+    \stopformula
+    \startformula
+        \Set[size=3]{x\in\mathbb R~:~x^2=1}
+    \stopformula
+    \startformula
+        \Set[size=4]{x\in\mathbb R~:~x^2=1}
+    \stopformula
+\stopTEXpage
+
+\stoptext

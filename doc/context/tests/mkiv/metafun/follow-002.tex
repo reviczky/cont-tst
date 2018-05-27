@@ -1,0 +1,74 @@
+\usemodule[scite]
+
+\starttext
+
+\startbuffer[demo]
+\startMPcode
+    interim tracingfollowtext := 1 ;
+    path p ; p := reverse halfcircle scaled 5cm ;
+    path q ; q := reverse fullcircle scaled 8cm ;
+    draw p ; draw q ;
+    draw followtext(p,"This works quite well") ;
+    draw followtext(q,"This works too\quad") ;
+\stopMPcode
+\stopbuffer
+
+\getbuffer[demo] \typebuffer[demo][option=tex] \page
+
+\startbuffer[demo]
+\startMPcode
+    interim tracingfollowtext := 1 ;
+    interim autoscaledownfollowtext := 0 ;
+    path p ; p := reverse fulltriangle scaled 5cm ;
+    path q ; q := reverse fullsquare scaled 8cm ;
+    draw p ; draw q ;
+    draw followtext(p,"This works quite well\quad") ;
+    draw followtext(q,"This works too\quad") ;
+\stopMPcode
+\stopbuffer
+
+\getbuffer[demo] \typebuffer[demo][option=tex] \page
+
+\startbuffer[demo]
+\startMPcode
+    interim autoscaledownfollowtext := 1 ;
+    path p ; p := reverse fulltriangle scaled 5cm ;
+    path q ; q := reverse fullsquare scaled 8cm ;
+    draw p ; draw q ;
+    draw followtext(p,"This works quite well\quad") ;
+    draw followtext(q,"This works too\quad") ;
+\stopMPcode
+\stopbuffer
+
+\getbuffer[demo] \typebuffer[demo][option=tex] \page
+
+\startbuffer[demo]
+\startMPcode
+    interim autoscaledownfollowtext := 2 ;
+    path p ; p := reverse fulltriangle scaled 5cm ;
+    path q ; q := reverse fullsquare scaled 8cm ;
+    draw p ; draw q ;
+    draw followtext(p,"This works quite well\quad") ;
+    draw followtext(q,"This works too\quad") ;
+\stopMPcode
+\stopbuffer
+
+\getbuffer[demo] \typebuffer[demo][option=tex] \page
+
+\startbuffer[demo]
+\startMPcode
+    path p ; p := (origin .. (1,1) .. (2,-1) .. (3,0)) ;
+    for i=0 step 1/10 until 1 :
+        path q ; q := p randomized i ;
+        q := q xsized (20cm + i*cm) ;
+        q := q ysized (20cm + i*cm) ;
+        q := q shifted (i*10*cm,i*10*cm) ;
+        draw q withcolor red ;
+        draw followtext(q,"\samplefile{klein}") ;
+    endfor ;
+\stopMPcode
+\stopbuffer
+
+\scale[maxheight=.7\textheight,maxwidth=\textwidth]{\getbuffer[demo]} \typebuffer[demo][option=tex] \page
+
+\stoptext

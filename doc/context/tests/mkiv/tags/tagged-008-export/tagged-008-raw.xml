@@ -4,7 +4,7 @@
 
     input filename   : tagged-008
     processing date  : 
-    context version  : 2018.03.10 14:52
+    context version  : 2018.05.19 21:46
     exporter version : 0.35
 
 -->
@@ -12,10 +12,3 @@
 <?xml-stylesheet type="text/css" href="styles/tagged-008-defaults.css" ?>
 <?xml-stylesheet type="text/css" href="styles/tagged-008-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/tagged-008-styles.css" ?>
-
-<document context="2018.03.10 14:52" file="tagged-008" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
- <metadata>
- </metadata>
-ff ff fi fi
- <break/>
-ff[]ff[]fi[]fi</document>

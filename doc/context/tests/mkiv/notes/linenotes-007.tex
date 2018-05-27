@@ -90,7 +90,7 @@ test test \linenote {oeps} test test test test test test test
 
 \startbuffer[setup-2]
 \def\WatchThis#1%
-  {\ifodd\linenumber
+  {\ifodd\linenumber\relax % relax needed !
      \definecolor[linecolor][red]%
    \else
      \definecolor[linecolor][green]%

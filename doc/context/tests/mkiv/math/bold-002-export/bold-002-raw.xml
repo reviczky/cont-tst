@@ -4,7 +4,7 @@
 
     input filename   : bold-002
     processing date  : 
-    context version  : 2018.03.10 14:52
+    context version  : 2018.05.19 21:46
     exporter version : 0.35
 
 -->
@@ -12,18 +12,3 @@
 <?xml-stylesheet type="text/css" href="styles/bold-002-defaults.css" ?>
 <?xml-stylesheet type="text/css" href="styles/bold-002-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/bold-002-styles.css" ?>
-
-<document context="2018.03.10 14:52" file="bold-002" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
- <metadata>
- </metadata>
-<m:math display="inline" xmlns:m="http://www.w3.org/1998/Math/MathML"><m:mrow><m:msqrt><m:mrow><m:msup><m:mi>𝑥</m:mi><m:mn>2</m:mn></m:msup></m:mrow></m:msqrt><m:msqrt><m:mrow><m:msup><m:mi>𝐱</m:mi><m:mi>𝟐</m:mi></m:msup></m:mrow></m:msqrt></m:mrow></m:math>
- <break/>
-<m:math display="inline" xmlns:m="http://www.w3.org/1998/Math/MathML"><m:mrow><m:msqrt><m:mrow><m:msup><m:mi>𝑥</m:mi><m:mn>2</m:mn></m:msup></m:mrow></m:msqrt><m:msqrt><m:mrow><m:msup><m:mi>𝑥</m:mi><m:mi>2</m:mi></m:msup></m:mrow></m:msqrt></m:mrow></m:math>
- <break/>
-<m:math display="inline" xmlns:m="http://www.w3.org/1998/Math/MathML"><m:mrow><m:msqrt><m:mrow><m:msup><m:mi>𝑥</m:mi><m:mn>2</m:mn></m:msup></m:mrow></m:msqrt><m:mrow><m:mi>𝜶</m:mi><m:mi>𝜎</m:mi><m:mi>𝜌</m:mi><m:mi>𝒙</m:mi></m:mrow><m:msqrt><m:mrow><m:msup><m:mi>𝑥</m:mi><m:mn>2</m:mn></m:msup></m:mrow></m:msqrt></m:mrow></m:math>
- <break/>
-<m:math display="inline" xmlns:m="http://www.w3.org/1998/Math/MathML"><m:mrow><m:msqrt><m:mrow><m:msup><m:mi>𝑥</m:mi><m:mn>2</m:mn></m:msup></m:mrow></m:msqrt><m:msqrt><m:mrow><m:msup><m:mi>𝐱</m:mi><m:mn>2</m:mn></m:msup></m:mrow></m:msqrt></m:mrow></m:math>
- <break/>
-<m:math display="inline" xmlns:m="http://www.w3.org/1998/Math/MathML"><m:mrow><m:msqrt><m:mrow><m:msup><m:mi>𝑥</m:mi><m:mn>2</m:mn></m:msup></m:mrow></m:msqrt><m:msqrt><m:mrow><m:msup><m:mi>𝑥</m:mi><m:mn>2</m:mn></m:msup></m:mrow></m:msqrt></m:mrow></m:math>
- <break/>
-<m:math display="inline" xmlns:m="http://www.w3.org/1998/Math/MathML"><m:mrow><m:msqrt><m:mrow><m:msup><m:mi>𝑥</m:mi><m:mn>2</m:mn></m:msup></m:mrow></m:msqrt><m:msqrt><m:mrow><m:msup><m:mi>𝑥</m:mi><m:mi>2</m:mi></m:msup></m:mrow></m:msqrt></m:mrow></m:math></document>

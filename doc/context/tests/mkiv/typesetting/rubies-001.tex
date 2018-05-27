@@ -1,0 +1,15 @@
+\defineruby[MUN]  [align=auto,color=darkblue,style=\infofont,voffset=-1.25ex]
+
+\starttexdefinition unexpanded MUN #1
+    \numberedruby[MUN]{#1}
+\stoptexdefinition
+
+\starttext
+
+\startTEXpage[offset=10pt]
+    \dorecurse{5}{%
+        whatever \MUN{something} and
+    }
+\stopTEXpage
+
+\stoptext

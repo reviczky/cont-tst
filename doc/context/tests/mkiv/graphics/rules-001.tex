@@ -1,0 +1,14 @@
+\starttext
+
+\startuseMPgraphic{foo}
+    fill unitsquare
+        xyscaled (RuleWidth,RuleHeight+RuleDepth) enlarged (ExHeight/4,ExHeight/8)
+        shifted  (-ExHeight/8,ExHeight/16)
+        withcolor RuleColor ;
+\stopuseMPgraphic
+
+\definelinefiller[foo][mp=foo,color=darkred]
+
+\linefillerhbox[foo]{\strut OEPS}
+
+\stoptext
