@@ -4,7 +4,7 @@
 
     input filename   : itemize-001
     processing date  : 
-    context version  : 2018.05.19 21:46
+    context version  : 2018.10.02 23:17
     exporter version : 0.35
 
 -->
@@ -12,3 +12,14 @@
 <?xml-stylesheet type="text/css" href="styles/itemize-001-defaults.css" ?>
 <?xml-stylesheet type="text/css" href="styles/itemize-001-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/itemize-001-styles.css" ?>
+
+<document context="2018.10.02 23:17" file="itemize-001" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+ <metadata>
+ </metadata>
+ <itemgroup detail="itemize" chain="itemize" level="1" symbol="n">
+  <item kind="head">
+   <itemtag>1.</itemtag>
+   <itemcontent><itemhead>Head 1</itemhead> </itemcontent>
+Test 1  </item>
+ </itemgroup>
+</document>

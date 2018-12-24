@@ -1,0 +1,21 @@
+\starttext
+
+\startsetups whatever
+    foo
+\stopsetups
+
+\copysetups[mysetup][whatever]
+
+\startsetups whatever
+    gnu
+    \directsetup{mysetup}
+    bar
+\stopsetups
+
+\directsetup{whatever}
+
+\resetsetups[mysetup]
+
+\directsetup{whatever}
+
+\stoptext

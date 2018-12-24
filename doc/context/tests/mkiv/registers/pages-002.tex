@@ -1,0 +1,10 @@
+\defineregister[nopageindex][index][pagenumber=no]
+
+\starttext
+
+    with page \index      {with page}\blank
+    no page   \nopageindex{no   page}\blank
+
+    \placeregister[index,nopageindex]
+
+\stoptext

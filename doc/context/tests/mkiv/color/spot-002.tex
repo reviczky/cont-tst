@@ -1,0 +1,49 @@
+\nopdfcompression
+
+\starttext
+
+\setupcolors[rgb=no] % spot=no]
+
+\definecolor [PMS144] [c=0.00,m=0.52,y=1.00,k=0.00] % donkeroranje
+
+\definespotcolor [TwoDark]     [PMS144] [p=1]
+\definespotcolor [TwoMiddle]   [PMS144] [p=.6]
+\definespotcolor [TwoLight]    [PMS144] [p=.8]
+\definespotcolor [TwoLighter]  [PMS144] [p=.15]
+
+% \dontleavehmode
+% \blackrule[height=3cm,width=2cm,color=PMS144]%
+% \blackrule[height=3cm,width=2cm,color=TwoDark]%
+% \blackrule[height=3cm,width=2cm,color=TwoMiddle]%
+% \blackrule[height=3cm,width=2cm,color=TwoLight]%
+% \blackrule[height=3cm,width=2cm,color=TwoLighter]
+
+\startMPcode
+%     fill fullcircle scaled 5cm withcolor "PMS144" ;
+%     fill fullcircle scaled 4cm withcolor "TwoLight";
+%     fill fullcircle scaled 3cm withcolor "TwoMiddle";
+    fill fullcircle scaled 2cm withcolor "TwoLight";
+%     fill fullcircle scaled 1cm withcolor "TwoLighter";
+%     currentpicture := currentpicture shifted (-5cm,0) ;
+%     fill fullcircle scaled 5cm withcolor spotcolor("sc1",.5) ;
+%     fill fullcircle scaled 3cm withcolor spotcolor("sc2",red) ;
+%     fill fullcircle scaled 2cm withcolor .5 * spotcolor("sc2",red) ;
+%     fill fullcircle scaled 2cm withcolor spotcolor("TwoDark",.5) ;
+
+%     fill fullcircle scaled 5cm withcolor spotcolor("temp1",red) ;
+%     fill fullcircle scaled 4cm withcolor .6 * spotcolor("temp2",red) ;
+
+%     currentpicture := currentpicture shifted (-5cm,0) ;
+%     fill fullcircle scaled 3cm withcolor multitonecolor("temp4",blue,yellow) ; ;
+%     fill fullcircle scaled 3cm withcolor multitonecolor("temp4",blue/2,yellow/2,green/2,magenta/3) ; ;
+%     fill fullcircle scaled 2cm withcolor multitonecolor("temp5",blue/2,yellow/2,green/2,magenta/3) ; ;
+%     fill fullcircle scaled 1cm withcolor .8 * multitonecolor("temp5",blue,yellow) ; ;
+%     fill fullcircle scaled 1cm withcolor .8 * multitonecolor("temp5",blue/2,yellow/2,green/2,magenta/3) ; ;
+
+%     fill fullcircle scaled 3mm withcolor white;
+
+\stopMPcode
+
+test
+
+\stoptext

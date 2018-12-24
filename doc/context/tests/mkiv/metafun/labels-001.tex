@@ -1,0 +1,87 @@
+% examples by Alan
+
+\starttext
+
+\startMPpage
+    path p ; p := fullcircle scaled 5cm ;
+
+    drawarrow p ;
+
+    dotlabel     ("test",point 0 of p) withcolor red ;
+    dotlabel.rt  ("rt",  point 1 of p) ;
+    dotlabel.urt ("urt", point 2 of p) ;
+    dotlabel.top ("top", point 3 of p) ;
+    dotlabel.ulft("ulft",point 4 of p) ;
+    dotlabel.lft ("lft", point 5 of p) ;
+    dotlabel.llft("llft",point 6 of p) ;
+    dotlabel.bot ("bot", point 7 of p) ;
+    dotlabel.lrt ("lrt", point 8 of p) ;
+\stopMPpage
+
+\startMPpage
+    path p ; p := fullcircle scaled 5cm ;
+
+    drawarrow p ;
+
+    dotlabel     ("test",p) ;
+    dotlabel.rt  ("rt",  p) ;
+    dotlabel.urt ("urt", p) ;
+    dotlabel.top ("top", p) ;
+    dotlabel.ulft("ulft",p) ;
+    dotlabel.lft ("lft", p) ;
+    dotlabel.llft("llft",p) ;
+    dotlabel.bot ("bot", p) ;
+    dotlabel.lrt ("lrt", p) ;
+\stopMPpage
+
+\startMPpage
+    p := (origin..right..up..left) scaled 5cm ;
+
+    drawarrow p ;
+
+    label     ("test",p) ;
+    label.rt  ("rt",  p) ;
+    label.urt ("urt", p) ;
+    label.top ("top", p) ;
+    label.ulft("ulft",p) ;
+    label.lft ("lft", p) ;
+    label.llft("llft",p) ;
+    label.bot ("bot", p) ;
+    label.lrt ("lrt", p) ;
+\stopMPpage
+
+\startMPpage
+    picture p ; p := image(drawarrow (origin..right..up..left) scaled 5cm ;) ;
+
+    draw p ;
+    draw bbox p dashed evenly ;
+
+    label     ("test",p) ;
+    label.rt  ("rt",  p) ;
+    label.urt ("urt", p) ;
+    label.top ("top", p) ;
+    label.ulft("ulft",p) ;
+    label.lft ("lft", p) ;
+    label.llft("llft",p) ;
+    label.bot ("bot", p) ;
+    label.lrt ("lrt", p) ;
+\stopMPpage
+
+\startMPpage
+    picture p ; p := image(drawarrow (origin..right..up..left) scaled 5cm ;) ;
+
+    draw p ;
+    draw bbox p dashed evenly ;
+
+    draw textext     ("test") shifted theoffset     (p) ;
+    draw textext.lft ("rt")   shifted theoffset.rt  (p) ;
+    draw textext.llft("urt")  shifted theoffset.urt (p) ;
+    draw textext.bot ("top")  shifted theoffset.top (p) ;
+    draw textext.lrt ("ulft") shifted theoffset.ulft(p) ;
+    draw textext.rt  ("lft")  shifted theoffset.lft (p) ;
+    draw textext.urt ("llft") shifted theoffset.llft(p) ;
+    draw textext.top ("bot")  shifted theoffset.bot (p) ;
+    draw textext.ulft("lrt")  shifted theoffset.lrt (p) ;
+\stopMPpage
+
+\stoptext

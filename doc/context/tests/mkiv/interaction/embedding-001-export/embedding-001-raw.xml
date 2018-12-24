@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+
+<!--
+
+    input filename   : embedding-001
+    processing date  : 
+    context version  : 2018.10.01 19:47
+    exporter version : 0.35
+
+-->
+
+<!-- This export file is used for filtering runtime only! -->
+
+<document context="2018.10.01 19:47" file="embedding-001" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+ <metadata>
+ </metadata>
+ <publications detail="default">
+  <list detail="btx">
+   <listitem detail="btx-default">
+    <listtag>1</listtag>
+    <listcontent><reference explicit="btx::list::1" implicit="1" reference="btx::list::1"></reference><publication dataset="default" tag="mytag"><pubfld detail="author">A.B. Author</pubfld>, <pubfld detail="title">The title</pubfld>, <pubfld detail="year">2018</pubfld>.</publication></listcontent>
+    </listitem>
+  </list>
+ </publications>
+Agriculture is a fairly recent human invention, and in many ways it was one of the great stupid moves of all time. Hunter-gatherers have thousands of wild sources of food to subsist on. Agriculture changed that all, generating an overwhelming reliance on a few dozen domesticated food sources, making you extremely vulnerable to the next famine, the next locust infestation, the next potato blight. Agriculture allowed for stockpiling of surplus resources and thus, inevitably, the unequal stockpiling of them — stratification of society and the invention of classes. Thus, it allowed for the invention of poverty. I think that the punch line of the primate-human difference is that when humans invented poverty, they came up with a way of subjugating the low-ranking like nothing ever seen before in the primate world. 
+ <formula>
+  <formulacontent n="1">
+   <m:math display="block" xmlns:m="http://www.w3.org/1998/Math/MathML">
+    <m:mrow>
+     <m:mi>𝑒</m:mi>
+     <m:mo>=</m:mo>
+     <m:mi>𝑚</m:mi>
+     <m:msup>
+      <m:mi>𝑐</m:mi>
+      <m:mn>2</m:mn>
+     </m:msup>
+    </m:mrow>
+   </m:math>
+  </formulacontent>
+  </formula>
+But if you place a human brain, with its evolutionary mandate to adapt to its environment, in an environment where there is no obvious linear sequence, where facts can be accessed at random, where everything is reversible, where the gap between stimulus and response is minimal, and above all where time is short, then your train of thought could be derailed. Add in the sensory distractions of an all-encompassing and vivid audio-visual universe encouraging shorter spans for sustained attention, and you might become, as it were, a computer yourself: a system responding efficiently and processing information very well, but devoid of deeper thought. 
+ <break/>
+The links in the margin are attachments and comments (just roll-over them).
+<extradata>
+<btxdata>
+<bibtex dataset='default'>
+ <entry tag='mytag' category='book' index='1'>
+  <field name='author'>Author, A.B.</field>
+  <field name='title'>The title</field>
+  <field name='year'>2018</field>
+  <field name='rawbibtex'><![CDATA[@book{mytag,
+author = {Author, A.B.},
+title = {The title},
+year = {2018},
+}]]></field>
+ </entry>
+</bibtex>
+</btxdata>
+</extradata>
+</document>

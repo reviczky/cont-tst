@@ -4,7 +4,7 @@
 
     input filename   : export-007
     processing date  : 
-    context version  : 2018.05.19 21:46
+    context version  : 2018.10.01 19:47
     exporter version : 0.35
 
 -->
@@ -12,3 +12,13 @@
 <?xml-stylesheet type="text/css" href="styles/export-007-defaults.css" ?>
 <?xml-stylesheet type="text/css" href="styles/export-007-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/export-007-styles.css" ?>
+
+<document context="2018.10.01 19:47" file="export-007" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+ <metadata>
+ </metadata>
+ <lines detail="lines" chain="lines">
+  <line><link destination="fileorurl(google)" url="http://www.google.com/">Google</link></line>
+  <line><reference explicit="txt:ref" implicit="1" reference="txt:ref"></reference><link destination="txt:ref" location="txt:ref">some text</link></line>
+  <line><link destination="url(http://www.google.com/)" url="http://www.google.com/">Google</link></line>
+ </lines>
+</document>

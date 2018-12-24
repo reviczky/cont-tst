@@ -1,0 +1,119 @@
+
+\defineblock[openquestion]
+\defineblock[itemintro]
+\defineblock[question]
+\defineblock[answer]
+\defineblock[explanation]
+
+\setupblock
+  [openquestion]
+  [before={\directsetup{QuestionNumber}}]
+
+\definelabel
+  [Exercise] % or enumeration
+
+\startsetups QuestionNumber
+    \Exercise
+\stopsetups
+
+\usemodule[dejavu,art-01]
+
+\starttext
+
+% \hideblocks[openquestion]
+\keepblocks[openquestion,itemintro,question,answer,explanation]
+%  \useblocks[openquestion,itemintro]
+% \selectblocks[itemintro,question]
+
+\subject{Questions}
+
+\hideblocks[answer,explanation]
+
+\startsetups tex:openquestion
+    \keepblocks[answer]
+\stopsetups
+
+\startsetups tex:explanation
+    \hideblocks[answer]
+\stopsetups
+
+\setupblock[openquestion][inner=\directsetup{tex:openquestion}]
+\setupblock[explanation] [inner=\directsetup{tex:explanation}]
+
+\beginopenquestion
+
+  \beginitemintro
+    This is the introduction to the question.
+  \enditemintro
+
+  \beginquestion
+    This is the question itself. Isn't it?
+  \endquestion
+
+  \beginexplanation
+    This is the explanation.
+  \endexplanation
+
+  \beginanswer
+    This is the answer.
+  \endanswer
+
+\endopenquestion
+
+\beginopenquestion
+
+  \beginitemintro
+    This is the introduction to the question.
+  \enditemintro
+
+  \beginquestion
+    This is the question itself. Isn't it?
+  \endquestion
+
+  \beginexplanation
+    This is the explanation.
+  \endexplanation
+
+\endopenquestion
+
+\beginopenquestion
+
+  \beginitemintro
+    This is the introduction to the question.
+  \enditemintro
+
+  \beginquestion
+    This is the question itself. Isn't it?
+  \endquestion
+
+  \beginanswer
+    This is the answer.
+  \endanswer
+
+\endopenquestion
+
+\subject{Answers}
+
+\resetcounter[Exercise]
+
+\keepblocks[openquestion,answer,explanation]
+\hideblocks[itemintro,question]
+\useblocks[openquestion]
+
+\blank[2*big]
+
+\textrule{Mijn vraag}
+
+\blank
+
+Indien er een 'explanation' is: dan explanation dus geen answer.
+
+\blank
+
+Een soort conditional useblock.
+
+\blank
+
+Dus: bij vraag 1 wil ik graag alleen de uitleg vergelijk Math4All.
+
+\stoptext

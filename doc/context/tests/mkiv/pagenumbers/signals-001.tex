@@ -1,0 +1,35 @@
+% for MF (follow up on ctx 2018 meeting)
+
+\setuppagenumbering[alternative=doublesided]
+
+\starttext
+
+\definepagestate[MM]
+\definepagestate[MMMM]
+
+\newcount\MMcounter
+
+\dorecurse {10} {
+    \subject{method 1}
+    #1.1: \signalrightpage \doifelserightpage{R}{L} \rightpageorder\par
+    #1.2: \signalrightpage \doifelserightpage{R}{L} \rightpageorder\par
+    #1.3: \signalrightpage \doifelserightpage{R}{L} \rightpageorder\par
+    #1.4: \signalrightpage \doifelserightpage{R}{L} \rightpageorder\par
+    \subject{method 2}
+    \global\advance\MMcounter\plusone
+    #1.1: \setpagestate[MM][\number\MMcounter] \pagestaterealpageorder{MM}{\number\MMcounter}\par
+    \global\advance\MMcounter\plusone
+    #1.2: \setpagestate[MM][\number\MMcounter] \pagestaterealpageorder{MM}{\number\MMcounter}\par
+    \global\advance\MMcounter\plusone
+    #1.3: \setpagestate[MM][\number\MMcounter] \pagestaterealpageorder{MM}{\number\MMcounter}\par
+    \global\advance\MMcounter\plusone
+    #1.4: \setpagestate[MM][\number\MMcounter] \pagestaterealpageorder{MM}{\number\MMcounter}\par
+    \subject{method 3}
+    #1.1: \setpagestate[MMMM] \autopagestaterealpageorder{MMMM}\par
+    #1.2: \setpagestate[MMMM] \autopagestaterealpageorder{MMMM}\par
+    #1.3: \setpagestate[MMMM] \autopagestaterealpageorder{MMMM}\par
+    #1.4: \setpagestate[MMMM] \autopagestaterealpageorder{MMMM}\par
+    \page
+}
+
+\stoptext

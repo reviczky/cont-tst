@@ -1,3 +1,68 @@
+\unprotect
+
+\unexpanded\def\flushlayer[#1]% quite core, so optimized (todo: check for void)
+  {\begingroup
+   \forgetall
+   \edef\currentlayer{#1}%
+   \edef\p_pack_layers_state{\layerparameter\c!state}%
+   \ifx\p_pack_layers_state\v!stop
+     % nothing
+   \else\ifx\p_pack_layers_state\v!next
+     \global\letlayerparameter\c!state\v!start  % dangerous, stack-built-up
+   \else\ifx\p_pack_layers_state\v!continue
+     \global\letlayerparameter\c!state\v!repeat % dangerous, stack-built-up
+   \else
+     \edef\p_pack_layers_doublesided{\layerparameter\c!doublesided}%
+     \ifx\p_pack_layers_doublesided\v!yes
+       \ifcsname\??layerbox#1\endcsname
+         % we can make a dedicated one for this
+         \doifbothsidesoverruled
+           {\pack_layers_flush_double\v!left }%
+           {\pack_layers_flush_double\v!right}%
+           {\pack_layers_flush_double\v!left }%
+       \else
+         \pack_layers_flush_single
+       \fi
+     \else
+       \pack_layers_flush_single
+     \fi
+   \fi\fi\fi
+   \endgroup}
+
+% text etc can be optimized
+
+\unexpanded\def\flushlayer[#1]% quite core, so optimized (todo: check for void)
+  {\begingroup
+   \forgetall
+   \edef\currentlayer{#1}%
+   \edef\p_pack_layers_state{\layerparameter\c!state}%
+   \ifx\p_pack_layers_state\v!stop
+     % nothing
+   \else\ifx\p_pack_layers_state\v!next
+     \global\letlayerparameter\c!state\v!start  % dangerous, stack-built-up
+   \else\ifx\p_pack_layers_state\v!continue
+     \global\letlayerparameter\c!state\v!repeat % dangerous, stack-built-up
+   \else
+     \edef\p_pack_layers_doublesided{\layerparameter\c!doublesided}%
+     \ifx\p_pack_layers_doublesided\v!yes
+       \ifcsname\??layerbox#1\endcsname
+         % we can make a dedicated one for this
+         \doifbothsidesoverruled
+           {\pack_layers_flush_double\v!left }%
+           {\pack_layers_flush_double\v!right}%
+           {\pack_layers_flush_double\v!left }%
+       \else
+         \pack_layers_flush_single
+       \fi
+     \else
+       \pack_layers_flush_single
+     \fi
+   \fi\fi\fi
+   \endgroup}
+
+\protect
+
+
 \enabletrackers[figures.links]
 
 \nopdfcompression

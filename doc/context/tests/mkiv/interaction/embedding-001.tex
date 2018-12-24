@@ -1,0 +1,50 @@
+% No attachments otherwise:
+
+\setupinteraction[state=start]
+
+% We need (for now) to export (only) xml:
+
+\setupbackend[export=xml]
+
+% We need a dummy:
+
+\startbuffer[bib]
+@book{mytag,
+  author = {Author, A.B.},
+  title  = {The title},
+  year   = {2018},
+}
+\stopbuffer
+
+% That we load:
+
+\usebtxdataset [bib.buffer]
+
+% We inject something:
+
+\startsetups btx:list:numbering:num
+    \btxaddsource
+    \texdefinition {btx:list:numbering} {num}
+\stopsetups
+
+% And typeset some text:
+
+\starttext
+
+    \samplefile{sapolsky}
+
+    \startformula
+        e = mc^2 \xmladdmmlsource
+    \stopformula
+
+    \samplefile{greenfield}
+
+    \blank
+
+    \placelistofpublications [method=dataset]
+
+    \blank
+
+    The links in the margin are attachments and comments (just roll|-|over them).
+
+\stoptext

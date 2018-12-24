@@ -1,0 +1,15 @@
+return {
+ ["htmlfiles"]={ "ignored-001-div.html" },
+ ["htmlroot"]="ignored-001-div.html",
+ ["identifier"]="a73eb864-4b88-85c9-0094-7036087a1b04",
+ ["imagefile"]="styles/ignored-001-images.css",
+ ["imagepath"]="images",
+ ["images"]={},
+ ["language"]="en",
+ ["metadata"]={},
+ ["name"]="ignored-001",
+ ["stylepath"]="styles",
+ ["styles"]={ "ignored-001-defaults.css", "ignored-001-images.css", "ignored-001-styles.css" },
+ ["xhtmlfiles"]={ "ignored-001-tag.xhtml" },
+ ["xmlfiles"]={ "ignored-001-raw.xml" },
+}

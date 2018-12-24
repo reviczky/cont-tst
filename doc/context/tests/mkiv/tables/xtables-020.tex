@@ -1,0 +1,36 @@
+\starttext
+
+\setupxtable[one][foregroundcolor=red]
+\setupxtable[two][foregroundcolor=blue]
+
+\startlinecorrection
+\startxtable
+   \startxrow[one]
+       \startxcell[width=5cm] Row 1, Column 1 \stopxcell
+       \startxcell Row 1, Column 2 \stopxcell
+       \startxcell Row 1, Column 3 \stopxcell
+   \stopxrow
+   \startxrow[two]
+       \startxcell Row 2, Column 1 \stopxcell
+       \startxcell Row 2, Column 2 \stopxcell
+       \startxcell Row 2, Column 3 \stopxcell
+   \stopxrow
+\stopxtable
+\stoplinecorrection
+
+\startlinecorrection
+\startxtable
+   \startxcolumn[one]
+       \startxcell[width=5cm] Row 1, Column 1 \stopxcell
+       \startxcell Row 1, Column 2 \stopxcell
+       \startxcell Row 1, Column 3 \stopxcell
+   \stopxcolumn
+   \startxcolumn[two]
+       \startxcell Row 2, Column 1 \stopxcell
+       \startxcell Row 2, Column 2 \stopxcell
+       \startxcell Row 2, Column 3 \stopxcell
+   \stopxcolumn
+\stopxtable
+\stoplinecorrection
+
+\stoptext

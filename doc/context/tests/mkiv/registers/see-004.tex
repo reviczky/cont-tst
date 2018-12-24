@@ -1,0 +1,20 @@
+% bad example from list
+
+\starttext
+
+\index{sample}
+\index{fun+games}\index{fun+stuff}
+\index{entertainment}
+
+% no anchor so no pages
+
+\seeindex{fun}{sample}
+\seeindex{fun}{blah}
+\seeindex{fun}{humbug}
+\seeindex{fun}{bug}
+
+\seeindex{fun+games}{entertainment}
+
+\placeindex[n=1,check=no] % check so show missing entries
+
+\stoptext

@@ -1,7 +1,7 @@
 return {
  ["htmlfiles"]={ "book-001-div.html" },
  ["htmlroot"]="book-001-div.html",
- ["identifier"]="06b6b19c-4d72-9b63-3438-be58e18649a6",
+ ["identifier"]="99a84d24-4b65-8806-c102-aaeae462e350",
  ["imagefile"]="styles/book-001-images.css",
  ["imagepath"]="images",
  ["images"]={

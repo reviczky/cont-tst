@@ -1,0 +1,21 @@
+\startluacode
+
+    luatex.wrapup(function()
+        for i=1,10 do
+            print("DONE",i)
+        end
+    end)
+
+    luatex.wrapup(function()
+        for i=1,10 do
+            print("MORE",i)
+        end
+    end)
+
+\stopluacode
+
+\starttext
+
+test
+
+\stoptext

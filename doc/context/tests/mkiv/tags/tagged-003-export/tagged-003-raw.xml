@@ -4,7 +4,7 @@
 
     input filename   : tagged-003
     processing date  : 
-    context version  : 2018.05.19 21:46
+    context version  : 2018.10.01 19:47
     exporter version : 0.35
 
 -->
@@ -12,3 +12,125 @@
 <?xml-stylesheet type="text/css" href="styles/tagged-003-defaults.css" ?>
 <?xml-stylesheet type="text/css" href="styles/tagged-003-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/tagged-003-styles.css" ?>
+
+<document context="2018.10.01 19:47" file="tagged-003" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+ <metadata>
+ </metadata>
+ <division detail="frontpart">
+  <section detail="chapter" chain="chapter" implicit="1" level="2">
+   <sectioncaption>
+    <sectiontitle>One</sectiontitle>
+   </sectioncaption>
+   <sectioncontent>
+    <paragraph>We thrive in information--thick worlds because of our marvelous and everyday capacity to select, edit, single out, structure, highlight, group, pair, merge, harmonize, synthesize, focus, organize, condense, reduce, boil down, choose, categorize, catalog, classify, list, abstract, scan, look into, idealize, isolate, discriminate, distinguish, screen, pigeonhole, pick over, sort, integrate, blend, inspect, filter, lump, skip, smooth, chunk, average, approximate, cluster, aggregate, outline, summarize, itemize, review, dip into, flip through, browse, glance into, leaf through, skim, refine, enumerate, glean, synopsize, winnow the wheat from the chaff and separate the sheep from the goats.</paragraph>
+    <paragraph>      <break/>
+<verbatim>structure:section</verbatim> : no     <break/>
+<verbatim>structure:chapter</verbatim> : no     <break/>
+<verbatim>division:*-structure:chapter</verbatim> : no </paragraph>
+    <itemgroup detail="itemize" chain="itemize" level="1" symbol="1">
+     <item>
+      <itemtag>•</itemtag>
+      <itemcontent>zero</itemcontent>
+     </item>
+     <item>
+      <itemtag>•</itemtag>
+      <itemcontent>first<descriptionsymbol detail="footnote" insert="1"><sup>1</sup></descriptionsymbol><description detail="footnote" chain="footnote" insert="1"><descriptiontag><sup>1</sup> </descriptiontag><descriptioncontent>test</descriptioncontent></description></itemcontent>
+     </item>
+     <item>
+      <itemtag>•</itemtag>
+      <itemcontent>second <registerlocation detail="index" internal="3"></registerlocation> <registerlocation detail="index" internal="4"></registerlocation></itemcontent>
+     </item>
+     <item>
+      <itemtag>•</itemtag>
+      <itemcontent>third</itemcontent>
+     </item>
+    </itemgroup>
+     <paragraph>The Earth, as a habitat for animal life, is in old age and has a fatal illness. Several, in fact. It would be happening whether humans had ever evolved or not. But our presence is like the effect of an old-age patient who smokes many packs of cigarettes per day<subsentencesymbol symbol="middle">—</subsentencesymbol>and we humans are the cigarettes.</paragraph>
+    <description detail="whatever" chain="whatever">
+      <descriptiontag>whocares</descriptiontag>
+     <descriptioncontent>Coming back to the use of typefaces in electronic publishing: many of the new typographers receive their knowledge and information about the rules of typography from books, from computer magazines or the instruction manuals which they get with the purchase of a PC or software. There is not so much basic instruction, as of now, as there was in the old days, showing the differences between good and bad typographic design. Many people are just fascinated by their PC’s tricks, and think that a widely--praised program, called up on the screen, will make everything automatic from now on.</descriptioncontent>
+     </description>
+   </sectioncontent>
+  </section>
+ </division>
+ <division detail="bodypart">
+  <section detail="chapter" chain="chapter" implicit="6" level="2">
+   <sectioncaption>
+    <sectionnumber>1</sectionnumber>
+    <sectiontitle>Two</sectiontitle>
+   </sectioncaption>
+   <sectioncontent>
+    <itemgroup detail="itemize" chain="itemize" level="1" symbol="1">
+     <item>
+      <itemtag>•</itemtag>
+      <itemcontent>first</itemcontent>
+     </item>
+     <item>
+      <itemtag>•</itemtag>
+      <itemcontent>second <registerlocation detail="index" internal="7"></registerlocation> <registerlocation detail="index" internal="8"></registerlocation></itemcontent>
+     </item>
+    </itemgroup>
+    </sectioncontent>
+  </section>
+  <section detail="chapter" chain="chapter" implicit="9" level="2">
+   <sectioncaption>
+    <sectionnumber>2</sectionnumber>
+    <sectiontitle>Three</sectiontitle>
+   </sectioncaption>
+   <sectioncontent>
+    <paragraph>Thus, I came to the conclusion that the designer of a new system must not only be the implementer and first large--scale user; the designer should also write the first user manual.     <break/>
+The separation of any of these four components would have hurt TEX significantly. If I had not participated fully in all these activities, literally hundreds of improvements would never have been made, because I would never have thought of them or perceived why they were important.     <break/>
+But a system cannot be successful if it is too strongly influenced by a single person. Once the initial design is complete and fairly robust, the real test begins as people with many different viewpoints undertake their own experiments.</paragraph>
+    <section detail="section" chain="section" implicit="10" level="3">
+     <sectioncaption>
+      <sectionnumber>2.1</sectionnumber>
+      <sectiontitle>Alpha</sectiontitle>
+     </sectioncaption>
+     <sectioncontent>
+      <paragraph>We thrive in information--thick worlds because of our marvelous and everyday capacity to select, edit, single out, structure, highlight, group, pair, merge, harmonize, synthesize, focus, organize, condense, reduce, boil down, choose, categorize, catalog, classify, list, abstract, scan, look into, idealize, isolate, discriminate, distinguish, screen, pigeonhole, pick over, sort, integrate, blend, inspect, filter, lump, skip, smooth, chunk, average, approximate, cluster, aggregate, outline, summarize, itemize, review, dip into, flip through, browse, glance into, leaf through, skim, refine, enumerate, glean, synopsize, winnow the wheat from the chaff and separate the sheep from the goats.</paragraph>
+      <paragraph>We thrive in information--thick worlds because of our marvelous and everyday capacity to select, edit, single out, structure, highlight, group, pair, merge, harmonize, synthesize, focus, organize, condense, reduce, boil down, choose, categorize, catalog, classify, list, abstract, scan, look into, idealize, isolate, discriminate, distinguish, screen, pigeonhole, pick over, sort, integrate, blend, inspect, filter, lump, skip, smooth, chunk, average, approximate, cluster, aggregate, outline, summarize, itemize, review, dip into, flip through, browse, glance into, leaf through, skim, refine, enumerate, glean, synopsize, winnow the wheat from the chaff and separate the sheep from the goats. We thrive in information--thick worlds because of our marvelous and everyday capacity to select, edit, single out, structure, highlight, group, pair, merge, harmonize, synthesize, focus, organize, condense, reduce, boil down, choose, categorize, catalog, classify, list, abstract, scan, look into, idealize, isolate, discriminate, distinguish, screen, pigeonhole, pick over, sort, integrate, blend, inspect, filter, lump, skip, smooth, chunk, average, approximate, cluster, aggregate, outline, summarize, itemize, review, dip into, flip through, browse, glance into, leaf through, skim, refine, enumerate, glean, synopsize, winnow the wheat from the chaff and separate the sheep from the goats.</paragraph>
+      <paragraph>We thrive in information--thick worlds because of our marvelous and everyday capacity to select, edit, single out, structure, highlight, group, pair, merge, harmonize, synthesize, focus, organize, condense, reduce, boil down, choose, categorize, catalog, classify, list, abstract, scan, look into, idealize, isolate, discriminate, distinguish, screen, pigeonhole, pick over, sort, integrate, blend, inspect, filter, lump, skip, smooth, chunk, average, approximate, cluster, aggregate, outline, summarize, itemize, review, dip into, flip through, browse, glance into, leaf through, skim, refine, enumerate, glean, synopsize, winnow the wheat from the chaff and separate the sheep from the goats.</paragraph>
+     </sectioncontent>
+    </section>
+   </sectioncontent>
+  </section>
+  <section detail="chapter" chain="chapter" implicit="11" level="2">
+   <sectioncaption>
+    <sectionnumber>3</sectionnumber>
+    <sectiontitle>Four</sectiontitle>
+   </sectioncaption>
+   <sectioncontent>
+oeps    <paragraph>The Earth, as a habitat for animal life, is in old age and has a fatal illness. Several, in fact. It would be happening whether humans had ever evolved or not. But our presence is like the effect of an old-age patient who smokes many packs of cigarettes per day<subsentencesymbol symbol="middle">—</subsentencesymbol>and we humans are the cigarettes.</paragraph>
+   </sectioncontent>
+  </section>
+ </division>
+ <division detail="backpart">
+  <section detail="title" chain="title" implicit="12" level="2">
+   <sectioncaption>
+    <sectiontitle>Index</sectiontitle>
+   </sectioncaption>
+   <sectioncontent>
+    <register detail="index" chain="index">
+     <registersection>
+      <registertag>o</registertag>
+      <registerentries>
+       <registerentry>
+        <registercontent>one</registercontent>
+        <registerpages><registerpage>1</registerpage><registerseparator>,</registerseparator><registerpage>2</registerpage></registerpages>
+       </registerentry>
+      </registerentries>
+     </registersection>
+     <registersection>
+      <registertag> t</registertag>
+      <registerentries>
+       <registerentry>
+        <registercontent>two</registercontent>
+        <registerpages><registerpage>1</registerpage><registerseparator>,</registerseparator><registerpage>2</registerpage></registerpages>
+       </registerentry>
+      </registerentries>
+     </registersection>
+    </register>
+   </sectioncontent>
+  </section>
+ </division>
+</document>

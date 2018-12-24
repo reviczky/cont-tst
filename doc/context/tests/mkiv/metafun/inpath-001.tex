@@ -1,0 +1,15 @@
+\starttext
+
+\startMPcode{doublefun}
+    path p ; p := (
+        for i=1 upto 2000 :
+            origin randomized 1000 ..
+        endfor cycle
+    ) xysized (TextWidth,TextHeight) ;
+    draw for i inpath p:
+        pointof i .. controls (leftof i) and (rightof i) ..
+    endfor cycle ;
+\stopMPcode
+
+\stoptext
+

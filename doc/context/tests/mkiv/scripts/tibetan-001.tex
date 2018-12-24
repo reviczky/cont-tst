@@ -1,0 +1,17 @@
+\starttext
+
+\definedfont[file:himalaya.ttf*tibetan]
+
+\showframe
+
+\startscript[tibetan]
+\dorecurse{50}{%
+    \char"0F56
+    \char"0F66\char"0F92\char"0FB2\char"0F74
+    \char"0F56
+    \char"0F66
+    \char"0F0B
+}
+\stopscript
+
+\stoptext

@@ -1,3 +1,5 @@
+\let\TeX\relax
+
 \startbuffer [mwe]
 @String{j-TUGboat = "TUGboat"}
 
@@ -38,40 +40,46 @@
 }
 \stopbuffer
 
-\btxremapauthor[Knuth, Donald][Donald E. Knuth]
-\btxremapauthor[Knuth, Don]   [Donald E. Knuth]
-%btxremapauthor[Don Knuth]    [Donald E. Knuth]
+% \let\btxcmd\relax
+% \let\btxcommand\relax
+
+% \btxremapauthor[Knuth, Donald][Donald E. Knuth]
+% \btxremapauthor[Knuth, Don]   [Donald E. Knuth]
+% %btxremapauthor[Don Knuth]    [Donald E. Knuth]
+%
+% \usebtxdefinitions
+%   [apa]
+%
+% \setupbtx
+%   [interaction=page]
+%
+% \defineregister [indexofauthors]
+%
+% \definebtxregister
+%   [authors]
+%   [field=author,
+%    alternative=invertedshort,
+%    register=indexofauthors,
+%    method=always]
 
 \usebtxdataset
   [mwe.buffer]
 
-\usebtxdefinitions
-    [apa]
-
-\setupbtx
-    [interaction=page]
-
-\defineregister [indexofauthors]
-
-\definebtxregister
-    [authors]
-    [field=author,
-     alternative=invertedshort,
-     register=indexofauthors,
-     method=always]
-
-\btxshowauthorremapping
-
 \starttext
 
-    \cite[match(author:Knuth)]
+%     \btxshowauthorremapping
+%
+%     \cite[match(author:Knuth)]
+%
+%     \page[yes]
+%
+%     \placebtxrendering
+%
+%     \page[yes]
+%
+%     \placeindexofauthors
 
-    \page[yes]
-
-    \placebtxrendering
-
-    \page[yes]
-
-    \placeindexofauthors
+test
 
 \stoptext
+

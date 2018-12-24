@@ -1,0 +1,19 @@
+\showframe
+
+\setuptolerance[verytolerant]
+
+\starttext
+
+    \startplacefigure [location={right,+5*hang}]
+        \externalfigure [cow] [width=.5\textwidth]
+    \stopplacefigure
+
+    \dorecurse{3}{\samplefile{tufte}\par}
+
+    \startplacefigure [location={right,+5*hang}]
+        \externalfigure [cow] [width=.5\textwidth]
+    \stopplacefigure
+
+    \dorecurse{30}{\samplefile{tufte}\par}
+
+\stoptext

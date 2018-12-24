@@ -10,7 +10,21 @@
 \blank
 
 \startMPcode{doublefun}
-    fill fullcircle scaled 1e1 cm ;
+    fill fullcircle scaled 0.5e1 cm ;
+    if known numbersystem :
+        draw textext(numbersystem) withcolor white ;
+    fi
+\stopMPcode
+
+\startMPcode{decimalfun}
+    fill fullcircle scaled 0.5e1 cm ;
+    if known numbersystem :
+        draw textext(numbersystem) withcolor white ;
+    fi
+\stopMPcode
+
+\startMPcode{binaryfun}
+    fill fullcircle scaled 0.5e1 cm ;
     if known numbersystem :
         draw textext(numbersystem) withcolor white ;
     fi

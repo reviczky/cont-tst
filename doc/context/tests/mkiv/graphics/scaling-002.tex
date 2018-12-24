@@ -1,0 +1,22 @@
+% \nopdfcompression
+
+\enabledirectives[metapost.stripzeros]
+\enabledirectives[pdf.stripzeros]
+
+\starttext
+
+\startTEXpage[offset=1pt]
+    \startoverlay
+        {\scale[sx=0.001,sy=0.002]{\scale[sx=1000,sy=1000]{\color[trace:r]{xx}}}}
+        {\scale[sx=1,sy=2]{\color[trace:g]{xx}}}
+    \stopoverlay
+\stopTEXpage
+
+\startTEXpage[offset=1pt]
+    \startoverlay
+        {\startMPcode draw textext("\color[trace:r]{xx}") yscaled 2\stopMPcode}
+        {\scale[sx=1,sy=2]{\color[trace:g]{xx}}}
+    \stopoverlay
+\stopTEXpage
+
+\stoptext

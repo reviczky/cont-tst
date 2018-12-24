@@ -1,0 +1,20 @@
+% \enabletrackers[language*]
+
+\setuplanguage[en] [patterns={us,agr}]
+\setuplanguage[agr][patterns={us,agr}]
+\setuplanguage[nl] [patterns={nl,agr}]
+\setuplanguage[de] [patterns={de,agr}]
+
+\starttext
+    \en  \hyphenatedword{judgmental}
+    \agr \hyphenatedword{judgmental}
+    \nl  \hyphenatedword{judgmental}
+    \de  \hyphenatedword{judgmental}
+
+    \usemodule[languages-hyphenation]
+
+    \startcomparepatterns[en,nl,de]
+        judgmental
+    \stopcomparepatterns
+
+\stoptext

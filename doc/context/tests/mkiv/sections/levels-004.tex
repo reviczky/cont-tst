@@ -1,0 +1,35 @@
+\starttext
+
+% this:
+%
+% \defineprefixset[chapter]   [chapter]
+% \defineprefixset[section]   [section]
+% \defineprefixset[subsection][subsection]
+%
+% \setuphead[chapter]   [sectionset=chapter]
+% \setuphead[section]   [sectionset=section]
+% \setuphead[subsection][sectionset=subsection]
+%
+% or:
+%
+% \setuphead[chapter]   [sectionsegments=\currentheadlevel]
+% \setuphead[section]   [sectionsegments=\currentheadlevel]
+% \setuphead[subsection][sectionsegments=\currentheadlevel]
+%
+% or:
+%
+% \setuphead[sectionsegments=\currentheadlevel]
+%
+% or
+
+\setuphead[sectionsegments=current]
+
+\startchapter[title=One,ownnumber={A}]
+    \startsection[title=OneOne,ownnumber={A.B}]
+        \startsubsection[title=OneOneOne,ownnumber={A.B.C}]
+            test
+        \stopsubsection
+    \stopsection
+\stopchapter
+
+\stoptext

@@ -1,0 +1,31 @@
+\setupdocument
+  [id=foo]
+
+\startluacode
+
+    luatex.wrapup(function()
+        local id = documentdata.variable("id")
+        if id and id ~= "" then
+            local oldname = file.addsuffix(environment.jobname,"pdf")
+            local newname = file.addsuffix("doc-"..id,"pdf")
+            if lfs.isfile(newname) then
+             -- print("removing",newname)
+                os.remove(newname)
+            end
+            if not lfs.isfile(newname) then
+             -- print("renaming",oldname,newname)
+                os.rename(oldname,newname)
+            end
+            if not lfs.isfile(newname) then
+             -- print("error in renaming")
+            end
+        end
+    end)
+
+\stopluacode
+
+\starttext
+
+    test
+
+\stoptext

@@ -1,0 +1,34 @@
+\enabledirectives[graphics.pdf.uselua]
+
+% \enabletrackers[graphics.fonts]
+
+% \nopdfcompression
+
+\setupbodyfont[dejavu]
+
+% mkiv lua stats  > merged fonts: DejaVuSerif (+38) DejaVuSerif-Bold (+36) DejaVuSerif-Italic (+38)
+
+\starttext
+
+    % \externalfigure[one.pdf][compact=yes,frame=on]
+    % \externalfigure[two.pdf][compact=yes,frame=on]
+
+    \startbuffer[one]
+    \setupbodyfont[dejavu]
+    \startTEXpage
+        \samplefile{ward} \sl \samplefile{klein} \bf \samplefile{sapolsky}
+    \stopTEXpage
+    \stopbuffer
+
+    \startbuffer[two]
+    \setupbodyfont[dejavu]
+    \startTEXpage
+        \samplefile{klein} \sl \samplefile{ward} \bf \samplefile{sapolsky}
+    \stopTEXpage
+    \stopbuffer
+
+    \samplefile{tufte} \blank
+    \typesetbuffer[one][height=4cm,compact=yes] \blank
+    \typesetbuffer[two][height=6cm,compact=yes] \blank
+
+\stoptext
