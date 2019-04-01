@@ -1,0 +1,37 @@
+\starttext
+
+\dontleavehmode \startluacode
+
+    if graphics.bitmaps then
+
+        local min, max, random = math.min, math.max, math.random
+
+        local bitmap = graphics.bitmaps.new(100,100,"rgb",1,true)
+
+        local data = bitmap.data
+        local mask = bitmap.mask
+
+        for i=1,100 do
+            local d = data[i]
+            local m = mask[i]
+            for j=1,100 do
+                d[j] = { i, max(i,j), j, min(i,j) }
+                m[j] = random(100,200)
+            end
+        end
+
+     -- context.scale (
+     --     { width = "10cm", height = "10cm" },
+     --     function() graphics.bitmaps.flush(bitmap) end
+     -- )
+
+     -- graphics.bitmaps.tocontext(bitmap)
+        graphics.bitmaps.tocontext(bitmap,"10cm", "5cm")
+
+    end
+
+\stopluacode
+
+done
+
+\stoptext

@@ -1,0 +1,24 @@
+% from mailing list:
+
+\startluacode
+fonts.handlers.otf.addfeature {
+    name    = "phone",
+    type    = "substitution",
+    nocheck = true,
+ -- data    = { [0x260E] = "PF003A" },
+    data    = { [0x260E] = "Telefon" },
+}
+\stopluacode
+
+\definefontfeature [phone] [mode=node,phone=yes]
+
+\definefallbackfamily [mainface] [serif] [MarVoSym] [range=0x260E,features=phone]
+\definefontfamily     [mainface] [serif] [TeX Gyre Pagella]
+\setupbodyfont        [mainface]
+
+\starttext
+    \utfchar                            {"260E}
+    \resolvedglyphdirect {name:marvosym}{n:Mobilefone}
+    \resolvedglyphdirect {name:marvosym}{n:PF003A}
+    \resolvedglyphdirect {name:marvosym}{n:Telefon}
+\stoptext

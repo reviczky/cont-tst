@@ -1,0 +1,75 @@
+% Posted by Alan and Aditya on the list, but generalized:
+
+\startluacode
+----- abs = math.abs
+
+local contour = { }
+local data    = { }
+local origin  = { 0, 0 }
+local length  = 0
+
+local function generate(f, x_min, x_max, y_min, y_max)
+   local points = { }
+   local length = 1000
+   local eps    = 1e-3
+   local spe    = -eps
+   local n      = 0
+   local code   = "return function(x,y) return " .. f .. " end"
+   local action = load(code)
+   if action then
+        action = action()
+   end
+   for xi = x_min, x_max, (x_max - x_min)/length do
+       for yi = y_min, y_max, (y_max - y_min)/length do
+         -- if abs(action(xi,yi)) < eps then -- 10% gain with:
+            local v = action(xi,yi)
+            if v < eps and v > spe then
+                n = n + 1
+                points[n] = { xi, yi }
+            end
+       end
+   end
+   return points, n
+end
+
+function mp.Countour(...)
+    data, length = generate(...)
+end
+
+function mp.ContourN()
+    mp.print(length)
+end
+
+function mp.ContourPoint(i)
+    mp.pair(data[i] or origin)
+end
+
+function mp.ContourPath(f,...)
+    if f then
+        data, length = generate(f,...)
+    end
+    mp.path(length > 0 and data or origin)
+end
+
+\stopluacode
+
+\starttext
+    \startMPpage[instance=doublefun]
+      % lua.mp.Countour("2*x^5  + x*y + y^5", 0, 2, -1, 0.5) ;
+      % draw lua.mp.ContourPath() withpen pencircle scaled .01 ;
+        draw lua.mp.ContourPath("2*x^5  + x*y + y^5", 0, 2, -1, 0.5) withpen pencircle scaled .01 ;
+        setbounds currentpicture to (0,-2) -- (2,-2) -- (2,.5) -- (0,.5) -- cycle ;
+        currentpicture := currentpicture xsized 5cm ;
+        picture pic ; pic := currentpicture ;
+        drawarrow llcorner pic -- lrcorner pic ;
+        drawarrow llcorner pic -- ulcorner pic ;
+        label.rt ("$x$", lrcorner pic) ;
+        label.top("$y$", ulcorner pic) ;
+        for x=0 step .5 until 2 :
+            label.bot(decimal x,(x/2)[llcorner pic,lrcorner pic]) ;
+        endfor ;
+        for y=0 step .5 until 2.5 :
+            label.lft(decimal (y-2),(y/2.5)[llcorner pic,ulcorner pic]) ;
+        endfor ;
+    \stopMPpage
+\stoptext

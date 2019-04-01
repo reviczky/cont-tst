@@ -1,7 +1,7 @@
 return {
  ["htmlfiles"]={ "itemize-001-div.html" },
  ["htmlroot"]="itemize-001-div.html",
- ["identifier"]="0a368e2c-4dbc-a1cd-91fc-185e02faba44",
+ ["identifier"]="ef22cf65-4de7-b8f7-3548-6e345e5ab712",
  ["imagefile"]="styles/itemize-001-images.css",
  ["imagepath"]="images",
  ["images"]={},

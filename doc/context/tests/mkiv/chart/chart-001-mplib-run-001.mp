@@ -1,8 +1,6 @@
-% begin graphic: n=0, trialrun=false, multipass=false, isextrapass=false
+% begin graphic: n=0
 
 ; beginfig(1) ; 
-boolean mfun_first_run ; mfun_first_run := true ;
-boolean mfun_trial_run ; mfun_trial_run := false ;
 ;
 if unknown context_flow : input mp-char.mpiv ; fi ;
 flow_begin_chart(0,3,4);

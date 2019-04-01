@@ -1,0 +1,12 @@
+\starttext
+    \startluacode
+        context("runtime: %0.3f",tonumber(io.loaddata(file.addsuffix(tex.jobname,"runtime"))))
+    \stopluacode
+
+    \startluacode
+        luatex.wrapup(function()
+            local r = tonumber(lua.getruntime and lua.getruntime() or statistics.elapsedtime(statistics))
+            io.savedata(file.addsuffix(tex.jobname,"runtime"),r)
+        end)
+    \stopluacode
+\stoptext

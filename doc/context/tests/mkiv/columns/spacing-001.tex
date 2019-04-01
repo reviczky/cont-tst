@@ -1,0 +1,26 @@
+% example by WS:
+
+\showboxes
+
+\starttext
+
+\setuphead[section][before=,after=]
+\setuphead[section][style=bold]
+
+\define[1]\Sample
+  {\begingroup
+     \setuphead[section][#1]
+     \section{Ward \doifsomething{#1}{\tttf [#1]}}
+     \samplefile{ward}\par
+   \endgroup}
+
+\starttext
+
+\startcolumns[balance=no]
+    \Sample{}
+    \Sample{style=}
+    \Sample{strut=no}
+    \Sample{grid=no}
+\stopcolumns
+
+\stoptext

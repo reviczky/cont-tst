@@ -1,0 +1,76 @@
+% posted by WS on the mailign list ...
+
+\usemodule[setups]
+
+\starttext
+
+When you describe a command, e.g. \type{\startdescription{\cmdbasicsetup[...]} ... \stopdescription}:
+
+\startbuffer [basicsetup]
+\cmdbasicsetup [startxtable]
+\stopbuffer
+
+\typebuffer [basicsetup]
+\getbuffer  [basicsetup]
+
+When you show the syntax of a command without the options:
+
+\startbuffer [shortsetup]
+\cmdshortsetup [startxtable]
+\stopbuffer
+
+\typebuffer [shortsetup]
+\getbuffer  [shortsetup]
+
+When you show the syntax of a command with the options:
+
+\startbuffer [fullsetup]
+\cmdfullsetup [startxtable]
+\stopbuffer
+
+\typebuffer [fullsetup]
+\getbuffer  [fullsetup]
+
+When you want to show the name of a command (similar to \tex{type}):
+
+\startbuffer [internal]
+\cmdinternal {startxtable}
+\stopbuffer
+
+\typebuffer [internal]
+\getbuffer  [internal]
+
+When you want to show the syntax of a command as a float:
+
+\startbuffer [showdefinition]
+\showdefinition [startxtable]
+\stopbuffer
+
+\typebuffer [showdefinition]
+\getbuffer  [showdefinition]
+
+When you want to refer to the definition:
+
+\startbuffer [definition]
+\definition [startxtable]
+%\definition [startxtable,startembeddedxtable]
+\stopbuffer
+
+\typebuffer [definition]
+\getbuffer  [definition]
+
+\page
+
+When you have a generated command (e.g. \tex {placefigure}):
+
+\startbuffer [instance]
+\cmdbasicsetupinstance {placefloat} {figure}
+\cmdshortsetupinstance {placefloat} {figure}
+\cmdfullsetupinstance  {placefloat} {figure}
+\stopbuffer
+
+\typebuffer [instance]
+\getbuffer  [instance]
+
+\stoptext
+

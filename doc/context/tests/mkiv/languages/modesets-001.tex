@@ -1,0 +1,34 @@
+\mainlanguage[nl]
+
+% \startmode[*en]
+%     \setupitemize[n]
+% \stopmode
+
+% \startmode[*nl]
+%     \setupitemize[a]
+% \stopmode
+
+% \startmode[*de]
+%     \setupitemize[i]
+% \stopmode
+
+\startmodeset
+    [*en] {
+        \setupitemize[n]
+    }
+    [*nl] {
+        \setupitemize[a]
+    }
+    [*de] {
+        \setupitemize[i]
+    }
+\stopmodeset
+
+\starttext
+
+\startitemize
+    \startitem test \stopitem
+    \startitem test \stopitem
+\stopitemize
+
+\stoptext

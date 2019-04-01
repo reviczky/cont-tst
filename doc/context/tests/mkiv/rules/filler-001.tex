@@ -1,0 +1,12 @@
+% example on list by WS
+
+\definefiller[dots][left=\dontleavehmode,right=\hskip\zeropoint\par]
+
+\starttext
+\input knuth \dorecurse{5}{\filler[dots]}
+
+\input knuth \dorecurse{5}{\hairline}
+
+\input knuth \thinrules[n=5]
+\stoptext
+

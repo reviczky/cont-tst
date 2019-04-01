@@ -1,28 +1,29 @@
 % for willi, reuse of graphic texts:
 
 \startMPpage
-	picture one   ; one   := image ( graphictext "1" scaled 4
-        withdrawcolor black withfillcolor white
-        withpen pencircle scaled 2pt ; ) ;
+    picture one   ; one   := image ( graphictext "1" ysized 2cm
+        withdrawcolor black
+        withfillcolor white
+        withpen pencircle scaled 2pt ) ;
+    picture two   ; two   := image ( graphictext "2" ysized 2cm
+        withdrawcolor red
+        withfillcolor cyan
+        withpen pencircle scaled 2pt ) ;
+    picture three ; three := image ( graphictext "3" ysized 2cm
+        withdrawcolor green
+        withfillcolor magenta
+        withpen pencircle scaled 2pt ) ;
+    picture four  ; four  := image ( graphictext "4" ysized 2cm
+        withdrawcolor blue
+        withfillcolor yellow
+        withpen pencircle scaled 2pt ) ;
 
-	picture two   ; two   := image ( graphictext "2" scaled 4
-        withdrawcolor red   withfillcolor cyan
-        withpen pencircle scaled 2pt ; ) ;
-
-	picture three ; three := image ( graphictext "3" scaled 4
-        withdrawcolor green withfillcolor magenta
-        withpen pencircle scaled 2pt ; ) ;
-
-	picture four  ; four  := image ( graphictext "4" scaled 4
-        withdrawcolor blue  withfillcolor yellow
-        withpen pencircle scaled 2pt ; ) ;
-
-	draw one   shifted (0cm,0);
-	draw one   shifted (1cm,0);
-	draw two   shifted (2cm,0);
-	draw two   shifted (3cm,0);
-	draw three shifted (4cm,0);
-	draw three shifted (5cm,0);
-	draw four  shifted (6cm,0); % has artefact in lm
-	draw four  shifted (7cm,0); % has artefact in lm
+    draw one   shifted (0cm,0);
+    draw one   shifted (2cm,0);
+    draw two   shifted (4cm,0);
+    draw two   shifted (6cm,0);
+    draw three shifted (8cm,0);
+    draw three shifted (10cm,0);
+    draw four  shifted (12cm,0); % has artefact in lm
+    draw four  shifted (14cm,0); % has artefact in lm
 \stopMPpage

@@ -1,0 +1,23 @@
+\starttext
+
+\startluacode
+    document.SavedFoo = ""
+    function mp.decimalvalue(s)
+        document.SavedFoo = s
+    end
+\stopluacode
+
+\startMPcalculation{decimalfun}
+    lua.mp.decimalvalue(decimal 123456789.123456789) ;
+\stopMPcalculation
+
+{\infofont\cldcontext{document.SavedFoo}}
+
+\startMPcalculation{decimalfun}
+    numberprecision:= 120 ;
+    lua.mp.decimalvalue(decimal (1/sqrt(3)));
+\stopMPcalculation
+
+{\infofont\cldcontext{document.SavedFoo}}
+
+\stoptext

@@ -1,0 +1,26 @@
+% \definefontfeature[default][default][scripts=yes]
+% \definefontfeature[default][default][scripts=.6]
+
+\definefontfeature[default][default][scripts={factor=.6,up=.3,down=.2,extend=1.25}]
+
+\starttext
+
+\startTEXpage[offset=3pt]
+    \startluacode
+        local chardata = fonts.hashes.characters[true]
+        for unicode, data in table.sortedhash(characters.data) do
+            local specials = data.specials
+            if specials then
+                local what  = specials[1]
+                local other = specials[2]
+                if chardata[other] and what == "super" or what == "sub" then
+                    context.char(other)
+                    context.char(unicode)
+                    context.space()
+                end
+            end
+        end
+    \stopluacode
+\stopTEXpage
+
+\stoptext

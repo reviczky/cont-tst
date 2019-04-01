@@ -1,4 +1,4 @@
--- The following list is based on greps for specific commands, reports from Lucas,  as well as
+-- The following list is based on greps for specific commands, reports from Lucas, as well as
 -- observations by Lars Hamren.
 
 -- context --nocompression --nodates --trailerid=1 --randomseed=1234 somefile

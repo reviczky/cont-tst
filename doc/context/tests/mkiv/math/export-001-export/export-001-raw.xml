@@ -3,8 +3,8 @@
 <!--
 
     input filename   : export-001
-    processing date  : 
-    context version  : 2018.10.01 19:47
+    processing date  : 2019-03-24T14:41:55+01:00
+    context version  : 2019.03.21 21:39
     exporter version : 0.35
 
 -->
@@ -13,7 +13,7 @@
 <?xml-stylesheet type="text/css" href="styles/export-001-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/export-001-styles.css" ?>
 
-<document context="2018.10.01 19:47" file="export-001" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+<document context="2019.03.21 21:39" date="2019-03-24T14:41:55+01:00" file="export-001" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
  <metadata>
  </metadata>
  <formula>
@@ -52,20 +52,10 @@
       <m:mn>1</m:mn>
       <m:mo>∑</m:mo>
      </m:msubsup>
-     <m:mfrac>
-      <m:mn>1</m:mn>
-      <m:mfrac>
-       <m:mn>1</m:mn>
-       <m:mfrac>
-        <m:mn>1</m:mn>
-        <m:mn>1</m:mn>
-       </m:mfrac>
-      </m:mfrac>
-     </m:mfrac>
     </m:mrow>
    </m:math>
   </formulacontent>
-  </formula>
+1 111  </formula>
  <formula>
   <formulacontent n="4">
    <m:math display="block" xmlns:m="http://www.w3.org/1998/Math/MathML">

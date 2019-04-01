@@ -1,0 +1,34 @@
+\setupbodyfont
+  [lucidaot,10pt]
+
+\usemodule[x][mathml]
+\usemodule[x][asciimath]
+
+% there is no 0x305 in lucida so we fake it ...
+
+\starttext
+
+\startbuffer[mathaccent]
+<p xmlns:m="http://whereever/mathml">
+
+<m:math>
+    <m:mrow>
+        <m:mover accent='true'>
+            <m:mrow>
+                <m:mi>AAAAA</m:mi>
+            </m:mrow>
+            <m:mo stretchy='true'>&#x00AF;</m:mo>
+        </m:mover>
+    </m:mrow>
+</m:math>
+</p>
+\stopbuffer
+
+\blackrule[width=4cm,height=.2bp]
+
+% \blackrule[width=.2bp,height=1cm]
+
+\xmlprocessbuffer{main}{mathaccent}{}
+
+\stoptext
+

@@ -1,0 +1,33 @@
+\starttext
+
+\startbuffer[test]
+<p>
+    <equation text="$$y_1(t) = 1, t \geq 0$$">
+       <img alt="$$y_1(t) = 1, t \geq 0$$" class="equation" height="15px" src="Lab01_eq10401623798909303081.png" width="95px"/>
+    </equation>
+</p>
+\stopbuffer
+
+\startxmlsetups whatever
+    \xmlsetsetup{#1}{p|equation}{xml:*}
+\stopxmlsetups
+
+\xmlregistersetup{whatever}
+
+\startxmlsetups xml:p
+    \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:equation
+    \cldcontext{lxml.getid("#1").at.text}
+\stopxmlsetups
+
+\startxmlsetups xml:equation
+    \startformula
+        \cldcontext{(string.gsub(lxml.getid("#1").at.text,"[$][$]",""))}
+    \stopformula
+\stopxmlsetups
+
+\xmlprocessbuffer{main}{test}{}
+
+\stoptext

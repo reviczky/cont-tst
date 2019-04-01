@@ -7,7 +7,7 @@
 
 \startluacode
 
-    callbacks.push("find_image_file",function(whaveter)
+    callbacks.push("find_data_file",function(whaveter)
         return "whatever"
     end)
 
@@ -15,7 +15,7 @@
     -- checking in the figure handlers but when you ask for an existing image it
     -- will crash luatex
 
-    callbacks.pop("find_image_file")
+    callbacks.pop("find_data_file")
 \stopluacode
 
 % \externalfigure[t:/sources/cow.pdf]

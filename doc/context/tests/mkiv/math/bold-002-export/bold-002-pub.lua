@@ -1,7 +1,7 @@
 return {
  ["htmlfiles"]={ "bold-002-div.html" },
  ["htmlroot"]="bold-002-div.html",
- ["identifier"]="ca42c204-4e43-9f0e-c9a6-55649fece772",
+ ["identifier"]="828e3bdb-4b81-b97a-3840-79b255557119",
  ["imagefile"]="styles/bold-002-images.css",
  ["imagepath"]="images",
  ["images"]={},
