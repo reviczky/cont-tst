@@ -1,0 +1,30 @@
+\showframe
+
+\starttext
+
+\definefloat
+  [one] [figure]
+  [default=right,
+   rightmargindistance=-20cm,
+   criterium=129pt,
+   fallback=rightmargin]
+
+\definefloat
+  [two] [figure]
+  [default=right,
+   rightmargindistance=-20cm,
+   criterium=129pt,
+   fallback=three]
+
+\definefloat
+  [three] [figure]
+  [default=rightmargin,
+   rightmargindistance=0cm]
+
+\placefloat[one]{}{\blackrule[width=30pt]}  \samplefile{tufte}
+\placefloat[one]{}{\blackrule[width=60pt]}  \samplefile{tufte}
+\placefloat[one]{}{\blackrule[width=90pt]}  \samplefile{tufte}
+\placefloat[one]{}{\blackrule[width=130pt]} \samplefile{tufte}
+\placefloat[two]{}{\blackrule[width=130pt]} \samplefile{tufte}
+
+\stoptext

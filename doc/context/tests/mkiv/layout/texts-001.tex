@@ -1,0 +1,18 @@
+\setuplayouttext
+  [header][text]
+  [lefttext=L,
+   middletext=M,
+   righttext=\doifoddpageelse{RO}{RE}]
+
+\setuplayouttext
+  [footer][text]
+  [lefttext=L,
+   middletext=M,
+   righttext=\doifoddpageelse{RO}{RE}]
+
+\setuppagenumbering
+  [alternative=doublesided]
+
+\starttext
+    test \page test \page test
+\stoptext

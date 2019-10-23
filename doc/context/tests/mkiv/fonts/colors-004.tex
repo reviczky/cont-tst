@@ -1,0 +1,16 @@
+\definefontfeature
+  [whatever]
+  [default,color:svg]
+  [script=latn,
+   language=dflt]
+
+\definefont[colorsvgfonta][file:Abelone-FREE.otf*whatever          @ 10pt]
+\definefont[colorsvgfontb][file:Gilbert-ColorBoldPreview5*whatever @ 10pt]
+
+\startTEXpage[offset=10pt]
+\showglyphs
+    \colorsvgfontb \input zapf
+    \blank
+    \colorsvgfonta \input zapf
+\stopTEXpage
+

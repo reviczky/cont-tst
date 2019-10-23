@@ -1,0 +1,19 @@
+\setupbodyfont[dejavu,9pt]
+
+\setuplayout[middle]
+
+\setuptolerance[verytolerant,stretch]
+
+\dontcomplain
+
+\starttext
+    \startpagecolumns[n=3]
+  % \startcolumns[n=3]
+        \dorecurse{100}{
+            \pagereference[column:#1]%
+            \doifelsereferencefound{column:#1}{\number\referencecolumnnumber}{}:
+            \input ward
+        \par}
+  % \stopcolumns
+    \stoppagecolumns
+\stoptext

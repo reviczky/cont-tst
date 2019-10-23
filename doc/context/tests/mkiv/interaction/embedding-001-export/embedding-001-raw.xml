@@ -3,15 +3,15 @@
 <!--
 
     input filename   : embedding-001
-    processing date  : 2019-03-24T14:36:51+01:00
-    context version  : 2019.03.21 21:39
+    processing date  : 2019-10-08T19:49:17+02:00
+    context version  : 2019.10.08 19:24
     exporter version : 0.35
 
 -->
 
 <!-- This export file is used for filtering runtime only! -->
 
-<document context="2019.03.21 21:39" date="2019-03-24T14:36:51+01:00" file="embedding-001" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+<document context="2019.10.08 19:24" date="2019-10-08T19:49:17+02:00" file="embedding-001" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
  <metadata>
  </metadata>
  <publications detail="default">

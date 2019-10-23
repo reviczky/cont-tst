@@ -1,0 +1,18 @@
+\definefloat
+  [myfigure]
+  [figure]
+  [margin=60pt,rightmargindistance=30pt]
+
+\starttext
+
+\samplefile{knuth}
+
+\startplacefloat[myfigure][location={right},title={whatever},reference={someplace},]
+  \externalfigure[t:/sources/mill.png][width=3cm]
+\stopplacefloat
+
+\samplefile{knuth}
+
+\samplefile{knuth}
+
+\stoptext

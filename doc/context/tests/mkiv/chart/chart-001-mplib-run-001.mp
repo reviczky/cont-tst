@@ -1,8 +1,6 @@
 % begin graphic: n=0
 
-; beginfig(1) ; 
-;
-if unknown context_flow : input mp-char.mpiv ; fi ;
+; beginfig(1) ; ;if unknown context_flow : input mp-char.mpiv ; fi ;
 flow_begin_chart(0,3,4);
 flow_grid_width     := 200.90549pt ;
 flow_grid_height    := 197.811pt ;
@@ -17,6 +15,7 @@ flow_connection_smooth_size := 4.5pt ;
 flow_connection_arrow_size  := 4.5pt ;
 flow_connection_dash_size   := 4.5pt ;
 flow_chart_offset := 56.9055pt ;
+flow_chart_clip_offset := 12pt ;
 flow_reverse_y := true ;
 flow_begin_sub_chart ;
 flow_shape_line_color := "FLOWframecolor" ;
@@ -113,7 +112,6 @@ flow_chart_draw_label(2,2,"r",textext("\doFLOWlabel{2}{2}{32}")) ;
 flow_chart_draw_label(2,2,"rt",textext("\doFLOWlabel{2}{2}{33}")) ;
 flow_chart_draw_text(2,4,textext("\setvariables[flowcell:text][x=2,y=4,n=34,align={},figure={},overlay={},destination={}]")) ;
 flow_chart_draw_text(2,4,textext("\setvariables[flowcell:text][x=2,y=4,n=35,align={},figure={},overlay={},destination={}]")) ;
-flow_end_chart ;
-; endfig ;
+flow_end_chart ;; endfig ;
 % end graphic
 

@@ -1,0 +1,76 @@
+\startbuffer[text]
+<para>
+    A <inline style="sup">sup 1</inline>
+    B <inline style="sub">sub 1</inline>
+    C <inline style="sup">sup 2</inline>
+    D <inline style="sub">sub 2</inline>
+    E <inline style="sup">sup 3</inline>
+    F <inline style="sup">sup 4</inline>
+    G <inline style="sup">sup 5</inline>
+    H <inline style="sub">sub 5</inline>
+    I <inline style="sup">sup 6</inline>
+</para>
+\stopbuffer
+
+\startluacode
+    function xml.expressions.MyCheck(list,position,what)
+     -- print("list",    list)
+     -- print("position",position)
+     -- print("what",    what)
+        local n = list[position+1]
+        return n and n.at.style == what
+    end
+\stopluacode
+
+\startxmlsetups xml:textsetups
+
+    \xmlsetsetup{#1}{para|inline}{xml:*}
+
+    % with a helper:
+
+%     \xmlsetsetup{#1}{inline[@style='sup' and MyCheck(list(),position(),"sub")]}{xml:supsub}
+%     \xmlsetsetup{#1}{inline[@style='sup' and MyCheck(list(),position(),"sup")]}{xml:supsup}
+
+    % rather verbose, we *need* to use ['at'] and not .at
+
+%     \xmlsetsetup{#1}{inline[@style='sup' and (position() < last() and list()[position()+1]['at']['style']=='sub')]}{xml:supsub}
+%     \xmlsetsetup{#1}{inline[@style='sup' and (position() < last() and list()[position()+1]['at']['style']=='sup')]}{xml:supsup}
+
+    % also ok
+
+%     \xmlsetsetup{#1}{inline[@style='sup' and (position() < last() and attribute(list()[position()+1],'style')=='sub')]}{xml:supsub}
+%     \xmlsetsetup{#1}{inline[@style='sup' and (position() < last() and attribute(list()[position()+1],'style')=='sup')]}{xml:supsup}
+
+    % direct checking
+
+%     \xmlsetsetup{#1}{inline[@style='sup' and (position() < last() and attribute(list()[position()+1],'style','sub'))]}{xml:supsub}
+%     \xmlsetsetup{#1}{inline[@style='sup' and (position() < last() and attribute(list()[position()+1],'style','sup'))]}{xml:supsup}
+
+    % shorter
+
+    \xmlsetsetup{#1}{inline[@style='sup' and (attribute(list()[position()+1],'style','sub'))]}{xml:supsub}
+    \xmlsetsetup{#1}{inline[@style='sup' and (attribute(list()[position()+1],'style','sup'))]}{xml:supsup}
+\stopxmlsetups
+
+\xmlregistersetup{xml:textsetups}
+
+\startxmlsetups xml:para
+    \xmlflush{#1}\par
+\stopxmlsetups
+
+\startxmlsetups xml:supsub
+    \color[red]{\xmlflush{#1}}
+\stopxmlsetups
+
+\startxmlsetups xml:supsup
+    \color[blue]{\xmlflush{#1}}
+\stopxmlsetups
+
+\startxmlsetups xml:inline
+    \color[green]{\xmlflush{#1}}
+\stopxmlsetups
+
+\starttext
+    \xmlprocessbuffer{main}{text}{}
+\stoptext
+

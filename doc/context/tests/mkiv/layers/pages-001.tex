@@ -1,0 +1,73 @@
+\usemodule[visual]
+
+\setuppapersize[A6][A6,oversized]
+
+\setuplayout
+   [location=middle,
+	marking=on,
+	grid=yes]
+
+\setuppagenumbering
+  [alternative=doublesided]
+
+\starttext
+
+\definelayer
+  [page]
+  [width=\paperwidth,
+   height=\paperheight]
+
+\definelayer
+  [footer]
+  [width=\textwidth,
+   height=\footerheight]
+
+\setupbackgrounds
+  [page]
+  [background=page,
+   state=start]
+
+\setupbackgrounds
+  [footer][text]
+  [background=footer,
+   state=start]
+
+\setupfooter[strut=no]
+
+\useMPlibrary[dum]
+
+\showframe[frame=on]
+
+\dorecurse{10} {
+
+    test
+
+    \page[left]
+
+    \setlayer
+      [page]
+      [x=-2mm,
+       y=-2mm,
+       preset=lefttop]
+      {\externalfigure
+         [bogus]
+         [width=\dimexpr\paperwidth+2mm,
+          height=\dimexpr\paperheight+4mm]
+         [frame=on]}
+
+    \setlayerframed
+      [footer]
+      [preset=leftbottom]
+      [frame=off,
+       align=normal,
+       background=color,
+       backgroundcolor=white]
+      {\fakewords{#1}{#1}}
+
+    \page[empty]
+
+    test
+
+}
+
+\stoptext

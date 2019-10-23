@@ -2,11 +2,17 @@
 
 \startluacode
 
-    local result = metapost.quickanddirty("metafun",[[ draw fullcircle scaled 1cm ;]])
+    local result, w, h, d, bbox = metapost.simple("metafun",[[ draw fullcircle scaled 1cm ;]])
 
-    context("% t",result.bbox)
+    context("w = %s",w)
     context.par()
-    context("% t",result.code)
+    context("h = %s",h)
+    context.par()
+    context("d = %s",d)
+    context.par()
+    context("b = [ %, t ]",bbox)
+    context.blank()
+    context("%s",result)
     context.par()
 
 \stopluacode

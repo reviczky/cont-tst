@@ -1,0 +1,32 @@
+\starttext
+    \setupcolors[rgb=no]
+    \startTEXpage[strut=no,offset=10pt]
+        \start
+            \definefont[TestA][file:NotoColorEmoji*color]%
+            x\ruledhbox{\TestA 12🐶🐶🐶}x\par
+            \showglyphs
+            x\ruledhbox{\TestA 12🐶🐶🐶}x\par
+        \stop
+        \start
+            \definefont[TestA][file:applecoloremoji.ttc*color]%
+            x\ruledhbox{\TestA 12🐶🐶🐶}x\par
+            \showglyphs
+            x\ruledhbox{\TestA 12🐶🐶🐶}x\par
+        \stop
+        \start
+            \definefont[TestA][seguiemj*color]%
+            {\red x}\ruledhbox{\TestA 12🐶🐶🐶}{\green x}\par
+            \showglyphs
+            x\ruledhbox{\TestA 12🐶🐶🐶}x\par
+        \stop
+        \start
+            \definefont[TestA][file:Abelone-FREE.otf*color]%
+            \TestA abc\par
+            \definefont[TestB][file:Gilbert-ColorBoldPreview5*color]%
+            \TestB abc\par
+        \stop
+    \stopTEXpage
+    \startTEXpage[strut=no,offset=10pt]
+        \externalfigure[hacker.png][width=10cm,cmyk=auto]
+    \stopTEXpage
+\stoptext

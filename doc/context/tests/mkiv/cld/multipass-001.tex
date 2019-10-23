@@ -1,0 +1,13 @@
+\starttext
+
+    \enabletrackers[context.*]
+
+    \ctxlua{context.framed({ align = "normal", width = "1cm", height = "2cm" }, "oeps")}
+
+    \enabledirectives[context.sorthash]
+
+    \ctxlua{context.framed({ align = "normal", width = "1cm", height = "2cm" }, "oeps")}
+
+    % sorting can be enforced if stuff ends up in the tuc file
+
+\stoptext

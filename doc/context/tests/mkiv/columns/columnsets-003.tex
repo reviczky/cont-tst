@@ -1,0 +1,32 @@
+\setuppagenumbering[alternative={doublesided}]
+
+\showgrid
+
+\setupalign[verytolerant] \dontcomplain
+
+\definecolumnset[three][n=3]
+
+\definecolumnsetspan[two]
+  [n=2,
+   background=color,
+   backgroundcolor=lightgray]
+
+\starttext
+
+\page[left]
+
+\startcolumnset[three]
+
+    \startcolumnsetspan[two][c=1,r=5]
+        \samplefile{ward}
+    \stopcolumnsetspan
+
+    \startcolumnsetspan[two][method=btlr,c=2,r=3]
+        \samplefile{ward}
+    \stopcolumnsetspan
+
+    \dorecurse{6}{\samplefile{knuth}\par}
+
+\stopcolumnset
+
+\stoptext

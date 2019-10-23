@@ -1,0 +1,29 @@
+\definefontfeature
+  [kannada-one]
+  [devanagari-one]
+  [script=knda]
+
+\definefontfeature
+  [kannada-two]
+  [devanagari-two]
+  [script=knd2]
+
+\definefont[kannadatestA][file:notosanskannada-regular.ttf*kannada-one]
+\definefont[kannadatestB][file:notosanskannada-regular.ttf*kannada-two]
+
+\startbuffer
+ಕ + ಿ \quad ಕ + ್ + ರ \quad ರ + ್ + ಕ \quad : \quad ಕಿ\quad\quad ಕ್ರ\quad\quad ರ್ಕ
+\stopbuffer
+
+\starttext
+
+\starttyping
+% 0C95 LETTER KA | 0CBF VOWEL SIGN I
+% 0C95 LETTER KA | 0CCD SIGN VIRAMA  | 0CB0 LETTER RA
+% 0CB0 LETTER RA | 0CCD SIGN VIRAMA  | 0C95 LETTER KA
+\stoptyping
+
+\type {knda} : {\kannadatestA \getbuffer\par}
+\type {knd2} : {\kannadatestB \getbuffer\par}
+
+\stoptext

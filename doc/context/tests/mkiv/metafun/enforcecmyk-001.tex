@@ -1,0 +1,36 @@
+\setupcolors[rgb=no]
+
+\starttext
+
+\startMPpage[instance=doublefun]
+    draw lmt_contour [
+        xmin =  0, xmax = 4*pi, xstep = .05,
+        ymin = -6, ymax = 6,    ystep = .05,
+        levels     = 7,
+        height     = 5cm,
+        preamble   = "local sin, cos = math.sin, math.cos",
+        function   = "cos(x) + sin(y)",
+        background = "bitmap",
+        foreground = "edge",
+        linewidth  = 1/2,
+        color      = "shade({1/2,0,0},{0,0,1/2})",
+    ] ;
+\stopMPpage
+
+\startMPpage[instance=doublefun]
+    draw lmt_surface [
+        preamble  = "local sin, cos = math.sin, math.cos",
+        code      = "sin(x*x) - cos(y*y)"
+        xmin      = -3,
+        xmax      =  3,
+        ymin      = -3,
+        ymax      =  3,
+        xvector   = { -0.3, -0.3 },
+        height    = 5cm,
+        axis      = { 40mm, 40mm, 30mm },
+        clipaxis  = true,
+        axiscolor = "gray",
+    ] ;
+\stopMPpage
+
+\stoptext

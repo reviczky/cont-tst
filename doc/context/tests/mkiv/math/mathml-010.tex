@@ -1,0 +1,69 @@
+\usemodule[mathml]
+
+\starttext
+
+\xmlprocessdata{}{
+    <imath>
+        <math xmlns='http://www.w3.org/1998/Math/MathML'>
+            <msup>
+                <mrow>
+                    <mo stretchy='false'></mo>
+                        <mi>N</mi>
+                    <mo stretchy='false'>)</mo>
+                </mrow>
+                <mn>2</mn>
+            </msup>
+        </math>
+    </imath>
+}{}
+
+\xmlprocessdata{}{
+    <imath>
+        <math xmlns='http://www.w3.org/1998/Math/MathML'>
+            <mi>A</mi>
+            <mo>+</mo>
+            <mfenced open="(" close=")" separators="">
+                <mi>B</mi>
+                <mo>|</mo>
+                <mi>C</mi>
+            </mfenced>
+            <mo>=</mo>
+            <mi>D</mi>
+        </math>
+    </imath>
+}{}
+
+\xmlprocessdata{}{
+    <imath>
+        <math xmlns='http://www.w3.org/1998/Math/MathML'>
+            <mi>A</mi>
+            <mo>+</mo>
+            <mfenced open="(" close=")" separators="">
+                <mi>B</mi>
+                <mo>|</mo>
+                <mi>C</mi>
+                <mo>|</mo>
+                <mi>D</mi>
+            </mfenced>
+            <mo>=</mo>
+            <mi>E</mi>
+        </math>
+    </imath>
+}{}
+
+\xmlprocessdata{}{
+    <imath>
+        <math xmlns='http://www.w3.org/1998/Math/MathML'>
+            <mi>A</mi>
+            <mo>+</mo>
+            <mfenced open="(" close=")" separators="|">
+                <mi>B</mi>
+                <mi>C</mi>
+            </mfenced>
+            <mo>=</mo>
+            <mi>D</mi>
+        </math>
+    </imath>
+}{}
+
+\stoptext

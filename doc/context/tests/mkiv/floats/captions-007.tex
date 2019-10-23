@@ -1,0 +1,15 @@
+\useMPlibrary[dum]
+
+\starttext
+
+% For hvdm, captions without figure.
+
+\placefigure      [here][fig:one]                  {labeltext-1}  {\externalfigure[figure-1]}
+\placefloatcaption[figure][reference=fig:two,title={labeltext-2}]  \externalfigure[figure-2]
+\placefigure      [here][fig:three]                {labeltext-3}  {\externalfigure[figure-3]}
+
+\in{one}  [fig:one]
+\in{two}  [fig:two]
+\in{three}[fig:three]
+
+\stoptext

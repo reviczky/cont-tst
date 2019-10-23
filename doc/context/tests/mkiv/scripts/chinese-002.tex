@@ -1,0 +1,11 @@
+\starttext
+
+\definefontfeature[zh][mode=node, script=hang, lang=zhs]
+\definefont[ChineseFont][AdobeSongStd-Light*zh at 10pt]
+
+\startMPpage
+    fill fullcircle scaled 10cm withcolor red ;
+    draw textext("\ChineseFont 发送时间") xsized 8cm withcolor white ;
+\stopMPpage
+
+\stoptext
