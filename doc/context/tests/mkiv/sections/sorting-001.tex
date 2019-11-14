@@ -1,0 +1,15 @@
+\setuphead[section][number=no]
+
+\starttext
+
+\startchapter[title=foo]
+
+    \placelist[section][criterium=local,order=title]
+
+    \startsection[title={Beta}]  \input sapolsky \stopsection
+    \startsection[title={Alpha}] \input sapolsky \stopsection
+    \startsection[title={Gamma}] \input sapolsky \stopsection
+
+\stopchapter
+
+\stoptext

@@ -1,0 +1,28 @@
+\setuppapersize
+  [A6,landscape]
+
+\setuplayout
+  [middle]
+
+\setupinteraction
+  [state=start]
+
+\noheaderandfooterlines
+
+\nopdfcompression
+
+% A useless feature: at least a simple list element should have been supported. Some
+% parts of pdf are quote ok (the complex rendering bits) but structure related stuff
+% is often rather ... not really worth exploring.
+
+\starttext
+    test \comment[symbol=Key,location=inmargin,color=yellow,option=xml]
+        {%
+         <body>
+            <p>We have <b>foo</b> and <i>bar</i></p><br/>
+            <p><b>1 </b>one</p><br/>
+            <p><b>2 </b>two</p><br/>
+            <p><b>2 </b>two</p><br/>
+         </body>
+        }
+\stoptext

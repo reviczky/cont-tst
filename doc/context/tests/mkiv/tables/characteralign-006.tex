@@ -1,0 +1,45 @@
+% \enabletrackers[typesetters.characteralign]
+
+\starttext
+
+\setupTABLE[c][2][alignmentcharacter={number->,}, aligncharacter=yes,align={flushleft}]
+\bTABLE
+\bTR \bTD line \#1 \eTD \bTD   125     cm                       \eTD \eTR
+\bTR \bTD line \#2 \eTD \bTD 1 125,80  cm                       \eTD \eTR
+\bTR \bTD line \#3 \eTD \bTD 1 125,80  centimeter               \eTD \eTR
+\bTR \bTD line \#5 \eTD \bTD 1 125,80  centimeter or more       \eTD \eTR
+\bTR \bTD line \#6 \eTD \bTD 1 125,80  $\pi^2$                  \eTD \eTR
+\bTR \bTD line \#7 \eTD \bTD   129,3   \unit{square centimeter} \eTD \eTR
+\eTABLE
+
+\setupTABLE[c][2][alignmentcharacter={number->,}, aligncharacter=yes,align={flushleft}]
+\bTABLE
+\bTR \bTD line \#1 \eTD \bTD  125     cm                       \eTD \eTR
+\bTR \bTD line \#2 \eTD \bTD 1125,80  cm                       \eTD \eTR
+\bTR \bTD line \#3 \eTD \bTD 1125,80  centimeter               \eTD \eTR
+\bTR \bTD line \#5 \eTD \bTD 1125,80  centimeter or more       \eTD \eTR
+\bTR \bTD line \#6 \eTD \bTD 1125,80  $\pi^2$                  \eTD \eTR
+\bTR \bTD line \#7 \eTD \bTD  129,3   \unit{square centimeter} \eTD \eTR
+\eTABLE
+
+\setupTABLE[c][2][alignmentcharacter={number->,}, aligncharacter=yes,align={middle}]
+\bTABLE
+\bTR \bTD line \#1 \eTD \bTD   125    \eTD \eTR
+\bTR \bTD line \#2 \eTD \bTD 1 125,80 \eTD \eTR
+\bTR \bTD line \#3 \eTD \bTD 1 125,80 \eTD \eTR
+\bTR \bTD line \#5 \eTD \bTD 1 125,80 \eTD \eTR
+\bTR \bTD line \#6 \eTD \bTD 1 125,80 \eTD \eTR
+\bTR \bTD line \#7 \eTD \bTD   129,3  \eTD \eTR
+\eTABLE
+
+\setupTABLE[c][2][alignmentcharacter={text->,}, aligncharacter=yes,align={middle}]
+\bTABLE
+\bTR \bTD line \#1 \eTD \bTD   125    \eTD \eTR
+\bTR \bTD line \#2 \eTD \bTD 1 125,80 \eTD \eTR
+\bTR \bTD line \#3 \eTD \bTD 1 125,80 \eTD \eTR
+\bTR \bTD line \#5 \eTD \bTD 1 125,80 \eTD \eTR
+\bTR \bTD line \#6 \eTD \bTD 1 125,80 \eTD \eTR
+\bTR \bTD line \#7 \eTD \bTD   129,3  \eTD \eTR
+\eTABLE
+
+\stoptext

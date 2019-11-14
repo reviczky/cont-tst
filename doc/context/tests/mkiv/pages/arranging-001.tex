@@ -1,0 +1,22 @@
+\setuppapersize[A4][A3,landscape]
+
+\setuparranging[2UP]
+
+\setupbodyfont[dejavu]
+
+\setuplayout[middle]
+
+\starttext
+
+    \completecontent
+
+    \dorecurse{20}{
+        \startchapter[reference=ref:#1,title={number #1}]
+            \input ward
+            \blank
+            \dorecurse{20}{\about[ref:##1] @ \at[ref:##1]\par}
+            \page
+        \stopchapter
+    }
+
+\stoptext

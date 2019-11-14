@@ -1,0 +1,20 @@
+\setupregister
+  [index]
+  [pagesegments=1:4,
+   pagemethod=section]
+
+\starttext
+
+    \chapter {one} \section {alpha}
+
+    x\index {whatever 1}x\index {whatever 2}x\index {whatever 2}x \page
+    x\index {whatever 1}x\index {whatever 2}x\index {whatever 2}x \page
+
+    \chapter {one} \section {alpha}
+
+    x\index {whatever 1}x\index {whatever 2}x\index {whatever 2}x \page
+    x\index {whatever 1}x\index {whatever 2}x\index {whatever 2}x \page
+
+    \placeindex[n=1]
+
+\stoptext
