@@ -3,8 +3,8 @@
 <!--
 
     input filename   : symbolsets-001
-    processing date  : 2019-10-08T19:57:46+02:00
-    context version  : 2019.10.08 19:24
+    processing date  : 2019-11-26T12:42:12+01:00
+    context version  : 2019.11.25 17:28
     exporter version : 0.35
 
 -->
@@ -13,7 +13,7 @@
 <?xml-stylesheet type="text/css" href="styles/symbolsets-001-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/symbolsets-001-styles.css" ?>
 
-<document context="2019.10.08 19:24" date="2019-10-08T19:57:46+02:00" file="symbolsets-001" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+<document context="2019.11.25 17:28" date="2019-11-26T12:42:12+01:00" file="symbolsets-001" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
  <metadata>
  </metadata>
  <formula>

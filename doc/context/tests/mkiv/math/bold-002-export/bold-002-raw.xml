@@ -3,8 +3,8 @@
 <!--
 
     input filename   : bold-002
-    processing date  : 2019-10-08T19:53:55+02:00
-    context version  : 2019.10.08 19:24
+    processing date  : 2019-11-26T12:40:12+01:00
+    context version  : 2019.11.25 17:28
     exporter version : 0.35
 
 -->
@@ -13,7 +13,7 @@
 <?xml-stylesheet type="text/css" href="styles/bold-002-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/bold-002-styles.css" ?>
 
-<document context="2019.10.08 19:24" date="2019-10-08T19:53:55+02:00" file="bold-002" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+<document context="2019.11.25 17:28" date="2019-11-26T12:40:12+01:00" file="bold-002" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
  <metadata>
  </metadata>
 <m:math display="inline" xmlns:m="http://www.w3.org/1998/Math/MathML"><m:mrow><m:msqrt><m:mrow><m:msup><m:mi>𝑥</m:mi><m:mn>2</m:mn></m:msup></m:mrow></m:msqrt><m:msqrt><m:mrow><m:msup><m:mi>𝐱</m:mi><m:mi>𝟐</m:mi></m:msup></m:mrow></m:msqrt></m:mrow></m:math>
