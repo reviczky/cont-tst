@@ -5,16 +5,17 @@ figures.converters["png"]["lowres.png"] = function(oldname,newname,resolution)
 end
 
 figures.converters["jpg"]["lowres.jpg"] = function(oldname,newname,resolution)
-    os.execute(string.format('gm convert "%s" "%s"',oldname,newname))
+    os.execute(string.format('gm convert -density %ix%i "%s" "%s"',resolution,resolution,oldname,newname))
 end
 
 -- figures.suffixes["lowres.png"] = figures.suffixes.png -- suffix is automatically done
 
 \stopluacode
+
 \enabletrackers[graphics*]
 
 
 \starttext
-    \externalfigure[t:/sources/mill.png][conversion=lowres.png]
-    \externalfigure[t:/sources/hacker.jpg][conversion=lowres.jpg]
+    \externalfigure[t:/sources/mill.png]  [conversion=lowres.png]
+    \externalfigure[t:/sources/hacker.jpg][conversion=lowres.jpg,resolution=50,width=10cm]
 \stoptext

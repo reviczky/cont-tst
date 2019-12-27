@@ -1,14 +1,31 @@
-\starttext
+% answer to question from the list
 
-\definenote[noteone][footnote]
-\definenote[notetwo]
+\setupindenting
+  [yes,small]
 
-test\footnote   {Test 1}
-test\noteone    {Test 1}
-test\notetwo    {Test 1}
-test\footnote   {Test 2}
-test\noteone    {Test 2}
-test\notetwo    {Test 2}
-test\subfootnote{Test S}
+\defineconversion
+  [mymix]
+  [a,b,c]
 
-\stoptext
+\definenotation
+  [symfootnote]
+  [footnote]
+  [counter=]
+
+\setupnotation
+  [footnote]
+  [align={hz,hanging},
+   indenting={yes,small,next}]
+
+\setupnotation
+  [symfootnote]
+  [align={hz,hanging},
+   indenting={yes,small,next},
+   numberconversion=mymix]
+
+\startdocument
+    This is the first sentence with a footnote.\footnote{This is the first footnote and its mark is "1".}
+    This is the second sentence with a footnote.\symfootnote{This is the second footnote and its mark is "a". }
+    This is the third sentence with a footnote.\footnote{This is the third footnote and its mark is "2". }
+    This is the second sentence with a footnote.\symfootnote{This is the fourth footnote and its mark is "b". }
+\stopdocument

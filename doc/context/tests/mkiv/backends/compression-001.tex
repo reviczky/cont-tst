@@ -1,0 +1,9 @@
+% always compress:
+
+\disabledirectives[backend.pdf.threshold]
+
+\starttext
+    \dorecurse{20}{
+        \startTEXpage[offset=1pt]\tttf#1\stopTEXpage
+    }
+\stoptext

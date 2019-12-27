@@ -1,0 +1,21 @@
+\setupexternalfigures[location=default]
+
+\setupcaption
+  [figure]
+  [align=tolerant]
+
+\starttext
+
+\startplacefigure[title={\samplefile{jojomayer}}]
+  \externalfigure[hacker][width=.75\textwidth]
+\stopplacefigure
+
+\setupcaption
+  [figure]
+  [hang=yes]
+
+\startplacefigure[title={\samplefile{jojomayer}}]
+  \externalfigure[hacker][width=.75\textwidth]
+\stopplacefigure
+
+\stoptext

@@ -1,0 +1,23 @@
+\starttexdefinition thinrulesfillpage
+    \par
+    \verticalstrut
+    \vskip-.5\lineheight
+    \leaders
+        \hbox to \hsize{\bfd\setstrut\strut\blackrule[width=\hsize,height=1pt,depth=1pt,color=red]}
+        \vfilll
+    \verticalstrut
+    \vskip-1.5\lineheight
+    \page
+\stoptexdefinition
+
+\showframe
+
+\starttext
+
+    \dorecurse{2}{\input knuth.tex\par} \thinrulesfillpage
+
+    \thinrulesfillpage
+
+    \input ward.tex \thinrulesfillpage
+
+\stoptext

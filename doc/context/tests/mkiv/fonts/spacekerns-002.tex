@@ -1,0 +1,29 @@
+\definefontfeature [TestA] [default]
+\definefontfeature [TestB] [default][kern=no]
+\definefontfeature [TestC] [default][kern=no,xkern=yes]
+
+\startluacode
+  fonts.handlers.otf.addfeature {
+      name = "kern",
+      type = "kern",
+      data = {
+          [" "] = { ["X"] = 4000 }
+      }
+  }
+
+  fonts.handlers.otf.addfeature {
+      name = "xkern",
+      type = "kern",
+      data = {
+          [" "] = { ["X"] = 1500 }
+      }
+  }
+
+\stopluacode
+
+\starttext
+    \definedfont[Serif*TestA]\dorecurse{3}{#1 x x X\par}
+    \definedfont[Serif*TestB]\dorecurse{3}{#1 x x X\par}
+    \definedfont[Serif*TestC]\dorecurse{3}{#1 x x X\par}
+\stoptext
+

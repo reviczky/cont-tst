@@ -1,0 +1,28 @@
+% another nice one by Wolfgang:
+
+\starttexdefinition TableCard #1
+
+    \setupTABLE [start] [frame=off,width=4in,height=3in,align={middle,lohi},style=\tfd]
+    \setupTABLE [row]   [1] [orientation=180]
+   %\setupTABLE [start]     [leftframe=on,rightframe=on]
+   %\setupTABLE [row]   [1] [topframe=on]
+   %\setupTABLE [row]   [2] [bottomframe=on]
+
+    \bTABLE
+        \bTR
+            \bTD
+                #1
+            \eTD
+        \eTR
+        \bTR
+            \bTD
+                #1
+            \eTD
+        \eTR
+    \eTABLE
+
+\stoptexdefinition
+
+\starttext
+    \TableCard{Insert Name}
+\stoptext
