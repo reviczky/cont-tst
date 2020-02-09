@@ -3,8 +3,8 @@
 <!--
 
     input filename   : ignored-001
-    processing date  : 2019-12-23T11:34:08+01:00
-    context version  : 2019.12.17 16:30
+    processing date  : 2020-02-06T11:54:11+01:00
+    context version  : 2020.02.03 15:41
     exporter version : 0.35
 
 -->
@@ -13,7 +13,7 @@
 <?xml-stylesheet type="text/css" href="styles/ignored-001-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/ignored-001-styles.css" ?>
 
-<document context="2019.12.17 16:30" date="2019-12-23T11:34:08+01:00" file="ignored-001" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+<document context="2020.02.03 15:41" date="2020-02-06T11:54:11+01:00" file="ignored-001" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
  <metadata>
  </metadata>
 test  test</document>

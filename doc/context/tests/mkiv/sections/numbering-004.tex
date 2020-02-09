@@ -1,0 +1,18 @@
+\startbuffer[headnumber]
+    \starttabulate
+        \NC first    \EQ \somenamedheadnumber {section} {first}    \NC\NR
+        \NC previous \EQ \somenamedheadnumber {section} {previous} \NC\NR
+        \NC current  \EQ \somenamedheadnumber {section} {current}  \NC\NR
+        \NC next     \EQ \somenamedheadnumber {section} {next}     \NC\NR
+        \NC last     \EQ \somenamedheadnumber {section} {last}     \NC\NR
+    \stoptabulate
+\stopbuffer
+
+\starttext
+
+\dorecurse {5} {
+    \section{Section #1}
+    \getbuffer[headnumber]
+}
+
+\stoptext
