@@ -1,0 +1,19 @@
+% example posted by Taco on mailing list
+
+\startbuffer[mytable]
+    \bTABLEnested
+    \bTR \bTD left footer \eTD \bTD right footer \eTD \eTR
+    \eTABLEnested
+\stopbuffer
+
+\setupfootertexts[{\backgroundline[red]{\getbuffer[mytable]}}]
+
+\starttext
+
+    \bTABLE[split=yes]
+        \dorecurse{40}
+          {\bTR \bTD left item1 \eTD \bTD right item1 \eTD \eTR
+           \bTR \bTD left item2 \eTD \bTD right item2 \eTD \eTR}
+    \eTABLE
+
+\stoptext
