@@ -1,0 +1,21 @@
+\usemodule[article-basic]
+
+\setupbackend[export=yes]
+
+\enabledirectives[export.nativetags]
+
+\starttext
+
+\bTABLE
+    \bTR
+        \bTD[align=flushleft]  l \eTD
+        \bTD[align=flushright] r \eTD
+    \bTR
+        \bTD[align=flushleft]  left  \eTD
+        \bTD[align=flushright] right \eTD
+    \bTR[align=middle]
+        \bTD[nx=2] both \eTD
+    \eTR
+\eTABLE
+
+\stoptext

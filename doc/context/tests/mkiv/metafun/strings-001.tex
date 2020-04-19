@@ -1,0 +1,27 @@
+\startTEXpage
+
+    \def\foo{x}
+
+    \framed{\startMPcode
+        interim catcoderegime := vrbcatcoderegime ;
+        draw textext("stream $\string\foo$") withcolor "darkred" ;
+    \stopMPcode}
+
+    \framed{\startMPcode
+        draw textext("stream $\foo$") withcolor "darkblue" ;
+    \stopMPcode}
+
+    \startlmtxmode
+
+        \framed{\startMPcode
+            interim catcoderegime := vrbcatcoderegime ;
+            draw textext(stream $\string\foo$) withcolor "darkgreen" ;
+        \stopMPcode}
+
+        \framed{\startMPcode
+            draw textext(stream $\foo$) withcolor "darkyellow" ;
+        \stopMPcode}
+
+    \stoplmtxmode
+
+\stopTEXpage

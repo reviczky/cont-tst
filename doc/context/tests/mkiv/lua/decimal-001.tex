@@ -1,0 +1,19 @@
+\starttext
+    \startluacode
+        if xdecimal then
+            context(xdecimal.new("64"))
+            context(" ")
+            context(xdecimal.new(64))
+            context(" ")
+            context(xdecimal.new("64")^2)
+            context(" ")
+            context(xdecimal.new("64")^xdecimal.new("2"))
+            local d = xdecimal.new("2")^64
+            context(" ")
+            context(d)
+        else
+            context("no decimal support")
+        end
+    \stopluacode
+\stoptext
+
