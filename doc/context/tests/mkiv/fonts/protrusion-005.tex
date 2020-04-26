@@ -1,0 +1,30 @@
+\startluacode
+
+local classes = fonts.protrusions.classes
+local vectors = fonts.protrusions.vectors
+
+classes.myown = {
+    vector = 'myown',
+    factor = 1,
+}
+
+vectors.myown = table.merged (vectors.quality, {
+
+    [0x0028] = { 1, 0 }, -- (
+    [0x0029] = { 0, 1 }, -- )
+
+})
+
+\stopluacode
+
+\starttext
+
+\showframe
+
+\definefontfeature[whatever][default][protrusion=myown]
+
+\definedfont[Serif*whatever] \setupalign[hanging]
+
+\dorecurse{100}{(#1) }
+
+\stoptext

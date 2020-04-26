@@ -1,0 +1,30 @@
+\starttext
+
+\ifdefined\Uover
+
+    \startTEXpage[offset=10pt]
+
+        $\Uover {                   1234} {                   5678} $\quad
+        $\Uover {\textstyle         1234} {\textstyle         5678} $\quad
+        $\Uover {\scriptstyle       1234} {\scriptstyle       5678} $\quad
+        $\Uover {\scriptscriptstyle 1234} {\scriptscriptstyle 5678} $\blank
+
+        $\Uover                          {1234} {5678} $\quad
+        $\Uover style \textstyle         {1234} {5678} $\quad
+        $\Uover style \scriptstyle       {1234} {5678} $\quad
+        $\Uover style \scriptscriptstyle {1234} {5678} $\blank
+
+        $\frac   {1234} {5678} $\quad
+        $\tfrac  {1234} {5678} $\quad
+        $\xfrac  {1234} {5678} $\quad
+        $\xxfrac {1234} {5678} $\blank
+
+    \stopTEXpage
+
+\else
+
+    The \type {\Uover} primitive is not supported.
+
+\fi
+
+\stoptext

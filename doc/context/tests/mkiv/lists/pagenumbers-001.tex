@@ -1,0 +1,17 @@
+\setuppapersize[A6]
+
+%\setuplist[chapter][pagenumber=yes]
+%\setuplist[chapter][pagenumber=no]
+%\setuplist[chapter][pagenumber=always]
+\setuplist[chapter][pagenumber=realpage]
+%\setuplist[chapter][pagenumber={always,realpage}]
+
+\setupuserpagenumber[way=chapter]
+
+\starttext
+
+    \placelist[chapter]
+
+    \dorecurse{5}{\chapter{Chapter}}
+
+\stoptext

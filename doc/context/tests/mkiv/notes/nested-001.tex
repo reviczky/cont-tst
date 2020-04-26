@@ -1,0 +1,17 @@
+\starttext
+
+\define [1]
+  \myindex
+  {\doifelseinnote
+    {\index[Footnote]->{#1}}
+    {\index{#1}}}
+
+          Test1: \myindex{cat}cat.
+\footnote{Test2: \myindex{mouse}mouse.}
+\footnote[note:cat]{Test3: \myindex[cat]{cat in \in{note}[note:cat]}cat.}
+
+\page
+
+\placeregister [index]
+
+\stoptext

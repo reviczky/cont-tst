@@ -3,8 +3,8 @@
 <!--
 
     input filename   : book-001
-    processing date  : 2020-04-10T14:53:49+02:00
-    context version  : 2020.04.08 14:38
+    processing date  : 2020-04-26T18:49:21+02:00
+    context version  : 2020.04.19 19:43
     exporter version : 0.35
 
 -->
@@ -13,7 +13,7 @@
 <?xml-stylesheet type="text/css" href="styles/book-001-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/book-001-styles.css" ?>
 
-<document context="2020.04.08 14:38" date="2020-04-10T14:53:49+02:00" file="book-001" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+<document context="2020.04.19 19:43" date="2020-04-26T18:49:21+02:00" file="book-001" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
  <metadata>
  </metadata>
  <section detail="chapter" chain="chapter" implicit="1" level="2">
