@@ -1,0 +1,75 @@
+\starttext
+
+\ifcase\contextlmtxmode Only lmtx! \expandafter \stoptext \fi
+
+\startMPpage
+    draw lmt_poisson [
+        width    = 40,
+        height   = 40,
+        distance =  1,
+        count    = 20,
+        macro    = "draw"
+    ] ;
+\stopMPpage
+
+\startMPpage
+    vardef tst (expr x, y, i, n) =
+        fill fullcircle scaled (10+10*(i/n)) shifted (10x,10y)
+            withcolor "darkblue" withtransparency (1,.5) ;
+    enddef ;
+    draw lmt_poisson [
+        width     = 50,
+        height    = 50,
+        distance  =  1,
+        count     = 20,
+        macro     = "tst",
+        arguments =  4
+    ] ;
+\stopMPpage
+
+\startMPpage
+    vardef tst (expr x, y, i, n) =
+        fill fulldiamond scaled (5+5*(i/n)) randomized 2 shifted (10x,10y)
+            withcolor "darkgreen" ;
+    enddef ;
+    draw lmt_poisson [
+        width     = 50,
+        height    = 50,
+        distance  =  1,
+        count     = 20,
+        macro     = "tst",
+        initialx  = 10,
+        initialy  = 10,
+        arguments =  4
+    ] ;
+\stopMPpage
+
+% \startMPpage[instance=doublefun]
+%     vardef tst (expr x, y, i, n) =
+%         fill fulldiamond randomized (.2*i/n) shifted (x,y);
+%     enddef ;
+%     draw lmt_poisson [
+%         width     = 150,
+%         height    = 150,
+%         distance  =   1,
+%         count     =  20,
+%         macro     = "tst",
+%         arguments =   4
+%     ] scaled 10 withcolor "darkmagenta" ;
+% \stopMPpage
+
+\startMPpage
+    vardef tst (expr x, y, i, n) =
+        draw externalfigure "cow.pdf" ysized (10+5*i/n) shifted (10x,10y);
+    enddef ;
+    draw lmt_poisson [
+        width     = 20,
+        height    = 20,
+        distance  =  1,
+        count     = 20,
+        macro     = "tst"
+        arguments = 4,
+    ] ;
+\stopMPpage
+
+\stoptext

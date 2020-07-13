@@ -1,0 +1,49 @@
+\startbuffer[demo]
+<document>
+    <ul>
+        <li>first</li>
+        <li>any</li>
+        <li>last</li>
+    </ul>
+</document>
+\stopbuffer
+
+\startxmlsetups xml:demo:base
+    \xmlsetsetup{#1}{document|ul|li}{xml:*}
+    \xmlsetsetup{#1}{ul/li[1]}{xml:item:first}
+    \xmlsetsetup{#1}{ul/li[-1]}{xml:item:last}
+\stopxmlsetups
+
+\xmlregistersetup{xml:demo:base}
+
+\startxmlsetups xml:document
+    \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:ul
+    \startitemize
+        \xmlflush{#1}
+    \stopitemize
+\stopxmlsetups
+
+\startxmlsetups xml:li
+    \startitem
+        \xmlflush{#1}
+    \stopitem
+\stopxmlsetups
+
+\startxmlsetups xml:item:first
+    \startitem
+        \color[blue]{\xmlflush{#1}}
+    \stopitem
+\stopxmlsetups
+
+\startxmlsetups xml:item:last
+    \startitem
+        \color[red]{\xmlflush{#1}}
+    \stopitem
+\stopxmlsetups
+
+\starttext
+    \xmlprocessbuffer{main}{demo}{}
+\stoptext

@@ -1,0 +1,40 @@
+\usemodule[article-basic]
+
+\definelistalternative
+  [whatever]
+  [renderingsetup=whatever]
+
+\setuplist
+  [chapter]
+  [alternative=whatever]
+
+\startsetups whatever
+    \framed [offset=overlay,frame=off] {
+        \framed [width=25mm,align=flushleft,frame=off,offset=0pt] {
+            number: \currentlistentrynumber
+        }
+        \framed [width=4cm,align=normal,frame=off,offset=0pt] {
+            title: \currentlistentrytitle
+        }
+        \framed [width=4cm,align=normal,frame=off,offset=0pt] {
+            author: \structurelistuservariable{author}
+        }
+        \framed [width=2cm,align=flushright,frame=off,offset=0pt] {
+            page: \currentlistentrypagenumber
+        }
+    }
+\stopsetups
+
+\starttext
+
+    \starttitle[title={Tabulated Table of Contents}]
+        \placelist[chapter]
+    \stoptitle
+
+    \dorecurse {3} {
+        \startchapter[title=Covid 9][author=Cuomo]
+            \input cuomo
+        \stopchapter
+    }
+
+\stoptext

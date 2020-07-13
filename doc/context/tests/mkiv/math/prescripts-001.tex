@@ -1,0 +1,34 @@
+\starttext
+
+\ifdefined \Usuperprescript
+
+\blank \hbox{$
+    {\tf X}^1_2^^3__4 \quad
+    {\tf X}^1  ^^3    \quad
+    {\tf X}  _1   __4 \quad
+    {\tf X}    ^^3    \quad
+    {\tf X}       __4 \quad
+    {\tf X}^^3    __4
+$} \blank
+
+\blank \hbox{
+\ruledhbox{${\tf X}\Usuperscript{1}                                                  $}
+\ruledhbox{${\tf X}                \Usubscript{2}                                    $}
+\ruledhbox{${\tf X}\Usuperscript{1}\Usubscript{2}                                    $}
+\ruledhbox{${\tf X}\Usuperscript{1}              \Usuperprescript{3}                 $}
+\ruledhbox{${\tf X}                \Usubscript{2}                   \Usubprescript{4}$}
+\ruledhbox{${\tf X}\Usuperscript{1}\Usubscript{2}\Usuperprescript{3}\Usubprescript{4}$}
+\ruledhbox{${\tf X}                              \Usuperprescript{3}                 $}
+\ruledhbox{${\tf X}                                                 \Usubprescript{4}$}
+\ruledhbox{${\tf X}                              \Usuperprescript{3}\Usubprescript{4}$}
+}
+\blank
+
+\else
+
+    only lmtx
+
+\fi
+
+\stoptext
+

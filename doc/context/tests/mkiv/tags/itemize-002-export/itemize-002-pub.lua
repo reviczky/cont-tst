@@ -1,0 +1,15 @@
+return {
+ ["htmlfiles"]={ "itemize-002-div.html" },
+ ["htmlroot"]="itemize-002-div.html",
+ ["identifier"]="c00648e6-438a-9e94-5a6a-6fe3af330f8d",
+ ["imagefile"]="styles/itemize-002-images.css",
+ ["imagepath"]="images",
+ ["images"]={},
+ ["language"]="en",
+ ["metadata"]={},
+ ["name"]="itemize-002",
+ ["stylepath"]="styles",
+ ["styles"]={ "itemize-002-defaults.css", "itemize-002-images.css", "itemize-002-styles.css" },
+ ["xhtmlfiles"]={ "itemize-002-tag.xhtml" },
+ ["xmlfiles"]={ "itemize-002-raw.xml" },
+}

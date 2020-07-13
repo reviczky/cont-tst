@@ -1,0 +1,27 @@
+\startluacode
+    fonts.handlers.otf.addfeature {
+        name     = "mykerns",
+        type     = "kern",
+        data     = {
+            [")"] = {
+                [","] = -300,
+                ["."] = -300,
+                [":"] = -250,
+                [";"] = -250,
+                [")"] = -100,
+            },
+        },
+    }
+\stopluacode
+
+\definefontfeature[default][default][mykerns=true]
+
+\setupbodyfont [dejavu,12pt]
+
+\startTEXpage[offset=10pt]
+    whatever),
+    whatever):
+    whatever);
+    whatever).
+    whatever))
+\stopTEXpage

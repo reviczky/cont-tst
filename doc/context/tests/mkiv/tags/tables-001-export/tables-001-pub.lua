@@ -1,7 +1,7 @@
 return {
  ["htmlfiles"]={ "tables-001-div.html" },
  ["htmlroot"]="tables-001-div.html",
- ["identifier"]="21272c88-4c7d-a418-2a8d-1cd29f0d8a53",
+ ["identifier"]="6a32bde0-499a-bb76-38ea-f0f8a96a004d",
  ["imagefile"]="styles/tables-001-images.css",
  ["imagepath"]="images",
  ["images"]={},

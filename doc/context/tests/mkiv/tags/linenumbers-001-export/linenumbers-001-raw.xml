@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+
+<!--
+
+    input filename   : linenumbers-001
+    processing date  : 2020-07-09T14:29:24+02:00
+    context version  : 2020.07.07 15:59
+    exporter version : 0.35
+
+-->
+
+<!-- This export file is used for filtering runtime only! -->
+
+<document context="2020.07.07 15:59" date="2020-07-09T14:29:24+02:00" file="linenumbers-001" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+ <metadata>
+ </metadata>
+ <verbatimblock detail="typing" chain="typing">
+  <verbatimlines>
+   <verbatimline><linenumber>1</linenumber>one</verbatimline>
+   <verbatimline><linenumber>2</linenumber>    two</verbatimline>
+   <verbatimline><linenumber>3</linenumber>        three</verbatimline>
+  </verbatimlines>
+ </verbatimblock>
+ <lines detail="lines" chain="lines">
+  <line><linenumber>1</linenumber>one</line>
+  <line><linenumber>2</linenumber>two</line>
+  <line><linenumber>3</linenumber>three</line>
+ </lines>
+</document>

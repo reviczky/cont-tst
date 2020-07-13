@@ -1,0 +1,73 @@
+\starttext
+
+\dorecurse {100} {
+    \setdatavalue{#1}{#1}
+}
+
+\start \tttf \darkred \raggedright \dorecurse {100} {
+    #1=\scratchcounter\getdatavalue{#1}\the\scratchcounter
+} \par \stop \blank
+
+\start \tttf \darkgreen \raggedright \dorecurse {100} {
+    #1=\thedatavalue{#1}%
+} \par \stop \blank
+
+\bgroup \tttf
+    \newluatable\testtable
+    \setluatable\testtable{ foo = 123, bar = "456", oof = "rab" }
+  % \inspectluatable\testtable
+    \darkblue
+    foo = \getfromluatable\testtable{foo}\par
+    bar = \getfromluatable\testtable{bar}\par
+    oof = \getfromluatable\testtable{oof}\blank
+    \bgroup
+        \useluatable\testtable
+        \setluatable\testtable{ foo = 123123, bar = "456456" }
+      % \inspectluatable\testtable
+        \darkmagenta
+        foo = \getfromluatable\testtable{foo}\par
+        bar = \getfromluatable\testtable{bar}\par
+        oof = \getfromluatable\testtable{oof}\blank
+        \startluacode
+            local t = context.luatables.get("testtable")
+            print(t.foo,t.bar,t.oof)
+        \stopluacode
+    \egroup
+    \darkyellow
+    foo = \getfromluatable\testtable{foo}\par
+    bar = \getfromluatable\testtable{bar}\par
+    oof = \getfromluatable\testtable{oof}\blank
+    \startluacode
+        local t = context.luatables.get("testtable")
+        print(t.foo,t.bar,t.oof)
+    \stopluacode
+  % \inspectluatable\testtable
+\egroup
+
+\bgroup \tttf
+    \newluatable\moretable
+    \setluatable\moretable{ 1, "foo" }
+    \darkblue
+    [1] = \getfromluatable\moretable{1}\par
+    [2] = \idxfromluatable\moretable 2 \blank
+    \bgroup
+        \useluatable\moretable
+        \setluatable\moretable{ foo = 123123, bar = "456456" }
+        \darkmagenta
+        [1] = \getfromluatable\moretable{1}\par
+        [2] = \idxfromluatable\moretable 2 \blank
+        \startluacode
+            local t = context.luatables.get("moretable")
+            print(t[1],t[2])
+        \stopluacode
+    \egroup
+    \darkyellow
+    [1] = \getfromluatable\moretable{1}\par
+    [2] = \idxfromluatable\moretable 2 \blank
+    \startluacode
+        local t = context.luatables.get("moretable")
+        print(t[1],t[2])
+    \stopluacode
+\egroup
+
+\stoptext

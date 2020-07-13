@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="aristophanes.xsl"?>
+
 <!DOCTYPE vorl [
-<!ELEMENT document (section)>
-<!ELEMENT section  (content)>
-<!ELEMENT content  (p,myitem,mynumber)>
-<!ELEMENT myitem   (item)>
-<!ELEMENT mynumber (item)>
-<!ELEMENT sln      EMPTY>
-<!ENTITY nbsp      "&#x000A0;">
-<!ENTITY one       " ">
-<!ENTITY two       "TWO">
-<!ENTITY three     "three">
+    <!ELEMENT document (section)>
+    <!ELEMENT section  (content)>
+    <!ELEMENT content  (p,myitem,mynumber)>
+    <!ELEMENT myitem   (item)>
+    <!ELEMENT mynumber (item)>
+    <!ELEMENT sln      EMPTY>
+    <!ENTITY nbsp      "&#x000A0;">
+    <!ENTITY one       " ">
+    <!ENTITY two       "TWO">
+    <!ENTITY three     "three">
 ]>
 
 <document>

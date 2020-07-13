@@ -1,7 +1,26 @@
--- The following list is based on greps for specific commands, reports from Lucas, as well as
--- observations by Lars Hamren.
-
--- context --nocompression --nodates --trailerid=1 --randomseed=1234 somefile
+-- The test suite is a collection of small tests that result from playign with new
+-- features, solving bugs, questions on the mailign list, etc. In principle one can
+-- use mtx-testsuite for regression testing but due to the fact that it costs me too
+-- much time (on the laptop) to do so, it actually is not really done. For that
+-- purpose you can tell context to create files that are not dependent on dates and
+-- such:
+--
+--   context --nocompression --nodates --trailerid=1 --randomseed=1234 somefile
+--
+-- When testing new features or changes in Lua(Meta)TeX, I normally run this
+-- command:
+--
+--   mtxrun  --script testsuite --process --pattern=**/*.tex --purge
+--
+-- and check if there are significant changes in performance and/or if the log at
+-- the end reports problematic files. The files in the list below depend on for
+-- instance fonts that are not in the distribution. Normally files will run okay,
+-- but some might fail to finish due to lack of resources.
+--
+-- The test don't cover all possible commands and combinations. Feel free to provide
+-- additional tests or examples.
+--
+-- Hans Hagen
 
 return {
     exceptions = {

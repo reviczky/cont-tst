@@ -1,0 +1,21 @@
+\setupbackend[export=xml]
+
+\setuplinenumbering[location=right]
+
+\starttext
+
+\starttyping[numbering=line]
+one
+    two
+        three
+\stoptyping
+
+\startlinenumbering[numbering=line]
+\startlines\tttf
+one
+    two
+        three
+\stoplines
+\stoplinenumbering
+
+\stoptext

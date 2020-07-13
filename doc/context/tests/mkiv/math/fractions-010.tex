@@ -1,0 +1,36 @@
+\definemathfraction
+  [gefrac]
+  [d:frac]
+
+\setupmathfraction
+  [gefrac]
+  [mathstyle=display,
+   alternative=inner,
+   rule=hidden]
+
+\unexpanded\def\cofrac#1#2{%
+    \rlap{\cfrac{1}{\phantom{#1}}}%
+    \gefrac{}{\gefrac{#1+}{}#2}%
+}
+
+\unexpanded\def\endfrac#1{%
+    \rlap{\phantom{\cfrac{1}{#1}}}%
+    \gefrac{}{#1}%
+}
+
+\starttext
+
+\startTEXpage
+\startformula \showmakeup[kern]
+        \alpha
+        +
+        \cofrac {\alpha'}
+            {\cofrac {\alpha''}
+                {\cofrac {\alpha'''}
+                    {\endfrac {\ddots}}}}
+        +
+        \frac{1}{\alpha'''}
+    \stopformula
+\stopTEXpage
+
+\stoptext

@@ -1,6 +1,6 @@
-% language=uk
+% language=us
 
-\usemodule[art-01,abr-04]
+\usemodule[article-basic,abbreviations-logos]
 
 \noheaderandfooterlines
 
@@ -8,16 +8,16 @@
 
 \startsubject[title=The test suite]
 
-This suite is a loosely organized collection of small files. Some files are
-tests that we made during development, some are examples taken (and/or
-adapted) from the mailing list and mail exchanges. Many of the files show
-some tricks that are not really meant for daily usage.
+This suite is a loosely organized collection of small files. Some files are tests
+that we made during development, some are examples taken (and/or adapted) from
+the mailing list and mail exchanges. Many of the files show some tricks that are
+not really meant for daily usage.
 
 If you use these files as a kind of regression test, an exact comparison with
 previous runs not always makes sense. Some files will differ due to typeset
-times, or because random content is used. Also some functionality can have
-been improved or fonts be updated. The \type {testsuite-info.lua} file
-provides some information about what files to skip in such a test.
+times, or because random content is used. Also some functionality can have been
+improved or fonts be updated. The \type {testsuite-info.lua} file provides some
+information about what files to skip in such a test.
 
 I run this suite occasionally when we have done some fundamental update to
 \CONTEXT\ or \LUATEX. When I'm in a hurry the test is simply running all files
@@ -49,7 +49,9 @@ due to limitations in the virtual machine.
 
 Several users run these files as test and report me issues. Feel free to send
 reports or addenda for the info file. If you observe differences, first make sure
-that the newer results are okay: after all macros might have been improved.
+that the newer results are okay: after all macros might have been improved. We
+assume that \CONTEXT\ \LMTX\ with \LUAMETATEX\ is used, but \LUATEX\ should work
+fine for most files.
 
 \blank[2*big]
 

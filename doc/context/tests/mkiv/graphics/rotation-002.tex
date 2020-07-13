@@ -1,0 +1,21 @@
+\setupbodyfont[dejavu]
+
+\def\Test{\ruledhbox{%
+    \def\DemoX{\vl\kern.5\emwidth\vl}%
+    \kern\emwidth\ruledhpack{\green\rotate[rotation=20]  {\ruledhpack{\DemoX}}}%
+    \kern\emwidth\ruledhpack{\blue \rotate[rotation=0]   {\ruledhpack{\DemoX}}}%
+    \kern\emwidth\ruledhpack{\red  \rotate[rotation=-20] {\ruledhpack{\DemoX}}}%
+    \kern\emwidth\ruledhpack{\green\rotate[rotation=200] {\ruledhpack{\DemoX}}}%
+    \kern\emwidth\ruledhpack{\blue \rotate[rotation=180] {\ruledhpack{\DemoX}}}%
+    \kern\emwidth\ruledhpack{\red  \rotate[rotation=-200]{\ruledhpack{\DemoX}}}%
+    \kern\emwidth}}
+
+\startTEXpage[offset=10pt,align=middle]
+    \setuprotate[location=fit]     \Test \par {\ttxx\setstrut\strut fit}     \par
+    \setuprotate[location=depth]   \Test \par {\ttxx\setstrut\strut depth}   \par
+    \setuprotate[location=broad]   \Test \par {\ttxx\setstrut\strut broad}   \par
+    \setuprotate[location=high]    \Test \par {\ttxx\setstrut\strut high}    \par
+    \setuprotate[location=middle]  \Test \par {\ttxx\setstrut\strut middle}  \par
+    \setuprotate[location=default] \Test \par {\ttxx\setstrut\strut default} \par
+\stopTEXpage
+

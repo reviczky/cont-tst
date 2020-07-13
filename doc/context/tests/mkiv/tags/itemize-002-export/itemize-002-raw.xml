@@ -2,18 +2,18 @@
 
 <!--
 
-    input filename   : itemize-001
-    processing date  : 2020-04-26T18:49:23+02:00
-    context version  : 2020.04.19 19:43
+    input filename   : itemize-002
+    processing date  : 2020-07-09T14:29:22+02:00
+    context version  : 2020.07.07 15:59
     exporter version : 0.35
 
 -->
 
-<?xml-stylesheet type="text/css" href="styles/itemize-001-defaults.css" ?>
-<?xml-stylesheet type="text/css" href="styles/itemize-001-images.css" ?>
-<?xml-stylesheet type="text/css" href="styles/itemize-001-styles.css" ?>
+<?xml-stylesheet type="text/css" href="styles/itemize-002-defaults.css" ?>
+<?xml-stylesheet type="text/css" href="styles/itemize-002-images.css" ?>
+<?xml-stylesheet type="text/css" href="styles/itemize-002-styles.css" ?>
 
-<document context="2020.04.19 19:43" date="2020-04-26T18:49:23+02:00" file="itemize-001" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+<document context="2020.07.07 15:59" date="2020-07-09T14:29:22+02:00" file="itemize-002" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
  <metadata>
  </metadata>
  <itemgroup detail="itemize" chain="itemize" level="1" symbol="n">

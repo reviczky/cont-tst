@@ -1,0 +1,20 @@
+\setuppagenumbering
+  [alternative=doublesided]
+
+\starttext
+
+\dorecurse{3}{\input tufte \par}
+
+\startpostponing
+    \setuppagenumbering[state=stop]
+    \startspread
+        \startplacefigure[location=here,title={This is a cow!}]
+        \externalfigure[cow.pdf][height=\textheight]%
+        \stopplacefigure
+    \stopspread
+    \setuppagenumbering[state=start]
+\stoppostponing
+
+\dorecurse{10}{\input tufte \par}
+
+\stoptext

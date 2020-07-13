@@ -1,0 +1,21 @@
+\usemodule[article-basic] \setupalign[verytolerant,stretch] \dontcomplain
+
+\newcounter\MyCounter
+
+\def\InfoInMargin#1%
+  {\doglobal\increment\MyCounter
+   \ifodd\MPcolumn{\MPregion{MyPos:\MyCounter}}\relax
+      \inmargin{\xypos{MyPos:\MyCounter}#1}%
+   \else
+      \inothermargin{\xypos{MyPos:\MyCounter}#1}%
+   \fi}
+
+\starttext
+  \startpagecolumns[n=2,distance=10mm]
+    \dorecurse {50}  {
+        \InfoInMargin{\bf#1}\input ward
+        \InfoInMargin{\sl#1}\input ward
+        \par
+    }
+  \stoppagecolumns
+\stoptext

@@ -1,0 +1,41 @@
+\starttext
+
+\definefontfeature[equalwidth][dimensions=halfmono]
+
+%definefontfamily[hebrew] [rm] [SBL Hebrew] [features={hebrew,reordercombining}]
+\definefontfamily[hebrew] [rm] [SBL Hebrew] [features=hebrew] % we always reorder
+\definefontfamily[hebrew] [tt] [SBL Hebrew] [features={equalwidth}]
+
+\setupbodyfont[hebrew]
+
+\setupalign[r2l]
+
+\startluacode
+    local s1 = "בְּרֵאשִׁ֖ית בָּרָ֣א אֱלֹהִ֑ים אֵ֥ת הַשָּׁמַ֖יִם וְאֵ֥ת הָאָֽרֶץ׃" -- canonical Unicode mark ordering
+    local s2 = "בְּרֵאשִׁ֖ית בָּרָ֣א אֱלֹהִ֑ים אֵ֥ת הַשָּׁמַ֖יִם וְאֵ֥ת הָאָֽרֶץ׃" -- typographically recommended mark ordering
+
+    local s3 = "בְּרֵאשִׁ֖יתּ"
+
+    context(s1)      context.blank()
+    context(s2)      context.blank()
+
+ -- context.showglyphs()
+ -- context.type(s1) context.blank()
+ -- context.type(s2) context.blank()
+
+    for i=1,5 do
+        for i=1,10 do
+            context(s1)
+            context(" ")
+            context(s2)
+            context(" ")
+        end
+        context.blank()
+    end
+
+ -- context.enabletrackers { "otf*" }
+ -- context(s3)      context.blank()
+
+\stopluacode
+
+\stoptext

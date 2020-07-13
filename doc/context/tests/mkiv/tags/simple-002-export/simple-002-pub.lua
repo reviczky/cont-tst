@@ -1,0 +1,15 @@
+return {
+ ["htmlfiles"]={ "simple-002-div.html" },
+ ["htmlroot"]="simple-002-div.html",
+ ["identifier"]="1b1372a2-4cff-9022-a5bf-3637c4981d33",
+ ["imagefile"]="styles/simple-002-images.css",
+ ["imagepath"]="images",
+ ["images"]={},
+ ["language"]="en",
+ ["metadata"]={},
+ ["name"]="simple-002",
+ ["stylepath"]="styles",
+ ["styles"]={ "simple-002-defaults.css", "simple-002-images.css", "simple-002-styles.css" },
+ ["xhtmlfiles"]={ "simple-002-tag.xhtml" },
+ ["xmlfiles"]={ "simple-002-raw.xml" },
+}
