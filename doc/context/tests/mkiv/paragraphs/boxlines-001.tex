@@ -1,0 +1,29 @@
+\usemodule[article-basic]
+
+\starttext
+
+\newbox\SpanishBox \newbox\EnglishBox \newbox\FrenchBox
+
+\setbox\SpanishBox\vbox\bgroup\forgetall\darkred  \samplefile{shelley-es}\egroup
+\setbox\EnglishBox\vbox\bgroup\forgetall\darkblue \samplefile{shelley-en}\egroup
+\setbox\FrenchBox \vbox\bgroup\forgetall\darkgreen\samplefile{shelley-fr}\egroup
+
+\ifnum\boxlines\EnglishBox=\zerocount
+    No English content found!\blank
+\orunless\ifnum\boxlines\EnglishBox=\boxlines\SpanishBox
+    English and French boxes mismatch!\blank
+\orunless\ifnum\boxlines\EnglishBox=\boxlines\FrenchBox
+    English and Spanish boxes mismatch!\blank
+\else
+    \dorecurse{\boxlines\SpanishBox}{
+        \dontleavehmode\llap{\hbox to 1.5em{\darkgray\txx#1\hss}}%
+                       \boxline \EnglishBox#1\crlf\nobreak
+        \dontleavehmode\boxline \SpanishBox#1\crlf\nobreak
+        \dontleavehmode\boxline \FrenchBox #1\par
+        \blank
+    }
+\fi
+
+% \startpacked \dorecurse {14} {#1 : \the\boxrangeht \EnglishBox 1 #1 \par}\stoppacked
+
+\stoptext

@@ -1,0 +1,13 @@
+\starttext
+
+{\everyeof{!!!}test: [\scantextokens            {ugh {\bf ugh} ugh}]}\par
+{\everyeof{!!!}test: [\scantokens               {ugh {\bf ugh} ugh}]}\par
+
+\ifcase\contextlmtxmode \else
+
+{\everyeof{!!!}test: [\tokenized                {ugh {\bf ugh} ugh}]}\par
+{\everyeof{!!!}test: [\tokenized catcodetable 2 {ugh {\bf ugh} ugh}]}\par
+
+\fi
+
+\stoptext

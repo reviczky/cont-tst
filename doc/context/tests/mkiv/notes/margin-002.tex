@@ -1,0 +1,64 @@
+\setuplayout
+  [cutspace=5cm,
+   width=middle,
+   margin=4cm]
+
+\setuptexttexts
+  [margin]
+  [] [{\directsetup{notabene}}]
+
+\startsetups notabene
+    \vbox to \textheight \bgroup
+        \setupalign[tolerant]
+        \topskipcorrection
+        \placenotes[endnote][before=,after=]
+        \vfilll
+    \egroup
+\stopsetups
+
+% handles overflow (suboptimal, nicer is stepwise flushing) but this
+% one also flushes notes that have refs on the next page
+%
+% \newbox\MyNoteOverflow
+%
+% \startsetups notabene
+%     \setbox\scratchbox\vbox\bgroup
+%         \setupalign[tolerant]
+%         \ifvoid\MyNoteOverflow \else
+%             \unvbox\MyNoteOverflow
+%         \fi
+%         \placenotes[endnote][before=,after=]
+%     \egroup
+%     \scratchdimen\dimexpr\textheight-.5\lineheight\relax
+%     \ifdim\ht\scratchbox>\scratchdimen
+%         \global\setbox\MyNoteOverflow\box\scratchbox
+%         \setbox\scratchbox\vsplit \MyNoteOverflow to \scratchdimen
+%     \fi
+%     \vbox\bgroup
+%         \topskipcorrection
+%         \unvbox\scratchbox
+%         \vfilll
+%     \egroup
+% \stopsetups
+%
+% \startsetups notaflush
+%     \doloop {
+%         \page
+%         \ifvoid\MyNoteOverflow
+%            \exitloop
+%         \else
+%            \null \page
+%         \fi
+%     }
+% \stopsetups
+
+\starttext
+
+test \endnote{\input ward }\par
+test \endnote{x}\par
+test \endnote{x}\par
+
+\setups{notaflush}
+
+\stoptext
+

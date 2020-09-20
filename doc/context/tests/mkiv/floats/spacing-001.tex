@@ -1,0 +1,23 @@
+\setupbodyfont[pagella]
+
+\starttext
+
+% spacing around figures (with and without enforced struts):
+
+% \showmakeup \showstruts
+
+\input ward
+
+\startplacefigure
+    \externalfigure[cow.pdf][height=3cm]
+\stopplacefigure
+
+\input ward \strut
+
+\startplacefigure
+    \externalfigure[cow.pdf][height=3cm]
+\stopplacefigure
+
+\strut \input ward
+
+\stoptext

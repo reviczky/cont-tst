@@ -1,0 +1,11 @@
+\starttext
+
+                  \type{new}: \dorecurse{10}{\randomnumber{10}{90} }\par
+\setrandomseed{24}\type{set}: \dorecurse{10}{\randomnumber{10}{90} }\par
+\setrandomseed{24}\type{set}: \dorecurse{10}{\randomnumber{10}{90} }\par
+\setrandomseed{24}\type{set}: \dorecurse{10}{\randomnumber{10}{90} }\par
+\pushrandomseed   \type{new}: \dorecurse{10}{\randomnumber{10}{90} }\par
+\poprandomseed    \type{old}: \dorecurse{10}{\randomnumber{10}{90} }\par
+                  \type{new}: \dorecurse{10}{\randomnumber{10}{90} }\par
+
+\stoptext

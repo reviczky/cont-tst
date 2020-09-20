@@ -1,0 +1,37 @@
+\starttext
+
+\startuseMPgraphic{whatever}{s::mode}
+    u := 2cm ;
+    draw unitsquare scaled u ;
+    drawdblarrow (0,-0.2u)..(u,-0.2u) ;
+    drawdblarrow (1.2u, 0)..(1.2u, u) ;
+    if "\MPvar{mode}" = "en" :
+        label("e", (0.5u,-0.4u)) ;
+        label("n", (1.6u, 0.5u)) ;
+    else :
+        label("n", (0.5u,-0.4u)) ;
+        label("l", (1.6u, 0.5u)) ;
+    fi ;
+\stopuseMPgraphic
+
+\useMPgraphic{whatever}{mode=en} \blank
+\useMPgraphic{whatever}{mode=nl} \blank
+
+\startuseMPgraphic{whatever}
+    u := 2cm ;
+    draw unitsquare scaled u ;
+    drawdblarrow (0,-0.2u)..(u,-0.2u) ;
+    drawdblarrow (1.2u, 0)..(1.2u, u) ;
+    if texmode("en") :
+        label("e", (0.5u,-0.4u)) ;
+        label("n", (1.6u, 0.5u)) ;
+    else :
+        label("n", (0.5u,-0.4u)) ;
+        label("l", (1.6u, 0.5u)) ;
+    fi ;
+\stopuseMPgraphic
+
+{ \enablemode[en] \useMPgraphic{whatever} } \blank
+{                 \useMPgraphic{whatever} } \blank
+
+\stoptext

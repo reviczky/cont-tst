@@ -1,0 +1,24 @@
+\definedocument[thesis]
+
+\setupdocument[a=b,e=f]
+\setupdocument[thesis][a=x,c=d]
+
+% \startsetups[thesis:start]
+\startsetups[document:start]
+    START
+\stopsetups
+
+\startsetups[thesis:stop]
+% \startsetups[document:stop]
+    STOP
+\stopsetups
+
+% \startdocument[thesis]
+\startthesis
+
+    (\currentdocument/a): \documentvariable{a}\par
+    (\currentdocument/c): \documentvariable{c}\par
+    (\currentdocument/e): \documentvariable{e}\par
+
+\stopthesis
+% \stopdocument

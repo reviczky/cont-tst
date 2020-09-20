@@ -1,0 +1,27 @@
+% posted by ws on list
+
+\setupheadertexts
+  [Page \userpagenumber\ of \lastuserpagenumber]
+
+\definetext
+  [chapterheader]          % name
+  [header]                 % vertical position
+  [This is a chapter page] % content
+
+\definetext
+  [chapterfooter]
+  [footer]
+  [pagenumber]
+
+\setuphead
+  [chapter]
+  [header=chapterheader,
+   footer=chapterfooter]
+
+\starttext
+
+\dorecurse{10}
+  {\expanded{\chapter{Chapter \recurselevel}}
+   \dorecurse{\numexpr2*\recurselevel\relax}{\samplefile{knuth}}}
+
+\stoptext

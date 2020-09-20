@@ -1,0 +1,65 @@
+\setuplayout[alternative=doublesided]
+
+\starttext
+
+\startbuffer
+
+    \page \start
+
+    \dorecurse{8}{
+        \interlinepenalties 1 \maxcard
+        CASE 1: \samplefile{tufte}
+        \par
+    }
+
+    \stop \page
+
+    \page \start
+
+    \dorecurse{8}{
+        CASE 2: \samplefile{tufte}
+        \interlinepenalties 1 \maxcard
+        \par
+    }
+
+    \stop \page
+
+    \page \start
+
+    \dorecurse{8}{
+        CASE 3: \samplefile{tufte}
+        \interlinepenalties 1 \maxcard
+        \freezeparagraphproperties
+        \par
+    }
+
+    \stop \page
+
+    \page \start
+
+    \dorecurse{8}{
+        CASE 4: \samplefile{tufte}
+        \frozen \interlinepenalties 1 \maxcard
+        \par
+    }
+
+    \stop \page
+
+    \page \start
+
+    \dorecurse{8}{
+        CASE 5: \samplefile{tufte}
+        \frozen \interlinepenalty \maxcard
+        \par
+    }
+
+    \stop \page
+\stopbuffer
+
+\ifcase\contextlmtxmode
+    This feature is only available in \LMTX.
+\else
+    \typebuffer \getbuffer
+\fi
+
+\stoptext

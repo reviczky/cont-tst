@@ -1,0 +1,42 @@
+\setupbodyfont[plex,10pt]
+
+\definefontfeature
+  [MyFeaturesA] [default]
+  [goodies={colors-006},colorscheme=default,liga=no]
+
+\definefontfeature
+  [MyFeaturesB] [default]
+  [goodies={colors-006},colorscheme=whatever,liga=no]
+
+\definefont[MyFontA][Serif*MyFeaturesA]
+\definefont[MyFontB][Serif*MyFeaturesB]
+
+% return {
+%     name = "coloralphabet",
+%     colorschemes = {
+%         default = {
+%             [1] = { "a", "e" },
+%             [2] = { "i", "o", "u" },
+%         },
+%         whatever = {
+%             [1] = { "65:90" },
+%             [2] = { },
+%             [3] = { },
+%             [4] = { "97:122" },
+%         }
+%     }
+% }
+
+\starttext
+
+\setfontcolorscheme[1] {\MyFontA \samplefile{tufte}}\par
+\setfontcolorscheme[2] {\MyFontA \samplefile{tufte}}\par
+\setfontcolorscheme[3] {\MyFontA \samplefile{tufte}}\par
+
+\page
+
+\setfontcolorscheme[1] {\MyFontB \samplefile{tufte}}\par
+\setfontcolorscheme[2] {\MyFontB \samplefile{tufte}}\par
+\setfontcolorscheme[3] {\MyFontB \samplefile{tufte}}\par
+
+\stoptext

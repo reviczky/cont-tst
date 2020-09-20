@@ -1,0 +1,15 @@
+\starttext
+
+    \widthofstring {foo \sl bar}\par
+    \heightofstring{foo \sl bar}\par
+    \depthofstring {foo \sl bar}\par
+    \totalofstring {foo \sl bar}\blank
+
+    \scratchdimen \widthofstring {foo \sl bar} \the\scratchdimen \par
+    \scratchdimen \heightofstring{foo \sl bar} \the\scratchdimen \par
+    \scratchdimen \depthofstring {foo \sl bar} \the\scratchdimen \par
+    \scratchdimen \totalofstring {foo \sl bar} \the\scratchdimen \blank
+
+    \setwidthof 12345\to\foo \foo
+
+\stoptext

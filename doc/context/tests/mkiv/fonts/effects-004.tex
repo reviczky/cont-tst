@@ -1,0 +1,43 @@
+% This is a variant of Pablo's test to the mailing list:
+
+\definefontfeature
+  [boldened]
+  [extend=1.2]
+
+\definefontfeature
+  [boldened]
+  [boldened-30]
+
+\definefontfamily
+    [mainface]
+    [rm]
+    [TeX Gyre Pagella]
+    [it={style:regular,features:{default,slanted}},
+     bi={style:regular,features:{default,boldened,slanted}},
+     bi={style:regular,features:{quality,default}},
+     bf={style:regular,features:{quality,default,boldened}}]
+
+\setupbodyfont[mainface]
+
+\noheaderandfooterlines
+
+\nopdfcompression
+
+\setupbackgrounds[text][background=color,backgroundcolor=middlegray]
+
+\starttext
+
+\ruledhbox{\bf test}\par
+\ruledhbox{\bi test}\par
+{\bf \input{zapf}}\par
+{\bi \input{zapf}}\par
+
+\setupalign[hz]
+
+\ruledhbox{\bf test}\par
+\ruledhbox{\bi test}\par
+{\bf \input{zapf}}\par
+{\bi \input{zapf}}\par
+
+\stoptext
+

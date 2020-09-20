@@ -1,0 +1,34 @@
+\starttext
+
+\forgetparagraphfreezing
+
+This works in \LMTX\ only: \blank
+
+\start
+    \dontleavehmode
+    \writestatus{PAR}{AFTER START \uchexnumbers{\the\snapshotpar}}%
+    \writestatus{BEFORE}{SET HANGINDENT \uchexnumbers{\the\snapshotpar}}%
+    \frozen\hangindent10pt\relax
+    \writestatus{AFTER}{SET HANGINDENT \uchexnumbers{\the\snapshotpar}}%
+    \writestatus{BEFORE}{SET LOOSENESS \uchexnumbers{\the\snapshotpar}}%
+    \frozen\looseness1\relax
+    \writestatus{AFTER}{SET LOOSENESS \uchexnumbers{\the\snapshotpar}}%
+    \writestatus{BEFORE}{SET HANGAFTER \uchexnumbers{\the\snapshotpar}}%
+    \frozen\hangafter 2\relax
+    \writestatus{AFTER}{SET HANGAFTER \uchexnumbers{\the\snapshotpar}}%
+    \bgroup
+    \writestatus{BEFORE}{SET RIGHTSKIP \uchexnumbers{\the\snapshotpar}}%
+    \frozen\rightskip2cm\relax
+    \writestatus{AFTER}{SET RIGHTSKIP \uchexnumbers{\the\snapshotpar}}%
+    \egroup
+%     \writestatus{BEFORE}{RESET HANGINDENT \uchexnumbers{\the\snapshotpar}}%
+%     \snapshotpar-\frozenhangindentcode\relax
+%     \writestatus{AFTER}{RESET HANGINDENT \uchexnumbers{\the\snapshotpar}}%
+%     \writestatus{BEFORE}{RESET HANGAFTER \uchexnumbers{\the\snapshotpar}}%
+%     \snapshotpar-\frozenhangaftercode\relax
+%     \writestatus{AFTER}{RESET HANGAFTER \uchexnumbers{\the\snapshotpar}}%
+%     \defrostparagraphproperties
+    \input ward
+\stop
+
+\stoptext

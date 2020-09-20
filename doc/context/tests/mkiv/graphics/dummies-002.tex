@@ -1,17 +1,17 @@
 \useMPlibrary[dum]
 
-\enabletrackers[metapost.lua]
+% \enabletrackers[metapost.lua]
 
 \starttext
 
 \startuseMPgraphic{x}
-    draw textext("\externalfigure[foo.pdf]") ;
+    draw textext("\externalfigure[./foo.pdf]") ;
 \stopuseMPgraphic
 
 \useMPgraphic{x}
 
 \startMPcode
-    draw externalfigure "foo.pdf" xysized (3cm,3cm) ;
+    draw externalfigure "./foo.pdf" xysized (3cm,3cm) ;
 \stopMPcode
 
 \stoptext

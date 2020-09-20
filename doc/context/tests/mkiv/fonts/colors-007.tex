@@ -1,0 +1,46 @@
+% The test is based on examples posted on list by MV Mesquita
+
+% The color-latin.lfg file collects latin shapes. Scheme 4 colors the vowels.
+
+\setupbodyfont[plex,14.4pt]
+
+\definefontfeature [MyFeaturesA] [default] [goodies={color-latin},colorscheme=default]
+\definefontfeature [MyFeaturesB] [default] [goodies={color-latin},colorscheme=upper]
+\definefontfeature [MyFeaturesC] [default] [goodies={color-latin},colorscheme=lower]
+
+\definefont[MyFontA][SerifBold*MyFeaturesA]
+\definefont[MyFontB][SerifBold*MyFeaturesB]
+\definefont[MyFontC][SerifBold*MyFeaturesC]
+
+\setfontcolorscheme[4]
+
+\starttext
+
+\startbuffer
+aàáâãäå AÀÁÂÃÄÅ
+eèéêë   EÈÉÊË
+iìíîï   IÌÍÎÏ
+oòóôõö  OÒÓÔÕÖ
+uùúûü   UÙÚÛÜ
+\stopbuffer
+
+\startlines \MyFontA
+\getbuffer
+\stoplines
+
+\startlines \MyFontB
+\getbuffer
+\stoplines
+
+\startlines \MyFontC
+\getbuffer
+\stoplines
+
+\stoptext
+
+% \usemodule[fonts-complete] \setupbodyfont[6pt]
+%
+% \starttext
+%     \ShowCompleteFont{name:IBMPlexSerif}{10pt}{1}
+% \stoptext
+

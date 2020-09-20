@@ -1,0 +1,19 @@
+return {
+    name = "oxoniensis",
+    version = "1.00",
+    comment = "Oxoniensis test file for Thomas Schmitz.",
+    author = "Hans Hagen",
+    copyright = "ConTeXt development team",
+    features = {
+        lunatesigma = {
+            type = "substitution",
+            data = {
+                sigma  = 0x03F2,
+                sigma1 = 0x03F2,
+                Sigma  = 0x03F9,
+                phi    = phi1,
+            },
+        }
+    },
+}
+

@@ -1,0 +1,31 @@
+\setuplayout[width=16cm]
+
+\starttext
+
+\enabledirectives[tabulate.linenumbers]
+
+\showframe
+
+\starttabulate[|p(7cm)|A{verytolerant}i2p(\dimexpr9cm-2em\relax)|]
+    \NC
+        \startlinenumbering
+            \dorecurse{10}{\input ward \par}
+        \stoplinenumbering
+    \NC
+        \dorecurse{3}{\input tufte \par}
+    \NC \NR
+\stoptabulate
+
+\disabledirectives[tabulate.linenumbers]
+
+\starttabulate[|p(7cm)|A{verytolerant}i2p(\dimexpr9cm-2em\relax)|]
+    \NC
+        \startlinenumbering
+            \dorecurse{10}{\input ward \par}
+        \stoplinenumbering
+    \NC
+        \dorecurse{3}{\input tufte \par}
+    \NC \NR
+\stoptabulate
+
+\stoptext

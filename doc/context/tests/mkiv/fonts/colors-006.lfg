@@ -1,0 +1,15 @@
+return {
+    name = "coloralphabet",
+    colorschemes = {
+        default = {
+            [1] = { "a", "e" },
+            [2] = { "i", "o", "u" },
+        },
+        whatever = {
+            [1] = { "65:90" },
+            [2] = { },
+            [3] = { },
+            [4] = { "97:122" },
+        }
+    }
+}

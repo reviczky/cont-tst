@@ -1,0 +1,13 @@
+\starttext
+
+\replaceword[whatever][this or][no] % space
+\replaceword[whatever][that][]      % wipe
+
+\startlines
+    it is this or that
+    {\setreplacements[whatever]it is this or that}
+    {\setreplacements[whatever]it is this or that}
+    it is this or that
+\stoplines
+
+\stoptext

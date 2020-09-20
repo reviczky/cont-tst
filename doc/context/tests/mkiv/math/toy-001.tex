@@ -1,0 +1,11 @@
+\starttext
+
+\enabletrackers[math.toysymbol]
+
+\definemathtoysymbol[Plus] [bin][+]
+\definemathtoysymbol[Minus][bin][-]
+\definemathtoysymbol[Equal][rel][=]
+
+$\dorecurse{199}{x_{#1} \ifodd#1\relax\Plus\else\Minus\fi} x_{200} \Equal n$ \blank
+
+\stoptext

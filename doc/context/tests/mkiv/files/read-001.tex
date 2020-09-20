@@ -1,0 +1,56 @@
+\starttext
+
+Just another lmtx test: \blank
+
+\startluacode
+io.savedata("tempdata.tmp", [[
+line 1
+% \relax 2
+line 3
+line \hbox{4}
+]])
+\stopluacode
+
+\openin1=tempdata.tmp % \openin1={tempdata.tmp}
+\doloop {
+    \ifeof1
+        \exitloop
+    \else
+        \readline1 to \TestLine
+        {\tttf \meaning\TestLine} \hfill {\tttf \TestLine}\par
+    \fi
+}
+
+\blank
+
+\openin1=tempdata.tmp % \openin1={tempdata.tmp}
+\doloop {
+    \ifeof1
+        \exitloop
+    \else
+        {\global\read1 to \TestLine}
+        {\tttf \meaning\TestLine} \hfill \TestLine\par
+    \fi
+}
+
+\blank
+
+\immediate\openout 1=tempdata.tmp
+\immediate\write   1{this is a line 1}
+\immediate\closeout1
+
+\input tempdata.tmp
+
+\blank
+
+[
+\openout 1=tempdata.tmp
+\write   1{this is a line 2}
+\closeout1
+]
+
+\blank
+
+\input tempdata.tmp
+
+\stoptext

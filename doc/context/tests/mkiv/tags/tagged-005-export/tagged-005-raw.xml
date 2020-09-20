@@ -3,8 +3,8 @@
 <!--
 
     input filename   : tagged-005
-    processing date  : 2020-07-09T14:29:53+02:00
-    context version  : 2020.07.07 15:59
+    processing date  : 2020-09-18T19:43:33+02:00
+    context version  : 2020.09.15 18:11
     exporter version : 0.35
 
 -->
@@ -13,7 +13,7 @@
 <?xml-stylesheet type="text/css" href="styles/tagged-005-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/tagged-005-styles.css" ?>
 
-<document context="2020.07.07 15:59" date="2020-07-09T14:29:53+02:00" file="tagged-005" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+<document context="2020.09.15 18:11" date="2020-09-18T19:43:33+02:00" file="tagged-005" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
  <metadata>
  </metadata>
  <table>
@@ -36,17 +36,17 @@ test
  <tabulate>
   <tabulaterow>
    <tabulatecell align="flushleft">one</tabulatecell>
-    <tabulatecell></tabulatecell>
+   <tabulatecell></tabulatecell>
     <tabulatecell align="flushright"></tabulatecell>
   </tabulaterow>
   <tabulaterow>
    <tabulatecell align="flushleft"></tabulatecell>
-    <tabulatecell>two</tabulatecell>
+   <tabulatecell>two</tabulatecell>
     <tabulatecell align="flushright"></tabulatecell>
   </tabulaterow>
   <tabulaterow>
    <tabulatecell align="flushleft"></tabulatecell>
-    <tabulatecell></tabulatecell>
+   <tabulatecell></tabulatecell>
     <tabulatecell align="flushright">three <delimited detail="quote-1"><delimitedsymbol symbol="left">‚</delimitedsymbol><delimitedcontent>connect</delimitedcontent><delimitedsymbol symbol="right">‘</delimitedsymbol></delimited> oeps</tabulatecell>
   </tabulaterow>
  </tabulate>
@@ -56,51 +56,51 @@ test
  <tabulate>
   <tabulaterow>
    <tabulatecell align="flushleft">zero</tabulatecell>
-    <tabulatecell>line one    <break/>
+   <tabulatecell>line one    <break/>
 line two    <break/>
 line three</tabulatecell>
     <tabulatecell align="flushright">0</tabulatecell>
   </tabulaterow>
   <tabulaterow>
    <tabulatecell align="flushleft">one</tabulatecell>
-    <tabulatecell>Coming back to the use of typefaces in electronic publishing: many of the new typographers receive their knowledge and information about the rules of typography from books, from computer magazines or the instruction manuals which they get with the purchase of a PC or software. There is not so much basic instruction, as of now, as there was in the old days, showing the differences between good and bad typographic design. Many people are just fascinated by their PC’s tricks, and think that a widely--praised program, called up on the screen, will make everything automatic from now on.    <break/>
-Coming back to the use of typefaces in electronic publishing: many of the new typographers receive their knowledge and information about the rules of typography from books, from computer magazines or the instruction manuals which they get with the purchase of a PC or software. There is not so much basic instruction, as of now, as there was in the old days, showing the differences between good and bad typographic design. Many people are just fascinated by their PC’s tricks, and think that a widely--praised program, called up on the screen, will make everything automatic from now on.</tabulatecell>
+   <tabulatecell>Coming back to the use of typefaces in electronic publishing: many of the new typographers receive their knowledge and information about the rules of typography from books, from computer magazines or the instruction manuals which they get with the purchase of a PC or software. There is not so much basic instruction, as of now, as there was in the old days, showing the differences between good and bad typographic design. Many people are just fascinated by their PC’s tricks, and think that a widely-- praised program, called up on the screen, will make everything automatic from now on.    <break/>
+Coming back to the use of typefaces in electronic publishing: many of the new typographers receive their knowledge and information about the rules of typography from books, from computer magazines or the instruction manuals which they get with the purchase of a PC or software. There is not so much basic instruction, as of now, as there was in the old days, showing the differences between good and bad typographic design. Many people are just fascinated by their PC’s tricks, and think that a widely-- praised program, called up on the screen, will make everything automatic from now on.</tabulatecell>
    <tabulatecell align="flushright">1</tabulatecell>
   </tabulaterow>
   <tabulaterow>
    <tabulatecell align="flushleft">two</tabulatecell>
-    <tabulatecell>Coming back to the use of typefaces in electronic publishing: many of the new typographers receive their knowledge and information about the rules of typography from books, from computer magazines or the instruction manuals which they get with the purchase of a PC or software. There is not so much basic instruction, as of now, as there was in the old days, showing the differences between good and bad typographic design. Many people are just fascinated by their PC’s tricks, and think that a widely--praised program, called up on the screen, will make everything automatic from now on.</tabulatecell>
+   <tabulatecell>Coming back to the use of typefaces in electronic publishing: many of the new typographers receive their knowledge and information about the rules of typography from books, from computer magazines or the instruction manuals which they get with the purchase of a PC or software. There is not so much basic instruction, as of now, as there was in the old days, showing the differences between good and bad typographic design. Many people are just fascinated by their PC’s tricks, and think that a widely-- praised program, called up on the screen, will make everything automatic from now on.</tabulatecell>
    <tabulatecell align="flushright">2</tabulatecell>
   </tabulaterow>
   <tabulaterow>
    <tabulatecell align="flushleft">three</tabulatecell>
-    <tabulatecell>Coming back to the use of typefaces in electronic publishing: many of the new typographers receive their knowledge and information about the rules of typography from books, from computer magazines or the instruction manuals which they get with the purchase of a PC or software. There is not so much basic instruction, as of now, as there was in the old days, showing the differences between good and bad typographic design. Many people are just fascinated by their PC’s tricks, and think that a widely--praised program, called up on the screen, will make everything automatic from now on.</tabulatecell>
+   <tabulatecell>Coming back to the use of typefaces in electronic publishing: many of the new typographers receive their knowledge and information about the rules of typography from books, from computer magazines or the instruction manuals which they get with the purchase of a PC or software. There is not so much basic instruction, as of now, as there was in the old days, showing the differences between good and bad typographic design. Many people are just fascinated by their PC’s tricks, and think that a widely-- praised program, called up on the screen, will make everything automatic from now on.</tabulatecell>
    <tabulatecell align="flushright">3</tabulatecell>
   </tabulaterow>
   <tabulaterow>
    <tabulatecell align="flushleft">four</tabulatecell>
-    <tabulatecell>Coming back to the use of typefaces in electronic publishing: many of the new typographers receive their knowledge and information about the rules of typography from books, from computer magazines or the instruction manuals which they get with the purchase of a PC or software. There is not so much basic instruction, as of now, as there was in the old days, showing the differences between good and bad typographic design. Many people are just fascinated by their PC’s tricks, and think that a widely--praised program, called up on the screen, will make everything automatic from now on.</tabulatecell>
+   <tabulatecell>Coming back to the use of typefaces in electronic publishing: many of the new typographers receive their knowledge and information about the rules of typography from books, from computer magazines or the instruction manuals which they get with the purchase of a PC or software. There is not so much basic instruction, as of now, as there was in the old days, showing the differences between good and bad typographic design. Many people are just fascinated by their PC’s tricks, and think that a widely-- praised program, called up on the screen, will make everything automatic from now on.</tabulatecell>
    <tabulatecell align="flushright">4</tabulatecell>
   </tabulaterow>
   <tabulaterow>
    <tabulatecell align="flushleft">five</tabulatecell>
-    <tabulatecell>Coming back to the use of typefaces in electronic publishing: many of the new typographers receive their knowledge and information about the rules of typography from books, from computer magazines or the instruction manuals which they get with the purchase of a PC or software. There is not so much basic instruction, as of now, as there was in the old days, showing the differences between good and bad typographic design. Many people are just fascinated by their PC’s tricks, and think that a widely--praised program, called up on the screen, will make everything automatic from now on.</tabulatecell>
+   <tabulatecell>Coming back to the use of typefaces in electronic publishing: many of the new typographers receive their knowledge and information about the rules of typography from books, from computer magazines or the instruction manuals which they get with the purchase of a PC or software. There is not so much basic instruction, as of now, as there was in the old days, showing the differences between good and bad typographic design. Many people are just fascinated by their PC’s tricks, and think that a widely-- praised program, called up on the screen, will make everything automatic from now on.</tabulatecell>
    <tabulatecell align="flushright">5</tabulatecell>
   </tabulaterow>
   <tabulaterow>
    <tabulatecell align="flushleft">six</tabulatecell>
-    <tabulatecell>before <verbatim>connect</verbatim>    <break/>
+   <tabulatecell>before <verbatim>connect</verbatim>    <break/>
 after</tabulatecell>
     <tabulatecell align="flushright">6</tabulatecell>
   </tabulaterow>
   <tabulaterow>
    <tabulatecell align="flushleft">seven</tabulatecell>
-    <tabulatecell>before <verbatim>connect</verbatim> after</tabulatecell>
+   <tabulatecell>before <verbatim>connect</verbatim> after</tabulatecell>
     <tabulatecell align="flushright">7</tabulatecell>
   </tabulaterow>
   <tabulaterow>
    <tabulatecell align="flushleft">eight</tabulatecell>
-    <tabulatecell>before    <break/>
+   <tabulatecell>before    <break/>
 after</tabulatecell>
     <tabulatecell align="flushright">8</tabulatecell>
   </tabulaterow>
