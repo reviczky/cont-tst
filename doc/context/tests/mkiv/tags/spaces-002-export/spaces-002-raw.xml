@@ -3,8 +3,8 @@
 <!--
 
     input filename   : spaces-002
-    processing date  : 2020-09-18T19:43:23+02:00
-    context version  : 2020.09.15 18:11
+    processing date  : 2020-11-22T15:37:50+01:00
+    context version  : 2020.11.21 21:32
     exporter version : 0.35
 
 -->
@@ -13,38 +13,38 @@
 <?xml-stylesheet type="text/css" href="styles/spaces-002-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/spaces-002-styles.css" ?>
 
-<document context="2020.09.15 18:11" date="2020-09-18T19:43:23+02:00" file="spaces-002" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+<document context="2020.11.21 21:32" date="2020-11-22T15:37:50+01:00" file="spaces-002" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
  <metadata>
  </metadata>
-<highlight detail="emph">A1</highlight> A2
+<highlight detail="empha">A1</highlight> A2
  <break/>
-<highlight detail="emph">B1</highlight> B2
+<highlight detail="empha">B1</highlight> B2
  <break/>
-C1 <highlight detail="emph">C2</highlight>
+C1 <highlight detail="empha">C2</highlight>
  <break/>
 D1
  <break/>
-<highlight detail="emph">E1</highlight>
+<highlight detail="empha">E1</highlight>
  <break/>
 F1
  <break/>
-G1 <highlight detail="emph">G2</highlight> G3
+G1 <highlight detail="empha">G2</highlight> G3
  <break/>
-<highlight detail="emph">H1</highlight>
+<highlight detail="empha">H1</highlight>
  <break/>
-<highlight detail="emph">I1</highlight>
+<highlight detail="empha">I1</highlight>
  <break/>
 J1
  <break/>
-<highlight detail="emph">K1</highlight>
+<highlight detail="empha">K1</highlight>
  <break/>
-<highlight detail="emph">L1</highlight>
+<highlight detail="empha">L1</highlight>
  <break/>
-<highlight detail="emph">M1</highlight>
+<highlight detail="empha">M1</highlight>
  <break/>
-<highlight detail="emph">N1</highlight>
+<highlight detail="empha">N1</highlight>
  <break/>
-<highlight detail="emph">O1</highlight> <paragraph>Published on <highlight detail="emph">Dissonanze</highlight> vol. I</paragraph>
- <paragraph>Published on vol. I Published on vol. I Published on vol. I Published on <highlight detail="emph">Dissonanze</highlight> vol. I</paragraph>
+<highlight detail="empha">O1</highlight> <paragraph>Published on Dissonanze vol. I</paragraph>
+ <paragraph>Published on vol. I Published on vol. I Published on vol. I Published on Dissonanze vol. I</paragraph>
  <paragraph>We thrive in information--thick worlds because of our marvelous and everyday capacity to select, edit, single out, structure, highlight, group, pair, merge, harmonize, synthesize, focus, organize, condense, reduce, boil down, choose, categorize, catalog, classify, list, abstract, scan, look into, idealize, isolate, discriminate, distinguish, screen, pigeonhole, pick over, sort, integrate, blend, inspect, filter, lump, skip, smooth, chunk, average, approximate, cluster, aggregate, outline, summarize, itemize, review, dip into, flip through, browse, glance into, leaf through, skim, refine, enumerate, glean, synopsize, winnow the wheat from the chaff and separate the sheep from the goats.</paragraph>
 </document>

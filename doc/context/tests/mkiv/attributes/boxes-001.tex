@@ -1,16 +1,16 @@
 \nopdfcompression
 
-\defineframed[colored][foregroundcolor=red,foregroundstyle=\bfc\underbar,location=low]
+\defineframed[mycolored][foregroundcolor=red,foregroundstyle=\bfc\underbar,location=low]
 
 \enabletrackers[context*]
 
 \starttext
 
-\colored{What}
+\mycolored{What}
 
 % todo: keep punctuation normal
 
-\processisolatedwords {\input ward \relax} \colored
+\processisolatedwords {\input ward \relax} \mycolored
 
 \startluacode
 
@@ -22,7 +22,7 @@
         else
             context.space()
         end
-        context.colored(words[i])
+        context.mycolored(words[i])
     end
 
     local i = 0
@@ -38,7 +38,7 @@
         else
             context.space()
         end
-        context.colored(s)
+        context.mycolored(s)
     end
 
     local splitter = lpeg.P(true)/reset * lpeg.splitter(lpeg.patterns.spacer,apply)

@@ -16,18 +16,18 @@
 
     \blank
 
-    \definefont[emoji][file:emojionecolor-svginot.ttf*svg]
+    \definefont[MyEmoji][file:emojionecolor-svginot.ttf*svg]
 
     \def\FourFaces{\char128104\zwj\char128105\zwj\char128102\zwj\char128102\relax}
 
-    How do we know what faces add up to the ligature {\emoji\FourFaces} and how
+    How do we know what faces add up to the ligature {\MyEmoji\FourFaces} and how
     are we supposed to know that there should {\darkgray \type {zwj}} in between?
 
     \blank
 
-    {\emoji\char128104} + {\darkgray \type {zwj}} +
-    {\emoji\char128105} + {\darkgray \type {zwj}} +
-    {\emoji\char128102} + {\darkgray \type {zwj}} +
-    {\emoji\char128102} = {\emoji\FourFaces}
+    {\MyEmoji\char128104} + {\darkgray \type {zwj}} +
+    {\MyEmoji\char128105} + {\darkgray \type {zwj}} +
+    {\MyEmoji\char128102} + {\darkgray \type {zwj}} +
+    {\MyEmoji\char128102} = {\MyEmoji\FourFaces}
 
 \stopTEXpage

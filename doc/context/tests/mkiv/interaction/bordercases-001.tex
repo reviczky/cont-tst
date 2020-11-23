@@ -1,0 +1,8 @@
+\starttext
+    \setupinteraction[state=start]
+    \enabledirectives[references.border]
+    \def\test{\goto{abc}[url(abc)]}
+    Line 1 \test.\par
+    Line 2 \test \par % so we need to quit at the skips
+    Line 3 \test.\par
+\stoptext

@@ -1,12 +1,8 @@
+\continuewhenlmtxmode
+
 \setupcolors[rgb=no]
 
 \starttext
-
-\ifcase\contextlmtxmode
-
-    only in lmtx
-
-\else
 
 \startMPpage[instance=doublefun]
     draw lmt_contour [
@@ -38,7 +34,5 @@
         axiscolor = "gray",
     ] ;
 \stopMPpage
-
-\fi
 
 \stoptext

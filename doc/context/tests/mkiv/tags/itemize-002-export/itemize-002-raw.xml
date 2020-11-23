@@ -3,8 +3,8 @@
 <!--
 
     input filename   : itemize-002
-    processing date  : 2020-09-18T19:43:11+02:00
-    context version  : 2020.09.15 18:11
+    processing date  : 2020-11-22T15:37:43+01:00
+    context version  : 2020.11.21 21:32
     exporter version : 0.35
 
 -->
@@ -13,17 +13,17 @@
 <?xml-stylesheet type="text/css" href="styles/itemize-002-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/itemize-002-styles.css" ?>
 
-<document context="2020.09.15 18:11" date="2020-09-18T19:43:11+02:00" file="itemize-002" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+<document context="2020.11.21 21:32" date="2020-11-22T15:37:43+01:00" file="itemize-002" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
  <metadata>
  </metadata>
  <itemgroup detail="itemize" chain="itemize" level="1" symbol="n">
   <item kind="head">
    <itemtag>1.</itemtag>
-   <itemcontent><itemhead>Head 1</itemhead> <itembody>Test 1</itembody></itemcontent>
+   <itemcontent><itemhead>Head 1</itemhead><itembody>Test 1</itembody></itemcontent>
   </item>
   <item kind="head">
    <itemtag>2.</itemtag>
-   <itemcontent><itemhead>Head 2</itemhead> <itembody>Test 2</itembody></itemcontent>
+   <itemcontent><itemhead>Head 2</itemhead><itembody>Test 2</itembody></itemcontent>
   </item>
   <item>
    <itemtag>3.</itemtag>

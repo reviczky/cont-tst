@@ -1,81 +1,81 @@
 \setupbodyfont[dejavu]
 
-\definetextbackground[normal][location=paragraph,mp=mpos:region:show]
-\definetextbackground[shaped][location=paragraph,mp=mpos:region:show,method=mpos:regionshape]
+\definetextbackground[a-normal][location=paragraph,mp=mpos:region:show]
+\definetextbackground[a-shaped][location=paragraph,mp=mpos:region:show,method=mpos:regionshape]
 
-\definetextbackground[xnormal][location=paragraph]
-\definetextbackground[xshaped][location=paragraph,method=mpos:regionshape]
+\definetextbackground[b-normal][location=paragraph]
+\definetextbackground[b-shaped][location=paragraph,method=mpos:regionshape]
 
 \tracepositions
 
 \starttext
 
-    \starttextbackground[normal]
+    \starttextbackground[a-normal]
         \placefigure[right]{}{} \input ward \par \input ward
     \stoptextbackground
 
-    \starttextbackground[normal]
+    \starttextbackground[a-normal]
         \placefigure[right]{}{} \input ward
     \stoptextbackground
 
     \page
 
-    \starttextbackground[shaped]
+    \starttextbackground[a-shaped]
         \placefigure[left]{}{} \input ward \input ward
     \stoptextbackground
 
     \blank[2*big]
 
-    \starttextbackground[shaped]
+    \starttextbackground[a-shaped]
         \placefigure[left]{}{} \input ward \par \input ward
     \stoptextbackground
 
     \page
 
 %     \startnarrower
-%         \starttextbackground[normal]
+%         \starttextbackground[a-normal]
 %             \input ward \par \input ward
 %         \stoptextbackground
 %     \stopnarrower
 
-    \starttextbackground[shaped]
+    \starttextbackground[a-shaped]
         \placefigure[right]{}{} \input ward \par \input ward
     \stoptextbackground
 
     \blank
 
-    \starttextbackground[shaped]
+    \starttextbackground[a-shaped]
         \placefigure[left]{}{} \input ward
     \stoptextbackground
 
     \blank
 
-    \starttextbackground[shaped]
+    \starttextbackground[a-shaped]
         \placefigure[right]{}{} \input ward
     \stoptextbackground
 
     \page
 
-    \starttextbackground[shaped]
+    \starttextbackground[a-shaped]
         \placefigure[right]{}{} \dorecurse{2}{test test test\par}
         \input ward
     \stoptextbackground
 
     \blank
 
-    \starttextbackground[shaped]
+    \starttextbackground[a-shaped]
         \placefigure[right]{}{} \dorecurse{20}{test test test\par}
     \stoptextbackground
 
     \page
 
-    \starttextbackground[xshaped]
+    \starttextbackground[b-shaped]
         \placefigure[left]{}{} \input ward \input ward
     \stoptextbackground
 
     \blank
 
-    \starttextbackground[xshaped]
+    \starttextbackground[b-shaped]
         \placefigure[left]{}{} \input ward \par \input ward
     \stoptextbackground
 

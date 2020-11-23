@@ -1,0 +1,20 @@
+% test by joseph canedo (mail)
+
+\starttext
+
+\setuppagenumbering[alternative=doublesided]
+
+\startluacode
+
+    function document.doublesided()
+        assert(
+            tex.conditionals.layoutisdoublesided and (not
+            tex.conditionals.layoutissinglesided
+        ), "I expected a double sided layout.")
+    end
+
+\stopluacode
+
+\starttext
+    Foo. \ctxlua{document.doublesided()}
+\stoptext

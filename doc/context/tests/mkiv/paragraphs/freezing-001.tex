@@ -1,3 +1,5 @@
+\continuewhenlmtxmode
+
 \setuplayout[alternative=doublesided]
 
 \starttext
@@ -56,10 +58,6 @@
     \stop \page
 \stopbuffer
 
-\ifcase\contextlmtxmode
-    This feature is only available in \LMTX.
-\else
-    \typebuffer \getbuffer
-\fi
+\typebuffer \getbuffer
 
 \stoptext

@@ -1,5 +1,8 @@
 % adapted from mail from list
 
+% We already have margintext:section predefined, therefore the \type {mine:}
+% prefix!
+
 \showframe
 
 \setuplayout
@@ -11,31 +14,31 @@
   [alternative=doublesided]
 
 \definemargindata
-  [margintext:chapter]
+  [margintext:mine:chapter]
   [margintext]
   [width=\outermarginwidth,
    location=outer,
    align=flushouter]
 
 \defineheadalternative
-  [margintext:chapter]
+  [margintext:mine:chapter]
   [margintext]
-  [margintext=margintext:chapter]
+  [margintext=margintext:mine:chapter]
 
-\definemargindata[margintext:section]
+\definemargindata[margintext:mine:section]
   [margintext]
   [width=\innermarginwidth,
    location=inner,
    align=flushinner]
 
 \defineheadalternative
-  [margintext:section]
+  [margintext:mine:section]
   [margintext]
-  [margintext=margintext:section]
+  [margintext=margintext:mine:section]
 
 \setuphead
   [chapter]
-  [alternative=margintext:chapter,
+  [alternative=margintext:mine:chapter,
    style=\tf,
    number=no]
 

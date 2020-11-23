@@ -1,44 +1,44 @@
-\definetextbackground[underline]    [location=text,alternative=1,background=,frame=off]
-\definetextbackground[overstrike]   [location=text,alternative=2,background=,frame=off]
-\definetextbackground[exlines]      [location=text,alternative=3,background=,frame=off]
-\definetextbackground[strikethrough][location=text,alternative=4,background=,frame=off]
+\definetextbackground[b:understroke]  [location=text,alternative=1,background=,frame=off]
+\definetextbackground[b:overstroke]   [location=text,alternative=2,background=,frame=off]
+\definetextbackground[b:exlines]      [location=text,alternative=3,background=,frame=off]
+\definetextbackground[b:strokethrough][location=text,alternative=4,background=,frame=off]
 
-\definestartstop [underline]
-  [before={\starttextbackground[underline]},
+\definestartstop [understroke]
+  [before={\starttextbackground[b:understroke]},
    after=\stoptextbackground]
 
 \definestartstop
-  [overstrike]
-  [before={\starttextbackground[overstrike]},
+  [overstroke]
+  [before={\starttextbackground[b:overstroke]},
    after=\stoptextbackground]
 
 \definestartstop
   [exlines]
-  [before={\starttextbackground[exlines]},
+  [before={\starttextbackground[b:exlines]},
    after=\stoptextbackground]
 
 \definestartstop
-  [strikethrough]
-  [before={\starttextbackground[strikethrough]},
+  [strokethrough]
+  [before={\starttextbackground[b:strokethrough]},
    after=\stoptextbackground]
 
 \definetextbackground
-  [sideline]
+  [b:sideline]
   [mp=mpos:region:sideline,
    location=paragraph,
    framecolor=red,
    frameoffset=5mm]
 
 \definestartstop [sideline]
-  [before={\starttextbackground[sideline]},
+  [before={\starttextbackground[b:sideline]},
    after=\stoptextbackground]
 
 \starttext
 
-    \startunderline     \input tufte \stopunderline      \blank
-    \startoverstrike    \input tufte \stopoverstrike     \blank
+    \startunderstroke   \input tufte \stopunderstroke    \blank
+    \startoverstroke    \input tufte \stopoverstroke     \blank
     \startexlines       \input tufte \stopexlines        \blank
-    \startstrikethrough \input tufte \stopstrikethrough  \blank
+    \startstrokethrough \input tufte \stopstrokethrough  \blank
     \startsideline      \input tufte \stopsideline       \blank
 
 \stoptext

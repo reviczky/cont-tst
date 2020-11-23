@@ -3,8 +3,8 @@
 <!--
 
     input filename   : export-001
-    processing date  : 2020-09-18T19:23:36+02:00
-    context version  : 2020.09.15 18:11
+    processing date  : 2020-11-22T15:27:04+01:00
+    context version  : 2020.11.21 21:32
     exporter version : 0.35
 
 -->
@@ -13,7 +13,7 @@
 <?xml-stylesheet type="text/css" href="styles/export-001-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/export-001-styles.css" ?>
 
-<document context="2020.09.15 18:11" date="2020-09-18T19:23:36+02:00" file="export-001" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+<document context="2020.11.21 21:32" date="2020-11-22T15:27:04+01:00" file="export-001" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
  <metadata>
  </metadata>
  <formula>
@@ -27,7 +27,7 @@
     </m:mrow>
    </m:math>
   </formulacontent>
-  </formula>
+ </formula>
 <m:math display="inline" xmlns:m="http://www.w3.org/1998/Math/MathML"><m:mrow><m:msup><m:mo>∫</m:mo><m:mn>2</m:mn></m:msup></m:mrow></m:math>
  <break/>
 <m:math display="inline" xmlns:m="http://www.w3.org/1998/Math/MathML"><m:mrow><m:msup><m:mo>∫</m:mo><m:mn>2</m:mn></m:msup></m:mrow></m:math>
@@ -42,7 +42,7 @@
     </m:mrow>
    </m:math>
   </formulacontent>
-  </formula>
+ </formula>
  <formula>
   <formulacontent n="3">
    <m:math display="block" xmlns:m="http://www.w3.org/1998/Math/MathML">
@@ -65,7 +65,7 @@
     </m:mrow>
    </m:math>
   </formulacontent>
-  </formula>
+ </formula>
  <formula>
   <formulacontent n="4">
    <m:math display="block" xmlns:m="http://www.w3.org/1998/Math/MathML">
@@ -80,7 +80,7 @@
     </m:mrow>
    </m:math>
   </formulacontent>
-  </formula>
+ </formula>
  <formula>
   <formulacontent n="5">
    <m:math display="block" xmlns:m="http://www.w3.org/1998/Math/MathML">

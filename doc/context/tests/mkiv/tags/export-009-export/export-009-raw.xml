@@ -3,8 +3,8 @@
 <!--
 
     input filename   : export-009
-    processing date  : 2020-09-18T19:43:05+02:00
-    context version  : 2020.09.15 18:11
+    processing date  : 2020-11-22T15:37:40+01:00
+    context version  : 2020.11.21 21:32
     exporter version : 0.35
 
 -->
@@ -13,7 +13,7 @@
 <?xml-stylesheet type="text/css" href="styles/export-009-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/export-009-styles.css" ?>
 
-<document context="2020.09.15 18:11" date="2020-09-18T19:43:05+02:00" file="export-009" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+<document context="2020.11.21 21:32" date="2020-11-22T15:37:40+01:00" file="export-009" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
  <metadata>
  </metadata>
 test <m:math display="inline" xmlns:m="http://www.w3.org/1998/Math/MathML"><m:mrow><m:mi>𝑒</m:mi><m:mo>+</m:mo><m:mn>1</m:mn><m:mo>=</m:mo><m:mi>𝑚</m:mi><m:msup><m:mi>𝑐</m:mi><m:mn>2</m:mn></m:msup><m:mo>+</m:mo><m:mn>1</m:mn></m:mrow></m:math> test

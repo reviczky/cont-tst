@@ -1,7 +1,9 @@
 \definefontfeature[default][default][expansion=quality] \setupalign[hz]
 \setupbackend[export=yes,css=yes,xhtml=yes]
 
-\unexpanded\def\,{\mathortext{\mskip\thinmuskip}\narrownobreakspace}
+\pushoverloadmode
+\frozen\protected\def\,{\mathortext{\mskip\thinmuskip}\narrownobreakspace}
+\popoverloadmode
 
 \starttext
   \startbuffer

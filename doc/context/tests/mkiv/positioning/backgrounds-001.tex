@@ -1,10 +1,10 @@
 
-\definetextbackground[r][backgroundcolor=red,frame=off]
-\definetextbackground[g][backgroundcolor=green,frame=off]
-\definetextbackground[b][backgroundcolor=blue,frame=off]
-\definetextbackground[c][backgroundcolor=cyan,frame=off]
-\definetextbackground[m][backgroundcolor=magenta,frame=off]
-\definetextbackground[y][backgroundcolor=yellow,frame=off]
+\definetextbackground[b:r][backgroundcolor=red,frame=off]
+\definetextbackground[b:g][backgroundcolor=green,frame=off]
+\definetextbackground[b:b][backgroundcolor=blue,frame=off]
+\definetextbackground[b:c][backgroundcolor=cyan,frame=off]
+\definetextbackground[b:m][backgroundcolor=magenta,frame=off]
+\definetextbackground[b:y][backgroundcolor=yellow,frame=off]
 
 \setupbodyfont[dejavu,10pt]
 
@@ -15,28 +15,28 @@
 \startxtable[region=yes,offset=2mm]
     \startxrow
         \startxcell
-            \starttextbackground[r]
+            \starttextbackground[b:r]
                 \input ward
             \stoptextbackground{}
             \input ward
-            \starttextbackground[y]
+            \starttextbackground[b:y]
                 \input ward
             \stoptextbackground{}
         \stopxcell
         \startxcell
-            \starttextbackground[g]
+            \starttextbackground[b:g]
                 \input ward
-                \starttextbackground[b]
+                \starttextbackground[b:b]
                     \input ward
                 \stoptextbackground{}
                 \input ward
             \stoptextbackground{}
         \stopxcell
         \startxcell
-            \starttextbackground[c]
+            \starttextbackground[b:c]
                 \input ward
             \stoptextbackground{}
-            \starttextbackground[m]
+            \starttextbackground[b:m]
                 \input ward
             \stoptextbackground{}
             \input ward

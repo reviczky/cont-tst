@@ -1,0 +1,27 @@
+\starttext
+
+\dorecurse{10}{
+     \ruledhbox{\horizontalpositionbar[n=#1,min=1,max=10,text=!,color=red]}
+     \par
+} \page
+
+\dorecurse{10}{
+     \ruledhbox{\horizontalgrowingbar[n=#1,min=1,max=10,text=!,color=green]}
+     \par
+} \page
+
+\hbox {
+    \dorecurse{10}{
+        \ruledhbox{\verticalpositionbar[n=#1,min=1,max=10,text=!,color=blue,width=1cm]}
+        \quad
+    }
+} \page
+
+\hbox {
+    \dorecurse{10}{
+         \ruledhbox{\verticalgrowingbar[n=#1,min=1,max=10,text=!,color=magenta,width=1cm]}
+         \quad
+    }
+} \page
+
+\stoptext

@@ -3,8 +3,8 @@
 <!--
 
     input filename   : tagged-008
-    processing date  : 2020-09-18T19:43:37+02:00
-    context version  : 2020.09.15 18:11
+    processing date  : 2020-11-22T15:37:57+01:00
+    context version  : 2020.11.21 21:32
     exporter version : 0.35
 
 -->
@@ -13,7 +13,7 @@
 <?xml-stylesheet type="text/css" href="styles/tagged-008-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/tagged-008-styles.css" ?>
 
-<document context="2020.09.15 18:11" date="2020-09-18T19:43:37+02:00" file="tagged-008" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+<document context="2020.11.21 21:32" date="2020-11-22T15:37:57+01:00" file="tagged-008" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
  <metadata>
  </metadata>
 ff ff fi fi

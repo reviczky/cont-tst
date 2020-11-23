@@ -1,11 +1,15 @@
-\def\chapter#1{\par<h1>#1</h1>\par}
+\pushoverloadmode
 
-\def\bTABLE{\par<table>\crlf}
-\def\eTABLE{</table>\par}
-\def\bTR{<tr>}
-\def\eTR{</tr>\crlf}
-\def\bTD{<td>}
-\def\eTD{</td>}
+\overloaded\def\chapter#1{\par<h1>#1</h1>\par}
+
+\overloaded\def\bTABLE{\par<table>\crlf}
+\overloaded\def\eTABLE{</table>\par}
+\overloaded\def\bTR{<tr>}
+\overloaded\def\eTR{</tr>\crlf}
+\overloaded\def\bTD{<td>}
+\overloaded\def\eTD{</td>}
+
+\popoverloadmode
 
 \appendtoks  <html><body>  \to \everystarttext
 \prependtoks </body><html> \to \everystoptext

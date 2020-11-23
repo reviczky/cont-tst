@@ -1,0 +1,18 @@
+\continuewhenlmtxmode
+
+\enabletrackers[*expans*]
+
+\definefontfeature[default][default,quality]
+\setupbodyfont[pagella]
+
+\starttext
+
+    {whatever we want to achieve} \input tufte
+
+    \setupalign[tolerant,stretch,hz]
+
+    {whatever we want to achieve} \input tufte
+
+    {\noexpansion whatever we want to achieve} \input tufte
+
+\stoptext

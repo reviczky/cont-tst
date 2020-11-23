@@ -1,19 +1,17 @@
+\continuewhenlmtxmode
+
 \setuplayout[tight]
 
 \starttext
-    \ifcase \contextlmtxmode
-        only in lmtx
-    \else
-        \dorecurse {26} {
-            #1: snippet \characters{#1}\scratchdimen\widthuptohere\ \the\scratchdimen\ in this line upto now\par
-        }
-        \blank
-        \start \tt
-        \dorecurse {26} {
-            #1: snippet \characters{#1}\scratchdimen\widthuptohere\ \the\scratchdimen\ in this line upto now\par
-        }
-        \stop
-        \blank
-        \input ward (\the\widthuptohere)
-    \fi
+    \dorecurse {26} {
+        #1: snippet \characters{#1}\scratchdimen\widthuptohere\ \the\scratchdimen\ in this line upto now\par
+    }
+    \blank
+    \start \tt
+    \dorecurse {26} {
+        #1: snippet \characters{#1}\scratchdimen\widthuptohere\ \the\scratchdimen\ in this line upto now\par
+    }
+    \stop
+    \blank
+    \input ward (\the\widthuptohere)
 \stoptext

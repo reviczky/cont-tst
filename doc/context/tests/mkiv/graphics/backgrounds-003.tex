@@ -19,12 +19,12 @@
 
 % \setuppapersize[A4][A3] \setuplayout[location=middle]
 
-\definetextbackground[r][backgroundcolor=red]
-\definetextbackground[g][backgroundcolor=green]
-\definetextbackground[b][backgroundcolor=blue]
-\definetextbackground[c][backgroundcolor=cyan]
-\definetextbackground[m][backgroundcolor=magenta]
-\definetextbackground[y][backgroundcolor=yellow]
+\definetextbackground[b:r][backgroundcolor=red]
+\definetextbackground[b:g][backgroundcolor=green]
+\definetextbackground[b:b][backgroundcolor=blue]
+\definetextbackground[b:c][backgroundcolor=cyan]
+\definetextbackground[b:m][backgroundcolor=magenta]
+\definetextbackground[b:y][backgroundcolor=yellow]
 
 \definetextbackground[t:1][backgroundcolor=red]
 \definetextbackground[t:2][backgroundcolor=green]
@@ -35,10 +35,10 @@
 
 \startbuffer[tabulate]
     \starttabulate[||pl|pl||]
-    \NC test \NC \dorecurse{5}{before \starttextbackground[r] \input ward \stoptextbackground{} after\par}                 \NC before \starttextbackground[r]\input ward \stoptextbackground after \NC test \NC \NR
-    \NC test \NC \dorecurse{1}{before \starttextbackground[g] \dorecurse{20}{\input ward }\stoptextbackground{} after\par} \NC before \starttextbackground[r]\input ward \stoptextbackground after \NC test \NC \NR
-    \NC test \NC \dorecurse{3}{before \starttextbackground[b] \input ward \stoptextbackground{} after\par}                 \NC before \starttextbackground[r]\input ward \stoptextbackground after \NC test \NC \NR
-    \NC test \NC \dorecurse{4}{before \starttextbackground[c] \input ward \stoptextbackground{} after\par}                 \NC before \starttextbackground[r]\input ward \stoptextbackground after \NC test \NC \NR
+    \NC test \NC \dorecurse{5}{before \starttextbackground[b:r] \input ward \stoptextbackground{} after\par}                 \NC before \starttextbackground[b:r]\input ward \stoptextbackground after \NC test \NC \NR
+    \NC test \NC \dorecurse{1}{before \starttextbackground[b:g] \dorecurse{20}{\input ward }\stoptextbackground{} after\par} \NC before \starttextbackground[b:r]\input ward \stoptextbackground after \NC test \NC \NR
+    \NC test \NC \dorecurse{3}{before \starttextbackground[b:b] \input ward \stoptextbackground{} after\par}                 \NC before \starttextbackground[b:r]\input ward \stoptextbackground after \NC test \NC \NR
+    \NC test \NC \dorecurse{4}{before \starttextbackground[b:c] \input ward \stoptextbackground{} after\par}                 \NC before \starttextbackground[b:r]\input ward \stoptextbackground after \NC test \NC \NR
     \stoptabulate
 \stopbuffer
 
@@ -46,28 +46,28 @@
     \startxtable[offset=2mm,region=\ifpositioning yes\fi]
         \startxrow
             \startxcell
-                \starttextbackground[r]
+                \starttextbackground[b:r]
                     \input ward
                 \stoptextbackground{}
                 \input ward
-                \starttextbackground[y]
+                \starttextbackground[b:y]
                     \input ward
                 \stoptextbackground{}
             \stopxcell
             \startxcell
-                \starttextbackground[g]
+                \starttextbackground[b:g]
                     \input ward
-                    \starttextbackground[b]
+                    \starttextbackground[b:b]
                         \input ward
                     \stoptextbackground{}
                     \input ward
                 \stoptextbackground{}
             \stopxcell
             \startxcell
-                \starttextbackground[c]
+                \starttextbackground[b:c]
                     \input ward
                 \stoptextbackground{}
-                \starttextbackground[m]
+                \starttextbackground[b:m]
                     \input ward
                 \stoptextbackground{}
                 \input ward
@@ -82,7 +82,7 @@
       {}
       {\framed[align=normal]\bgroup
             \input ward
-            \starttextbackground[g]
+            \starttextbackground[b:g]
                 BEGIN \input ward END
             \stoptextbackground
             \input ward
@@ -92,13 +92,13 @@
 \startbuffer[text]
     \page
     \par \dorecurse{1}{\input ward }
-    \starttextbackground[g]
+    \starttextbackground[b:g]
         BEGIN \dorecurse{2}{\input ward } END
     \stoptextbackground
     \dorecurse{1}{\input ward } \par
     \startnarrower
         \dorecurse{1}{\input ward }
-        \starttextbackground[b]
+        \starttextbackground[b:b]
             BEGIN \dorecurse{2}{\input ward } END
         \stoptextbackground
         \dorecurse{1}{\input ward }
@@ -107,7 +107,7 @@
 
 \startbuffer[side]
     \page
-    \starttextbackground[r] START
+    \starttextbackground[b:r] START
     \dorecurse{10}{
         \dorecurse{1}{\input ward }
         \placefigure[right]{}{}
@@ -138,10 +138,10 @@
         \dorecurse{10} {
             \par
             \dorecurse{1}{\input ward }
-            \starttextbackground[g]
+            \starttextbackground[b:g]
                 BEGIN
                 \dorecurse{1}{\input ward }
-                \starttextbackground[r]
+                \starttextbackground[b:r]
                     \dorecurse{10}{\recurselevel: \input ward }
                 \stoptextbackground
                 \dorecurse{1}{\input ward }
@@ -162,7 +162,7 @@
             \starttextbackground[t:\recurselevel]
                 \dorecurse{1}{\input ward }
                 BEGIN
-                \starttextbackground[r]
+                \starttextbackground[b:r]
                     \dorecurse{30}{\recurselevel: \input ward }
                 \stoptextbackground
                 END

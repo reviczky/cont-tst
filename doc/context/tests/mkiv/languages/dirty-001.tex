@@ -1,0 +1,23 @@
+\starttext
+
+\definestartstop
+  [CapitalisQuadrata]
+  [setups=foo]
+
+\startsetups foo
+    \pushoverloadmode % needed when protection enabled
+        \def\obeyedline{\removepunctuation\endgraf}
+        \obeylines
+        \nospacing
+        \WORD
+    \popoverloadmode
+\stopsetups
+
+\start[CapitalisQuadrata]
+    This is a line,
+    that is a line,
+    and a third line as well
+\stop
+
+\stoptext
+

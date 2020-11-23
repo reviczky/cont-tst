@@ -3,8 +3,8 @@
 <!--
 
     input filename   : tagged-003
-    processing date  : 2020-09-18T19:43:29+02:00
-    context version  : 2020.09.15 18:11
+    processing date  : 2020-11-22T15:37:53+01:00
+    context version  : 2020.11.21 21:32
     exporter version : 0.35
 
 -->
@@ -13,7 +13,7 @@
 <?xml-stylesheet type="text/css" href="styles/tagged-003-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/tagged-003-styles.css" ?>
 
-<document context="2020.09.15 18:11" date="2020-09-18T19:43:29+02:00" file="tagged-003" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+<document context="2020.11.21 21:32" date="2020-11-22T15:37:53+01:00" file="tagged-003" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
  <metadata>
  </metadata>
  <division detail="frontpart">
@@ -23,10 +23,9 @@
    </sectioncaption>
    <sectioncontent>
     <paragraph>We thrive in information--thick worlds because of our marvelous and everyday capacity to select, edit, single out, structure, highlight, group, pair, merge, harmonize, synthesize, focus, organize, condense, reduce, boil down, choose, categorize, catalog, classify, list, abstract, scan, look into, idealize, isolate, discriminate, distinguish, screen, pigeonhole, pick over, sort, integrate, blend, inspect, filter, lump, skip, smooth, chunk, average, approximate, cluster, aggregate, outline, summarize, itemize, review, dip into, flip through, browse, glance into, leaf through, skim, refine, enumerate, glean, synopsize, winnow the wheat from the chaff and separate the sheep from the goats.</paragraph>
-    <paragraph>      <break/>
-<verbatim>structure:section</verbatim> : no     <break/>
+    <paragraph><verbatim>structure:section</verbatim> : no     <break/>
 <verbatim>structure:chapter</verbatim> : no     <break/>
-<verbatim>division:*-structure:chapter</verbatim> : no </paragraph>
+<verbatim>division:*-structure:chapter</verbatim> : no</paragraph>
     <itemgroup detail="itemize" chain="itemize" level="1" symbol="1">
      <item>
       <itemtag>•</itemtag>
@@ -45,11 +44,11 @@
       <itemcontent>third</itemcontent>
      </item>
     </itemgroup>
-     <paragraph>The Earth, as a habitat for animal life, is in old age and has a fatal illness. Several, in fact. It would be happening whether humans had ever evolved or not. But our presence is like the effect of an old-age patient who smokes many packs of cigarettes per day<subsentencesymbol symbol="middle">—</subsentencesymbol>and we humans are the cigarettes.</paragraph>
+    <paragraph>The Earth, as a habitat for animal life, is in old age and has a fatal illness. Several, in fact. It would be happening whether humans had ever evolved or not. But our presence is like the effect of an old-age patient who smokes many packs of cigarettes per day<subsentencesymbol symbol="middle">—</subsentencesymbol>and we humans are the cigarettes.</paragraph>
     <description detail="whatever" chain="whatever">
-      <descriptiontag>whocares</descriptiontag>
+     <descriptiontag>whocares</descriptiontag>
      <descriptioncontent>Coming back to the use of typefaces in electronic publishing: many of the new typographers receive their knowledge and information about the rules of typography from books, from computer magazines or the instruction manuals which they get with the purchase of a PC or software. There is not so much basic instruction, as of now, as there was in the old days, showing the differences between good and bad typographic design. Many people are just fascinated by their PC’s tricks, and think that a widely--praised program, called up on the screen, will make everything automatic from now on.</descriptioncontent>
-     </description>
+    </description>
    </sectioncontent>
   </section>
  </division>
@@ -70,7 +69,7 @@
       <itemcontent>second <registerlocation detail="index" internal="7"></registerlocation> <registerlocation detail="index" internal="8"></registerlocation></itemcontent>
      </item>
     </itemgroup>
-    </sectioncontent>
+   </sectioncontent>
   </section>
   <section detail="chapter" chain="chapter" implicit="9" level="2">
    <sectioncaption>
@@ -121,7 +120,7 @@ oeps    <paragraph>The Earth, as a habitat for animal life, is in old age and ha
       </registerentries>
      </registersection>
      <registersection>
-      <registertag> t</registertag>
+      <registertag>t</registertag>
       <registerentries>
        <registerentry>
         <registercontent>two</registercontent>

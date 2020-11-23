@@ -1,0 +1,31 @@
+\setupexternalfigures[location=default]
+
+\starttext
+
+\dorecurse {5} {Before #1\page}
+
+\getfiguredimensions[check-001.pdf]
+
+\startsetups SomeNumber
+    \vbox to \overlayheight \bgroup
+        \vss
+        \hbox to \overlaywidth \bgroup
+            \hss
+                \bfd \red You can figure it out: \pagenumber
+            \hss
+        \egroup
+        \vss
+    \egroup
+\stopsetups
+
+\defineoverlay[SomeNumber][\setups{SomeNumber}]
+
+\dorecurse {\noffigurepages} {
+    \startTEXpage[pagestate=start]
+        \externalfigure[check-001.pdf][page=#1,background=SomeNumber]%
+    \stopTEXpage
+}
+
+\dorecurse {5} {After #1\page}
+
+\stoptext

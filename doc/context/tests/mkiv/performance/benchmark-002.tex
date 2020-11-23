@@ -4,8 +4,9 @@
 
 \starttext
 
-    \setupbackgrounds[text] [background=color,backgroundcolor=magenta]
-    \setupbackgrounds[header][text] [background=color,backgroundcolor=cyan]
+    \setupbackgrounds[text]               [background=color,backgroundcolor=magenta]
+    \setupbackgrounds[header][text]       [background=color,backgroundcolor=cyan]
+    \setupbackgrounds[header][leftmargin] [background=color,backgroundcolor=gray]
 
     \dorecurse{250}{
         \setupbackgrounds[leftpage] [background=color,backgroundcolor=red]
