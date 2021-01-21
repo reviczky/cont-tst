@@ -1,0 +1,17 @@
+\starttext
+
+test
+    \startalternate[text={A}]
+        \dorecurse{10}{A }
+        \startalternate[text={B}]
+            \dorecurse{10}{B }
+        \stopalternate
+        \dorecurse{10}{A }
+    \stopalternate
+test \par
+
+test \startalternate[text={e=mc^2}]$e=mc^2$\stopalternate
+
+test \alternate{e=mc^2}{copy:}\nbsp$e=mc^2$
+
+\stoptext

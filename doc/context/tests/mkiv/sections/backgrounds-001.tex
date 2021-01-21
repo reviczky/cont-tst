@@ -1,0 +1,71 @@
+% posted by aditya on se
+
+\usemodule[annotation]
+
+\usecolors[solarized]
+
+\startsetups table:tcolorbox
+  \setupTABLE[row][1]
+             [
+               background=color,
+               backgroundcolor=red,
+               foregroundcolor=base3,
+               foregroundstyle=bold,
+               framecolor=red,
+               rulethickness=1.5bp,
+               corner=03,
+               loffset=0.25em,
+               roffset=0.25em,
+             ]
+
+  \setupTABLE[row][2]
+             [
+               background=color,
+               backgroundcolor=base2,
+               foregroundcolor=base03,
+               framecolor=red,
+               rulethickness=1.5bp,
+               corner=01,
+               loffset=0.25em,
+               roffset=0.25em,
+               align={normal,hyphenated},
+             ]
+\stopsetups
+
+\startsetups annotation:tcolorbox
+  \startTABLE[setups=table:tcolorbox]
+    \NC \placeannotationtext\space
+        \placeannotationnumber:\space
+        \placeannotationtitle   \NC \NR
+    \NC \placeannotationcontent \NC \NR
+  \stopTABLE
+\stopsetups
+
+\defineannotationalternative
+    [tcolorbox]
+    [
+      alternative=vertical,
+      renderingsetup=annotation:tcolorbox,
+    ]
+
+\defineannotation[tcolorbox]
+                 [
+                   text=Example,
+                   number=yes,
+                   alternative=tcolorbox,
+                 ]
+
+
+\starttext
+
+\placelist[tcolorbox][criterium=all]
+
+\starttcolorbox[title={Title with a number}]
+  \input ward
+\stoptcolorbox
+
+\starttcolorbox[title={Title with a number}]
+  \input ward
+\stoptcolorbox
+
+\stoptext

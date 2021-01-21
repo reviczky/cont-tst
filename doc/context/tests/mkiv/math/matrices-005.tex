@@ -1,0 +1,26 @@
+ \continuewhenlmtxmode
+
+ \definemathmatrix
+  [mymatrix]
+  [left={\left\lparent\thinspace},
+   right={\thinspace\right\rparent}]
+
+\starttext
+
+\startformula
+	\startmymatrix
+		\NC A \VL  B \NR
+		\HL
+		\NC C \VL  D \NR
+	\stopmymatrix
+\stopformula
+
+\startformula
+	\startmymatrix
+		\NC A \VL[3,green]  B \NR
+		\HL[10,red]
+		\NC C \VL  D \NR
+	\stopmymatrix
+\stopformula
+
+\stoptext

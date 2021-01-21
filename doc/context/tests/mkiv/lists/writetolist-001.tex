@@ -1,0 +1,15 @@
+\definelist[test][chapter]
+
+\starttext
+
+\startchapter[title=Foo me]
+
+\placelist[chapter,test][criterium=all,alternative=b,headnumber=always] % otherwise no headnumber
+
+\writetolist[test]{a}{One}
+\writetolist[test]{b}{Two}
+
+\stopchapter
+
+\stoptext
+

@@ -1,0 +1,16 @@
+\setupbodyfont[pagella]
+
+\starttext
+
+\startTEXpage[offset=2mm] \showfontkerns \showglyphs
+    whatever\par
+    {\nokerning whatever}\par
+    efficient ff fi\par
+    {\noligaturing efficient ff fi}\par
+    {\nokerning\noligaturing efficient ff fi}\par
+    {e{\noligaturing ffi}cient}\par
+    {ef{\noleftligaturing f}icient ff fi}\par
+    {ef{\norightligaturing f}icient ff fi}\par
+\stopTEXpage
+
+\stoptext

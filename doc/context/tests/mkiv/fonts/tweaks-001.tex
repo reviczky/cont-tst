@@ -1,0 +1,41 @@
+\enableexperiments[fonts.compact] % for the definitions
+
+\starttext
+
+    \definefont[FooA][Serif*default @ 12pt 1800 500]
+    \definefont[FooB][Serif*default @ 12pt 0.85 0.50]
+    \definefont[FooC][Serif*default @ 12pt]
+
+    \definetweakedfont[runwider] [xscale=1.5]
+    \definetweakedfont[runtaller][yscale=2.5,xscale=.8,yoffset=-.2ex]
+
+    {\FooA test test \runwider test test \runtaller test test}\par
+    {\FooB test test \runwider test test \runtaller test test}\par
+    {\FooC test test \runwider test test \runtaller test test}\par
+
+    \blank {\input tufte }
+
+    \blank {\glyphxscale 1070 \input tufte }
+
+    \definetweakedfont[squeezed] [xscale=0.9]
+
+    \blank $a = mb^2 + \sqrt{123}$
+    \blank {\squeezed $a = mb^2 + \sqrt{123}$}
+
+    \bTABLE
+        \bTR \bTD foo \eTD \bTD[style=\squeezed] $x = 1$ \eTD \eTR
+        \bTR \bTD oof \eTD \bTD[style=\squeezed] $x = 2$ \eTD \eTR
+    \eTABLE
+
+    \bTABLE[style=squeezed]
+        \bTR \bTD $x = 1$ \eTD \bTD  $x = 3$ \eTD \eTR
+        \bTR \bTD $x = 2$ \eTD \bTD  $x = 4$ \eTD \eTR
+    \eTABLE
+
+    \bTABLE[style=\squeezed\squeezed]
+        \bTR \bTD $x = 1$ \eTD \bTD  $x = 3$ \eTD \eTR
+        \bTR \bTD $x = 2$ \eTD \bTD  $x = 4$ \eTD \eTR
+    \eTABLE
+
+\stoptext
+

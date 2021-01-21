@@ -1,0 +1,67 @@
+\continuewhenlmtxmode
+
+\starttext
+
+1: \number\dimexpr\availablehsize\relax
+
+2: \startluacode
+    token.set_macro(tex.ctxcatcodes,"temp","\\scratchdimen\\availablehsize")
+    token.expand_macro("temp")
+    context(tex.getdimen("scratchdimen"))
+\stopluacode
+
+3: \startluacode
+    token.set_macro(tex.ctxcatcodes,"temp","\\scratchdimen\\availablehsize")
+    tex.runlocal("temp")
+    context(tex.getdimen("scratchdimen"))
+\stopluacode
+
+4: \startluacode
+    tex.print("\\scratchdimen\\availablehsize")
+    tex.pushlocal()
+    tex.poplocal()
+    context(tex.getdimen("scratchdimen"))
+\stopluacode
+
+5: \startluacode
+    tex.print("\\dimensiondef\\temp\\availablehsize")
+    tex.pushlocal()
+    tex.poplocal()
+    context(tex.getdimensionvalue("temp"))
+\stopluacode
+
+\def\calculateavailablehsize{\dimensiondef\temp\availablehsize}
+
+6: \startluacode
+    token.expand_macro("calculateavailablehsize")
+    context(tex.getdimensionvalue("temp"))
+\stopluacode
+
+\newtoks\tcalculateavailablehsize \tcalculateavailablehsize{\dimensiondef\temp\availablehsize}
+
+7: \startluacode -- mkiv
+    tex.runtoks("tcalculateavailablehsize")
+    context(tex.getdimensionvalue("temp"))
+\stopluacode
+
+\hsize 3cm
+
+8: \startluacode
+    context(tex.getdimensionvalue("hsize"))
+\stopluacode
+
+9: \startluacode
+    context(tex.getdimensionvalue("availablehsize"))
+\stopluacode
+
+\def\whatever
+  {\beginlocalcontrol \writestatus{whatever}{doing!}\scratchdimen123sp\endlocalcontrol
+   \scratchdimen
+   \beginlocalcontrol \writestatus{whatever}{done!}\endlocalcontrol
+  }
+
+10: \startluacode
+    context(tex.getdimensionvalue("whatever"))
+\stopluacode
+
+\stoptext

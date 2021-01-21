@@ -1,0 +1,17 @@
+\definedescription
+  [desc]
+
+\starttext
+
+    \startchapter[title=Foo,referencetext=Bar,reference=bar]
+
+        \startdesc[title={Long title},reference=foo,referencetext={Short Title}]
+            \input jojomayer
+        \stopdesc
+
+    \stopchapter
+
+    \about[foo]
+    \about[bar]
+
+\stoptext

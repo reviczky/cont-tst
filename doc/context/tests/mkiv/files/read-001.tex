@@ -17,6 +17,7 @@ line \hbox{4}
         \exitloop
     \else
         \readline1 to \TestLine
+      % \showluatokens\TestLine
         {\tttf \meaning\TestLine} \hfill {\tttf \TestLine}\par
     \fi
 }
@@ -29,6 +30,7 @@ line \hbox{4}
         \exitloop
     \else
         {\global\read1 to \TestLine}
+      % \showluatokens\TestLine
         {\tttf \meaning\TestLine} \hfill \TestLine\par
     \fi
 }

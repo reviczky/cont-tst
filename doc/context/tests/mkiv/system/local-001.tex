@@ -1,0 +1,43 @@
+% for Jano Kula
+
+\def\MacroJano#1%
+  {\writestatus{JANO}{ONE}%
+   \setbox0=\hbox\bgroup\xmlflush{#1}\egroup}
+
+\startluacode
+    function document.FunctionJano(id)
+        context.writestatus("JANO","ZERO")
+        token.expand_macro("MacroJano",true,id)
+        context("%p",tex.box[0].width)
+        context.writestatus("JANO","TWO")
+    end
+\stopluacode
+
+\startbuffer[doc]
+<?xml version "1.0"?>
+<document>
+    <section>one</section>
+    <section>one two</section>
+    <section>one two three</section>
+</document>
+\stopbuffer
+
+\startxmlsetups xml:name
+    \xmlsetsetup{#1}{*}{xml:*}
+\stopxmlsetups
+
+\xmlregistersetup{xml:name}
+
+\startxmlsetups xml:section
+    width: \ctxlua{document.FunctionJano("#1")}\par
+\stopxmlsetups
+
+\startxmlsetups xml:document
+    \xmlflush{#1}
+\stopxmlsetups
+
+\starttext
+
+    \xmlprocessbuffer{xml:name}{doc}{}
+
+\stoptext

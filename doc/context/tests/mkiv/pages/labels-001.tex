@@ -1,0 +1,58 @@
+% example for mailing list by WS
+
+\setuplayout
+  [page]
+  [backspace=5mm,
+   topspace=10mm]
+
+\setuplayout
+  [page]
+
+\starttext
+
+\dorecurse{14}
+  {\dontleavehmode
+   \dorecurse{4}
+     {\framed[width=5cm,height=2cm]{}}%
+   \par
+   \offinterlineskip}
+
+\page
+
+% \stoptext
+
+% Variant 2:
+
+\definepapersize
+  [etikett]
+  [width=5cm,
+   height=2cm]
+
+\setuppapersize
+  [etikett] [A4]
+
+\setuplayout
+  [page]
+
+\setuppaper
+  [nx=4,
+   ny=14]
+
+\setuppaper
+  [dx=1sp,
+   dy=1sp,
+   backspace=5mm,
+   topspace=10mm]
+
+\setuparranging
+  [XY]
+
+\setuplayout
+  [location=middle]
+
+% \starttext
+
+\dorecurse{56}
+  {\framed[width=max,height=max]{}}
+
+\stoptext

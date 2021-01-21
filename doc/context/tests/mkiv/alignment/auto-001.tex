@@ -1,0 +1,11 @@
+\setuppagenumbering[alternative=doublesided]
+
+\enabletrackers[typesetters.margindata]
+
+\starttext
+
+\dorecurse{200}{
+    line #1 x\ibox{\hsize 5cm !\par !}x\crlf
+}
+
+\stoptext

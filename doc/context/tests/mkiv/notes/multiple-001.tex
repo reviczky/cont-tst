@@ -1,0 +1,15 @@
+% Massimiliano Farinella's test
+
+\definenote[notea] \setupnote[notea]    [paragraph=yes]
+\definenote[noteb] \setupnote[noteb]    [paragraph=yes]
+                   \setupnote[footnote] [paragraph=yes]
+
+\starttext
+\dorecurse{5}{
+    \dorecurse{10}{line ##1\crlf}
+    note\footnote{test test test test} \par
+    note\notea{test test test test} \par
+    note\noteb{test test test test} \par
+    \dorecurse{10}{line ##1\crlf}
+}
+\stoptext

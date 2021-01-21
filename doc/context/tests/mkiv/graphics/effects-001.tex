@@ -1,0 +1,71 @@
+\starttext
+
+\startMPpage
+    StartPage;
+
+        fill Page
+           withshademethod "linear"
+           withshadedirection(0,1)
+           withshadecolors (red, blue) ;
+
+        picture p ; p := lmt_outline [
+            text          = "\strut foo f o o",
+            drawcolor     = "white",
+            rulethickness = .2
+        ] ysized 5cm ;
+
+        draw (p shifted - center p) shifted center Page;
+
+    StopPage;
+\stopMPpage
+
+\startuseMPgraphic{MyShade}
+    fill OverlayBox
+       withshademethod "linear"
+       withshadedirection(0,1)
+       withshadecolors (red, blue) ;
+\stopuseMPgraphic
+
+\defineoverlay[MyShade][\useMPgraphic{MyShade}]
+
+\setupbackgrounds[page][background=MyShade]
+
+\startmakeup
+
+    \definedfont[SerifBold*default @ 50pt] \setupinterlinespace
+
+    \defineeffect[MyOutline][alternative=outer,rulethickness=1pt]
+
+    \startcolor[white]
+        \starteffect[MyOutline]
+            \input jojomayer
+        \stopeffect
+    \stopcolor
+
+\stopmakeup
+
+% see discussion in list with Garulfo
+
+\startMPpage
+    picture tt ; tt := lmt_outline [
+        kind = "fillup",
+        text = "\definedfont[name:texgyrepagellabold*default]foo f o o",
+    ] xsized 12cm ;
+
+    path bb ; bb := boundingbox tt ;
+
+    path pp ; pp := bb enlarged 2cm ;
+
+    fill pp
+       withshademethod "linear"
+       withshadedirection down
+       withshadecolors (red, blue) ;
+
+    for i within tt :
+        nofill pathpart i;
+    endfor ;
+
+    eofill bb withcolor "gray";
+\stopMPpage
+
+\stoptext
