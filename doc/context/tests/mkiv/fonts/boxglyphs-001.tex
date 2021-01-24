@@ -1,0 +1,90 @@
+\starttext
+
+\doifelsemode {atpragma} {
+    \setupexternalfigure[directory=t:/sources]
+} {
+    \setupexternalfigure[directory={global,default}]
+}
+
+\startsetups box:demo:103
+    \externalfigure[cow-brown.pdf][height=12pt]
+\stopsetups
+
+\startsetups box:demo:104
+    \externalfigure[cow-black.pdf][height=10pt]
+\stopsetups
+
+\startsetups box:demo:105
+    \externalfigure[mill.png][height=12pt]
+\stopsetups
+
+\startsetups box:demo:106
+    \externalfigure[hacker.jpg][height=12pt]
+\stopsetups
+
+\registerboxglyph category {demo} unicode 103 \relax % rather low level for now
+\registerboxglyph category {demo} unicode 104 \relax % rather low level for now
+\registerboxglyph category {demo} unicode 105 \relax % rather low level for now
+\registerboxglyph category {demo} unicode 106 \relax % rather low level for now
+
+\definefontfeature[whatever][box=demo]
+
+\definedfont[Serif*whatever]
+
+% \enabletrackers[fonts.collecting]
+
+\startTEXpage%[offset=0pt]
+   %\hbox{g}%
+    \hbox{\char103}%
+    \hbox{\char104}%
+\stopTEXpage
+
+\startsetups box:demo:whatever
+    \startMPcode
+        picture p ; p := image (draw figure "hacker.jpg" ysized 10pt);
+        fill      boundingbox p enlarged .5pt randomized 2pt withcolor "darkgray" ;
+        clip p to boundingbox p enlarged -1pt randomized 2pt ;
+        draw p ;
+    \stopMPcode
+\stopsetups
+
+% in current font!
+
+\iffontchar\font\privatecharactercode{demo:whatever}\else
+    \setboxglyph {
+        category {demo}
+        name     {demo:whatever}
+        setups   {box:demo:whatever}
+    }%
+\fi
+
+\startTEXpage[offset=10pt]
+    \char\privatecharactercode{demo:whatever}%
+\stopTEXpage
+
+\startTEXpage%[offset=0pt]
+    \ruledhbox{\char103}
+    \ruledhbox{\char104}
+    \ruledhbox{\char105}
+    \ruledhbox{\char106}
+\stopTEXpage
+
+\dorecurse{1000}{
+    \char 103\relax \space
+    \char 104\relax \space
+    \char 105\relax \space
+    \char 106\relax \space
+}
+
+\page
+
+\setupalign[verytolerant,flushleft]
+
+\dorecurse{100}{
+    #1:
+    \glyph yoffset -2pt `i\relax
+    \glyph yoffset -3pt `j\relax\space
+}
+
+
+\stoptext
