@@ -3,22 +3,22 @@
 <!--
 
     input filename   : embedding-001
-    processing date  : 2021-01-21 14:47:42+01:00
-    context version  : 2021.01.18 18:19
+    processing date  : 2021-02-18 19:03:48+01:00
+    context version  : 2021.02.18 10:24
     exporter version : 0.35
 
 -->
 
 <!-- This export file is used for filtering runtime only! -->
 
-<document context="2021.01.18 18:19" date="2021-01-21 14:47:42+01:00" file="embedding-001" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+<document context="2021.02.18 10:24" date="2021-02-18 19:03:48+01:00" file="embedding-001" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
  <metadata>
  </metadata>
  <publications detail="default">
   <list detail="btx">
    <listitem detail="btx-default">
     <listtag>1</listtag>
-    <listcontent><reference explicit="btx::list::1" implicit="1" reference="btx::list::1"></reference><publication dataset="default" tag="mytag"><pubfld detail="category">book</pubfld>: [author: Author, A.B.] [title: The title] [year: 2018]</publication></listcontent>
+    <listcontent><reference explicit="btx::list::1" implicit="1" reference="btx::list::1"></reference><publication dataset="default" tag="mytag"><p detail="u">bfldcategorybook</p>: [author: Author, A.B.] [title: The title] [year: 2018]</publication></listcontent>
    </listitem>
   </list>
  </publications>

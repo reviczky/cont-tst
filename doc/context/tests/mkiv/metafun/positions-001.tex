@@ -1,0 +1,19 @@
+\defineoverlay[frames][\positionoverlay{frames}]
+
+\setupbackgrounds[text][background=frames]
+
+\startMPpositiongraphic{frame}
+    getposboxes("self","anchor") ;
+    if nofposboxes = 1 :
+        draw posboxes[1] ;
+    fi ;
+\stopMPpositiongraphic
+
+\startpositionoverlay{frames}
+    \setMPpositiongraphic{one}{frame}
+    \setMPpositiongraphic{two}{frame}
+\stoppositionoverlay
+
+\starttext
+    This \hpos{one}{\strut word} should \hpos{two}{\strut also be framed}.
+\stoptext

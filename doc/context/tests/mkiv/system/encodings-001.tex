@@ -1,0 +1,52 @@
+\starttext
+
+% maybe some day we'll drop the verbose names so we getvalue them
+
+\startbuffer
+\starttabulate[||||]
+    \NC \getvalue{agrave}        \NC \withgrave       {a} \NC \`{a} \NC \NR
+    \NC \getvalue{aacute}        \NC \withacute       {a} \NC \'{a} \NC \NR
+    \NC \getvalue{acircumflex}   \NC \withcircumflex  {a} \NC \^{a} \NC \NR
+    \NC \getvalue{atilde}        \NC \withtilde       {a} \NC \~{a} \NC \NR
+    \NC \getvalue{amacron}       \NC \withmacron      {a} \NC \={a} \NC \NR
+    \NC \getvalue{ebreve}        \NC \withbreve       {e} \NC \u{e} \NC \NR
+    \NC \getvalue{cdotaccent}    \NC \withdot         {c} \NC \.{c} \NC \NR
+    \NC \getvalue{ediaeresis}    \NC \withdieresis    {e} \NC \"{e} \NC \NR
+    \NC \getvalue{uring}         \NC \withring        {u} \NC \r{u} \NC \NR
+    \NC \getvalue{uhungarumlaut} \NC \withhungarumlaut{u} \NC \H{u} \NC \NR
+    \NC \getvalue{ecaron}        \NC \withcaron       {e} \NC \v{e} \NC \NR
+    \NC \getvalue{ecedilla}      \NC \withcedilla     {e} \NC \c{e} \NC \NR
+    \NC \getvalue{eogonek}       \NC \withogonek      {e} \NC \k{e} \NC \NR
+\stoptabulate
+\stopbuffer
+
+\startcombination[nx=3,location=top,distance=5em]
+    {\replacemissingcharacters\getbuffer}                          {} % decompose or replacement
+    {\switchtobodyfont[pagella]\handlemissingcharacters\getbuffer} {} % replacement
+    {\switchtobodyfont[dejavu]\getbuffer}                          {} % nothing
+\stopcombination
+
+\startlines
+\chr {a acute} \chr {a grave} \chr {a umlaut}
+\chr {aacute}  \chr {agrave}  \chr {aumlaut}
+\stoplines
+
+% mkiv  lmtx
+%
+% 0.012 0.009 % faster core code
+% 0.028 0.036 % different io code path
+% 0.055 0.043 % different io code path / faster core code
+% 0.156 0.129 % more efficient resolving
+% 0.153 0.119 % more efficient resolving
+
+\ifdefined\withdieresis\else\let\withdieresis\"\fi % for mkiv
+
+\setbox0\hpack{\testfeatureonce{100000}{ü}}                \par \elapsedtime \par % direct
+\setbox0\hpack{\testfeatureonce{100000}{ü}}                \par \elapsedtime \par % composed (input)
+\setbox0\hpack{\testfeatureonce{100000}{u{}̈}}              \par \elapsedtime \par % overlay
+\setbox0\hpack{\testfeatureonce{100000}{\withdieresis{u}}} \par \elapsedtime \par % official also \"u
+\setbox0\hpack{\testfeatureonce{100000}{\" u}}             \par \elapsedtime \par % alias of previous
+
+% so, although more delegated to lua no real performance loss
+
+\stoptext

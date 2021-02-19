@@ -12,7 +12,9 @@
 \stopTEXpage
 
 \startTEXpage
-    \tikzfading[name=fade inside, inner color=transparent!80,outer color=transparent!30]%
+    \starttikzsettings
+        \tikzfading[name=fade inside, inner color=transparent!80,outer color=transparent!30]%
+    \stoptikzsettings
     \starttikzpicture
         % Checker board
         \fill [black!20] (0,0) rectangle (4,4);

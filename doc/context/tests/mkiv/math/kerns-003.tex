@@ -1,0 +1,21 @@
+\startluacode
+    fonts.handlers.otf.addfeature {
+        name = "morekerns",
+        type = "kern",
+        data = { ["("] = { ["𝑓"] = 800 } },
+    }
+\stopluacode
+
+\definefontfeature[mathextra][morekerns=yes]
+
+\starttext
+    % there should be no kern
+
+    \setbox0\hbox {$\textstyle (f+g)$}
+    \setbox2\vbox{$$\textstyle (f+g)$$}
+
+    % \showbox0
+    % \showbox2
+
+    \box0 \par \box2
+\stoptext

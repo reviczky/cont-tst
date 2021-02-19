@@ -1,0 +1,31 @@
+\definefontfamily [font] [serif] [amiri] [features=arabic]
+
+\setupdirections
+  [bidi=global,
+   method=one]
+
+\setupbodyfont[font,9pt]
+
+\starttext
+
+    \startTEXpage
+        BEFORE
+    \stopTEXpage
+
+    \startMPpage[offset=1pt]
+        draw outlinetext.d("x\inframed{كتاب !!!!}x") (withcolor blue withpen pencircle scaled .1);
+    \stopMPpage
+
+    \startMPpage[offset=1pt]
+        draw outlinetext.d("\framed[align=normal,frame=off]{\dorecurse{100}{كتاب }}") (withcolor blue withpen pencircle scaled .1);
+    \stopMPpage
+
+    \startMPpage[offset=1pt]
+        draw outlinetext.d("كتاب") (withcolor blue withpen pencircle scaled .1);
+    \stopMPpage
+
+    \startTEXpage
+        AFTER
+    \stopTEXpage
+
+\stoptext

@@ -1,0 +1,56 @@
+% answer to mailing list:
+
+\defineblock
+  [ChangePR]
+
+\defineblock
+  [ChangeRP]
+
+\setupblock
+  [ChangePR]
+  [before={\startsidebar[rulecolor=red]},
+   after={\blank[overlay]\stopsidebar}]
+
+\setupblock
+  [ChangeRP]
+  [before={\startsidebar[rulecolor=green]},
+   after={\blank[overlay]\stopsidebar}]
+
+% \hideblocks[ChangePR]
+\keepblocks[ChangePR]
+% \keepblocks[ChangePR,ChangeRP]
+
+% \enablemode[wipe]
+
+\doifelsemode {wipe} {
+    \definebuffer[ChangePP]
+} {
+    \definestartstop
+      [ChangePP]
+      [before={\startsidebar[rulecolor=red]},
+       after={\blank[overlay]\stopsidebar}]
+}
+
+\starttext
+
+Before
+
+\beginChangePR
+    \input knuth
+\endChangePR
+
+Inbetween
+
+\beginChangeRP
+    \input knuth
+\endChangeRP
+
+After
+
+\startChangePP
+    \input knuth
+\stopChangePP
+
+Done
+
+\stoptext

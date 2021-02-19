@@ -1,0 +1,21 @@
+\def\DemoA#1{\vbox{\red                      \hsize#1\input tufte }}
+\def\DemoB#1{\vbox{\green \setupalign[always]\hsize#1\input tufte }}
+\def\DemoC#1{\startTEXpage[offset=10pt]\DemoA{#1pt}\blank\DemoB{#1pt}\blank#1pt\stopTEXpage}
+
+\starttext
+
+    \dostepwiserecurse{300}{600}{10}{
+        \startTEXpage[offset=10pt]
+            \startoverlay
+                {\DemoA{#1pt}}
+                {\DemoB{#1pt}}
+            \stopoverlay
+            \blank
+            \the\dimexpr#1pt\relax
+        \stopTEXpage
+    }
+
+    \DemoC{370} \DemoC{390} \DemoC{490} \DemoC{540} \DemoC{580}
+
+\stoptext
+

@@ -1,0 +1,30 @@
+\starttext
+
+% lmtx accepts empty lines too
+
+\enablemode[two,four]
+
+x\startmodeset
+    [one]     {1}
+    [two]     {21}
+    [two]     {22}
+
+    [two]     {23}
+    [three]   {3}
+
+    [default] {?}
+\stopmodeset x x\startmodeset
+    [one]     {1}
+    [two]     {21}
+
+    [two]     {22}
+    [three]   {3}
+    [four]    {4}
+
+    [default] {?}
+\stopmodeset x x\startmodeset
+    [none]    {1}
+    [default] {?}
+\stopmodeset x
+
+\stoptext

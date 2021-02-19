@@ -1,0 +1,25 @@
+\starttext
+
+\definefontfeature[whatever][box=demo]
+
+\definedfont[Serif*whatever]
+
+\startsetups box:demo:元
+    \strut \darkred \tttf YUAN
+\stopsetups
+\startsetups box:demo:角
+    \strut \darkblue \tttf JIAO
+\stopsetups
+\startsetups box:demo:分
+    \strut \darkgreen \tttf FEN
+\stopsetups
+
+\setboxglyph { category {demo} unicode `元 setups {box:demo:元} }
+\setboxglyph { category {demo} unicode `角 setups {box:demo:角} }
+\setboxglyph { category {demo} unicode `分 setups {box:demo:分} }
+
+\startTEXpage
+    \ruledhbox{元 角 分}
+\stopTEXpage
+
+\stoptext

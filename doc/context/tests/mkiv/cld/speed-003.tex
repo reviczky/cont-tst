@@ -11,13 +11,15 @@
         for i=1,1000 do
             dummydummydummy(1111,2222,3333,4444)
         end
-        local d1 = statistics.stoptiming()
+        statistics.stoptiming()
+        local d1 = statistics.elapsed()
         context("%0.5f => ",d1)
         statistics.starttiming()
         for i=1,1000 do
             texsprint(ctxcatcodes,"\\dummydummydummy{",1111,"}{",2222,"}{",3333,"}{",4444,"}")
         end
-        local d2 = statistics.stoptiming()
+        statistics.stoptiming()
+        local d2 = statistics.elapsed()
         context("%0.5f => %0.5f",d2,d1-d2)
         context.par()
     end

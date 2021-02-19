@@ -1,0 +1,139 @@
+\setupbodyfont[pagella]
+
+\starttext
+
+\definextable
+  [MyTable]
+  [align={middle,lohi},
+   width=0.8cm,
+   offset=0.8ex,
+   bodyfont=9pt,
+   framecolor=cyan]
+
+\startluacode
+    function document.MyTable(specification)
+
+        local pattern    = specification.pattern
+        local action     = specification.action
+        local conversion = specification.conversion or "Characters"
+
+        local n = #pattern
+
+    --  context.startxtable { align = "middle,lohi", width = "0.8cm", offset = "0.8ex", bodyfont = "9pt", framecolor = "cyan" }
+        context.startxtable { "MyTable" }
+            context.startxrow()
+                context.startxcell { frame = "off" }
+                    context()
+                context.stopxcell()
+                for i=1,n do
+                    context.startxcell()
+                        context.convertnumber(conversion,i)
+                    context.stopxcell()
+                end
+            context.stopxrow()
+            for i=1,n do
+                context.startxrow()
+                    context.startxcell()
+                        context.convertnumber(conversion,i)
+                    context.stopxcell()
+                for j=1,n do
+                    context.startxcell { align = "middle" }
+                        action(string.sub(pattern[i],j,j))
+                    context.stopxcell()
+                end
+                context.stopxrow()
+            end
+        context.stopxtable()
+
+    end
+\stopluacode
+
+\startuniqueMPgraphic{cross}{width,height,depth,color,line}
+    draw image (
+        draw (\MPvar{depth},\MPvar{height}) -- (\MPvar{width},0) ;
+        draw (\MPvar{depth},0) -- (\MPvar{width},\MPvar{height}) ;
+    )
+        withpen pencircle scaled \MPvar{line}
+        withcolor \MPvar{color} ;
+\stopuniqueMPgraphic
+
+\definesymbol
+  [MyRedCross]
+  [\uniqueMPgraphic{cross}{width=1em,height=1ex,depth=.5ex,color=red,line=.2ex}]
+
+\definesymbol
+  [MyGreenCross]
+  [\uniqueMPgraphic{cross}{width=1em,height=1ex,depth=.5ex,color=green,line=.2ex}]
+
+\startluacode
+    document.MyTable {
+        action = function(value)
+            context(value == "X" and 1 or 0)
+        end,
+        conversion = "Characters",
+        pattern = {
+            ".XXX..XX",
+            "X...XXX.",
+            "X..X.XXX",
+            "X.X.X..X",
+            ".X.X.XX.",
+            ".XX.X...",
+            "XXX.X...",
+            "X.XX...."
+        }
+    }
+\stopluacode
+
+\startluacode
+    document.MyTable {
+        action = function(value)
+            context(value == "X" and 1 or 0)
+        end,
+        conversion = "Greek",
+        pattern = {
+            ".XXX..XX",
+            "X...XXX.",
+            "X..X.XXX",
+            "X.X.X..X",
+        }
+    }
+\stopluacode
+
+\startluacode
+    document.MyTable {
+        action = function(value)
+            if value == "X" then
+                context.symbol { "MyRedCross" }
+            end
+        end,
+        conversion = "Romannumerals",
+        pattern = {
+            ".XXX..XX",
+            "X...XXX.",
+            "X..X.XXX",
+            "X.X.X..X",
+            ".X.X.XX.",
+            ".XX.X...",
+            "XXX.X...",
+            "X.XX...."
+        }
+    }
+\stopluacode
+
+\startluacode
+    document.MyTable {
+        action = function(value)
+            context.symbol { value == "X" and "MyRedCross"  or "MyGreenCross" }
+        end,
+        conversion = "Romannumerals",
+        pattern = {
+            "X.X.X..X",
+            ".X.X.XX.",
+            ".XX.X...",
+            "XXX.X...",
+            "X.XX...."
+        }
+    }
+\stopluacode
+
+\stoptext

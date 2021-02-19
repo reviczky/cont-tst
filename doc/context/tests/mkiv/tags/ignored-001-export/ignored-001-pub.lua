@@ -1,7 +1,7 @@
 return {
  ["htmlfiles"]={ "ignored-001-div.html" },
  ["htmlroot"]="ignored-001-div.html",
- ["identifier"]="c92a0878-46c4-ae23-428e-82a3b4aefea9",
+ ["identifier"]="f0ff7066-4a2e-8b71-650f-2b0da6ee787b",
  ["imagefile"]="styles/ignored-001-images.css",
  ["imagepath"]="images",
  ["images"]={},

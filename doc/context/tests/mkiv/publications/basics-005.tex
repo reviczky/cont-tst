@@ -1,0 +1,17 @@
+\starttext
+
+\startbuffer[bib]
+@article{test,
+    title  = {\"Articl\`e \O n\k{e}},
+    author = {Th\^omas},
+    year   = {2001},
+}
+\stopbuffer
+
+\usebtxdataset[bib.buffer]
+
+\ctxlua{inspect(publications.datasets.default.luadata.test)}
+
+\placebtxrendering[method=dataset,pagestate=start]
+
+\stoptext

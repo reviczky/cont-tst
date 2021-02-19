@@ -1,0 +1,21 @@
+\replacemissingcharacters
+
+\startbuffer
+    \startlines[before=,after=]
+        \strut {\tf test \char 12345\ test \char 12346\ test}
+        \strut {\bf test \char 12345\ test \char 12346\ test}
+        \strut {\it test \char 12345\ test \char 12346\ test}
+        \strut {\bi test \char 12345\ test \char 12346\ test}
+        \strut {test ὀ ρ φ α ν ῖ ο ς test}
+    \stoplines
+\stopbuffer
+
+\starttext
+    \startTEXpage[offset=2pt,strut=no]
+        \getbuffer \blank
+        \switchtobodyfont[pagella]
+        \getbuffer \blank
+        \switchtobodyfont[dejavu]
+        \getbuffer
+    \stopTEXpage
+\stoptext

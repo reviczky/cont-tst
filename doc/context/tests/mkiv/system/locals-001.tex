@@ -1,0 +1,33 @@
+\starttext
+
+\begingroup
+  \newlocaldimen\mydimena     \mydimena1\onepoint
+  \newlocaldimen\mydimenb     \mydimenb2\onepoint (\the\mydimena,\the\mydimenb)
+  \begingroup
+    \newlocaldimen\mydimena   \mydimena3\onepoint
+    \newlocaldimen\mydimenb   \mydimenb4\onepoint
+    \newlocaldimen\mydimenc   \mydimenc5\onepoint (\the\mydimena,\the\mydimenb,\the\mydimenc)
+    \begingroup
+      \newlocaldimen\mydimena \mydimena6\onepoint
+      \newlocaldimen\mydimenb \mydimenb7\onepoint (\the\mydimena,\the\mydimenb)
+    \endgroup
+    \newlocaldimen\mydimend   \mydimend8\onepoint (\the\mydimena,\the\mydimenb,\the\mydimenc,\the\mydimend)
+  \endgroup                                       (\the\mydimena,\the\mydimenb)
+\endgroup
+
+\begingroup
+  \setnewlocaldimen\mydimena     1\onepoint
+  \setnewlocaldimen\mydimenb     2\onepoint (\the\mydimena,\the\mydimenb)
+  \begingroup
+    \setnewlocaldimen\mydimena   3\onepoint
+    \setnewlocaldimen\mydimenb   4\onepoint
+    \setnewlocaldimen\mydimenc   5\onepoint (\the\mydimena,\the\mydimenb,\the\mydimenc)
+    \begingroup
+      \setnewlocaldimen\mydimena 6\onepoint
+      \setnewlocaldimen\mydimenb 7\onepoint (\the\mydimena,\the\mydimenb)
+    \endgroup
+    \setnewlocaldimen\mydimend   8\onepoint (\the\mydimena,\the\mydimenb,\the\mydimenc,\the\mydimend)
+  \endgroup                                 (\the\mydimena,\the\mydimenb)
+\endgroup
+
+\stoptext

@@ -1,0 +1,21 @@
+% from the mailing list
+
+\starttext
+
+\startTEXpage[offset=2pt]
+    $\frac{\sin(x)}{16 \pi \epsilon_0 c^2 m_e^2} \frac{\sin(x)}{\epsilon_0}$\par
+    $\frac{\sin(x)}{16 \pi \epsilon_0 c^2 m_e^2} \frac{\sin(x)}{\epsilon_0}$\par
+    \vskip-3.85ex
+    {\red$\frac{\sin(x)}{16 \pi \epsilon_0 c^2 m_e^2} \frac{\sin(x)}{\epsilon_0}$}\par
+    \the\dimexpr-3.85ex\relax
+\stopTEXpage
+
+\startTEXpage[offset=2pt]
+    \ruledhbox{$\frac{\sin(x)}{16 \pi \epsilon_0 c^2 m_e^2} \frac{\sin(x)}{\epsilon_0}$}\par
+    \ruledhbox{$\frac{\sin(x)}{16 \pi \epsilon_0 c^2 m_e^2} \frac{\sin(x)}{\epsilon_0}$}\par
+    \vskip-3.85ex
+    \ruledhbox{\red$\frac{\sin(x)}{16 \pi \epsilon_0 c^2 m_e^2} \frac{\sin(x)}{\epsilon_0}$}\par
+    \the\dimexpr-3.85ex\relax
+\stopTEXpage
+
+\stoptext

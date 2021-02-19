@@ -9,14 +9,14 @@
 % \setuppapersize[A4][A3]
 % \setuplayout[location=middle]
 
-\definetextbackground[r]
+\definetextbackground[myregion]
 
 % \loggingall
 
 \starttext
 
     \dorecurse{200}{
-        \starttextbackground[r]
+        \starttextbackground[myregion]
         \input ward
         \stoptextbackground
         \
