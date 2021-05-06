@@ -3,8 +3,8 @@
 <!--
 
     input filename   : hz-001
-    processing date  : 2021-04-29 20:52:47+02:00
-    context version  : 2021.04.28 18:39
+    processing date  : 2021-05-06 20:30:41+02:00
+    context version  : 2021.05.05 19:29
     exporter version : 0.35
 
 -->
@@ -13,7 +13,7 @@
 <?xml-stylesheet type="text/css" href="styles/hz-001-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/hz-001-styles.css" ?>
 
-<document context="2021.04.28 18:39" date="2021-04-29 20:52:47+02:00" file="hz-001" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+<document context="2021.05.05 19:29" date="2021-05-06 20:30:41+02:00" file="hz-001" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
  <metadata>
  </metadata>
 narrow nonbreaking space

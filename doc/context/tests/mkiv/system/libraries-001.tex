@@ -1,0 +1,138 @@
+% permitloadlib=true
+
+\continuewhenlmtxmode
+
+\setuplayout[tight] \setupbodyfont[10pt,tt]
+
+\starttext
+
+% \registerctxluafile{libs-imp-zstd}{autosuffix}
+% \registerctxluafile{libs-imp-lz4}{autosuffix}
+% \registerctxluafile{libs-imp-lzo}{autosuffix}
+
+% c:\data\develop\tex-context\tex\texmf-win64\bin\lib\luametatex\zstd\libzstd.dll
+% c:\data\develop\tex-context\tex\texmf-win64\bin\lib\luametatex\lz4\liblz4.dll
+% c:\data\develop\tex-context\tex\texmf-win64\bin\lib\luametatex\lzo\liblzo.dll
+
+\subject{test run}
+
+\startluacode
+    -- preloads:
+
+    require("libs-imp-zstd.lmt")
+    require("libs-imp-lz4.lmt")
+    require("libs-imp-lzo.lmt")
+
+    -- prepares:
+
+    local zstd = require("zstd")
+    local lz4  = require("lz4")
+    local lzo  = require("lzo")
+
+    -- first call loads:
+
+    local data = io.loaddata(resolvers.findfile("char-def.lua"))
+
+    local comp = zstd.compress(data)
+    if comp then
+        local back = zstd.decompress(comp)
+        context(
+            "method: %s, original: %i, compressed: %i, decompressed: %i, percentage: %r\\par",
+            "zsdt", #data, #comp, #back, 100*#comp/#back
+        )
+    end
+
+    local comp = lz4.compress(data)
+    if comp then
+        local back = lz4.decompresssize(comp,#data)
+        context(
+            "method: %s, original: %i, compressed: %i, decompressed: %i, percentage: %r\\par",
+            "lz4 ", #data, #comp, #back, 100*#comp/#back
+        )
+    end
+
+    local comp = lzo.compress(data)
+    if comp then
+        local back = lzo.decompresssize(comp,#data)
+        context(
+            "method: %s, original: %i, compressed: %i, decompressed: %i, percentage: %r\\par",
+            "lzo ", #data, #comp, #back, 100*#comp/#back
+        )
+    end
+\stopluacode
+
+\registerctxluafile{libs-imp-foreign}{autosuffix}
+
+\startluacode
+local foreign = optional.loaded.foreign
+local zstd    = foreign.load("libzstd")
+
+if zstd then
+
+    local ZSTD_compressBound = zstd:register {
+        name      = "ZSTD_compressBound",
+        result    = "int",
+        arguments = { "int" },
+    }
+
+    local ZSTD_getFrameContentSize = zstd:register {
+        name      = "ZSTD_getFrameContentSize",
+        result    = "int",
+        arguments = { "pointer", "int" },
+    }
+
+    local ZSTD_compress = zstd:register {
+        name      = "ZSTD_compress",
+        result    = "int",
+        arguments = { "pointer", "int", "string", "int", "int" },
+        arguments = { "pointer", "int", "string", "int", "int" },
+    }
+
+    local ZSTD_decompress = zstd:register {
+        name      = "ZSTD_decompress",
+        result    = "int",
+        arguments = { "pointer", "int", "string", "int" },
+    }
+
+    local newbuffer = foreign.newbuffer
+    local getbuffer = foreign.getbuffer
+
+    local function zstd_compress(source,level)
+        local sourcesize = #source
+        local targetsize = ZSTD_compressBound(sourcesize)
+        local target     = newbuffer(targetsize)
+        local result     = ZSTD_compress(target,targetsize,source,sourcesize,tonumber(level) or 3)
+        return getbuffer(target,result)
+    end
+
+    local function zstd_decompress(source)
+        local sourcesize = #source
+        local targetsize = ZSTD_getFrameContentSize(source,sourcesize)
+        local target     = newbuffer(targetsize)
+        local result     = ZSTD_decompress(target,targetsize,source,sourcesize)
+        return getbuffer(target,result)
+    end
+
+    local data = io.loaddata(resolvers.findfile("char-def.lua"))
+    local comp = zstd_compress(data)
+    local back = zstd_decompress(comp)
+
+    context(
+        "method: %s, original: %i, compressed: %i, decompressed: %i, percentage: %r\\par",
+        "zstd", #data, #comp, #back, 100*#comp/#back
+    )
+
+end
+
+\stopluacode
+
+\subject{hans run}
+
+\starttyping
+method: zsdt, original: 5182325, compressed: 424115, decompressed: 5182325, percentage: 8
+method: lz4 , original: 5182325, compressed: 739759, decompressed: 5182325, percentage: 14
+method: lzo , original: 5182325, compressed: 741703, decompressed: 5182325, percentage: 14
+method: zstd, original: 5182325, compressed: 424115, decompressed: 5182325, percentage: 8
+\stoptyping
+
+\stoptext
