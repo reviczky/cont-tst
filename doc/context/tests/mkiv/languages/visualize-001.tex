@@ -1,0 +1,14 @@
+\enabletrackers[hyphenation.applied.visualize]
+
+\starttext
+
+\startexceptions[de]
+    au{f-}{f}{ff}as-ste
+    au{f-}{f}{ff}(f!f)ax-xte
+\stopexceptions
+
+\mainlanguage[de]
+
+\dorecurse{100}{#1 auffasste auffaxxte }
+
+\stoptext

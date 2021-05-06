@@ -1,0 +1,28 @@
+ \startbuffer[test]
+<something>
+    <what>
+        test
+        <?context-directive tex command \inframed{xxx} ?>
+        <?context-directive tex command \page ?>
+        test
+    </what>
+</something>
+\stopbuffer
+
+\def\xmltexdirective#1#2{\doif{#1}{command}{#2}}
+
+\xmlinstalldirective{tex}{xmltexdirective}
+
+\startxmlsetups xml:mysetups
+    \xmlsetsetup{\xmldocument}{something}{xml:*}
+\stopxmlsetups
+
+\xmlregistersetup{xml:mysetups}
+
+\startxmlsetups xml:something
+    \xmlfirst{#1}{what}
+\stopxmlsetups
+
+\starttext
+    \xmlprocessbuffer{main}{test}{}
+\stoptext

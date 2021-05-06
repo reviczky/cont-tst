@@ -1,0 +1,24 @@
+% macros=mkix
+
+\starttext
+
+A neat example by Aditya (mode at command line!):
+
+<?lua if tex.modes["A"] and not tex.modes["B"] then ?>
+\starttyping
+A and not B
+\stoptyping
+<?lua else ?>
+\starttyping
+not (A and not B)
+\stoptyping
+<?lua end ?>
+
+% for testing in the suite:
+
+<?lua if tex.modes["atpragma"] then ?>
+\usemodule[scite]
+\typefile[option=TEX]{selective-001.tex}
+<?lua end ?>
+
+\stoptext

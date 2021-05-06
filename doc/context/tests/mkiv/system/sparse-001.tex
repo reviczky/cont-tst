@@ -1,0 +1,51 @@
+\setuplayout[tight] \setupbodyfont[tt,10pt]
+
+\starttext
+
+    \startluacode
+        local d = io.loaddata(resolvers.findfile("tufte.tex"))
+        local a = sparse.new()
+        for v in string.utfvalues(d) do
+         -- sparse.set(a,v,sparse.get(a,v)+1)
+            a[v] = a[v] + 1
+        end
+        for i, v in sparse.traverse(a) do
+            if i > 32 and v > 0 then
+                context("%03i %U\\crlf",i,i)
+            end
+        end
+    \stopluacode
+
+    \blank
+
+    \startluacode
+        local a = { }
+        local y = string.byte("1")
+        local n = string.byte("0")
+        for i=1,20 do
+            a[i] = sparse.new(1,n) -- bytes (1|2|4) | default
+        end
+        for i=8,15 do
+            local ai = a[i]
+            for j=10,15 do
+             -- sparse.set(ai,j,y)
+                ai[j] = y
+            end
+        end
+        for i=1,20 do
+            a[i] = sparse.concat(a[i],1,20)
+        end
+        context(table.concat(a,"\\crlf"))
+    \stopluacode
+
+    \blank
+
+    \codedef\mycode
+
+    {       \mycode 999 = 123} 000 = \the\mycode999\par
+    {\global\mycode 999 = 124} 124 = \the\mycode999\par
+    {       \mycode 999 = 125} 124 = \the\mycode999\par
+
+  % \codedef\mycode            \the\mycode999\par % overload error/warning
+
+\stoptext

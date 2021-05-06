@@ -1,0 +1,15 @@
+% \definefontfeature[mathextra][collapseitalics]
+
+\setupbodyfont[pagella]
+
+\startTEXpage[frame=on] \showfontitalics
+    $\sin{\left(xxx\right)}$\par
+    $\sin\begingroup\left(xxx\right)\endgroup$\par
+    $\sin(xxx)$\par
+    $f {\left(xxx\right)}$\par
+    $f \begingroup\left(xxx\right)\endgroup$\par
+    $f (xxx)$\par
+    $x {\left(xxx\right)}$\par
+    $x \begingroup\left(xxx\right)\endgroup$\par
+    $x (xxx)$\par
+\stopTEXpage

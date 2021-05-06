@@ -1,0 +1,8 @@
+\starttext
+              \def\foo{foo}
+    \protected\def\oof{foo}
+    \edef\ofo{\prerolltostring{\foo\ \bold{and} \oof}}
+    {\foo\ \bold{and} \oof}\par
+    [\prerolltostring{\foo\ \bold{and} \oof}]\par
+    \meaning\ofo\par
+\stoptext

@@ -1,0 +1,54 @@
+\startluacode
+sorters.definitions["biblical"] = {
+    method  = interfaces.variables.before,
+    replacements = {
+        { "Gen",  utf.char(0xFF01) },
+        { "Ex",   utf.char(0xFF02) },
+        { "Lev",  utf.char(0xFF03) },
+        { "Deut", utf.char(0xFF04) },
+        { "Lam",  utf.char(0xFF05) },
+        { "Dan",  utf.char(0xFF06) },
+        { "Joel", utf.char(0xFF07) },
+        { "Ps",   utf.char(0xFF08) },
+        { "Prov", utf.char(0xFF09) },
+        { "Sir",  utf.char(0xFF0A) },
+        { "Mt",   utf.char(0xFF0B) },
+        { "Mk",   utf.char(0xFF0C) },
+    },
+}
+\stopluacode
+
+\defineregister[bibcit] \setupregister[bibcit][language=biblical,before=]
+
+\starttext
+
+test ... \bibcit{Gen 3:6}
+test ... \bibcit{Gen 4:2-8}
+test ... \bibcit{Gen 39:6-20}
+test ... \bibcit{Gen 17:1}
+test ... \bibcit{Gen 18:27}
+test ... \bibcit{Gen 28:10-12}
+test ... \bibcit{Ex 20:12}
+test ... \bibcit{Lev 6:5-6}
+test ... \bibcit{Deut 6:5}
+test ... \bibcit{Lam 3:27}
+test ... \bibcit{Mk 2:19-20}
+test ... \bibcit{Mt 3:8-10}
+test ... \bibcit{Prov 3:11-12}
+test ... \bibcit{Sir 4:17-18}
+test ... \bibcit{Mt 5:5}
+test ... \bibcit{Mt 5:6}
+test ... \bibcit{Mt 5:16}
+test ... \bibcit{Mt 6:1-6, 16-18}
+test ... \bibcit{Mt 7:13-14}
+test ... \bibcit{Sir 10:9}
+test ... \bibcit{Mt 11:12}
+test ... \bibcit{Mt 12:34}
+test ... \bibcit{Mt 12:36}
+test ... \bibcit{Mk 12:41-44}
+test ... \bibcit{Sir 17:27}
+
+\blank[3*big] \placeregister[bibcit]
+
+\stoptext
+

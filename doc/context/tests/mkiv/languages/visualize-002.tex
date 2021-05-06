@@ -1,0 +1,22 @@
+% \zwj  : no ligatures
+% \zwnj : no kerns either
+
+\enabletrackers[hyphenation.applied.visualize=ligatures]
+
+\startexceptions[de]
+begri{ff-}{l}{ffl}(f\zwj fl)ich
+xegri{ff-}{l}{ffl}(ff\zwj l)ich
+zegri{ff-}{l}{ffl}(ffl)ich
+wegri{ff-}{l}{ffl}(f\zwj f\zwj l)ich
+\stopexceptions
+
+\showglyphs
+
+\mainlanguage[de]
+
+\startTEXpage[offset=10pt]
+    begrifflich\par
+    xegrifflich\par
+    zegrifflich\par
+    wegrifflich\par
+\stopTEXpage

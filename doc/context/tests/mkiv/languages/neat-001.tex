@@ -1,0 +1,19 @@
+\starttext
+
+\registerhyphenationpattern[nl][e1ë/e=e]
+\registerhyphenationpattern[nl][a9atje./a=t,1,3]
+\registerhyphenationpattern[en][eigh1tee/t=t,5,1]
+\registerhyphenationpattern[de][c1k/k=k]
+\registerhyphenationpattern[de][schif1f/ff=f,5,2]
+
+\starthyphenation[traditional]
+    \starttabulate[|||]
+        \NC reëel      \NC \language[nl]\hyphenatedcoloredword{reëel}      \NC \NR
+        \NC omaatje    \NC \language[nl]\hyphenatedcoloredword{omaatje}    \NC \NR
+        \NC eighteen   \NC \language[en]\hyphenatedcoloredword{eighteen}   \NC \NR
+        \NC Zucker     \NC \language[de]\hyphenatedcoloredword{Zucker}     \NC \NR
+        \NC Schiffahrt \NC \language[de]\hyphenatedcoloredword{Schiffahrt} \NC \NR
+    \stoptabulate
+\stophyphenation
+
+\stoptext

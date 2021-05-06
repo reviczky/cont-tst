@@ -1,0 +1,22 @@
+% based on question on the list
+
+\startluacode
+    userdata = userdata or { }
+    userdata.myfunction = function()
+        return [[
+            343327959841638047651959775267761420323
+            657838053757849835434002826851807933276
+            324327913964298509889902373459201557839
+            848280014864125740605537568541370698786
+        ]]
+    end
+\stopluacode
+
+\starttext
+
+    \doloopovermatch {\letterpercent d} {\luaexpr{userdata.myfunction()}} {
+        \colored[h=\luaexpr{40*#1},s=1,v=1]{#1}
+    }
+
+\stoptext
+

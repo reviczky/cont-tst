@@ -3,36 +3,38 @@
 <!--
 
     input filename   : embedding-001
-    processing date  : 2021-02-18 19:03:48+01:00
-    context version  : 2021.02.18 10:24
+    processing date  : 2021-04-29 20:29:06+02:00
+    context version  : 2021.04.28 18:39
     exporter version : 0.35
 
 -->
 
 <!-- This export file is used for filtering runtime only! -->
 
-<document context="2021.02.18 10:24" date="2021-02-18 19:03:48+01:00" file="embedding-001" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+<document context="2021.04.28 18:39" date="2021-04-29 20:29:06+02:00" file="embedding-001" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
  <metadata>
  </metadata>
  <publications detail="default">
   <list detail="btx">
    <listitem detail="btx-default">
     <listtag>1</listtag>
-    <listcontent><reference explicit="btx::list::1" implicit="1" reference="btx::list::1"></reference><publication dataset="default" tag="mytag"><p detail="u">bfldcategorybook</p>: [author: Author, A.B.] [title: The title] [year: 2018]</publication></listcontent>
+    <listcontent><reference explicit="btx::list::1" implicit="1" reference="btx::list::1"></reference><publication dataset="default" tag="mytag"><pubfld detail="author">A.B. Author</pubfld>, <pubfld detail="title">The title</pubfld>, <pubfld detail="year">2018</pubfld>.</publication></listcontent>
    </listitem>
   </list>
  </publications>
 Agriculture is a fairly recent human invention, and in many ways it was one of the great stupid moves of all time. Hunter-gatherers have thousands of wild sources of food to subsist on. Agriculture changed that all, generating an overwhelming reliance on a few dozen domesticated food sources, making you extremely vulnerable to the next famine, the next locust infestation, the next potato blight. Agriculture allowed for stockpiling of surplus resources and thus, inevitably, the unequal stockpiling of them — stratification of society and the invention of classes. Thus, it allowed for the invention of poverty. I think that the punch line of the primate-human difference is that when humans invented poverty, they came up with a way of subjugating the low-ranking like nothing ever seen before in the primate world. 
  <formula>
   <formulacontent n="1">
-   <m:math display="block" xmlns:m="http://www.w3.org/1998/Math/MathML">
+   <m:math display="block">
     <m:mrow>
      <m:mi>𝑒</m:mi>
      <m:mo>=</m:mo>
      <m:mi>𝑚</m:mi>
      <m:msup>
       <m:mi>𝑐</m:mi>
-      <m:mn>2</m:mn>
+      <!-- begin m:mrow -->
+       <m:mn>2</m:mn>
+      <!-- end m:mrow -->
      </m:msup>
     </m:mrow>
    </m:math>

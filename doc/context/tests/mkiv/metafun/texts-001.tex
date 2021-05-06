@@ -1,5 +1,9 @@
+% \enabletrackers[metapost.textexts]
+% \enabletrackers[metapost.instance]
+
 \starttext
 
+\nologbuffering
 \useMPlibrary[txt]
 
 \startsetups text-a
@@ -12,7 +16,7 @@
 
 \startsetups text-b
     \startuseMPgraphic{followtokens}
-        path RotPath ; RotPath := reverse halfcircle xyscaled 3cm  ;
+        path RotPath ; RotPath := reverse halfcircle xyscaled 3cm ;
         draw RotPath ;
     \stopuseMPgraphic
     \followtokens{{\hskip1em}some text{\hskip1em}}
@@ -20,7 +24,7 @@
 
 \startMPpage
     draw textext("\setups{text-a}") ;
-    draw textext("\setups{text-b}") shifted (0,-.5cm);
+    draw textext("\setups{text-b}") shifted (0,-.5cm) ;
 \stopMPpage
 
 \stoptext

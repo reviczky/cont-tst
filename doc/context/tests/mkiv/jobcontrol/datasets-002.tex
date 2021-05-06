@@ -1,0 +1,49 @@
+\definedataset[nicedata]
+
+\starttext
+
+\startluacode
+
+local function dofactorial(n)
+	local function inner(c,m)
+		if m < 2 then
+            return c
+        else
+            return inner(c*m, m-1)
+        end
+	end
+	return inner(1,n)
+end
+
+local function factorial(n)
+    local data = job.datasets.getdata("factorials","list")
+    if not data then
+        data = { }
+    end
+    local f = data[n]
+    if not f then
+		f = dofactorial(n)
+        data[n] = f
+    end
+    job.datasets.setdata {
+        name = "factorials",
+        tag  = "list",
+        data = data
+    }
+    return f
+end
+
+interfaces.implement{
+	name      = "factorial",
+	public    = true,
+	arguments = { "integer" },
+	actions   = { factorial, context }
+}
+
+\stopluacode
+
+\dorecurse {20} {
+    \factorial #1 \relax
+}
+
+\stoptext

@@ -1,0 +1,13 @@
+\definefontfeature
+  [mathextra]
+  [collapseitalics=yes]
+
+\showglyphs
+
+\starttext
+
+    \dostepwiserecurse{`A}{`Z}{1}{
+        \mathematics{\Uchar#1 \Uchar#1_{\Uchar#1} \Uchar#1_{\Uchar#1\Uchar#1} \Uchar#1_{\Uchar#1\Uchar#1\Uchar#1}}\par
+    }
+
+\stoptext

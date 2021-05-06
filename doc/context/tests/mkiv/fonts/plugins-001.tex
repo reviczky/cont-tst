@@ -1,0 +1,11 @@
+% just there because i kept in sync with local old mkiv stuff
+
+\starttext
+    \definefontfeature[test][mode=plug,features=text]
+    \start
+        \definefont[FontA][Serif*test]
+        \definefont[FontB][Serif*test]
+        {\FontA aaa}{\FontB\glyphscale 1200  bbb}
+        {\FontA aaa}{\FontB\glyphscale 1200  bbb}
+    \stop
+\stoptext

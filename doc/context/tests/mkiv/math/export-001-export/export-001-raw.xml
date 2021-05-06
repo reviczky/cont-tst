@@ -3,8 +3,8 @@
 <!--
 
     input filename   : export-001
-    processing date  : 2021-02-18 19:06:54+01:00
-    context version  : 2021.02.18 10:24
+    processing date  : 2021-04-29 20:33:52+02:00
+    context version  : 2021.04.28 18:39
     exporter version : 0.35
 
 -->
@@ -13,30 +13,34 @@
 <?xml-stylesheet type="text/css" href="styles/export-001-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/export-001-styles.css" ?>
 
-<document context="2021.02.18 10:24" date="2021-02-18 19:06:54+01:00" file="export-001" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+<document context="2021.04.28 18:39" date="2021-04-29 20:33:52+02:00" file="export-001" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
  <metadata>
  </metadata>
  <formula>
   <formulacontent n="1">
-   <m:math display="block" xmlns:m="http://www.w3.org/1998/Math/MathML">
+   <m:math display="block">
     <m:mrow>
      <m:msup>
-      <m:mn>2</m:mn>
+      <!-- begin m:mrow -->
+       <m:mn>2</m:mn>
+      <!-- end m:mrow -->
       <m:mo>∫</m:mo>
      </m:msup>
     </m:mrow>
    </m:math>
   </formulacontent>
  </formula>
-<m:math display="inline" xmlns:m="http://www.w3.org/1998/Math/MathML"><m:mrow><m:msup><m:mo>∫</m:mo><m:mn>2</m:mn></m:msup></m:mrow></m:math>
+<m:math display="inline"><m:mrow><m:msup><m:mo>∫</m:mo><!-- begin m:mrow --><m:mn>2</m:mn><!-- end m:mrow --></m:msup></m:mrow></m:math>
  <break/>
-<m:math display="inline" xmlns:m="http://www.w3.org/1998/Math/MathML"><m:mrow><m:msup><m:mo>∫</m:mo><m:mn>2</m:mn></m:msup></m:mrow></m:math>
+<m:math display="inline"><m:mrow><m:msup><m:mo>∫</m:mo><!-- begin m:mrow --><m:mn>2</m:mn><!-- end m:mrow --></m:msup></m:mrow></m:math>
  <formula>
   <formulacontent n="2">
-   <m:math display="block" xmlns:m="http://www.w3.org/1998/Math/MathML">
+   <m:math display="block">
     <m:mrow>
      <m:msup>
-      <m:mn>2</m:mn>
+      <!-- begin m:mrow -->
+       <m:mn>2</m:mn>
+      <!-- end m:mrow -->
       <m:mo>∑</m:mo>
      </m:msup>
     </m:mrow>
@@ -45,35 +49,73 @@
  </formula>
  <formula>
   <formulacontent n="3">
-   <m:math display="block" xmlns:m="http://www.w3.org/1998/Math/MathML">
+   <m:math display="block">
     <m:mrow>
      <m:msubsup>
       <m:mo>∑</m:mo>
-      <m:mn>1</m:mn>
-      <m:mn>1</m:mn>
-     </m:msubsup>
-     <m:mfrac>
-      <m:mn>1</m:mn>
-      <m:mfrac>
+      <!-- begin m:mrow -->
        <m:mn>1</m:mn>
-       <m:mfrac>
-        <m:mn>1</m:mn>
-        <m:mn>1</m:mn>
-       </m:mfrac>
+      <!-- end m:mrow -->
+      <!-- begin m:mrow -->
+       <m:mn>1</m:mn>
+      <!-- end m:mrow -->
+     </m:msubsup>
+     <!-- begin m:mrow -->
+      <m:mfrac>
+       <!-- begin m:mrow -->
+        <!-- begin m:mrow -->
+         <m:mn>1</m:mn>
+        <!-- end m:mrow -->
+       <!-- end m:mrow -->
+       <!-- begin m:mrow -->
+        <!-- begin m:mrow -->
+         <!-- begin m:mrow -->
+          <m:mfrac>
+           <!-- begin m:mrow -->
+            <!-- begin m:mrow -->
+             <m:mn>1</m:mn>
+            <!-- end m:mrow -->
+           <!-- end m:mrow -->
+           <!-- begin m:mrow -->
+            <!-- begin m:mrow -->
+             <!-- begin m:mrow -->
+              <m:mfrac>
+               <!-- begin m:mrow -->
+                <!-- begin m:mrow -->
+                 <m:mn>1</m:mn>
+                <!-- end m:mrow -->
+               <!-- end m:mrow -->
+               <!-- begin m:mrow -->
+                <!-- begin m:mrow -->
+                 <m:mn>1</m:mn>
+                <!-- end m:mrow -->
+               <!-- end m:mrow -->
+              </m:mfrac>
+             <!-- end m:mrow -->
+            <!-- end m:mrow -->
+           <!-- end m:mrow -->
+          </m:mfrac>
+         <!-- end m:mrow -->
+        <!-- end m:mrow -->
+       <!-- end m:mrow -->
       </m:mfrac>
-     </m:mfrac>
+     <!-- end m:mrow -->
     </m:mrow>
    </m:math>
   </formulacontent>
  </formula>
  <formula>
   <formulacontent n="4">
-   <m:math display="block" xmlns:m="http://www.w3.org/1998/Math/MathML">
+   <m:math display="block">
     <m:mrow>
      <m:msubsup>
       <m:mo>∫</m:mo>
-      <m:mn>2</m:mn>
-      <m:mo>∞</m:mo>
+      <!-- begin m:mrow -->
+       <m:mn>2</m:mn>
+      <!-- end m:mrow -->
+      <!-- begin m:mrow -->
+       <m:mo>∞</m:mo>
+      <!-- end m:mrow -->
      </m:msubsup>
      <m:mo>∇</m:mo>
      <m:mn>3</m:mn>
@@ -83,12 +125,16 @@
  </formula>
  <formula>
   <formulacontent n="5">
-   <m:math display="block" xmlns:m="http://www.w3.org/1998/Math/MathML">
+   <m:math display="block">
     <m:mrow>
      <m:msubsup>
       <m:mo>∑</m:mo>
-      <m:mn>2</m:mn>
-      <m:mo>∞</m:mo>
+      <!-- begin m:mrow -->
+       <m:mn>2</m:mn>
+      <!-- end m:mrow -->
+      <!-- begin m:mrow -->
+       <m:mo>∞</m:mo>
+      <!-- end m:mrow -->
      </m:msubsup>
      <m:mo>∇</m:mo>
      <m:mn>3</m:mn>

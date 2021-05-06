@@ -1,0 +1,13 @@
+\starttext
+
+\startbuffer
+    \input tufte
+\stopbuffer
+
+\fillinrules[n=\determinednoflines{\getbuffer},width=fit]{first}
+\fillinrules[n=\determinednoflines{\getbuffer},width=broad]{first}
+\fillinrules[n=\determinednoflines{\getbuffer},width=3cm]{first}
+\fillinrules[n=\determinednoflines{\getbuffer},width=3cm,distance=.5em,separator=:]{first}
+\fillinrules[n=\determinednoflines{\getbuffer}]{first}{last}
+
+\stoptext

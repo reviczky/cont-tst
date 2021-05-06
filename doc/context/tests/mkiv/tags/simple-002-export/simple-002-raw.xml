@@ -3,8 +3,8 @@
 <!--
 
     input filename   : simple-002
-    processing date  : 2021-02-18 19:18:44+01:00
-    context version  : 2021.02.18 10:24
+    processing date  : 2021-04-29 20:52:59+02:00
+    context version  : 2021.04.28 18:39
     exporter version : 0.35
 
 -->
@@ -13,7 +13,7 @@
 <?xml-stylesheet type="text/css" href="styles/simple-002-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/simple-002-styles.css" ?>
 
-<document context="2021.02.18 10:24" date="2021-02-18 19:18:44+01:00" file="simple-002" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+<document context="2021.04.28 18:39" date="2021-04-29 20:52:59+02:00" file="simple-002" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
  <metadata>
  </metadata>
 We thrive in information--thick worlds because of our marvelous and everyday capacity to select, edit, single out, structure, highlight, group, pair, merge, harmonize, synthesize, focus, organize, condense, reduce, boil down, choose, categorize, catalog, classify, list, abstract, scan, look into, idealize, isolate, discriminate, distinguish, screen, pigeonhole, pick over, sort, integrate, blend, inspect, filter, lump, skip, smooth, chunk, average, approximate, cluster, aggregate, outline, summarize, itemize, review, dip into, flip through, browse, glance into, leaf through, skim, refine, enumerate, glean, synopsize, winnow the wheat from the chaff and separate the sheep from the goats.
@@ -52,4 +52,4 @@ We thrive in information--thick worlds because of our marvelous and everyday cap
    <itemcontent>z</itemcontent>
   </item>
  </itemgroup>
-a bit of <m:math display="inline" xmlns:m="http://www.w3.org/1998/Math/MathML"><m:mrow><m:mi>𝑒</m:mi><m:mo>=</m:mo><m:mi>𝑚</m:mi><m:msup><m:mi>𝑐</m:mi><m:mn>2</m:mn></m:msup></m:mrow></m:math></document>
+a bit of <m:math display="inline"><m:mrow><m:mi>𝑒</m:mi><m:mo>=</m:mo><m:mi>𝑚</m:mi><m:msup><m:mi>𝑐</m:mi><!-- begin m:mrow --><m:mn>2</m:mn><!-- end m:mrow --></m:msup></m:mrow></m:math></document>

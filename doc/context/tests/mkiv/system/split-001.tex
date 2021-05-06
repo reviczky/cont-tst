@@ -1,0 +1,13 @@
+% answer to mailing list
+
+% context--extra=select --list=1:123 foo.pdf --once
+
+\starttext
+    \dorecurse{10}{\samplefile{tufte}\page}
+    \appendetoks
+        \writestatus{!!!!!}{}
+        \writestatus{!!!!!}{SPLIT HERE: \the\realpageno}
+        \writestatus{!!!!!}{}
+    \to \everystoptext
+    \dorecurse{10}{\samplefile{tufte}\page}
+\stoptext

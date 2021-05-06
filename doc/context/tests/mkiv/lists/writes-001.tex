@@ -1,0 +1,20 @@
+\starttext
+
+\installstructurelistprocessor{chapter:userdata}
+  {\startlinecorrection[blank]
+   \hfill \inframed{you really need to look at \structurelistuservariable{pagenumber}}%
+   \stoplinecorrection}
+
+\placelist[chapter]
+
+\chapter{one}
+
+\writebetweenlist[chapter][location=here]{\blank page 4\blank}
+
+\writedatatolist[chapter][location=here][pagenumber=4]
+
+\writetolist[chapter]{}{It's a test}
+
+\chapter{two}
+
+\stoptext

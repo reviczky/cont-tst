@@ -6,7 +6,7 @@
         fill Page
            withshademethod "linear"
            withshadedirection(0,1)
-           withshadecolors (red, blue) ;
+           withshadecolors ("darkblue", "darkyellow") ;
 
         picture p ; p := lmt_outline [
             text          = "\strut foo f o o",
@@ -59,13 +59,14 @@
     fill pp
        withshademethod "linear"
        withshadedirection down
-       withshadecolors (red, blue) ;
+       withshadecolors ("darkred", "darkblue") ;
 
     for i within tt :
         nofill pathpart i;
     endfor ;
 
-    eofill bb withcolor "gray";
+    eofill bb withcolor "darkgray" ;
+    clip currentpicture to bb ;
 \stopMPpage
 
 \stoptext

@@ -1,0 +1,19 @@
+\setupTEXpage
+  [width=10cm,
+   setups=whatever]
+
+\startsetups whatever
+    \setupindenting[yes,medium]
+\stopsetups
+
+\starttext
+
+    \startTEXpage
+        \input knuth
+    \stopTEXpage
+
+    \startTEXpage
+        \input knuth
+    \stopTEXpage
+
+\stoptext

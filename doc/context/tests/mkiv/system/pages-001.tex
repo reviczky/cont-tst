@@ -1,0 +1,28 @@
+\starttext
+
+% context --pages pages-001
+% context --pages --page=first,fourth pages-001
+% context --pages --list=one,two pages-001
+
+\chapter[one]{One}
+
+\markpage[first]  test \page test \page
+\markpage[second] test \page
+
+\chapter[two]{Two}
+
+test \page
+\markpage[fourth] test
+
+\page
+
+% \doifelsemarkedpage{second}{YES}{NO}
+% \doifelsemarkedpage{fourth}{YES}{NO}
+
+% \page
+
+% \doifelsemarkedpage{second}{YES}{NO}
+% \doifelsemarkedpage{fourth}{YES}{NO}
+
+\stoptext
+

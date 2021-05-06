@@ -1,0 +1,34 @@
+\continuewhenlmtxmode
+
+\setupbodyfont[pagella,10pt]
+
+\showframe
+
+\setuplayout[width=middle,height=middle,footer=0pt]
+
+\startuseMPgraphic{circle}
+    lmt_parshape [
+     %  path       = fullcircle scaled 136mm,
+        path       = fullcircle scaled TextWidth randomized 2cm,
+     %  offset     = 2mm,
+        bottomskip = - 1.5LineHeight,
+    ] ;
+\stopuseMPgraphic
+
+\starttext
+
+\startshapedparagraph[mp=circle,repeat=yes,method=cycle]%
+    \setupalign[verytolerant,stretch,last]\dontcomplain
+  % \dorecurse{100}{
+    \dorecurse{10}{
+        {\darkred                          \samplefile{tufte}}
+        {\darkgreen   \kerncharacters[.125]\samplefile{ward}}
+        {\darkblue    \it                  \samplefile{thuan}}
+        {\darkcyan    \bf                  \samplefile{zapf}}
+        {\darkmagenta \bi                  \samplefile{sapolsky}}
+        {\darkyellow  \smallcaps           \samplefile{davis}}
+        \par % \blank
+    }
+\stopshapedparagraph
+
+\stoptext

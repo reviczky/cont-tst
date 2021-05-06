@@ -1,0 +1,23 @@
+\starttext
+    \setupcounter[formula][way=bytext]
+    \setupcaption[figure][way=bytext,prefixsegments=1:*]
+    \setupformulas[way=bytext,prefixsegments=1:*,prefixset=all]
+
+    \startchapter[title=Chapter]
+        \dorecurse{4}{
+            \startsection[title=Section]
+                \startsubsection[title=SubSection]
+                    \startplacefigure[list=cow] \externalfigure[cow] \stopplacefigure
+                    \startplaceformula[reference=eq1] \startformula c^2 = a^2 + b^2 \stopformula \stopplaceformula
+                \stopsubsection
+                \startsubsection[title=SubSection]
+                    \startplacefigure[list=cow] \externalfigure[cow] \stopplacefigure
+                    \startplaceformula[reference=eq1] \startformula c^2 = a^2 + b^2 \stopformula \stopplaceformula
+                \stopsubsection
+            \stopsection
+        }
+    \stopchapter
+
+    \placelistoffigures[criterium=all]
+    \placelist[formula][criterium=all]
+\stoptext

@@ -1,0 +1,16 @@
+\starttext
+
+    \enabletrackers[hyphenation.applied]
+    \enabletrackers[hyphenation.applied.console]
+    \enabletrackers[hyphenation.applied.visualize]
+
+    \dontcomplain \dostepwiserecurse{0}{15}{1}{
+        {\advance\hsize -#1cm \input tufte \par}
+    }
+
+    \dontcomplain \dostepwiserecurse{0}{15}{1}{
+        {\advance\hsize -#1cm \dorecurse{20}{aaaa\discretionary{bbbb}{cccc}{dddd}eeee }\par}
+    }
+
+\stoptext
+

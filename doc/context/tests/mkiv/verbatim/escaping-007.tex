@@ -1,0 +1,14 @@
+% for/from the mailing list
+
+\starttext
+
+\def\MyRed[#1]{{\red#1}}
+
+\starttyping[escape=@]
+1   137  26  25 >    1  69  32
+2   @btex@bgroup@red@bf 137 @egroup@etex@space 26  25 >    1  69  32
+2   @MyRed[137]  26  25 >    1  69  32
+3   137  26  25 >    1  69  32
+\stoptyping
+
+\stoptext

@@ -3,8 +3,8 @@
 <!--
 
     input filename   : tagged-003
-    processing date  : 2021-02-18 19:18:49+01:00
-    context version  : 2021.02.18 10:24
+    processing date  : 2021-04-29 20:53:07+02:00
+    context version  : 2021.04.28 18:39
     exporter version : 0.35
 
 -->
@@ -13,7 +13,7 @@
 <?xml-stylesheet type="text/css" href="styles/tagged-003-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/tagged-003-styles.css" ?>
 
-<document context="2021.02.18 10:24" date="2021-02-18 19:18:49+01:00" file="tagged-003" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+<document context="2021.04.28 18:39" date="2021-04-29 20:53:07+02:00" file="tagged-003" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
  <metadata>
  </metadata>
  <division detail="frontpart">
@@ -47,7 +47,7 @@
     <paragraph>The Earth, as a habitat for animal life, is in old age and has a fatal illness. Several, in fact. It would be happening whether humans had ever evolved or not. But our presence is like the effect of an old-age patient who smokes many packs of cigarettes per day<subsentencesymbol symbol="middle">—</subsentencesymbol>and we humans are the cigarettes.</paragraph>
     <description detail="whatever" chain="whatever">
      <descriptiontag>whocares</descriptiontag>
-     <descriptioncontent>Coming back to the use of typefaces in electronic publishing: many of the new typographers receive their knowledge and information about the rules of typography from books, from computer magazines or the instruction manuals which they get with the purchase of a PC or software. There is not so much basic instruction, as of now, as there was in the old days, showing the differences between good and bad typographic design. Many people are just fascinated by their PC’s tricks, and think that a widely--praised program, called up on the screen, will make everything automatic from now on.</descriptioncontent>
+     <descriptioncontent>Coming back to the use of typefaces in electronic publishing: many of the new typographers receive their knowledge and information about the rules of typography from books, from computer magazines or the instruction manuals which they get with the purchase of a PC or software. There is not so much basic instruction, as of now, as there was in the old days, showing the differences between good and bad typographic design. Many people are just fascinated by their PC's tricks, and think that a widely--praised program, called up on the screen, will make everything automatic from now on.</descriptioncontent>
     </description>
    </sectioncontent>
   </section>
