@@ -1,7 +1,7 @@
 return {
  ["htmlfiles"]={ "hz-001-div.html" },
  ["htmlroot"]="hz-001-div.html",
- ["identifier"]="06e59a5c-47c3-b512-6779-0263d37a056d",
+ ["identifier"]="372cc118-466b-969e-a061-a7754418df99",
  ["imagefile"]="styles/hz-001-images.css",
  ["imagepath"]="images",
  ["images"]={},

@@ -1,7 +1,7 @@
 return {
  ["htmlfiles"]={ "userproperties-001-div.html" },
  ["htmlroot"]="userproperties-001-div.html",
- ["identifier"]="5ac74163-4892-a3e1-531c-265b9932b6e5",
+ ["identifier"]="47b99a82-43b0-b96a-2d34-94339252dd19",
  ["imagefile"]="styles/userproperties-001-images.css",
  ["imagepath"]="images",
  ["images"]={},

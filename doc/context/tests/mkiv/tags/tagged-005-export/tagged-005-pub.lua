@@ -1,7 +1,7 @@
 return {
  ["htmlfiles"]={ "tagged-005-div.html" },
  ["htmlroot"]="tagged-005-div.html",
- ["identifier"]="55bf58bf-445b-9f5e-890c-3f3ba147298f",
+ ["identifier"]="f629ca16-43a9-aa3d-e653-1c575382d109",
  ["imagefile"]="styles/tagged-005-images.css",
  ["imagepath"]="images",
  ["images"]={},

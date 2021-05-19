@@ -1,0 +1,45 @@
+\continuewhenlmtxmode
+
+\useMPlibrary[dum]
+
+\starttext
+
+\startbuffer
+    \externalfigure[dummy][width=6cm]
+\stopbuffer
+
+\startshapedparagraph[text=\getbuffer]
+    \showstruts \strut \dorecurse{3}{\samplefile{ward}\par}
+\stopshapedparagraph
+
+\page
+
+\startshapedparagraph[text=\getbuffer,distance=1em]
+    \showstruts \strut \dorecurse{3}{\samplefile{ward}\par}
+\stopshapedparagraph
+
+\page
+
+\startshapedparagraph[text=\getbuffer,distance=1em,hoffset=-2em]
+    \showstruts \strut \dorecurse{3}{\samplefile{ward}\par}
+\stopshapedparagraph
+
+\page
+
+\startshapedparagraph[text=\getbuffer,distance=1em,voffset=-2ex,hoffset=-2em]
+    \showstruts \strut \dorecurse{3}{\samplefile{ward}\par}
+\stopshapedparagraph
+
+\page
+
+\startshapedparagraph[text=\getbuffer,distance=1em,voffset=-2ex,hoffset=-2em,lines=1]
+    \showstruts \strut \dorecurse{3}{\samplefile{ward}\par}
+\stopshapedparagraph
+
+\page
+
+\startshapedparagraph[width=4cm,lines=4]
+    \showstruts \strut \dorecurse{3}{\samplefile{ward}\par}
+\stopshapedparagraph
+
+\stoptext

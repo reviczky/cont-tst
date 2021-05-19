@@ -1,0 +1,14 @@
+\continuewhenlmtxmode
+
+% \markpages[stretch][lines=2] % current page
+
+\setuplayout[height=middle] \showframe
+
+\starttext
+    \brokenpenalty 10000 \clubpenalty 20000 \widowpenalty 20000
+    \dorecurse{10}{\samplefile{tufte}\par} \page
+    \startmarkpages[stretch][lines=2]
+        \dorecurse{10}{\samplefile{tufte}\par} \page
+    \stopmarkpages
+    \dorecurse{10}{\samplefile{tufte}\par} \page
+\stoptext

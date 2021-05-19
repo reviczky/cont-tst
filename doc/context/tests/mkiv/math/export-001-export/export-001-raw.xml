@@ -3,8 +3,8 @@
 <!--
 
     input filename   : export-001
-    processing date  : 2021-05-06 20:11:43+02:00
-    context version  : 2021.05.05 19:29
+    processing date  : 2021-05-15 21:16:37+02:00
+    context version  : 2021.05.15 22:45
     exporter version : 0.35
 
 -->
@@ -13,133 +13,20 @@
 <?xml-stylesheet type="text/css" href="styles/export-001-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/export-001-styles.css" ?>
 
-<document context="2021.05.05 19:29" date="2021-05-06 20:11:43+02:00" file="export-001" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+<document context="2021.05.15 22:45" date="2021-05-15 21:16:37+02:00" file="export-001" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
  <metadata>
  </metadata>
  <formula>
-  <formulacontent n="1">
-   <m:math display="block">
-    <m:mrow>
-     <m:msup>
-      <!-- begin m:mrow -->
-       <m:mn>2</m:mn>
-      <!-- end m:mrow -->
-      <m:mo>∫</m:mo>
-     </m:msup>
-    </m:mrow>
-   </m:math>
-  </formulacontent>
- </formula>
-<m:math display="inline"><m:mrow><m:msup><m:mo>∫</m:mo><!-- begin m:mrow --><m:mn>2</m:mn><!-- end m:mrow --></m:msup></m:mrow></m:math>
+2 ∫ </formula>
+∫2
  <break/>
-<m:math display="inline"><m:mrow><m:msup><m:mo>∫</m:mo><!-- begin m:mrow --><m:mn>2</m:mn><!-- end m:mrow --></m:msup></m:mrow></m:math>
+∫2
  <formula>
-  <formulacontent n="2">
-   <m:math display="block">
-    <m:mrow>
-     <m:msup>
-      <!-- begin m:mrow -->
-       <m:mn>2</m:mn>
-      <!-- end m:mrow -->
-      <m:mo>∑</m:mo>
-     </m:msup>
-    </m:mrow>
-   </m:math>
-  </formulacontent>
- </formula>
+2 ∑ </formula>
  <formula>
-  <formulacontent n="3">
-   <m:math display="block">
-    <m:mrow>
-     <m:msubsup>
-      <m:mo>∑</m:mo>
-      <!-- begin m:mrow -->
-       <m:mn>1</m:mn>
-      <!-- end m:mrow -->
-      <!-- begin m:mrow -->
-       <m:mn>1</m:mn>
-      <!-- end m:mrow -->
-     </m:msubsup>
-     <!-- begin m:mrow -->
-      <m:mfrac>
-       <!-- begin m:mrow -->
-        <!-- begin m:mrow -->
-         <m:mn>1</m:mn>
-        <!-- end m:mrow -->
-       <!-- end m:mrow -->
-       <!-- begin m:mrow -->
-        <!-- begin m:mrow -->
-         <!-- begin m:mrow -->
-          <m:mfrac>
-           <!-- begin m:mrow -->
-            <!-- begin m:mrow -->
-             <m:mn>1</m:mn>
-            <!-- end m:mrow -->
-           <!-- end m:mrow -->
-           <!-- begin m:mrow -->
-            <!-- begin m:mrow -->
-             <!-- begin m:mrow -->
-              <m:mfrac>
-               <!-- begin m:mrow -->
-                <!-- begin m:mrow -->
-                 <m:mn>1</m:mn>
-                <!-- end m:mrow -->
-               <!-- end m:mrow -->
-               <!-- begin m:mrow -->
-                <!-- begin m:mrow -->
-                 <m:mn>1</m:mn>
-                <!-- end m:mrow -->
-               <!-- end m:mrow -->
-              </m:mfrac>
-             <!-- end m:mrow -->
-            <!-- end m:mrow -->
-           <!-- end m:mrow -->
-          </m:mfrac>
-         <!-- end m:mrow -->
-        <!-- end m:mrow -->
-       <!-- end m:mrow -->
-      </m:mfrac>
-     <!-- end m:mrow -->
-    </m:mrow>
-   </m:math>
-  </formulacontent>
- </formula>
+1 ∑ 11 1 1 1 </formula>
  <formula>
-  <formulacontent n="4">
-   <m:math display="block">
-    <m:mrow>
-     <m:msubsup>
-      <m:mo>∫</m:mo>
-      <!-- begin m:mrow -->
-       <m:mn>2</m:mn>
-      <!-- end m:mrow -->
-      <!-- begin m:mrow -->
-       <m:mo>∞</m:mo>
-      <!-- end m:mrow -->
-     </m:msubsup>
-     <m:mo>∇</m:mo>
-     <m:mn>3</m:mn>
-    </m:mrow>
-   </m:math>
-  </formulacontent>
- </formula>
+∞ ∫ 2∇3 </formula>
  <formula>
-  <formulacontent n="5">
-   <m:math display="block">
-    <m:mrow>
-     <m:msubsup>
-      <m:mo>∑</m:mo>
-      <!-- begin m:mrow -->
-       <m:mn>2</m:mn>
-      <!-- end m:mrow -->
-      <!-- begin m:mrow -->
-       <m:mo>∞</m:mo>
-      <!-- end m:mrow -->
-     </m:msubsup>
-     <m:mo>∇</m:mo>
-     <m:mn>3</m:mn>
-    </m:mrow>
-   </m:math>
-  </formulacontent>
- </formula>
+∞ ∑ 2∇3 </formula>
 </document>
