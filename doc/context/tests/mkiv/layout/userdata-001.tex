@@ -1,0 +1,41 @@
+% posted by WS on the list
+
+\startsetups [userdata:shiftblock]
+    \signalrightpage
+    \doifelserightpage {
+        \startnarrower[2*left,-2*right]
+        \getuserdata
+        \stopnarrower
+    } {
+        \startnarrower[-2*left,2*right]
+        \getuserdata
+        \stopnarrower
+    }
+\stopsetups
+
+\defineuserdataalternative
+    [shiftblock]
+    [renderingsetup=userdata:shiftblock]
+
+\defineuserdata
+    [shiftblock]
+    [before=\blank,
+     after=\blank,
+     alternative=shiftblock]
+
+\setuppagenumbering
+    [alternative=doublesided]
+
+\starttext
+
+\startbuffer
+    \dorecurse{2}{\input knuth\par}
+    \startuserdata[shiftblock]
+    \input ward
+    \stopuserdata
+    \dorecurse{2}{\input zapf\par}
+\stopbuffer
+
+\dorecurse{10}{\getbuffer}
+
+\stoptext

@@ -1,0 +1,41 @@
+\setuphead[part][placehead=yes]
+
+\setupnotations
+  [endnote]
+  [way=bypart]
+
+\setupnotes
+  [endnote]
+  [location=list]
+
+\starttext
+
+\part{First Part}
+
+asdf\endnote{asdf}
+jklö\endnote{jklö}
+
+\part{Second Part}
+
+asdf\endnote{asdf}
+jklö\endnote{jklö}
+
+\page
+
+\setuplist
+  [part]
+  [after={\blank[samepage,big]\placelist[endnote]}]
+
+\blank
+
+\placelist
+  [part]
+  [criterium=all]
+
+\blank
+
+\placelist
+  [endnote]
+  [criterium=text]
+
+\stoptext

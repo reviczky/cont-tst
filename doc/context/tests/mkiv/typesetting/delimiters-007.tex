@@ -1,0 +1,22 @@
+\definefontfeature [default] [default] [protrusion=quality]
+
+\setupalign [hanging]
+
+\showframe [text] [text]
+
+\starttext
+
+\quotation{Quotation}
+
+\startquotation\samplefile{ward}\stopquotation
+
+\setupquotation [method=font]
+\setupquotation [method=text]
+\setupquotation [method=paragraph]
+\setupquotation [location=paragraph]
+
+\quotation{Quotation}
+
+\startquotation\samplefile{ward}\stopquotation
+
+\stoptext

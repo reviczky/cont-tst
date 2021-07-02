@@ -3,8 +3,8 @@
 <!--
 
     input filename   : symbolsets-001
-    processing date  : 2021-05-15 21:19:36+02:00
-    context version  : 2021.05.15 22:45
+    processing date  : 2021-06-30 09:04:33+02:00
+    context version  : 2021.06.29 23:13
     exporter version : 0.35
 
 -->
@@ -13,11 +13,29 @@
 <?xml-stylesheet type="text/css" href="styles/symbolsets-001-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/symbolsets-001-styles.css" ?>
 
-<document context="2021.05.15 22:45" date="2021-05-15 21:19:36+02:00" file="symbolsets-001" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
- <metadata>
- </metadata>
+<document context="2021.06.29 23:13" date="2021-06-30 09:04:33+02:00" file="symbolsets-001" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
  <formula>
-ℝRℝ𝐑 </formula>
+  <formulacontent n="1">
+   <m:math display="block">
+    <m:mrow>
+     <m:mi>ℝ</m:mi>
+     <m:mi>𝐑</m:mi>
+     <m:mi>ℝ</m:mi>
+     <m:mi>𝐑</m:mi>
+    </m:mrow>
+   </m:math>
+  </formulacontent>
+ </formula>
  <formula>
-ℝRℝ𝐑 </formula>
+  <formulacontent n="2">
+   <m:math display="block">
+    <m:mrow>
+     <m:mi>ℝ</m:mi>
+     <m:mi>𝐑</m:mi>
+     <m:mi>ℝ</m:mi>
+     <m:mi>𝐑</m:mi>
+    </m:mrow>
+   </m:math>
+  </formulacontent>
+ </formula>
 </document>

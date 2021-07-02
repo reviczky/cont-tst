@@ -1,0 +1,65 @@
+\continuewhenlmtxmode
+
+\starttext
+
+\protected\def\makeitfit#1#2#3%
+  {\begingroup
+   \hsize#1\relax
+   \setbox\scratchboxone\hbox\bgroup#3\egroup
+   \doloop {%
+      \setbox\scratchboxtwo\vbox\bgroup\unhcopy\scratchboxone\egroup
+      \scratchdimenone\boxlinenw\scratchboxtwo\boxlines\scratchboxtwo
+      \scratchdimentwo\boxlinewd\scratchboxtwo\boxlines\scratchboxtwo
+      \ifdim\scratchdimenone<\scratchdimentwo
+        \advance\hsize-#2\relax
+      \else
+        \unhbox\scratchboxone
+        \exitloop
+      \fi
+   }%
+   \endgroup}
+
+% \protected\def\guessbestwidth#1#2#3% no \protected when no \dimexpr
+%   {\beginlocalcontrol
+%    \begingroup
+%    \hsize#1\relax
+%    \setbox\scratchboxone\hbox\bgroup#3\egroup
+%    \doloop {%
+%       \setbox\scratchboxtwo\vbox\bgroup\unhcopy\scratchboxone\egroup
+%       \scratchcounter\boxlines\scratchboxtwo
+%       \scratchdimenone\boxlinenw\scratchboxtwo\scratchcounter
+%       \scratchdimentwo\boxlinewd\scratchboxtwo\scratchcounter
+%       \ifdim\scratchdimenone<\scratchdimentwo
+%         \advance\hsize-#2\relax
+%       \else
+%         \exitloop
+%       \fi
+%    }%
+%  % \normalexpanded{\endgroup\endlocalcontrol\the\hsize}}
+%    \normalexpanded{\endgroup\endlocalcontrol\dimexpr\the\hsize\relax}} % dimen
+
+\protected\def\guessbestwidth#1#2#3%
+  {\beginlocalcontrol
+   \begingroup
+   \hsize#1\relax
+   \setbox\scratchboxone\hbox\bgroup#3\egroup
+   \doloop {%
+      \setbox\scratchboxtwo\vbox\bgroup\unhcopy\scratchboxone\egroup
+      \scratchcounter\boxlines\scratchboxtwo
+      \ifdim\boxlinenw\scratchboxtwo\scratchcounter<\boxlinewd\scratchboxtwo\scratchcounter
+        \advance\hsize-#2\relax
+      \else
+        \exitloop
+      \fi
+   }%
+   \normalexpanded{\endgroup\endlocalcontrol\dimexpr\the\hsize\relax}}
+
+\makeitfit{10cm}{1mm}{\input{ward}}
+
+\hsize \guessbestwidth{10cm}{1mm}{\input{ward}}
+
+\input{ward}
+
+\the\guessbestwidth{10cm}{1mm}{\input{ward}}
+
+\stoptext

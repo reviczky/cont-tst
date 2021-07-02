@@ -3,8 +3,8 @@
 <!--
 
     input filename   : export-005
-    processing date  : 2021-05-15 21:35:10+02:00
-    context version  : 2021.05.15 22:45
+    processing date  : 2021-06-30 09:20:11+02:00
+    context version  : 2021.06.29 23:13
     exporter version : 0.35
 
 -->
@@ -13,22 +13,20 @@
 <?xml-stylesheet type="text/css" href="styles/export-005-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/export-005-styles.css" ?>
 
-<document context="2021.05.15 22:45" date="2021-05-15 21:35:10+02:00" file="export-005" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
- <metadata>
- </metadata>
- <section detail="chapter" chain="chapter" implicit="1" level="2">
+<document context="2021.06.29 23:13" date="2021-06-30 09:20:11+02:00" file="export-005" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+ <section detail="chapter" chain="chapter" level="2">
   <sectioncaption>
    <sectionnumber>1</sectionnumber>
    <sectiontitle>chapter a</sectiontitle>
   </sectioncaption>
   <sectioncontent>
-   <section detail="section" chain="section" implicit="2" level="3">
+   <section detail="section" chain="section" level="3">
     <sectioncaption>
      <sectionnumber>1.1</sectionnumber>
      <sectiontitle>section a</sectiontitle>
     </sectioncaption>
    </section>
-   <section detail="section" chain="section" implicit="3" level="3">
+   <section detail="section" chain="section" level="3">
     <sectioncaption>
      <sectionnumber>1.2</sectionnumber>
      <sectiontitle>section b</sectiontitle>
@@ -36,19 +34,19 @@
    </section>
   </sectioncontent>
  </section>
- <section detail="chapter" chain="chapter" implicit="4" level="2">
+ <section detail="chapter" chain="chapter" level="2">
   <sectioncaption>
    <sectionnumber>2</sectionnumber>
    <sectiontitle>chapter b</sectiontitle>
   </sectioncaption>
   <sectioncontent>
-   <section detail="section" chain="section" implicit="5" level="3">
+   <section detail="section" chain="section" level="3">
     <sectioncaption>
      <sectionnumber>2.1</sectionnumber>
      <sectiontitle>section a</sectiontitle>
     </sectioncaption>
    </section>
-   <section detail="section" chain="section" implicit="6" level="3">
+   <section detail="section" chain="section" level="3">
     <sectioncaption>
      <sectionnumber>2.2</sectionnumber>
      <sectiontitle>section b</sectiontitle>

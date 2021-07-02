@@ -1,0 +1,35 @@
+\continuewhenlmtxmode
+
+\starttext
+
+\startTEXpage[offset=10pt]
+    \startcombination[nx=3,ny=1]
+        \startcontent \framed[strut=no,align=normal,offset=1ex]\bgroup  \showmakeup[math,kern]%
+            $a = b + c$\par
+            $b = c + d$\par
+            $c = e + f$\par
+        \egroup \stopcontent
+        \startcaption
+            italic correction
+        \stopcaption
+        \startcontent \framed[strut=no,align=normal,offset=1ex]\bgroup \showmakeup[math,kern]%
+            \noitaliccorrection
+            $a = b + c$\par
+            $b = c + d$\par
+            $c = e + f$\par
+        \egroup \stopcontent
+        \startcaption
+            no italic correction
+        \stopcaption
+        \startcontent \framed[strut=no,align=normal,offset=1ex]\bgroup \showmakeup[math,kern]%
+            $a = b + c$\par
+            $\noitaliccorrection b = c + d$\par
+            $c = e + f$\par
+        \egroup \stopcontent
+        \startcaption
+            selected correction
+        \stopcaption
+    \stopcombination
+\stopTEXpage
+
+\stoptext

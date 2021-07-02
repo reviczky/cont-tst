@@ -3,8 +3,8 @@
 <!--
 
     input filename   : tagged-003
-    processing date  : 2021-05-15 21:35:34+02:00
-    context version  : 2021.05.15 22:45
+    processing date  : 2021-06-30 09:20:38+02:00
+    context version  : 2021.06.29 23:13
     exporter version : 0.35
 
 -->
@@ -13,11 +13,9 @@
 <?xml-stylesheet type="text/css" href="styles/tagged-003-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/tagged-003-styles.css" ?>
 
-<document context="2021.05.15 22:45" date="2021-05-15 21:35:34+02:00" file="tagged-003" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
- <metadata>
- </metadata>
+<document context="2021.06.29 23:13" date="2021-06-30 09:20:38+02:00" file="tagged-003" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
  <division detail="frontpart">
-  <section detail="chapter" chain="chapter" implicit="1" level="2">
+  <section detail="chapter" chain="chapter" level="2">
    <sectioncaption>
     <sectiontitle>One</sectiontitle>
    </sectioncaption>
@@ -53,7 +51,7 @@
   </section>
  </division>
  <division detail="bodypart">
-  <section detail="chapter" chain="chapter" implicit="6" level="2">
+  <section detail="chapter" chain="chapter" level="2">
    <sectioncaption>
     <sectionnumber>1</sectionnumber>
     <sectiontitle>Two</sectiontitle>
@@ -71,7 +69,7 @@
     </itemgroup>
    </sectioncontent>
   </section>
-  <section detail="chapter" chain="chapter" implicit="9" level="2">
+  <section detail="chapter" chain="chapter" level="2">
    <sectioncaption>
     <sectionnumber>2</sectionnumber>
     <sectiontitle>Three</sectiontitle>
@@ -80,7 +78,7 @@
     <paragraph>Thus, I came to the conclusion that the designer of a new system must not only be the implementer and first large--scale user; the designer should also write the first user manual.     <break/>
 The separation of any of these four components would have hurt TEX significantly. If I had not participated fully in all these activities, literally hundreds of improvements would never have been made, because I would never have thought of them or perceived why they were important.     <break/>
 But a system cannot be successful if it is too strongly influenced by a single person. Once the initial design is complete and fairly robust, the real test begins as people with many different viewpoints undertake their own experiments.</paragraph>
-    <section detail="section" chain="section" implicit="10" level="3">
+    <section detail="section" chain="section" level="3">
      <sectioncaption>
       <sectionnumber>2.1</sectionnumber>
       <sectiontitle>Alpha</sectiontitle>
@@ -93,7 +91,7 @@ But a system cannot be successful if it is too strongly influenced by a single p
     </section>
    </sectioncontent>
   </section>
-  <section detail="chapter" chain="chapter" implicit="11" level="2">
+  <section detail="chapter" chain="chapter" level="2">
    <sectioncaption>
     <sectionnumber>3</sectionnumber>
     <sectiontitle>Four</sectiontitle>
@@ -104,7 +102,7 @@ oeps    <paragraph>The Earth, as a habitat for animal life, is in old age and ha
   </section>
  </division>
  <division detail="backpart">
-  <section detail="title" chain="title" implicit="12" level="2">
+  <section detail="title" chain="title" level="2">
    <sectioncaption>
     <sectiontitle>Index</sectiontitle>
    </sectioncaption>

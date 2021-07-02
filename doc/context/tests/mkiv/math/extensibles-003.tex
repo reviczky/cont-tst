@@ -1,0 +1,50 @@
+\continuewhenlmtxmode
+
+\setupbodyfont[newcomputermodern-book]
+
+\enableexperiments[math.extensibles]
+
+\starttext
+
+% \startformula
+%     x = \integral^1_2 \mathinner{\vrule height 10mm depth 10mm width 5mm} =
+%     x = \integral^1_2 \mathinner{\vrule height 20mm depth 20mm width 5mm} =
+%     x = \integral^1_2 \mathinner{\vrule height 30mm depth 30mm width 5mm} =
+%     x = \integral^1_2 \mathinner{x} =
+%     x = \integral^1_2 x
+% \stopformula
+
+% \startformula
+%     x = \int\Umathadapttoright^1_2 \mathinner{\vrule height 10mm depth 10mm width 5mm} =
+%     x = \int\Umathadapttoright^1_2 \mathinner{\vrule height 20mm depth 20mm width 5mm} =
+%     x = \int\Umathadapttoright^1_2 \mathinner{\vrule height 30mm depth 30mm width 5mm} =
+%     x = \int\Umathadapttoright^1_2 \mathinner{x} =
+%     x = \int\Umathadapttoright^1_2 x
+% \stopformula
+
+% $
+%     x = \int\Umathadapttoright^1_2 \mathinner{\vrule height 10mm depth 10mm width 5mm} =
+%     x = \int\Umathadapttoright^1_2 \mathinner{\vrule height 20mm depth 20mm width 5mm} =
+%     x = \int\Umathadapttoright^1_2 \mathinner{\vrule height 30mm depth 30mm width 5mm} =
+%     x = \int\Umathadapttoright^1_2 x =
+% $
+
+\def\rab{\Umathchar"1"00"007C }
+
+\startTEXpage[offset=3cm]
+  $
+    \color[green]{\rab\Umathadapttoright^{\black 1}_{\black 2}^^3__4}
+    \color[blue] {\mathinner{\vrule height 30mm depth 30mm width 5mm}}
+    \color[red]  {\rab\Umathadapttoleft ^5_6^^{\black 7}__{\black 8}}
+  $
+\stopTEXpage
+
+\startTEXpage[offset=10pt] % \showglyphs
+$
+    \rab\Umathadapttoright^1_2^^3__4
+    \mathinner{\vrule height 30mm depth 30mm width 5mm}
+    \rab\Umathadapttoleft^5_6^^7__8
+$
+\stopTEXpage
+
+\stoptext

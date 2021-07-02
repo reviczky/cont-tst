@@ -3,8 +3,8 @@
 <!--
 
     input filename   : simple-001
-    processing date  : 2021-05-15 21:35:25+02:00
-    context version  : 2021.05.15 22:45
+    processing date  : 2021-06-30 09:20:29+02:00
+    context version  : 2021.06.29 23:13
     exporter version : 0.35
 
 -->
@@ -13,16 +13,14 @@
 <?xml-stylesheet type="text/css" href="styles/simple-001-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/simple-001-styles.css" ?>
 
-<document context="2021.05.15 22:45" date="2021-05-15 21:35:25+02:00" file="simple-001" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
- <metadata>
- </metadata>
- <section detail="chapter" chain="chapter" implicit="1" level="2">
+<document context="2021.06.29 23:13" date="2021-06-30 09:20:29+02:00" file="simple-001" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+ <section detail="chapter" chain="chapter" level="2">
   <sectioncaption>
    <sectionnumber>1</sectionnumber>
    <sectiontitle>First Chapter</sectiontitle>
   </sectioncaption>
   <sectioncontent>
-   <section detail="section" chain="section" implicit="2" level="3">
+   <section detail="section" chain="section" level="3">
     <sectioncaption>
      <sectionnumber>1.1</sectionnumber>
      <sectiontitle>First Section</sectiontitle>
@@ -40,8 +38,27 @@ We thrive in information--thick worlds because of our marvelous and everyday ca�
       </item>
      </itemgroup>
      <formula>
-e=√ mc2     </formula>
-     <float detail="figure" chain="figure" implicit="3" method="here">
+      <formulacontent n="1">
+       <m:math display="block">
+        <m:mrow>
+         <m:mi>𝑒</m:mi>
+         <m:mo>=</m:mo>
+         <m:msqrt>
+          <m:mrow>
+           <m:mi>𝑚</m:mi>
+           <m:msup>
+            <m:mi>𝑐</m:mi>
+            <!-- begin m:mrow -->
+             <m:mn>2</m:mn>
+            <!-- end m:mrow -->
+           </m:msup>
+          </m:mrow>
+         </m:msqrt>
+        </m:mrow>
+       </m:math>
+      </formulacontent>
+     </formula>
+     <float detail="figure" chain="figure" method="here">
       <floatcontent><image height="3.052cm" id="image-1" label="3.052cm" name="cow.pdf" width="4.070cm"></image></floatcontent>
       <floatcaption><floatlabel detail="figure">Figure </floatlabel><floatnumber detail="figure">1.1</floatnumber> <floattext>cow</floattext></floatcaption>
      </float>

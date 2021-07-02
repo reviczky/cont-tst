@@ -3,8 +3,8 @@
 <!--
 
     input filename   : export-009
-    processing date  : 2021-05-15 21:35:14+02:00
-    context version  : 2021.05.15 22:45
+    processing date  : 2021-06-30 09:20:16+02:00
+    context version  : 2021.06.29 23:13
     exporter version : 0.35
 
 -->
@@ -13,23 +13,21 @@
 <?xml-stylesheet type="text/css" href="styles/export-009-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/export-009-styles.css" ?>
 
-<document context="2021.05.15 22:45" date="2021-05-15 21:35:14+02:00" file="export-009" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
- <metadata>
- </metadata>
-test e+1=mc2+1 test
+<document context="2021.06.29 23:13" date="2021-06-30 09:20:16+02:00" file="export-009" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+test <m:math display="inline"><m:mrow><m:mi>𝑒</m:mi><m:mo>+</m:mo><m:mn>1</m:mn><m:mo>=</m:mo><m:mi>𝑚</m:mi><m:msup><m:mi>𝑐</m:mi><!-- begin m:mrow --><m:mn>2</m:mn><!-- end m:mrow --></m:msup><m:mo>+</m:mo><m:mn>1</m:mn></m:mrow></m:math> test
  <break/>
-test e+2=mc2+2 test
+test <m:math display="inline"><m:mrow><m:mi>𝑒</m:mi><m:mo>+</m:mo><m:mn>2</m:mn><m:mo>=</m:mo><m:mi>𝑚</m:mi><m:msup><m:mi>𝑐</m:mi><!-- begin m:mrow --><m:mn>2</m:mn><!-- end m:mrow --></m:msup><m:mo>+</m:mo><m:mn>2</m:mn></m:mrow></m:math> test
  <break/>
-test e+3=mc2+3 test
+test <m:math display="inline"><m:mrow><m:mi>𝑒</m:mi><m:mo>+</m:mo><m:mn>3</m:mn><m:mo>=</m:mo><m:mi>𝑚</m:mi><m:msup><m:mi>𝑐</m:mi><!-- begin m:mrow --><m:mn>2</m:mn><!-- end m:mrow --></m:msup><m:mo>+</m:mo><m:mn>3</m:mn></m:mrow></m:math> test
  <break/>
-test e+4=mc2+4 test
+test <m:math display="inline"><m:mrow><m:mi>𝑒</m:mi><m:mo>+</m:mo><m:mn>4</m:mn><m:mo>=</m:mo><m:mi>𝑚</m:mi><m:msup><m:mi>𝑐</m:mi><!-- begin m:mrow --><m:mn>2</m:mn><!-- end m:mrow --></m:msup><m:mo>+</m:mo><m:mn>4</m:mn></m:mrow></m:math> test
  <break/>
-test e+5=mc2+5 test
+test <m:math display="inline"><m:mrow><m:mi>𝑒</m:mi><m:mo>+</m:mo><m:mn>5</m:mn><m:mo>=</m:mo><m:mi>𝑚</m:mi><m:msup><m:mi>𝑐</m:mi><!-- begin m:mrow --><m:mn>2</m:mn><!-- end m:mrow --></m:msup><m:mo>+</m:mo><m:mn>5</m:mn></m:mrow></m:math> test
  <break/>
-test e+6=mc2+6 test
+test <m:math display="inline"><m:mrow><m:mi>𝑒</m:mi><m:mo>+</m:mo><m:mn>6</m:mn><m:mo>=</m:mo><m:mi>𝑚</m:mi><m:msup><m:mi>𝑐</m:mi><!-- begin m:mrow --><m:mn>2</m:mn><!-- end m:mrow --></m:msup><m:mo>+</m:mo><m:mn>6</m:mn></m:mrow></m:math> test
  <break/>
-test e+7=mc2+7 test
+test <m:math display="inline"><m:mrow><m:mi>𝑒</m:mi><m:mo>+</m:mo><m:mn>7</m:mn><m:mo>=</m:mo><m:mi>𝑚</m:mi><m:msup><m:mi>𝑐</m:mi><!-- begin m:mrow --><m:mn>2</m:mn><!-- end m:mrow --></m:msup><m:mo>+</m:mo><m:mn>7</m:mn></m:mrow></m:math> test
  <break/>
-test e+8=mc2+8 test
+test <m:math display="inline"><m:mrow><m:mi>𝑒</m:mi><m:mo>+</m:mo><m:mn>8</m:mn><m:mo>=</m:mo><m:mi>𝑚</m:mi><m:msup><m:mi>𝑐</m:mi><!-- begin m:mrow --><m:mn>2</m:mn><!-- end m:mrow --></m:msup><m:mo>+</m:mo><m:mn>8</m:mn></m:mrow></m:math> test
  <break/>
-test e+9=mc2+9 test</document>
+test <m:math display="inline"><m:mrow><m:mi>𝑒</m:mi><m:mo>+</m:mo><m:mn>9</m:mn><m:mo>=</m:mo><m:mi>𝑚</m:mi><m:msup><m:mi>𝑐</m:mi><!-- begin m:mrow --><m:mn>2</m:mn><!-- end m:mrow --></m:msup><m:mo>+</m:mo><m:mn>9</m:mn></m:mrow></m:math> test</document>

@@ -1,0 +1,15 @@
+% --keeppdf
+
+\setupinteraction[state=start]
+
+\starttext
+
+HERE \goto{page 1}[page(1)] \goto{page 2}[page(2)] \goto{page 3}[page(3)]\page
+HERE \goto{page 1}[page(1)] \goto{page 2}[page(2)] \goto{page 3}[page(3)]\page
+HERE \goto{page 1}[page(1)] \goto{page 2}[page(2)] \goto{page 3}[page(3)]\page
+
+\externalfigure[inclusions-001-pdf-keep.pdf][frame=on,width=\textwidth,page=1,interaction={reference}]\page
+\externalfigure[inclusions-001-pdf-keep.pdf][frame=on,width=\textwidth,page=2,interaction={reference}]\page
+\externalfigure[inclusions-001-pdf-keep.pdf][frame=on,width=\textwidth,page=3,interaction={reference}]\page
+
+\stoptext

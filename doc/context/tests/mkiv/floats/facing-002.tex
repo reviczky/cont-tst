@@ -1,0 +1,67 @@
+\continuewhenlmtxmode
+
+\showframe
+
+\setuphead
+  [chapter]
+  [number=yes,
+   align=middle,
+   page=left,
+%    after=\page
+   ]
+
+\definefacingfloat
+  [whatever]
+
+\setupfacingfloat
+  [whatever]
+  [width=frame,
+   offset=10pt,
+   color=white]
+
+\setupfacingfloat
+  [whatever:left]
+  [background=color,
+   backgroundcolor=red]
+
+\setupfacingfloat
+  [whatever:right]
+  [background=color,
+   backgroundcolor=green]
+
+\setupbackgrounds
+  [text]
+  [background=color,
+   backgroundcolor=gray]
+
+% \unprotect \pushoverloadmode
+% \popoverloadmode \protect
+
+\starttext
+
+\startchapter [title=First Chapter]
+
+\samplefile{knuth}
+
+\startfacingfloat[whatever]
+    {
+        LEFT \dorecurse{2}{\samplefile{tufte} }
+    }
+    {
+        RIGHT \dorecurse{2}{\samplefile{ward} }
+    }
+    {
+        LEFT \dorecurse{2}{\samplefile{tufte} }
+    }
+    {
+        RIGHT \dorecurse{2}{\samplefile{ward} }
+    }
+\stopfacingfloat
+
+\flushfacingfloats % so explicit flush !
+
+\dorecurse{10}{\samplefile{knuth}}
+
+\stopchapter
+
+\stoptext

@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-
-<!--
-
-    input filename   : linenumbers-002
-    processing date  : 2021-05-15 21:35:21+02:00
-    context version  : 2021.05.15 22:45
-    exporter version : 0.35
-
--->
-
 <!-- This export file is used for filtering runtime only! -->
 
-<document context="2021.05.15 22:45" date="2021-05-15 21:35:21+02:00" file="linenumbers-002" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
- <metadata>
- </metadata>
+<document context="2021.06.29 23:13" date="2021-06-30 09:20:23+02:00" file="linenumbers-002" language="en" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
  <verbatimblock detail="typing" chain="typing">
   <verbatimlines>
    <verbatimline><linenumber>1</linenumber>one</verbatimline>

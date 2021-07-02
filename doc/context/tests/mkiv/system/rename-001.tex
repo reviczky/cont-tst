@@ -1,0 +1,12 @@
+\startluacode
+luatex.wrapup(
+    function()
+        os.remove("rename-000.pdf")
+        os.rename("rename-001.pdf","rename-000.pdf")
+    end
+)
+\stopluacode
+
+\starttext
+    test
+\stoptext

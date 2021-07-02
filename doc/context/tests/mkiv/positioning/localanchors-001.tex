@@ -1,0 +1,159 @@
+\continuewhenlmtxmode
+
+\usemodule[article-basic]
+
+% topic for meeting
+
+\starttext
+
+% \startbuffer
+%     \framed[synchronize=yes,align=normal]{%
+%         \strut {\red test {\recurselevel} test test} 1\syncanchor{one}{1}{1}1{\green test \hbox orientation 3 yoffset -3pt{\infofont \recurselevel} test test} 2\syncanchor{one}{2}{1}2{\blue test test test}\par
+%         \strut {\red test {\recurselevel}}           1\syncanchor{one}{1}{2}1{\green test \hbox orientation 3 yoffset -3pt{\infofont \recurselevel}}           2\syncanchor{one}{2}{2}2{\blue           test}\par
+%         \strut {\red test {\recurselevel} }          1\syncanchor{one}{1}{3}1{\green test \hbox orientation 3 yoffset -3pt{\infofont \recurselevel}}           2\syncanchor{one}{2}{3}2{\blue           test}\par
+%         \strut {\red test {\recurselevel} test}      1\syncanchor{one}{1}{4}1{\green test \hbox orientation 3 yoffset -3pt{\infofont \recurselevel} test}      2\syncanchor{one}{2}{4}2{\blue      test test}\par
+%         \strut {\red test {\recurselevel} test} { }  1\syncanchor{one}{1}{5}1{\green test \hbox orientation 3 yoffset -3pt{\infofont \recurselevel} test}      2\syncanchor{one}{2}{5}2{\blue      test test test test}%
+%     }
+% \stopbuffer
+
+% \testfeatureonce {1} {
+%     %     \dorecurse {250} {
+%     \dorecurse {25} {
+%         \startpacked
+%             \getbuffer
+%         \stoppacked
+%     }
+% } \startTEXpage \elapsedtime \stopTEXpage
+
+\startuseMPgraphic{whatever-1}
+    fill OverlayBox withcolor "darkyellow" ;
+    drawdot anchorxy("one", 0, 1)
+        withpen pencircle scaled 1mm
+        withcolor "gray" ;
+    drawdot anchorxy("one", 0, 2)
+        withpen pencircle scaled 1mm
+        withcolor "gray" ;
+    drawdot anchorxy("two", 0, 1)
+        withpen pencircle scaled 1mm
+        withcolor "gray" ;
+    drawdot anchorxy("two", 0, 2)
+        withpen pencircle scaled 1mm
+        withcolor "gray" ;
+    drawdot anchorxy("three", 0, 1)
+        withpen pencircle scaled 1mm
+        withcolor "gray" ;
+    setbounds currentpicture to OverlayBox ;
+\stopuseMPgraphic
+
+\startuseMPgraphic{whatever-2}
+    pair a ; a := anchorxy("one", 0, 1) ;
+    pair b ; b := anchorxy("one", 0, 2) ;
+    drawarrow
+        anchorxy("one", 0, 1) { right } ..
+        anchorxy("one", 0, 2)
+        withcolor white withtransparency (1,.75) ;
+    drawarrow
+        anchorxy("two", 0, 1) { down } ..
+        anchorxy("two", 0, 2)
+        withcolor white withtransparency (1,.75) ;
+    drawarrow
+        anchorxy("two", 0, 1) { dir 30 } ..
+        anchorxy("three", 0, 1)
+        withcolor white withtransparency (1,.75) ;
+    setbounds currentpicture to OverlayBox ;
+\stopuseMPgraphic
+
+\defineoverlay[whatever-1][\useMPgraphic{whatever-1}]
+\defineoverlay[whatever-2][\useMPgraphic{whatever-2}]
+
+\framed[synchronize=yes,align=normal,offset=10pt,frame=off,background={whatever-1,foreground,whatever-2}]{%
+    \markanchor{two}{0}{1}{\white foo}\markanchor{one}{0}{1} bar rab oof\crlf
+    foo bar rab oof\crlf
+    oof rab bar foo\crlf
+    oof rab \markanchor{two}{0}{2}{\white bar}\markanchor{one}{0}{2} foo\markanchor{three}{0}{1}
+}
+
+\framed[synchronize=yes,align=normal,offset=10pt,frame=off,background={whatever-1,foreground,whatever-2}]{%
+    \strut {\red test test test} \syncanchor{a}{1}{1}{\green test test test} \syncanchor{a}{2}{1}{\blue test test test}\par
+    \strut {\red test}           \syncanchor{a}{1}{2}{\green test}           \syncanchor{a}{2}{2}{\blue test}\par
+    \strut {\red test}           \syncanchor{a}{1}{3}{\green test}           \syncanchor{a}{2}{3}{\blue test}\par
+    \blank
+    \markanchor{two}{0}{1}{\white foo}\markanchor{one}{0}{1} bar rab oof\crlf
+    foo bar rab oof\crlf
+    oof rab bar foo\crlf
+    oof rab \markanchor{two}{0}{2}{\white bar}\markanchor{one}{0}{2} foo
+    \blank
+    \strut {\red test test} \syncanchor{a}{1}{4}{\green test test} \syncanchor{a}{2}{4}{\blue test test}\par
+    \strut {\red test test} \syncanchor{a}{1}{5}{\green test test} \syncanchor{a}{2}{5}{\blue test test test test%
+    \markanchor{three}{0}{1}}%
+}
+
+\framed[synchronize=yes,align=normal]{%
+    \showmakeup[kern]%
+    \strut {\red test test test test 1}      \sync{one}{1}{\green test test 2}      \par
+    \strut {\red test test test 1}           \sync{one}{1}{\green test test test 2} \par
+    \strut {\red test test 1}                \sync{one}{1}{\green test 2}           \par
+    \strut {\red test test test test test 1} \sync{one}{1}{\green test test 2}
+}
+
+\framed[synchronize=yes,align=normal]{%
+    \showmakeup[kern]%
+    \strut {\green test test 2}      \sync{one}{2}{\blue           test 3}\par
+    \strut {\green test test test 2} \sync{one}{2}{\blue      test test 3}\par
+    \strut {\green test 2}           \sync{one}{2}{\blue test test test 3}%
+}
+
+\framed[synchronize=yes,align=normal]{%
+    \showmakeup[kern]%
+    \strut {\red test test test test 1} \sync{one}{1}{\green test test 2}      \sync{one}{2}{\blue           test 3}\par
+    \strut {\red test test test 1}      \sync{one}{1}{\green test test test 2} \sync{one}{2}{\blue      test test 3}\par
+    \strut {\red test test 1}           \sync{one}{1}{\green test 2}           \sync{one}{2}{\blue test test test 3}%
+    \blank
+    \strut {\red tst tst tst 1} \sync{two}{1}{\green tst tst 2}     \sync{two}{2}{\blue         tst 3}\par
+    \strut {\red tst tst 1}     \sync{two}{1}{\green tst tst tst 2} \sync{two}{2}{\blue     tst tst 3}\par
+    \strut {\red tst 1}         \sync{two}{1}{\green tst 2}         \sync{two}{2}{\blue tst tst tst 3}%
+}
+
+\framed[synchronize=yes,align=normal]{%
+    \showmakeup[kern]%
+    \strut {\red test test test test 1} \sync{one}{3}{\green test test 2}      \sync{one}{4}{\blue           test 3}\par
+    \strut {\red test test test 1}      \sync{one}{3}{\green test test test 2} \sync{one}{4}{\blue      test test 3}\par
+    \strut {\red test test 1}           \sync{one}{3}{\green test 2}           \sync{one}{4}{\blue test test test 3}%
+}
+
+\framed[synchronize=yes,align=normal]{%
+    \showmakeup[kern]%
+    \strut \sync{one}{1}{\red test test test test 1} \sync{one}{2}{\green test test 2}      \sync{one}{3}{\blue           test 3} \sync{one}{4}test\sync{one}{5}\par
+    \strut \sync{one}{1}{\red test test test 1}      \sync{one}{2}{\green test test test 2} \sync{one}{3}{\blue      test test 3} \sync{one}{4}test\sync{one}{5}\par
+    \strut \sync{one}{1}{\red test test 1}           \sync{one}{2}{\green test 2}           \sync{one}{3}{\blue test test test 3} \sync{one}{4}test\sync{one}{5}%
+}
+
+\framed[synchronize=yes,align=normal]{%
+    \showmakeup[kern,hbox]%
+    \strut \sync{one}{1}\hbox{\red test test test test 1} \sync{one}{2}\hbox{\green test test 222}    \sync{one}{4}\hbox{test}\par
+    \strut \sync{one}{1}\hbox{\red test test test 11}     \sync{one}{2}\hbox{\green test test test 2} \sync{one}{4}\hbox{test}\par
+    \strut \sync{one}{1}\hbox{\red test test 111}         \sync{one}{2}\hbox{\green test 22}          \sync{one}{4}\hbox{test}%
+}
+
+\framed[synchronize=yes,align=normal]{%
+    \showmakeup[kern,hbox]%
+    \strut \sync{one}{1}\hbox{\red test test test test 1} \sync{one}{2}\hbox{\green test test 222}    \sync{one}{3}\hbox{\blue           test 3} \sync{one}{4}\hbox{test}\par
+    \strut \sync{one}{1}\hbox{\red test test test 11}     \sync{one}{2}\hbox{\green test test test 2} \sync{one}{3}\hbox{\blue      test test 3} \sync{one}{4}\hbox{test}\par
+    \strut \sync{one}{1}\hbox{\red test test 111}         \sync{one}{2}\hbox{\green test 22}          \sync{one}{3}\hbox{\blue test test test 3} \sync{one}{4}\hbox{test}%
+}
+
+\framed[synchronize=yes,align=normal]{%
+    \showmakeup[kern,hbox]%
+    \strut \syncanchor{one}{1}{1}\hbox{\red test test test test 1} \syncanchor{one}{2}{1}\hbox{\green test test 222} \syncanchor{one}{3}{1}\hbox{\blue           test 3} \sync{one}{4}\hbox{test}\par
+    \strut \alignanchor{one}{1}{2}{m}\hbox{\red test test test 11}                                                       \syncanchor{one}{3}{2}\hbox{\blue      test test 3} \sync{one}{4}\hbox{test}\par
+    \strut \alignanchor{one}{1}{3}{m}\hbox{\red test test 111}         \syncanchor{one}{2}{3}\hbox{\green test 22}       \syncanchor{one}{3}{3}\hbox{\blue test test test 3} \sync{one}{4}\hbox{test}%
+}
+
+\framed[synchronize=yes,align=normal]{%
+    \showmakeup[kern,hbox]%
+    \strut \async{one}{1}{l}\hbox{\red test test test test 1} \async{one}{2}{c}\hbox{\green test test 222}    \async{one}{3}{r}\hbox{\blue           test 3} \async{one}{4}{l}\hbox{left}   \removeunwantedspaces\sync{one}{5}\par
+    \strut \async{one}{1}{l}\hbox{\red test test test 11}     \async{one}{2}{c}\hbox{\green test test test 2} \async{one}{3}{r}\hbox{\blue      test test 3} \async{one}{4}{m}\hbox{middle} \removeunwantedspaces\sync{one}{5}\par
+    \strut \async{one}{1}{l}\hbox{\red test test 111}         \async{one}{2}{c}\hbox{\green test 22}          \async{one}{3}{r}\hbox{\blue test test test 3} \async{one}{4}{r}\hbox{right}  \removeunwantedspaces\sync{one}{5}%
+}
+
+\stoptext

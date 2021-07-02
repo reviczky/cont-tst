@@ -1,0 +1,158 @@
+\starttext
+
+\startoverlayMPgraphic{mp:whatever-6}
+    fill OverlayBox withcolor "darkgray" ;
+    draw matrixbox (1, 1) (2, 1) enlarged OverlayOffset shifted paired(OverlayOffset) withpen pencircle scaled 1pt withcolor "blue" ;
+    draw matrixbox (2, 2) (4, 4) enlarged OverlayOffset shifted paired(OverlayOffset) withpen pencircle scaled 1pt withcolor "red" ;
+\stopoverlayMPgraphic
+
+\framed
+  [synchronize=background,
+   align=normal,
+   frame=off,
+   background=mp:whatever-6,
+   backgroundoffset=.5ex,
+   foregroundcolor=white]
+  {\setmathmatrixanchoring[yes]% left|right|both|yes
+   \startmathmatrix
+      \NC a_1 \NC a   \NC b   \NC c\NR
+      \NC a_2 \NC a   \NC b   \NC c\NR
+      \NC a_3 \NC a^2 \NC b   \NC c\NR
+      \NC a_4 \NC a   \NC b_2 \NC c\NR
+      \NC a_5 \NC a   \NC b   \NC c\NR
+      \NC a_6 \NC a   \NC b   \NC c\NR
+  \stopmathmatrix}
+
+% \blank
+
+% This can also be done by Alans node module.
+
+\startoverlayMPgraphic{mp:whatever-7}
+    fill OverlayBox withcolor "darkgray" ;
+    draw lmt_matrix [
+        from        = (1, 1),
+        to          = (5, 4),
+        connect     = { "bottom", "left"  },
+        color       = "blue",
+        linewidth   = 1pt,
+        arrowoffset = 2pt,
+        label       = [
+            text     = "$\white \scriptscriptstyle x =1$",
+            offset   = ExHeight/2,
+            anchor   = "lft",
+            fraction = .25
+        ],
+    ] ;
+    draw lmt_matrix [
+        from       = (4, 1),
+        to         = (1, 5),
+        connect    = { "bottom", "right" }
+        colors     = { "green", "magenta" },
+        arrowcolor = "white",
+        linewidth  = 1pt,
+    ] ;
+    draw lmt_matrix [
+        cell      = (2, 2),
+        shape     = "circle"
+        color     = "red",
+        linewidth = 1pt,
+    ] ;
+    draw lmt_matrix [
+        cell      = (4, 6),
+        shape     = "round",
+        radius    = ExHeight/2,
+        color     = "red",
+        linewidth = 1pt,
+    ] ;
+    draw lmt_matrix [
+        cell      = (2, 6),
+        shape     = "path",
+        path      = fulldiamond xscaled 3EmWidth yscaled 4ExHeight,
+        color     = "red",
+        linewidth = 1pt,
+    ] ;
+    draw lmt_matrix [
+        cell      = (2, 6),
+        shape     = "scaledpath",
+        offset    = .5ExHeight,
+        path      = fulldiamond,
+        color     = "yellow",
+        linewidth = 1pt,
+    ] ;
+\stopoverlayMPgraphic
+
+\blank
+
+\framed
+  [synchronize=background,
+   align=normal,
+   frame=off,
+   offset=overlay,
+   background=mp:whatever-7,
+   foregroundcolor=white]
+  {\setmathmatrixanchoring[both]%
+   \startmathmatrix
+      \NC a \NC   \NC \quad \NC b \NC   \NR
+      \NC   \NC c \NC \quad \NC   \NC   \NR
+      \NC   \NC   \NC \quad \NC   \NC   \NR
+      \NC   \NC   \NC \quad \NC   \NC d \NR
+      \NC e \NC   \NC \quad \NC   \NC   \NR
+      \NC   \NC f \NC \quad \NC g \NC   \NR
+  \stopmathmatrix}
+
+\blank
+
+\startoverlayMPgraphic{whatever-9}
+    fill anchorspan (1, 1) (1, 3) withcolor "blue" ;
+    fill anchorspan (2, 1) (3, 3) withcolor "yellow" ;
+    fill anchorspan (3, 1) (3, 3) withcolor "green" ;
+    path p ; p := anchorcell (2, 2) ;
+    fill p withcolor "red" ;
+    % now some weird stuff:
+    picture q ; q := externalfigure "t:/sources/cow.pdf" ;
+    q := q xysized (bbwidth(p), bbheight(p)) ;
+    draw q shifted - center q shifted center p ;
+    % and some even weirder stuff:
+    \includeMPoverlaydata
+\stopoverlayMPgraphic
+
+\enabletrackers[localanchor]
+
+\bTABLE[frame=off,synchronize=background,background=whatever-9]
+    \bTR
+        \bTD[foregroundcolor=white]
+            \startMPoverlaydata
+                fill anchorcell (\xanchor,\yanchor) enlarged -.25ExHeight withcolor "darkgray" ;
+            \stopMPoverlaydata
+            test
+        \eTD
+        \bTD
+            test test
+        \eTD
+        \bTD
+            test test test
+        \eTD
+    \eTD
+    \bTR
+        \bTD[foregroundcolor=white]
+            test test
+        \eTD
+        \bTD[nx=2,align=middle,foregroundstyle=bold,foregroundcolor=white]
+            test
+        \eTD
+    \eTD
+    \bTR
+        \bTD[foregroundcolor=white]
+            test test test
+        \eTD
+        \bTD
+            test test
+        \eTD
+        \bTD
+            test
+        \eTD
+    \eTD
+\eTABLE
+
+\stoptext
+

@@ -1,0 +1,27 @@
+\setuptagging[state=start]
+
+\setupbodyfont[8pt]
+
+\starttext
+
+\setelementnature[foo][display]
+
+\startboxexport%[buffer=foo] % [file=] [foo]
+    \startparagraph
+        \input tufte
+    \stopparagraph
+    \startitemize
+        \startitem item one \stopitem
+        \startitem item two \stopitem
+    \stopitemize
+    \startparagraph
+        \input tufte
+    \stopparagraph
+    \startelement[foo]
+        \input ward
+    \stopelement
+\stopboxexport
+
+\typebuffer%[foo]
+
+\stoptext

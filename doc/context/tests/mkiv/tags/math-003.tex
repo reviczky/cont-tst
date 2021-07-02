@@ -1,0 +1,39 @@
+\setuptagging[state=start]
+
+\setupbodyfont[8pt]
+
+\starttext
+
+\startmathexport[buffer=yes]
+    test $ x = 1 + a $ test
+\stopmathexport
+
+\typebuffer
+
+\startmathexport[buffer=yes]
+    test $ x = 1 + a^2 $ test
+\stopmathexport
+
+\typebuffer
+
+\startmathexport[buffer=yes]
+    test $ x = z + \sqrt{a} $ test
+\stopmathexport
+
+\typebuffer
+
+\startmathexport[buffer=yes]
+    test $ x = 1 + a^2 $ test
+    test $ x = 1 + a $ test
+    test $ x = z + \sqrt{a} $ test
+\stopmathexport
+
+\typebuffer
+
+\dorecurse {\collectedmath} {
+    \page
+    \collectedmath #1
+    \page
+}
+
+\stoptext
