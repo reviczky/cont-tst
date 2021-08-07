@@ -22,6 +22,7 @@ return {
  ["name"]="simple-001",
  ["stylepath"]="styles",
  ["styles"]={ "simple-001-defaults.css", "simple-001-images.css", "simple-001-styles.css" },
+ ["title"]="simple-001",
  ["xhtmlfiles"]={ "simple-001-tag.xhtml" },
  ["xmlfiles"]={ "simple-001-raw.xml" },
 }

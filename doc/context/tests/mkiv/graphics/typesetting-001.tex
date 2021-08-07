@@ -1,0 +1,33 @@
+\starttext
+
+\input knuth
+
+\startbuffer[starttikz]
+    \usemodule[tikz]
+    \startTEXpage
+    \starttikzpicture
+\stopbuffer
+
+\startbuffer[stoptikz]
+    \stoptikzpicture
+    \stopTEXpage
+\stopbuffer
+
+\protected\def\MyTikzBuffer#1{\typesetbuffer[starttikz,BlueCircle,stoptikz]}
+
+\startbuffer[BlueCircle]
+  \draw
+    [thick,blue] (0,0) circle (1.5cm)node{Ti{\it k}Z!};
+\stopbuffer
+
+\startplacefigure[location=margin,reference=fig:BlueCircle,title={Example A.}]
+    \typesetbuffer[starttikz,BlueCircle,stoptikz]
+\stopplacefigure
+
+\startplacefigure[location=margin,reference=fig:BlueCircle,title={Example B.}]
+    \MyTikzBuffer{BlueCircle}
+\stopplacefigure
+
+\input knuth
+
+\stoptext

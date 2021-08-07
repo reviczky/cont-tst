@@ -1,0 +1,19 @@
+\starttext
+
+\definesavebuffer [example][prefix=no,directory=examples]
+\definetypesetting[example]
+
+Before
+
+\startexample
+\setuplayout [tight]
+\starttext
+\input ward
+\stoptext
+\stopexample
+
+After
+
+\typesetfile [example][examples/example.tex][frame=on,height=10cm]
+
+\stoptext

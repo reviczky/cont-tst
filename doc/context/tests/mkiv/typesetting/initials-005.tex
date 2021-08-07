@@ -1,0 +1,23 @@
+\setupinitial
+  [n=2,
+   style=\tfd,
+   location=text]
+
+\setuphead
+  [chapter]
+  [after=\placeinitial]
+
+\enableexperiments[autoforgetinitials]
+
+\starttext
+
+  \chapter{Test me}
+
+  Hello world!
+
+ %\forgetinitial \input tufte
+
+  \input tufte
+
+\stoptext
+

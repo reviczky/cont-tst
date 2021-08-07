@@ -1,0 +1,51 @@
+% example by willi egger
+
+\setuppapersize[A6][A6]
+
+\showinjector
+  [list,register]
+
+\setinjector
+  [register]
+  [3]
+  [\column]
+
+\setupexternalfigure
+  [location={local,global,default}]
+
+\setuppagenumbering
+  [location=]
+
+\starttext
+    \starttitle[title=Table of Contents]
+        \placelist[chapter,section][criterium=all]
+        \blank[3*big]
+	\stoptitle
+	\starttitle[title=Register]
+        \placeregister[index][criterium=text]
+    \stoptitle
+    \starttitle[title=List of Figures]
+        \placelistoffigures
+	\stoptitle
+    \startchapter[title=Alpha]
+        first \index{first}
+        \startsection[title=Alpha]
+            first \index{first}
+            \startplacefigure
+                [title=test-figure]
+                {\externalfigure[hacker][width=.5\textwidth]}
+            \stopplacefigure
+        \stopsection
+    \stopchapter
+    \startchapter[title=Beta]  second \index{second}
+        \startsection[title=Beta]
+            second \index{second}
+        \stopsection
+    \stopchapter
+    \startchapter[title=Gamma] third \index{third}
+        \startsection[title=Gamma]
+            third \index{third}
+        \stopsection
+    \stopchapter
+\stoptext
+

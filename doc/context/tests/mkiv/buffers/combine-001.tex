@@ -1,0 +1,44 @@
+
+\starttext
+
+\startbuffer[test]
+    test
+\stopbuffer
+
+\startbuffer[oeps]
+    oeps
+\stopbuffer
+
+\typebuffer[test] \getbuffer[test]
+
+\startbuffer[test = * + test]
+    prepend
+\stopbuffer
+
+\typebuffer[test] \getbuffer[test]
+
+\startbuffer[test = test + *]
+    append
+\stopbuffer
+
+\typebuffer[test] \getbuffer[test]
+
+\startbuffer[test = * +++ test]
+    before
+\stopbuffer
+
+\typebuffer[test] \getbuffer[test]
+
+\startbuffer[test = test +++ *]
+    after
+\stopbuffer
+
+\typebuffer[test] \getbuffer[test]
+
+\startbuffer[test = * + oeps + test + oeps + * ]
+    DONE
+\stopbuffer
+
+\typebuffer[test] \getbuffer[test]
+
+\stoptext

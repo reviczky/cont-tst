@@ -10,6 +10,7 @@ return {
  ["name"]="userproperties-001",
  ["stylepath"]="styles",
  ["styles"]={ "userproperties-001-defaults.css", "userproperties-001-images.css", "userproperties-001-styles.css" },
+ ["title"]="userproperties-001",
  ["xhtmlfiles"]={ "userproperties-001-tag.xhtml" },
  ["xmlfiles"]={ "userproperties-001-raw.xml" },
 }

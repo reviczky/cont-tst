@@ -1,0 +1,21 @@
+\starttext
+
+\defineuserdata [foo] [style=italic,color=blue]
+
+\startuserdata [before=\blank,after=\blank,color=red]
+    \samplefile{greenfield}
+\stopuserdata
+
+\startuserdata
+    \samplefile{greenfield}
+\stopuserdata
+
+\startfoo
+    \samplefile{bryson}
+\stopfoo
+
+\startfoo [before=\blank,after=\blank,color=green]
+    \samplefile{bryson}
+\stopfoo
+
+\stoptext

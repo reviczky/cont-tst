@@ -10,6 +10,7 @@ return {
  ["name"]="hz-001",
  ["stylepath"]="styles",
  ["styles"]={ "hz-001-defaults.css", "hz-001-images.css", "hz-001-styles.css" },
+ ["title"]="hz-001",
  ["xhtmlfiles"]={ "hz-001-tag.xhtml" },
  ["xmlfiles"]={ "hz-001-raw.xml" },
 }

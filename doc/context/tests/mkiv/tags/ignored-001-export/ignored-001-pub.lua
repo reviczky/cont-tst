@@ -10,6 +10,7 @@ return {
  ["name"]="ignored-001",
  ["stylepath"]="styles",
  ["styles"]={ "ignored-001-defaults.css", "ignored-001-images.css", "ignored-001-styles.css" },
+ ["title"]="ignored-001",
  ["xhtmlfiles"]={ "ignored-001-tag.xhtml" },
  ["xmlfiles"]={ "ignored-001-raw.xml" },
 }

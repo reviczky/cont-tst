@@ -13,6 +13,7 @@ return {
  ["name"]="export-002",
  ["stylepath"]="styles",
  ["styles"]={ "export-002-defaults.css", "export-002-images.css", "export-002-styles.css" },
+ ["title"]="export-002",
  ["xhtmlfiles"]={ "export-002-tag.xhtml" },
  ["xmlfiles"]={ "export-002-raw.xml" },
 }

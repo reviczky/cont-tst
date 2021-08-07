@@ -10,6 +10,7 @@ return {
  ["name"]="tagged-010",
  ["stylepath"]="styles",
  ["styles"]={ "tagged-010-defaults.css", "tagged-010-images.css", "tagged-010-styles.css" },
+ ["title"]="tagged-010",
  ["xhtmlfiles"]={ "tagged-010-tag.xhtml" },
  ["xmlfiles"]={ "tagged-010-raw.xml" },
 }

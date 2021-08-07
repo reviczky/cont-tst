@@ -1,0 +1,42 @@
+\startprotectedcolors
+    \usemodule[statistical-charts]
+\stopprotectedcolors
+
+\starttext
+
+\ifdefined\areachart
+
+\def\citizenshipdatatwo
+  {{13,19,34,20,36},{10,19,11,10,11},{21,10,18,10,10}}
+
+\def\yearlabelsone
+  {2014,2015,2016,2017,2018}
+
+\areachart
+  [basic]
+  [yscale=0.2,
+   xscale=1.6,
+   distance=2,
+   xgridlinesdensity=2,
+   fillpalette=turquoise,
+   line=no,
+   dotscolor=shamrock,
+   dotswidth=8,
+   axesunits=yes,
+   xunit=Year,
+   yunit=Number of citizenships]
+  [method=struct,
+   data={\citizenshipdatatwo},
+   xlabels={\yearlabelsone}]
+
+\else
+
+This is needed:
+
+\starttyping
+\usemodule[statistical-charts]
+\stoptyping
+
+\fi
+
+\stoptext

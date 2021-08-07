@@ -10,6 +10,7 @@ return {
  ["name"]="bold-002",
  ["stylepath"]="styles",
  ["styles"]={ "bold-002-defaults.css", "bold-002-images.css", "bold-002-styles.css" },
+ ["title"]="bold-002",
  ["xhtmlfiles"]={ "bold-002-tag.xhtml" },
  ["xmlfiles"]={ "bold-002-raw.xml" },
 }

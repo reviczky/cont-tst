@@ -1,0 +1,42 @@
+% solution for problem posted on list
+
+% \def\stripnumber#1{\cldcontext{lpeg.match(lpeg.stripper(lpeg.US("¹²³⁴⁵⁶⁷⁸⁹⁰")), [==[#1]==])}}
+
+% \startluacode
+%     local s = lpeg.stripper(lpeg.US("¹²³⁴⁵⁶⁷⁸⁹⁰"))
+%     function document.StripNumber(str)
+%         context(lpeg.match(s, str))
+%     end
+% \stopluacode
+%
+% \def\stripnumber#1{\ctxlua{document.StripNumber([==[#1]==])}}
+
+\startluacode
+    local p_strip = lpeg.stripper(lpeg.US("¹²³⁴⁵⁶⁷⁸⁹⁰"))
+
+    interfaces.implement {
+        name      = "StripNumber",
+        public    = true,
+        arguments = "string",
+        actions   = function(str)
+            context(lpeg.match(p_strip, str))
+        end
+    }
+\stopluacode
+
+\starttext
+
+\startlines
+    \StripNumber{árbitro⁶}
+    \StripNumber{ébano¹}
+    \StripNumber{ícone⁸}
+    \StripNumber{zoológico⁰}
+    \StripNumber{eletroacústico⁹}
+    \StripNumber{trânsfuga⁷}
+    \StripNumber{farmacêutico¹}
+    \StripNumber{maître²}
+    \StripNumber{termômetro³}
+    \StripNumber{noûs⁴}
+\stoplines
+
+\stoptext

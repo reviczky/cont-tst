@@ -10,6 +10,7 @@ return {
  ["name"]="itemize-002",
  ["stylepath"]="styles",
  ["styles"]={ "itemize-002-defaults.css", "itemize-002-images.css", "itemize-002-styles.css" },
+ ["title"]="itemize-002",
  ["xhtmlfiles"]={ "itemize-002-tag.xhtml" },
  ["xmlfiles"]={ "itemize-002-raw.xml" },
 }

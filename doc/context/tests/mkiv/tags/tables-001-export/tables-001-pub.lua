@@ -10,6 +10,7 @@ return {
  ["name"]="tables-001",
  ["stylepath"]="styles",
  ["styles"]={ "tables-001-defaults.css", "tables-001-images.css", "tables-001-styles.css" },
+ ["title"]="tables-001",
  ["xhtmlfiles"]={ "tables-001-tag.xhtml" },
  ["xmlfiles"]={ "tables-001-raw.xml" },
 }

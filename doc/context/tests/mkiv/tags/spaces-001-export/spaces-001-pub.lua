@@ -10,6 +10,7 @@ return {
  ["name"]="spaces-001",
  ["stylepath"]="styles",
  ["styles"]={ "spaces-001-defaults.css", "spaces-001-images.css", "spaces-001-styles.css" },
+ ["title"]="spaces-001",
  ["xhtmlfiles"]={ "spaces-001-tag.xhtml" },
  ["xmlfiles"]={ "spaces-001-raw.xml" },
 }

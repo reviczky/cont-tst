@@ -10,6 +10,7 @@ return {
  ["name"]="simple-002",
  ["stylepath"]="styles",
  ["styles"]={ "simple-002-defaults.css", "simple-002-images.css", "simple-002-styles.css" },
+ ["title"]="simple-002",
  ["xhtmlfiles"]={ "simple-002-tag.xhtml" },
  ["xmlfiles"]={ "simple-002-raw.xml" },
 }

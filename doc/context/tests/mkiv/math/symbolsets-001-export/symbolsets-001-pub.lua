@@ -10,6 +10,7 @@ return {
  ["name"]="symbolsets-001",
  ["stylepath"]="styles",
  ["styles"]={ "symbolsets-001-defaults.css", "symbolsets-001-images.css", "symbolsets-001-styles.css" },
+ ["title"]="symbolsets-001",
  ["xhtmlfiles"]={ "symbolsets-001-tag.xhtml" },
  ["xmlfiles"]={ "symbolsets-001-raw.xml" },
 }

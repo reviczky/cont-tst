@@ -1,0 +1,37 @@
+% example by wolfgang on the list
+
+\defineenumeration
+  [grouptest]
+  [        title=yes,
+            text={dummy text},
+       titleleft=,
+      titleright=,
+     headcommand=\groupedcommand{[}{]},
+   numbercommand=\groupedcommand{(}{)},
+    titlecommand=\groupedcommand{<}{>}]
+
+\starttext
+
+\startgrouptest [title={dummy title}]
+    \unknown
+\stopgrouptest
+
+\startgrouptest
+    \unknown
+\stopgrouptest
+
+\blank[2*line]
+
+\setupenumeration
+  [grouptest]
+  [number=no]
+
+\startgrouptest [title={dummy title}]
+    \unknown
+\stopgrouptest
+
+\startgrouptest
+    \unknown
+\stopgrouptest
+
+\stoptext

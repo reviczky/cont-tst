@@ -10,6 +10,7 @@ return {
  ["name"]="export-006",
  ["stylepath"]="styles",
  ["styles"]={ "export-006-defaults.css", "export-006-images.css", "export-006-styles.css" },
+ ["title"]="export-006",
  ["xhtmlfiles"]={ "export-006-tag.xhtml" },
  ["xmlfiles"]={ "export-006-raw.xml" },
 }

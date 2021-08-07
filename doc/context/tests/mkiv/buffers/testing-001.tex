@@ -1,0 +1,21 @@
+\starttext
+
+\startbuffer[test]
+test
+\stopbuffer
+
+\doifelsebuffer{test} {YES} {NOP}
+\doifelsebufferempty{test} {YES} {NOP}
+
+\startbuffer[test]
+\stopbuffer
+
+\doifelsebufferempty{test} {YES} {NOP}
+
+\startbuffer[test]
+
+\stopbuffer
+
+\doifelsebufferempty{test} {YES} {NOP}
+
+\stoptext

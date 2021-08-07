@@ -1,0 +1,14 @@
+\defineblock[testa]
+\defineblock[testb]
+
+\starttext
+
+\begintesta
+    oeps
+\endtesta
+
+\doifelseblocksempty{testa}{}{}{YES}{NOP} % {name}{tag}{criterium}
+\doifelseblocksempty{testb}{}{}{YES}{NOP} % {name}{tag}{criterium}
+
+\stoptext
+

@@ -1,0 +1,34 @@
+% based on mail question
+
+\startuseMPgraphic{demo}
+    for i=1 upto 10:
+        draw fullcircle scaled (i*cm/3)
+            withcolor (i*red/10)
+            withpen   pencircle scaled (bp/2)
+            withstacking i
+        ;
+    endfor ;
+\stopuseMPgraphic
+
+\ifdefined\useMPanimation \else
+
+    \unprotect
+
+    \tolerant\protected\def\useMPanimation[#1]#2%
+      {\begingroup
+       \scratchtoks\emptytoks
+       \dorecurse{10}{\etoksapp\scratchtoks{{\useMPgraphic[\c!stacking={\recurselevel}]{#2}}}}%
+       \expanded{\startanimation[#1]\the\scratchtoks\stopanimation}%
+       \endgroup}
+
+    \protect
+
+\fi
+
+\setupinteraction[state=start]
+
+\usemodule[animation]
+
+\starttext
+    \useMPanimation[menu=yes]{demo}
+\stoptext

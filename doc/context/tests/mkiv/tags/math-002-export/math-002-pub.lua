@@ -10,6 +10,7 @@ return {
  ["name"]="math-002",
  ["stylepath"]="styles",
  ["styles"]={ "math-002-defaults.css", "math-002-images.css", "math-002-styles.css" },
+ ["title"]="math-002",
  ["xhtmlfiles"]={ "math-002-tag.xhtml" },
  ["xmlfiles"]={ "math-002-raw.xml" },
 }
