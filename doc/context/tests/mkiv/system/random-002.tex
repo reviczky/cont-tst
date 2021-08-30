@@ -1,0 +1,40 @@
+\starttext
+
+   % \enabletrackers[system.randomizer.details]
+    % empty == default
+
+    \newrepeatablerandom\MyRandom {Welcome 2 America}
+    \newrepeatablerandom\MyRandomN{\randomnumber{0}{1000}}
+    \newrepeatablerandom\MyRandomM{\randomnumber{0}{1000}}
+
+    \cldcontext{utilities.randomizer.getrepeatableseed()}\par
+    \cldcontext{utilities.randomizer.getrepeatableseed("default")}\par
+    \cldcontext{utilities.randomizer.getrepeatableseed("MyRandom")}\par
+    \cldcontext{utilities.randomizer.getrepeatableseed("MyRandomN")}\par
+    \cldcontext{utilities.randomizer.getrepeatableseed("MyRandomM")}\par
+
+    \dorecurse{10}{\MyRandom\par}
+
+    \startlinecorrection
+        \startMPcode
+            randomseed := repeatablerandom("MyRandom") ;
+            draw image (
+                for i=1 upto 1000 :
+                    draw origin randomized 100 ;
+                endfor ;
+            ) withpen pencircle scaled 1 withcolor white withstacking 2 ;
+            fill boundingbox currentpicture withcolor darkred withstacking 1 ;
+        \stopMPcode
+    \stoplinecorrection
+
+    \startluacode
+        context(utilities.randomizer.getrepeatableseed("MyRandom"))
+        context.par()
+        local rep = utilities.randomizer.getrepeatable("MyRandom")
+        for i=1,5 do
+            context(rep())
+            context.par()
+        end
+    \stopluacode
+
+\stoptext

@@ -1,0 +1,30 @@
+\starttext
+
+\edef\xxx{[\wipetokens {123}{abc123abc123abc123abc123abc}]}1 : \meaningless\xxx\par
+\edef\xxx{[\wipetokens {123}{abc}]}                        2 : \meaningless\xxx\par
+\edef\xxx{[\wipetokens {123}{123}]}                        3 : \meaningless\xxx\par
+\edef\xxx{[\wipetokens {123}{123123}]}                     4 : \meaningless\xxx\par
+\edef\xxx{[\wipetokens {123}{}]}                           5 : \meaningless\xxx\par
+\edef\xxx{[\wipetokens {}{123}]}                           6 : \meaningless\xxx\par
+\edef\xxx{[\wipetokens {\relax}{1\relax2\relax3}]}         7 : \meaningless\xxx\par
+\edef\xxx{[\wipetokens {1}{1{2}3}]}                        8 : \meaningless\xxx\par
+\edef\xxx{[\wipedtokens{{1}}{{1}23}]}                      9 : \meaningless\xxx\par
+\edef\xxx{[\wipedtokens{{1}}{123}]}                        0 : \meaningless\xxx\par
+
+% \testfeatureonce{100000}{
+%     \edef\xxx{[\wipetokens{123}{abc123abc123abc123abc123abc}]}
+%     \edef\xxx{[\wipetokens{123}{abc}]}
+%     \edef\xxx{[\wipetokens{123}{123}]}
+%     \edef\xxx{[\wipedtokens{123}{123}]}
+% } \elapsedtime
+
+              \def\abc{abc}
+\semiprotected\def\xyz{xyz}
+
+\ifcondition\similartokens{abc}{def}YES\else NOP\fi
+\ifcondition\similartokens{abc}{\abc}YES\else NOP\fi
+
+\ifcondition\similartokens{xyz}{pqr}YES\else NOP\fi
+\ifcondition\similartokens{xyz}{\xyz}YES\else NOP\fi
+
+\stoptext

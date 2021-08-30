@@ -1,7 +1,7 @@
 return {
  ["htmlfiles"]={ "spaces-001-div.html" },
  ["htmlroot"]="spaces-001-div.html",
- ["identifier"]="2791fc58-4a5a-a6ab-bfeb-133b5437cb61",
+ ["identifier"]="c2c4030c-45bb-865b-b406-1a25c9617ae3",
  ["imagefile"]="styles/spaces-001-images.css",
  ["imagepath"]="images",
  ["images"]={},

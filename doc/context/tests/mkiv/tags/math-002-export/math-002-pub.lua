@@ -1,7 +1,7 @@
 return {
  ["htmlfiles"]={ "math-002-div.html" },
  ["htmlroot"]="math-002-div.html",
- ["identifier"]="a0ec4b4d-48d4-a02f-2bcf-7453df26eff1",
+ ["identifier"]="966109a3-4765-8f4f-4abd-1bb2f6cc81be",
  ["imagefile"]="styles/math-002-images.css",
  ["imagepath"]="images",
  ["images"]={},

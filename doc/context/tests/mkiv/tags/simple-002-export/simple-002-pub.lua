@@ -1,7 +1,7 @@
 return {
  ["htmlfiles"]={ "simple-002-div.html" },
  ["htmlroot"]="simple-002-div.html",
- ["identifier"]="97cc7cd8-4aad-a776-c959-158d4b35eefd",
+ ["identifier"]="8a2517a2-450c-a6dd-dab7-d505d5fa32c5",
  ["imagefile"]="styles/simple-002-images.css",
  ["imagepath"]="images",
  ["images"]={},

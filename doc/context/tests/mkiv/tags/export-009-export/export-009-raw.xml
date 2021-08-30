@@ -3,8 +3,8 @@
 <!--
 
     input filename   : export-009
-    processing date  : 2021-08-04 11:45:38+02:00
-    context version  : 2021.08.02 11:59
+    processing date  : 2021-08-26 17:27:51+02:00
+    context version  : 2021.08.24 22:16
     exporter version : 0.35
 
 -->
@@ -13,7 +13,7 @@
 <?xml-stylesheet type="text/css" href="styles/export-009-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/export-009-styles.css" ?>
 
-<document context="2021.08.02 11:59" date="2021-08-04 11:45:38+02:00" file="export-009" language="en" title="export-009" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+<document context="2021.08.24 22:16" date="2021-08-26 17:27:51+02:00" file="export-009" language="en" title="export-009" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
 test <m:math display="inline"><m:mrow><m:mi>𝑒</m:mi><m:mo>+</m:mo><m:mn>1</m:mn><m:mo>=</m:mo><m:mi>𝑚</m:mi><m:msup><m:mi>𝑐</m:mi><!-- begin m:mrow --><m:mn>2</m:mn><!-- end m:mrow --></m:msup><m:mo>+</m:mo><m:mn>1</m:mn></m:mrow></m:math> test
  <break/>
 test <m:math display="inline"><m:mrow><m:mi>𝑒</m:mi><m:mo>+</m:mo><m:mn>2</m:mn><m:mo>=</m:mo><m:mi>𝑚</m:mi><m:msup><m:mi>𝑐</m:mi><!-- begin m:mrow --><m:mn>2</m:mn><!-- end m:mrow --></m:msup><m:mo>+</m:mo><m:mn>2</m:mn></m:mrow></m:math> test

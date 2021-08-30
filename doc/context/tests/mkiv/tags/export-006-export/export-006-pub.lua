@@ -1,7 +1,7 @@
 return {
  ["htmlfiles"]={ "export-006-div.html" },
  ["htmlroot"]="export-006-div.html",
- ["identifier"]="6a586ef3-422c-9ff4-c62e-6e8d5d9e561d",
+ ["identifier"]="0d6437b6-436c-9de5-92f7-cea6cecf4bd2",
  ["imagefile"]="styles/export-006-images.css",
  ["imagepath"]="images",
  ["images"]={},
