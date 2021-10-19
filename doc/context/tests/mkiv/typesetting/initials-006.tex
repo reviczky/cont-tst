@@ -1,0 +1,23 @@
+% example from list
+
+\defineinitial[mine][method={keep,auto}] % new keep (quote) option
+
+\setuphead
+  [chapter]
+  [after={\placeinitial[mine]},
+   page=no]
+
+\starttext
+
+    \chapter{Harriet Tubman}
+
+    \quotation {Every great dream begins with a dreamer. Always remember, you
+    have within you the strength, the patience, and the passion to reach for the
+    stars to change the world.}
+
+    \chapter{Eleanor Roosevelt}
+
+    Great minds discuss ideas; average minds discuss events; small minds discuss
+    people.
+
+\stoptext

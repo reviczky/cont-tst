@@ -1,0 +1,26 @@
+\showframe
+
+\starttext
+
+\definenote[NoteOne]
+\definenote[NoteTwo]
+\definenote[NoteThree]
+
+\setupinterlinespace[ntop=0] % use all room (fixed topskip)
+
+\setupnotes           [spacebefore=big]       % before first note (root setting)
+\setupnotes[NoteOne]  [spaceinbetween=big]    % between notes
+\setupnotes[NoteTwo]  [spaceinbetween=2*big]  % between notes
+\setupnotes[NoteThree][spaceinbetween=3*big]  % between notes
+
+\setupnotes[split=tolerant]  % permit split / move
+% \setupnotes[split=strict]  % permit split / move
+
+\dorecurse{10}{
+    \input tufte
+    \NoteOne{one #1.1}\NoteTwo{two #1.2}\NoteThree{three #1.3}
+    \NoteOne{one #1.1}\NoteTwo{two #1.2}\NoteThree{three #1.3}
+    \par
+}
+
+\stoptext

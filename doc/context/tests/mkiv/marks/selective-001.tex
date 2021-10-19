@@ -1,0 +1,8 @@
+\setupheadertexts[\doifelsefirstsectionpage{chapter}{}{\getmarking[chapter]}]
+
+\starttext
+    \dorecurse{10}{
+        \chapter{Chapter #1}
+        \dorecurse{#1}{\section{Section #1/##1}\samplefile{tufte}\par}
+    }
+\stoptext

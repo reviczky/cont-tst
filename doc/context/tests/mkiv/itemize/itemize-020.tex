@@ -1,0 +1,17 @@
+\starttext
+
+\defineitemgroup[marginalized]
+\setupitemgroup[marginalized][2][leftmargindistance=2em]
+\setupitemgroup[marginalized][3][leftmargindistance=4em]
+
+\startmarginalized
+    \item one: \input tufte
+        \startmarginalized
+            \item two: \input tufte
+            \startmarginalized
+                \item three:  \input tufte
+            \stopmarginalized
+        \stopmarginalized
+\stopmarginalized
+
+\stoptext
