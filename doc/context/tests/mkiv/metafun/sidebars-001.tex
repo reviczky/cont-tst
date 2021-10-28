@@ -1,0 +1,51 @@
+
+\definesidebar[ds][rulecolor=red]
+
+\setuppagenumbering[alternative=doublesided]
+
+\starttext
+  \centerline{page left intentionally empty}
+  \page
+  default behavior same as before (\type{\setupsidebar[location=left]})
+  \blank
+  \startsidebar[ds]
+  \dorecurse{3}{\samplefile{knuth}}
+  \startsidebar[ds]
+    \dorecurse{2}{\samplefile{knuth}}
+  \stopsidebar
+  \dorecurse{3}{\samplefile{knuth}}
+  \stopsidebar\par
+  \page
+  \type{\setupsidebar[location=right]}
+  \blank
+  \setupsidebar[ds][location=right]
+  \startsidebar[ds]
+  \dorecurse{3}{\samplefile{knuth}}
+  \startsidebar[ds]
+    \dorecurse{2}{\samplefile{knuth}}
+  \stopsidebar
+  \dorecurse{3}{\samplefile{knuth}}
+  \stopsidebar\par
+  \page
+  \type{\setupsidebar[location=inner]}
+  \blank
+  \setupsidebar[ds][location=inner]
+  \startsidebar[ds]
+  \dorecurse{3}{\samplefile{knuth}}
+  \startsidebar[ds]
+    \dorecurse{2}{\samplefile{knuth}}
+  \stopsidebar
+  \dorecurse{3}{\samplefile{knuth}}
+  \stopsidebar\par
+  \page
+  \type{\setupsidebar[location=outer]}
+  \blank
+  \setupsidebar[ds][location=outer]
+  \startsidebar[ds]
+  \dorecurse{3}{\samplefile{knuth}}
+  \startsidebar[ds]
+    \dorecurse{2}{\samplefile{knuth}}
+  \stopsidebar
+  \dorecurse{3}{\samplefile{knuth}}
+  \stopsidebar\par
+\stoptext

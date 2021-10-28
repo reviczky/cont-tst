@@ -1,0 +1,23 @@
+\showframe
+
+\starttext
+    \topskip4cm
+    \dostepwiserecurse{0}{360}{10}{
+        \ruledhbox{\rotate[rotation=#1]{\blackrule[width=\textheight,height=\textwidth,depth=0cm,color=darkred]}}
+    }
+    \dostepwiserecurse{0}{360}{10}{
+        \ruledhbox{\rotate[rotation=#1,location=high]{\blackrule[width=\textheight,height=\textwidth,depth=0cm,color=darkgreen]}}
+    }
+    \dostepwiserecurse{0}{360}{10}{
+        \ruledhbox{\rotate[rotation=#1,location=fit]{\blackrule[width=\textheight,height=\textwidth,depth=0cm,color=darkblue]}}
+    }
+    \dostepwiserecurse{0}{360}{10}{
+        \ruledhbox{\rotate[rotation=#1,location=middle]{\blackrule[width=\textheight,height=\textwidth,depth=0cm,color=darkcyan]}}
+    }
+    \dostepwiserecurse{0}{360}{10}{
+        \ruledhbox{\rotate[rotation=#1,location=depth]{\blackrule[width=\textheight,height=\textwidth,depth=0cm,color=darkmagenta]}}
+    }
+    \dostepwiserecurse{0}{360}{10}{
+        \ruledhbox{\rotate[rotation=#1,location=broad]{\blackrule[width=\textheight,height=\textwidth,depth=0cm,color=darkyellow]}}
+    }
+\stoptext

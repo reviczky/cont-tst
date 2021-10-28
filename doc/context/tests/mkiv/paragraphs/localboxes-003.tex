@@ -1,0 +1,41 @@
+\showframe
+
+\starttext
+
+{test test \localleftbox par local {L1}test test test test
+test test test test test test test test test test test test test test test test
+test test test test test test test test test test test test test test test test \par
+test test test test test test test test test test test test test test test test
+test test test test test test test test test test test test test test test test \par
+}
+\blank
+{test test \localleftbox{L1}test test \localleftbox{}test test
+test test test test test test test test test test test test test test test test
+test test test test test test test test\par}
+\blank
+{test test \localleftbox{L1}test test \localleftbox{L2}test test
+test test test test test test test test test test test test test test test test
+\par}
+\blank
+{test test \localleftbox{L1}test test \localleftbox{L2}test test
+test test test test test test test test test test test test test test test test
+test test test test test test test test test test test test test test test test\par}
+\blank
+
+{test test \localrightbox{R1}test test test test
+test test test test test test test test test test test test test test test test
+test test test test test test test test test test test test test test test test\par}
+\blank
+{test test \localrightbox{R1}test test \localrightbox{}test test
+test test test test test test test test test test test test test test test test
+test test test test test test test test\par}
+\blank
+{test test \localrightbox{R1}test test \localrightbox{R2}test test
+test test test test test test test test\par}
+\blank
+{test test \localrightbox{R1}test test \localrightbox{R2}test test
+test test test test test test test test test test test test test test test test
+test test test test test test test test test test test test test test test test\par}
+\blank
+
+\stoptext

@@ -1,0 +1,45 @@
+\definelocalboxes
+  [linetextA]
+  [command=\LeftTextA,
+   location=lefttext,
+   style=\bs,
+   color=darkblue]
+
+\protected\def\LeftTextA#1{\llap{#1}\quad}
+
+\definelocalboxes
+  [linetextB]
+  [command=\LeftTextB,
+   location=left,
+   style=\bs,
+   color=darkgreen]
+
+\protected\def\LeftTextB{\llap{\unhbox\localboxcontentbox}\quad}
+
+\starttext
+
+\dorecurse{10}{some text #1 }
+\leftparbox {\red \bf keyword}HERE\leftparbox{}
+\dorecurse{10}{some text #1 }
+\blank
+
+{\dorecurse{10}{some text #1 }
+\leftparbox {\red \bf keyword}test
+\dorecurse{10}{some text #1 }}
+\blank
+
+{\dorecurse{10}{some text #1 }
+\localbox[linetextA]{keyword}HERE
+\dorecurse{10}{some text #1 }}
+
+{\dorecurse{10}{some text #1 }
+\localbox[linetextB]{keyword}HERE
+\dorecurse{10}{some text #1 }}
+
+{\dorecurse{10}{some text #1 }
+\localbox[linetextB]{keyword 1}HERE1
+\dorecurse{10}{some text #1 }
+\localbox[linetextB]{keyword 2}HERE2
+\dorecurse{10}{some text #1 }}
+
+\stoptext

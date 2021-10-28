@@ -1,0 +1,12 @@
+\starttext
+    \ignorespaces\input tufte \removeunwantedspaces
+    we want a break before this line \vadjust pre {\break}%
+    \ignorespaces\input tufte \removeunwantedspaces
+
+    \page
+
+    \ignorespaces\input tufte \removeunwantedspaces
+    we want seperate lines now \leftparbox{\vadjust post {\break}}%
+    \ignorespaces\input tufte \removeunwantedspaces
+    \resetleftparbox{}
+\stoptext

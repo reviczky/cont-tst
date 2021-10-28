@@ -1,0 +1,84 @@
+\definelocalboxes
+  [linenumber]
+  [command=\LeftNumber,
+   location=left,
+   width=3em,
+   style=\bs,
+   color=darkred]
+
+\definelocalboxes
+  [linenumbertwo]
+  [linenumber]
+  [command=\RightNumber,
+   location=right,
+   width=6em,
+   style=\bf,
+   color=darkgreen]
+
+\definelocalboxes
+  [linetext]
+  [command=\LeftText,
+   location=lefttext,
+   style=\bs,
+   color=darkblue]
+
+\definelocalboxes
+  [linetexttwo]
+  [linetext]
+  [command=\RightText,
+   location=righttext,
+   style=\bf,
+   color=darkgray]
+
+% just using the content
+
+% \protected\def\LeftNumber {\hbox to \localboxesparameter{width}{\strut\box\localboxcontentbox\hss)}}
+% \protected\def\RightNumber{\hbox to \localboxesparameter{width}{\strut(\hss\box\localboxcontentbox)}}
+
+% using the provided line number:
+
+% \def\LineNumberL{\the\localboxlinenumber}
+% \def\LineNumberR{\the\localboxlinenumber}
+
+% using a tex counter
+
+% \newcount\MyLineNumberL
+% \newcount\MyLineNumberR
+% \def\LineNumberL{\global\advance\MyLineNumberL\plusone\the\MyLineNumberL}
+% \def\LineNumberR{\global\advance\MyLineNumberR\plusone\the\MyLineNumberR}
+
+% using proper counters
+
+\definecounter[MyLineNumberL]
+\definecounter[MyLineNumberR]
+
+\setupcounter[MyLineNumberL][numberconversion=characters]
+\setupcounter[MyLineNumberR][numberconversion=romannumerals]
+
+\def\LineNumberL{\incrementcounter[MyLineNumberL]\convertedcounter[MyLineNumberL]}
+\def\LineNumberR{\incrementcounter[MyLineNumberR]\convertedcounter[MyLineNumberR]}
+
+\protected\def\LeftNumber {\hbox to \localboxesparameter{width}{\strut(\LineNumberL\hss)}}
+\protected\def\RightNumber{\hbox to \localboxesparameter{width}{\strut(\hss\LineNumberR)}}
+
+\protected\def\LeftText #1{#1\quad}
+\protected\def\RightText#1{\quad#1}
+
+\showframe
+
+\starttext
+
+\start
+    \localbox[linenumber]{}%
+    \localbox[linenumbertwo]{}%
+    \localbox[linetext]{L}%
+    \startlocalbox[linetexttwo]
+        R
+    \stoplocalbox
+    \dorecurse{100}{
+        \samplefile{tufte}
+        \par
+    }
+\stop
+
+\stoptext

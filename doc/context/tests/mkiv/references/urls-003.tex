@@ -1,0 +1,19 @@
+\starttext
+
+    \hsize 6em
+
+    Default: \hyphenatedurl{https://wiki.contextgarden.net/URL}
+
+    \blank
+
+    \bgroup
+      \sethyphenatedurlnormal{:=?&/.0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ}
+      \sethyphenatedurlbefore{:=?&/.0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ}
+      \sethyphenatedurlafter{:=?&/.0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ}
+      Grouped: \hyphenatedurl{https://wiki.contextgarden.net/URL}
+    \egroup
+    \blank
+
+    Default: \hyphenatedurl{https://wiki.contextgarden.net/URL}
+
+\stoptext

@@ -1,0 +1,20 @@
+\starttext
+    \showstruts
+    \input tufte \removeunwantedspaces\space
+    \localleftbox  par {%
+       \hbox to 0pt{%
+          \llap{L}%
+          \vadjust{\strut\blackrule[width=1cm,color=red]}%
+          \hbox{\vadjust pre{\strut\blackrule[width=1cm,color=green]}}%
+       }\hss
+    }%
+    \localrightbox par {}%
+    \input tufte \removeunwantedspaces\space
+    \vadjust pre    {\strut BEFORE 1}%
+    \vadjust pre    {\strut BEFORE 2}%
+    \vadjust before {\strut AFTER  1}%
+    \vadjust before {\strut AFTER  2}%
+    \ignorespaces
+    \input tufte
+\stoptext
+

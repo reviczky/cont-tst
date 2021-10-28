@@ -1,0 +1,51 @@
+\definefontfeature[myssty] [ssty=yes]
+\definefontfeature[myssty1][ssty=1]
+\definefontfeature[myssty2][ssty=2]
+
+\startbuffer
+    \dontleavehmode
+    {2x
+     \red                     \ruledhbox{\char"2032}%
+     \green   \addff  {myssty}\ruledhbox{\char"2032}%
+     \blue    \addff {myssty1}\ruledhbox{\char"2032}%
+     \darkgray\addff {myssty2}\ruledhbox{\char"2032}%
+     }
+\stopbuffer
+
+\usebodyfont[modern,10pt]
+\usebodyfont[cambria,10pt]
+\usebodyfont[libertinus,10pt]
+
+\starttext
+
+\startTEXpage
+    \definedfont[file:cambria.ttc(Cambria Math)*default @ 10pt ]\getbuffer
+    \strut\quad
+    \definedfont[file:cambria.ttc(Cambria Math)*default @ 7pt]\getbuffer % 7.3
+    \strut\quad
+    \definedfont[file:cambria.ttc(Cambria Math)*default @ 5pt]\getbuffer % 6
+    \strut\quad
+    \switchtobodyfont[cambria,10pt]$x\prime+x\doubleprime+x\tripleprime$
+\stopTEXpage
+
+\startTEXpage
+    \definedfont[file:latinmodern-math.otf*default @ 10pt]\getbuffer
+    \strut\quad
+    \definedfont[file:latinmodern-math.otf*default @ 7pt]\getbuffer
+    \strut\quad
+    \definedfont[file:latinmodern-math.otf*default @ 5pt]\getbuffer
+    \strut\quad
+    \switchtobodyfont[modern,10pt]$x\prime+x\doubleprime+x\tripleprime$
+\stopTEXpage
+
+\startTEXpage
+    \definedfont[file:libertinusmath-regular.otf*default @ 10pt]\getbuffer
+    \strut\quad
+    \definedfont[file:libertinusmath-regular.otf*default @ 7pt]\getbuffer % 8
+    \strut\quad
+    \definedfont[file:libertinusmath-regular.otf*default @ 5pt]\getbuffer % 6
+    \strut\quad
+    \switchtobodyfont[libertinus,10pt]$x\prime+x\doubleprime+x\tripleprime$
+\stopTEXpage
+
+\stoptext

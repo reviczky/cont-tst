@@ -1,0 +1,13 @@
+\starttext
+    \input tufte \removeunwantedspaces\space
+    \vadjust pre  {BEFORE 1}%
+    \vadjust pre  {BEFORE 2}%
+    \vadjust post {AFTER  1}%
+    \vadjust post {AFTER  2}%
+    \ignorespaces\input tufte \removeunwantedspaces\space
+    \vadjust pre        {BEFORE 1}%
+    \vadjust pre        {BEFORE 2}%
+    \vadjust post before {AFTER  1}%
+    \vadjust post before {AFTER  2}%
+    \ignorespaces\input tufte
+\stoptext
