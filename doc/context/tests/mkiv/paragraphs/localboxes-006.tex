@@ -1,0 +1,75 @@
+\showframe
+
+\setuplayout
+ [backspace=35mm,
+  cutspace=35mm,
+  width=middle,
+  leftedge=12mm,
+  leftmargin=12mm,
+  rightedge=12mm,
+  rightmargin=12mm]
+
+\setuplocalboxes
+  [leftmargin]
+  [style=\bs,
+   color=darkgreen]
+\setuplocalboxes
+  [rightmargin]
+  [style=\bs,
+   color=darkred]
+\setuplocalboxes
+  [leftedge]
+  [style=\bf,
+   color=darkmagenta]
+\setuplocalboxes
+  [rightedge]
+  [style=\bf,
+   color=darkcyan]
+
+\definelocalboxes
+  [lefttext]
+  [location=lefttext,width=3em,color=darkblue]
+\definelocalboxes
+  [lefttextx]
+  [location=lefttext,width=3em,color=darkblue]
+\definelocalboxes
+  [lefttextxx]
+  [location=lefttext,width=3em,color=darkblue]
+
+\definelocalboxes
+  [righttext]
+  [location=righttext,width=3em,color=darkyellow]
+\definelocalboxes
+  [righttextx]
+  [location=righttext,width=3em,color=darkyellow]
+
+\setupalign[verytolerant,stretch]
+
+\starttext
+
+\start \dorecurse{50}{
+\startnarrower
+    \dorecurse{10}{some text #1.##1 }%
+    KEY#1.1%
+    \localbox[lefttext]{[!]}%
+    \localbox[lefttextx]{[!]}%
+    \localmargintext[leftedge]{E #1.1}%
+    \localmargintext[leftmargin]{L #1.1}%
+    \localbox[righttext]{ [WHATEVER #1]}%
+    \localmargintext[rightmargin]{R #1.1}%
+    \localbox[righttextx]{ [!]}%
+    \localmargintext[rightedge]{E #1.1}%
+    \dorecurse{10}{some text #1.##1 }%
+    KEY#1.2%
+    \localbox[lefttext]{}%
+    \localbox[righttext]{}%
+    \localmargintext[leftmargin]{L #1.2}%
+    \localmargintext[leftedge]{E #1.2}%
+    \localmargintext[rightmargin]{R #1.2}%
+    \localmargintext[rightedge]{E #1.2}%
+    \dorecurse{10}{some text #1.##1 }%
+\stopnarrower
+    \blank
+} \stop
+
+\stoptext

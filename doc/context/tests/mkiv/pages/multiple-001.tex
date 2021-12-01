@@ -1,0 +1,49 @@
+\definepapersize
+  [sheetpaper]
+  [width=95mm,
+   height=100mm]
+
+\definelayout
+  [sheetzooi]
+  [nx=3,dx=3mm,
+   ny=2,dy=3mm,
+   location=middle]
+
+\showframe
+
+\starttext
+
+\input tufte
+
+% begin local
+
+\page
+
+    \setuppapersize
+      [sheetpaper]
+      [A4,landscape]
+
+    \setuplayout
+      [sheetzooi]
+
+    \setupalign
+      [verytolerant,stretch]
+
+    \placefigure
+      [left]
+      {}
+      {}
+
+    \dorecurse{30}{crap #1 }
+
+\page
+
+% end local
+
+\setuppapersize
+  [A4]
+  [A4]
+
+\input tufte
+
+\stoptext

@@ -1,0 +1,53 @@
+% posted by ws on the list
+
+\starttext
+
+\startsetups [alexandre:1]
+    \setupTABLE [start] [frame=off]
+    \setupTABLE [c] [1] [width=.3\textwidth]
+    \setupTABLE [c] [2] [width=.6\textwidth]
+\stopsetups
+
+\startitemize [a] [right=),stopper=]
+\bTABLE[setups=alexandre:1]
+\bTR \bTD \dontleavehmode\itemtag\quad Something \eTD \bTD Something \eTD \eTR
+\bTR \bTD \dontleavehmode\itemtag\quad Something \eTD \bTD Something \eTD \eTR
+\bTR \bTD \dontleavehmode\itemtag\quad Something \eTD \bTD Something \eTD \eTR
+\bTR \bTD \dontleavehmode\itemtag\quad Something \eTD \bTD Something \eTD \eTR
+\eTABLE
+\stopitemize
+
+\startsetups [alexandre:2]
+    \setupTABLE [start] [frame=off]
+    \setupTABLE [c] [2] [width=.2\textwidth]
+    \setupTABLE [c] [3] [width=.6\textwidth]
+\stopsetups
+
+\startitemize [a] [right=),stopper=]
+\bTABLE[setups=alexandre:2]
+\bTR \bTD \itemtag \eTD \bTD Something \eTD \bTD Something \eTD \eTR
+\bTR \bTD \itemtag \eTD \bTD Something \eTD \bTD Something \eTD \eTR
+\bTR \bTD \itemtag \eTD \bTD Something \eTD \bTD Something \eTD \eTR
+\bTR \bTD \itemtag \eTD \bTD Something \eTD \bTD Something \eTD \eTR
+\eTABLE
+\stopitemize
+
+\startitemize [a] [right=),stopper=]
+\starttabulate[|l|lw(.2\textwidth)|p|]
+\NC \itemtag \NC Something \NC Something \NC\NR
+\NC \itemtag \NC Something \NC Something \NC\NR
+\NC \itemtag \NC Something \NC Something \NC\NR
+\NC \itemtag \NC Something \NC Something \NC\NR
+\stoptabulate
+\stopitemize
+
+\startitemize [a] [right=),stopper=]
+\starttabulate[|l|lw(.2\textwidth)|p|]
+\NI Something \NC Something \NC\NR
+\NI Something \NC Something \NC\NR
+\NI Something \NC Something \NC\NR
+\NI Something \NC Something \NC\NR
+\stoptabulate
+\stopitemize
+
+\stoptext

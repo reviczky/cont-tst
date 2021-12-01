@@ -1,0 +1,14 @@
+\starttext
+
+\start \showboxes
+    \dorecurse{20}{test #1 }
+    \insertlinebefore{BEFORE 1}
+    \insertlineafter {AFTER  1}
+    \dorecurse{20}{test #1 }
+    \dorecurse{20}{test #1 }
+    \insertlinebefore{BEFORE 2}
+    \insertlineafter {AFTER  2}
+    \dorecurse{20}{test #1 }
+\stop
+
+\stoptext

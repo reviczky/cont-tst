@@ -1,0 +1,22 @@
+\starttext
+
+\tolerant\def\MyInnerOuter#1\MyInner[#2]#3\MyDone\ignorearguments{#2}
+
+\def\MyOuter#1{\MyInnerOuter#1\MyDone\ignorearguments}
+
+whatever: \MyOuter{\MyInner[oeps]}\par
+whatever: \MyOuter{\InnerMy[oeps]}\par
+
+\edef\ItWorksA{\MyOuter{\MyInner[oeps]}}
+\edef\ItWorksB{\MyOuter{\InnerMy[oeps]}}
+
+whatever: \meaningless\ItWorksA\par
+whatever: \meaningless\ItWorksB\par
+
+% \testfeatureonce{1000000}{%
+%     \edef\ItWorksA{\MyOuter{\MyInner[oeps]}}%
+%     \edef\ItWorksB{\MyOuter{\InnerMy[oeps]}}%
+% } \elapsedtime
+
+\stoptext
+

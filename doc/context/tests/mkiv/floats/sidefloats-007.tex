@@ -1,0 +1,15 @@
+\showframe
+
+\starttext
+
+\samplefile{lorem}
+\blank[20*line]
+
+\startplacefigure[location={right,15*hang,force}]
+% \startplacefigure[location={right,15*hang}]
+    \framed[width=30mm,height=20mm]{!!}
+\stopplacefigure
+
+\dorecurse{10}{\samplefile{lorem}}
+
+\stoptext

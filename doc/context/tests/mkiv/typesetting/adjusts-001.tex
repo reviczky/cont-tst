@@ -1,0 +1,37 @@
+\starttext
+
+\dorecurse{10} {
+    \dorecurse{20}{test #1 }
+    \dorecurse{10}{\insertlinebefore{BEFORE 1/#1}}
+    \dorecurse{20}{test #1 }
+    \blank
+}
+
+\page
+
+\dorecurse{10} {
+    \dorecurse{20}{test #1 }
+    \insertlinebefore{BEFORE 1a}
+    \insertlinebefore{BEFORE 1b}
+    \insertlineafter {AFTER  1}
+    \dorecurse{20}{test #1 \hbox{\hbox{\hbox{\footnote{!}}}}}
+    \dorecurse{20}{test #1 }
+    \insertlinebefore{BEFORE 2}
+    \insertlineafter {AFTER  2}
+    \dorecurse{20}{test #1 }
+    \blank
+}
+
+\page
+
+\dorecurse{20}{before #1 }
+\insertblankbefore[big]%
+\insertlinebefore{\bf patch starts here}%
+\insertblankbefore[2*big]%
+\dorecurse{20}{between #1 }
+\insertblankafter[2*big]%
+\insertlineafter{\bf and ends here}%
+\insertblankafter[big]%
+\dorecurse{20}{after #1 }
+
+\stoptext

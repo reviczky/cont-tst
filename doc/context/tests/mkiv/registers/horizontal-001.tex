@@ -1,0 +1,39 @@
+% this is a variant of an example on the mailing list
+
+\mainlanguage[es]
+
+\setupbodyfont[dejavu]
+
+\defineregister
+  [Russian]
+  [n=1,
+   command=\Words,
+   pagenumber=no,
+   language=ru,
+   textalternative=horizontal,
+   distance=0pt]
+
+\setupregister [Russian] [2] [textstyle=bold,left={, }]
+\setupregister [Russian] [3] [textstyle=italic,left={, }]
+
+% word category meaning
+
+\setregisterentry [Russian] [entries:1={исчисление},  entries:2={n. neutr.},  entries:3={cálculo}]
+\setregisterentry [Russian] [entries:1={исчисление},  entries:2={n. neutr.},  entries:3={cálculo}]
+\setregisterentry [Russian] [entries:1={вероятность}, entries:2={n. fem.},    entries:3={probabilidad}]
+\setregisterentry [Russian] [entries:1={обозначать},  entries:2={v.},         entries:3={denotar}]
+\setregisterentry [Russian] [entries:1={область},     entries:2={n. fem},     entries:3={región, área}]
+\setregisterentry [Russian] [entries:1={событие},     entries:2={n. neutr.},  entries:3={evento}]
+\setregisterentry [Russian] [entries:1={определение}, entries:2={n. neutr.},  entries:3={definición}]
+\setregisterentry [Russian] [entries:1={знание},      entries:2={n. neutr,},  entries:3={conocimiento}]
+\setregisterentry [Russian] [entries:1={бесконечно},  entries:2={adv.},       entries:3={infinitamente}]
+\setregisterentry [Russian] [entries:1={сборник},     entries:2={n. masc.},   entries:3={colección, compilación, compendio}]
+\setregisterentry [Russian] [entries:1={неравенство}, entries:2={n. neutr.},  entries:3={desigualdad}]
+
+\starttext
+
+\starttitle[title=Ruso-español]
+    \placeRussian
+\stoptitle
+
+\stoptext

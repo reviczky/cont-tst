@@ -1,0 +1,53 @@
+\definesynonyms
+  [myabbreviation]
+
+\setupsynonyms
+  [myabbreviation]
+  [headstyle=bold,
+   headcolor=darkred,
+   synonymstyle=boldslanted,
+   synonymcolor=darkblue,
+   textstyle=slanted,
+   textcolor=darkgreen,
+   style=normal,
+   color=darkyellow]
+
+\myabbreviation [FIRST]  {TheFirst}  {The First Words}
+\myabbreviation [SECOND] {TheSecond} {The Second Words}
+\myabbreviation [THIRD]  {TheThird}  {The Third Words}
+
+\starttext
+
+\startchapter[title=One]
+    test \FIRST\ test
+    test \THIRD\ test
+
+    \blank
+    \placelistofsynonyms[myabbreviation]
+    \resetsynonymsprogress[myabbreviation]
+\stopchapter
+
+\startchapter[title=Two]
+    test \FIRST\ test
+    test \SECOND\ test
+
+    \blank
+    \placelistofsynonyms[myabbreviation][criterium=current]
+    \resetsynonymsprogress[myabbreviation]
+\stopchapter
+
+\startchapter[title=Three]
+    test test
+    test test
+    test test
+
+    \blank
+    \placelistofsynonyms[myabbreviation][criterium=current]
+\stopchapter
+
+
+\startchapter[title=All]
+    \placelistofsynonyms[myabbreviation][criterium=all]
+\stopchapter
+
+\stoptext

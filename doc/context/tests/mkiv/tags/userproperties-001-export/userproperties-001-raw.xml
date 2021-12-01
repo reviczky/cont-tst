@@ -3,8 +3,8 @@
 <!--
 
     input filename   : userproperties-001
-    processing date  : 2021-10-28 11:03:57+02:00
-    context version  : 2021.10.28 10:19
+    processing date  : 2021-11-29 22:56:27+01:00
+    context version  : 2021.11.26 11:38
     exporter version : 0.35
 
 -->
@@ -13,7 +13,7 @@
 <?xml-stylesheet type="text/css" href="styles/userproperties-001-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/userproperties-001-styles.css" ?>
 
-<document context="2021.10.28 10:19" date="2021-10-28 11:03:57+02:00" file="userproperties-001" language="en" title="userproperties-001" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+<document context="2021.11.26 11:38" date="2021-11-29 22:56:27+01:00" file="userproperties-001" language="en" title="userproperties-001" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
  <section detail="chapter" chain="chapter" level="2">
   <sectioncaption>
    <sectionnumber>1</sectionnumber>

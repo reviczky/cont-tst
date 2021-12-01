@@ -1,0 +1,30 @@
+\starttext
+
+\mainlanguage[cs]
+
+\setuplanguage
+  [cs]
+  [explicitlefthyphenchar=45,
+   explicitrighthyphenchar=45]
+
+\startbuffer
+\hsize 1mm modrozelený  \par
+\hsize 1mm modro-zelený\par
+
+\hsize 1mm slovenskonizozemský  \par
+\hsize 1mm slovensko-nizozemský\par
+
+\hsize 1mm československonizozemský  \par
+\hsize 1mm československo-nizozemský\par
+\stopbuffer
+
+% default anyway:
+
+\hyphenationmode\bitwiseflip\hyphenationmode \compoundhyphenationcode \getbuffer \page
+
+% disabled:
+
+\hyphenationmode\bitwiseflip\hyphenationmode-\compoundhyphenationcode \getbuffer \page
+
+\stoptext
+

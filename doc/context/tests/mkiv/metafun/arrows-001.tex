@@ -1,0 +1,15 @@
+\starttext
+
+\startMPcode
+    save ahfactor ; ahfactor := 5;
+    path p ; p := origin .. (1cm, 1cm) .. (2cm, 0) ;
+    draw lmt_arrow [
+        path        = p,
+        location    = "percentage",
+        percentage  = 50,
+        alternative = "curved",
+    ]
+       withpen pencircle scaled 1bp;
+\stopMPcode
+
+\stoptext

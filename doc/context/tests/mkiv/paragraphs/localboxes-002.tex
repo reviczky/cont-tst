@@ -2,37 +2,16 @@
 
 \starttext
 
-% \dorecurse{10}{
-%     \showboxes
-%     \localleftbox{\ruledhbox {\smallinfofont\setstrut\strut[L #1.0]}}%
-%     \localleftbox{\ruledhbox {\smallinfofont\setstrut\strut[L #1.1]}\the\localleftbox}%
-%     \localleftbox{\ruledhbox {\smallinfofont\setstrut\strut[L #1.2]}\the\localleftbox}%
-%     \localleftbox{\ruledhbox {\smallinfofont\setstrut\strut[L #1.3]}\the\localleftbox}%
-%     %
-%     \localrightbox{\ruledhbox                  {\smallinfofont\setstrut\strut[R #1.0]}}%
-%     \localrightbox{\the\localrightbox\ruledhbox{\smallinfofont\setstrut\strut[R #1.1]}}%
-%     \localrightbox{\the\localrightbox\ruledhbox{\smallinfofont\setstrut\strut[R #1.2]}}%
-%     \localrightbox{\the\localrightbox\ruledhbox{\smallinfofont[R #1.3]}}%
-%     % \localrightbox{}%
-%     \samplefile{tufte}
-% }
-
 \dorecurse{10}{
     \showboxes
     %
-    \resetleftparbox
-    \resetrightparbox
+    \dorecurse{2}{
+        \localleftbox  index ##1 {\ruledhbox{\smallinfofont\setstrut\strut[L #1.##1]}}%
+    }
     %
-    \prependleftparbox {\ruledhbox{\smallinfofont\setstrut\strut[L #1.0]}}%
-    \prependleftparbox {\ruledhbox{\smallinfofont\setstrut\strut[L #1.1]}}%
-    \prependleftparbox {\ruledhbox{\smallinfofont\setstrut\strut[L #1.2]}}%
-    \prependleftparbox {\ruledhbox{\smallinfofont\setstrut\strut[L #1.3]}}%
-    %
-    \appendrightparbox{\ruledhbox{\smallinfofont\setstrut\strut[R #1.0]}}%
-    \appendrightparbox{\ruledhbox{\smallinfofont\setstrut\strut[R #1.1]}}%
-    \appendrightparbox{\ruledhbox{\smallinfofont\setstrut\strut[R #1.2]}}%
-    \appendrightparbox{\ruledhbox{\smallinfofont[R #1.3]}}%
-    %
+    \dorecurse{4}{
+        \localrightbox index ##1 {\ruledhbox{\smallinfofont\setstrut\strut[R #1.##1]}}%
+    }%
     \samplefile{tufte}
 }
 
