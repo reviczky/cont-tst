@@ -1,0 +1,29 @@
+% variant on mail on list
+
+\defineornament
+  [MyOrn]
+  [corner={right,bottom},
+   location={right,top},
+   alternative=b]
+  [offset=overlay,
+   frame=off]
+
+\defineoverlay
+  [MyOrn]
+  [\MyOrn
+    {\framedtextparameter{MyTitle}}
+    {\novrule width \overlaywidth height \overlayheight}]
+
+\defineframedtext
+  [MyText]
+  [background=MyOrn,
+   width=\textwidth,
+   height=2cm]
+
+\starttext
+
+    \startMyText[MyTitle={oeps}]
+       foo
+    \stopMyText
+
+\stoptext

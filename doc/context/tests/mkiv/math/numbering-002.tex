@@ -1,0 +1,67 @@
+\showframe
+
+\starttext
+The general rule (assuming midaligned displayed formulas) should/could be:
+\startitemize[n]
+\item If the formula is wider than the equation number plus one quad, center the formula and put the tag on the line below.
+\item If the centered formula has a distance of at least one quad to the tag, set the formula midaligned.
+\item If we are inbetween, set the formula with a distance of one quad to the equation number (this will make it non-centered, but that is life).
+\stopitemize
+
+This one goes into the first category:
+\placeformula[eq:long]
+\startformula
+xxxxxxxxxxxx=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+\stopformula
+
+This one also goes into the first category:
+\placeformula[eq:notsolong]
+\startformula
+xxxxxxxxxxxx=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+\stopformula
+
+This one goes into the second category:
+\placeformula[eq:evenshorter]
+\startformula
+xxxxxxxxxxxx=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+\stopformula
+
+This one goes into the third category:
+\placeformula[eq:evenshorter]
+\startformula
+xxxxxxxxxxxx=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+\stopformula
+
+If the equation numbers are set to the left, it is common practice to put the equation number \emph{above} the equation instead in case it is needed. Except for that, the same rules apply.
+
+\setupformula[location=left]
+
+This one goes into the first category:
+\placeformula[eq:long]
+\startformula
+xxxxxxxxxxxx=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+\stopformula
+
+This one also goes into the first category:
+\placeformula[eq:notsolong]
+\startformula
+xxxxxxxxxxxx=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+\stopformula
+
+This one goes into the second category:
+\placeformula[eq:evenshorter]
+\startformula
+xxxxxxxxxxxx=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+\stopformula
+
+
+
+This one goes into the third category:
+\placeformula[eq:evenshorter]
+\startformula
+xxxxxxxxxxxx=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+\stopformula
+
+
+
+\stoptext

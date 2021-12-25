@@ -1,0 +1,17 @@
+\starttext
+
+    \setbox\scratchbox\vbox{\samplefile{ward}}
+    \localcontrolledloop \plusone \boxlines\scratchbox \plusone {
+        \boxlineht\scratchbox\currentloopiterator 4pt
+        \boxlinedp\scratchbox\currentloopiterator 2pt
+        \boxline  \scratchbox\currentloopiterator
+    }
+
+    \setbox\scratchbox\vbox{\samplefile{ward}}
+    \dorecurse{\boxlines\scratchbox} {
+        \boxlineht\scratchbox\recurselevel\space 4pt
+        \boxlinedp\scratchbox\recurselevel\space 2pt
+        \boxline  \scratchbox#1
+    }
+
+\stoptext

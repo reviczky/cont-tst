@@ -3,8 +3,8 @@
 <!--
 
     input filename   : simple-001
-    processing date  : 2021-11-29 22:56:16+01:00
-    context version  : 2021.11.26 11:38
+    processing date  : 2021-12-24 14:46:23+01:00
+    context version  : 2021.12.14 19:19
     exporter version : 0.35
 
 -->
@@ -12,58 +12,3 @@
 <?xml-stylesheet type="text/css" href="styles/simple-001-defaults.css" ?>
 <?xml-stylesheet type="text/css" href="styles/simple-001-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/simple-001-styles.css" ?>
-
-<document context="2021.11.26 11:38" date="2021-11-29 22:56:16+01:00" file="simple-001" language="en" title="simple-001" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
- <section detail="chapter" chain="chapter" level="2">
-  <sectioncaption>
-   <sectionnumber>1</sectionnumber>
-   <sectiontitle>First Chapter</sectiontitle>
-  </sectioncaption>
-  <sectioncontent>
-   <section detail="section" chain="section" level="3">
-    <sectioncaption>
-     <sectionnumber>1.1</sectionnumber>
-     <sectiontitle>First Section</sectiontitle>
-    </sectioncaption>
-    <sectioncontent>
-The Earth, as a habitat for animal life, is in old age and has a fatal illness. Several, in fact. It would be happening whether humans had ever evolved or not. But our presence is like the effect of an old-age patient who smokes many packs of cigarettes per day<subsentencesymbol symbol="middle">—</subsentencesymbol>and we humans are the cigarettes.
-     <break/>
-test <highlight detail="whatever">test</highlight> test
-     <break/>
-We thrive in information--thick worlds because of our marvelous and everyday ca­pacity to select, edit, single out, structure, highlight, group, pair, merge, harmo­nize, synthesize, focus, organize, condense, reduce, boil down, choose, categorize, catalog, classify, list, abstract, scan, look into, idealize, isolate, discriminate, dis­tinguish, screen, pigeonhole, pick over, sort, integrate, blend, inspect, filter, lump, skip, smooth, chunk, average, approximate, cluster, aggregate, outline, summarize, itemize, review, dip into, flip through, browse, glance into, leaf through, skim, re­fine, enumerate, glean, synopsize, winnow the wheat from the chaff and separate the sheep from the goats.
-     <itemgroup detail="itemize" chain="itemize" level="1" symbol="1">
-      <item>
-       <itemtag>•</itemtag>
-       <itemcontent>test</itemcontent>
-      </item>
-     </itemgroup>
-     <formula>
-      <formulacontent n="1">
-       <m:math display="block">
-        <m:mrow>
-         <m:mi>𝑒</m:mi>
-         <m:mo>=</m:mo>
-         <m:msqrt>
-          <m:mrow>
-           <m:mi>𝑚</m:mi>
-           <m:msup>
-            <m:mi>𝑐</m:mi>
-            <!-- begin m:mrow -->
-             <m:mn>2</m:mn>
-            <!-- end m:mrow -->
-           </m:msup>
-          </m:mrow>
-         </m:msqrt>
-        </m:mrow>
-       </m:math>
-      </formulacontent>
-     </formula>
-     <float detail="figure" chain="figure" method="here">
-      <floatcontent><image height="3.052cm" id="image-1" label="3.052cm" name="cow.pdf" width="4.070cm"></image></floatcontent>
-      <floatcaption><floatlabel detail="figure">Figure </floatlabel><floatnumber detail="figure">1.1</floatnumber> <floattext>cow</floattext></floatcaption>
-     </float>
-    </sectioncontent>
-   </section>
-  </sectioncontent>
- </section>
-</document>

@@ -3,8 +3,8 @@
 <!--
 
     input filename   : spaces-001
-    processing date  : 2021-11-29 22:56:18+01:00
-    context version  : 2021.11.26 11:38
+    processing date  : 2021-12-24 14:46:24+01:00
+    context version  : 2021.12.14 19:19
     exporter version : 0.35
 
 -->
@@ -12,20 +12,3 @@
 <?xml-stylesheet type="text/css" href="styles/spaces-001-defaults.css" ?>
 <?xml-stylesheet type="text/css" href="styles/spaces-001-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/spaces-001-styles.css" ?>
-
-<document context="2021.11.26 11:38" date="2021-11-29 22:56:18+01:00" file="spaces-001" language="en" title="spaces-001" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
-nop: [one] [two]
- <break/>
-nop: [one] [two]
- <break/>
-nop: [one] [two]
- <break/>
-nop: [one] [two]
- <break/>
-yes: [one] [two]
- <break/>
-yes: [one] [two]
- <break/>
-nop: [one][two]
- <break/>
-yes: [one] [two]</document>

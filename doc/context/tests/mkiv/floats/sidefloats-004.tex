@@ -27,9 +27,9 @@
 
 \setupheadertexts[width=\measure{MyWidth},height=\measure{MyHeight}]
 
-\dostepwiserecurse {\number\dimexpr3cm} {\number\dimexpr4cm} {\number\dimexpr0.25cm} {
+\dostepwiserecurse {\dimexpr3cm\relax} {\dimexpr4cm\relax} {\dimexpr0.25cm\relax} {
     \definemeasure[MyWidth][#1sp]
-    \dostepwiserecurse {\number\dimexpr3cm} {\number\dimexpr4cm} {\number\dimexpr0.25cm} {
+    \dostepwiserecurse {\dimexpr3cm\relax} {\dimexpr4cm\relax} {\dimexpr0.25cm\relax} {
         \definemeasure[MyHeight][##1sp]
         \start
             \setupwhitespace[none]

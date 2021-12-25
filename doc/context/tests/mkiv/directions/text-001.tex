@@ -1,0 +1,20 @@
+\setupdelimitedtext
+  [blockquote]
+  [leftmargin=1.5em,
+   rightmargin=0em]
+
+\starttext
+
+\input knuth
+
+\startblockquote
+    \input knuth
+\stopblockquote
+
+\startblockquote
+    \rtltext{\input{knuth}}
+\stopblockquote
+
+\input knuth
+
+\stoptext

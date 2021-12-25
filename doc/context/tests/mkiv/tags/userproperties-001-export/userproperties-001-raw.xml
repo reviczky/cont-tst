@@ -3,8 +3,8 @@
 <!--
 
     input filename   : userproperties-001
-    processing date  : 2021-11-29 22:56:27+01:00
-    context version  : 2021.11.26 11:38
+    processing date  : 2021-12-24 14:46:33+01:00
+    context version  : 2021.12.14 19:19
     exporter version : 0.35
 
 -->
@@ -12,14 +12,3 @@
 <?xml-stylesheet type="text/css" href="styles/userproperties-001-defaults.css" ?>
 <?xml-stylesheet type="text/css" href="styles/userproperties-001-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/userproperties-001-styles.css" ?>
-
-<document context="2021.11.26 11:38" date="2021-11-29 22:56:27+01:00" file="userproperties-001" language="en" title="userproperties-001" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
- <section detail="chapter" chain="chapter" level="2">
-  <sectioncaption>
-   <sectionnumber>1</sectionnumber>
-   <sectiontitle user_elementname="head">First Chapter</sectiontitle>
-  </sectioncaption>
-  <sectioncontent>
-(sectioncontent)  </sectioncontent>
- </section>
-</document>

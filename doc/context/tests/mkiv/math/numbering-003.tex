@@ -1,0 +1,28 @@
+% The problematic part here is the location=top and the number on the second row.
+% To put it into context (sic) we give a formula before the problematic one,
+% showing how it is meant to be used.
+
+
+\starttext
+Without \type{align=top}:
+\placeformula[eq:one]
+\startformula
+\startalign
+\NC xxxxx \NC = xxxx \NR
+\NC       \NC = xxxxxxxxxx\NR[+]
+\stopalign
+\stopformula
+
+With \type{align=top}:
+\startformula
+xxxx = xxxxxxxxxxxxxxxxx
+\stopformula
+and\blank[force,overlay]
+\placeformula[eq:two]
+\startformula
+\startalign[location=top]
+\NC xxxxx \NC = xxxx \NR
+\NC       \NC = xxxxxxxxxx\NR[+]
+\stopalign
+\stopformula
+\stoptext

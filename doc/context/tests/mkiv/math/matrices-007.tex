@@ -1,0 +1,49 @@
+\continuewhenlmtxmode
+
+\starttext
+
+\definemathmatrix [Pmatrix] [matrix:parentheses]
+    [align={all:right},simplecommand=Pmatrix]
+\definemathmatrix [Tmatrix] [Pmatrix]
+    [action=transpose,simplecommand=Tmatrix]
+\definemathmatrix [Nmatrix] [Pmatrix]
+    [action=negate,simplecommand=Nmatrix]
+\definemathmatrix [Xmatrix] [Pmatrix]
+    [action={transpose,negate},simplecommand=Xmatrix]
+\definemathmatrix [Smatrix] [Pmatrix]
+    [action={transpose,{scale,2}},simplecommand=Smatrix]
+
+\startformula
+    \Pmatrix{ -1, 2, 3; 4,-5, 6; 7, 8,-9 } \neq
+    \Tmatrix{ -1, 2, 3; 4,-5, 6; 7, 8,-9 } \neq
+    \Nmatrix{ -1, 2, 3; 4,-5, 6; 7, 8,-9 } \neq
+    \Xmatrix{ -1, 2, 3; 4,-5, 6; 7, 8,-9 }
+\stopformula
+
+\startformula
+    \Pmatrix{ -1, 2, 3; 4,-5, 6; 7, 8,-9 } \neq
+    \Smatrix{ -1, 2, 3; 4,-5, 6; 7, 8,-9 }
+\stopformula
+
+\startluacode
+    mathematics.registersimplematrix("mikael",function(m)
+        local s = string.split("mikael")
+        for i=1,#m do
+            local mi = m[i]
+            for j=1,#mi do
+                mi[j] = math.random(1,10) * mi[j]
+            end
+        end
+        return m
+    end)
+\stopluacode
+
+\definemathmatrix [Mmatrix] [Pmatrix]
+    [action={mikael},simplecommand=Mmatrix]
+
+\startformula
+    \Mmatrix{ -1, 2, 3; 4,-5, 6; 7, 8,-9 } \neq
+    \Mmatrix{ -1, 2, 3; 4,-5, 6; 7, 8,-9 }
+\stopformula
+
+\stoptext

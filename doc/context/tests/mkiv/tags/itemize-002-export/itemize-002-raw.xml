@@ -3,8 +3,8 @@
 <!--
 
     input filename   : itemize-002
-    processing date  : 2021-11-29 22:56:12+01:00
-    context version  : 2021.11.26 11:38
+    processing date  : 2021-12-24 14:46:19+01:00
+    context version  : 2021.12.14 19:19
     exporter version : 0.35
 
 -->
@@ -12,32 +12,3 @@
 <?xml-stylesheet type="text/css" href="styles/itemize-002-defaults.css" ?>
 <?xml-stylesheet type="text/css" href="styles/itemize-002-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/itemize-002-styles.css" ?>
-
-<document context="2021.11.26 11:38" date="2021-11-29 22:56:12+01:00" file="itemize-002" language="en" title="itemize-002" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
- <itemgroup detail="itemize" chain="itemize" level="1" symbol="n">
-  <item kind="head">
-   <itemtag>1.</itemtag>
-   <itemcontent><itemhead>Head 1</itemhead><itembody>Test 1</itembody></itemcontent>
-  </item>
-  <item kind="head">
-   <itemtag>2.</itemtag>
-   <itemcontent><itemhead>Head 2</itemhead><itembody>Test 2</itembody></itemcontent>
-  </item>
-  <item>
-   <itemtag>3.</itemtag>
-   <itemcontent>Test 3</itemcontent>
-  </item>
-  <item kind="symbol">
-   <itemtag>!!!</itemtag>
-   <itemcontent>Test 3</itemcontent>
-  </item>
-  <item kind="sub">
-   <itemtag>3.</itemtag>
-   <itemcontent>Test 4</itemcontent>
-  </item>
-  <item kind="margin">
-   <itemtag>4.</itemtag>
-   <itemcontent>Test 5</itemcontent>
-  </item>
- </itemgroup>
-</document>

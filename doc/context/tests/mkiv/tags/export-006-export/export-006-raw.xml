@@ -3,8 +3,8 @@
 <!--
 
     input filename   : export-006
-    processing date  : 2021-11-29 22:56:07+01:00
-    context version  : 2021.11.26 11:38
+    processing date  : 2021-12-24 14:46:15+01:00
+    context version  : 2021.12.14 19:19
     exporter version : 0.35
 
 -->
@@ -12,12 +12,3 @@
 <?xml-stylesheet type="text/css" href="styles/export-006-defaults.css" ?>
 <?xml-stylesheet type="text/css" href="styles/export-006-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/export-006-styles.css" ?>
-
-<document context="2021.11.26 11:38" date="2021-11-29 22:56:07+01:00" file="export-006" language="en" title="export-006" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
- <lines detail="lines" chain="lines">
-  <line>‌   test  test test</line>
-  <line>‌  test  test test</line>
-  <line>‌ test  test test</line>
-  <line>test  test test</line>
- </lines>
-</document>
