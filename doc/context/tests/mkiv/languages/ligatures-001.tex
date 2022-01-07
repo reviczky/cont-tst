@@ -1,0 +1,22 @@
+\startluacode
+    local demo = {
+        name    = "demo",
+        options = {
+            {
+                patterns = {
+                    fio  = "f|io",
+                },
+                words = [[ fioot fiots ]],
+            },
+        },
+    }
+    table.save("oeps-fixes.llg",demo)
+\stopluacode
+
+\setuplanguage[en][goodies={oeps-fixes.llg}]
+
+\setupbodyfont[ebgaramond]
+
+\starttext
+    fiets fiots fiats fioot
+\stoptext

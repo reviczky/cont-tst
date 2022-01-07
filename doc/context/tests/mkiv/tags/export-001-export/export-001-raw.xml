@@ -3,8 +3,8 @@
 <!--
 
     input filename   : export-001
-    processing date  : 2021-12-24 14:46:11+01:00
-    context version  : 2021.12.14 19:19
+    processing date  : 2021-12-30 18:57:54+01:00
+    context version  : 2021.12.25 00:58
     exporter version : 0.35
 
 -->
@@ -12,3 +12,6 @@
 <?xml-stylesheet type="text/css" href="styles/export-001-defaults.css" ?>
 <?xml-stylesheet type="text/css" href="styles/export-001-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/export-001-styles.css" ?>
+
+<document context="2021.12.25 00:58" date="2021-12-30 18:57:54+01:00" file="export-001" language="en" title="export-001" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+Hello world! () (❖) (❖) (❖)</document>

@@ -1,0 +1,22 @@
+% see mail by Hans Åberg on list
+
+\protected\def\FancySuperscript#1⁾{\superscript{#1}}
+\protected\def\FancySubscript  #1₎{\subscript  {#1}}
+
+\protected\def\FancyScripts
+ {\catcode`⁽=\activecatcode\letcharcode`⁽=\FancySuperscript
+  \catcode`₍=\activecatcode\letcharcode`₍=\FancySubscript}
+
+\appendtoks
+   \FancyScripts
+\to \everymathematics
+
+\starttext
+
+Course-of-values induction:
+
+  \startformula
+  𝜞 ⊢ 𝑷(0); 𝜞, 𝒚 ≤ 𝒙 ⇒ 𝑷(𝒚) ⊢⁽𝒚⁾₍𝒙₎ 𝑷(s(𝒙)) ⊩ 𝜞 ⊢ 𝑷(𝒕)
+  \stopformula
+
+\stoptext

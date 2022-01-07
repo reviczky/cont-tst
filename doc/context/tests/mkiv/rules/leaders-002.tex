@@ -1,0 +1,43 @@
+\continuewhenlmtxmode
+
+\starttext
+
+\frule
+    width  10cm
+    height  2cm
+    depth   1cm
+    line    1pt
+    radius  3mm
+\relax x
+
+test \leaders \hrule height 1mm \hfill test
+
+test \leaders \frule height 6mm depth 3mm radius 1mm\hfill test
+
+\startuseMPgraphic{demoleader}
+    fill
+        unitcircle xysized (RuleWidth,RuleHeight+RuleDepth)
+        withcolor RuleColor ;
+\stopuseMPgraphic
+
+test {\red \leaders \frule
+    height 6mm
+    depth  3mm
+    type    mp
+    data    {\includeMPgraphic{demoleader}}
+\hfill} test
+
+\startuseMPgraphic{demoleader}
+    drawdblarrow (0,RuleHeight) -- (RuleWidth,RuleHeight)
+        withpen pencircle scaled  RuleThickness
+        withcolor RuleColor ;
+\stopuseMPgraphic
+
+test {\red \leaders \frule
+    height  1mm % we need at least some dimensions
+    type    mp
+    line    1mm
+    data    {\includeMPgraphic{demoleader}}
+\hfill} test
+
+\stoptext
