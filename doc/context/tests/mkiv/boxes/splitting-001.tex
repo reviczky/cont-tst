@@ -1,0 +1,41 @@
+\starttext
+
+\showboxes
+
+\def\Test#1{%
+    \par
+    \setbox0\hbox{\samplefile{tufte}}
+%    \setbox0\hbox{\righttoleft\samplefile{tufte}\removeunwantedspaces}
+    \dontleavehmode
+    \strut\llap{{\infofont #1}\quad}\blackrule[width=#1]
+    \par
+    \doloop {
+        \ifvoid0\relax
+            \exitloop
+        \else
+            \hsplit0 to #1 depth \strutdp height \strutht shrinkcriterium 1000
+        \par
+        \fi
+    }
+    \page
+}
+
+\dostepwiserecurse {100} {120} {1} {
+    \Test{#1mm}
+}
+
+\def\Test#1{%
+    \par
+    \setbox0\hbox{\samplefile{tufte}}
+    \dontleavehmode
+    \strut\llap{{\infofont #1}\quad}\blackrule[width=#1]
+    \par
+    \hsplit0 to #1 depth \strutdp height \strutht shrinkcriterium 1000
+    \par
+}
+
+\dostepwiserecurse {100} {120} {1} {
+    \Test{#1mm}
+}
+
+\stoptext

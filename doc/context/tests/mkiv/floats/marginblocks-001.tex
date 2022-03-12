@@ -1,0 +1,40 @@
+\setuplayout
+  [backspace=4cm,
+   leftmarginwidth=2cm]
+
+\setupmarginblocks
+  [location=left,
+   width=\leftmarginwidth,
+   top=\vfilll,
+   bottom=]
+
+\definemarginblock[demoblock][state=start]
+
+\definefloat
+  [marginfigure]
+  [figure]
+  [default=margin]
+
+% \showframe
+
+\starttext
+
+    \dorecurse{10}{
+        \startplacemarginfigure[reference=#1]
+            \framed[width=\leftmarginwidth,height=5cm,background=color,backgroundcolor=darkyellow]{#1}
+        \stopplacemarginfigure
+        See \in[#1].
+        \samplefile{tufte}
+    }
+
+%     \dorecurse{10}{
+%         \startmarginblock[demoblock]
+%             \framed[width=\leftmarginwidth,height=5cm,background=color,backgroundcolor=darkyellow]{#1}
+%         \stopmarginblock
+%         See \in[#1].
+%         \samplefile{tufte}
+%     }
+
+\flushallmarginblocks[1]
+
+\stoptext

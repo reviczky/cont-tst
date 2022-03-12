@@ -1,0 +1,117 @@
+\showframe
+% \showboxes
+
+\setupsynchronize [paralleltext] [color=darkblue]
+% \setupsynchronize [paralleltext] [style=\tx,color=darkred]
+% \setupsynchronize [paralleltext] [style=\txx,color=darkgreen]
+
+\starttext
+
+\dorecurse{10}{%
+    \paralleltext
+        {[een allereerste zinnetje]}
+        {[een tweede      zinnetje]}%
+    \space
+    \paralleltext
+        {[een derde zin]}
+        {[een vierde zinnetje]}
+    \space
+} \removeunwantedspaces
+\par test line \page
+
+\paralleltext
+    {[\ignorespaces\samplefile{tufte}\removeunwantedspaces]}
+    {[\samplefile{ward}\removeunwantedspaces]}%
+\par test line \page
+
+\paralleltext
+    {[\ignorespaces\samplefile{tufte}\removeunwantedspaces]}
+    {[\ignorespaces\samplefile{tufte}\removeunwantedspaces]}%
+\par test line \page
+
+\paralleltext
+    {[\ignorespaces\samplefile{ward}\removeunwantedspaces]}%
+    {[\ignorespaces\samplefile{tufte}\removeunwantedspaces]}
+\par test line \page
+
+\setupsynchronize [paralleltext] [style=\tx,color=darkred]
+
+\startbuffer[en]
+    This is an english text and
+    this is also something english;
+    as is this.
+    Not that there is much meaning in it.
+\stopbuffer
+
+\startbuffer[nl]
+    Dit is een nederlandse tekst
+    en dit is ook wat nederlands;
+    net als dit.
+    Niet dat het veel te betekenen heeft.
+\stopbuffer
+
+\definesynchronizecontent
+  [nl]
+  [language=nl,
+   color=darkred]
+
+\definesynchronizecontent
+  [en]
+  [language=en,
+   color=darkgreen]
+
+\definesynchronize
+  [parallel-en-nl]
+  [list={en,nl}]
+
+\placesynchronize
+  [parallel-en-nl]
+  [buffer={en,nl}]
+
+\blank
+
+\placesynchronize
+  [parallel-en-nl]
+  [split={.},
+   text={
+    {This is an english text and this is also something english; as is this. Not that there is much meaning in it.},
+    {Dit is een nederlandse tekst en dit is ook wat nederlands; net als dit. Niet dat het veel te betekenen heeft.}
+   }]
+
+\blank
+
+\placesynchronize
+  [parallel-en-nl]
+  [split={.},
+   text={
+    {
+        {This is an english text and this is also something english;},
+        {as is this.},
+        {Not that there is much meaning in it.}
+    },
+    {
+        {Dit is een nederlandse tekst en dit is ook wat nederlands;},
+        {net als dit.},
+        {Niet dat het veel te betekenen heeft.}
+    }
+   }]
+
+\enabletrackers[synchronize]
+
+
+\setupsynchronizecontent
+  [nl]
+  [language=nl,
+   style=\tx,
+   left={[},
+   right={]},
+   color=darkblue]
+
+\placesynchronize
+  [parallel-en-nl]
+  [distance=1pt,
+   buffer={en,nl}]
+
+\blank
+
+\stoptext

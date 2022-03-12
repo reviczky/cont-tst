@@ -3,8 +3,8 @@
 <!--
 
     input filename   : simple-001
-    processing date  : 2021-12-30 18:58:07+01:00
-    context version  : 2021.12.25 00:58
+    processing date  : 2022-03-10 19:21:55+01:00
+    context version  : 2022.03.10 17:22
     exporter version : 0.35
 
 -->
@@ -13,7 +13,7 @@
 <?xml-stylesheet type="text/css" href="styles/simple-001-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/simple-001-styles.css" ?>
 
-<document context="2021.12.25 00:58" date="2021-12-30 18:58:07+01:00" file="simple-001" language="en" title="simple-001" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+<document context="2022.03.10 17:22" date="2022-03-10 19:21:55+01:00" file="simple-001" language="en" title="simple-001" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
  <section detail="chapter" chain="chapter" level="2">
   <sectioncaption>
    <sectionnumber>1</sectionnumber>
@@ -41,7 +41,7 @@ We thrive in information--thick worlds because of our marvelous and everyday caÂ
       <formulacontent n="1">
        <m:math display="block">
         <m:mrow>
-         <m:mi>ğ‘’</m:mi>
+         <m:mo>ğ‘’</m:mo>
          <m:mo>=</m:mo>
          <m:msqrt>
           <m:mrow>
@@ -49,7 +49,7 @@ We thrive in information--thick worlds because of our marvelous and everyday caÂ
            <m:msup>
             <m:mi>ğ‘</m:mi>
             <!-- begin m:mrow -->
-             <m:mn>2</m:mn>
+             <m:mo>2</m:mo>
             <!-- end m:mrow -->
            </m:msup>
           </m:mrow>

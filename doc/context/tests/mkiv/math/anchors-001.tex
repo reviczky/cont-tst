@@ -1,0 +1,41 @@
+\startTEXpage [offset=1dk,width=30dk] \setupwhitespace[big]
+
+    \defineboxanchor[test]
+
+    \setboxanchor
+      [test]
+      [corner=depth,location=height,yoffset=-.25ex]
+      \hbox to \zeropoint{\darkblue\hss\mathindexfont\ruledhbox{F}\hss}
+
+    $ \frac [source=test]{a}{b}^1_2^^3__4 $
+
+    \defineboxanchor[test]
+
+    \setboxanchor
+      [test]
+      [corner=depth,location=height,yoffset=-.25ex]
+      \hbox to \zeropoint{\darkblue\hss\mathindexfont\ruledhbox{S}\hss}
+
+    $ \sqrt [source=test][3]{b}^1_2^^3__4 $
+
+    \defineboxanchor[left]
+    \defineboxanchor[right]
+
+    \setboxanchor
+      [left]
+      [corner={left,bottom},location=height,xoffset=.5em,yoffset=-.25ex]
+      \hbox to \zeropoint{\darkblue\hss\mathindexfont\ruledhbox{L}\hss}
+
+    \setboxanchor
+      [right]
+      [corner={right,bottom},location=height,xoffset=-.5em,yoffset=-.25ex]
+      \hbox to \zeropoint{\darkblue\hss\mathindexfont\ruledhbox{R}\hss}
+
+    $
+      \fenced
+        [parenthesis]
+        [leftsource=left,rightsource=right,factor=force,height=5mm,depth=5mm]
+        {1+x}^1_2^^3__4
+    $
+
+\stopTEXpage

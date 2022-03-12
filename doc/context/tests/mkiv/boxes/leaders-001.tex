@@ -1,0 +1,38 @@
+\showframe
+
+\starttext
+
+\definecolor[tred]  [r=.6,a=1,t=.5]
+\definecolor[tgreen][g=.6,a=1,t=.5]
+\definecolor[tblue] [b=.6,a=1,t=.5]
+
+\startbuffer[one]
+    x xx xxx xxxx
+    \ruledhbox{L\hss R}\space
+    x xx xxx xxxx
+\stopbuffer
+
+\startbuffer[two]
+    x xx xxx xxxx
+    \uleaders\backgroundhbox[gray]{L\hss R}\hskip\zeropoint plus 100pt\relax\space
+    x xx xxx xxxx
+\stopbuffer
+
+\startbuffer[three]
+    x xx xxx xxxx
+    \uleaders\ruledhbox{L\hss R}\hskip\zeropoint plus 100pt\relax\space
+    x xx xxx xxxx
+\stopbuffer
+
+% so we let the box virtually stretch upto 100pt and afterwards we repackage
+
+\startoverlay
+    {\vbox{\color[tgreen]{\small\dorecurse {20} {\getbuffer[three]}}}}
+    {\vbox{\color[tblue] {\small\dorecurse {20} {\getbuffer  [two]}}}}
+    {\vbox{\color[tred]  {\small\dorecurse {20} {\getbuffer  [one]}}}}
+\stopoverlay
+
+% \showmakeup[glue]
+% test test $x + 1$ test test
+
+\stoptext

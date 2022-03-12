@@ -1,15 +1,50 @@
+% \enableexperiments[fonts.compact]
+% \enabletrackers[fonts.defining]
+
+\environment reference-000
+
+\startbuffer[accents]
+    $+\bar{u}\bar{f}\bar{\Omega}$
+    $\overbar{u}\overbar{f}\overbar{\Omega}$
+    $\overline{u}\overline{f}\overline{\Omega}$
+    \blank
+    $\dot{u}\dot{f}\dot{\Omega}$
+    $\hat{u}\hat{f}\hat{\Omega}$
+    $\tilde{u}\tilde{f}\tilde{\Omega}$
+    \blank
+    $\ddot{u}\ddot{f}\ddot{\Omega}$
+    $\widehat{u}\widehat{f}\widehat{\Omega}$
+    $\widetilde{u}\widetilde{f}\widetilde{\Omega}$
+\stopbuffer
+
+\def\Sample#1%
+  {\setupbodyfont[#1]
+   \startTEXpage[offset=10pt]
+     \getbuffer[accents]
+   \stopTEXpage}
+
 \starttext
 
-    $ \hat{H}  \ruledhbox{$\widehat{H}$}  \ruledhbox{$H$}  \widehat{H} $
+% \Sample{asana}
+\Sample{bonum}
+% \Sample{cambria}
+% \Sample{concrete}
+\Sample{dejavu}
+% \Sample{ebgaramond}
+% \Sample{erewhon}
+% \Sample{kpfonts}
+% \Sample{libertinus}
+% \Sample{lucidadk}
+\Sample{modern}
+% \Sample{modernlatin}
+% \Sample{newcomputermodern}
+% \Sample{newcomputermodern-book}
+\Sample{pagella}
+\Sample{termes}
+\Sample{schola}
+% \Sample{stixtwo}
+% \Sample{xits}
 
-    \definemathoverextensible [top] [hoed]  ["FE302]
-    \definemathoverextensible [top] [slang] ["FE303]
-
-    $ \hoed{H}  \ruledhbox{$\hoed{\tf H}$}  \slang{H} $
-
-    \definemathaccents   [myaccents] [color=darkred]
-    \definemathtopaccent [myaccents] [mywidehat] ["0302]
-
-    $ \hat{H}  \widehat{H}  \mywidehat{H} $
+\stoptext
 
 \stoptext

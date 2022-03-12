@@ -3,8 +3,8 @@
 <!--
 
     input filename   : bold-002
-    processing date  : 2021-12-30 18:46:20+01:00
-    context version  : 2021.12.25 00:58
+    processing date  : 2022-03-10 18:59:40+01:00
+    context version  : 2022.03.10 17:22
     exporter version : 0.35
 
 -->
@@ -13,15 +13,15 @@
 <?xml-stylesheet type="text/css" href="styles/bold-002-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/bold-002-styles.css" ?>
 
-<document context="2021.12.25 00:58" date="2021-12-30 18:46:20+01:00" file="bold-002" language="en" title="bold-002" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
-<m:math display="inline"><m:mrow><m:msqrt><m:mrow><m:msup><m:mi>𝑥</m:mi><!-- begin m:mrow --><m:mn>2</m:mn><!-- end m:mrow --></m:msup></m:mrow></m:msqrt><m:msqrt><m:mrow><m:msup><m:mi>𝐱</m:mi><!-- begin m:mrow --><m:mi>𝟐</m:mi><!-- end m:mrow --></m:msup></m:mrow></m:msqrt></m:mrow></m:math>
+<document context="2022.03.10 17:22" date="2022-03-10 18:59:40+01:00" file="bold-002" language="en" title="bold-002" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+<m:math display="inline"><m:mrow><m:msqrt><m:mrow><m:msup><m:mi>𝑥</m:mi><!-- begin m:mrow --><m:mo>2</m:mo><!-- end m:mrow --></m:msup></m:mrow></m:msqrt><m:msqrt><m:mrow><m:msup><m:mi>𝐱</m:mi><!-- begin m:mrow --><m:mi>𝟐</m:mi><!-- end m:mrow --></m:msup></m:mrow></m:msqrt></m:mrow></m:math>
  <break/>
-<m:math display="inline"><m:mrow><m:msqrt><m:mrow><m:msup><m:mi>𝑥</m:mi><!-- begin m:mrow --><m:mn>2</m:mn><!-- end m:mrow --></m:msup></m:mrow></m:msqrt><m:msqrt><m:mrow><m:msup><m:mi>𝑥</m:mi><!-- begin m:mrow --><m:mn>2</m:mn><!-- end m:mrow --></m:msup></m:mrow></m:msqrt></m:mrow></m:math>
+<m:math display="inline"><m:mrow><m:msqrt><m:mrow><m:msup><m:mi>𝑥</m:mi><!-- begin m:mrow --><m:mo>2</m:mo><!-- end m:mrow --></m:msup></m:mrow></m:msqrt><m:msqrt><m:mrow><m:msup><m:mi>𝑥</m:mi><!-- begin m:mrow --><m:mo>2</m:mo><!-- end m:mrow --></m:msup></m:mrow></m:msqrt></m:mrow></m:math>
  <break/>
-<m:math display="inline"><m:mrow><m:msqrt><m:mrow><m:msup><m:mi>𝑥</m:mi><!-- begin m:mrow --><m:mn>2</m:mn><!-- end m:mrow --></m:msup></m:mrow></m:msqrt><m:mrow><m:mi>𝜶</m:mi><m:mi>𝜎</m:mi><m:mi>𝜌</m:mi><m:mi>𝒙</m:mi></m:mrow><m:msqrt><m:mrow><m:msup><m:mi>𝑥</m:mi><!-- begin m:mrow --><m:mn>2</m:mn><!-- end m:mrow --></m:msup></m:mrow></m:msqrt></m:mrow></m:math>
+<m:math display="inline"><m:mrow><m:msqrt><m:mrow><m:msup><m:mi>𝑥</m:mi><!-- begin m:mrow --><m:mo>2</m:mo><!-- end m:mrow --></m:msup></m:mrow></m:msqrt><m:mrow><m:mi>𝜶</m:mi><m:mi>𝜎</m:mi><m:mi>𝜌</m:mi><m:mi>𝒙</m:mi></m:mrow><m:msqrt><m:mrow><m:msup><m:mi>𝑥</m:mi><!-- begin m:mrow --><m:mo>2</m:mo><!-- end m:mrow --></m:msup></m:mrow></m:msqrt></m:mrow></m:math>
  <break/>
-<m:math display="inline"><m:mrow><m:msqrt><m:mrow><m:msup><m:mi>𝑥</m:mi><!-- begin m:mrow --><m:mn>2</m:mn><!-- end m:mrow --></m:msup></m:mrow></m:msqrt><m:msqrt><m:mrow><m:msup><m:mi>𝐱</m:mi><!-- begin m:mrow --><m:mn>2</m:mn><!-- end m:mrow --></m:msup></m:mrow></m:msqrt></m:mrow></m:math>
+<m:math display="inline"><m:mrow><m:msqrt><m:mrow><m:msup><m:mi>𝑥</m:mi><!-- begin m:mrow --><m:mo>2</m:mo><!-- end m:mrow --></m:msup></m:mrow></m:msqrt><m:msqrt><m:mrow><m:msup><m:mi>𝐱</m:mi><!-- begin m:mrow --><m:mo>2</m:mo><!-- end m:mrow --></m:msup></m:mrow></m:msqrt></m:mrow></m:math>
  <break/>
-<m:math display="inline"><m:mrow><m:msqrt><m:mrow><m:msup><m:mi>𝑥</m:mi><!-- begin m:mrow --><m:mn>2</m:mn><!-- end m:mrow --></m:msup></m:mrow></m:msqrt><m:msqrt><m:mrow><m:msup><m:mi>𝑥</m:mi><!-- begin m:mrow --><m:mn>2</m:mn><!-- end m:mrow --></m:msup></m:mrow></m:msqrt></m:mrow></m:math>
+<m:math display="inline"><m:mrow><m:msqrt><m:mrow><m:msup><m:mi>𝑥</m:mi><!-- begin m:mrow --><m:mo>2</m:mo><!-- end m:mrow --></m:msup></m:mrow></m:msqrt><m:msqrt><m:mrow><m:msup><m:mi>𝑥</m:mi><!-- begin m:mrow --><m:mo>2</m:mo><!-- end m:mrow --></m:msup></m:mrow></m:msqrt></m:mrow></m:math>
  <break/>
-<m:math display="inline"><m:mrow><m:msqrt><m:mrow><m:msup><m:mi>𝑥</m:mi><!-- begin m:mrow --><m:mn>2</m:mn><!-- end m:mrow --></m:msup></m:mrow></m:msqrt><m:msqrt><m:mrow><m:msup><m:mi>𝑥</m:mi><!-- begin m:mrow --><m:mn>2</m:mn><!-- end m:mrow --></m:msup></m:mrow></m:msqrt></m:mrow></m:math></document>
+<m:math display="inline"><m:mrow><m:msqrt><m:mrow><m:msup><m:mi>𝑥</m:mi><!-- begin m:mrow --><m:mo>2</m:mo><!-- end m:mrow --></m:msup></m:mrow></m:msqrt><m:msqrt><m:mrow><m:msup><m:mi>𝑥</m:mi><!-- begin m:mrow --><m:mo>2</m:mo><!-- end m:mrow --></m:msup></m:mrow></m:msqrt></m:mrow></m:math></document>

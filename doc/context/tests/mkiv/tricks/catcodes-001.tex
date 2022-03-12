@@ -1,0 +1,31 @@
+\defineblock[MyBlock]
+\keepblocks[MyBlock]
+
+\starttext
+
+Don't do this unless you know what you deal with. There are often better ways.
+
+\tolerant\def\startMyCommand[#1]%
+  {\begingroup
+   \setcatcodetable\notcatcodes
+   \dostartMyCommand[#1]}
+
+\let\stopMyCommand\relax
+
+%normalexpanded{\def\noexpand\dostartMyCommand[#1]#2\expandtoken\notcatcodes92 stopMyCommand}%
+\normalexpanded{\def\noexpand\dostartMyCommand[#1]#2\retokenized\notcatcodes {\stopMyCommand}}%
+  {\endgroup
+   % whatever #1 does
+   \setbuffer[foo]#2\endbuffer
+   \typebuffer[foo]
+   \getbuffer[foo]}
+
+\startMyCommand[optional={Maybe}]
+
+\beginMyBlock
+bla bla
+\endMyBlock
+
+\stopMyCommand
+
+\stoptext

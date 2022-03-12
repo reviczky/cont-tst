@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <!-- This export file is used for filtering runtime only! -->
 
-<document context="2021.12.25 00:58" date="2021-12-30 18:43:37+01:00" file="embedding-001" language="en" title="embedding-001" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+<document context="2022.03.10 17:22" date="2022-03-10 18:54:39+01:00" file="embedding-001" language="en" title="embedding-001" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
  <publications detail="default">
   <list detail="btx">
    <listitem detail="btx-default">
@@ -15,13 +15,13 @@ Agriculture is a fairly recent human invention, and in many ways it was one of t
   <formulacontent n="1">
    <m:math display="block">
     <m:mrow>
-     <m:mi>𝑒</m:mi>
+     <m:mo>𝑒</m:mo>
      <m:mo>=</m:mo>
      <m:mi>𝑚</m:mi>
      <m:msup>
       <m:mi>𝑐</m:mi>
       <!-- begin m:mrow -->
-       <m:mn>2</m:mn>
+       <m:mo>2</m:mo>
       <!-- end m:mrow -->
      </m:msup>
     </m:mrow>

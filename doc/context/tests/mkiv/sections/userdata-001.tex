@@ -1,0 +1,77 @@
+% posted by WS on the list
+
+\setuplist
+  [section]
+  [textcommand=\SectionTocEntry,
+         after=\blank]
+
+\define[1]\SectionTocEntry
+  {\doifsomething{\rawstructurelistuservariable{author}}
+     {{\it\structurelistuservariable{author}} --\crlf}%
+   #1%
+   \doifsomething{\rawstructurelistuservariable{subtitle}}
+     {\crlf\structurelistuservariable{subtitle}}}
+
+\setuphead
+  [section]
+  [ after=\directsetup{section},
+    align=center,
+   number=no,
+    style=bold]
+
+\startsetups [section]
+    \blank
+    \midaligned{\it\structureuservariable{author}}
+    \blank
+\stopsetups
+
+\setuphead
+  [subject]
+  [align=flushleft,
+   style=\bfb]
+
+\definenote[someothername]
+
+\setupnote
+  [someothername]
+  [rule=off]
+
+\setupnotation
+  [someothername]
+  [numberconversion=set 2]
+
+\setupnotation
+  [alternative=left,
+          hang=fit,
+     indenting={yes,small},
+    indentnext=yes]
+
+\setupinteraction
+  [        state=start,
+           color=,
+   contrastcolor=]
+
+\starttext
+
+\subject{Grande lista de autores}
+
+\placecontent[alternative=c]
+
+\startsection[title={Whatever}][author={A. Uthor},subtitle={I’d like to say}]
+This is a section.
+\stopsection
+
+\startsection[title={Segunda seção}][author={Fulano de Tal},subtitle={Uma segunda seção de teste}]
+This is a section.
+\stopsection
+
+\startsection[title={Terceira seção}][author={Alberto de Paiva\someothername{asdf}},subtitle={Uma terceira seção de teste}]
+This is a section.
+\stopsection
+
+\startsection[title={Três autores}][author={Sicrano de Tal\someothername{Universidade de Tangerinas} e Alberto Steinenberg\someothername{Universidade de Nilfgaard}},
+subtitle={Uma seção de teste com dois autores e comentário}]
+This is a section.\footnote{Só de teste.}
+\stopsection
+
+\stoptext

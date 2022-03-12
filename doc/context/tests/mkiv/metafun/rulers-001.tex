@@ -1,0 +1,42 @@
+\startuniqueMPpagegraphic{ruler}
+    numeric n, f, sign ;
+    pair first, last;
+    if OnOddPage :
+        first := urcorner Page;
+        last  := lrcorner Page;
+        sign  := -1;
+    else :
+        first := ulcorner Page;
+        last  := llcorner Page;
+        sign  := 1;
+    fi ;
+    f := xpart first;
+    n := 0;
+    draw first -- last withpen pencircle scaled 2pt;
+    for i = ypart first step -1mm until ypart last :
+        if (n mod 10) == 0 :
+            draw (f,i) -- (f+sign*10mm,i) ;
+            if OnOddPage :
+                draw thetextext.lft(n/10,(f+sign*12mm,i)) ;
+            else :
+                draw thetextext.rt (n/10,(f+sign*12mm,i)) ;
+            fi
+        elseif (n mod 5) == 0 :
+            draw (f,i) -- (f+sign*5mm,i) ;
+        else :
+            draw (f,i) -- (f+sign*3mm,i) ;
+        fi ;
+        n := n + 1 ;
+    endfor ;
+    setbounds currentpicture to Page ;
+\stopuniqueMPpagegraphic
+
+\defineoverlay[ruler][\uniqueMPpagegraphic{ruler}]
+
+\setupbackgrounds[page][background=ruler]
+
+\setuppagenumbering[alternative=doublesided]
+
+\starttext
+    \dorecurse{10}{test \page}
+\stoptext

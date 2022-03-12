@@ -1,0 +1,32 @@
+\starttext
+
+\definemathfraction[Ifrac][mathstyle=,alternative=inner]
+\definemathfraction[Ofrac][mathstyle=,alternative=outer]
+\definemathfraction[Bfrac][mathstyle=,alternative=both]
+\definemathfraction[Cfrac][mathstyle=,alternative=command]
+
+\definemathfraction[IfracM][margin=\emwidth,mathstyle=,alternative=inner]
+\definemathfraction[OfracM][margin=\emwidth,mathstyle=,alternative=outer]
+\definemathfraction[BfracM][margin=\emwidth,mathstyle=,alternative=both]
+\definemathfraction[CfracM][margin=\emwidth,mathstyle=,alternative=command]
+
+\startformula
+    \Ifrac {1}{2} + \Ofrac {1}{2} + \Bfrac {1}{2} + \Cfrac {1}{2} =
+    \IfracM{1}{2} + \OfracM{1}{2} + \BfracM{1}{2} + \CfracM{1}{2}
+\stopformula
+
+$
+    \Ifrac {1}{2} + \Ofrac {1}{2} + \Bfrac {1}{2} + \Cfrac {1}{2} =
+    \IfracM{1}{2} + \OfracM{1}{2} + \BfracM{1}{2} + \CfracM{1}{2}
+$
+
+\startformula
+    \frac{1}{2} + \tfrac{1}{2} + \dfrac{1}{2}
+\stopformula
+
+$
+    \frac{1}{2} + \tfrac{1}{2} + \dfrac{1}{2}
+$
+
+\stoptext
+

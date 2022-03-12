@@ -125,16 +125,36 @@
                 },
             },
             {
-                type = "single",
+                type = "substitution",
                 data = {
                     ["a"] = "1",
                     ["b"] = "2",
                     ["c"] = "3",
                 },
             },
+            {
+                type = "multiple",
+                data = {
+                    ["z"] = { "Z", "Z", "Z" },
+                },
+            },
+            {
+                type = "multiple",
+                data = {
+                    ["f"] = { "F", "F", "F" },
+                },
+            },
         },
         data = {
             rules = {
+                {
+                    current = { { "z" }, { "z" }, { "z" },  },
+                    lookups = { 3 },
+                },
+                {
+                    current = { { "f" }, { "f" }, { "f" },  },
+                    lookups = { 3 },
+                },
                 {
                     current = { { "f" }, { "f" } },
                     lookups = { 1 },
@@ -170,21 +190,30 @@
 
 \starttext
 
+\enabletrackers[otf.loading]
+
 \startTEXpage
     \definedfont[file:dejavu-serif.ttf*default]%
-                  abracadabra\par
-    {\addff{stest}abracadabra\par}
-    {\addff{atest}abracadabra\par}
-    {\addff{mtest}abracadabra\par}
-    {\addff{ltest}abracadabra\par}
-    {\addff{ktest}abracadabra\par}
+%                   abracadabra\par
+%     {\addff{stest}abracadabra\par}
+%     {\addff{atest}abracadabra\par}
+%     {\addff{mtest}abracadabra\par}
+%     {\addff{ltest}abracadabra\par}
+%     {\addff{ktest}abracadabra\par}
+%     \enabletrackers[otf.*]
+%     {\addff{ytest}abracadabra\par}
+%     \disabletrackers[otf.*]
     \enabletrackers[otf.*]
-    {\addff{ytest}abracadabra\par}
+    {\addff{itest}%
+%         effe
+        efffe
+%         ezzze
+%         abcdef
+%         !f
+        \par
+    }
     \disabletrackers[otf.*]
-    \enabletrackers[otf.*]
-    {\addff{itest}effe abcdef !f\par}
-    \disabletrackers[otf.*]
-    {\addff{stest}\vl a\vl\par}
+%     {\addff{stest}\vl a\vl\par}
 \stopTEXpage
 
 \stoptext
