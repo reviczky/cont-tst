@@ -7,13 +7,13 @@
 \definecolor[mymarker:3][r=.6,g=.6]
 
 \startluacode
-local setcolor    = nodes.tracers.colors.setlist
-local getmarker   = nodes.markers.get
-local hlist_code  = nodes.nodecodes.hlist
-local traverse_id = node.traverse_id
+local setcolor   = nodes.tracers.colors.setlist
+local getmarker  = nodes.markers.get
+local hlist_code = nodes.nodecodes.hlist
+local traverseid = nodes.traverseid
 
 function userdata.processmystuff(head)
-    for n in traverse_id(hlist_code,head) do
+    for n in traverseid(hlist_code,head) do
         local m = getmarker(n,"mymarker")
         if m then
             setcolor(n.list,"mymarker:" .. m)

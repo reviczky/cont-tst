@@ -11,5 +11,17 @@
     endfor cycle ;
 \stopMPcode
 
+% \startMPcode{doublefun}
+%     path p ; p := (
+%         for i=1 upto 2000 :
+%             origin randomized 1000 ..
+%         endfor cycle
+%     ) xysized (TextWidth,TextHeight) ;
+%     draw for i = 1 upto length p:
+%         % ok for timing but we should use left and right
+%         point i of p .. controls (precontrol i of p) and (postcontrol i of p) ..
+%     endfor cycle ;
+% \stopMPcode
+
 \stoptext
 

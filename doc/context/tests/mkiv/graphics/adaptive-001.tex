@@ -1,0 +1,72 @@
+\starttext
+
+\startMPdefinitions
+    def TickTock =
+        interim linecap := squared;
+        save p ; path p ; p := fullsquare xysized(AdaptiveWidth,.9(AdaptiveHeight+AdaptiveDepth)) ;
+        fill p withcolor AdaptiveColor ;
+        draw bottomboundary (p enlarged (-AdaptiveThickness) )
+            withdashes (3*AdaptiveThickness)
+            withpen pencircle scaled AdaptiveThickness
+            withcolor white ;
+    enddef ;
+\stopMPdefinitions
+
+\startsetups adaptive:test
+    \setbox\usedadaptivebox\hbox to \usedadaptivewidth yoffset -.9\usedadaptivedepth \bgroup
+        \hss
+        \startMPcode
+            TickTock ;
+        \stopMPcode
+        \hss
+   \egroup
+\stopsetups
+
+\definecolor[adaptive:tick][.25(blue,green)]
+\definecolor[adaptive:tock][.75(blue,green)]
+
+\defineadaptive
+  [tick]
+  [setups=adaptive:test,
+   color=adaptive:tick,
+   foregroundcolor=white,
+   foregroundstyle=\infofont,
+   strut=yes]
+
+\defineadaptive
+  [tock]
+  [tick]
+  [color=adaptive:tock]
+
+\dorecurse{5}{
+    \dostepwiserecurse{1}{150}{1}{%
+        this~#1.##1 is~#1.##1 test~#1.##1
+        \ifodd##1\relax
+            \adaptivebox[tick]{\hss tick #1.##1\hss}
+        \else
+            \adaptivebox[tock]{\hss tock #1.##1\hss}
+        \fi
+    }
+    \blank
+}
+
+\setupexternalfigures
+  [location={default,global}]
+
+\startsetups adaptive:test
+    \setbox\usedadaptivebox\hbox to \usedadaptivewidth yoffset -\usedadaptivedepth \bgroup
+        \externalfigure
+          [cow.pdf]
+          [width=\usedadaptivewidth,
+           height=\dimexpr\usedadaptiveheight+\usedadaptivedepth\relax]%
+   \egroup
+\stopsetups
+
+\dorecurse{5}{
+    \dostepwiserecurse{1}{150}{1}{%
+        this~#1.##1 is~#1.##1 test~#1.##1
+        {\adaptivebox[strut=yes,setups=adaptive:test]{}}
+    }
+    \blank
+}
+\stoptext
