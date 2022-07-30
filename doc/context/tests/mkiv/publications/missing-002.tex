@@ -1,0 +1,39 @@
+\usebtxdefinitions[aps]
+
+\startbuffer[bib]
+@ELECTRONIC{hh2010,
+    author = {Hans Hagen},
+    year   = {2010},
+    title  = {Metafun. \CONTEXT\ mkiv},
+    url    = {http://www.pragma-ade.nl/general/manuals/metafun-s.pdf},
+}
+
+@ELECTRONIC{XX2010,
+    author = {Hans Hagen},
+    year   = {2010},
+    title  = {Metafun. ConTeXt mkiv},
+    url    = {http://www.pragma-ade.nl/general/manuals/metafun-s.pdf},
+}
+@ELECTRONIC{Hx2010,
+    author = {Hans Hagen},
+    year   = {2010},
+    title  = {Metafun. ConTeXt mkiv},
+    url    = {http://www.pragma-ade.nl/general/manuals/metafun-s.pdf},
+}
+\stopbuffer
+
+\usebtxdataset[bib.buffer]
+
+\starttext
+
+1 : \cite[hh2010] \cite[HH2010] \par
+
+2 : \cite[xx2010] \cite[XX2010] \par
+
+3 : \cite[hx2010] \cite[Hx2010] \cite[HX2010] \cite[hX2010] \par
+
+\blank
+
+\placelistofpublications
+
+\stoptext

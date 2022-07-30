@@ -1,0 +1,43 @@
+% example by Jacob Kauffmann (who also patched for z)
+
+\starttext
+
+\setupMPpage
+  [offset=10pt,
+   instance=doublefun]
+
+\startluacode
+function fun(x,y)
+    local exp = math.exp
+    return
+        1.5*exp(-1.5*((x + 1.1)^2 + (y - 1.1)^2))
+      + 0.5*exp(-1.0*((x + 1  )^2 + (y + 1  )^2))
+      - 0.5*exp(-0.9*((x - 1  )^2 + (y - 0  )^2))
+end
+
+-- example of a simple blue-gray-red colormap
+
+function colormap(f)
+	local abs, min = math.abs, math.min
+	local r, g, b = min(1, 2*f), 1-2*abs(f-.5), min(1,2-2*f)
+	return .85*r, .85*g, .85*b
+end
+\stopluacode
+
+\startMPpage
+draw lmt_surface [
+    code      = "fun(x,y)",
+    color     = "colormap( 0.5 * z / max(abs(minz),abs(maxz)) + 0.5 )",
+  % color     = "colormap(f)",
+    xmin      = -3,
+    xmax      = 3,
+    ymin      = -3,
+    ymax      = 3,
+    xstep     = .3,
+    ystep     = .3,
+    xvector   = { -0.3, -0.5 },
+    linecolor = 0
+] xsized 10cm ;
+\stopMPpage
+
+\stoptext

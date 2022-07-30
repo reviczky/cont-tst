@@ -1,0 +1,36 @@
+% example from the list
+
+\usemodule[scite]
+
+\setupbodyfont[bonum]
+
+\startTEXpage[offset=2dk,width=\textwidth]
+
+\startbuffer
+\startformula[spaceinbetween=.5\lineheight]
+    \left\{
+      \mparagraph
+         {Quaternion algebras\par
+          over $\blackboard{Q}$ up to isomorphism}
+    \right\}
+  \alignhere \leftrightarrow
+    \left\{
+      \mparagraph
+        [foregroundcolor=darkred,offset=.1ex,frame=on]
+        {Finite subset of places of $\blackboard{Q}$\par
+         of even cardinality}
+    \right\}
+  \breakhere \leftrightarrow
+    \left\{
+      \mparagraph{more text}
+    \right\}
+  \breakhere \leftrightarrow
+    \left\{
+      \mparagraph[foregroundcolor=darkblue]{and more text}
+    \right\}
+\stopformula
+\stopbuffer
+
+\getbuffer  \blank[2*big] \small \typebuffer[option=TEX]
+
+\stopTEXpage

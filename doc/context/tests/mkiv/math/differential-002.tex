@@ -1,0 +1,16 @@
+\starttext
+
+    \startbuffer
+        \startTEXpage[offset=1dk]
+            \im{ L\dd x^2+2M\dd x\dd y + N\dd y^2 }\par
+            \dm{ \frac{\dd y}{\dd x} }\par
+            \dm{ \int_a^b f(x) \dd x }
+        \stopTEXpage
+    \stopbuffer
+
+    \showmakeup[mathglue]
+
+    \setupmathematics[differentiald=normal]  \getbuffer
+    \setupmathematics[differentiald=upright] \getbuffer
+
+\stoptext

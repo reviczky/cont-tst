@@ -1,0 +1,122 @@
+% runs=2
+
+\usemodule[article-basic]
+
+\setupinteraction[state=start]
+
+\useMPlibrary[dum]
+
+\starttext
+
+\def\AlphaOffset{0}
+\def\BetaOffset {0}
+
+% the flexible ones (can come from files)
+
+\startbuffer[alpha]
+    \startchapter[title=Alpha]
+        \dorecurse{20}{\samplefile{tufte}\par}
+    \stopchapter
+\stopbuffer
+
+\startbuffer[beta]
+    \startchapter[title=Beta]
+        \dorecurse{6}{\samplefile{tufte}\par}
+    \stopchapter
+\stopbuffer
+
+% the fixed ones
+
+\startbuffer[gamma]
+    \startchapter[title=Gamma]
+        \externalfigure[whatever-dummy-3][width=\textwidth]
+    \stopchapter
+\stopbuffer
+
+\startbuffer[rest]
+    \startchapter[title=Rest A]
+        \samplefile{tufte}
+    \stopchapter
+    \startchapter[title=Rest B]
+        \samplefile{tufte}
+        \blank
+        Alpha : \goto{page \AlphaPages}[realpage(\AlphaPages)]\par
+        Beta  : \goto{page \BetaPages }[realpage(\BetaPages )]
+    \stopchapter
+\stopbuffer
+
+\startbuffer[contents]
+    \starttitle[title=Contents]
+        \placelist[chapter][criterium=text]
+    \stoptitle
+\stopbuffer
+
+% Preroll.
+
+\startprerollpageblock[alpha]
+    \start
+        \setuphead[chapter][incrementnumber=no]
+        \getbuffer[alpha]
+    \stop
+\stopprerollpageblock
+
+% \writestatus{!!!!!}{nofalphapages: \prerolledpages{alpha}}
+
+\startprerollpageblock[beta]
+    \start
+        \setuphead[chapter][incrementnumber=no]
+        \getbuffer[beta]
+    \stop
+\stopprerollpageblock
+
+% \writestatus{!!!!!}{nofbetapages: \prerolledpages{beta}}
+
+% Some titling.
+
+\startpageblock[titlepage]
+    \startstandardmakeup
+        \externalfigure[whatever-dummy-1][height=\textheight,width=\textwidth]
+    \stopstandardmakeup
+\stoppageblock
+
+\startpageblock[boguspage]
+    \startstandardmakeup
+        \externalfigure[whatever-dummy-2][height=\textheight,width=\textwidth]
+    \stopstandardmakeup
+\stoppageblock
+
+% The contents will end up here.
+
+% page 1
+
+% The main document.
+
+\setuppagenumber[number=2]
+
+\startpageblock[chapters]
+    % we have a predictable rest:
+
+    \edef\AlphaPages{\the\numexpr 4 \relax}
+    \edef\BetaPages {\the\numexpr 4 + \prerolledpages{alpha} \relax}
+
+    \getbuffer[rest]
+    \getbuffer[alpha]
+    \getbuffer[beta]
+    \getbuffer[gamma]
+\stoppageblock
+
+% This one will move:
+
+\setuppagenumber[number=1]
+
+\startpageblock[contents]
+    \getbuffer[contents]
+\stoppageblock
+
+\flushpageblocks
+  [titlepage,
+   boguspage,
+   contents,
+   chapters]
+
+\stoptext

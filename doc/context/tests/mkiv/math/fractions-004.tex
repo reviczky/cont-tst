@@ -1,5 +1,10 @@
 \starttext
 
+    \ifdefined\mathgroupingmode
+        % use \frac instead
+        \mathgroupingmode\zerocount
+    \fi
+
     $\displaystyle 1+{2g\over3}+{2\over3}$ \blank
 
     \setupmathfractions[topdistance=0pt]

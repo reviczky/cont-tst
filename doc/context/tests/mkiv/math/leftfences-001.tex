@@ -1,0 +1,39 @@
+% example by MS
+
+\setupbodyfont[cambria,10pt] % only some fonts have these larger ones
+
+\starttext
+
+\definemathmatrix[longmatrix][matrix:brackets][simplecommand=longmatrix]
+
+This:
+
+\startformula
+\startintegral[bottom={a},top={b}]
+\longmatrix{1;2;3;4}
+\stopintegral
+\neq
+e^{
+\startintegral[bottom={a},top={b}]
+\longmatrix{1;2;3;4}
+    \stopintegral
+}
+\stopformula
+
+or this
+
+\startformula
+\startsum[bottom={a},top={b}]
+\longmatrix{1;2;3;4}
+\stopsum
+\neq
+e^{
+\startsum[bottom={a},top={b}]
+\longmatrix{1;2;3;4}
+\stopsum
+}
+\stopformula
+
+you tell me.
+
+\stoptext

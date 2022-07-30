@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<root xmlns:mmp="mathml">
+
+    <mmp:math>
+        <mmp:mmultiscripts>
+            <mmp:mi> R </mmp:mi>
+            <mmp:mi> i </mmp:mi>
+            <mmp:none/>
+            <mmp:none/>
+            <mmp:mi> j </mmp:mi>
+            <mmp:mi> k </mmp:mi>
+            <mmp:none/>
+            <mmp:mi> l </mmp:mi>
+            <mmp:none/>
+        </mmp:mmultiscripts>
+    </mmp:math>
+
+    <mmp:math>
+        <mmp:mmultiscripts>
+            <mmp:mi> R </mmp:mi>
+            <mmp:mi> i </mmp:mi>
+            <mmp:mi> j </mmp:mi>
+            <mmp:mprescripts/>
+            <mmp:mi> k </mmp:mi>
+            <mmp:mi> l </mmp:mi>
+            <mmp:none/>
+        </mmp:mmultiscripts>
+    </mmp:math>
+
+</root>

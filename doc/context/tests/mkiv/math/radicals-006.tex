@@ -1,0 +1,18 @@
+\starttext
+
+\definemathradical[esqrt][sqrt][height=\maxdimen,depth=\maxdimen]
+\definemathradical[fsqrt][sqrt][height=3ex,depth=2ex]
+\definemathradical[ssqrt][sqrt][height=-.5pt,depth=-.5pt]
+
+\def\TestSqrt#1%
+  {test $      #1{x}           + #1{\sin(x)}                         $ test\par
+   test $      #1{x}           + #1{\sin(x)} + #1{\frac{1}{x}}       $ test\par
+   test $      #1{x} + #1{x^2}                                       $ test\par
+   test $\left(#1{x} + #1{x^2}                                \right)$ test\par}
+
+\TestSqrt\sqrt \blank % dynamic
+\TestSqrt\esqrt\blank % equal
+\TestSqrt\fsqrt\blank % fixed
+\TestSqrt\ssqrt\blank % squeezed
+
+\stoptext

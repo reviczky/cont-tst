@@ -1,0 +1,28 @@
+\starttext
+
+    \startbuffer
+        before $                  i = 1 $                   after\par
+        before $                  i = 2 \Ustopmath{}        after\par
+        before \Ustartmath        i = 3 $                   after\par
+        before \Ustartmath        i = 4 \Ustopmath{}        after\par
+        before $$                 d = 1 $$                  after\par
+        before $$                 d = 2 \Ustopdisplaymath{} after\par
+        before \Ustartdisplaymath d = 3 $$                  after\par
+        before \Ustartdisplaymath d = 4 \Ustopdisplaymath{} after\par
+    \stopbuffer
+
+    {\mathdisplaymode\zerocount \getbuffer}
+    {\mathdisplaymode\plusone   \getbuffer}
+
+    \catcode`€=\catcode`$
+    \catcode`¤=\catcode`$
+
+    €x=2^3€
+
+    ¤x=2^3¤
+
+    \mathdisplaymode\plusone
+
+    ¤¤x=2^3¤¤
+
+\stoptext

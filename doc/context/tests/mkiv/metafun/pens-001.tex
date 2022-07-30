@@ -1,0 +1,11 @@
+\startMPpage[offset=1dk]
+
+    pickup pencircle scaled 4 ;
+
+    draw (0, 0) -- (20, 0)                     withcolor darkyellow ;
+    draw (0, 5) -- (20, 5) withlinecap butt    withcolor darkred ;
+    draw (0,-5) -- (20,-5) withlinecap squared withcolor darkgreen ;
+
+    drawpoints (0,0) -- (0,5) -- (20,5) -- (20,0) -- (20,-5) -- (0,-5) withpen pencircle scaled 1;
+
+\stopMPpage

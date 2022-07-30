@@ -1,0 +1,26 @@
+\usetypescript[modernlatin]
+\usebodyfont[lessmodernlatin]
+
+\setupbodyfont[modern]
+
+\setuptolerance
+  [verytolerant]
+
+\setuplayout
+  [tight]
+
+\startbuffer
+    \tf\samplefile{tufte}\blank
+    \it\samplefile{tufte}\blank
+    \sl\samplefile{tufte}\blank
+    \bf\samplefile{tufte}\blank
+    \bi\samplefile{tufte}\blank
+    \bs\samplefile{tufte}\page
+\stopbuffer
+
+\starttext
+    {\switchtobodyfont[modern]         \getbuffer}
+    {\switchtobodyfont[modernlatin]    \getbuffer}
+    {\switchtobodyfont[lessmodernlatin]\getbuffer}
+\stoptext
+

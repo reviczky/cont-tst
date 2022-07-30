@@ -3,16 +3,13 @@
         name    = "demo",
         options = {
             {
-                patterns = {
-                    fio  = "f|io",
+                substitutions = {
+                    th = "t|h",
+                    Th = "T|h",
+                    st = "s|t",
+                    St = "S|t",
+                    fi = "f|i",
                 },
-                words = [[ fioot fiots ]],
-            },
-            {
-                patterns = {
-                    fio  = "t|h",
-                },
-                words = [[ this that ]],
             },
         },
     }
@@ -24,5 +21,5 @@
 \setupbodyfont[ebgaramond]
 
 \starttext
-    fiets fiots fiats fioot this that
+    The This These fiets and thisthis thisfiets
 \stoptext

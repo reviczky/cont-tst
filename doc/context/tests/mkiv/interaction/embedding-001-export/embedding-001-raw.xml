@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <!-- This export file is used for filtering runtime only! -->
 
-<document context="2022.04.06 18:36" date="2022-04-07 13:54:05+02:00" file="embedding-001" language="en" title="embedding-001" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
- <publications detail="default">
-  <list detail="btx">
-   <listitem detail="btx-default">
-    <listtag>1</listtag>
-    <listcontent><reference explicit="btx::list::1" implicit="1" reference="btx::list::1"></reference><publication dataset="default" tag="mytag"><pubfld detail="author">A.B. Author</pubfld>, <pubfld detail="title">The title</pubfld>, <pubfld detail="year">2018</pubfld>.</publication></listcontent>
-   </listitem>
-  </list>
- </publications>
+<document context="2022.07.06 21:42" date="2022-07-07 14:54:58+02:00" file="embedding-001" language="en" title="embedding-001" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
 Agriculture is a fairly recent human invention, and in many ways it was one of the great stupid moves of all time. Hunter-gatherers have thousands of wild sources of food to subsist on. Agriculture changed that all, generating an overwhelming reliance on a few dozen domesticated food sources, making you extremely vulnerable to the next famine, the next locust infestation, the next potato blight. Agriculture allowed for stockpiling of surplus resources and thus, inevitably, the unequal stockpiling of them — stratification of society and the invention of classes. Thus, it allowed for the invention of poverty. I think that the punch line of the primate-human difference is that when humans invented poverty, they came up with a way of subjugating the low-ranking like nothing ever seen before in the primate world. 
  <formula>
   <formulacontent n="1">
@@ -29,7 +21,14 @@ Agriculture is a fairly recent human invention, and in many ways it was one of t
   </formulacontent>
  </formula>
 But if you place a human brain, with its evolutionary mandate to adapt to its environment, in an environment where there is no obvious linear sequence, where facts can be accessed at random, where everything is reversible, where the gap between stimulus and response is minimal, and above all where time is short, then your train of thought could be derailed. Add in the sensory distractions of an all-encompassing and vivid audio-visual universe encouraging shorter spans for sustained attention, and you might become, as it were, a computer yourself: a system responding efficiently and processing information very well, but devoid of deeper thought. 
- <break/>
+ <publications detail="default">
+  <list detail="btx">
+   <listitem detail="btx-default">
+    <listtag>1</listtag>
+    <listcontent><reference explicit="btx::list::1" implicit="1" reference="btx::list::1"></reference><publication dataset="default" tag="mytag"><pubfld detail="author">A.B. Author</pubfld>, <pubfld detail="title">The title</pubfld>, <pubfld detail="year">2018</pubfld>.</publication></listcontent>
+   </listitem>
+  </list>
+ </publications>
 The links in the margin are attachments and comments (just roll-over them).
 <extradata>
 <btxdata>

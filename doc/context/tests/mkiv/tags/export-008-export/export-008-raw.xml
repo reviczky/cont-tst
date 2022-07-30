@@ -3,8 +3,8 @@
 <!--
 
     input filename   : export-008
-    processing date  : 2022-04-07 14:20:03+02:00
-    context version  : 2022.04.06 18:36
+    processing date  : 2022-07-07 15:17:43+02:00
+    context version  : 2022.07.06 21:42
     exporter version : 0.35
 
 -->
@@ -13,7 +13,7 @@
 <?xml-stylesheet type="text/css" href="styles/export-008-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/export-008-styles.css" ?>
 
-<document context="2022.04.06 18:36" date="2022-04-07 14:20:03+02:00" file="export-008" language="en" title="export-008" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+<document context="2022.07.06 21:42" date="2022-07-07 15:17:43+02:00" file="export-008" language="en" title="export-008" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
  <table>
   <tablerow>
    <tablecell align="flushleft">A </tablecell>

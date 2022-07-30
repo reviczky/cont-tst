@@ -1,0 +1,42 @@
+\continuewhenlmtxmode
+
+\starttext
+
+\startcombination[2*2]
+    \startcontent
+        \startplaceformula\startformula[width=\combinationwidth,title=a]1+x\stopformula\stopplaceformula
+    \stopcontent
+    \startcaption\stopcaption
+    \startcontent
+        \startplaceformula\startformula[width=\combinationwidth,title=b]2+x\stopformula\stopplaceformula
+    \stopcontent
+    \startcaption\stopcaption
+    \startcontent
+        \startplaceformula\startformula[width=\combinationwidth,xxxxx=c]3+x\stopformula\stopplaceformula
+    \stopcontent
+    \startcaption\stopcaption
+    \startcontent
+        \startplaceformula\startformula[width=\combinationwidth,title=d]4+x\stopformula\stopplaceformula
+    \stopcontent
+    \startcaption\stopcaption
+\stopcombination
+
+\startplaceformula[a]
+\startcombination[formula][nx=2,ny=2]
+    \startformula[title=a]1+x\stopformula
+    \startformula[title=b]2+x\stopformula
+    \startformula[xxxxx=c]3+x\stopformula
+    \startformula[title=d]4+x\stopformula
+\stopcombination
+\stopplaceformula
+
+\startplaceformula[a]
+\startformulacombination[nx=2,ny=2]
+    \startformula[title=a]1+x\stopformula
+    \startformula[title=b]2+x\stopformula
+    \startformula[xxxxx=c]3+x\stopformula
+    \startformula[title=d]4+x\stopformula
+\stopformulacombination
+\stopplaceformula
+
+\stoptext

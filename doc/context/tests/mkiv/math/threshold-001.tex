@@ -1,0 +1,59 @@
+% turning small inline formulas into leaders to that we don't get overflows
+% or excessive spacing
+
+\continuewhenlmtxmode
+
+\startbuffer[threshold-none]
+    \setupbodyfont[modern]
+    \setuppapersize[A5]
+    \setuplayout[tight]
+    \setupmathematics[threshold=none]
+    \dorecurse {950} {
+        test $\darkblue \showboxes x + #1    $
+        test $\darkred  \showboxes x + #1 + z$
+    }
+\stopbuffer
+
+\startbuffer[threshold-small]
+    \setupbodyfont[modern]
+    \setuppapersize[A5]
+    \setuplayout[tight]
+    \setupmathematics[threshold=small]
+    \dorecurse {950} {
+        test $\darkblue \showboxes x + #1    $
+        test $\darkred  \showboxes x + #1 + z$
+    }
+\stopbuffer
+
+\startbuffer[threshold-medium]
+    \setupbodyfont[modern]
+    \setuppapersize[A5]
+    \setuplayout[tight]
+    \setupmathematics[threshold=medium]
+    \dorecurse {950} {
+        test $\darkblue \showboxes x + #1    $
+        test $\darkred  \showboxes x + #1 + z$
+    }
+\stopbuffer
+
+\startbuffer[threshold-big]
+    \setupbodyfont[modern]
+    \setuppapersize[A5]
+    \setuplayout[tight]
+    \setupmathematics[threshold=big]
+    \dorecurse {950} {
+        test $\darkblue \showboxes x + #1    $
+        test $\darkred  \showboxes x + #1 + z$
+    }
+\stopbuffer
+
+\starttext
+    \dorecurse {10} {
+        \startcombination[2*2]
+            {\hbox to .45\textwidth{\typesetbuffer[threshold-none]  [frame=on,width=.45\textwidth,page=#1]\hss}} {\type {threshold=none}}
+            {\hbox to .45\textwidth{\typesetbuffer[threshold-small] [frame=on,width=.45\textwidth,page=#1]\hss}} {\type {threshold=small}}
+            {\hbox to .45\textwidth{\typesetbuffer[threshold-medium][frame=on,width=.45\textwidth,page=#1]\hss}} {\type {threshold=medium}}
+            {\hbox to .45\textwidth{\typesetbuffer[threshold-big]   [frame=on,width=.45\textwidth,page=#1]\hss}} {\type {threshold=big}}
+        \stopcombination
+    }
+\stoptext

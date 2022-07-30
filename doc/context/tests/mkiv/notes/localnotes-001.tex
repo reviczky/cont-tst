@@ -1,0 +1,30 @@
+\starttext
+
+\startplacetable[title={A breakfast table.\footnote{asdf}}]
+    \startlocalfootnotes
+    \placelegend
+        {\starttable[|l|r|]
+            \HL
+            \VL Spam \footnote {lovely}    \VL Bacon \footnote {wonderful} \VL\FR
+            \VL Eggs \footnote {wonderful} \VL Spam  \footnote {lovely}    \VL\LR
+            \HL
+        \stoptable}
+        {\placelocalfootnotes}
+    \stoplocalfootnotes
+\stopplacetable
+
+\startlocalfootnotes
+\footnotetext[asdf]{asdf}
+\startplacetable[title={A breakfast table.\note[asdf]}]
+    \placelegend
+        {\starttable[|l|r|]
+            \HL
+            \VL Spam \footnote {lovely}    \VL Bacon \footnote {wonderful} \VL\FR
+            \VL Eggs \footnote {wonderful} \VL Spam  \footnote {lovely}    \VL\LR
+            \HL
+        \stoptable}
+        {\placelocalfootnotes}
+\stopplacetable
+\stoplocalfootnotes
+
+\stoptext
