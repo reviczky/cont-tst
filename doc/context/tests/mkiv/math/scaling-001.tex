@@ -1,0 +1,38 @@
+\continuewhenlmtxmode
+
+\usemodule[article-basic]
+\setupbodyfont[11pt]
+\setuplayout[tight]
+
+\starttext
+
+\startbuffer
+
+\protected\def\TinyMath    {\setmscale {800}}  % {\setmscale{0.8}}
+\protected\def\PettyMath   {\setmscale {700}}  % {\setmscale{0,7}}
+\protected\def\PatheticMath{\setmscale {400}}  % {\setmscale{0,4}}
+\protected\def\ExtremeMath {\setmscale{1500}}  % {\setmscale{1.5}}
+
+\startformula               a=b^2 + \sqrt[3]{\frac{1}{x}} \stopformula
+\startformula \mx           a=b^2 + \sqrt[3]{\frac{1}{x}} \stopformula
+\startformula \mxx          a=b^2 + \sqrt[3]{\frac{1}{x}} \stopformula
+\startformula \TinyMath     a=b^2 + \sqrt[3]{\frac{1}{x}} \stopformula
+\startformula \PettyMath    a=b^2 + \sqrt[3]{\frac{1}{x}} \stopformula
+\startformula \PatheticMath a=b^2 + \sqrt[3]{\frac{1}{x}} \stopformula
+\startformula \ExtremeMath  a=b^2 + \sqrt[3]{\frac{1}{x}} \stopformula
+\startformula
+    {\TinyMath     a=b^2 + \sqrt[3]{\frac{1}{x}}} \quad + \quad
+    {\PettyMath    a=b^2 + \sqrt[3]{\frac{1}{x}}} \quad + \quad
+    {\PatheticMath a=b^2 + \sqrt[3]{\frac{1}{x}}}
+\stopformula
+\stopbuffer
+
+\input tufte
+
+\getbuffer
+
+\input tufte
+
+\typebuffer
+
+\stoptext

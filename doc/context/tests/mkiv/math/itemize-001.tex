@@ -1,0 +1,33 @@
+% posted by ms from se
+
+\starttext
+
+\showmakeup[line]
+
+\startitemize[columns,three][grid=no]
+    \startitem $\frac{x^2-4}{\sqrt{x}-\sqrt{2}}$ \stopitem
+    \startitem $\sqrt{n} - \sqrt{n+1}$           \stopitem
+    \startitem $\frac{x^3-1}{x^2-1}$             \stopitem
+\stopitemize
+
+\showmakeup[line]
+
+\defineitemgroup
+  [mathmess]
+\setupitemgroup
+  [mathmess]
+  [columns,three,packed]
+\setupitemgroup
+  [grid=no,
+   inner={\setupinterlinespace[30pt]}]
+
+\startitemgroup[mathmess]
+     \startitem $\frac{x^2-4}{\sqrt{x}-\sqrt{2}}$ \stopitem
+     \startitem $\sqrt{n} - \sqrt{n+1}$           \stopitem
+     \startitem $\frac{x^3-1}{x^2-1}$             \stopitem
+     \startitem $\frac{x^2-4}{\sqrt{x}-\sqrt{2}}$ \stopitem
+     \startitem $\sqrt{n} - \sqrt{n+1}$           \stopitem
+     \startitem $\frac{x^3-1}{x^2-1}$             \stopitem
+\stopitemgroup
+
+\stoptext

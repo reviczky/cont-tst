@@ -3,8 +3,8 @@
 <!--
 
     input filename   : export-002
-    processing date  : 2022-07-07 15:17:37+02:00
-    context version  : 2022.07.06 21:42
+    processing date  : 2022-07-27 17:18:47+02:00
+    context version  : 2022.07.24 12:18
     exporter version : 0.35
 
 -->
@@ -13,7 +13,7 @@
 <?xml-stylesheet type="text/css" href="styles/export-002-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/export-002-styles.css" ?>
 
-<document context="2022.07.06 21:42" date="2022-07-07 15:17:37+02:00" file="export-002" language="en" title="export-002" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+<document context="2022.07.24 12:18" date="2022-07-27 17:18:47+02:00" file="export-002" language="en" title="export-002" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
  <metadata>
   <metavariable name="author">Hans Hagen</metavariable>
   <metavariable name="title">Hello World!</metavariable>
