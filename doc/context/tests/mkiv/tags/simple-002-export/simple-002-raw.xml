@@ -3,8 +3,8 @@
 <!--
 
     input filename   : simple-002
-    processing date  : 2022-07-27 17:18:57+02:00
-    context version  : 2022.07.24 12:18
+    processing date  : 2022-08-04 11:00:26+02:00
+    context version  : 2022.08.01 20:32
     exporter version : 0.35
 
 -->
@@ -13,7 +13,7 @@
 <?xml-stylesheet type="text/css" href="styles/simple-002-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/simple-002-styles.css" ?>
 
-<document context="2022.07.24 12:18" date="2022-07-27 17:18:57+02:00" file="simple-002" language="en" title="simple-002" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+<document context="2022.08.01 20:32" date="2022-08-04 11:00:26+02:00" file="simple-002" language="en" title="simple-002" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
 We thrive in information--thick worlds because of our marvelous and everyday capacity to select, edit, single out, structure, highlight, group, pair, merge, harmonize, synthesize, focus, organize, condense, reduce, boil down, choose, categorize, catalog, classify, list, abstract, scan, look into, idealize, isolate, discriminate, distinguish, screen, pigeonhole, pick over, sort, integrate, blend, inspect, filter, lump, skip, smooth, chunk, average, approximate, cluster, aggregate, outline, summarize, itemize, review, dip into, flip through, browse, glance into, leaf through, skim, refine, enumerate, glean, synopsize, winnow the wheat from the chaff and separate the sheep from the goats.
  <verbatimblock detail="typing" chain="typing">
   <verbatimlines>
