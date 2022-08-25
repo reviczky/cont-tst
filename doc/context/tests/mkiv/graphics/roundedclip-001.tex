@@ -1,0 +1,13 @@
+% posted on the list by WS
+
+\setupexternalfigures[location=default]
+
+\starttext
+
+\startMPclip{rounded corner}
+    clip currentpicture to (roundedsquare(OverlayWidth,OverlayHeight,EmWidth)) ;
+\stopMPclip
+
+\clip[nx=1,ny=1,mp=rounded corner]{\externalfigure[mill]}
+
+\stoptext
