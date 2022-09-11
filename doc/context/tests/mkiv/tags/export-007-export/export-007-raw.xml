@@ -3,8 +3,8 @@
 <!--
 
     input filename   : export-007
-    processing date  : 2022-09-10 02:36:11+02:00
-    context version  : 2022.09.10 01:02
+    processing date  : 2022-09-11 15:14:39+02:00
+    context version  : 2022.09.10 02:44
     exporter version : 0.35
 
 -->
@@ -13,7 +13,7 @@
 <?xml-stylesheet type="text/css" href="styles/export-007-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/export-007-styles.css" ?>
 
-<document context="2022.09.10 01:02" date="2022-09-10 02:36:11+02:00" file="export-007" language="en" title="export-007" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+<document context="2022.09.10 02:44" date="2022-09-11 15:14:39+02:00" file="export-007" language="en" title="export-007" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
  <lines detail="lines" chain="lines">
   <line><link destination="fileorurl(google)" url="http://www.google.com/">Google</link></line>
   <line><reference explicit="txt:ref" implicit="1" reference="txt:ref"></reference><link destination="txt:ref" location="txt:ref">some text</link></line>
