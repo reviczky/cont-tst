@@ -1,0 +1,51 @@
+\starttext
+
+\startTEXpage[offset=1ts]
+
+    \scratchfloat=1.23456
+    \scratchdimen=1.23456pt
+
+    \setbox0\hbox to \scratchfloat {x}\the\wd0 \quad(\the\scratchfloat)\par
+    \scratchfloat \floatexpr \scratchfloat * 2\relax
+    \setbox0\hbox to \scratchfloat {x}\the\wd0 \quad(\the\scratchfloat)\par
+    \advance \scratchfloat \scratchfloat
+    \setbox0\hbox to \scratchfloat {x}\the\wd0 \quad(\the\scratchfloat)\par
+    \multiply\scratchfloat by 2
+    \setbox0\hbox to \scratchfloat {x}\the\wd0 \quad(\the\scratchfloat)\par
+
+    \blank
+
+    \setbox0\hbox to \scratchdimen {x}\the\wd0\par
+    \scratchdimen \dimexpr \scratchdimen * 2\relax
+    \setbox0\hbox to \scratchdimen {x}\the\wd0\par
+    \advance \scratchdimen \scratchdimen
+    \setbox0\hbox to \scratchdimen {x}\the\wd0\par
+    \multiply\scratchdimen by 2
+    \setbox0\hbox to \scratchdimen {x}\the\wd0\par
+
+    \blank
+
+    \scratchdimenone=1.2345pt 1: \the\scratchdimenone\par
+    \scratchdimentwo=1.2345pt 2: \the\scratchdimentwo\par
+
+    \ifdim           \scratchdimenone=\scratchdimentwo    SAME\else DIFFERENT\fi \space +0sp: =    \par
+    \ifintervaldim0sp\scratchdimenone \scratchdimentwo OVERLAP\else DIFFERENT\fi \space +0sp: [0sp]\par
+
+    \advance\scratchdimentwo 1sp \blank
+
+    \ifdim                    \scratchdimenone=\scratchdimentwo    SAME\else DIFFERENT\fi \space +1sp: =    \par
+    \ifintervaldim\scaledpoint\scratchdimenone \scratchdimentwo OVERLAP\else DIFFERENT\fi \space +1sp: [1sp]\par
+    \ifintervaldim\scaledpoint\scratchdimentwo \scratchdimenone OVERLAP\else DIFFERENT\fi \space +1sp: [1sp]\par
+    \ifintervaldim 2sp        \scratchdimenone \scratchdimentwo OVERLAP\else DIFFERENT\fi \space +1sp: [2sp]\par
+    \ifintervaldim 2sp        \scratchdimentwo \scratchdimenone OVERLAP\else DIFFERENT\fi \space +1sp: [2sp]\par
+
+    \advance\scratchdimentwo 1sp \blank
+
+    \ifintervaldim 1sp \scratchdimenone\scratchdimentwo OVERLAP\else DIFFERENT\fi \space +2sp: [1sp]\par
+    \ifintervaldim 1sp \scratchdimentwo\scratchdimenone OVERLAP\else DIFFERENT\fi \space +2sp: [1sp]\par
+    \ifintervaldim 5sp \scratchdimenone\scratchdimentwo OVERLAP\else DIFFERENT\fi \space +2sp: [5sp]\par
+    \ifintervaldim 5sp \scratchdimentwo\scratchdimenone OVERLAP\else DIFFERENT\fi \space +2sp: [5sp]\par
+
+\stopTEXpage
+
+\stoptext

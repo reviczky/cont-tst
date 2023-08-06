@@ -1,0 +1,38 @@
+% adapted from mailing list (Rik K.)
+
+\starttexdefinition tolerant protected BD #=#*#=
+   \removeunwantedspaces
+   \space % insert a space
+   (
+   \ifparameter#2\or
+       #1|–|#2
+   \orelse\ifparameter#1\or
+       #1–
+   \else
+       {\red I NEED A DATE OR DATES!}
+   \fi
+   )
+   \autoinsertedspace
+\stoptexdefinition
+
+\tt
+
+\starttext
+
+\startlines
+    This\optionalspace, fails unexpectedly with autoinsertedspace.
+    This\optionalspace, \emph{fails unexpectedly} with autoinsertedspace.
+    This\optionalspace fails unexpectedly with autoinsertedspace.
+    This\optionalspace \emph{fails unexpectedly} with autoinsertedspace.
+    This\autoinsertedspace fails unexpectedly with autoinsertedspace.
+    This\autoinsertedspace \emph{fails unexpectedly} with autoinsertedspace.
+    Saussure\BD{1857}{1913} works.
+    Saussure \BD{1857}{1913} \emph{works}.
+    Saussure \BD{1857}{1913}. Works.
+    Chomsky\BD{1928} fails with LMTX, works with MkIV.
+    Chomsky \BD{1928} \emph{fails with LMTX, works with MkIV}.
+    Chomsky \BD{1928}. Works.
+    \BD blah
+\stoplines
+
+\stoptext

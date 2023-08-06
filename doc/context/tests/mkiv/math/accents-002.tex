@@ -1,0 +1,31 @@
+\starttext
+
+\startTEXpage[offset=1dk]
+    \im { \showboxes \showglyphs
+        \dot{x}
+    }
+    \im { \showboxes \showglyphs
+        \hat{\tilde{\dot{x}}}
+    }
+    \im { \showboxes \showglyphs
+        \hat{\hat{\hat{x}}}
+    }
+    \im { \showboxes \showglyphs
+        \dot{\dot{\dot{x}}}
+    }
+    \blank
+    \im { \showboxes \showglyphs
+        \dot[align=middle]{x}
+    }
+    \im { \showboxes \showglyphs
+        \hat[align=middle]{\tilde[align=middle]{\dot{x}}}
+    }
+    \im { \showboxes \showglyphs
+        \hat[align=middle]{\hat[align=middle]{\hat[align=middle]{x}}}
+    }
+    \im { \showboxes \showglyphs
+        \dot[align=middle]{\dot[align=middle]{\dot[align=middle]{x}}}
+    }
+\stopTEXpage
+
+\stoptext

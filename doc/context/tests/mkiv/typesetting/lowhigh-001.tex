@@ -1,0 +1,103 @@
+\starttext
+
+% \enabletrackers[typesetters.tighten]
+
+\startTEXpage[offset=1dk]
+    Mikael S's Feb 24 friday afternoon challenge,\par
+    we use only positive compensation!
+    \blank
+    \starttabulate[|l|l|]
+    \HL
+    \NC times, default
+    \NC \showglyphs \definedfont[file:times*default]%
+        f\high{x}%
+        \quad
+        p\high{x}%
+    \NC \NR
+    \NC times, default, compensated
+    \NC \showglyphs \definedfont[file:times*default]%
+        f\kern\tightfitcompensation\high{x}%
+        \quad
+        p\kern\tightfitcompensation\high{x}%
+    \NC \NR
+    \HL
+    \NC dejavu sans, default
+    \NC \showglyphs \definedfont[file:dejavusans*default]%
+        f\high{x}%
+        \quad
+        p\high{x}%
+    \NC \NR
+    \NC dejavu sans, compensated
+    \NC \showglyphs \definedfont[file:dejavusans*default]%
+        f\kern\tightfitcompensation\high{x}%
+        \quad
+        p\kern\tightfitcompensation\high{x}%
+    \NC \NR
+    \HL
+    \NC pagella, default
+    \NC \showglyphs \definedfont[file:texgyrepagellaregular*default]%
+        f\high{x}%
+        \quad
+        p\high{x}%
+    \NC \NR
+    \NC pagella, compensated
+    \NC \showglyphs \definedfont[file:texgyrepagellaregular*default]%
+        f\kern\tightfitcompensation\high{x}%
+        \quad
+        p\kern\tightfitcompensation\high{x}%
+    \NC \NR
+    \NC pagella, automated
+    \NC \showglyphs \definedfont[file:texgyrepagellaregular*default]%
+        f\tightfitboundary\high{x}%
+        \quad
+        p\tightfitboundary\high{x}%
+    \NC \NR
+    \HL
+    \NC pagella, smallcaps, default
+    \NC \showglyphs \definedfont[file:texgyrepagellaregular*default]%
+        \smallcaps
+        f\high{x}%
+        \quad
+        p\high{x}%
+    \NC \NR
+    \NC pagella, smallcaps, compensated
+    \NC
+        \showglyphs \definedfont[file:texgyrepagellaregular*default]%
+        \smallcaps
+        f\kern\tightfitcompensation\high{x}%
+        \quad
+        p\kern\tightfitcompensation\high{x}%
+    \NC \NR
+    \NC pagella, smallcaps, automated
+    \NC \showglyphs \definedfont[file:texgyrepagellaregular*default]%
+        \smallcaps
+        f\tightfitboundary\high{x}%
+        \quad
+        p\tightfitboundary\high{x}%
+    \NC \NR
+    \HL
+\stoptabulate
+
+\blank
+\type{f\kern\tightfitcompensation\high{x}}
+\blank
+\type{f\tightfitboundary\high{x}}
+\blank
+
+\setuplow [distance=\zeropoint]
+\setuphigh[distance=\zeropoint]
+\blank
+integrated, could be default:
+\blank
+{\showglyphs f\high{x}\quad p\high{x}\quad}
+\setuplow [distance=tight]%
+\setuphigh[distance=tight]%
+{\showglyphs f\high{x}\quad p\high{x}\quad}
+\blank
+\type{\setuplow [distance=tight]}\par
+\type{\setuphigh[distance=tight]}
+\blank
+but no one ever complained
+\stopTEXpage
+
+\stoptext

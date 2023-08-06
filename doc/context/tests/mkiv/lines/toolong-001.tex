@@ -1,0 +1,50 @@
+\continuewhenlmtxmode
+
+\starttext
+
+% An answer to the list, for Bruce:
+
+\startbuffer[address]
+Name
+Address 1
+A long line that wraps
+Town
+Postcode
+\stopbuffer
+
+\framed
+  [align={flushleft},strut=no]
+  {\startlines[before=,after=]
+   \getbuffer[address]
+   \stoplines}
+
+\scale
+  [width=3cm]
+  {\framed
+     [align={flushleft},strut=no]
+     {\startlines[before=,after=]
+      \getbuffer[address]
+      \stoplines}}
+
+\begingroup
+\doloop {
+    \setbox\scratchbox\hbox\bgroup\framed
+      [align={flushleft},strut=no]
+      {\startlines[before=,after=]
+       \getbuffer[address]
+       \stoplines}
+    \egroup
+    \ifdim\wd\scratchbox>3cm
+      \advance\glyphxscale by -50
+    \else
+      \framed
+        [align={flushleft},strut=no,width=3cm]
+        {\startlines[before=,after=]
+         \getbuffer[address]
+         \stoplines}
+      \exitloop
+    \fi
+}
+\endgroup
+
+\stoptext

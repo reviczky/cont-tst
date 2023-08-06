@@ -1,0 +1,21 @@
+% question on list
+
+\starttext
+
+\def\StartHack
+ {\margintext
+   [location=right,style=]
+   {\thinrules[n=3]}}
+
+\def\StopHack
+ {\par \ifnum\prevgraf<3
+    \blank[\the\numexpr4-\prevgraf\relax*line]
+  \fi}
+
+\StartHack \input tufte \StopHack
+
+\StartHack test test \StopHack
+
+\StartHack test test \StopHack
+
+\stoptext

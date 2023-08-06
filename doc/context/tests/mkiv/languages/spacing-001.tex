@@ -1,0 +1,25 @@
+\starttext
+
+\setupcharacterspacing
+  [frenchpunctuation]
+  [language=fr]
+
+bla: bla\crlf
+bla : bla\crlf
+bla\nbsp: bla\crlf
+
+\setcharacterspacing[frenchpunctuation]
+
+\start \en
+    bla: bla (en)\crlf
+    bla : bla (en)\crlf
+    bla\nbsp: bla (en)\crlf
+\stop
+
+\start \fr
+    bla: bla (fr)\crlf
+    bla : bla (fr)\crlf
+    bla\nbsp: bla (fr)\crlf
+\stop
+
+\stoptext

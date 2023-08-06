@@ -1,0 +1,49 @@
+\starttext
+
+\setuplayout[width=10cm,height=fit,footer=0pt,header=1cm,topspace=1cm]
+
+\startbuffer[all]
+\startbuffer
+\dontleavehmode X\hfilll X\par
+\parfillskip30pt \parindent 40pt
+\setuptolerance[stretch,tolerant]
+\startlinefiller[filler]
+    \showboxes
+    \input ward
+    \par
+\stoplinefiller
+\stopbuffer
+
+\start         R \raggedright  \getbuffer \par \blank \stop
+\start         C \raggedcenter \getbuffer \par \blank \stop
+\start         L \raggedleft   \getbuffer \par \blank \stop
+
+\startnarrower R \raggedright  \getbuffer \par \blank \stopnarrower
+\startnarrower C \raggedcenter \getbuffer \par \blank \stopnarrower
+\startnarrower L \raggedleft   \getbuffer \par \blank \stopnarrower
+\stopbuffer
+
+\startbuffer[scopes]
+\setupheadertexts[location=both,scope=local]   \setuplinefiller[filler][scope=local]  \getbuffer[all] \page
+\setupheadertexts[location=both,scope=global]  \setuplinefiller[filler][scope=global] \getbuffer[all] \page
+\setupheadertexts[location=both,scope=left]    \setuplinefiller[filler][scope=left]   \getbuffer[all] \page
+\setupheadertexts[location=both,scope=right]   \setuplinefiller[filler][scope=right]  \getbuffer[all] \page
+
+\setupheadertexts[location=left,scope=local]   \setuplinefiller[filler][location=left,scope=local]  \getbuffer[all] \page
+\setupheadertexts[location=left,scope=global]  \setuplinefiller[filler][location=left,scope=global] \getbuffer[all] \page
+\setupheadertexts[location=left,scope=left]    \setuplinefiller[filler][location=left,scope=left]   \getbuffer[all] \page
+\setupheadertexts[location=left,scope=right]   \setuplinefiller[filler][location=left,scope=right]  \getbuffer[all] \page
+
+\setupheadertexts[location=right,scope=local]  \setuplinefiller[filler][location=right,scope=local]  \getbuffer[all] \page
+\setupheadertexts[location=right,scope=global] \setuplinefiller[filler][location=right,scope=global] \getbuffer[all] \page
+\setupheadertexts[location=right,scope=left]   \setuplinefiller[filler][location=right,scope=left]   \getbuffer[all] \page
+\setupheadertexts[location=right,scope=right]  \setuplinefiller[filler][location=right,scope=right]  \getbuffer[all] \page
+\stopbuffer
+
+\getbuffer[scopes]
+
+\setupalign[r2l]
+
+\getbuffer[scopes]
+
+\stoptext

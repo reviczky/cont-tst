@@ -1,0 +1,9 @@
+\setuplayout         [width=100mm,height=200mm]
+\definelayout[shorta][height=80mm]
+\definelayout[shortb][height=130mm]
+
+\starttext
+    \definelayout[2][shorta] \definelayout[4][shortb]
+    \definelayout[7][shorta] \definelayout[8][shortb]
+    \dorecurse{20}{#1: \samplefile{knuth}\par}
+\stoptext

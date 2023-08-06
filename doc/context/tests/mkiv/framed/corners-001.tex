@@ -1,0 +1,29 @@
+\setupbodyfont[dejavu]
+
+\starttext
+
+% corner options (with radius=0pt rectangular):
+%
+%  0 round ltrb trbl rblt bltr
+%  1 2 3 4 5 6 7 8 ltrb
+%  9 lbr rbl / 10 tlb blt / 11 ltr rtl / 12 lbr rbl
+% 13 rt tr / 14 rb br / 15 bl lb / 16 tl lt
+% 32 lr rl / 33 tb bt
+% 28 l / 29 r / 30 b / 31 t
+
+\dostepwiserecurse{0}{33}{1}{
+    \startTEXpage[offset=1dk]
+        \dontleavehmode\ruledhbox{\framed
+          [framecolor=red,
+           framecorner=#1,
+           frameradius=\zeropoint]
+          {TEST #1}}
+        \ruledhbox{\framed
+          [framecolor=red,
+           framecorner=#1,
+           frameradius=5pt]
+          {TEST #1}}
+    \stopTEXpage
+}
+
+\stoptext

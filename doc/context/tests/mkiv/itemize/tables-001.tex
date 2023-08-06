@@ -1,0 +1,60 @@
+\showframe
+
+\starttext
+
+\startitemize[n,loose]
+    \startitem \samplefile{ward}  \stopitem
+    \starttabulate[|pl|i3pl|]
+        \NC \startitem \samplefile{ward}  \stopitem
+        \NC \startitem \samplefile{tufte} \stopitem
+        \NC \NR
+        \NC \startitem \samplefile{ward}  \stopitem
+        \NC \startitem \samplefile{tufte} \stopitem
+        \NC \NR
+        \NC \startitem \samplefile{ward}  \stopitem
+        \NC \startitem \samplefile{tufte} \stopitem
+        \NC \NR
+    \stoptabulate
+    \startitem \samplefile{tufte}  \stopitem
+\stopitemize
+
+\page
+
+\starttabulate[|l|i3pl|]
+    \NC one \NC
+        \startitemize[n]
+            \startitem \samplefile{ward}  \stopitem
+            \startitem \samplefile{tufte} \stopitem
+        \stopitemize
+    \NC \NR
+\stoptabulate
+
+\page
+
+\startitemize[n,loose,packed]
+    \startitem \samplefile{ward}  \stopitem
+    \startlinecorrection
+        \bTABLE[distance=2em]
+            \bTR
+                \bTD \startitem \samplefile{ward}  \stopitem \eTD
+                \bTD \startitem \samplefile{tufte} \stopitem \eTD
+            \eTR
+        \eTABLE
+    \stoplinecorrection
+    \startitem \samplefile{tufte}  \stopitem
+\stopitemize
+
+\page
+
+\bTABLE
+    \bTR
+        \bTD
+            \startitemize[n]
+                \startitem \samplefile{ward}  \stopitem
+                \startitem \samplefile{tufte} \stopitem
+            \stopitemize
+        \eTD
+    \eTR
+\eTABLE
+
+\stoptext

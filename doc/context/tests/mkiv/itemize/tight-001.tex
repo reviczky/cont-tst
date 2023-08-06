@@ -1,0 +1,50 @@
+\setuplayout[tight]
+
+\starttext
+
+\start \showmakeup[penalty]
+
+    loose       \startitemize[packed,loose]       \item one \item two \stopitemize test \blank
+    loose       \startitemize[packed,loose]       \item one \item two \item three \stopitemize test \blank
+    loose       \startitemize[packed,loose]       \item one \item two \item three \item four \stopitemize test \blank
+    loose       \startitemize[packed,loose]       \item one \item two \item three \item four \item five \stopitemize test \blank
+
+\stop \page
+
+\start \showmakeup[penalty]
+
+    tight       \startitemize[packed,tight]       \item one \item two \stopitemize test \blank
+    tight       \startitemize[packed,tight]       \item one \item two \item three \stopitemize test \blank
+    tight       \startitemize[packed,tight]       \item one \item two \item three \item four \stopitemize test \blank
+    tight       \startitemize[packed,tight]       \item one \item two \item three \item four \item five \stopitemize test \blank
+
+\stop \page
+
+\start \showmakeup[penalty]
+
+    verytight   \startitemize[packed,verytight]   \item one \item two \stopitemize test \blank
+    verytight   \startitemize[packed,verytight]   \item one \item two \item three \stopitemize test \blank
+    verytight   \startitemize[packed,verytight]   \item one \item two \item three \item four \stopitemize test \blank
+    verytight   \startitemize[packed,verytight]   \item one \item two \item three \item four \item five \stopitemize test \blank
+
+\stop \page
+
+\start \showmakeup[penalty]
+
+    tight:first \startitemize[packed,tight:first] \item one \item two \stopitemize test \blank
+    tight:first \startitemize[packed,tight:first] \item one \item two \item three \stopitemize test \blank
+    tight:first \startitemize[packed,tight:first] \item one \item two \item three \item four \stopitemize test \blank
+    tight:first \startitemize[packed,tight:first] \item one \item two \item three \item four \item five \stopitemize test \blank
+
+\stop \page
+
+\start \showmakeup[penalty]
+
+    tight:last  \startitemize[packed,tight:last]  \item one \item two \stopitemize test \blank
+    tight:last  \startitemize[packed,tight:last]  \item one \item two \item three \stopitemize test \blank
+    tight:last  \startitemize[packed,tight:last]  \item one \item two \item three \item four \stopitemize test \blank
+    tight:last  \startitemize[packed,tight:last]  \item one \item two \item three \item four \item five \stopitemize test \blank
+
+\stop \page
+
+\stoptext

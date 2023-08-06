@@ -1,0 +1,13 @@
+\usemodule[tikz]
+
+\usetikzlibrary[positioning]
+
+\starttext
+    \starttikzpicture
+      \node (A) {A};
+      \node [right=1cm of A] (B) {B};
+      \node [right=1cm of B] (C) {C};
+      \node [below=1cm of C] (D) {D};
+      \node (E) at (B |- D) {E};
+    \stoptikzpicture
+\stoptext

@@ -1,0 +1,12 @@
+\setupreferencing[autofile=yes]
+
+\useexternaldocument[foo] [setnumber-001] [{TEST 1}]
+
+\setupheadnumber[chapter][\getreferencesectionnumber{foo::two}]
+
+\starttext
+
+    \chapter[three]{Three} from setnumber-001, one: \getreferencesectionnumber{foo::one}\par
+    \chapter[four] {Four}  from setnumber-001, two: \getreferencesectionnumber{foo::two}\par
+
+\stoptext

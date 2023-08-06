@@ -1,5 +1,51 @@
 \showframe
 
+\unprotect
+\protected\def\page_mix_routine_balance
+  {\bgroup
+   \forgetall
+   \dontcomplain
+   \setbox\b_page_mix_collected\vpack{\unvbox\normalpagebox}% brrr we need to make a tight box (combine this in lua)
+   \doloop
+     {%writestatus\m!columns{construct continue (\the\htdp\b_page_mix_collected)}%
+      \page_mix_routine_construct\v!no
+      \ifcase\clf_mixstate\relax
+        % 0 = okay, we can balance
+        \setbox\b_page_mix_collected\vpack{\clf_mixflushlist}% we could avoid this
+        %writestatus\m!columns{construct balance}%
+        \page_mix_routine_construct\v!yes
+        \page_mix_routine_package
+      % \c_page_mix_routine\c_page_mix_routine_regular % no, because we also need to set vsize
+        \setupoutputroutine[\s!singlecolumn]%
+        \page_otr_command_set_vsize
+        \page_otr_command_set_hsize
+        \par
+        %writestatus\m!columns{flush balance}%
+        \page_grids_add_to_mix\b_page_mix_collected % no linenumbers here
+        \box\b_page_mix_collected
+        % can't we do this differently now?
+%         \vskip\zeroskip % triggers recalculation of page stuff (weird that this is needed but it *is* needed, see mixed-001.tex)
+        \par
+        \nointerlineskip
+        \prevdepth\strutdp
+        \clf_mixflushrest% rubish
+        \clf_mixcleanup  % rubish
+        \exitloop
+      \or
+        % 1 = we have stuff left, so flush and rebalance
+        %writestatus\m!columns{flush continue}%
+        \page_mix_routine_package
+        \page_mix_construct_and_shipout\box\b_page_mix_collected\zerocount % three arguments
+        \setbox\b_page_mix_collected\vpack{\clf_mixflushrest}% we could avoid this
+        \clf_mixcleanup
+        \ifzeropt\ht\b_page_mix_collected
+            \exitloop
+        \fi
+      \fi}%
+   \egroup}
+
+\protect
+
 % A test case for \vskip\zeropoint in
 %
 % \box\b_page_mix_collected

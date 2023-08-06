@@ -1,0 +1,20 @@
+\setupbodyfont[bonum]
+
+\starttext
+
+\startbuffer
+    $ \left( \frac{1}{x}^{2} \right)$
+    $ \left( x \right)$
+    $ \left( x^2 \right)$
+    $ \left( \frac{1}{x} \right)$
+    $ \left( \frac{1}{x}^2 \right)$
+\stopbuffer
+
+\getbuffer
+
+\setupmathfence[topspace=-2pt,bottomspace=-1pt] \blank
+
+\getbuffer
+
+\stoptext
+

@@ -1,0 +1,13 @@
+\starttext
+
+\enablemode[foomode]
+\enablemode[oofmode]
+
+\ifmode          {foomode}          YES  \else  NOP \fi \par
+\ifmodes         {oofmode,foomode}  YES  \else  NOP \fi \par
+\ifallmodes      {oofmode,foomode}  YES  \else  NOP \fi \par
+\doifelsemode    {foomode}         {YES}       {NOP}    \par
+\doifelsemode    {oofmode,foomode} {YES}       {NOP}    \par
+\doifelseallmodes{oofmode,foomode} {YES}       {NOP}    \par
+
+\stoptext

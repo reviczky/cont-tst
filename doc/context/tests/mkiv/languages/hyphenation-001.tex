@@ -1,0 +1,36 @@
+\startluacode
+function document.addfunnyhyphen(tfmdata)
+    local underscore = utf.byte("_")
+    local char       = tfmdata.characters[underscore]
+    if not char then return end
+    tfmdata.characters[0xFE000]   = {
+        width    = 0,
+        height   = 0,
+        depth    = 0,
+        commands = {
+            { "right", -char.width },
+            { "down", char.depth },
+            { "slot", 1, underscore },
+        }
+    }
+end
+
+utilities.sequencers.appendaction("aftercopyingcharacters","after","document.addfunnyhyphen")
+\stopluacode
+
+\definehyphenationfeatures
+ [underscore]
+ [righthyphenchar="FE000]
+
+\setuplanguage
+ [explicitrighthyphenchar=-1]
+
+\sethyphenationfeatures[underscore]
+\setuphyphenation[method=traditional]
+
+\starttext
+    \startTEXpage[offset=1em, width=10em]
+        \hsize\zeropoint\tt
+        legibility-legible
+    \stopTEXpage
+\stoptext

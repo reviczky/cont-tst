@@ -1,0 +1,89 @@
+\continuewhenlmtxmode
+
+\usemodule[article-basic]
+
+\unprotect \pushoverloadmode
+
+\protect
+
+
+\starttext
+
+\startboxanchoring[+]
+\connectboxanchors[top]    [top]    [distance=1ex,arrow=no] {c1}{c2}
+\connectboxanchors[bottom] [bottom] [distance=1ex,arrow=no] {c2}{c3}
+\startformula
+    \mathboxanchored[nucleus]{c1}{e}_{\alpha}
+    \mathboxanchored[nucleus]{c2}{e}^{\mu}
+    \mathboxanchored[nucleus]{c3}{e}_{\dot{\beta}} = \frac{1}{\sqrt{2}}
+    \sigma_{\alpha,\dot{\beta}}^{\mu}
+\stopformula
+\stopboxanchoring
+
+\startboxanchoring[+]
+\connectboxanchors[top]    [top]    [distance=1ex,arrow=no] {c1}{c2}
+\connectboxanchors[bottom] [bottom] [distance=1ex,arrow=no] {c2}{c3}
+\startformula
+    \mathboxanchored[nucleus]{c1}{e}_{\alpha}
+    \mathboxanchored[nucleus]{c2}{e}^{\mu}
+    \mathboxanchored[nucleus]{c3}{e}_{\dot{\beta}} = \frac{1}{\sqrt{2}}
+    \sigma_{\alpha,\dot{\beta}}^{\mu}
+\stopformula
+\stopboxanchoring
+
+\startboxanchoring[+]
+\connectboxanchors[top]    [top]    [distance=1ex,arrow=yes,page=yes] {c1}{c2}
+\connectboxanchors[bottom] [bottom] [distance=1ex,arrow=yes,page=yes] {c2}{c3}
+\startformula
+    \mathboxanchored[nucleus]{c1}{e}_{\alpha}
+    \mathboxanchored[nucleus]{c2}{e}^{\mu}
+                                  e _{\dot{\beta}} = \frac{1}{\sqrt{2}}
+    \sigma_{\alpha,\dot{\beta}}^{\mu}
+\stopformula
+\page
+\startformula
+                                  e _{\alpha}
+                                  e ^{\mu}
+    \mathboxanchored[nucleus]{c3}{e}_{\dot{\beta}} = \frac{1}{\sqrt{2}}
+    \sigma_{\alpha,\dot{\beta}}^{\mu}
+\stopformula
+\stopboxanchoring
+
+\startMPpositiongraphic{mypos:boxanchor:top}
+    begingroup ;
+        save f, t, p ; pair f, t ; path p ;
+        f := positionxy(mpvars("from")) ;
+        t := positionxy(mpvars("to")) ;
+        p := f { up } .. t ;
+        drawarrow p
+            withpen pencircle scaled mpvard "rulethickness"
+            withcolor mpvars "linecolor" ; % historically different names
+        positioninregion ;
+    endgroup ;
+\stopMPpositiongraphic
+
+\startMPpositiongraphic{mypos:boxanchor:bottom}
+    begingroup ;
+        save f, t, p ; pair f, t ; path p ;
+        f := positionxy(mpvars("from")) ;
+        t := positionxy(mpvars("to")) ;
+        p := f { down } .. t ;
+        drawarrow p
+            withpen pencircle scaled mpvard "rulethickness"
+            withcolor mpvars "linecolor" ; % historically different names
+        positioninregion ;
+    endgroup ;
+\stopMPpositiongraphic
+
+\startboxanchoring[+]
+\connectboxanchors[top]    [top]    [distance=1ex,rulethickness=1pt,rulecolor=darkgreen,mp=mypos:boxanchor:top]    {c1}{c2}
+\connectboxanchors[bottom] [bottom] [distance=1ex,rulethickness=1pt,rulecolor=darkred,  mp=mypos:boxanchor:bottom] {c2}{c3}
+\startformula
+    \mathboxanchored[nucleus]{c1}{e}_{\alpha}
+    \mathboxanchored[nucleus]{c2}{e}^{\mu}
+    \mathboxanchored[nucleus]{c3}{e}_{\dot{\beta}} = \frac{1}{\sqrt{2}}
+    \sigma_{\alpha,\dot{\beta}}^{\mu}
+\stopformula
+\stopboxanchoring
+
+\stoptext

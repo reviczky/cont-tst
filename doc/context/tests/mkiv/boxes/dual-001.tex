@@ -1,0 +1,23 @@
+\continuewhenlmtxmode
+
+\starttext
+
+\startcombination [nx=3,ny=1,location=top]
+    {\vbox \bgroup \hsize .3\textwidth \setupalign[tolerant,stretch] \dontcomplain
+        xxxxxxxxxxxxxxxx\par
+        \ruledvbox{\samplefile{tufte}}\par
+        xxxxxxxxxxxxxxxx\par
+     \egroup} {vbox}
+    {\vbox \bgroup \hsize .3\textwidth \setupalign[tolerant,stretch] \dontcomplain
+        xxxxxxxxxxxxxxxx\par
+        \ruledvtop{\samplefile{tufte}}\par
+        xxxxxxxxxxxxxxxx\par
+     \egroup} {vtop}
+    {\vbox \bgroup \hsize .3\textwidth \setupalign[tolerant,stretch] \dontcomplain
+        xxxxxxxxxxxxxxxx\par
+        \ruleddbox{\samplefile{tufte} }\par
+        xxxxxxxxxxxxxxxx\par
+     \egroup} {dbox}
+\stopcombination
+
+\stoptext

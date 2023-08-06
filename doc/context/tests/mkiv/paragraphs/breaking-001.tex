@@ -1,0 +1,9 @@
+\starttext
+    \setupalign[verytolerant]
+    \tracinglousiness1
+  % \tracinglousiness2
+    \hsize8cm \lousiness 0            \samplefile{ward} \blank % test run (okay)
+    {\tt \the\lousiness} \blank
+    \hsize8cm \silliness   11         \samplefile{ward} \blank % single overload (okay)
+    \hsize8cm \lousiness 2 11 0 8 200 \samplefile{ward} \blank % can be more overloads (ugly)
+\stoptext

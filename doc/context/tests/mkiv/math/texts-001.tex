@@ -1,0 +1,21 @@
+\startbuffer
+    $
+    {       x\! \neq x!} \quad
+    {\bf    x\! \neq x!} \quad
+    {\it    x\! \neq x!} \quad
+    {\bi    x\! \neq x!} \qquad
+    {\ss    x\! \neq x!} \quad
+    {\ss\bf x\! \neq x!} \quad
+    {\ss\it x\! \neq x!} \quad
+    {\ss\bi x\! \neq x!}
+    $
+\stopbuffer
+
+\starttext
+    \startTEXpage[offset=1dk]
+        \getbuffer  \par
+        \automathtext
+        \getbuffer
+    \stopTEXpage
+\stoptext
+

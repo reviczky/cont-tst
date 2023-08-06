@@ -1,0 +1,30 @@
+\setupbackend
+  [export=yes]
+
+\setupexternalfigures
+  [location={default,local,global}]
+
+\setupexport
+  [option=mathjax]
+
+\starttext
+
+test
+
+\startformula
+    \int ^1 _2 f'(x)\dd x = f(b) - f(a)
+\stopformula
+
+test
+
+\startformula
+    \sqrt{f'(x)\dd x = f(b) - f(a)}
+\stopformula
+
+test
+
+\startformula
+    \frac{f(b)}{f(a)}
+\stopformula
+
+\stoptext

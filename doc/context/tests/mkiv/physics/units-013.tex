@@ -1,0 +1,37 @@
+\starttext
+
+\registerunit
+  [unit]
+  [Point=PT,
+   point=pt,
+   Basepoint=BP,
+ % basepoint=bp,
+   ]
+
+\registerunitshortcut
+  [unit]
+  [C=coulomb]
+
+\startlines
+10 \unit {square meter per second}
+10 \unit {square Meter per Second}
+10 \unit {point}
+10 \unit {Point}
+10 \unit {basepoint}
+10 \unit {Basepoint}
+10 \unit {C}
+\stoplines
+
+\setupunit[unit][option=keep]
+
+\startlines
+10 \unit {square meter per second}
+10 \unit {square Meter per Second}
+10 \unit {point}
+10 \unit {Point}
+10 \unit {basepoint}
+10 \unit {Basepoint}
+10 \unit {C}
+\stoplines
+
+\stoptext

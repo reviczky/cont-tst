@@ -1,0 +1,23 @@
+\starttext
+
+\start
+    \tttf
+    \hsize\widthofstring{short}
+    --:\par
+    \discretionaryoptions\zerocount
+    \discretionary{before}{after}{short}\par
+    \discretionary{before}{}{short}\blank
+    nb:\par
+    \discretionaryoptions\prefernobreakdiscoptioncode
+    \discretionary{before}{after}{short}\par
+    \discretionary{before}{}{short}\blank
+    br:\par
+    \discretionaryoptions\preferbreakdiscoptioncode
+    \discretionary{before}{after}{short}\par
+    \discretionary{before}{}{short}\blank
+    \discretionaryoptions\prefernobreakdiscoptioncode
+    \discretionary break {before}{after}{short}\par
+    \discretionary break {before}{}{short}\blank
+\stop
+
+\stoptext

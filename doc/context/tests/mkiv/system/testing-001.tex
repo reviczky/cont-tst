@@ -1,0 +1,15 @@
+\starttext
+
+\doifelsecommon{aa,bb,cc}{dd,ee,aa} {YES}       {NOP}
+\ifcommon      {aa,bb,cc}{dd,ee,aa}  YES  \else  NOP \fi
+
+\doifelseinset {aa}{dd,ee,aa}       {YES}       {NOP}
+\ifinset       {aa}{dd,ee,aa}        YES  \else  NOP \fi
+
+\doifelsecommon{aa,bb,cc}{dd,ee,ff} {YES}       {NOP}
+\ifcommon      {aa,bb,cc}{dd,ee,ff}  YES  \else  NOP \fi
+
+\doifelseinset {xx}{dd,ee,aa}       {YES}       {NOP}
+\ifinset       {xx}{dd,ee,aa}        YES  \else  NOP \fi
+
+\stoptext

@@ -1,0 +1,39 @@
+\useMPlibrary[dum]
+
+\starttext
+
+\startplacefigure[title=Test]
+    \bTABLE[frame=off]
+        \bTR
+            \bTD[nx=2,align=middle,offset=overlay]
+                \dontleavehmode\externalfigure[dummy-1][width=4cm,height=1cm]
+            \eTD
+        \eTR
+        \bTR[toffset=1ex]
+            \bTD[nx=2,align=middle]
+              % \placefloatcaption[figure][title=foo]
+                a) foo
+            \eTD
+        \eTR
+        \bTR[toffset=2ex]
+            \bTD[align=middle,offset=overlay]
+                \externalfigure[dummy-2][width=4cm,height=1cm]
+            \eTD
+            \bTD[align=middle,offset=overlay]
+                \externalfigure[dummy-3][width=4cm,height=1cm]
+            \eTD
+        \eTR
+        \bTR[toffset=1ex]
+            \bTD[align=middle]
+              % \placefloatcaption[figure][title=foo]
+                b) foo
+            \eTD
+            \bTD[align=middle]
+              % \placefloatcaption[figure][title=foo]
+                c) foo
+            \eTD
+        \eTR
+    \eTABLE
+\stopplacefigure
+
+\stoptext

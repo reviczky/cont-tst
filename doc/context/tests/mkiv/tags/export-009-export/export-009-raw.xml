@@ -3,8 +3,8 @@
 <!--
 
     input filename   : export-009
-    processing date  : 2022-09-11 15:14:41+02:00
-    context version  : 2022.09.10 02:44
+    processing date  : 2023-07-28 21:31:43+02:00
+    context version  : 2023.07.28 20:04
     exporter version : 0.35
 
 -->
@@ -13,21 +13,21 @@
 <?xml-stylesheet type="text/css" href="styles/export-009-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/export-009-styles.css" ?>
 
-<document context="2022.09.10 02:44" date="2022-09-11 15:14:41+02:00" file="export-009" language="en" title="export-009" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
-test <m:math display="inline"><m:mrow><m:mo>𝑒</m:mo><m:mo>+</m:mo><m:mo>1</m:mo><m:mo>=</m:mo><m:mi>𝑚</m:mi><m:msup><m:mi>𝑐</m:mi><!-- begin m:mrow --><m:mo>2</m:mo><!-- end m:mrow --></m:msup><m:mo>+</m:mo><m:mo>1</m:mo></m:mrow></m:math> test
+<document context="2023.07.28 20:04" date="2023-07-28 21:31:43+02:00" file="export-009" language="en" title="export-009" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+test <m:math display="inline"><m:mrow><m:mi>𝑒</m:mi><m:mo>+</m:mo><m:mn>1</m:mn><m:mo>=</m:mo><m:mi>𝑚</m:mi><m:msup><m:mi>𝑐</m:mi><!-- begin m:mrow --><m:mn>2</m:mn><!-- end m:mrow --></m:msup><m:mo>+</m:mo><m:mn>1</m:mn></m:mrow></m:math> test
  <break/>
-test <m:math display="inline"><m:mrow><m:mo>𝑒</m:mo><m:mo>+</m:mo><m:mo>2</m:mo><m:mo>=</m:mo><m:mi>𝑚</m:mi><m:msup><m:mi>𝑐</m:mi><!-- begin m:mrow --><m:mo>2</m:mo><!-- end m:mrow --></m:msup><m:mo>+</m:mo><m:mo>2</m:mo></m:mrow></m:math> test
+test <m:math display="inline"><m:mrow><m:mi>𝑒</m:mi><m:mo>+</m:mo><m:mn>2</m:mn><m:mo>=</m:mo><m:mi>𝑚</m:mi><m:msup><m:mi>𝑐</m:mi><!-- begin m:mrow --><m:mn>2</m:mn><!-- end m:mrow --></m:msup><m:mo>+</m:mo><m:mn>2</m:mn></m:mrow></m:math> test
  <break/>
-test <m:math display="inline"><m:mrow><m:mo>𝑒</m:mo><m:mo>+</m:mo><m:mo>3</m:mo><m:mo>=</m:mo><m:mi>𝑚</m:mi><m:msup><m:mi>𝑐</m:mi><!-- begin m:mrow --><m:mo>2</m:mo><!-- end m:mrow --></m:msup><m:mo>+</m:mo><m:mo>3</m:mo></m:mrow></m:math> test
+test <m:math display="inline"><m:mrow><m:mi>𝑒</m:mi><m:mo>+</m:mo><m:mn>3</m:mn><m:mo>=</m:mo><m:mi>𝑚</m:mi><m:msup><m:mi>𝑐</m:mi><!-- begin m:mrow --><m:mn>2</m:mn><!-- end m:mrow --></m:msup><m:mo>+</m:mo><m:mn>3</m:mn></m:mrow></m:math> test
  <break/>
-test <m:math display="inline"><m:mrow><m:mo>𝑒</m:mo><m:mo>+</m:mo><m:mo>4</m:mo><m:mo>=</m:mo><m:mi>𝑚</m:mi><m:msup><m:mi>𝑐</m:mi><!-- begin m:mrow --><m:mo>2</m:mo><!-- end m:mrow --></m:msup><m:mo>+</m:mo><m:mo>4</m:mo></m:mrow></m:math> test
+test <m:math display="inline"><m:mrow><m:mi>𝑒</m:mi><m:mo>+</m:mo><m:mn>4</m:mn><m:mo>=</m:mo><m:mi>𝑚</m:mi><m:msup><m:mi>𝑐</m:mi><!-- begin m:mrow --><m:mn>2</m:mn><!-- end m:mrow --></m:msup><m:mo>+</m:mo><m:mn>4</m:mn></m:mrow></m:math> test
  <break/>
-test <m:math display="inline"><m:mrow><m:mo>𝑒</m:mo><m:mo>+</m:mo><m:mo>5</m:mo><m:mo>=</m:mo><m:mi>𝑚</m:mi><m:msup><m:mi>𝑐</m:mi><!-- begin m:mrow --><m:mo>2</m:mo><!-- end m:mrow --></m:msup><m:mo>+</m:mo><m:mo>5</m:mo></m:mrow></m:math> test
+test <m:math display="inline"><m:mrow><m:mi>𝑒</m:mi><m:mo>+</m:mo><m:mn>5</m:mn><m:mo>=</m:mo><m:mi>𝑚</m:mi><m:msup><m:mi>𝑐</m:mi><!-- begin m:mrow --><m:mn>2</m:mn><!-- end m:mrow --></m:msup><m:mo>+</m:mo><m:mn>5</m:mn></m:mrow></m:math> test
  <break/>
-test <m:math display="inline"><m:mrow><m:mo>𝑒</m:mo><m:mo>+</m:mo><m:mo>6</m:mo><m:mo>=</m:mo><m:mi>𝑚</m:mi><m:msup><m:mi>𝑐</m:mi><!-- begin m:mrow --><m:mo>2</m:mo><!-- end m:mrow --></m:msup><m:mo>+</m:mo><m:mo>6</m:mo></m:mrow></m:math> test
+test <m:math display="inline"><m:mrow><m:mi>𝑒</m:mi><m:mo>+</m:mo><m:mn>6</m:mn><m:mo>=</m:mo><m:mi>𝑚</m:mi><m:msup><m:mi>𝑐</m:mi><!-- begin m:mrow --><m:mn>2</m:mn><!-- end m:mrow --></m:msup><m:mo>+</m:mo><m:mn>6</m:mn></m:mrow></m:math> test
  <break/>
-test <m:math display="inline"><m:mrow><m:mo>𝑒</m:mo><m:mo>+</m:mo><m:mo>7</m:mo><m:mo>=</m:mo><m:mi>𝑚</m:mi><m:msup><m:mi>𝑐</m:mi><!-- begin m:mrow --><m:mo>2</m:mo><!-- end m:mrow --></m:msup><m:mo>+</m:mo><m:mo>7</m:mo></m:mrow></m:math> test
+test <m:math display="inline"><m:mrow><m:mi>𝑒</m:mi><m:mo>+</m:mo><m:mn>7</m:mn><m:mo>=</m:mo><m:mi>𝑚</m:mi><m:msup><m:mi>𝑐</m:mi><!-- begin m:mrow --><m:mn>2</m:mn><!-- end m:mrow --></m:msup><m:mo>+</m:mo><m:mn>7</m:mn></m:mrow></m:math> test
  <break/>
-test <m:math display="inline"><m:mrow><m:mo>𝑒</m:mo><m:mo>+</m:mo><m:mo>8</m:mo><m:mo>=</m:mo><m:mi>𝑚</m:mi><m:msup><m:mi>𝑐</m:mi><!-- begin m:mrow --><m:mo>2</m:mo><!-- end m:mrow --></m:msup><m:mo>+</m:mo><m:mo>8</m:mo></m:mrow></m:math> test
+test <m:math display="inline"><m:mrow><m:mi>𝑒</m:mi><m:mo>+</m:mo><m:mn>8</m:mn><m:mo>=</m:mo><m:mi>𝑚</m:mi><m:msup><m:mi>𝑐</m:mi><!-- begin m:mrow --><m:mn>2</m:mn><!-- end m:mrow --></m:msup><m:mo>+</m:mo><m:mn>8</m:mn></m:mrow></m:math> test
  <break/>
-test <m:math display="inline"><m:mrow><m:mo>𝑒</m:mo><m:mo>+</m:mo><m:mo>9</m:mo><m:mo>=</m:mo><m:mi>𝑚</m:mi><m:msup><m:mi>𝑐</m:mi><!-- begin m:mrow --><m:mo>2</m:mo><!-- end m:mrow --></m:msup><m:mo>+</m:mo><m:mo>9</m:mo></m:mrow></m:math> test</document>
+test <m:math display="inline"><m:mrow><m:mi>𝑒</m:mi><m:mo>+</m:mo><m:mn>9</m:mn><m:mo>=</m:mo><m:mi>𝑚</m:mi><m:msup><m:mi>𝑐</m:mi><!-- begin m:mrow --><m:mn>2</m:mn><!-- end m:mrow --></m:msup><m:mo>+</m:mo><m:mn>9</m:mn></m:mrow></m:math> test</document>

@@ -1,0 +1,23 @@
+\setupinitial
+  [n=2,
+   continue=yes]
+
+\setuphead[chapter]
+  [after={\placeinitial},
+   page=no]
+
+\starttext
+
+\startchapter[title={one}]
+
+A First Line
+
+A Second Line.
+
+A Third Line.
+
+\chapter{two}
+
+\samplefile{knuth}
+
+\stoptext

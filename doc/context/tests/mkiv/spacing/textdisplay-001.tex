@@ -1,0 +1,24 @@
+\continuewhenlmtxmode
+
+\useMPlibrary[dum]
+
+\definetextdisplay[steppedbystep][before={\blank[halfline]}] % factor = .5
+
+\starttext \showmakeup[line]
+  \dostepwiserecurse{10}{25}{1}{
+      xxxxxxxxxxxxxxxx\par
+      \starttextdisplay
+        \externalfigure[dummydummy][height=#1mm,text=no]%
+      \stoptextdisplay
+      xxxxxxxxxxxxxxxx\par
+      \starttextdisplay[before=\blank,after=\blank] % factor=.5
+        \externalfigure[dummydummy][height=#1mm,text=no]%
+      \stoptextdisplay
+      xxxxxxxxxxxxxxxx\par
+      \startsteppedbystep
+        \externalfigure[dummydummy][height=#1mm,text=no]%
+      \stopsteppedbystep
+      xxxxxxxxxxxxxxxx\par
+      \page
+  }
+\stoptext

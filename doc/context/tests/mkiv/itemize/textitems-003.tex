@@ -1,0 +1,58 @@
+\starttext
+
+\startitemize[none]
+    \item fish
+    \item eggs
+    \item milk
+\stopitemize
+
+\blank[2*line]
+
+\startitemize[text]
+    \item fish
+    \item eggs
+    \item milk
+\stopitemize
+
+\blank[2*line]
+
+\startitemize[none,text][textseparator=;]
+    \item fish
+    \item eggs
+    \item milk
+\stopitemize
+
+\blank[2*line]
+
+\startitemize[none,text][textseparator={;},lasttextseparator={ and}]
+    \item fish
+    \item eggs
+    \item milk
+\stopitemize
+
+\blank[2*line]
+
+\startitemize[none,text][textseparator={; },lasttextseparator={ and },textdistance=none]
+    \item fish
+    \item eggs
+    \item milk
+\stopitemize
+
+\defineitemgroup
+  [fooditems]
+
+\setupitemgroup
+  [fooditems]
+  [each]
+  [none,text]
+  [textseparator=;]
+
+\blank[2*line]
+
+\startfooditems
+    \item fish
+    \item eggs
+    \item milk
+\stopfooditems
+
+\stoptext

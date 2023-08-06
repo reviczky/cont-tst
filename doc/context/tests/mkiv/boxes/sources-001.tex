@@ -1,0 +1,27 @@
+\startTEXpage[offset=2cm]
+
+    \setbox 0 \ruledhbox
+        source  123
+        anchors 1 2
+        {one}
+    \setbox 2 \ruledhbox
+        target 123
+        {test 1}
+
+%     \dontleavehmode \box2 xxxxxx\box0
+    \dontleavehmode \box2 \box0
+
+    \setbox 0 \ruledhbox
+        target      124
+        orientation 2
+        anchors     1 4
+        xoffset    -10pt
+        {two}
+    \setbox 2 \ruledhbox
+        source 124
+        {test 2}
+
+%     \dontleavehmode \box2 xxxxxx\box0
+    \dontleavehmode \box2 \box0
+
+\stopTEXpage

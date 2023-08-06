@@ -1,0 +1,17 @@
+\starttext
+
+\permanent\tolerant\protected\def\foo#1#2#*#3#4#5#6#7#8#9#A{x[#A]x}
+
+\start \tt
+    \meaning    \foo\par
+    \meaningfull\foo\par
+    \meaningless\foo\par
+    \meaningful \foo\par
+    \meaningles \foo\par
+\stop
+
+\blank
+
+\foo123456789A
+
+\stoptext

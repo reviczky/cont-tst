@@ -1,0 +1,28 @@
+% from/for the list
+
+\pushoverloadmode
+
+\starttext
+
+\definelabel[X][text=]
+
+\startTEXpage[offset=1cm]
+  (\X)
+  (\X[a])
+  (\X[b])
+  (\X)
+  \par
+  \doifelsereferencefound {a}
+    {\convertnumber{number}{\currentreferencenumber}}
+    {}
+  \par
+  \doifelsereferencefound {a}
+    {\convertnumber{R}{\currentreferencenumber}}
+    {}
+  \par
+  \doifelsereferencefound {b}
+    {\convertnumber{G}{\currentreferencenumber}}
+    {}
+\stopTEXpage
+
+\stoptext

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+
+<!--
+
+    input filename   : export-010
+    processing date  : 2023-07-28 21:31:44+02:00
+    context version  : 2023.07.28 20:04
+    exporter version : 0.35
+
+-->
+
+<?xml-stylesheet type="text/css" href="styles/export-010-defaults.css" ?>
+<?xml-stylesheet type="text/css" href="styles/export-010-images.css" ?>
+<?xml-stylesheet type="text/css" href="styles/export-010-styles.css" ?>
+
+<document context="2023.07.28 20:04" date="2023-07-28 21:31:44+02:00" file="export-010" language="en" title="export-010" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+test
+ <formula>
+  <formulacontent n="1">
+   <m:math display="block">
+    <m:mrow>
+     <m:msubsup>
+      <!-- begin m:mrow -->
+       <!-- begin m:mfenced -->
+        <m:mo>∫</m:mo>
+        <!-- end m:mfenced -->
+      <!-- end m:mrow -->
+      <!-- begin m:mrow -->
+       <m:mn>2</m:mn>
+      <!-- end m:mrow -->
+      <!-- begin m:mrow -->
+       <m:mn>1</m:mn>
+      <!-- end m:mrow -->
+     </m:msubsup>
+     <m:msup>
+      <m:mi>𝑓</m:mi>
+      <m:mi>′</m:mi>
+     </m:msup>
+     <m:mo>(</m:mo>
+     <m:mi>𝑥</m:mi>
+     <m:mo>)</m:mo>
+     <m:mi>𝑑</m:mi>
+     <m:mi>𝑥</m:mi>
+     <m:mo>=</m:mo>
+     <m:mi>𝑓</m:mi>
+     <m:mo>(</m:mo>
+     <m:mi>𝑏</m:mi>
+     <m:mo>)</m:mo>
+     <m:mo>−</m:mo>
+     <m:mi>𝑓</m:mi>
+     <m:mo>(</m:mo>
+     <m:mi>𝑎</m:mi>
+     <m:mo>)</m:mo>
+    </m:mrow>
+   </m:math>
+  </formulacontent>
+ </formula>
+test
+ <formula>
+  <formulacontent n="2">
+   <m:math display="block">
+    <m:mrow>
+     <m:msqrt>
+      <m:mrow>
+       <m:msup>
+        <m:mi>𝑓</m:mi>
+        <m:mi>′</m:mi>
+       </m:msup>
+       <m:mo>(</m:mo>
+       <m:mi>𝑥</m:mi>
+       <m:mo>)</m:mo>
+       <m:mi>𝑑</m:mi>
+       <m:mi>𝑥</m:mi>
+       <m:mo>=</m:mo>
+       <m:mi>𝑓</m:mi>
+       <m:mo>(</m:mo>
+       <m:mi>𝑏</m:mi>
+       <m:mo>)</m:mo>
+       <m:mo>−</m:mo>
+       <m:mi>𝑓</m:mi>
+       <m:mo>(</m:mo>
+       <m:mi>𝑎</m:mi>
+       <m:mo>)</m:mo>
+      </m:mrow>
+     </m:msqrt>
+    </m:mrow>
+   </m:math>
+  </formulacontent>
+󽀤󽀤󽀤󽀤󽀤󽀤󽀤󽀤󽀤󽀤󽀤󽀤󽀤󽀤󽀤󽀤󽀤󽀤󽀤󽀤󽀤󽀤󽀤󽀤󽀤󽀤󽀤󽀤󽀤󽀤󽀤󽀤󽀤󽀤󽀤󽀤󽀤󽀤󽀤󽀤󽀤󽀤󽀤󽀤󽀤󽀤󽀤󽀤󽀤󽀥 </formula>
+test
+ <formula>
+  <formulacontent n="3">
+   <m:math display="block">
+    <!-- begin m:mrow -->
+     <!-- begin m:mrow -->
+      <m:mfrac>
+       <m:mrow>
+        <m:mi>𝑓</m:mi>
+        <m:mo>(</m:mo>
+        <m:mi>𝑏</m:mi>
+        <m:mo>)</m:mo>
+       </m:mrow>
+       <m:mrow>
+        <m:mi>𝑓</m:mi>
+        <m:mo>(</m:mo>
+        <m:mi>𝑎</m:mi>
+        <m:mo>)</m:mo>
+       </m:mrow>
+      </m:mfrac>
+     <!-- end m:mrow -->
+    <!-- end m:mrow -->
+   </m:math>
+  </formulacontent>
+󽀊󽀋󽀋󽀋󽀋󽀋󽀋󽀋󽀋󽀌 </formula>
+</document>

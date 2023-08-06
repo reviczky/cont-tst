@@ -1,0 +1,24 @@
+\starttext
+
+\definesorting[MySort]
+\setupsimplelist[MySort][page=yes]
+
+\MySort{one}
+\MySort{two}
+\MySort{three}
+
+\dorecurse{4}{
+    test (\one) \registersort[MySort][one]
+%     test (\two)
+    \ifodd#1\else
+      test (\three) \registersort[MySort][three]
+    \fi
+\page}
+
+\placelistofsorts[MySort]
+
+\sortingpages[MySort][one]
+
+\sortingpages[MySort][three]
+
+\stoptext

@@ -1,0 +1,41 @@
+% adapted from mailing list
+
+\defineenumeration[remark][prefix=yes, prefixsegments=chapter:section]
+
+\starttext
+
+Equations: \in[eq1], \in[eq2], \in[eq3], \in[eq4]
+
+Sections: \in[sec1], \in[sec2], \in[sec3], \in[sec4]
+
+Chapters: \in[chap1], \in[chap2], \in[chap3], \in[chap4]
+
+Remarks: \in[remark1], \in[remark2]
+
+\startbodymatter
+
+\chapter[chap1]{Chapter}
+\placeformula[eq1]\startformula x = y\stopformula
+\chapter[chap2]{Chapter}
+\section[sec1]{Section}
+\section[sec2]{Section}
+\placeformula[eq1]\startformula x = y\stopformula
+\placeformula[eq2]\startformula x = y\stopformula
+
+\stopbodymatter
+
+\startappendices
+
+\chapter[chap3]{Chapter}
+\section[sec3]{Section}
+\placeformula[eq3]\startformula x = y\stopformula
+\section[sec4]{Section}
+\startremark[remark1]\stopremark
+\placeformula[eq4]\startformula x = y\stopformula
+\startremark[remark2]\stopremark
+\chapter[chap4]{Chapter}
+
+\stopappendices
+
+\stoptext
+

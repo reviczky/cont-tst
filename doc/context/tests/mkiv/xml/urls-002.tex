@@ -1,0 +1,20 @@
+\startbuffer[test]
+<something xlink:href="a%20filename%20with%20spaces.jpg">
+    test
+</something>
+\stopbuffer
+
+\startxmlsetups xml:mysetups
+    \xmlsetsetup{\xmldocument}{something}{xml:*}
+\stopxmlsetups
+
+\xmlregistersetup{xml:mysetups}
+
+\startxmlsetups xml:something
+    \xmlatt{#1}{xlink:href}\par
+    \xmlfilter{#1}{./url('xlink:href')}
+\stopxmlsetups
+
+\starttext
+    \xmlprocessbuffer{main}{test}{}
+\stoptext

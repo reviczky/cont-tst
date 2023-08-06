@@ -9,7 +9,7 @@
 \stoptabulatehead
 
 \starttabulate[|l|l|]
-    \dorecurse{100}{\NC ##1 \NC ##1 \NC\NR}
+    \dorecurse{100}{\normalexpanded{\NC \recurselevel \NC \recurselevel \NC\NR}}
 \stoptabulate
 
 \stoptext

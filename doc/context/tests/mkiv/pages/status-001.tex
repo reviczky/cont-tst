@@ -1,0 +1,11 @@
+\setuppagenumbering[alternative=doublesided]
+% \setuppagenumbering[alternative={singlesided,doublesided}]
+
+\starttext
+    \dorecurse{200}{
+        \dontleavehmode\signalrightpage
+        \doifelserightpage{RIGHT}{LEFT}
+        \doifelseoddpage  {ODD  }{EVEN}
+        \par
+    }
+\stoptext

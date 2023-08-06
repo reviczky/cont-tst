@@ -1,0 +1,47 @@
+\startluacode
+    fonts.handlers.otf.addfeature {
+        name = "germantexlig",
+        type = "ligature",
+        dataset = {
+            {
+                data = {
+                    ['“'] = { "`", "`" },
+                    ['”'] = { "'", "'" },
+                    ['„'] = { '"', "`" },
+                }
+            },
+            {
+                data = {
+                    ['“'] = { '"', "'" },
+                    ['‘'] = { "`" },
+                    ['’'] = { "'" },
+                }
+            }
+        }
+    }
+\stopluacode
+
+\setupbodyfont[palatino]
+
+\definefontfeature[ltest][germantexlig=yes,trep=no,tlig=no]
+
+% result of pseudo ligatures explored by Leah on the list
+
+\starttext
+
+\startbuffer
+``foo'' `foo' "`foo"' 19" rack
+
+`` = “ \quad
+'' = ” \quad
+"` = „ \quad
+"' = “ \quad
+`  = ‘ \quad
+'  = ’ \quad
+\stopbuffer
+
+\getbuffer
+
+{\addff{ltest}\getbuffer}
+
+\stoptext

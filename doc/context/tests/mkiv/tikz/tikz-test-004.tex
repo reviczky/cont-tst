@@ -1,0 +1,12 @@
+% Testing -| and |- inside positioning
+\usemodule[tikz]
+
+\starttext
+\starttikzpicture
+  \node at (0,0) (A) {A};
+  \node at (1,1) (B) {B};
+
+  \node (C) at (A |- B) {C};
+  \node (D) at (A -| B) {D};
+\stoptikzpicture
+\stoptext

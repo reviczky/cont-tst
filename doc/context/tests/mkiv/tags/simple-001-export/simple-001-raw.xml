@@ -3,8 +3,8 @@
 <!--
 
     input filename   : simple-001
-    processing date  : 2022-09-11 15:14:51+02:00
-    context version  : 2022.09.10 02:44
+    processing date  : 2023-07-28 21:31:47+02:00
+    context version  : 2023.07.28 20:04
     exporter version : 0.35
 
 -->
@@ -13,7 +13,7 @@
 <?xml-stylesheet type="text/css" href="styles/simple-001-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/simple-001-styles.css" ?>
 
-<document context="2022.09.10 02:44" date="2022-09-11 15:14:51+02:00" file="simple-001" language="en" title="simple-001" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+<document context="2023.07.28 20:04" date="2023-07-28 21:31:47+02:00" file="simple-001" language="en" title="simple-001" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
  <section detail="chapter" chain="chapter" level="2">
   <sectioncaption>
    <sectionnumber>1</sectionnumber>
@@ -41,7 +41,7 @@ We thrive in information--thick worlds because of our marvelous and everyday ca�
       <formulacontent n="1">
        <m:math display="block">
         <m:mrow>
-         <m:mo>𝑒</m:mo>
+         <m:mi>𝑒</m:mi>
          <m:mo>=</m:mo>
          <m:msqrt>
           <m:mrow>
@@ -49,7 +49,7 @@ We thrive in information--thick worlds because of our marvelous and everyday ca�
            <m:msup>
             <m:mi>𝑐</m:mi>
             <!-- begin m:mrow -->
-             <m:mo>2</m:mo>
+             <m:mn>2</m:mn>
             <!-- end m:mrow -->
            </m:msup>
           </m:mrow>
@@ -57,7 +57,7 @@ We thrive in information--thick worlds because of our marvelous and everyday ca�
         </m:mrow>
        </m:math>
       </formulacontent>
-     </formula>
+󽀤󽀤󽀤󽀤󽀤󽀤󽀤󽀤󽀥     </formula>
      <float detail="figure" chain="figure" method="here">
       <floatcontent><image height="3.052cm" id="image-1" label="3.052cm" name="cow.pdf" width="4.070cm"></image></floatcontent>
       <floatcaption><floatlabel detail="figure">Figure </floatlabel><floatnumber detail="figure">1.1</floatnumber> <floattext>cow</floattext></floatcaption>

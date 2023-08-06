@@ -1,0 +1,81 @@
+% criterium test by Alan
+
+\enablemode [alternative]
+
+\usebtxdefinitions
+  [apa]
+
+\setupbtxrendering
+  [apa]
+  [repeat=yes,
+   continue=yes,
+   method=global,
+   pagestate=start]
+
+\startbuffer [bibliography]
+@book{Darwin1859,
+   Author = {Darwin, C.},
+   Title = {On the Origin of Species by Means of Natural Selection},
+   Publisher = {John Murray},
+   Address = {London},
+      Year = {1859},
+}
+
+@book{Tufte1990,
+  Author = {Tufte, E. R.},
+  Title  = {Envisioning Information},
+  Publisher = {Graphics Press},
+  Address   = {Cheshire, CT},
+  Year      = {1990},
+}
+
+@article{Knuth,
+  Author = {Knuth, D. E.},
+  Title  = {What is the source of this quotation?},
+  Year   = {19??},
+  Journal = {Where published},
+  Volume = {Vol?},
+}
+\stopbuffer
+
+\usebtxdataset [bibliography.buffer]
+
+\starttext
+
+\doifmode {alternative} {\startfrontmatter}
+
+\startchapter [title={Preface}]
+  \input tufte
+  \cite [Tufte1990]
+  \startsection [title=Bibliography,incrementnumber=no,number=no]
+    \placelistofpublications [criterium=chapter]
+  \stopsection
+\stopchapter
+
+\doifmode {alternative} {\stopfrontmatter}
+
+\doifmode {alternative} {\startbodymatter}
+
+\startchapter [title={Introduction}]
+  \input knuth
+  \cite [Knuth]
+  \startsection [title=Bibliography,incrementnumber=no,number=no]
+    \placelistofpublications [criterium=chapter]
+  \stopsection
+\stopchapter
+
+\doifmode {alternative} {\stopbodymatter}
+
+\doifmode {alternative} {\startappendices}
+
+\startchapter [title={Methods}]
+  \input darwin
+  \cite [Darwin1859]
+  \startsection [title=Bibliography,incrementnumber=no,number=no]
+    \placelistofpublications [criterium=chapter]
+  \stopsection
+\stopchapter
+
+\doifmode {alternative} {\stopappendices}
+
+\stoptext

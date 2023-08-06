@@ -1,0 +1,24 @@
+\setupinteraction[state=start]
+
+\definesymbol[codeattachment][{\infofont\darkred  code}]
+\definesymbol[codecomment]   [{\infofont\darkblue code}]
+
+\starttext
+
+    \startbuffer[demo-1]
+    this is some text
+      with   some   spaces
+     indeed
+    \stopbuffer
+
+    \inmargin{%
+      \attachment
+        [symbol=codeattachment,
+         space=yes,
+         buffer=demo-1,
+         name=demo-1]}%
+    here is some code:
+
+    \typebuffer[demo-1]
+
+\stoptext

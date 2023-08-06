@@ -1,0 +1,39 @@
+\starttext
+
+\defineorientation[test][orientation=down,vertical=top]
+
+\startbuffer[b]
+\definetabulatemove[a][xoffset=40pt]
+\definetabulatemove[b][orientation=test,yoffset=depth]
+
+\starttabulate[|c|c|]
+\TM[a] \NC \darkred   cell one   \NC \darkgray cell one   \NC \NR
+\TM[b] \NC \darkgreen cell one   \NC \darkblue cell one   \NC \NR
+\TM[a] \NC \darkred   cell two   \NC \darkgray cell two   \NC \NR
+\TM[b] \NC \darkgreen cell two   \NC \darkblue cell two   \NC \NR
+\TM[a] \NC \darkred   cell three \NC \darkgray cell three \NC \NR
+\TM[b] \NC \darkgreen cell three \NC \darkblue cell three \NC \NR
+\TM[a] \NC \darkred   cell four  \NC \darkgray cell four  \NC \NR
+\TM[b] \NC \darkgreen cell four  \NC \darkblue cell four  \NC \NR
+\stoptabulate
+\stopbuffer
+
+\start \showmakeup[line] \showstruts \ruledvbox{\getbuffer[b]} \stop
+\start                   \showstruts \ruledvbox{\getbuffer[b]} \stop
+\start                               \ruledvbox{\getbuffer[b]} \stop
+
+\startbuffer[b]
+\definetabulatemove[a][xoffset=20pt]
+
+\starttabulate[|p|p|]
+\TM[a] \NC \darkred   \samplefile{tufte} \NC \darkgray \samplefile{ward} \NC \NR
+       \NC \darkgreen \samplefile{tufte} \NC \darkblue \samplefile{ward} \NC \NR
+\TM[a] \NC \darkred   \samplefile{tufte} \NC \darkgray \samplefile{ward} \NC \NR
+       \NC \darkgreen \samplefile{tufte} \NC \darkblue \samplefile{ward} \NC \NR
+\stoptabulate
+\stopbuffer
+
+\start \small \small \showmakeup[line] \showstruts \getbuffer[b] \stop
+
+\stoptext
+

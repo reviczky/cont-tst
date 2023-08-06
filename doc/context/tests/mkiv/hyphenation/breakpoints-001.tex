@@ -1,0 +1,12 @@
+\starttext
+
+\definebreakpoints [test]
+
+\definebreakpoint [test][:][nleft=3,nright=3,type=1]
+\definebreakpoint [test][/][nleft=3,nright=3,type=1]
+
+{\setbreakpoints[test]\hsize1mm\nohyphens x boundary:boundary/boundary\par}
+
+{\setbreakpoints[test]\hsize1mm x boundary:boundary/boundary\par} % still hyphenated
+
+\stoptext

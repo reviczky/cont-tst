@@ -1,0 +1,36 @@
+\useMPlibrary[dum]
+
+\starttext
+
+\samplefile{tufte}
+
+\placefigure[somewhere:a]{}{\externalfigure[dummy-001]}
+
+\samplefile{tufte}
+
+\placefigure{}{\externalfigure[dummy-002]}
+
+\samplefile{tufte}
+
+{%\showboxes
+\startplacefigure[location={somewhere:b,tight}]
+    \externalfigure[dummy-003]
+\stopplacefigure
+}
+\samplefile{tufte}
+
+\placefigure{}{\externalfigure[dummy-004]}
+
+\page
+
+\placesavedfloat[figure][b][location={none,left}] \samplefile{tufte}
+\placesavedfloat[figure][a]
+% \placenamedfloat[figure][*]
+% \placenamedfloat[figure][b]
+% \placenamedfloat[figure][a]
+
+%    \startplacefloat[figure]{}
+%    xxxx
+%    \stopplacefloat
+
+\stoptext

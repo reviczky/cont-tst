@@ -1,0 +1,24 @@
+\setuplayout
+  [grid=yes,
+   columns=3,
+   columndistance=10pt,
+   lines=30]
+
+\showgrid
+
+\starttext
+
+\definelayer [text] \setupbackgrounds [text] [background=text]
+
+\setlayerframed
+    [text]
+    [y=\layoutlineoffset{10},
+     x=\layoutcolumnoffset{2}]
+    [align={lohi,flushleft},
+     offset=overlay,
+     width=\layoutcolumnwidth]
+    {\begstrut We are sort of snapping here, aren't we?\endstrut}
+
+\null
+
+\stoptext

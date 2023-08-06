@@ -1,0 +1,42 @@
+\starttext
+
+\start \showstruts \showboxes
+
+\starttabulate[|w(top,3cm)|w(top,3cm)|]
+\NC test \NC test \par test \NC \NR
+\NC test \NC test \par test \NC \NR
+\stoptabulate
+
+\starttabulate[|w(top,packed,3cm)|w(top,packed,3cm)|]
+\NC test \NC test \par test \NC \NR
+\NC test \NC test \par test \NC \NR
+\stoptabulate
+
+\starttabulate[interlinespace=no,format={|w(bottom,3cm)|w(bottom,3cm)|}]
+\NC test \NC test \par test \NC \NR
+\NC test \NC test \par test \NC \NR
+\stoptabulate
+
+\starttabulate[format={|w(3cm)|w(3cm)|}]
+\NC \vtop{\strut test} \NC \vtop{\strut test\par \strut test} \NC \NR
+\NC \vtop{\strut test} \NC \vtop{\strut test\par \strut test} \NC \NR
+\stoptabulate
+
+\starttabulate[interlinespace=no,format={|w(3cm)|w(3cm)|}]
+\NC \vtop{\strut test} \NC \vtop{\strut test\par \strut test} \NC \NR
+\NC \vtop{\strut test} \NC \vtop{\strut test\par \strut test} \NC \NR
+\stoptabulate
+
+\starttabulate[interlinespace=no,format={|w(3cm)|w(3cm)|}]
+\NC \vbox{\strut test} \NC \vbox{\strut test\par \strut test} \NC \NR
+\NC \vbox{\strut test} \NC \vbox{\strut test\par \strut test} \NC \NR
+\stoptabulate
+
+\starttabulate[interlinespace=no,format={|w(3cm)|w(3cm)|}]
+\NC \vtop{\strut test} \NC \vbox{\strut test\par \strut test} \NC \NR
+\NC \vbox{\strut test} \NC \vtop{\strut test\par \strut test} \NC \NR
+\stoptabulate
+
+\stop
+
+\stoptext

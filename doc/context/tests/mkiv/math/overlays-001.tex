@@ -1,0 +1,23 @@
+\continuewhenlmtxmode
+
+\pushoverloadmode
+
+\permanent\protected\def\not#1{\Umathaccent class \mathordinarycode exact overlay 0 0 "338 {#1}}
+\permanent\protected\def\not#1{\Umathaccent class \mathrelationcode exact overlay 0 0 "338 {#1}}
+\permanent\protected\def\not#1{\Umathaccent class \mathbinarycode   exact overlay 0 0 "338 {#1}}
+
+\definemathcommand[slashD][ordinary]{\Umathaccent class \mathordinarycode exact  overlay 0 0 "338 {D}}
+\definemathcommand[slashD][ordinary]{\Umathaccent class \mathordinarycode center overlay 0 0 "338 {D}}
+
+\popoverloadmode
+
+\setupbodyfont[bonum]
+
+\showglyphs
+
+\startTEXpage[offset=1dk]
+    \im{
+        D _{\phi} + \slashD _{\phi}
+        + x \not{=}x
+    }
+\stopTEXpage

@@ -1,32 +1,30 @@
 % When grouping formulas one expect that the number is middle aligned vertically (seems OK).
 % This example show a problem with the right brace being too big.
 
-\definemathfence[klammer][left=,right="007D,command=yes]
+\definemathfence[klammer][left=,right="007D,define=yes]
 
 \starttext
 
 \placeformula[eq:klammer]
 \startformula
-\klammer{
-\startalign[location=top]
-\NC xxxxx   \NC = xxxx       \NR
-\NC xx      \NC = xxx        \NR
-\NC xxxxxxx \NC = xxxxxxxxxx \NR
-\stopalign
-}
+    \klammer{
+        \startalign[location=top]
+            \NC xxxxx   \NC = xxxx       \NR
+            \NC xx      \NC = xxx        \NR
+            \NC xxxxxxx \NC = xxxxxxxxxx \NR
+        \stopalign
+    }
 \stopformula
-
-
 
 \placeformula[eq:klammer]
 \startformula
-\klammer{
-\startalign
-\NC xxxxx   \NC = xxxx       \NR
-\NC xx      \NC = xxx        \NR
-\NC xxxxxxx \NC = xxxxxxxxxx \NR
-\stopalign
-}
+    \klammer{
+        \startalign
+            \NC xxxxx   \NC = xxxx       \NR
+            \NC xx      \NC = xxx        \NR
+            \NC xxxxxxx \NC = xxxxxxxxxx \NR
+        \stopalign
+    }
 \stopformula
 
 

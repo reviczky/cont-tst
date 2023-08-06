@@ -1,0 +1,24 @@
+\starttext
+
+\bTABLE[split=repeat]
+    \bTABLEhead
+        \bTR \bTH \darkblue header \eTH \bTH \darkblue done \eTH \eTR
+    \eTABLEhead
+    \dorecurse{12}{
+        \bTABLEbody
+            \bTABLEsection
+                \bTR \bTD \darkred line #1.1 \eTD \bTD \darkred done \eTD \eTR
+                \bTR \bTD \darkred line #1.2 \eTD \bTD \darkred done \eTD \eTR
+            \eTABLEsection
+            \bTABLEsection[repeat=2]
+                \bTR[samepage=after] \bTH \darkorange header #1.1 \eTH \bTH \darkorange done \eTH \eTR
+                \bTR[samepage=after] \bTH \darkorange header #1.2 \eTH \bTH \darkorange done \eTH \eTR
+                \bTR                 \bTD \darkgreen  hline  #1.3 \eTD \bTD \darkgreen  done \eTD \eTR
+                \bTR                 \bTD \darkgreen  hline  #1.4 \eTD \bTD \darkgreen  done \eTD \eTR
+                \bTR                 \bTD \darkgreen  hline  #1.5 \eTD \bTD \darkgreen  done \eTD \eTR
+            \eTABLEsection
+        \eTABLEbody
+    }
+\eTABLE
+
+\stoptext

@@ -1,0 +1,23 @@
+\starttext
+
+\startchapter[title={Foo Bar}][authors={Alice, Bob},AUTHORS={Bob,Alice}]
+
+    \doloopovermatch {[^, ]+} {\structureuservariable{authors}}  {
+        (#1)\crlf
+    }
+    \doloopovermatch {[^,]+} {\structureuservariable{authors}}  {
+        (#1)\crlf
+    }
+    \doloopovermatch {[^,]+} {\structureuservariable{AUTHORS}}  {
+        (#1)\crlf
+    }
+    \doloopovermatch {[^,]+} {\structureuservariable{AUTHORS}}  {
+        \doloopovermatch {.} {#1}  {
+            (##1)
+        }
+        \crlf
+    }
+
+\stopchapter
+
+\stoptext

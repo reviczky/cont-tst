@@ -1,0 +1,15 @@
+\starttext
+
+    \dostepwiserecurse {\firstsectionpage[select-001][chapter:3]} {\lastsectionpage[select-001][chapter:3]} {1} {
+        \startpagemakeup
+            \externalfigure[select-001.pdf][page=#1]
+        \stoppagemakeup
+    }
+
+    \dostepwiserecurse {\firstsectionpage[select-001][chapter:5]} {\lastsectionpage[select-001][chapter:5]} {1} {
+        \dontleavehmode
+        \externalfigure[select-001.pdf][page=#1,width=3cm,frame=on]%
+        \space\allowbreak
+    }
+
+\stoptext

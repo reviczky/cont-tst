@@ -1,0 +1,16 @@
+return {
+ ["htmlfiles"]={ "export-10-div.html" },
+ ["htmlroot"]="export-10-div.html",
+ ["identifier"]="18664bab-4177-a6f1-fd1e-998493ecdc8f",
+ ["imagefile"]="styles/export-10-images.css",
+ ["imagepath"]="images",
+ ["images"]={},
+ ["language"]="en",
+ ["metadata"]={},
+ ["name"]="export-10",
+ ["stylepath"]="styles",
+ ["styles"]={ "export-10-defaults.css", "export-10-images.css", "export-10-styles.css" },
+ ["title"]="export-10",
+ ["xhtmlfiles"]={ "export-10-tag.xhtml" },
+ ["xmlfiles"]={ "export-10-raw.xml" },
+}

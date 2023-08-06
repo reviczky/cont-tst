@@ -1,0 +1,46 @@
+\starttext
+
+\startluacode
+    local done = { }
+    function document.ShowFeatures(script)
+        local test = [[
+            ABCDEFGHIJKLMNOPQRSTUVWXYZ
+            abcdefghijklmnopqrstuvwxyz
+            1234567890
+            1/4 2/8 3/9
+            ffi ft fi fl ffl
+        ]]
+
+        local font     = fonts.hashes.identifiers[true]
+        local features = font.resources.features
+     -- inspect(features)
+        for name, detail in table.sortedhash(features.gsub) do
+            if #name == 4 then
+                context.type(name)
+                context.quad()
+                if script then
+                    context.type(script)
+                    context.quad()
+                end
+                local fname = "f:" .. (script or "dflt") .. ":" .. name
+                if not done[fname] then
+                    context.definefontfeature( { fname }, { [name] = "yes", script = script })
+                    done[fname] = true
+                end
+                context.start()
+                    context.addff(fname)
+                    context(test)
+                context.stop()
+                context.blank()
+            end
+        end
+    end
+\stopluacode
+
+\definedfont[LibertinusSerif-Regular.otf*always]
+
+\ctxlua{document.ShowFeatures()}
+% \ctxlua{document.ShowFeatures("latn")}
+% \ctxlua{document.ShowFeatures("grek")}
+
+\stoptext

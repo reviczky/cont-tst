@@ -1,0 +1,60 @@
+\showboxes
+
+\starttext
+
+    \startplacefigure[location={here}, title={Here is a title}]
+        \startfloatcombination[nx=2, ny=1, distance=2.5cm]
+            \startplacefigure[location=none]
+                \startMPcode
+                    draw (-1cm,0cm) -- (1cm,0cm) ;
+                    draw (0cm,-1cm) -- (0cm,1cm) ;
+                \stopMPcode
+            \stopplacefigure
+            \startplacefigure[location=none]
+                \startMPcode
+                    draw (-1cm,0cm) -- (1cm,0cm) ;
+                    draw (0cm,-1cm) -- (0cm,1cm) ;
+                \stopMPcode
+            \stopplacefigure
+        \stopfloatcombination
+    \stopplacefigure
+
+    \startplacefigure[location={here}, title={Here is a title}]
+        \startfloatcombination[nx=2, ny=1, distance=2.5cm]
+            \startplacefigure
+                \startMPcode
+                    draw (-1cm,0cm) -- (1cm,0cm) ;
+                    draw (0cm,-1cm) -- (0cm,1cm) ;
+                \stopMPcode
+            \stopplacefigure
+            \startplacefigure
+                \startMPcode
+                    draw (-1cm,0cm) -- (1cm,0cm) ;
+                    draw (0cm,-1cm) -- (0cm,1cm) ;
+                \stopMPcode
+            \stopplacefigure
+        \stopfloatcombination
+    \stopplacefigure
+
+    \startplacefigure[location={here}, title={Here is a title}]
+        \startcombination[nx=2, ny=1, distance=2.5cm]
+            \startcontent
+                \startMPcode
+                    draw (-1cm,0cm) -- (1cm,0cm) ;
+                    draw (0cm,-1cm) -- (0cm,1cm) ;
+                \stopMPcode
+            \stopcontent
+            \startcaption
+            \stopcaption
+            \startcontent
+                \startMPcode
+                    draw (-1cm,0cm) -- (1cm,0cm) ;
+                    draw (0cm,-1cm) -- (0cm,1cm) ;
+                \stopMPcode
+            \stopcontent
+            \startcaption
+            \stopcaption
+        \stopcombination
+    \stopplacefigure
+
+\stoptext

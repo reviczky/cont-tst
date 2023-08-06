@@ -1,0 +1,85 @@
+% example by Mikael S
+
+\setupbodyfont[8pt]
+\showmakeup[line]
+
+\starttext
+
+\startbuffer
+Aharonov, Y. & Casher, A. (1979) Ground state of a spin-$\frac{1}{2}$ charged
+particle in a two-dimensional magnetic field
+\stopbuffer
+
+\startmixedcolumns[n=2,balance=yes]
+    \hsize 207.39372pt
+    \getbuffer
+    \par
+    \getbuffer
+\stopmixedcolumns
+
+\blank
+
+\startmixedcolumns[n=2,balance=yes,grid=no]
+    \hsize 207.39372pt
+    \getbuffer
+    \par
+    \getbuffer
+\stopmixedcolumns
+
+\blank
+
+\enabletrackers[*prof*]
+
+\startmixedcolumns[n=2,balance=yes,grid=no]
+\setupalign[profile]
+    \hsize 207.39372pt
+    \getbuffer
+    \par
+    \getbuffer
+\stopmixedcolumns
+
+\blank
+
+% doesn't work
+
+\startmixedcolumns[n=2,balance=yes]
+    \setupalign[profile]
+    \hsize 207.39372pt
+    \getbuffer
+    \par
+    \getbuffer
+\stopmixedcolumns
+
+\blank
+
+\startmixedcolumns[n=2,balance=yes,grid=tolerant:50]
+    \hsize 207.39372pt
+    \getbuffer
+    \par
+    \getbuffer
+\stopmixedcolumns
+
+% works
+
+\blank
+
+\startmixedcolumns[n=2,balance=yes,grid=tolerant:50]
+    \setupalign[profile]
+    \hsize 207.39372pt
+    \getbuffer
+    \par
+    \getbuffer
+\stopmixedcolumns
+
+\blank
+
+% old profiler
+
+\startmixedcolumns[n=2,balance=yes,profile=fixed] % strict fixed none
+    \hsize 207.39372pt
+    \getbuffer
+    \par
+    \getbuffer
+\stopmixedcolumns
+
+\stoptext

@@ -1,0 +1,25 @@
+% question on list
+
+\starttext
+
+\tolerant\def\mycommand#=#=#=#=#:[#5]%
+  {\ifparameter#1\or(1:#1)\fi
+   \ifparameter#2\or(2:#2)\fi
+   \ifparameter#3\or(3:#3)\fi
+   \ifparameter#4\or(4:#4)\fi
+   \ifparameter#5\or[5:#5]\fi}
+
+\startbuffer
+\mycommand{aa}{bb}{cc}
+  \mycommand{aa}{bb}{cc}{dd}
+  \mycommand{aa}{bb}{cc}{dd}[ee]
+\mycommand{aa}{bb}{cc}
+  \mycommand{aa}{bb}{cc}{dd}
+  \mycommand{aa}{bb}{cc}{dd}[ee]
+\stopbuffer
+
+\typebuffer
+
+\startlines \getbuffer \stoplines
+
+\stoptext

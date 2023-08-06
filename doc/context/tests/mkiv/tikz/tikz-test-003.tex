@@ -1,0 +1,11 @@
+% Testing -| and |- macros
+\usemodule[tikz]
+\starttext
+\starttikzpicture
+  \node at (0,0) (A) {A};
+  \node at (1,1) (B) {B};
+
+  \draw (A) -| (B); % Doesn't come out right
+  \draw (A) |- (B);
+\stoptikzpicture
+\stoptext

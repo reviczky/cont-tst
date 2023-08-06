@@ -1,0 +1,20 @@
+% example by Max C on list
+
+\definefontfeature[default][default][tlig=yes,tquo=yes,trep=yes]
+
+\startbuffer[test-bib]
+@article{one, author = {``Auth\v{o}r---One''} }
+@article{two, author = {``Authǒr---Two''} }
+\stopbuffer
+
+\usebtxdataset[test-bib.buffer]
+
+\starttext
+    Converting ...
+    \startluacode
+       for key, value in table.sortedpairs(publications.datasets.default.luadata) do
+           print(key, publications.prerollcmdstring(value.author))
+       end
+    \stopluacode
+    done.
+\stoptext

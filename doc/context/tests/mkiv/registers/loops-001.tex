@@ -1,0 +1,35 @@
+\starttexdefinition protected IndexA#1#2
+    \index{#2}
+    \doloopoverlist {#1} {
+        \index{##1+#2}
+    }
+\stoptexdefinition
+
+\starttexdefinition tolerant protected IndexB[#1]#:#*#2
+    \index{#2}
+    \doloopoverlist {#1} {
+        \index{##1+#2}
+    }
+\stoptexdefinition
+
+\starttext
+    a\IndexA{animals}{dogs}
+    a\IndexA{animals}{cats}
+    a\IndexA{plants}{flowers}
+    a\IndexA{animals,small}{snails}
+    a\IndexA{plants,huge}{trees}
+    \page
+    b\IndexB[animals]      {dogs}
+    b\IndexB[animals]      {cats}
+    b\IndexB[plants]       {flowers}
+    b\IndexB[animals,small]{snails}
+    b\IndexB[plants,huge]  {trees}
+    \page
+    c\IndexB{dogs}
+    c\IndexB{cats}
+    c\IndexB{flowers}
+    c\IndexB{snails}
+    c\IndexB{trees}
+    \page
+    \placeindex
+\stoptext

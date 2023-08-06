@@ -1,0 +1,84 @@
+% adapted from example sent to me by MS
+
+\useMPlibrary[dum]
+
+\setuplayout
+  [backspace=11.67mm,        width=131.25mm,
+   topspace=21.21mm,         height=254.57mm,
+   headerdistance=13pt,      header=13pt,
+   footerdistance=13pt,      footer=13pt,
+   rightmargindistance=13pt, rightmargin=39.5mm]
+
+\setuppagenumbering
+  [alternative=doublesided,location=]
+
+\setuphead
+  [section]
+  [page=right,
+   continue=no,
+   style=\ssb\bf]
+
+\defineframed
+  [MyCaptionFramed]
+  [align={lohi,flushleft},
+   width=fit,
+   frame=off,
+   strut=no,
+   topframe=on,
+   loffset=3cm,
+   toffset=0.25\lineheight]
+
+\starttexdefinition protected MyCaption #1
+  \MyCaptionFramed {
+    % we ignore #1 as we want to unpack
+    \unvbox\floatcaptionbox
+  }
+\stoptexdefinition
+
+\definefloat[pagefloat][pagefloats][graphic]
+
+\setupfloat
+  [pagefloat]
+  [default={page,header,footer},
+   location=inner]
+
+\setupcaption
+  [pagefloat]
+  [location={top,inner},
+   align=inner,
+   command=\MyCaption,
+   spaceinbetween=nowhite]
+
+\starttexdefinition PageFigure #1#2
+  \startplacefloat
+    [pagefloat]
+    [title={#2}]
+      \externalfigure
+        [#1]
+        [width=\dimexpr \textwidth + \rightmargintotal \relax,
+         height=\textheight,
+         factor=fit]
+  \stopplacefloat
+\stoptexdefinition
+
+\showframe
+
+\starttext
+
+\startchapter[title={Testing Ruled Captions}]
+
+  \dorecurse{3}{\input{knuth}}
+
+  \PageFigure
+    {some dummy}
+    {First line\\Second line of the caption}
+
+  \startsection[title={First Section}]
+
+    \dorecurse{4}{\input{knuth}}
+
+  \stopsection
+
+\stopchapter
+
+\stoptext

@@ -1,0 +1,28 @@
+\continuewhenlmtxmode
+
+\starttext
+
+\startluacode
+    languages.replacements.add("basics", {
+        ["one"]   = "cool",
+        ["two"]   = function(s)
+            return "warm"
+        end,
+        ["four"]   = function(s)
+            return s .. " degrees celsius"
+        end
+    })
+\stopluacode
+
+\startluacode
+    local function f(s) return s .. " degrees" end
+
+    languages.replacements.add("basics", "three", f)
+\stopluacode
+
+\start \setreplacements[basics] It's one in here! \stop \par
+\start \setreplacements[basics] It's two in here! \stop \par
+\start \setreplacements[basics] It's four in here! \stop \par
+\start \setreplacements[basics] It's three in here! \stop \par
+
+\stoptext

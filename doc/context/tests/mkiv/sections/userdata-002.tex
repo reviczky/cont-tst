@@ -1,0 +1,48 @@
+% derived from example from SE / MS
+
+\startsetups[chapter:leftpage]
+    \page[yes]
+    \midaligned{
+        \definedfont[SerifBold*default at 21pt]
+        \setupinterlinespace
+        \WORD {
+            \namedstructurevariable{chapter:+}{title}
+        }
+    }
+    \blank[line]
+    \midaligned{
+        \definedfont[Serif*default at 14pt]
+        \setupinterlinespace
+        \namedstructureuservariable{chapter:+}{author},\space
+        \namedstructureuservariable{chapter:+}{year}
+    }
+    \blank[line]
+    \midaligned{
+        \definedfont[SerifBold*default at 14pt]
+        \setupinterlinespace
+        \namedstructurevariable{chapter:+}{userdata.author},\space
+        \namedstructurevariable{chapter:+}{userdata.year}
+    }
+    \blank[2*line]
+\stopsetups
+
+\setuphead
+    [chapter]
+    [page=,
+     number=no,
+     placehead=no,
+     location=none,
+     indentnext=no,
+     beforesection=\directsetup{chapter:leftpage}]
+
+\starttext
+
+\startchapter[title={My second interview}][author={John Doe},year={2023}]
+    \input knuth
+\stopchapter
+
+\startchapter[title={My third interview}][author={Jane Doe},year={2032}]
+    \input ward
+\stopchapter
+
+\stoptext

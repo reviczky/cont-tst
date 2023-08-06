@@ -1,0 +1,22 @@
+\starttext
+
+\starttabulate[||r|]
+    \NC red   \NC \colorluminance{red}   \NC \NR
+    \NC green \NC \colorluminance{green} \NC \NR
+    \NC black \NC \colorluminance{black} \NC \NR
+    \NC white \NC \colorluminance{white} \NC \NR
+\stoptabulate
+
+\starttabulate[||r|]
+    \NC red : green \NC \colorluminanceratio{red}{green} \NC \NR
+    \NC red : black \NC \colorluminanceratio{red}{black} \NC \NR
+    \NC red : white \NC \colorluminanceratio{red}{white} \NC \NR
+\stoptabulate
+
+\usecolors[crayola]
+
+\compareluminance[Jade]      [Onyx] \par
+\compareluminance[Goldenrod] [Onyx] \par
+\compareluminance[CobaltBlue][Onyx] \par
+
+\stoptext

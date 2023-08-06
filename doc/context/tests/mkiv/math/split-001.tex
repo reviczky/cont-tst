@@ -1,0 +1,58 @@
+\setupbodyfont
+  [lucidadk,10pt]
+
+\setupwhitespace
+  [big]
+
+\setupformula
+  [align=flushleft]
+
+\setupformula
+  [splitmethod=both]
+
+
+\starttext
+
+% \showmakeup[line] \showstruts
+
+Some of the accents come with wider versions.
+
+\startformula
+ %\overbar{abcdefghijklmnopqrstuvwxyz}
+ %\breakhere
+  \widecheck{abcdefghijklmnopqrstuvwxyz}
+  \breakhere
+  \widehat{abcdefghijklmnopqrstuvwxyz}
+  \breakhere
+  \vec{abcdefghijklmnopqrstuvwxyz}
+  \breakhere
+  \widetilde{abcdefghijklmnopqrstuvwxyz}
+\stopformula
+
+Some of the accents come with wider versions.
+
+\startformula
+  \widehat{abcdefghijklmnopqrstuvwxyz}
+  \breakhere
+  \vec{abcdefghijklmnopqrstuvwxyz}
+  \breakhere
+  \widetilde{abcdefghijklmnopqrstuvwxyz}
+\stopformula
+
+Some of the accents come with wider versions.
+
+\startformula
+  \vec{abcdefghijklmnopqrstuvwxyz}
+  \breakhere
+  \widetilde{abcdefghijklmnopqrstuvwxyz}
+\stopformula
+
+Some of the accents come with wider versions.
+
+\startformula
+  \widetilde{abcdefghijklmnopqrstuvwxyz}
+\stopformula
+
+Some of the accents come with wider versions.
+
+\stoptext

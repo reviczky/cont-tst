@@ -4,9 +4,19 @@ $y=a x + b$
 
 $y=a {\mkern 1mu} x + b$
 
+\ifcase\contextlmtxmode
+
 \startsetups math:morespacing
-    \ordordspacing\textstyle 1mu plus .5mu minus .25mu\relax
+    \ordordspacing \textstyle 1mu plus .5mu minus .25mu\relax
 \stopsetups
+
+\else
+
+\startsetups math:morespacing
+    \setmathspacing \mathordinarycode \mathordinarycode \textstyle 1mu plus .5mu minus .25mu\relax
+\stopsetups
+
+\fi
 
 \setupmathematics
   [setups=math:morespacing]
