@@ -1,0 +1,42 @@
+\showframe
+
+\starttext
+
+\defineitemgroup[xxxx]
+
+\samplefile{tufte}\samplefile{tufte}
+
+\startitemizetable[n,four]
+    \startitem
+        \im{\sqrt{\frac{1}{x^4}}}
+    \stopitem
+    \startitem
+        \im{\sqrt{x^5}}
+    \stopitem
+\stopitemizetable
+
+\samplefile{tufte}\samplefile{tufte}
+
+\startxxxxtable[n,four]
+    \dorecurse{10}{
+        \startitem
+            \im{\sqrt{1/x}}
+        \stopitem
+        \startitem
+            \im{\sqrt{\frac{2}{x}}}
+        \stopitem
+        \startitem
+            \im{\frac{3}{x}}
+        \stopitem
+    }
+    \startitem
+        \im{\sqrt{\frac{1}{x^4}}}
+    \stopitem
+    \startitem
+        \im{\sqrt{x^5}}
+    \stopitem
+\stopxxxxtable
+
+\samplefile{tufte}
+
+\stoptext

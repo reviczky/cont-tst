@@ -1,0 +1,42 @@
+\usemodule[visual]
+
+\definetyping[MyCode]
+
+\setuptyping
+  [MyCode]
+  [option=tex,
+   numbering=file]
+
+\definebuffer
+  [MyBuffer]
+  [category=MyCode]
+
+\setuptyping
+  [MyBuffer]
+  [option=TEX,
+   numbering=file]
+
+% \setuptyping
+%   [buffer]
+%   [option=TEX,
+%    numbering=file]
+
+\startMyBuffer
+\fakewords{10}{20}
+\stopMyBuffer
+
+\starttext
+
+\startMyCode
+\fakeword
+\stopMyCode
+
+\getMyBuffer
+
+\typeMyBuffer
+
+\typeMyBuffer[MyCode]
+
+\typeMyBuffer[option=TEX]
+
+\stoptext
