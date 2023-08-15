@@ -1,0 +1,32 @@
+\starttext
+
+\uunit=1cm % beginfig
+
+\framed[offset=1uu]
+    \bgroup
+        \startMPcode
+            fill fullcircle scaled (3*uu) withcolor "red"   ;
+            fill fullcircle scaled (2*cm) withcolor "green" ;
+        \stopMPcode
+    \egroup
+
+\uunit=2cm
+
+\framed[offset=.5uu]
+    \bgroup
+        \startMPcode
+            fill fullcircle scaled (3*uu) withcolor "red"   ;
+            fill fullcircle scaled (2*cm) withcolor "green" ;
+        \stopMPcode
+    \egroup
+
+\framed[offset=1uu]
+    \bgroup
+        \startMPcode
+            save uu ; numeric uu ; uu := 1cm ;
+            fill fullcircle scaled (3*uu) withcolor "red"   ;
+            fill fullcircle scaled (2*cm) withcolor "green" ;
+        \stopMPcode
+    \egroup
+
+\stoptext

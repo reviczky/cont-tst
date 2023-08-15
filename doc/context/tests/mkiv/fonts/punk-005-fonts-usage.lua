@@ -2,8 +2,8 @@ return {
  {
   ["filename"]="c:/data/develop/tex-context/tex/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf",
   ["instances"]=3,
-  ["size"]=733500,
-  ["version"]="Version 1.958",
+  ["size"]=733736,
+  ["version"]="Version 1.959",
  },
  {
   ["filename"]="c:/data/develop/tex-context/tex/texmf/fonts/opentype/public/lm/lmmono10-regular.otf",

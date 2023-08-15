@@ -1,11 +1,19 @@
 \starttext
 
+% \placeregister[index][compress=all]
 \placeregister[index]
 
+\blank[3*big]
+
 x \index{b} x
-    \startregister   [index][x]{bb}
+    \startregister[index][x]{bb}
         x \page x \page x \page x
-    \stopregister       [index][x]
+    \stopregister[index][x]
+
+x \index{c} x
+    \setregisterentry[index][label=x,entries=bb]
+        x \page x \page x \page x
+    \finishregisterentry[index][label=x]
 
 x \index{c} x
     \setregisterentry[index][label=x,entries=bb]

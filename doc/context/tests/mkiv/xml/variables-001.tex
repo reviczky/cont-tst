@@ -1,0 +1,50 @@
+% follow up on mail discussion with T
+
+\startbuffer[demo]
+<html>
+    <body>
+        <div class="concurrent" data-title="Berth 5" data-location="San Diego">
+            Text Goes Here
+        </div>
+        <div class="concurrent" data-title="Road" data-location="Beale AFB">
+            Different Text Goes Here
+        </div>
+    </body>
+</html>
+\stopbuffer
+
+\startxmlsetups xml:xhtml
+    \xmlsetsetup{\xmldocument}{*}{-}
+    \xmlsetsetup{\xmldocument}{html|body|div}{xml:*}
+\stopxmlsetups
+
+\xmlregistersetup{xml:xhtml}
+
+\startxmlsetups xml:html
+    \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:body
+    \xmlflush{#1}
+\stopxmlsetups
+
+\startxmlsetups xml:div
+    \setupstartstop
+        [\xmlatt{#1}{class}]
+        [title=\xmlatt{#1}{data-title}]%
+    \start[\xmlatt{#1}{class}]%
+        \xmlflush{#1}
+    \stop
+    \blank
+    used wherever needed: \namedstartstopparameter{concurrent}{title}
+    \blank
+\stopxmlsetups
+
+\definestartstop
+   [concurrent]
+   [before=\startsection[title={TITLE: \namedstartstopparameter{concurrent}{title}}],
+    after=\stopsection]%
+
+\starttext
+    \xmlprocessbuffer{main}{demo}{}
+\stoptext

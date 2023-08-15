@@ -1,0 +1,37 @@
+\startTEXpage[offset=1ts]
+
+    \the\dimexpr .5 pi \relax\par % for mikael
+    \the\dimexpr .5 ft \relax\par % for alan
+    \the\dimexpr .5 fs \relax\par % font size
+    \the\dimexpr .5 tw \relax\par % text width
+    \the\dimexpr .5 th \relax\par % text height
+    \the\dimexpr .5 hs \relax\par % hsize
+    \the\dimexpr .5 vs \relax\par % vsize
+  % \the\dimexpr .5 cd \relax\par % column distance   (todo)
+  % \the\dimexpr .5 cw \relax\par % column width      (todo)
+    \the\dimexpr .5 cx \relax\par % combination width
+
+\newdimension \FooA   \FooA 1.23pt
+\newdimen     \FooB   \FooB 12.3pt
+\protected\def\FooC   {\the\dimexpr\FooA +\FooB\relax}
+
+\pushoverloadmode
+    \newuserunit\FooA ua
+    \newuserunit\FooB ub
+    \newuserunit\FooC uc
+\popoverloadmode
+
+\the\dimexpr 2 ua \relax\par
+\the\dimexpr 2 ub \relax\par
+\the\dimexpr 2 uc \relax\par
+
+\blank
+
+\startcombination[nx=4,ny=1]
+    {\ruledhbox to 1cx{\strut one}}   {1}
+    {\ruledhbox to 1cx{\strut two}}   {2}
+    {\ruledhbox to 1cx{\strut three}} {3}
+    {\ruledhbox to 1cx{\strut four}}  {4}
+\stopcombination
+
+\stopTEXpage
