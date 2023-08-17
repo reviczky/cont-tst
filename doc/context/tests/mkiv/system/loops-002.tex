@@ -1,0 +1,9 @@
+\continuewhenlmtxmode
+
+\startTEXpage[offset=1ex]
+    \localcontrolledloop 1 10 1 {
+        \localcontrolledloop 1 10 1 {
+            (\the\previousloopiterator\plusone,\the\currentloopiterator)
+        }
+    }
+\stopTEXpage

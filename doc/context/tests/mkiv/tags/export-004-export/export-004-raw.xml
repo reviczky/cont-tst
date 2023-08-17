@@ -3,8 +3,8 @@
 <!--
 
     input filename   : export-004
-    processing date  : 2023-08-15 16:01:27+02:00
-    context version  : 2023.08.15 15:41
+    processing date  : 2023-08-16 19:29:58+02:00
+    context version  : 2023.08.15 18:48
     exporter version : 0.35
 
 -->
@@ -13,5 +13,5 @@
 <?xml-stylesheet type="text/css" href="styles/export-004-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/export-004-styles.css" ?>
 
-<document context="2023.08.15 15:41" date="2023-08-15 16:01:27+02:00" file="export-004" language="en" title="export-004" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+<document context="2023.08.15 18:48" date="2023-08-16 19:29:58+02:00" file="export-004" language="en" title="export-004" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
 We thrive in information--thick worlds because of our marvelous and every­day capacity to select, edit, single out, structure, highlight, group, pair, merge, harmonize, synthesize, focus, organize, condense, reduce, boil down, choose, categorize, catalog, classify, list, abstract, scan, look into, ideal­ize, isolate, discriminate, distinguish, screen, pigeonhole, pick over, sort, integrate, blend, inspect, filter, lump, skip, smooth, chunk, average, approx­imate, cluster, aggregate, outline, summarize, itemize, review, dip into, flip through, browse, glance into, leaf through, skim, refine, enumerate, glean, synopsize, winnow the wheat from the chaff and separate the sheep from the goats.</document>

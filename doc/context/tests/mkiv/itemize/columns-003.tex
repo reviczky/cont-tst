@@ -1,0 +1,84 @@
+
+\showframe
+
+\starttext
+
+\defineitemgroup[xxxx]
+
+\samplefile{tufte}
+
+\startlinecorrection
+\bTABLE \bTR \bTD
+\startitemize[a]
+\startitem
+    \im{\sqrt{\frac{1}{x^4}}}
+\stopitem
+\startitem
+    \startitemize[n]
+    \startitem
+        \im{\sqrt{\frac{1}{x^4}}}
+    \stopitem
+    \startitem
+        \im{\sqrt{\frac{1}{x^4}}}
+    \stopitem
+    \stopitemize
+\stopitem
+\startitem
+    \im{\sqrt{\frac{1}{x^4}}}
+\stopitem
+\stopitemize
+\eTD \eTR \eTABLE
+\stoplinecorrection
+
+\samplefile{tufte}
+
+\startitemize[n]
+\starttabulate[||k2|]
+    \NC \startitem test \stopitem
+    \NC \startitem test \stopitem \NC \NR
+    \NC \startitem test \stopitem
+    \NC \startitem test \stopitem \NC \NR
+\stoptabulate
+\stopitemize
+
+\samplefile{tufte}
+
+\startitemizetable[n,four]
+    \dorecurse{10}{
+        \startitem
+            \im{\sqrt{\frac{1}{x^4}}}
+        \stopitem
+        \startitem
+            \im{\sqrt{x^5}}
+        \stopitem
+        \startitem
+            \im{\frac{x^5}{x^5}}
+        \stopitem
+    }
+\stopitemizetable
+
+\samplefile{tufte}
+
+\startxxxxtable[n,four][inbetween={\blank[big]}]
+    \dorecurse{10}{
+        \startitem
+            \im{\sqrt{1/x}}
+        \stopitem
+        \startitem
+            \im{\sqrt{\frac{2}{x}}}
+        \stopitem
+        \startitem
+            \im{\frac{3}{x}}
+        \stopitem
+    }
+    \startitem
+        \im{\sqrt{\frac{1}{x^4}}}
+    \stopitem
+    \startitem
+        \im{\sqrt{x^5}}
+    \stopitem
+\stopxxxxtable
+
+\samplefile{tufte}
+
+\stoptext
