@@ -3,8 +3,8 @@
 <!--
 
     input filename   : tagged-010
-    processing date  : 2023-08-16 19:30:09+02:00
-    context version  : 2023.08.15 18:48
+    processing date  : 2023-08-27 12:07:06+02:00
+    context version  : 2023.08.26 20:20
     exporter version : 0.35
 
 -->
@@ -13,5 +13,5 @@
 <?xml-stylesheet type="text/css" href="styles/tagged-010-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/tagged-010-styles.css" ?>
 
-<document context="2023.08.15 18:48" date="2023-08-16 19:30:08+02:00" file="tagged-010" language="en" title="tagged-010" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+<document context="2023.08.26 20:20" date="2023-08-27 12:07:06+02:00" file="tagged-010" language="en" title="tagged-010" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
 12 45 12345 12.3412 45 12 45 12 3412 45 12 45 12 34</document>

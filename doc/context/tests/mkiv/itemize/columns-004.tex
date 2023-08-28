@@ -1,0 +1,27 @@
+\continuewhenlmtxmode
+
+\defineitemgroup[alex]
+
+\setupitemgroup
+  [alex]
+  [each]
+  [a,two]
+  [before=\blank[overlay,-depth],
+   margin=2cm]
+
+\showboxes
+
+\starttext
+
+\startitemize[n]
+    \startitem
+        \startalextable
+            \startitem First  \stopitem
+            \startitem Second \stopitem
+            \startitem Third  \stopitem
+            \startitem Fourth \stopitem
+        \stopalextable
+    \stopitem
+\stopitemize
+
+\stoptext

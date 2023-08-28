@@ -1,0 +1,22 @@
+\starttext
+
+\edef\foo{[#G,#P,#I]}
+\def \oof{<#G,#P,#I>}
+
+\localcontrolledloop 1 4 1 {%
+    \localcontrolledloop 1 3 1 {%
+        \localcontrolledloop 1 2 1 {%
+        %
+        % I iterator    \currentloopiterator
+        % P parent      \previousloopiterator1
+        % G grandparent \previousloopiterator2
+        %
+            \edef\ofo{[#G,#P,#I]}%
+            \foo\oof\ofo(#G,#P,#I)\space
+        %
+        }
+        \par
+    }
+}
+
+\stoptext
