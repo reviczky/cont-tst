@@ -3,8 +3,8 @@
 <!--
 
     input filename   : export-010
-    processing date  : 2023-09-03 18:55:56+02:00
-    context version  : 2023.09.03 18:34
+    processing date  : 2023-09-04 19:08:56+02:00
+    context version  : 2023.09.03 19:03
     exporter version : 0.35
 
 -->
@@ -13,7 +13,7 @@
 <?xml-stylesheet type="text/css" href="styles/export-010-images.css" ?>
 <?xml-stylesheet type="text/css" href="styles/export-010-styles.css" ?>
 
-<document context="2023.09.03 18:34" date="2023-09-03 18:55:56+02:00" file="export-010" language="en" title="export-010" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
+<document context="2023.09.03 19:03" date="2023-09-04 19:08:56+02:00" file="export-010" language="en" title="export-010" version="0.35" xmlns:m="http://www.w3.org/1998/Math/MathML">
 test
  <formula>
   <formulacontent n="1">
